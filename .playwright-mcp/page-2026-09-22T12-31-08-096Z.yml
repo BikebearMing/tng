@@ -1,0 +1,133 @@
+- main [ref=f23e2]:
+  - generic [ref=f23e3]:
+    - generic [ref=f23e4]:
+      - paragraph [ref=f23e5]:
+        - generic [aria-hidden] [ref=f23e8]: Featured
+      - heading "Vietnam Takes Major Step in AI Governance with New Guiding Decree" [level=1] [ref=f23e9]:
+        - generic [aria-hidden] [ref=f23e11]: Vietnam Takes Major Step
+        - generic [aria-hidden] [ref=f23e13]: in AI Governance with
+        - generic [aria-hidden] [ref=f23e15]: New Guiding Decree
+      - link "Read more" [ref=f23e16] [cursor=pointer]:
+        - /url: "#"
+    - generic [ref=f23e19]:
+      - generic [ref=f23e20]:
+        - paragraph [ref=f23e21]:
+          - generic [aria-hidden] [ref=f23e23]:
+            - generic [aria-hidden] [ref=f23e24]: Recent
+            - generic [aria-hidden] [ref=f23e25]: Insights
+        - link "View all" [ref=f23e26] [cursor=pointer]:
+          - /url: "#"
+      - list [ref=f23e29]:
+        - listitem [ref=f23e30]:
+          - link [ref=f23e31] [cursor=pointer]:
+            - /url: "#"
+            - 'heading "Practical Law: Insurance and Reinsurance Global Guide 2026 – Vietnam" [level=4] [ref=f23e32]':
+              - generic [aria-hidden] [ref=f23e34]: "Practical Law: Insurance and"
+              - generic [aria-hidden] [ref=f23e36]: Reinsurance Global Guide 2026 –
+              - generic [aria-hidden] [ref=f23e38]: Vietnam
+            - paragraph [ref=f23e39]:
+              - generic [aria-hidden] [ref=f23e41]:
+                - generic [aria-hidden] [ref=f23e42]: Dec
+                - generic [aria-hidden] [ref=f23e43]: 02,
+                - generic [aria-hidden] [ref=f23e44]: "2026"
+        - listitem [ref=f23e48]:
+          - link [ref=f23e49] [cursor=pointer]:
+            - /url: "#"
+            - heading "Indonesia Expands Rules on Drug Promotion and Advertising" [level=4] [ref=f23e50]:
+              - generic [aria-hidden] [ref=f23e52]: Indonesia Expands Rules on Drug
+              - generic [aria-hidden] [ref=f23e54]: Promotion and Advertising
+            - paragraph [ref=f23e55]:
+              - generic [aria-hidden] [ref=f23e57]:
+                - generic [aria-hidden] [ref=f23e58]: Dec
+                - generic [aria-hidden] [ref=f23e59]: 02,
+                - generic [aria-hidden] [ref=f23e60]: "2026"
+        - listitem [ref=f23e64]:
+          - link [ref=f23e65] [cursor=pointer]:
+            - /url: "#"
+            - heading "Thai Cabinet Advances Draft Amendments to Liberalize Nine Foreign Business Activities" [level=4] [ref=f23e66]:
+              - generic [aria-hidden] [ref=f23e68]: Thai Cabinet Advances Draft
+              - generic [aria-hidden] [ref=f23e70]: Amendments to Liberalize Nine
+              - generic [aria-hidden] [ref=f23e72]: Foreign Business Activities
+            - paragraph [ref=f23e73]:
+              - generic [aria-hidden] [ref=f23e75]:
+                - generic [aria-hidden] [ref=f23e76]: Dec
+                - generic [aria-hidden] [ref=f23e77]: 02,
+                - generic [aria-hidden] [ref=f23e78]: "2026"
+        - listitem [ref=f23e82]:
+          - link [ref=f23e83] [cursor=pointer]:
+            - /url: "#"
+            - heading "US-Thailand Trade Meetings Increase Focus on Trade Enforcement" [level=4] [ref=f23e84]:
+              - generic [aria-hidden] [ref=f23e86]: US-Thailand Trade Meetings
+              - generic [aria-hidden] [ref=f23e88]: Increase Focus on Trade
+              - generic [aria-hidden] [ref=f23e90]: Enforcement
+            - paragraph [ref=f23e91]:
+              - generic [aria-hidden] [ref=f23e93]:
+                - generic [aria-hidden] [ref=f23e94]: Dec
+                - generic [aria-hidden] [ref=f23e95]: 02,
+                - generic [aria-hidden] [ref=f23e96]: "2026"
+  - generic [ref=f23e100]:
+    - generic [ref=f23e101]:
+      - link "Explore" [ref=f23e103] [cursor=pointer]:
+        - /url: "#"
+      - list [ref=f23e106]:
+        - listitem [ref=f23e107]
+        - listitem [ref=f23e108]
+        - listitem [ref=f23e109]
+        - listitem [ref=f23e110]
+    - list [ref=f23e112]:
+      - listitem [ref=f23e113]:
+        - link [ref=f23e114] [cursor=pointer]:
+          - /url: "#"
+      - listitem [ref=f23e119]:
+        - link [ref=f23e120] [cursor=pointer]:
+          - /url: "#"
+      - listitem [ref=f23e125]:
+        - link [ref=f23e126] [cursor=pointer]:
+          - /url: "#"
+      - listitem [ref=f23e131]:
+        - link [ref=f23e132] [cursor=pointer]:
+          - /url: "#"
+      - listitem [ref=f23e137]:
+        - link [ref=f23e138] [cursor=pointer]:
+          - /url: "#"
+      - listitem [ref=f23e143]:
+        - link [ref=f23e144] [cursor=pointer]:
+          - /url: "#"
+  - generic [ref=f23e149]:
+    - generic [ref=f23e150]:
+      - tablist [ref=f23e151]:
+        - listitem [ref=f23e152]:
+          - tab "Automotive" [selected] [ref=f23e153] [cursor=pointer]
+        - listitem [ref=f23e154]:
+          - tab "Aviation" [ref=f23e155] [cursor=pointer]
+        - listitem [ref=f23e156]:
+          - tab "Consumer Products" [ref=f23e157] [cursor=pointer]
+        - listitem [ref=f23e158]:
+          - tab "Energy" [ref=f23e159] [cursor=pointer]
+        - listitem [ref=f23e160]:
+          - tab "Fintech" [ref=f23e161] [cursor=pointer]
+      - link "View all" [ref=f23e162] [cursor=pointer]:
+        - /url: "#"
+    - generic [ref=f23e165]:
+      - link [ref=f23e166] [cursor=pointer]:
+        - /url: "#"
+      - list [ref=f23e172]:
+        - listitem [ref=f23e173]:
+          - link [ref=f23e174] [cursor=pointer]:
+            - /url: "#"
+        - listitem [ref=f23e178]:
+          - link [ref=f23e179] [cursor=pointer]:
+            - /url: "#"
+        - listitem [ref=f23e183]:
+          - link [ref=f23e184] [cursor=pointer]:
+            - /url: "#"
+  - generic [ref=f23e188]:
+    - link "Explore opportunities" [ref=f23e190] [cursor=pointer]:
+      - /url: "#"
+    - img "ALB Employer of Choice 2026" [ref=f23e195]
+  - generic [ref=f23e197]:
+    - img "The Legal 500" [ref=f23e199]
+    - link "Read more" [ref=f23e201] [cursor=pointer]:
+      - /url: "#"
+    - link [ref=f23e204] [cursor=pointer]:
+      - /url: "#"

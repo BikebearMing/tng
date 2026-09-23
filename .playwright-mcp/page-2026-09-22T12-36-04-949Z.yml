@@ -1,0 +1,137 @@
+- main [ref=f27e2]:
+  - generic [ref=f27e3]:
+    - generic [ref=f27e4]:
+      - paragraph [ref=f27e5]:
+        - generic [aria-hidden] [ref=f27e8]: Featured
+      - heading "Vietnam Takes Major Step in AI Governance with New Guiding Decree" [level=1] [ref=f27e9]:
+        - generic [aria-hidden] [ref=f27e11]: Vietnam Takes Major Step
+        - generic [aria-hidden] [ref=f27e13]: in AI Governance with
+        - generic [aria-hidden] [ref=f27e15]: New Guiding Decree
+      - link "Read more" [ref=f27e16] [cursor=pointer]:
+        - /url: "#"
+    - generic [ref=f27e19]:
+      - generic [ref=f27e20]:
+        - paragraph [ref=f27e21]:
+          - generic [aria-hidden] [ref=f27e23]:
+            - generic [aria-hidden] [ref=f27e24]: Recent
+            - generic [aria-hidden] [ref=f27e25]: Insights
+        - link "View all" [ref=f27e26] [cursor=pointer]:
+          - /url: "#"
+      - list [ref=f27e29]:
+        - listitem [ref=f27e30]:
+          - link [ref=f27e31] [cursor=pointer]:
+            - /url: "#"
+            - 'heading "Practical Law: Insurance and Reinsurance Global Guide 2026 – Vietnam" [level=4] [ref=f27e32]':
+              - generic [aria-hidden] [ref=f27e34]: "Practical Law: Insurance and"
+              - generic [aria-hidden] [ref=f27e36]: Reinsurance Global Guide 2026 –
+              - generic [aria-hidden] [ref=f27e38]: Vietnam
+            - paragraph [ref=f27e39]:
+              - generic [aria-hidden] [ref=f27e41]:
+                - generic [aria-hidden] [ref=f27e42]: Dec
+                - generic [aria-hidden] [ref=f27e43]: 02,
+                - generic [aria-hidden] [ref=f27e44]: "2026"
+        - listitem [ref=f27e48]:
+          - link [ref=f27e49] [cursor=pointer]:
+            - /url: "#"
+            - heading "Indonesia Expands Rules on Drug Promotion and Advertising" [level=4] [ref=f27e50]:
+              - generic [aria-hidden] [ref=f27e52]: Indonesia Expands Rules on Drug
+              - generic [aria-hidden] [ref=f27e54]: Promotion and Advertising
+            - paragraph [ref=f27e55]:
+              - generic [aria-hidden] [ref=f27e57]:
+                - generic [aria-hidden] [ref=f27e58]: Dec
+                - generic [aria-hidden] [ref=f27e59]: 02,
+                - generic [aria-hidden] [ref=f27e60]: "2026"
+        - listitem [ref=f27e64]:
+          - link [ref=f27e65] [cursor=pointer]:
+            - /url: "#"
+            - heading "Thai Cabinet Advances Draft Amendments to Liberalize Nine Foreign Business Activities" [level=4] [ref=f27e66]:
+              - generic [aria-hidden] [ref=f27e68]: Thai Cabinet Advances Draft
+              - generic [aria-hidden] [ref=f27e70]: Amendments to Liberalize Nine
+              - generic [aria-hidden] [ref=f27e72]: Foreign Business Activities
+            - paragraph [ref=f27e73]:
+              - generic [aria-hidden] [ref=f27e75]:
+                - generic [aria-hidden] [ref=f27e76]: Dec
+                - generic [aria-hidden] [ref=f27e77]: 02,
+                - generic [aria-hidden] [ref=f27e78]: "2026"
+        - listitem [ref=f27e82]:
+          - link [ref=f27e83] [cursor=pointer]:
+            - /url: "#"
+            - heading "US-Thailand Trade Meetings Increase Focus on Trade Enforcement" [level=4] [ref=f27e84]:
+              - generic [aria-hidden] [ref=f27e86]: US-Thailand Trade Meetings
+              - generic [aria-hidden] [ref=f27e88]: Increase Focus on Trade
+              - generic [aria-hidden] [ref=f27e90]: Enforcement
+            - paragraph [ref=f27e91]:
+              - generic [aria-hidden] [ref=f27e93]:
+                - generic [aria-hidden] [ref=f27e94]: Dec
+                - generic [aria-hidden] [ref=f27e95]: 02,
+                - generic [aria-hidden] [ref=f27e96]: "2026"
+  - generic [ref=f27e100]:
+    - generic [ref=f27e101]:
+      - link "Explore" [ref=f27e103] [cursor=pointer]:
+        - /url: "#"
+      - list [ref=f27e106]:
+        - listitem [ref=f27e107]:
+          - paragraph [ref=f27e108]: 0+
+        - listitem [ref=f27e109]:
+          - paragraph [ref=f27e110]: "0"
+        - listitem [ref=f27e111]:
+          - paragraph [ref=f27e112]: "0"
+        - listitem [ref=f27e113]:
+          - paragraph [ref=f27e114]: "0"
+    - list [ref=f27e116]:
+      - listitem [ref=f27e117]:
+        - link [ref=f27e118] [cursor=pointer]:
+          - /url: "#"
+      - listitem [ref=f27e123]:
+        - link [ref=f27e124] [cursor=pointer]:
+          - /url: "#"
+      - listitem [ref=f27e129]:
+        - link [ref=f27e130] [cursor=pointer]:
+          - /url: "#"
+      - listitem [ref=f27e135]:
+        - link [ref=f27e136] [cursor=pointer]:
+          - /url: "#"
+      - listitem [ref=f27e141]:
+        - link [ref=f27e142] [cursor=pointer]:
+          - /url: "#"
+      - listitem [ref=f27e147]:
+        - link [ref=f27e148] [cursor=pointer]:
+          - /url: "#"
+  - generic [ref=f27e153]:
+    - generic [ref=f27e154]:
+      - tablist [ref=f27e155]:
+        - listitem [ref=f27e156]:
+          - tab "Automotive" [selected] [ref=f27e157] [cursor=pointer]
+        - listitem [ref=f27e158]:
+          - tab "Aviation" [ref=f27e159] [cursor=pointer]
+        - listitem [ref=f27e160]:
+          - tab "Consumer Products" [ref=f27e161] [cursor=pointer]
+        - listitem [ref=f27e162]:
+          - tab "Energy" [ref=f27e163] [cursor=pointer]
+        - listitem [ref=f27e164]:
+          - tab "Fintech" [ref=f27e165] [cursor=pointer]
+      - link "View all" [ref=f27e166] [cursor=pointer]:
+        - /url: "#"
+    - generic [ref=f27e169]:
+      - link [ref=f27e170] [cursor=pointer]:
+        - /url: "#"
+      - list [ref=f27e176]:
+        - listitem [ref=f27e177]:
+          - link [ref=f27e178] [cursor=pointer]:
+            - /url: "#"
+        - listitem [ref=f27e182]:
+          - link [ref=f27e183] [cursor=pointer]:
+            - /url: "#"
+        - listitem [ref=f27e187]:
+          - link [ref=f27e188] [cursor=pointer]:
+            - /url: "#"
+  - generic [ref=f27e192]:
+    - link "Explore opportunities" [ref=f27e194] [cursor=pointer]:
+      - /url: "#"
+    - img "ALB Employer of Choice 2026" [ref=f27e199]
+  - generic [ref=f27e201]:
+    - img "The Legal 500" [ref=f27e203]
+    - link "Read more" [ref=f27e205] [cursor=pointer]:
+      - /url: "#"
+    - link [ref=f27e208] [cursor=pointer]:
+      - /url: "#"

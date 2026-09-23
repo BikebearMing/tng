@@ -1,0 +1,1525 @@
+/* Fonts */
+:root {
+  --font-inter-tight: "Inter Tight", sans-serif;
+  --font-roboto-condensed: "Roboto Condensed", sans-serif;
+  --font-roboto: "Roboto", sans-serif;
+
+  --white: #ffffff;
+  --red: #e63628;
+  --navy: #0f1c29;
+  --black: #071423;
+  --grey: #9fb2c5;
+  --sidepadding-xs: 1.389vw;
+  --sidepaddong-m: 5.903vw;
+}
+
+/* Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  
+
+
+}
+
+.dark {
+  color: var(--white) !important;
+}
+
+.h1 {
+  font-family: var(--font-inter-tight);
+  font-size: 4.167vw;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 0.91;
+  color: var(--black);
+}
+
+.h2 {
+  font-family: var(--font-inter-tight);
+  font-size: 2.778vw;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1;
+  color: var(--black);
+}
+
+.h3 {
+  font-family: var(--font-inter-tight);
+  font-size: 1.667vw; /* 24 */
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--black);
+}
+
+.body {
+  font-family: "Inter Tight";
+font-size: 0.972vw;
+font-style: normal;
+font-weight: 400;
+line-height: 1.14;
+letter-spacing: 0.28px;
+}
+
+.counter {
+  font-family: var(--font-roboto-condensed);
+  font-size: 9.028vw; /* 130 */
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1; /* 130 */
+  letter-spacing: -0.451vw; /* -6.5 */
+  color: var(--black);
+}
+
+.counter-label {
+  font-family: var(--font-roboto);
+  font-size: 1.25vw; /* 18 */
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.111; /* 20 */
+  letter-spacing: -0.0375vw; /* -0.54 */
+  color: var(--black);
+}
+
+.h4 {
+  font-family: var(--font-inter-tight);
+  font-size: 1.25vw;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.11;
+  letter-spacing: 0.18px;
+  color: var(--black);
+}
+
+.subhead {
+  font-size: 0.972vw;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.14;
+  letter-spacing: 0.01vw;
+  color: var(--grey);
+}
+
+.button-label {
+  font-size: 1.25vw;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.11;
+  letter-spacing: 0.013vw;
+  color: var(--black);
+}
+
+/* Shared pieces */
+
+/* Text link with a chevron and a red underline running under both */
+.link-arrow {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.417vw; /* 6 */
+  padding-bottom: 0.278vw; /* 4 */
+}
+
+.link-arrow::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: var(--red);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.link-arrow.is-in::after {
+  transform: scaleX(1);
+}
+
+.link-arrow svg {
+  width: 0.694vw; /* 10 */
+  height: 0.694vw;
+  flex: none;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.link-arrow:hover svg {
+  transform: translateX(0.278vw); /* 4 */
+}
+
+/* Red circle with a white chevron */
+.arrow-circle {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 1.111vw; /* 16 */
+  height: 1.111vw;
+  border-radius: 50%;
+  background: var(--red);
+  color: var(--white);
+}
+
+.arrow-circle svg {
+  width: 0.417vw;
+  height: 0.417vw;
+}
+
+.arrow-circle--lg {
+  width: 1.389vw; /* 20 */
+  height: 1.389vw;
+}
+
+.arrow-circle--lg svg {
+  width: 0.556vw;
+  height: 0.556vw;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-inter-tight);
+  min-height: 200vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+blockquote {
+  margin: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+img,
+svg,
+video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+/* ============================================================
+   Homepage — Featured banner (100vh)
+   vw values are px / 1440 * 100
+   ============================================================ */
+.hp-featured-banner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  padding: 8.681vw var(--sidepadding-xs) 4.306vw; /* 125 / 20 / 62 */
+  overflow: hidden;
+  isolation: isolate;
+  background: var(--navy);
+}
+
+/* Parallax image: taller than the section so it can travel */
+.has-parallax .parallax-img {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 120%;
+  object-fit: cover;
+  will-change: transform;
+}
+
+/* Navy fade over the banner image, multiplied */
+.hp-featured-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(180deg, #0f1c29 4.28%, rgba(15, 28, 41, 0) 66.59%);
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+.hp-featured-banner__content {
+  max-width: 48.611vw; /* 700 */
+}
+
+.hp-featured-banner__content .h1 {
+  margin-top: 1.389vw; /* 20 */
+}
+
+.hp-featured-banner__link {
+  margin-top: 2.083vw; /* 30 */
+}
+
+/* Recent insights panel */
+.hp-featured-banner__panel {
+  background: var(--white);
+  border-radius: 0.347vw;
+  overflow: hidden;
+}
+
+.hp-featured-banner__panel-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.556vw 1.181vw; /* 8 / 17 */
+  background: var(--navy);
+  border-bottom-left-radius: 0.347vw;
+  border-bottom-right-radius: 0.347vw;
+}
+
+.hp-featured-banner__panel-head .subhead {
+  color: var(--white);
+}
+
+.hp-featured-banner__view-all {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.278vw;
+}
+
+.hp-featured-banner__view-all svg {
+  width: 0.556vw; /* 8 */
+  height: 0.556vw;
+}
+
+.hp-featured-banner__list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.hp-featured-banner__item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 0.972vw 1.181vw 1.111vw; /* 14 / 17 / 16 */
+}
+
+/* Divider: inset 17px from the card top and bottom, draws down on scroll */
+.hp-featured-banner__item + .hp-featured-banner__item::before {
+  content: "";
+  position: absolute;
+  top: 1.181vw; /* 17 */
+  bottom: 1.181vw; /* 17 */
+  left: 0;
+  width: 1px;
+  background: #e3e8ee;
+  transform: scaleY(0);
+  transform-origin: center top;
+  transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hp-featured-banner__item.is-in::before {
+  transform: scaleY(1);
+}
+
+.hp-featured-banner__item a {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.hp-featured-banner__item .h4 {
+  padding-right: 2.5vw; /* keep clear of the icon */
+}
+
+.hp-featured-banner__item .subhead {
+  margin-top: auto;
+  padding-top: 2.569vw; /* 37 */
+}
+
+.hp-featured-banner__icon {
+  position: absolute;
+  right: 1.181vw;
+  bottom: 1.111vw;
+  display: grid;
+  place-items: center;
+  width: 1.111vw; /* 16 */
+  height: 1.111vw;
+  border-radius: 50%;
+  background: var(--red);
+  color: var(--white);
+}
+
+.hp-featured-banner__icon svg {
+  width: 0.417vw;
+  height: 0.417vw;
+}
+
+/* ============================================================
+   Homepage — Intro, counters and regional presence
+   vw values are px / 1440 * 100
+   ============================================================ */
+.hp-intro {
+  position: relative;
+  padding: 1.806vw 0.972vw 0.972vw; /* 26 / 14 / 14 */
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* Black fade over the teal texture */
+.hp-intro::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 66.59%);
+  pointer-events: none;
+}
+
+/* Top row: text column left, counters right */
+.hp-intro__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0 0.417vw; /* 6 → 20 total with the section padding */
+}
+
+.hp-intro__text {
+  max-width: 21.528vw; /* 310 */
+}
+
+.hp-intro__text .body {
+  max-width: 18.403vw; /* 265 */
+  margin-top: 0.833vw; /* 12 */
+}
+
+.hp-intro__link {
+  justify-content: space-between;
+  min-width: 4.861vw; /* 70 */
+  margin-top: 1.319vw; /* 19 */
+}
+
+.hp-intro__counters {
+  display: grid;
+  grid-template-columns: auto auto;
+  column-gap: 7.639vw; /* 110 */
+  row-gap: 3.472vw; /* 50 */
+  margin-right: 11.181vw; /* 181 from the viewport edge, minus the 20 section padding */
+}
+
+/* Regional presence panel */
+.hp-intro__panel {
+  position: relative;
+  display: grid;
+  grid-template-columns: 20.208vw 1fr; /* 291 | cards */
+  column-gap: 4.861vw; /* 70 */
+  margin-top: 8.819vw; /* 127 */
+  padding: 1.597vw 2.431vw 1.319vw 1.319vw; /* 23 / 35 / 19 / 19 */
+  background: var(--white);
+  overflow: hidden;
+  border-radius: 0.347vw;
+}
+
+/* Map illustration behind the panel content */
+.hp-intro__map {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: left top;
+  pointer-events: none;
+}
+
+.hp-intro__panel > :not(.hp-intro__map) {
+  position: relative;
+  z-index: 1;
+}
+
+.hp-intro__locations {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 0.903vw; /* 37 */
+  row-gap: 1.181vw; /* 17 */
+}
+
+/* Card: photo inset 12px each side (306 in a 330 card), sitting 12px over the white strip */
+.hp-intro__location a {
+  display: block;
+}
+
+.hp-intro__location img {
+  position: relative;
+  z-index: 1;
+  width: calc(100% - 1.667vw); /* 330 - 24 */
+  margin: 0 auto;
+  aspect-ratio: 306 / 193;
+  object-fit: cover;
+  border-radius: 0.347vw;
+}
+
+.hp-intro__location-name {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: -0.833vw; /* 12 overlap under the photo */
+  padding: 0.833vw 0.833vw 3.542vw 1.389vw; /* 12 / 12 / 51 / 20 */
+  background: var(--white);
+  border-radius: 0.347vw;
+  z-index: 10;
+  position: relative;
+}
+
+.hp-intro__location-name .hp-featured-banner__icon {
+  position: static;
+  width: 1.389vw; /* 20 */
+  height: 1.389vw;
+}
+
+.hp-intro__location-name .hp-featured-banner__icon svg {
+  width: 0.556vw;
+  height: 0.556vw;
+}
+
+/* ============================================================
+   Homepage — Insights (tabs, feature card, list)
+   vw values are px / 1440 * 100
+   ============================================================ */
+.hp-insights {
+  padding: 4.028vw 6.389vw 6.875vw var(--sidepaddong-m); /* 58 / 92 / 99 / 85 */
+  background: var(--white);
+}
+
+/* Label with the grey rule under it */
+.hp-insights__label {
+  position: relative;
+  display: block;
+  padding-bottom: 0.694vw; /* 10 */
+}
+
+.hp-insights__label::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: #e3e8ee;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hp-insights__label.is-in::after {
+  transform: scaleX(1);
+}
+
+/* Tabs row */
+.hp-insights__tabs {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-top: 0.972vw; /* 14 */
+}
+
+.hp-insights__tab-list {
+  display: flex;
+  gap: 2.083vw; /* 30 */
+}
+
+.hp-insights__tab {
+  position: relative;
+  padding-bottom: 0.694vw; /* 10 */
+  color: var(--grey);
+  transition: color 0.2s;
+}
+
+.hp-insights__tab:hover {
+  color: var(--black);
+}
+
+.hp-insights__tab.is-active {
+  color: var(--black);
+}
+
+/* Active indicator under the tab text */
+.hp-insights__tab.is-active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: var(--red);
+}
+
+/* Body: feature left, list right */
+.hp-insights__body {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.736vw; /* 25 */
+  margin-top: 1.111vw; /* 16 */
+}
+
+/* Feature card */
+.hp-insights__feature {
+  position: relative;
+  flex: none;
+  width: 44.653vw; /* 643 */
+  height: 35.903vw; /* 517 */
+}
+
+.hp-insights__feature img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0.347vw;
+}
+
+.hp-insights__card {
+  position: absolute;
+  left: 0.972vw; /* 14 */
+  bottom: 1.042vw; /* 15 */
+  width: 22.986vw; /* 331 */
+  padding: 1.389vw 1.25vw 0.972vw; /* 20 / 18 / 14 */
+  background: var(--white);
+  border-radius: 0.347vw;
+}
+
+.hp-insights__card .h3 {
+  max-width: 18.75vw; /* 270 */
+}
+
+.hp-insights__card .body {
+  max-width: 18.75vw;
+  margin-top: 0.833vw; /* 12 */
+  color: var(--grey);
+}
+
+.hp-insights__card-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 3.333vw; /* 48 */
+}
+
+/* List */
+.hp-insights__list {
+  flex: 1;
+  margin-right: 2.569vw; /* 129 from the viewport edge, minus the 92 section padding */
+}
+
+.hp-insights__item {
+  position: relative;
+}
+
+.hp-insights__item::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: #e3e8ee;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hp-insights__item.is-in::after {
+  transform: scaleX(1);
+}
+
+.hp-insights__item a {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 1.389vw 0 1.875vw; /* 20 / 27 */
+}
+
+.hp-insights__item .h4 {
+  max-width: 18.75vw; /* 270 */
+}
+
+.hp-insights__item .arrow-circle {
+  position: absolute;
+  right: 0;
+  bottom: 1.181vw; /* 17 */
+}
+
+/* ============================================================
+   Homepage — Careers (text left, scrolling portraits right)
+   vw values are px / 1440 * 100
+   ============================================================ */
+.hp-careers {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 34.583vw; /* 498 */
+  padding: 3.125vw 0 2.431vw var(--sidepaddong-m); /* 45 / 35 / 85 */
+  overflow: hidden;
+  isolation: isolate;
+  background: var(--navy);
+}
+
+.hp-careers__intro .h2 {
+  max-width: 26.042vw; /* 375 */
+}
+
+.hp-careers__intro .link-arrow {
+  gap: 1.319vw; /* 19 */
+  margin-top: 0.833vw; /* 12 */
+}
+
+/* Bottom: divider, note and badge */
+.hp-careers__foot {
+  position: relative;
+  width: 25.556vw; /* 368 */
+  padding-top: 1.042vw; /* 15, lands the note 46 below the rule once centred on the badge */
+}
+
+.hp-careers__foot::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.2);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hp-careers__foot.is-in::before {
+  transform: scaleX(1);
+}
+
+.hp-careers__foot-row {
+  display: flex;
+  align-items: center;
+}
+
+.hp-careers__note {
+  max-width: 11.806vw; /* 170 */
+  line-height: 1.5;
+}
+
+/* Vertical rule: 13 after the note, 34 before the badge, starts 17 below the top rule */
+.hp-careers__rule {
+  align-self: stretch;
+  flex: none;
+  width: 1px;
+  margin: 0.139vw 2.361vw 0 0.903vw; /* 17 below the top rule (15 padding + 2) / 34 / 13 */
+  background: rgba(255, 255, 255, 0.2);
+  transform: scaleY(0);
+  transform-origin: center top;
+  transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1) 0.3s;
+}
+
+.hp-careers__rule.is-in {
+  transform: scaleY(1);
+}
+
+.hp-careers__badge {
+  flex: none;
+  width: 8.681vw; /* 125 */
+  height: 8.681vw;
+}
+
+/* Portrait marquee: two columns, left scrolls up, right scrolls down */
+.hp-careers__marquee {
+  position: absolute;
+  top: 0;
+  right: 6.042vw; /* 87 */
+  bottom: 0;
+  display: flex;
+  align-items: flex-start; /* columns keep their natural height so the loop distance is exact */
+  gap: 0.764vw; /* 11 */
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.hp-careers__column {
+  display: flex;
+  flex-direction: column;
+  will-change: transform;
+}
+
+.hp-careers__column img {
+  width: 15.347vw; /* 221 */
+  height: 19.931vw; /* 287 */
+  object-fit: cover;
+  margin-bottom: 0.764vw; /* 11, on each item so the loop distance is exact */
+}
+
+/* ============================================================
+   Homepage — Awards & Rankings
+   vw values are px / 1440 * 100
+   ============================================================ */
+.hp-awards {
+  padding: 0.903vw 1.458vw 1.25vw; /* 13 / 21 / 18 */
+  background: var(--white);
+}
+
+.hp-awards__label {
+  display: block;
+  padding: 0 0 0.625vw 0.764vw; /* 9 below, 11 in from the panel edge */
+}
+
+.hp-awards__panel {
+  display: flex;
+  align-items: stretch;
+  padding: 1.667vw 2.222vw 1.667vw 1.667vw; /* 24 / 32 / 24 / 24 */
+  background: #eef1f4;
+  border-radius: 0.347vw;
+}
+
+/* Heading and logo */
+.hp-awards__main {
+  flex: none;
+  width: 35.417vw; /* 510, holds the heading to three lines */
+}
+
+.hp-awards__logo {
+  display: block;
+  width: 6.667vw; /* 96 */
+  height: 6.667vw;
+  margin-top: 2.361vw; /* 34 */
+  object-fit: contain;
+}
+
+/* Description */
+.hp-awards__text {
+  flex: none;
+  width: 21.181vw; /* 305 */
+  margin-left: auto;
+}
+
+.hp-awards__text .body {
+  color: var(--grey);
+}
+
+.hp-awards__text .link-arrow {
+  gap: 1.319vw; /* 19 */
+  margin-top: 0.556vw; /* 8 */
+}
+
+/* Card */
+.hp-awards__card {
+  position: relative;
+  flex: none;
+  width: 16.944vw; /* 244 */
+  margin-left: 7.431vw; /* 107 */
+  padding: 1.181vw; /* 17 */
+  background: var(--white);
+  border-radius: 0.347vw;
+}
+
+.hp-awards__card .arrow-circle {
+  position: absolute;
+  right: 1.597vw; /* 23 */
+  bottom: 1.319vw; /* 19 */
+}
+
+/* ============================================================
+   Footer (site-wide)
+   vw values are px / 1440 * 100
+   ============================================================ */
+.hp-footer {
+  background: #041f36;
+  color: var(--white);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Top: brand column left, networks + quick links from the midline */
+.hp-footer__top {
+  display: grid;
+  grid-template-columns: 47.847vw 1fr; /* right column starts 728 from the viewport edge (39 + 689) */
+  padding: 2.222vw 0 3.75vw 2.708vw; /* 32 / 54 / 39 */
+}
+
+/* Brand: text stand-in for the logo, 225 x 104 */
+.hp-footer__logo {
+  display: block;
+  width: max-content;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 3.472vw; /* 50 */
+  line-height: 1.04; /* 52 a line, 104 total */
+  letter-spacing: -0.035vw;
+  color: var(--white);
+}
+
+.hp-footer__logo span {
+  display: block;
+}
+
+.hp-footer__logo em {
+  font-style: normal;
+  color: var(--red);
+}
+
+/* Social: 44 outlined circles, 12 apart, 25 below the logo */
+.hp-footer__social {
+  display: flex;
+  gap: 0.833vw; /* 12 */
+  margin-top: 1.736vw; /* 25 */
+}
+
+.hp-footer__social a {
+  display: grid;
+  place-items: center;
+  width: 3.056vw; /* 44 */
+  height: 3.056vw;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  transition: background 0.3s cubic-bezier(0.22, 1, 0.36, 1), color 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hp-footer__social a:hover {
+  background: var(--white);
+  color: #041f36;
+}
+
+.hp-footer__social svg {
+  width: 1.25vw; /* 18 */
+  height: 1.25vw;
+}
+
+/* Newsletter: heading 75 below the icons, field 10 below the heading */
+.hp-footer__newsletter-heading {
+  margin-top: 5.208vw; /* 75 */
+}
+
+.hp-footer__form {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 21.389vw; /* 308 */
+  height: 3.958vw; /* 57 */
+  margin-top: 0.694vw; /* 10 */
+  padding: 0 0.694vw 0 1.111vw; /* 10 / 16 */
+  background: #011728;
+  border-radius: 0.694vw; /* 10 */
+}
+
+.hp-footer__form input {
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  border: 0;
+  background: none;
+  outline: 0;
+  font-size: 0.972vw; /* 14 */
+  font-weight: 500;
+  color: var(--white);
+}
+
+.hp-footer__form input::placeholder {
+  color: var(--grey);
+}
+
+.hp-footer__form button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.694vw; /* 10 */
+  flex: none;
+  height: 2.5vw; /* 36 */
+  padding: 0 0.833vw 0 0.972vw; /* 12 / 14 */
+  background: var(--white);
+  border-radius: 0.556vw; /* 8 */
+  font-size: 0.972vw; /* 14 */
+  font-weight: 600;
+  color: #041f36;
+}
+
+.hp-footer__form button svg {
+  width: 0.556vw; /* 8 */
+  height: 0.556vw;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hp-footer__form button:hover svg {
+  transform: translateX(0.208vw); /* 3 */
+}
+
+/* Networks */
+.hp-footer__label {
+  display: block;
+}
+
+.hp-footer__networks {
+  display: flex;
+  align-items: center;
+  margin-top: 2.639vw; /* 38 */
+}
+
+.hp-footer__networks li + li {
+  margin-left: 2.639vw; /* 38 */
+}
+
+.hp-footer__networks li:last-child {
+  margin-left: 2.708vw; /* 39 */
+}
+
+.hp-footer__network {
+  display: block;
+  object-fit: contain;
+}
+
+.hp-footer__network--lexmundi {
+  width: 8.056vw; /* 116 */
+  height: 3.125vw; /* 45 */
+}
+
+.hp-footer__network--multilaw {
+  width: 7.778vw; /* 112 */
+  height: 4.375vw; /* 63 */
+}
+
+.hp-footer__network--dna {
+  width: 10.139vw; /* 146 */
+  height: 2.361vw; /* 34 */
+}
+
+/* Quick links: label 54 below the logos, list 15 below the label */
+.hp-footer__label--links {
+  margin-top: 3.75vw; /* 54 */
+}
+
+.hp-footer__quick {
+  display: flex;
+  margin-top: 1.042vw; /* 15 */
+}
+
+.hp-footer__quick-col + .hp-footer__quick-col {
+  margin-left: 14.722vw; /* 212 between the column texts */
+}
+
+.hp-footer__quick-col li + li {
+  margin-top: 0.347vw; /* 5 */
+}
+
+.hp-footer__quick-col a {
+  display: inline-block;
+  transition: opacity 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hp-footer__quick-col a:hover,
+.hp-footer__legal a:hover {
+  opacity: 0.6;
+}
+
+/* Bottom bar: rule on top, copyright left, legal links right */
+.hp-footer__bar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.556vw var(--sidepadding-xs) 0.903vw; /* 8 / 20 / 13 */
+}
+
+.hp-footer__bar::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.12);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hp-footer__bar.is-in::before {
+  transform: scaleX(1);
+}
+
+.hp-footer__legal {
+  display: flex;
+  align-items: center;
+}
+
+.hp-footer__legal li:nth-child(2) {
+  margin-left: 16.319vw; /* 235 */
+}
+
+.hp-footer__legal li:nth-child(3) {
+  margin-left: 8.264vw; /* 119 */
+}
+
+.hp-footer__legal a {
+  transition: opacity 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ============================================================
+   Header (site-wide, absolute over the banner)
+   vw values are px / 1440 * 100
+   ============================================================ */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  height: 6.181vw; /* 89: 9 + 71 logo + 9 */
+  color: var(--white);
+  background: transparent;
+  transition: background-color 0.4s cubic-bezier(0.22, 1, 0.36, 1), color 0.4s cubic-bezier(0.22, 1, 0.36, 1), height 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Type classes inside the header take the header's colour so the scrolled
+   state can swap white for navy in one place */
+.site-header .subhead,
+.site-header .button-label {
+  color: inherit;
+}
+
+/* Logo: text stand-in, 155 x 71, 21 in and 9 down */
+.site-header__logo {
+  position: absolute;
+  top: 0.625vw; /* 9 */
+  left: 1.458vw; /* 21 */
+  display: block;
+  width: max-content;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 2.361vw; /* 34 */
+  line-height: 1.04; /* 35.5 a line, 71 total */
+  letter-spacing: -0.035vw;
+  color: inherit;
+  transition: top 0.4s cubic-bezier(0.22, 1, 0.36, 1), font-size 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.site-header__logo span {
+  display: block;
+}
+
+.site-header__logo em {
+  font-style: normal;
+  color: var(--red);
+}
+
+/* Nav: fills the span between the logo (ends at 200) and the utilities (start at 1258) */
+.site-header__nav {
+  position: absolute;
+  top: 0;
+  left: 13.889vw; /* 200 */
+  right: 12.639vw; /* 182 */
+  height: 100%;
+}
+
+/* Rule at 35, spans the nav */
+.site-header__nav::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 2.431vw; /* 35 */
+  height: 1px;
+  background: rgba(255, 255, 255, 0.3);
+  transition: top 0.4s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Top row: 16 line, its bottom 9 above the rule → top 10 */
+.site-header__top {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0.694vw; /* 10 */
+  display: flex;
+  justify-content: center;
+  gap: 2.292vw; /* 33 */
+  transition: top 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Main row: 20 line, 9 below the rule → top 44 */
+.site-header__main {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 3.056vw; /* 44 */
+  display: flex;
+  justify-content: center;
+  gap: 2.917vw; /* 42 */
+  transition: top 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Flex items so the root font's line box doesn't add height to the rows */
+.site-header__top li,
+.site-header__main li {
+  position: relative;
+  display: flex;
+}
+
+.site-header__top a,
+.site-header__main a,
+.site-header__utils a,
+.site-header__utils button {
+  display: inline-flex;
+  align-items: center;
+  transition: opacity 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.site-header__top a:hover,
+.site-header__utils a:hover,
+.site-header__utils button:hover {
+  opacity: 0.6;
+}
+
+/* Main links: pill on hover. Padding is cancelled by negative margins so the
+   text sits exactly where the mockup puts it */
+.site-header__main a {
+  padding: 0.417vw 0.694vw; /* 6 / 10 */
+  margin: -0.417vw -0.694vw;
+  border-radius: 0.417vw; /* 6 */
+  transition: background-color 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.site-header__main a:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* Utilities: centred on the rule line, 17 from the right edge */
+.site-header__utils {
+  position: absolute;
+  right: 1.181vw; /* 17 */
+  top: 2.431vw; /* 35 */
+  display: flex;
+  align-items: center;
+  gap: 1.806vw; /* 26 */
+  transform: translateY(-50%);
+  transition: top 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Buttons wrap their children in an anonymous block, so the icon can't be a
+   flex item; keep it inline and space it with a margin instead of gap */
+.site-header__search svg {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 0.347vw; /* 5 */
+}
+
+.site-header__lang {
+  gap: 0.417vw; /* 6 */
+}
+
+.site-header__utils svg {
+  width: 1.25vw; /* 18 */
+  height: 1.25vw;
+  flex: none;
+}
+
+/* Scrolled: white bar, navy text and logo, compact to 72 (8 + 56 logo + 8) */
+.site-header.is-scrolled {
+  height: 5vw; /* 72 */
+  color: var(--black);
+  background: var(--white);
+}
+
+.site-header.is-scrolled .site-header__logo {
+  top: 0.556vw; /* 8 */
+  font-size: 1.875vw; /* 27, two lines = 56 */
+}
+
+.site-header.is-scrolled .site-header__nav::before {
+  top: 2.292vw; /* 33 */
+  background: #e7eaee;
+}
+
+.site-header.is-scrolled .site-header__top {
+  top: 0.556vw; /* 8: 16 line ends 9 above the rule */
+}
+
+.site-header.is-scrolled .site-header__main {
+  top: 2.917vw; /* 42: 9 below the rule */
+}
+
+.site-header.is-scrolled .site-header__utils {
+  top: 2.292vw; /* 33 */
+}
+
+.site-header.is-scrolled .site-header__main a:hover {
+  background: #eef0f3;
+}
+
+/* ------------------------------------------------------------
+   Locations megamenu
+   Panel hangs from the nav item: 12 below the pill, aligned to its left.
+   Sizes: 11 / 6 / 7 / 6 padding, list 110 wide, 74 to a 187 x 226 image.
+   ------------------------------------------------------------ */
+.site-header__mega {
+  position: absolute;
+  top: calc(100% + 1.25vw); /* 6 pill overhang + 12 gap = 18 */
+  left: -0.694vw; /* pill's left edge (10 padding) */
+  z-index: 1;
+  display: flex;
+  align-items: flex-start;
+  padding: 0.417vw 0.417vw 0.486vw 0.764vw; /* 6 / 6 / 7 / 11 */
+  background: var(--white);
+  border-radius: 0.556vw; /* 8 */
+  box-shadow: 0 0.694vw 2.083vw rgba(7, 20, 35, 0.12); /* separates the panel from light content once scrolled */
+  color: var(--black);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-0.417vw);
+  transition: opacity 0.3s cubic-bezier(0.22, 1, 0.36, 1), transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), visibility 0s linear 0.3s;
+}
+
+/* Invisible bridge over the gap so the pointer can travel pill → panel */
+.site-header__mega::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 100%;
+  height: 1.25vw; /* 18, covers the whole gap */
+}
+
+.has-mega:hover .site-header__mega,
+.has-mega:focus-within .site-header__mega,
+.has-mega.is-open .site-header__mega {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition-delay: 0s;
+}
+
+/* List: first item 15 below the panel top (6 + 9), 13 between, 20 to the bottom (7 + 13) */
+.site-header__mega-list {
+  flex: none;
+  width: 7.847vw; /* 113: "Cambodia" + 8 + 20 circle, so the 74 gap is measured from the circle */
+  margin: 0.625vw 0 0.903vw; /* 9 / 13 */
+}
+
+.site-header__mega-list li + li {
+  margin-top: 0.903vw; /* 13 */
+}
+
+.site-header .site-header__mega-list a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.556vw; /* 8 */
+  padding: 0;
+  margin: 0;
+  border-radius: 0;
+  line-height: 1; /* 18, matches the mockup's row rhythm */
+  white-space: nowrap;
+  color: var(--grey);
+  background: none;
+  transition: color 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.site-header .site-header__mega-list .is-active a {
+  color: var(--black);
+}
+
+.site-header__mega-list .arrow-circle {
+  margin: -1px 0; /* 20 circle in an 18 row without growing it */
+  opacity: 0;
+  transform: scale(0.6);
+  transition: opacity 0.3s cubic-bezier(0.22, 1, 0.36, 1), transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.site-header__mega-list .is-active .arrow-circle {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Media: stacked images, the active one fades in */
+.site-header__mega-media {
+  position: relative;
+  flex: none;
+  width: 12.986vw; /* 187 */
+  height: 15.694vw; /* 226 */
+  margin-left: 5.139vw; /* 74 from the active item's circle */
+  border-radius: 0.417vw; /* 6 */
+  overflow: hidden;
+}
+
+.site-header__mega-media img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.site-header__mega-media img.is-active {
+  opacity: 1;
+}
+
+/* Reveal on open: rows rise in one after another, the image follows.
+   Closed state resets them so the sequence replays every time. */
+.site-header__mega li {
+  opacity: 0;
+  transform: translateY(0.694vw); /* 10 */
+  transition: opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1), transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.site-header__mega-media {
+  opacity: 0;
+  transform: translateY(0.694vw) scale(0.98);
+  transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1), transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.has-mega:hover .site-header__mega li,
+.has-mega:focus-within .site-header__mega li,
+.has-mega.is-open .site-header__mega li,
+.has-mega:hover .site-header__mega-media,
+.has-mega:focus-within .site-header__mega-media,
+.has-mega.is-open .site-header__mega-media {
+  opacity: 1;
+  transform: none;
+}
+
+.has-mega:hover .site-header__mega li:nth-child(1),
+.has-mega:focus-within .site-header__mega li:nth-child(1),
+.has-mega.is-open .site-header__mega li:nth-child(1) { transition-delay: 0.05s; }
+.has-mega:hover .site-header__mega li:nth-child(2),
+.has-mega:focus-within .site-header__mega li:nth-child(2),
+.has-mega.is-open .site-header__mega li:nth-child(2) { transition-delay: 0.10s; }
+.has-mega:hover .site-header__mega li:nth-child(3),
+.has-mega:focus-within .site-header__mega li:nth-child(3),
+.has-mega.is-open .site-header__mega li:nth-child(3) { transition-delay: 0.15s; }
+.has-mega:hover .site-header__mega li:nth-child(4),
+.has-mega:focus-within .site-header__mega li:nth-child(4),
+.has-mega.is-open .site-header__mega li:nth-child(4) { transition-delay: 0.20s; }
+.has-mega:hover .site-header__mega li:nth-child(5),
+.has-mega:focus-within .site-header__mega li:nth-child(5),
+.has-mega.is-open .site-header__mega li:nth-child(5) { transition-delay: 0.25s; }
+.has-mega:hover .site-header__mega li:nth-child(6),
+.has-mega:focus-within .site-header__mega li:nth-child(6),
+.has-mega.is-open .site-header__mega li:nth-child(6) { transition-delay: 0.30s; }
+.has-mega:hover .site-header__mega li:nth-child(7),
+.has-mega:focus-within .site-header__mega li:nth-child(7),
+.has-mega.is-open .site-header__mega li:nth-child(7) { transition-delay: 0.35s; }
+.has-mega:hover .site-header__mega li:nth-child(8),
+.has-mega:focus-within .site-header__mega li:nth-child(8),
+.has-mega.is-open .site-header__mega li:nth-child(8) { transition-delay: 0.40s; }
+.has-mega:hover .site-header__mega li:nth-child(9),
+.has-mega:focus-within .site-header__mega li:nth-child(9),
+.has-mega.is-open .site-header__mega li:nth-child(9) { transition-delay: 0.45s; }
+.has-mega:hover .site-header__mega li:nth-child(10),
+.has-mega:focus-within .site-header__mega li:nth-child(10),
+.has-mega.is-open .site-header__mega li:nth-child(10) { transition-delay: 0.50s; }
+.has-mega:hover .site-header__mega li:nth-child(11),
+.has-mega:focus-within .site-header__mega li:nth-child(11),
+.has-mega.is-open .site-header__mega li:nth-child(11) { transition-delay: 0.55s; }
+.has-mega:hover .site-header__mega li:nth-child(12),
+.has-mega:focus-within .site-header__mega li:nth-child(12),
+.has-mega.is-open .site-header__mega li:nth-child(12) { transition-delay: 0.60s; }
+
+.has-mega:hover .site-header__mega-media,
+.has-mega:focus-within .site-header__mega-media,
+.has-mega.is-open .site-header__mega-media {
+  transition-delay: 0.15s;
+}
+
+/* ------------------------------------------------------------
+   Services megamenu
+   Padding 16 / 32 / 13 / 17. Industries list (same style as locations,
+   9 between rows) → 102 → divider → 16 → practices in a two-column grid.
+   ------------------------------------------------------------ */
+.site-header__mega--services {
+  padding: 1.111vw 2.222vw 0.903vw 1.181vw; /* 16 / 32 / 13 / 17 */
+}
+
+.site-header__mega-col {
+  flex: none;
+}
+
+/* Divider: 1px, starts 9 below the panel top and ends 10 above the bottom */
+.site-header__mega-col--divided {
+  position: relative;
+  padding-left: 1.111vw; /* 16 */
+}
+
+.site-header__mega-col--divided::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -0.486vw; /* 16 padding - 9 */
+  bottom: -0.208vw; /* 13 padding - 10 */
+  width: 1px;
+  background: #dbe2e9;
+}
+
+.site-header__mega-label {
+  display: block;
+  margin-bottom: 0.556vw; /* 8 */
+}
+
+/* Industries: width by content; the hidden circles add 28 to it, so the
+   102 gap to the divider is 74 of margin */
+.site-header__mega--services .site-header__mega-list {
+  width: max-content;
+  margin: 0 5.139vw 0 0; /* 74 */
+}
+
+.site-header__mega--services .site-header__mega-list li + li {
+  margin-top: 0.625vw; /* 9 */
+}
+
+/* Practices: columns of --rows items, 209 wide each, 11 between rows */
+.site-header__mega-links {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-rows: repeat(var(--rows, 6), auto);
+  grid-auto-columns: 15.278vw; /* 220: 209 in the mock, +11 so the longest practice clears column 2 */
+  row-gap: 0.764vw; /* 11 */
+}
+
+.site-header__mega-link {
+  display: inline-block;
+  font-size: 0.972vw; /* 14 */
+  font-weight: 600;
+  line-height: 1.14;
+  white-space: nowrap;
+  color: var(--black);
+  transition: opacity 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.site-header__mega-link:hover {
+  opacity: 0.6;
+}

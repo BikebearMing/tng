@@ -1,0 +1,121 @@
+- main [ref=f18e2]:
+  - generic [ref=f18e3]:
+    - generic [ref=f18e4]:
+      - paragraph [ref=f18e5]: Featured
+      - heading "Vietnam Takes Major Step in AI Governance with New Guiding Decree" [level=1] [ref=f18e6]
+      - link "Read more" [ref=f18e7] [cursor=pointer]:
+        - /url: "#"
+    - generic [ref=f18e10]:
+      - generic [ref=f18e11]:
+        - paragraph [ref=f18e12]: Recent Insights
+        - link "View all" [ref=f18e13] [cursor=pointer]:
+          - /url: "#"
+      - list [ref=f18e16]:
+        - listitem [ref=f18e17]:
+          - link [ref=f18e18] [cursor=pointer]:
+            - /url: "#"
+            - 'heading "Practical Law: Insurance and Reinsurance Global Guide 2026 – Vietnam" [level=4] [ref=f18e19]'
+            - paragraph [ref=f18e20]: Dec 02, 2026
+        - listitem [ref=f18e24]:
+          - link [ref=f18e25] [cursor=pointer]:
+            - /url: "#"
+            - heading "Indonesia Expands Rules on Drug Promotion and Advertising" [level=4] [ref=f18e26]
+            - paragraph [ref=f18e27]: Dec 02, 2026
+        - listitem [ref=f18e31]:
+          - link [ref=f18e32] [cursor=pointer]:
+            - /url: "#"
+            - heading "Thai Cabinet Advances Draft Amendments to Liberalize Nine Foreign Business Activities" [level=4] [ref=f18e33]
+            - paragraph [ref=f18e34]: Dec 02, 2026
+        - listitem [ref=f18e38]:
+          - link [ref=f18e39] [cursor=pointer]:
+            - /url: "#"
+            - heading "US-Thailand Trade Meetings Increase Focus on Trade Enforcement" [level=4] [ref=f18e40]
+            - paragraph [ref=f18e41]: Dec 02, 2026
+  - generic [ref=f18e45]:
+    - generic [ref=f18e46]:
+      - generic [ref=f18e47]:
+        - heading "Southeast Asia's Leading Law Firm" [level=2] [ref=f18e48]
+        - paragraph [ref=f18e49]: Tilleke & Gibbins is a leading full-service Southeast Asian law firm proudly serving international and local businesses across six countries. We are committed to helping our clients achieve sustainable success in the region, working with them to provide unparalleled legal expertise, rooted in practical commercial insight.
+        - link "Explore" [ref=f18e50] [cursor=pointer]:
+          - /url: "#"
+      - list [ref=f18e53]:
+        - listitem [ref=f18e54]:
+          - paragraph [ref=f18e55]: 250+
+          - paragraph [ref=f18e56]: Lawyers
+        - listitem [ref=f18e57]:
+          - paragraph [ref=f18e58]: "135"
+          - paragraph [ref=f18e59]: Years of Service
+        - listitem [ref=f18e60]:
+          - paragraph [ref=f18e61]: "50"
+          - paragraph [ref=f18e62]: Firm of the Year Awards (2025)
+        - listitem [ref=f18e63]:
+          - paragraph [ref=f18e64]: "7"
+          - paragraph [ref=f18e65]: Offices
+    - generic [ref=f18e66]:
+      - heading "Our Regional Presence" [level=2] [ref=f18e67]
+      - list [ref=f18e68]:
+        - listitem [ref=f18e69]:
+          - link "Cambodia" [ref=f18e70] [cursor=pointer]:
+            - /url: "#"
+        - listitem [ref=f18e76]:
+          - link "Indonesia" [ref=f18e77] [cursor=pointer]:
+            - /url: "#"
+        - listitem [ref=f18e83]:
+          - link "Laos" [ref=f18e84] [cursor=pointer]:
+            - /url: "#"
+        - listitem [ref=f18e90]:
+          - link "Myanmar" [ref=f18e91] [cursor=pointer]:
+            - /url: "#"
+        - listitem [ref=f18e97]:
+          - link "Thailand" [ref=f18e98] [cursor=pointer]:
+            - /url: "#"
+        - listitem [ref=f18e104]:
+          - link "Vietnam" [ref=f18e105] [cursor=pointer]:
+            - /url: "#"
+  - generic [ref=f18e111]:
+    - paragraph [ref=f18e112]: Insights
+    - generic [ref=f18e113]:
+      - tablist [ref=f18e114]:
+        - listitem [ref=f18e115]:
+          - tab "Automotive" [selected] [ref=f18e116] [cursor=pointer]
+        - listitem [ref=f18e117]:
+          - tab "Aviation" [ref=f18e118] [cursor=pointer]
+        - listitem [ref=f18e119]:
+          - tab "Consumer Products" [ref=f18e120] [cursor=pointer]
+        - listitem [ref=f18e121]:
+          - tab "Energy" [ref=f18e122] [cursor=pointer]
+        - listitem [ref=f18e123]:
+          - tab "Fintech" [ref=f18e124] [cursor=pointer]
+      - link "View all" [ref=f18e125] [cursor=pointer]:
+        - /url: "#"
+    - generic [ref=f18e128]:
+      - link "Thailand's New Labeling Requirements for Traditional and Electric Vehicles Obtaining marketing authorization is a fundamental requirement for bringing pharmaceutical products to the Thai market. Dec 01, 2026" [ref=f18e129] [cursor=pointer]:
+        - /url: "#"
+        - generic [ref=f18e130]:
+          - heading "Thailand's New Labeling Requirements for Traditional and Electric Vehicles" [level=3] [ref=f18e131]
+          - paragraph [ref=f18e132]: Obtaining marketing authorization is a fundamental requirement for bringing pharmaceutical products to the Thai market.
+          - generic [ref=f18e133]: Dec 01, 2026
+      - list [ref=f18e138]:
+        - listitem [ref=f18e139]:
+          - link "Tilleke & Gibbins Highly Ranked in Benchmark Litigation Asia-Pacific 2026 Dec 02, 2026" [ref=f18e140] [cursor=pointer]:
+            - /url: "#"
+            - heading "Tilleke & Gibbins Highly Ranked in Benchmark Litigation Asia-Pacific 2026" [level=4] [ref=f18e141]
+            - generic [ref=f18e142]: Dec 02, 2026
+        - listitem [ref=f18e146]:
+          - link "Tilleke & Gibbins Named Laos Firm of the Year at the Legal 500 Southeast Asia Awards 2026 Dec 02, 2026" [ref=f18e147] [cursor=pointer]:
+            - /url: "#"
+            - heading "Tilleke & Gibbins Named Laos Firm of the Year at the Legal 500 Southeast Asia Awards 2026" [level=4] [ref=f18e148]
+            - generic [ref=f18e149]: Dec 02, 2026
+        - listitem [ref=f18e153]:
+          - link "New Investment Incentives for Thai-Foreign Auto Parts Joint Ventures Dec 01, 2026" [ref=f18e154] [cursor=pointer]:
+            - /url: "#"
+            - heading "New Investment Incentives for Thai-Foreign Auto Parts Joint Ventures" [level=4] [ref=f18e155]
+            - generic [ref=f18e156]: Dec 01, 2026
+  - generic [ref=f18e160]:
+    - generic [ref=f18e161]:
+      - heading "Build your career with Tilleke & Gibbins" [level=2] [ref=f18e162]
+      - link "Explore opportunities" [ref=f18e163] [cursor=pointer]:
+        - /url: "#"
+    - generic [ref=f18e167]:
+      - paragraph [ref=f18e168]: We're always looking for great people to join our team
+      - img "ALB Employer of Choice 2026" [ref=f18e170]

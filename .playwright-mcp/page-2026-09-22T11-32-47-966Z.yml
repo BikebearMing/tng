@@ -1,0 +1,33 @@
+- main [ref=f2e2]:
+  - generic [ref=f2e3]:
+    - generic [ref=f2e4]:
+      - paragraph [ref=f2e5]: Featured
+      - heading "Vietnam Takes Major Step in AI Governance with New Guiding Decree" [level=1] [ref=f2e6]
+      - link "Read more" [ref=f2e7] [cursor=pointer]:
+        - /url: "#"
+    - generic [ref=f2e10]:
+      - generic [ref=f2e11]:
+        - paragraph [ref=f2e12]: Recent Insights
+        - link "View all" [ref=f2e13] [cursor=pointer]:
+          - /url: "#"
+      - list [ref=f2e16]:
+        - listitem [ref=f2e17]:
+          - link [ref=f2e18] [cursor=pointer]:
+            - /url: "#"
+            - 'heading "Practical Law: Insurance and Reinsurance Global Guide 2026 – Vietnam" [level=4] [ref=f2e19]'
+            - paragraph [ref=f2e20]: Dec 02, 2026
+        - listitem [ref=f2e24]:
+          - link [ref=f2e25] [cursor=pointer]:
+            - /url: "#"
+            - heading "Indonesia Expands Rules on Drug Promotion and Advertising" [level=4] [ref=f2e26]
+            - paragraph [ref=f2e27]: Dec 02, 2026
+        - listitem [ref=f2e31]:
+          - link [ref=f2e32] [cursor=pointer]:
+            - /url: "#"
+            - heading "Thai Cabinet Advances Draft Amendments to Liberalize Nine Foreign Business Activities" [level=4] [ref=f2e33]
+            - paragraph [ref=f2e34]: Dec 02, 2026
+        - listitem [ref=f2e38]:
+          - link [ref=f2e39] [cursor=pointer]:
+            - /url: "#"
+            - heading "US-Thailand Trade Meetings Increase Focus on Trade Enforcement" [level=4] [ref=f2e40]
+            - paragraph [ref=f2e41]: Dec 02, 2026

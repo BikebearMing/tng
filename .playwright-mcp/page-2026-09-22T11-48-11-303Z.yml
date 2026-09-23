@@ -1,0 +1,74 @@
+- main [ref=f7e2]:
+  - generic [ref=f7e3]:
+    - generic [ref=f7e4]:
+      - paragraph [ref=f7e5]: Featured
+      - heading "Vietnam Takes Major Step in AI Governance with New Guiding Decree" [level=1] [ref=f7e6]
+      - link "Read more" [ref=f7e7] [cursor=pointer]:
+        - /url: "#"
+    - generic [ref=f7e10]:
+      - generic [ref=f7e11]:
+        - paragraph [ref=f7e12]: Recent Insights
+        - link "View all" [ref=f7e13] [cursor=pointer]:
+          - /url: "#"
+      - list [ref=f7e16]:
+        - listitem [ref=f7e17]:
+          - link [ref=f7e18] [cursor=pointer]:
+            - /url: "#"
+            - 'heading "Practical Law: Insurance and Reinsurance Global Guide 2026 – Vietnam" [level=4] [ref=f7e19]'
+            - paragraph [ref=f7e20]: Dec 02, 2026
+        - listitem [ref=f7e24]:
+          - link [ref=f7e25] [cursor=pointer]:
+            - /url: "#"
+            - heading "Indonesia Expands Rules on Drug Promotion and Advertising" [level=4] [ref=f7e26]
+            - paragraph [ref=f7e27]: Dec 02, 2026
+        - listitem [ref=f7e31]:
+          - link [ref=f7e32] [cursor=pointer]:
+            - /url: "#"
+            - heading "Thai Cabinet Advances Draft Amendments to Liberalize Nine Foreign Business Activities" [level=4] [ref=f7e33]
+            - paragraph [ref=f7e34]: Dec 02, 2026
+        - listitem [ref=f7e38]:
+          - link [ref=f7e39] [cursor=pointer]:
+            - /url: "#"
+            - heading "US-Thailand Trade Meetings Increase Focus on Trade Enforcement" [level=4] [ref=f7e40]
+            - paragraph [ref=f7e41]: Dec 02, 2026
+  - generic [ref=f7e45]:
+    - generic [ref=f7e46]:
+      - generic [ref=f7e47]:
+        - heading "Southeast Asia's Leading Law Firm" [level=2] [ref=f7e48]
+        - paragraph [ref=f7e49]: Tilleke & Gibbins is a leading full-service Southeast Asian law firm proudly serving international and local businesses across six countries. We are committed to helping our clients achieve sustainable success in the region, working with them to provide unparalleled legal expertise, rooted in practical commercial insight.
+        - link "Explore" [ref=f7e50] [cursor=pointer]:
+          - /url: "#"
+      - list [ref=f7e53]:
+        - listitem [ref=f7e54]:
+          - paragraph [ref=f7e55]: 250+
+          - paragraph [ref=f7e56]: Lawyers
+        - listitem [ref=f7e57]:
+          - paragraph [ref=f7e58]: "135"
+          - paragraph [ref=f7e59]: Years of Service
+        - listitem [ref=f7e60]:
+          - paragraph [ref=f7e61]: "50"
+          - paragraph [ref=f7e62]: Firm of the Year Awards (2025)
+        - listitem [ref=f7e63]:
+          - paragraph [ref=f7e64]: "7"
+          - paragraph [ref=f7e65]: Offices
+    - generic [ref=f7e66]:
+      - heading "Our Regional Presence" [level=2] [ref=f7e67]
+      - list [ref=f7e68]:
+        - listitem [ref=f7e69]:
+          - link "Cambodia" [ref=f7e70] [cursor=pointer]:
+            - /url: "#"
+        - listitem [ref=f7e76]:
+          - link "Indonesia" [ref=f7e77] [cursor=pointer]:
+            - /url: "#"
+        - listitem [ref=f7e83]:
+          - link "Laos" [ref=f7e84] [cursor=pointer]:
+            - /url: "#"
+        - listitem [ref=f7e90]:
+          - link "Myanmar" [ref=f7e91] [cursor=pointer]:
+            - /url: "#"
+        - listitem [ref=f7e97]:
+          - link "Thailand" [ref=f7e98] [cursor=pointer]:
+            - /url: "#"
+        - listitem [ref=f7e104]:
+          - link "Vietnam" [ref=f7e105] [cursor=pointer]:
+            - /url: "#"

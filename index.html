@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TNG</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/vendor/blaze.css">
+  <link rel="stylesheet" href="assets/vendor/lenis.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       HEADER (site-wide, sits over the banner)
+       SCF options page: site/header
+       Fields: logo (image/svg), top_menu (WP menu "Header top":
+               About / Careers / Contact), main_menu (WP menu "Header main":
+               Professionals / Services / Insights / Locations),
+               search_label, languages (repeater: code, url),
+               locations_mega (auto from Location taxonomy: name, image,
+               link; plus extra_links repeater, e.g. Global Reach),
+               services_mega (auto from Industry and Practice taxonomies:
+               name, link; labels editable)
+       ============================================================ -->
+  <header class="site-header" data-scrolled-at="40">
+    <!-- TODO: swap for the logo SVG once supplied; this is a text stand-in -->
+    <a href="#" class="site-header__logo" aria-label="Tilleke &amp; Gibbins">
+      <span>Tilleke</span>
+      <span><em>&amp;</em>Gibbins</span>
+    </a>
+
+    <nav class="site-header__nav" aria-label="Main">
+      <ul class="site-header__top">
+        <li><a href="#" class="subhead">About</a></li>
+        <li><a href="#" class="subhead">Careers</a></li>
+        <li><a href="#" class="subhead">Contact</a></li>
+      </ul>
+      <ul class="site-header__main">
+        <li><a href="#" class="button-label">Professionals</a></li>
+        <li class="has-mega">
+          <a href="#" class="button-label" aria-haspopup="true">Services</a>
+          <!-- Megamenu: industries (active follows hover) | practices in two columns -->
+          <div class="site-header__mega site-header__mega--services">
+            <div class="site-header__mega-col">
+              <p class="subhead site-header__mega-label">Industries</p>
+              <ul class="site-header__mega-list">
+              <li class="is-active"><a href="#" class="button-label">Automotive<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+              <li><a href="#" class="button-label">Aviation<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+              <li><a href="#" class="button-label">Consumer products<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+              <li><a href="#" class="button-label">Energy<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+              <li><a href="#" class="button-label">Fintech<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+              <li><a href="#" class="button-label">Insurance<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+              <li><a href="#" class="button-label">Life Sciences<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+              <li><a href="#" class="button-label">Technology<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+              </ul>
+            </div>
+            <div class="site-header__mega-col site-header__mega-col--divided">
+              <p class="subhead site-header__mega-label">Practices</p>
+              <ul class="site-header__mega-links" style="--rows: 6;">
+              <li><a href="#" class="site-header__mega-link">Antitrust and Competition</a></li>
+              <li><a href="#" class="site-header__mega-link">Banking and Finance</a></li>
+              <li><a href="#" class="site-header__mega-link">Capital Markets</a></li>
+              <li><a href="#" class="site-header__mega-link">Compliance and Investigations</a></li>
+              <li><a href="#" class="site-header__mega-link">Corporate/M&amp;A</a></li>
+              <li><a href="#" class="site-header__mega-link">Customs and International Trade</a></li>
+              <li><a href="#" class="site-header__mega-link">Dispute Resolution and Litigation</a></li>
+              <li><a href="#" class="site-header__mega-link">Employment</a></li>
+              <li><a href="#" class="site-header__mega-link">Intellectual Property</a></li>
+              <li><a href="#" class="site-header__mega-link">Real Estate</a></li>
+              <li><a href="#" class="site-header__mega-link">Regulatory Affairs</a></li>
+              <li><a href="#" class="site-header__mega-link">Tax</a></li>
+              </ul>
+            </div>
+          </div>
+        </li>
+        <li><a href="#" class="button-label">Insights</a></li>
+        <li class="has-mega">
+          <a href="#" class="button-label" aria-haspopup="true">Locations</a>
+          <!-- Megamenu: hover/focus opens it; hovering a location swaps the image -->
+          <div class="site-header__mega">
+            <ul class="site-header__mega-list">
+            <li class="is-active"><a href="#" class="button-label">Cambodia<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            <li><a href="#" class="button-label">Indonesia<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            <li><a href="#" class="button-label">Laos<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            <li><a href="#" class="button-label">Myanmar<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            <li><a href="#" class="button-label">Thailand<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            <li><a href="#" class="button-label">Vietnam<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            <li><a href="#" class="button-label">Global Reach<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            </ul>
+            <div class="site-header__mega-media" aria-hidden="true">
+            <img src="https://picsum.photos/seed/cambodia/374/452" alt="" class="is-active">
+            <img src="https://picsum.photos/seed/indonesia/374/452" alt="">
+            <img src="https://picsum.photos/seed/laos/374/452" alt="">
+            <img src="https://picsum.photos/seed/myanmar/374/452" alt="">
+            <img src="https://picsum.photos/seed/thailand/374/452" alt="">
+            <img src="https://picsum.photos/seed/vietnam/374/452" alt="">
+            <img src="https://picsum.photos/seed/global/374/452" alt="">
+            </div>
+          </div>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="site-header__utils">
+      <button type="button" class="subhead site-header__search">
+        Search
+        <svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="7.5" cy="7.5" r="6" stroke="currentColor" stroke-width="1.5"/><path d="M12 12l4.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+      <a href="#" class="subhead site-header__lang" aria-label="Language: English">
+        ENG
+        <svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="7.5" stroke="currentColor" stroke-width="1.3"/><ellipse cx="9" cy="9" rx="3.2" ry="7.5" stroke="currentColor" stroke-width="1.3"/><path d="M1.5 9h15M2.8 5.2h12.4M2.8 12.8h12.4" stroke="currentColor" stroke-width="1.3"/></svg>
+      </a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============================================================
+         SECTION: Featured banner (100vh)
+         SCF block: home/featured-banner
+         Fields: featured_insight (post object → Insight), background_image,
+                 recent_insights (relationship → Insight, or auto latest 4)
+         ============================================================ -->
+    <section class="hp-featured-banner has-parallax" data-section="featured-banner" data-toggle="show_featured_banner">
+      <img src="assets/Rectangle 1.jpg" alt="" class="parallax-img">
+
+      <div class="hp-featured-banner__content">
+        <p class="subhead dark">Featured</p>
+        <h1 class="h1 dark">Vietnam Takes Major Step in AI Governance with New Guiding Decree</h1>
+        <a href="#" class="button-label dark link-arrow hp-featured-banner__link">
+          Read more
+          <svg viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+
+      <div class="hp-featured-banner__panel">
+        <div class="hp-featured-banner__panel-head">
+          <p class="subhead">Recent Insights</p>
+          <a href="#" class="subhead hp-featured-banner__view-all">
+            View all
+            <svg viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+
+        <ul class="hp-featured-banner__list">
+          <li class="hp-featured-banner__item">
+            <a href="#">
+              <h4 class="h4">Practical Law: Insurance and Reinsurance Global Guide 2026 – Vietnam</h4>
+              <p class="subhead">Dec 02, 2026</p>
+            </a>
+            <span class="hp-featured-banner__icon" aria-hidden="true">
+              <svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </li>
+          <li class="hp-featured-banner__item">
+            <a href="#">
+              <h4 class="h4">Indonesia Expands Rules on Drug Promotion and Advertising</h4>
+              <p class="subhead">Dec 02, 2026</p>
+            </a>
+            <span class="hp-featured-banner__icon" aria-hidden="true">
+              <svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </li>
+          <li class="hp-featured-banner__item">
+            <a href="#">
+              <h4 class="h4">Thai Cabinet Advances Draft Amendments to Liberalize Nine Foreign Business Activities</h4>
+              <p class="subhead">Dec 02, 2026</p>
+            </a>
+            <span class="hp-featured-banner__icon" aria-hidden="true">
+              <svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </li>
+          <li class="hp-featured-banner__item">
+            <a href="#">
+              <h4 class="h4">US-Thailand Trade Meetings Increase Focus on Trade Enforcement</h4>
+              <p class="subhead">Dec 02, 2026</p>
+            </a>
+            <span class="hp-featured-banner__icon" aria-hidden="true">
+              <svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION: Intro + counters + regional presence
+         SCF block: home/intro-stats
+         Fields: heading, body, cta_label, cta_link, background_image,
+                 counters (repeater: number, label) x4
+         SCF block: home/regional-presence
+         Fields: heading, map_image, locations (auto from Location taxonomy:
+                 term name, term image, term link)
+         ============================================================ -->
+    <section class="hp-intro has-parallax" data-section="intro-stats" data-toggle="show_intro_stats">
+      <img src="assets/hp-location-bg.jpg" alt="" class="parallax-img">
+
+      <div class="hp-intro__top">
+        <div class="hp-intro__text">
+          <h2 class="h2 dark">Southeast Asia's Leading Law Firm</h2>
+          <p class="body dark">Tilleke &amp; Gibbins is a leading full-service Southeast Asian law firm proudly serving international and local businesses across six countries. We are committed to helping our clients achieve sustainable success in the region, working with them to provide unparalleled legal expertise, rooted in practical commercial insight.</p>
+          <a href="#" class="button-label dark link-arrow hp-intro__link">
+            Explore
+            <svg viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+
+        <ul class="hp-intro__counters">
+          <li>
+            <p class="counter dark">250+</p>
+            <p class="counter-label dark">Lawyers</p>
+          </li>
+          <li>
+            <p class="counter dark">135</p>
+            <p class="counter-label dark">Years of Service</p>
+          </li>
+          <li>
+            <p class="counter dark">50</p>
+            <p class="counter-label dark">Firm of the Year Awards (2025)</p>
+          </li>
+          <li>
+            <p class="counter dark">7</p>
+            <p class="counter-label dark">Offices</p>
+          </li>
+        </ul>
+      </div>
+
+      <div class="hp-intro__panel" data-section="regional-presence" data-toggle="show_regional_presence">
+        <img src="assets/regional-presence.jpg" alt="" class="hp-intro__map">
+        <h2 class="h2">Our Regional Presence</h2>
+
+        <ul class="hp-intro__locations">
+          <li class="hp-intro__location">
+            <a href="#">
+              <img src="https://picsum.photos/seed/cambodia/604/368" alt="">
+              <span class="hp-intro__location-name">
+                <span class="h3">Cambodia</span>
+                <span class="hp-featured-banner__icon" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              </span>
+            </a>
+          </li>
+          <li class="hp-intro__location">
+            <a href="#">
+              <img src="https://picsum.photos/seed/indonesia/604/368" alt="">
+              <span class="hp-intro__location-name">
+                <span class="h3">Indonesia</span>
+                <span class="hp-featured-banner__icon" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              </span>
+            </a>
+          </li>
+          <li class="hp-intro__location">
+            <a href="#">
+              <img src="https://picsum.photos/seed/laos/604/368" alt="">
+              <span class="hp-intro__location-name">
+                <span class="h3">Laos</span>
+                <span class="hp-featured-banner__icon" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              </span>
+            </a>
+          </li>
+          <li class="hp-intro__location">
+            <a href="#">
+              <img src="https://picsum.photos/seed/myanmar/604/368" alt="">
+              <span class="hp-intro__location-name">
+                <span class="h3">Myanmar</span>
+                <span class="hp-featured-banner__icon" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              </span>
+            </a>
+          </li>
+          <li class="hp-intro__location">
+            <a href="#">
+              <img src="https://picsum.photos/seed/thailand/604/368" alt="">
+              <span class="hp-intro__location-name">
+                <span class="h3">Thailand</span>
+                <span class="hp-featured-banner__icon" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              </span>
+            </a>
+          </li>
+          <li class="hp-intro__location">
+            <a href="#">
+              <img src="https://picsum.photos/seed/vietnam/604/368" alt="">
+              <span class="hp-intro__location-name">
+                <span class="h3">Vietnam</span>
+                <span class="hp-featured-banner__icon" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              </span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION: Insights by industry
+         SCF block: home/insights
+         Fields: label, tabs (auto from Industry taxonomy, or manual picks),
+                 per tab: feature_insight (post object) + list_insights
+                 (relationship, 3) or auto latest in that industry,
+                 view_all_link
+         ============================================================ -->
+    <section class="hp-insights" data-section="insights" data-toggle="show_insights">
+      <p class="subhead hp-insights__label">Insights</p>
+
+      <div class="hp-insights__tabs">
+        <ul class="hp-insights__tab-list" role="tablist">
+          <li><button type="button" class="h3 hp-insights__tab is-active" role="tab" aria-selected="true">Automotive</button></li>
+          <li><button type="button" class="h3 hp-insights__tab" role="tab" aria-selected="false">Aviation</button></li>
+          <li><button type="button" class="h3 hp-insights__tab" role="tab" aria-selected="false">Consumer Products</button></li>
+          <li><button type="button" class="h3 hp-insights__tab" role="tab" aria-selected="false">Energy</button></li>
+          <li><button type="button" class="h3 hp-insights__tab" role="tab" aria-selected="false">Fintech</button></li>
+        </ul>
+        <a href="#" class="button-label link-arrow">
+          View all
+          <svg viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+
+      <div class="hp-insights__body">
+        <a href="#" class="hp-insights__feature">
+          <img src="https://picsum.photos/seed/automotive/1286/1034" alt="">
+          <div class="hp-insights__card">
+            <h3 class="h3">Thailand's New Labeling Requirements for Traditional and Electric Vehicles</h3>
+            <p class="body">Obtaining marketing authorization is a fundamental requirement for bringing pharmaceutical products to the Thai market.</p>
+            <div class="hp-insights__card-foot">
+              <span class="subhead">Dec 01, 2026</span>
+              <span class="arrow-circle" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </div>
+          </div>
+        </a>
+
+        <ul class="hp-insights__list">
+          <li class="hp-insights__item">
+            <a href="#">
+              <h4 class="h4">Tilleke &amp; Gibbins Highly Ranked in Benchmark Litigation Asia-Pacific 2026</h4>
+              <span class="subhead">Dec 02, 2026</span>
+              <span class="arrow-circle" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </a>
+          </li>
+          <li class="hp-insights__item">
+            <a href="#">
+              <h4 class="h4">Tilleke &amp; Gibbins Named Laos Firm of the Year at the Legal 500 Southeast Asia Awards 2026</h4>
+              <span class="subhead">Dec 02, 2026</span>
+              <span class="arrow-circle" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </a>
+          </li>
+          <li class="hp-insights__item">
+            <a href="#">
+              <h4 class="h4">New Investment Incentives for Thai-Foreign Auto Parts Joint Ventures</h4>
+              <span class="subhead">Dec 01, 2026</span>
+              <span class="arrow-circle" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION: Careers
+         SCF block: home/careers
+         Fields: heading, cta_label, cta_link, note, badge_image,
+                 portraits (gallery, or auto from Professional photos)
+         ============================================================ -->
+    <section class="hp-careers" data-section="careers" data-toggle="show_careers">
+      <div class="hp-careers__intro">
+        <h2 class="h2 dark">Build your career with Tilleke &amp; Gibbins</h2>
+        <a href="#" class="button-label dark link-arrow">
+          Explore opportunities
+          <svg viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+
+      <div class="hp-careers__foot">
+        <div class="hp-careers__foot-row">
+          <p class="subhead hp-careers__note">We're always looking for great people to join our team</p>
+          <span class="hp-careers__rule" aria-hidden="true"></span>
+          <img src="assets/ALB-Badge-2025-Employer-of-Choice 1.png" alt="ALB Employer of Choice 2026" class="hp-careers__badge">
+        </div>
+      </div>
+
+      <div class="hp-careers__marquee" aria-hidden="true">
+        <div class="hp-careers__column" data-direction="up">
+          <img src="assets/guy-1.jpg" alt="">
+          <img src="assets/lady-2.jpg" alt="">
+        </div>
+        <div class="hp-careers__column" data-direction="down">
+          <img src="assets/lady-2.jpg" alt="">
+          <img src="assets/guy-1.jpg" alt="">
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION: Awards & Rankings
+         SCF block: home/awards
+         Fields: label, featured_award (post object → Award) or manual
+                 heading + logo + body, read_more_link, card_text, card_link
+         ============================================================ -->
+    <section class="hp-awards" data-section="awards" data-toggle="show_awards">
+      <p class="subhead hp-awards__label">Awards &amp; Rankings</p>
+
+      <div class="hp-awards__panel">
+        <div class="hp-awards__main">
+          <h2 class="h2">Tilleke &amp; Gibbins Achieves Top Results in Legal 500 Asia-Pacific 2026 Rankings</h2>
+          <img src="assets/legal-500.png" alt="The Legal 500" class="hp-awards__logo">
+        </div>
+
+        <div class="hp-awards__text">
+          <p class="body">Tilleke &amp; Gibbins has demonstrated continued excellence across all six jurisdictions where the firm operates in the 2026 edition of the Legal 500 Asia-Pacific rankings. The recently released rankings showcase the firm's outstanding performance with 29 practice area recognitions and 34 individual rankings—an increase from 30 individual recognitions in 2025.</p>
+          <a href="#" class="button-label link-arrow">
+            Read more
+            <svg viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+
+        <a href="#" class="hp-awards__card">
+          <h4 class="h4">Learn more about our latest recognitions</h4>
+          <span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER (site-wide)
+       SCF options page: site/footer
+       Fields: logo (image/svg), social_links (repeater: network, url),
+               newsletter_heading, newsletter_form (Mailchimp/CF7 embed or
+               action url), networks (repeater: logo, url), quick_links
+               (WP menu "Footer quick links", split into 2 columns),
+               copyright, legal_links (WP menu "Footer legal")
+       ============================================================ -->
+  <footer id="footer" class="hp-footer" data-section="footer">
+    <div class="hp-footer__top">
+
+      <div class="hp-footer__brand">
+        <!-- TODO: swap for the logo SVG once supplied; this is a text stand-in -->
+        <a href="#" class="hp-footer__logo" aria-label="Tilleke &amp; Gibbins">
+          <span>Tilleke</span>
+          <span><em>&amp;</em>Gibbins</span>
+        </a>
+
+        <ul class="hp-footer__social">
+          <li>
+            <a href="#" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.5-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H8v3h2.5V21h3z"/></svg>
+            </a>
+          </li>
+          <li>
+            <a href="#" aria-label="YouTube">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18.3 5 12 5 12 5s-6.3 0-7.8.4A2.5 2.5 0 0 0 2.4 7.2C2 8.8 2 12 2 12s0 3.2.4 4.8a2.5 2.5 0 0 0 1.8 1.8C5.7 19 12 19 12 19s6.3 0 7.8-.4a2.5 2.5 0 0 0 1.8-1.8c.4-1.6.4-4.8.4-4.8s0-3.2-.4-4.8zM10 15V9l5.2 3L10 15z"/></svg>
+            </a>
+          </li>
+          <li>
+            <a href="#" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.9 8.7H3.6V20h3.3V8.7zM5.3 3.5a1.9 1.9 0 1 0 0 3.8 1.9 1.9 0 0 0 0-3.8zM20.4 13.1c0-3.2-1.7-4.7-4-4.7a3.4 3.4 0 0 0-3.1 1.7V8.7H10V20h3.3v-5.6c0-1.5.3-2.9 2.1-2.9 1.8 0 1.8 1.7 1.8 3V20h3.3v-6.9z"/></svg>
+            </a>
+          </li>
+        </ul>
+
+        <p class="button-label dark hp-footer__newsletter-heading">Subscribe to our newsletter</p>
+        <form class="hp-footer__form" action="#" method="post">
+          <label class="visually-hidden" for="footer-email">Your email</label>
+          <input type="email" id="footer-email" name="email" placeholder="Your email" required>
+          <button type="submit">
+            Subscribe
+            <svg viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </form>
+      </div>
+
+      <div class="hp-footer__nav">
+        <p class="subhead hp-footer__label">Networks</p>
+        <ul class="hp-footer__networks">
+          <li><a href="#"><img src="assets/lexmundi.png" alt="Lex Mundi Member" class="hp-footer__network hp-footer__network--lexmundi"></a></li>
+          <li><a href="#"><img src="assets/multilaw.png" alt="Multilaw" class="hp-footer__network hp-footer__network--multilaw"></a></li>
+          <li><a href="#"><img src="assets/dna.png" alt="Drew Network Asia" class="hp-footer__network hp-footer__network--dna"></a></li>
+        </ul>
+
+        <p class="subhead hp-footer__label hp-footer__label--links">Quick links</p>
+        <div class="hp-footer__quick">
+          <ul class="hp-footer__quick-col">
+            <li><a href="#" class="button-label dark">Professionals</a></li>
+            <li><a href="#" class="button-label dark">Services</a></li>
+            <li><a href="#" class="button-label dark">Insights</a></li>
+            <li><a href="#" class="button-label dark">Locations</a></li>
+          </ul>
+          <ul class="hp-footer__quick-col">
+            <li><a href="#" class="button-label dark">About</a></li>
+            <li><a href="#" class="button-label dark">Careers</a></li>
+            <li><a href="#" class="button-label dark">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="hp-footer__bar">
+      <p class="subhead hp-footer__copyright">&copy; 2026 Tilleke &amp; Gibbins International Ltd. All rights reserved.</p>
+      <ul class="hp-footer__legal">
+        <li><a href="#" class="subhead dark">Privacy Policy</a></li>
+        <li><a href="#" class="subhead dark">Fraudulent Communications</a></li>
+        <li><a href="#" class="subhead dark">Legal Notice</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="assets/vendor/ScrollTrigger.min.js"></script>
+  <script src="assets/vendor/SplitText.min.js"></script>
+  <script src="assets/vendor/blaze-slider.min.js"></script>
+  <script src="assets/vendor/lenis.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

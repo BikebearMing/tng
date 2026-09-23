@@ -1,0 +1,52 @@
+- main [ref=f28e2]:
+  - generic [ref=f28e3]:
+    - generic [ref=f28e4]:
+      - paragraph [ref=f28e5]:
+        - generic [aria-hidden] [ref=f28e8]: Featured
+      - heading "Vietnam Takes Major Step in AI Governance with New Guiding Decree" [level=1] [ref=f28e9]:
+        - generic [aria-hidden] [ref=f28e11]: Vietnam Takes Major Step
+        - generic [aria-hidden] [ref=f28e13]: in AI Governance with
+        - generic [aria-hidden] [ref=f28e15]: New Guiding Decree
+      - link "Read more" [ref=f28e16] [cursor=pointer]:
+        - /url: "#"
+    - generic [ref=f28e19]:
+      - generic [ref=f28e20]:
+        - paragraph [ref=f28e21]:
+          - generic [aria-hidden] [ref=f28e23]:
+            - generic [aria-hidden] [ref=f28e24]: Recent
+            - generic [aria-hidden] [ref=f28e25]: Insights
+        - link "View all" [ref=f28e26] [cursor=pointer]:
+          - /url: "#"
+      - list [ref=f28e29]:
+        - listitem [ref=f28e30]:
+          - link [ref=f28e31] [cursor=pointer]:
+            - /url: "#"
+            - 'heading "Practical Law: Insurance and Reinsurance Global Guide 2026 – Vietnam" [level=4] [ref=f28e32]':
+              - generic [aria-hidden] [ref=f28e34]: "Practical Law: Insurance and"
+              - generic [aria-hidden] [ref=f28e36]: Reinsurance Global Guide 2026 –
+              - generic [aria-hidden] [ref=f28e38]: Vietnam
+        - listitem [ref=f28e42]:
+          - link [ref=f28e43] [cursor=pointer]:
+            - /url: "#"
+            - heading "Indonesia Expands Rules on Drug Promotion and Advertising" [level=4] [ref=f28e44]:
+              - generic [aria-hidden] [ref=f28e46]: Indonesia Expands Rules on Drug
+              - generic [aria-hidden] [ref=f28e48]: Promotion and Advertising
+  - generic [ref=f28e52]:
+    - generic [ref=f28e53]:
+      - link "Explore" [ref=f28e55] [cursor=pointer]:
+        - /url: "#"
+      - list [ref=f28e58]
+    - list [ref=f28e60]
+  - generic [ref=f28e61]:
+    - generic [ref=f28e62]:
+      - tablist [ref=f28e63]
+      - link "View all" [ref=f28e64] [cursor=pointer]:
+        - /url: "#"
+    - generic [ref=f28e67]:
+      - link [ref=f28e68] [cursor=pointer]:
+        - /url: "#"
+      - list [ref=f28e74]
+  - generic [ref=f28e75]:
+    - link "Explore opportunities" [ref=f28e77] [cursor=pointer]:
+      - /url: "#"
+    - img "ALB Employer of Choice 2026" [ref=f28e82]
