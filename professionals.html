@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Professionals — TNG</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/vendor/blaze.css">
+  <link rel="stylesheet" href="assets/vendor/lenis.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       HEADER (site-wide, sits over the banner)
+       SCF options page: site/header
+       Fields: logo (image/svg), top_menu (WP menu "Header top":
+               About / Careers / Contact), main_menu (WP menu "Header main":
+               Professionals / Services / Insights / Locations),
+               search_label, languages (repeater: code, url),
+               locations_mega (auto from Location taxonomy: name, image,
+               link; plus extra_links repeater, e.g. Global Reach),
+               services_mega (auto from Industry and Practice taxonomies:
+               name, link; labels editable)
+       ============================================================ -->
+  <header class="site-header" data-scrolled-at="40">
+    <!-- TODO: swap for the logo SVG once supplied; this is a text stand-in -->
+    <a href="index.html" class="site-header__logo" aria-label="Tilleke &amp; Gibbins">
+      <span>Tilleke</span>
+      <span><em>&amp;</em>Gibbins</span>
+    </a>
+
+    <nav class="site-header__nav" aria-label="Main">
+      <ul class="site-header__top">
+        <li><a href="#" class="subhead">About</a></li>
+        <li><a href="#" class="subhead">Careers</a></li>
+        <li><a href="#" class="subhead">Contact</a></li>
+      </ul>
+      <ul class="site-header__main">
+        <li><a href="professionals.html" class="button-label">Professionals</a></li>
+        <li class="has-mega">
+          <a href="#" class="button-label" aria-haspopup="true">Services</a>
+          <!-- Megamenu: industries (active follows hover) | practices in two columns -->
+          <div class="site-header__mega site-header__mega--services">
+            <div class="site-header__mega-col">
+              <p class="subhead site-header__mega-label">Industries</p>
+              <ul class="site-header__mega-list">
+              <li class="is-active"><a href="#" class="button-label">Automotive<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+              <li><a href="#" class="button-label">Aviation<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+              <li><a href="#" class="button-label">Consumer products<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+              <li><a href="#" class="button-label">Energy<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+              <li><a href="#" class="button-label">Fintech<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+              <li><a href="#" class="button-label">Insurance<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+              <li><a href="#" class="button-label">Life Sciences<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+              <li><a href="#" class="button-label">Technology<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+              </ul>
+            </div>
+            <div class="site-header__mega-col site-header__mega-col--divided">
+              <p class="subhead site-header__mega-label">Practices</p>
+              <ul class="site-header__mega-links" style="--rows: 6;">
+              <li><a href="#" class="site-header__mega-link">Antitrust and Competition</a></li>
+              <li><a href="#" class="site-header__mega-link">Banking and Finance</a></li>
+              <li><a href="#" class="site-header__mega-link">Capital Markets</a></li>
+              <li><a href="#" class="site-header__mega-link">Compliance and Investigations</a></li>
+              <li><a href="#" class="site-header__mega-link">Corporate/M&amp;A</a></li>
+              <li><a href="#" class="site-header__mega-link">Customs and International Trade</a></li>
+              <li><a href="#" class="site-header__mega-link">Dispute Resolution and Litigation</a></li>
+              <li><a href="#" class="site-header__mega-link">Employment</a></li>
+              <li><a href="#" class="site-header__mega-link">Intellectual Property</a></li>
+              <li><a href="#" class="site-header__mega-link">Real Estate</a></li>
+              <li><a href="#" class="site-header__mega-link">Regulatory Affairs</a></li>
+              <li><a href="#" class="site-header__mega-link">Tax</a></li>
+              </ul>
+            </div>
+          </div>
+        </li>
+        <li><a href="#" class="button-label">Insights</a></li>
+        <li class="has-mega">
+          <a href="#" class="button-label" aria-haspopup="true">Locations</a>
+          <!-- Megamenu: hover/focus opens it; hovering a location swaps the image -->
+          <div class="site-header__mega">
+            <ul class="site-header__mega-list">
+            <li class="is-active"><a href="#" class="button-label">Cambodia<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            <li><a href="#" class="button-label">Indonesia<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            <li><a href="#" class="button-label">Laos<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            <li><a href="#" class="button-label">Myanmar<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            <li><a href="#" class="button-label">Thailand<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            <li><a href="#" class="button-label">Vietnam<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            <li><a href="#" class="button-label">Global Reach<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            </ul>
+            <div class="site-header__mega-media" aria-hidden="true">
+            <img src="https://picsum.photos/seed/cambodia/374/452" alt="" class="is-active">
+            <img src="https://picsum.photos/seed/indonesia/374/452" alt="">
+            <img src="https://picsum.photos/seed/laos/374/452" alt="">
+            <img src="https://picsum.photos/seed/myanmar/374/452" alt="">
+            <img src="https://picsum.photos/seed/thailand/374/452" alt="">
+            <img src="https://picsum.photos/seed/vietnam/374/452" alt="">
+            <img src="https://picsum.photos/seed/global/374/452" alt="">
+            </div>
+          </div>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="site-header__utils">
+      <button type="button" class="subhead site-header__search">
+        Search
+        <svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="7.5" cy="7.5" r="6" stroke="currentColor" stroke-width="1.5"/><path d="M12 12l4.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+      <a href="#" class="subhead site-header__lang" aria-label="Language: English">
+        ENG
+        <svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="7.5" stroke="currentColor" stroke-width="1.3"/><ellipse cx="9" cy="9" rx="3.2" ry="7.5" stroke="currentColor" stroke-width="1.3"/><path d="M1.5 9h15M2.8 5.2h12.4M2.8 12.8h12.4" stroke="currentColor" stroke-width="1.3"/></svg>
+      </a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============================================================
+         SECTION: Page hero (navy, sits under the header)
+         Professionals archive: SCF options page professionals/archive
+         Fields: title, intro (textarea)
+         Breadcrumbs are generated from the page hierarchy.
+         ============================================================ -->
+    <section class="page-hero" data-section="page-hero" data-toggle="show_page_hero">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <p class="subhead"><a href="index.html">Home</a> / <span aria-current="page">Professional</span></p>
+      </nav>
+
+      <div class="page-hero__content">
+        <h1 class="h1 dark">Professionals</h1>
+        <p class="body dark page-hero__intro">The Tilleke &amp; Gibbins team is driven by our core values of integrity, innovation, and collaboration to deliver the results that our clients need to thrive in Southeast Asia. With extensive industry experience, world-class legal credentials, unrivalled local knowledge, and fluency in multiple languages, our team of over 250 legal professionals are committed to our clients' long-term success. To learn more about any of our professionals, please browse or search below.</p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION: Professionals filter
+         Part of the professionals archive (SCF options page professionals/archive)
+         Fields: search_placeholder
+         Facets come from the Industry, Practice, Position, Location and
+         Language taxonomies; filtering runs client-side on the roster JSON.
+         ============================================================ -->
+    <section class="pro-filter" data-section="pro-filter" data-toggle="show_pro_filter">
+      <form class="pro-filter__form" role="search" action="#">
+        <div class="pro-filter__bar">
+          <div class="pro-filter__search">
+            <label class="visually-hidden" for="pro-search">Search professionals</label>
+            <input type="search" class="button-label" id="pro-search" name="q" placeholder="Search by name, expertise or industry">
+            <button type="submit" class="pro-filter__submit" aria-label="Search">
+              <svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="7.5" cy="7.5" r="6" stroke="currentColor" stroke-width="1.8"/><path d="M12 12l4.5 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </button>
+          </div>
+          <ul class="pro-filter__alpha" aria-label="Filter by surname">
+            <li><button type="button" class="is-active" aria-pressed="true">A</button></li>
+            <li><button type="button" aria-pressed="false">B</button></li>
+            <li><button type="button" aria-pressed="false">C</button></li>
+            <li><button type="button" aria-pressed="false">D</button></li>
+            <li><button type="button" aria-pressed="false">E</button></li>
+            <li><button type="button" aria-pressed="false">F</button></li>
+            <li><button type="button" aria-pressed="false">G</button></li>
+            <li><button type="button" aria-pressed="false">H</button></li>
+            <li><button type="button" aria-pressed="false">I</button></li>
+            <li><button type="button" aria-pressed="false">J</button></li>
+            <li><button type="button" aria-pressed="false">K</button></li>
+            <li><button type="button" aria-pressed="false">L</button></li>
+            <li><button type="button" aria-pressed="false">M</button></li>
+            <li><button type="button" aria-pressed="false">N</button></li>
+            <li><button type="button" aria-pressed="false">O</button></li>
+            <li><button type="button" aria-pressed="false">P</button></li>
+            <li><button type="button" aria-pressed="false">Q</button></li>
+            <li><button type="button" aria-pressed="false">R</button></li>
+            <li><button type="button" aria-pressed="false">S</button></li>
+            <li><button type="button" aria-pressed="false">T</button></li>
+            <li><button type="button" aria-pressed="false">U</button></li>
+            <li><button type="button" aria-pressed="false">V</button></li>
+            <li><button type="button" aria-pressed="false">W</button></li>
+            <li><button type="button" aria-pressed="false">X</button></li>
+            <li><button type="button" aria-pressed="false">Y</button></li>
+            <li><button type="button" aria-pressed="false">Z</button></li>
+          </ul>
+        </div>
+
+        <!-- Facet dropdowns: closed state only until the open panel is designed -->
+        <div class="pro-filter__facets">
+        <button type="button" class="button-label pro-filter__facet" aria-expanded="false">
+          <span>Industries</span>
+          <span class="pro-filter__chevron" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M1 3l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </button>
+        <button type="button" class="button-label pro-filter__facet" aria-expanded="false">
+          <span>Practices</span>
+          <span class="pro-filter__chevron" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M1 3l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </button>
+        <button type="button" class="button-label pro-filter__facet" aria-expanded="false">
+          <span>Positions</span>
+          <span class="pro-filter__chevron" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M1 3l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </button>
+        <button type="button" class="button-label pro-filter__facet" aria-expanded="false">
+          <span>Locations</span>
+          <span class="pro-filter__chevron" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M1 3l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </button>
+        <button type="button" class="button-label pro-filter__facet" aria-expanded="false">
+          <span>Languages</span>
+          <span class="pro-filter__chevron" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M1 3l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </button>
+        </div>
+      </form>
+    </section>
+
+    <!-- ============================================================
+         SECTION: Professionals grid
+         Part of the professionals archive. Cards come from the roster JSON
+         (name, position, photo, link); 15 per page, "View more" appends
+         the next 15. Placeholder cards and portraits below.
+         Fields: none (page size could be an option if the client wants it)
+         ============================================================ -->
+    <section class="pro-grid" data-section="pro-grid" data-toggle="show_pro_grid">
+      <ul class="pro-grid__list">
+          <li>
+            <a href="professional.html" class="pro-card">
+              <img src="assets/lady-2.jpg" alt="" class="pro-card__img" loading="lazy">
+              <div class="pro-card__info">
+                <p class="pro-card__name">Renee Van Dyk<span class="arrow-circle" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></p>
+                <p class="subhead pro-card__position">Consultant</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="professional.html" class="pro-card">
+              <img src="assets/guy-1.jpg" alt="" class="pro-card__img" loading="lazy">
+              <div class="pro-card__info">
+                <p class="pro-card__name">Alan Adcock<span class="arrow-circle" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></p>
+                <p class="subhead pro-card__position">Partner and Director,<br>Intellectual Property</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="professional.html" class="pro-card">
+              <img src="assets/lady-2.jpg" alt="" class="pro-card__img" loading="lazy">
+              <div class="pro-card__info">
+                <p class="pro-card__name">Alisa Koovimol<span class="arrow-circle" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></p>
+                <p class="subhead pro-card__position">Consultant and Patent Agent</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="professional.html" class="pro-card">
+              <img src="assets/guy-1.jpg" alt="" class="pro-card__img" loading="lazy">
+              <div class="pro-card__info">
+                <p class="pro-card__name">Alongkorn Tongmee<span class="arrow-circle" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></p>
+                <p class="subhead pro-card__position">Consultant</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="professional.html" class="pro-card">
+              <img src="assets/lady-2.jpg" alt="" class="pro-card__img" loading="lazy">
+              <div class="pro-card__info">
+                <p class="pro-card__name">Ampolphan Sriduangchan<span class="arrow-circle" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></p>
+                <p class="subhead pro-card__position">Senior Associate &amp; Patent Agent</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="professional.html" class="pro-card">
+              <img src="assets/lady-2.jpg" alt="" class="pro-card__img" loading="lazy">
+              <div class="pro-card__info">
+                <p class="pro-card__name">Renee Van Dyk<span class="arrow-circle" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></p>
+                <p class="subhead pro-card__position">Consultant</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="professional.html" class="pro-card">
+              <img src="assets/guy-1.jpg" alt="" class="pro-card__img" loading="lazy">
+              <div class="pro-card__info">
+                <p class="pro-card__name">Alan Adcock<span class="arrow-circle" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></p>
+                <p class="subhead pro-card__position">Partner and Director,<br>Intellectual Property</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="professional.html" class="pro-card">
+              <img src="assets/lady-2.jpg" alt="" class="pro-card__img" loading="lazy">
+              <div class="pro-card__info">
+                <p class="pro-card__name">Alisa Koovimol<span class="arrow-circle" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></p>
+                <p class="subhead pro-card__position">Consultant and Patent Agent</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="professional.html" class="pro-card">
+              <img src="assets/guy-1.jpg" alt="" class="pro-card__img" loading="lazy">
+              <div class="pro-card__info">
+                <p class="pro-card__name">Alongkorn Tongmee<span class="arrow-circle" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></p>
+                <p class="subhead pro-card__position">Consultant</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="professional.html" class="pro-card">
+              <img src="assets/lady-2.jpg" alt="" class="pro-card__img" loading="lazy">
+              <div class="pro-card__info">
+                <p class="pro-card__name">Ampolphan Sriduangchan<span class="arrow-circle" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></p>
+                <p class="subhead pro-card__position">Senior Associate &amp; Patent Agent</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="professional.html" class="pro-card">
+              <img src="assets/lady-2.jpg" alt="" class="pro-card__img" loading="lazy">
+              <div class="pro-card__info">
+                <p class="pro-card__name">Renee Van Dyk<span class="arrow-circle" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></p>
+                <p class="subhead pro-card__position">Consultant</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="professional.html" class="pro-card">
+              <img src="assets/guy-1.jpg" alt="" class="pro-card__img" loading="lazy">
+              <div class="pro-card__info">
+                <p class="pro-card__name">Alan Adcock<span class="arrow-circle" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></p>
+                <p class="subhead pro-card__position">Partner and Director,<br>Intellectual Property</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="professional.html" class="pro-card">
+              <img src="assets/lady-2.jpg" alt="" class="pro-card__img" loading="lazy">
+              <div class="pro-card__info">
+                <p class="pro-card__name">Alisa Koovimol<span class="arrow-circle" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></p>
+                <p class="subhead pro-card__position">Consultant and Patent Agent</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="professional.html" class="pro-card">
+              <img src="assets/guy-1.jpg" alt="" class="pro-card__img" loading="lazy">
+              <div class="pro-card__info">
+                <p class="pro-card__name">Alongkorn Tongmee<span class="arrow-circle" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></p>
+                <p class="subhead pro-card__position">Consultant</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="professional.html" class="pro-card">
+              <img src="assets/lady-2.jpg" alt="" class="pro-card__img" loading="lazy">
+              <div class="pro-card__info">
+                <p class="pro-card__name">Ampolphan Sriduangchan<span class="arrow-circle" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></p>
+                <p class="subhead pro-card__position">Senior Associate &amp; Patent Agent</p>
+              </div>
+            </a>
+          </li>
+      </ul>
+
+      <div class="pro-grid__more">
+        <p class="pro-grid__count">Showing <strong>15</strong> out of <strong>729</strong> results</p>
+        <button type="button" class="button-label link-arrow pro-grid__view-more">
+          View more
+          <svg viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M1 3l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER (site-wide)
+       SCF options page: site/footer
+       Fields: logo (image/svg), social_links (repeater: network, url),
+               newsletter_heading, newsletter_form (Mailchimp/CF7 embed or
+               action url), networks (repeater: logo, url), quick_links
+               (WP menu "Footer quick links", split into 2 columns),
+               copyright, legal_links (WP menu "Footer legal")
+       ============================================================ -->
+  <footer id="footer" class="hp-footer" data-section="footer">
+    <div class="hp-footer__top">
+
+      <div class="hp-footer__brand">
+        <!-- TODO: swap for the logo SVG once supplied; this is a text stand-in -->
+        <a href="index.html" class="hp-footer__logo" aria-label="Tilleke &amp; Gibbins">
+          <span>Tilleke</span>
+          <span><em>&amp;</em>Gibbins</span>
+        </a>
+
+        <ul class="hp-footer__social">
+          <li>
+            <a href="#" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.5-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H8v3h2.5V21h3z"/></svg>
+            </a>
+          </li>
+          <li>
+            <a href="#" aria-label="YouTube">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18.3 5 12 5 12 5s-6.3 0-7.8.4A2.5 2.5 0 0 0 2.4 7.2C2 8.8 2 12 2 12s0 3.2.4 4.8a2.5 2.5 0 0 0 1.8 1.8C5.7 19 12 19 12 19s6.3 0 7.8-.4a2.5 2.5 0 0 0 1.8-1.8c.4-1.6.4-4.8.4-4.8s0-3.2-.4-4.8zM10 15V9l5.2 3L10 15z"/></svg>
+            </a>
+          </li>
+          <li>
+            <a href="#" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.9 8.7H3.6V20h3.3V8.7zM5.3 3.5a1.9 1.9 0 1 0 0 3.8 1.9 1.9 0 0 0 0-3.8zM20.4 13.1c0-3.2-1.7-4.7-4-4.7a3.4 3.4 0 0 0-3.1 1.7V8.7H10V20h3.3v-5.6c0-1.5.3-2.9 2.1-2.9 1.8 0 1.8 1.7 1.8 3V20h3.3v-6.9z"/></svg>
+            </a>
+          </li>
+        </ul>
+
+        <p class="button-label dark hp-footer__newsletter-heading">Subscribe to our newsletter</p>
+        <form class="hp-footer__form" action="#" method="post">
+          <label class="visually-hidden" for="footer-email">Your email</label>
+          <input type="email" id="footer-email" name="email" placeholder="Your email" required>
+          <button type="submit">
+            Subscribe
+            <svg viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </form>
+      </div>
+
+      <div class="hp-footer__nav">
+        <p class="subhead hp-footer__label">Networks</p>
+        <ul class="hp-footer__networks">
+          <li><a href="#"><img src="assets/lexmundi.png" alt="Lex Mundi Member" class="hp-footer__network hp-footer__network--lexmundi"></a></li>
+          <li><a href="#"><img src="assets/multilaw.png" alt="Multilaw" class="hp-footer__network hp-footer__network--multilaw"></a></li>
+          <li><a href="#"><img src="assets/dna.png" alt="Drew Network Asia" class="hp-footer__network hp-footer__network--dna"></a></li>
+        </ul>
+
+        <p class="subhead hp-footer__label hp-footer__label--links">Quick links</p>
+        <div class="hp-footer__quick">
+          <ul class="hp-footer__quick-col">
+            <li><a href="professionals.html" class="button-label dark">Professionals</a></li>
+            <li><a href="#" class="button-label dark">Services</a></li>
+            <li><a href="#" class="button-label dark">Insights</a></li>
+            <li><a href="#" class="button-label dark">Locations</a></li>
+          </ul>
+          <ul class="hp-footer__quick-col">
+            <li><a href="#" class="button-label dark">About</a></li>
+            <li><a href="#" class="button-label dark">Careers</a></li>
+            <li><a href="#" class="button-label dark">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="hp-footer__bar">
+      <p class="subhead hp-footer__copyright">&copy; 2026 Tilleke &amp; Gibbins International Ltd. All rights reserved.</p>
+      <ul class="hp-footer__legal">
+        <li><a href="#" class="subhead dark">Privacy Policy</a></li>
+        <li><a href="#" class="subhead dark">Fraudulent Communications</a></li>
+        <li><a href="#" class="subhead dark">Legal Notice</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="assets/vendor/ScrollTrigger.min.js"></script>
+  <script src="assets/vendor/SplitText.min.js"></script>
+  <script src="assets/vendor/blaze-slider.min.js"></script>
+  <script src="assets/vendor/lenis.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

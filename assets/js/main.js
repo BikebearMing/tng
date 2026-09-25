@@ -75,6 +75,8 @@ const GROUPS = [
   '.hp-footer__social',
   '.hp-footer__networks',
   '.hp-footer__quick-col',
+  '.pro-hero__locations',
+  '.pro-hero__contacts',
 ].join(', ');
 const GROUP_STAGGER = 0.12;
 
@@ -228,6 +230,20 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // Professionals alphabet: one letter at a time; clicking the active one clears it.
+  // Active state only for now; filtering comes with the roster JSON.
+  document.querySelectorAll('.pro-filter__alpha').forEach((list) => {
+    list.addEventListener('click', (e) => {
+      const letter = e.target.closest('button');
+      if (!letter) return;
+      const on = !letter.classList.contains('is-active');
+      list.querySelectorAll('button').forEach((b) => {
+        b.classList.toggle('is-active', on && b === letter);
+        b.setAttribute('aria-pressed', on && b === letter ? 'true' : 'false');
+      });
+    });
+  });
+
   // Careers marquee: each column's items are cloned once, then the column
   // translates by half its height on a loop, so the seam is invisible.
   document.querySelectorAll('.hp-careers__column').forEach((col) => {
@@ -259,6 +275,27 @@ document.addEventListener('DOMContentLoaded', () => {
         },
       }
     );
+  });
+
+  // Facets: label and chevron rise in, the buttons (and their divider lines) stay put
+  const facets = document.querySelector('.pro-filter__facets');
+  if (facets) {
+    gsap.from(facets.querySelectorAll('.pro-filter__facet > *'), {
+      y: 40,
+      autoAlpha: 0,
+      duration: 1,
+      ease: EASE,
+      stagger: GROUP_STAGGER,
+      scrollTrigger: { trigger: facets, start: REVEAL_START, once: true },
+    });
+  }
+
+  // Professional cards rise in row by row as they enter
+  gsap.set('.pro-card', { autoAlpha: 0, y: 40 });
+  ScrollTrigger.batch('.pro-card', {
+    start: REVEAL_START,
+    once: true,
+    onEnter: (batch) => gsap.to(batch, { autoAlpha: 1, y: 0, duration: 1, ease: EASE, stagger: GROUP_STAGGER }),
   });
 
   drawRules();

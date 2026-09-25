@@ -11,6 +11,7 @@
   --grey: #9fb2c5;
   --sidepadding-xs: 1.389vw;
   --sidepaddong-m: 5.903vw;
+  --top-from-header: 7.153vw;
 }
 
 /* Reset */
@@ -179,6 +180,32 @@ letter-spacing: 0.28px;
 .arrow-circle--lg svg {
   width: 0.556vw;
   height: 0.556vw;
+}
+
+/* Breadcrumbs: 4 grey dot, 6 gap, then the trail (.subhead p inside) */
+.breadcrumbs {
+  position: relative;
+  padding-left: 0.694vw; /* 10: 4 dot + 6 */
+}
+
+.breadcrumbs::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 0.278vw; /* 4 */
+  height: 0.278vw;
+  border-radius: 50%;
+  background: var(--grey);
+  transform: translateY(-50%);
+}
+
+.breadcrumbs a {
+  transition: color 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.breadcrumbs a:hover {
+  color: var(--white);
 }
 
 body {
@@ -1522,4 +1549,428 @@ button {
 
 .site-header__mega-link:hover {
   opacity: 0.6;
+}
+
+/* ============================================================
+   Page hero (inner pages): breadcrumbs, then title and intro
+   sitting on the bottom edge. Navy, under the header.
+   vw values are px / 1440 * 100
+   ============================================================ */
+.page-hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 29.792vw; /* 429 */
+  padding: var(--top-from-header) var(--sidepadding-xs) 2.222vw; /* 103 / 20 / 32 */
+  background: var(--navy);
+}
+
+/* Title in the left half, intro starts at the page centre (720) */
+.page-hero__content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+}
+
+.page-hero__intro {
+  max-width: 30.278vw; /* 436 */
+}
+
+/* ============================================================
+   Professionals — filter
+   Row 1 (white, 70): search in the left half, its red button 15
+   from the centre rule; alphabet starts 30 past the rule.
+   Row 2 (grey, 70): five equal facet buttons, 20 in, chevron 17
+   from each divider.
+   vw values are px / 1440 * 100
+   ============================================================ */
+/* Sticks under the compact header (72) for the rest of the page */
+.pro-filter {
+  position: sticky;
+  top: 5vw; /* 72 */
+  z-index: 5;
+  background: var(--white);
+}
+
+.pro-filter__bar {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-bottom: 1px solid #dbe2e9;
+}
+
+.pro-filter__search {
+  display: flex;
+  align-items: center;
+  gap: 1.042vw; /* 15 */
+  padding: 1.042vw 1.042vw 1.042vw var(--sidepadding-xs); /* 15 / 15 / 15 / 20 */
+  border-right: 1px solid #dbe2e9;
+}
+
+.pro-filter__search input {
+  flex: 1;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  outline: none;
+}
+
+.pro-filter__search input::placeholder {
+  color: var(--black);
+  opacity: 1;
+}
+
+.pro-filter__search input::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+
+.pro-filter__submit {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 2.778vw; /* 40 */
+  height: 2.778vw;
+  border-radius: 50%;
+  background: var(--red);
+  color: var(--white);
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.pro-filter__submit:hover {
+  transform: scale(1.08);
+}
+
+.pro-filter__submit svg {
+  width: 0.972vw; /* 14 */
+  height: 0.972vw;
+}
+
+/* Alphabet: 14 semibold, 10 apart; active letter gets a red underline */
+.pro-filter__alpha {
+  display: flex;
+  align-items: center;
+  gap: 0.694vw; /* 10 */
+  padding-left: 2.083vw; /* 30 */
+}
+
+.pro-filter__alpha button {
+  position: relative;
+  font-size: 0.972vw; /* 14 */
+  font-weight: 600;
+  line-height: 1.14;
+  color: var(--black);
+  transition: opacity 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.pro-filter__alpha button:hover {
+  opacity: 0.6;
+}
+
+.pro-filter__alpha button::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -0.208vw; /* 3 */
+  height: 0.139vw; /* 2 */
+  background: var(--red);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.pro-filter__alpha button.is-active::after {
+  transform: scaleX(1);
+}
+
+/* Facets */
+.pro-filter__facets {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  background: #eef0f3;
+  border-bottom: 1px solid #dbe2e9;
+}
+
+.pro-filter__facet {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.736vw 1.181vw 1.736vw var(--sidepadding-xs); /* 25 / 17 / 25 / 20 */
+  text-align: left;
+  overflow: hidden;
+  transition: background-color 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.pro-filter__facet + .pro-filter__facet {
+  border-left: 1px solid #dbe2e9;
+}
+
+.pro-filter__facet:hover {
+  background: #e4e8ed;
+}
+
+/* Navy circle with a white down chevron, 20 */
+.pro-filter__chevron {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 1.389vw; /* 20 */
+  height: 1.389vw;
+  border-radius: 50%;
+  background: var(--black);
+  color: var(--white);
+}
+
+/* Rotation lives on the svg so it doesn't fight GSAP's rise on the span */
+.pro-filter__chevron svg {
+  width: 0.556vw; /* 8 */
+  height: 0.556vw;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.pro-filter__facet[aria-expanded="true"] .pro-filter__chevron svg {
+  transform: rotate(180deg);
+}
+
+/* ============================================================
+   Professionals — grid
+   85 sides, 40 below the facets. Five columns 9 apart, rows 57
+   apart. Count sits 70 below the grid, View more 19 below that,
+   113 to the footer.
+   vw values are px / 1440 * 100
+   ============================================================ */
+.pro-grid {
+  padding: 2.778vw var(--sidepaddong-m) 7.847vw; /* 40 / 85 / 113 */
+  background: var(--white);
+}
+
+.pro-grid__list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 3.958vw 0.625vw; /* 57 / 9 */
+}
+
+/* Card: grey panel, portrait on top, name + arrow, position pinned
+   to the bottom so one- and two-line positions share a baseline */
+.pro-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border-radius: 0.278vw; /* 4 */
+  overflow: hidden;
+  background: #f2f4f6;
+}
+
+.pro-card__img {
+  width: 100%;
+  aspect-ratio: 252 / 326;
+  object-fit: cover;
+  object-position: top;
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.pro-card:hover .pro-card__img {
+  transform: scale(1.04);
+}
+
+.pro-card__info {
+  position: relative;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-height: 5.486vw; /* 79 */
+  padding: 0.486vw 0.694vw 0.417vw; /* 7 / 10 / 6 */
+  background: inherit;
+}
+
+.pro-card__name {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.694vw; /* 10 */
+  font-size: 0.972vw; /* 14 */
+  font-weight: 600;
+  line-height: 1.14;
+  color: var(--black);
+}
+
+.pro-card__name .arrow-circle {
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.pro-card:hover .pro-card__name .arrow-circle {
+  transform: translateX(0.278vw); /* 4 */
+}
+
+.pro-card__position {
+  margin-top: auto;
+  padding-top: 0.625vw; /* 9 min between name and position */
+}
+
+/* Count + View more, centred */
+.pro-grid__more {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 4.861vw; /* 70 */
+}
+
+.pro-grid__count {
+  font-size: 1.25vw; /* 18 */
+  font-weight: 400;
+  line-height: 1.11;
+  color: var(--black);
+}
+
+.pro-grid__count strong {
+  font-weight: 600;
+}
+
+/* View more: link-arrow with a down chevron, 23 to the chevron, underline
+   runs 4 past it */
+.pro-grid__view-more {
+  gap: 1.597vw; /* 23 */
+  margin-top: 1.319vw; /* 19 */
+  padding-right: 0.278vw; /* 4 */
+}
+
+.pro-grid__view-more::after {
+  height: 2px;
+}
+
+.pro-grid__view-more:hover svg {
+  transform: translateY(0.208vw); /* 3 */
+}
+
+/* ============================================================
+   Header on light pages (.site-header--light): navy text over
+   the professional hero instead of white
+   ============================================================ */
+.site-header--light {
+  color: var(--black);
+}
+
+.site-header--light .site-header__nav::before {
+  background: rgba(7, 20, 35, 0.15);
+}
+
+.site-header--light .site-header__main a:hover {
+  background: rgba(7, 20, 35, 0.06);
+}
+
+/* ============================================================
+   Professional — hero
+   567 tall, light gradient. Breadcrumbs, 150 to the name, 8 to the
+   position, 11 to the location pills; contacts sit 23 off the bottom.
+   Portrait: 386 wide, 146 from the right, bottom-anchored and
+   contained, so a cutout of any ratio stays whole on the floor.
+   vw values are px / 1440 * 100
+   ============================================================ */
+.pro-hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 39.375vw; /* 567 */
+  padding: var(--top-from-header) var(--sidepadding-xs) 1.597vw; /* 103 / 20 / 23 */
+  overflow: hidden;
+  background: linear-gradient(90deg, #f4f6f9 0%, #c8cfd9 100%);
+}
+
+.pro-hero .breadcrumbs a:hover {
+  color: var(--black);
+}
+
+.pro-hero__intro {
+  position: relative;
+  z-index: 1;
+  margin-top: 10.417vw; /* 150 */
+}
+
+.pro-hero__position {
+  margin-top: 0.556vw; /* 8 */
+  font-size: 1.25vw; /* 18 */
+  line-height: 1.11;
+  color: var(--black);
+}
+
+/* Location pills: navy, 17.5 flag, 6 apart */
+.pro-hero__locations {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.417vw; /* 6 */
+  margin-top: 0.764vw; /* 11 */
+}
+
+.pro-hero__location {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.417vw; /* 6 */
+  padding: 0.313vw 0.625vw 0.313vw 0.313vw; /* 4.5 / 9 / 4.5 / 4.5 */
+  border-radius: 999px;
+  background: var(--black);
+  font-size: 0.972vw; /* 14 */
+  font-weight: 500;
+  line-height: 1.14;
+  color: var(--white);
+  transition: background-color 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.pro-hero__location:hover {
+  background: var(--navy);
+}
+
+.pro-hero__location img {
+  width: 1.215vw; /* 17.5 */
+  height: 1.215vw;
+}
+
+/* Contacts: 40 outlined circle, 13 to the text, 51 between items */
+.pro-hero__contacts {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  gap: 3.542vw; /* 51 */
+  margin-top: auto;
+}
+
+.pro-hero__contacts a {
+  display: flex;
+  align-items: center;
+  gap: 0.903vw; /* 13 */
+  font-size: 1.25vw; /* 18 */
+  line-height: 1.11;
+  color: var(--black);
+}
+
+.pro-hero__icon {
+  display: grid;
+  place-items: center;
+  width: 2.778vw; /* 40 */
+  height: 2.778vw;
+  border: 1px solid #c3ccd6;
+  border-radius: 50%;
+  color: #9aa6b4;
+  transition: background-color 0.3s cubic-bezier(0.22, 1, 0.36, 1), color 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.pro-hero__contacts a:hover .pro-hero__icon {
+  background: var(--black);
+  color: var(--white);
+}
+
+.pro-hero__icon svg {
+  width: 1.111vw; /* 16 */
+  height: 1.111vw;
+}
+
+.pro-hero__portrait {
+  position: absolute;
+  top: 6.111vw; /* 88: top of the photo box */
+  right: 10.139vw; /* 146 */
+  bottom: 0;
+  width: 26.806vw; /* 386 */
+  height: auto;
+  max-width: none;
+  object-fit: contain;
+  object-position: bottom center;
 }
