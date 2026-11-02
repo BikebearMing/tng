@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cambodia — TNG</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/vendor/blaze.css">
+  <link rel="stylesheet" href="assets/vendor/lenis.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       HEADER (site-wide, sits over the banner)
+       SCF options page: site/header
+       Fields: logo (image/svg), top_menu (WP menu "Header top":
+               About / Careers / Contact), main_menu (WP menu "Header main":
+               Professionals / Services / Insights / Locations),
+               search_label, languages (repeater: code, url),
+               locations_mega (auto from Location taxonomy: name, image,
+               link; plus extra_links repeater, e.g. Global Reach),
+               services_mega (auto from Industry and Practice taxonomies:
+               name, link; labels editable)
+       ============================================================ -->
+  <header class="site-header" data-scrolled-at="40">
+    <!-- TODO: swap for the logo SVG once supplied; this is a text stand-in -->
+    <a href="index.html" class="site-header__logo" aria-label="Tilleke &amp; Gibbins">
+      <span>Tilleke</span>
+      <span><em>&amp;</em>Gibbins</span>
+    </a>
+
+    <nav class="site-header__nav" aria-label="Main">
+      <ul class="site-header__top">
+        <li><a href="about.html" class="subhead">About</a></li>
+        <li><a href="careers.html" class="subhead">Careers</a></li>
+        <li><a href="contact.html" class="subhead">Contact</a></li>
+      </ul>
+      <ul class="site-header__main">
+        <li><a href="professionals.html" class="button-label">Professionals</a></li>
+        <li class="has-mega">
+          <a href="#" class="button-label" aria-haspopup="true">Services</a>
+          <!-- Megamenu: industries (active follows hover) | practices in two columns -->
+          <div class="site-header__mega site-header__mega--services">
+            <div class="site-header__mega-col">
+              <p class="subhead site-header__mega-label">Industries</p>
+              <ul class="site-header__mega-list">
+              <li class="is-active"><a href="service.html" class="button-label">Automotive<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+              <li><a href="#" class="button-label">Aviation<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+              <li><a href="#" class="button-label">Consumer products<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+              <li><a href="#" class="button-label">Energy<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+              <li><a href="#" class="button-label">Fintech<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+              <li><a href="#" class="button-label">Insurance<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+              <li><a href="#" class="button-label">Life Sciences<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+              <li><a href="#" class="button-label">Technology<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+              </ul>
+            </div>
+            <div class="site-header__mega-col site-header__mega-col--divided">
+              <p class="subhead site-header__mega-label">Practices</p>
+              <ul class="site-header__mega-links" style="--rows: 6;">
+              <li><a href="#" class="site-header__mega-link">Antitrust and Competition</a></li>
+              <li><a href="#" class="site-header__mega-link">Banking and Finance</a></li>
+              <li><a href="#" class="site-header__mega-link">Capital Markets</a></li>
+              <li><a href="#" class="site-header__mega-link">Compliance and Investigations</a></li>
+              <li><a href="#" class="site-header__mega-link">Corporate/M&amp;A</a></li>
+              <li><a href="#" class="site-header__mega-link">Customs and International Trade</a></li>
+              <li><a href="#" class="site-header__mega-link">Dispute Resolution and Litigation</a></li>
+              <li><a href="#" class="site-header__mega-link">Employment</a></li>
+              <li><a href="practice.html" class="site-header__mega-link">Intellectual Property</a></li>
+              <li><a href="#" class="site-header__mega-link">Real Estate</a></li>
+              <li><a href="#" class="site-header__mega-link">Regulatory Affairs</a></li>
+              <li><a href="#" class="site-header__mega-link">Tax</a></li>
+              </ul>
+            </div>
+          </div>
+        </li>
+        <li><a href="insights.html" class="button-label">Insights</a></li>
+        <li class="has-mega">
+          <a href="#" class="button-label" aria-haspopup="true">Locations</a>
+          <!-- Megamenu: hover/focus opens it; hovering a location swaps the image -->
+          <div class="site-header__mega">
+            <ul class="site-header__mega-list">
+            <li class="is-active"><a href="location.html" class="button-label">Cambodia<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            <li><a href="#" class="button-label">Indonesia<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            <li><a href="#" class="button-label">Laos<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            <li><a href="#" class="button-label">Myanmar<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            <li><a href="#" class="button-label">Thailand<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            <li><a href="#" class="button-label">Vietnam<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            <li><a href="#" class="button-label">Global Reach<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            </ul>
+            <div class="site-header__mega-media" aria-hidden="true">
+            <img src="https://picsum.photos/seed/cambodia/374/452" alt="" class="is-active">
+            <img src="https://picsum.photos/seed/indonesia/374/452" alt="">
+            <img src="https://picsum.photos/seed/laos/374/452" alt="">
+            <img src="https://picsum.photos/seed/myanmar/374/452" alt="">
+            <img src="https://picsum.photos/seed/thailand/374/452" alt="">
+            <img src="https://picsum.photos/seed/vietnam/374/452" alt="">
+            <img src="https://picsum.photos/seed/global/374/452" alt="">
+            </div>
+          </div>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="site-header__utils">
+      <button type="button" class="subhead site-header__search">
+        Search
+        <svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="7.5" cy="7.5" r="6" stroke="currentColor" stroke-width="1.5"/><path d="M12 12l4.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+      <a href="#" class="subhead site-header__lang" aria-label="Language: English">
+        ENG
+        <svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="7.5" stroke="currentColor" stroke-width="1.3"/><ellipse cx="9" cy="9" rx="3.2" ry="7.5" stroke="currentColor" stroke-width="1.3"/><path d="M1.5 9h15M2.8 5.2h12.4M2.8 12.8h12.4" stroke="currentColor" stroke-width="1.3"/></svg>
+      </a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============================================================
+         SECTION: Location hero (navy, white header over it)
+         Location term template (taxonomy-location), template block
+         tng/location-hero
+         Fields (Location term): hero_image (image, cover-cropped, min
+                 1394 x 942). Title = term name. Office block = the
+                 term's office (country term → its office city child):
+                 office_name, phone, email, address, map_query (the
+                 "View on map" link opens Google Maps with the query).
+         Breadcrumbs: Home / Locations / <term>.
+         ============================================================ -->
+    <section class="in-hero loc-hero" data-section="loc-hero">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <p class="subhead"><a href="index.html">Home</a> / <a href="#">Locations</a> / <span aria-current="page">Cambodia</span></p>
+      </nav>
+
+      <h1 class="h1 dark loc-hero__title">Cambodia</h1>
+
+      <div class="loc-hero__office">
+        <p class="body dark loc-hero__office-name">Phnom Penh Office</p>
+        <div class="loc-hero__office-body">
+          <ul class="loc-hero__lines">
+            <li><span class="loc-hero__icon"><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M6.6 2.2a1.5 1.5 0 0 0-1.9-.6L3 2.4A2.3 2.3 0 0 0 1.7 5c.9 5.7 5.6 10.4 11.3 11.3a2.3 2.3 0 0 0 2.6-1.3l.8-1.7a1.5 1.5 0 0 0-.6-1.9l-2.3-1.4a1.5 1.5 0 0 0-1.9.3l-.8.9a9.5 9.5 0 0 1-4.7-4.7l.9-.8a1.5 1.5 0 0 0 .3-1.9L6.6 2.2z"/></svg></span><a href="tel:+85523964210">+855 23 964 210</a></li>
+            <li><span class="loc-hero__icon"><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M1 5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v.4l-9 5.4-9-5.4V5zm0 2.7V15a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V7.7l-8.5 5.1a1 1 0 0 1-1 0L1 7.7z"/></svg></span><a href="mailto:cambodia@tilleke.com">cambodia@tilleke.com</a></li>
+          </ul>
+          <div class="loc-hero__address">
+            <p class="body dark">15th Floor, Unit 1501, Flatiron, Street No. 102 Phnom Penh City Center, Sangkat Srah Chak, Khan Daun Penh, Phnom Penh, 120210</p>
+            <a href="https://www.google.com/maps?q=Tilleke+%26+Gibbins,+Phnom+Penh" class="loc-hero__map" target="_blank" rel="noopener">View on map</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- TODO: placeholder image -->
+      <img src="https://picsum.photos/seed/tng-cambodia/1394/942" alt="" class="in-hero__image">
+    </section>
+
+    <!-- ============================================================
+         On-this-page tabs (the professional page's pro-tabs, six
+         equal columns). Template chrome, not a block; a tab is left
+         out when its section is off or empty. main.js skips tabs
+         whose section isn't on the page.
+         ============================================================ -->
+    <nav class="pro-tabs pro-tabs--six" aria-label="On this page" data-section="pro-tabs">
+      <p class="pro-tabs__label">On this page</p>
+      <ul class="pro-tabs__list">
+        <li><a href="#overview" class="button-label pro-tabs__link is-active" aria-current="true">Overview</a></li>
+        <li><a href="#professionals" class="button-label pro-tabs__link">Professionals</a></li>
+        <li><a href="#insights" class="button-label pro-tabs__link">Insights</a></li>
+        <li><a href="#client-successes" class="button-label pro-tabs__link">Client Successes</a></li>
+        <li><a href="#experience" class="button-label pro-tabs__link">Experience</a></li>
+        <li><a href="#awards" class="button-label pro-tabs__link">Awards &amp; Rankings</a></li>
+      </ul>
+    </nav>
+
+    <!-- ============================================================
+         SECTION: Location overview
+         Location term template, template block tng/location-overview
+         Fields (Location term): show_loc_overview (true/false),
+                 overview_heading (textarea, .h2), overview_text
+                 (wysiwyg, .rich-text at 16/22)
+         Label 33 under the tabs; heading 20 in, text 545 wide ending
+         175 from the right, both 23 under the rule. 129 to the
+         professionals row below.
+         ============================================================ -->
+    <section class="loc-overview" id="overview" data-section="loc-overview" data-toggle="show_loc_overview">
+      <p class="subhead pro-label loc-overview__label">Overview</p>
+      <h2 class="h2 loc-overview__heading">Trusted and innovative legal advisors in the emerging economy of Cambodia.</h2>
+      <div class="rich-text loc-overview__text">
+        <p>Built on a strong local foundation, Tilleke &amp; Gibbins office in Phnom Penh has grown into one of the strongest legal outfits on the ground in Cambodia. The firm’s 16-person team in Phnom Penh comprises a mix of local and foreign legal advisors and other business professionals to provide our clients with well-rounded legal, business, and cultural advice to help them achieve their objectives in the jurisdiction.</p>
+        <p>Under the leadership of partner Jay Cohen, a practitioner with over 15 years of experience in Asia, the firm’s Phnom Penh office handles a full range of corporate and commercial, intellectual property, and regulatory services to a wide range of clients. On the commercial side this includes market entry for multinationals, commercial transactions (M&amp;As, JVs, and business partnerships), labor and employment, and key regulatory matters for highly regulated industries—especially banking and finance, technology, telecommunications, media, e-commerce, energy, consumer goods, and life sciences (e.g., pharmaceuticals and medical devices).</p>
+        <p>Beyond this corporate and commercial work, the firm also boasts a market-leading intellectual property (IP) practice, which clients often see as a key differentiator between our firm and other corporate and commercial firms in the country. Our IP practice seamlessly compliments our strategic market entry advice and sets the firm apart as a premium one-stop shop for all legal needs in Cambodia.</p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION: Location professionals
+         Template block tng/location-professionals: the Module
+         template's related-people block (4 .pro-cards from 384, 9
+         apart). Fields (Location term): show_loc_professionals
+         (true/false). Cards = 4 professionals with this Location term
+         (children included), ordered by position then name; "View all"
+         = professionals page filtered to the location. Hides when none.
+         ============================================================ -->
+    <section class="pro-related pro-related--people" id="professionals" data-section="loc-professionals" data-toggle="show_loc_professionals">
+      <div class="pro-related__head">
+        <h2 class="h2 pro-related__title">Professionals</h2>
+        <a href="professionals.html" class="button-label link-arrow pro-related__link">
+          View all
+          <svg viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+      <ul class="pro-related__cards">
+        <li>
+          <a href="professional.html" class="pro-card">
+            <img src="assets/guy-1.jpg" alt="" class="pro-card__img" loading="lazy">
+            <div class="pro-card__info">
+              <p class="pro-card__name">Alan Adcock<span class="arrow-circle" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></p>
+              <p class="subhead pro-card__position">Partner and Director,<br>Intellectual Property</p>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="professional.html" class="pro-card">
+            <img src="assets/lady-2.jpg" alt="" class="pro-card__img" loading="lazy">
+            <div class="pro-card__info">
+              <p class="pro-card__name">Alisa Koovimol<span class="arrow-circle" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></p>
+              <p class="subhead pro-card__position">Consultant and Patent Agent</p>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="professional.html" class="pro-card">
+            <img src="assets/guy-1.jpg" alt="" class="pro-card__img" loading="lazy">
+            <div class="pro-card__info">
+              <p class="pro-card__name">Alongkorn Tongmee<span class="arrow-circle" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></p>
+              <p class="subhead pro-card__position">Consultant</p>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="professional.html" class="pro-card">
+            <img src="assets/lady-2.jpg" alt="" class="pro-card__img" loading="lazy">
+            <div class="pro-card__info">
+              <p class="pro-card__name">Ampolphan Sriduangchan<span class="arrow-circle" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></p>
+              <p class="subhead pro-card__position">Senior Associate &amp; Patent Agent</p>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ============================================================
+         SECTION: Location insights
+         Template block tng/location-insights: the professional page's
+         related block (3 .post-cards from 378, grey rule above).
+         Fields (Location term): show_loc_insights (true/false).
+         Cards = 3 latest Insights with this Location term; "View all"
+         = insights archive filtered to the location. Hides when none.
+         83 to the client successes below.
+         ============================================================ -->
+    <section class="pro-related loc-insights" id="insights" data-section="loc-insights" data-toggle="show_loc_insights">
+      <div class="pro-related__head">
+        <h2 class="h2 pro-related__title">Insights</h2>
+        <a href="#" class="button-label link-arrow pro-related__link">
+          View all
+          <svg viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+      <ul class="pro-related__cards">
+        <li>
+          <a href="insight.html" class="post-card">
+            <h3 class="h3 post-card__title">Thailand Legal Basics</h3>
+            <p class="body post-card__excerpt">Thailand Legal Basics, a valuable primer for foreign investors, explores all aspects of living and doing business in Thailand.</p>
+            <p class="post-card__foot"><time class="subhead" datetime="2026-12-02">Dec 02, 2026</time><span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></p>
+          </a>
+        </li>
+        <li>
+          <a href="insight.html" class="post-card">
+            <h3 class="h3 post-card__title">Marketing Authorization for Pharmaceuticals in Thailand</h3>
+            <p class="body post-card__excerpt">Obtaining marketing authorization is a fundamental requirement for bringing pharmaceutical products to the Thai market.</p>
+            <p class="post-card__foot"><time class="subhead" datetime="2026-07-01">Jul 01, 2026</time><span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></p>
+          </a>
+        </li>
+        <li>
+          <a href="insight.html" class="post-card">
+            <h3 class="h3 post-card__title">Thomson Reuters Country Update – Thailand: Insurance 2026</h3>
+            <p class="body post-card__excerpt">Tilleke &amp; Gibbins’ insurance specialists in Bangkok provided Thomson Reuters’ latest country update on Thailand’s regulatory framework for the insurance industry.</p>
+            <p class="post-card__foot"><time class="subhead" datetime="2026-07-30">Jul 30, 2026</time><span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></p>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ============================================================
+         SECTION: Client successes (teal texture, parallax)
+         Template block tng/location-successes
+         Fields (Location term): show_loc_successes (true/false),
+                 successes (repeater): title (textarea, .h2), text
+                 (textarea, .body), link (link: "Read more")
+         Label 20 in (rule to 373); cards from 413 to 28 from the right,
+         32 from the top, 192 to the bottom. Card: title 26 in (max
+         384) + "Read more" 32 under it; text 252 wide, 207 from the
+         card's right edge. Hides when the repeater is empty.
+         ============================================================ -->
+    <section class="loc-successes has-parallax" id="client-successes" data-section="loc-successes" data-toggle="show_loc_successes">
+      <img src="assets/hp-location-bg.jpg" alt="" class="parallax-img">
+      <p class="subhead dark pro-label loc-successes__label">Client Successes</p>
+      <ul class="loc-successes__list">
+        <li class="loc-success">
+          <h3 class="h2 loc-success__title">Tilleke &amp; Gibbins Supports CAEX with Strategic Investments from OKX Ventures and HashKey Capital</h3>
+          <a href="#" class="button-label link-arrow loc-success__link">
+            Read more
+            <svg viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <p class="body loc-success__text">Advised a major U.S.-based consumer bank on its market entry into Cambodia, Laos, and Myanmar, including advice on offshore banking services, banking regulations, permitted banking operations, foreign exchange regulations, securities markets, doing business, and tax in each jurisdiction.</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ============================================================
+         SECTION: Location experience (light grey)
+         Template block tng/location-experience: the professional
+         page's experience block. Fields (Location term):
+         show_loc_experience (true/false), experience (wysiwyg: a
+         bullet list). main.js caps it at data-cap (4) + "Read more".
+         ============================================================ -->
+    <section class="pro-experience" id="experience" data-section="loc-experience" data-toggle="show_loc_experience">
+      <p class="subhead pro-label">Experience</p>
+      <div class="rich-text pro-experience__list" data-cap="4">
+        <ul>
+          <li>Actively advising an international group with investments in real estate, telecommunications, and corporate finance on commercial and dispute strategy across multiple ongoing matters in Myanmar, including assessment of operational and litigation risk, jurisdictional considerations, and enforcement options in a volatile regulatory environment.</li>
+          <li>Advised multinational technology and automotive companies in Laos and Myanmar on data privacy and cross-border data transfer compliance, including regulatory assessments for digital platforms and connected-vehicle subscription services.</li>
+          <li>Advised a Japanese pharmaceutical and healthcare products group on a multiparty, cross-border sales and purchase agreement governing supply and distribution arrangements across Myanmar, Thailand, and Vietnam, addressing contractual risk allocation and regulatory implications.</li>
+          <li>Advised a Japanese pharmaceutical and healthcare products group on a multiparty, cross-border sales and purchase agreement governing supply and distribution arrangements across Myanmar, Thailand, and Vietnam, addressing contractual risk allocation and regulatory implications.</li>
+          <!-- TODO: placeholder items (not from the mockup) to show Read more -->
+          <li>Represented a regional energy developer in contract disputes arising from a cross-border power supply project in Laos, including pre-arbitration negotiations and enforcement strategy.</li>
+          <li>Advised a digital asset platform on licensing requirements and market entry in Thailand, including engagement with the regulator on product structuring.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION: Location awards & rankings
+         Template block tng/location-awards: the professional page's
+         related block. Fields (Location term): show_loc_awards
+         (true/false). Cards = 3 latest Awards with this Location term;
+         "View all" = awards archive filtered to the location. Hides
+         when none. 54 top (under the grey experience panel) / 65 bottom.
+         ============================================================ -->
+    <section class="pro-related loc-awards" id="awards" data-section="loc-awards" data-toggle="show_loc_awards">
+      <div class="pro-related__head">
+        <h2 class="h2 pro-related__title">Awards &amp; Rankings</h2>
+        <a href="#" class="button-label link-arrow pro-related__link">
+          View all
+          <svg viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+      <ul class="pro-related__cards">
+        <li>
+          <a href="#" class="post-card">
+            <h3 class="h3 post-card__title">Tilleke &amp; Gibbins Named Regional Litigation Law Firm of the Year at the 2026 ALB SE Asia Law Awards</h3>
+            <p class="body post-card__excerpt">Thailand Legal Basics, a valuable primer for foreign investors, explores all aspects of living and doing business in Thailand.</p>
+            <p class="post-card__foot"><time class="subhead" datetime="2026-12-02">Dec 02, 2026</time><span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></p>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="post-card">
+            <h3 class="h3 post-card__title">Tilleke &amp; Gibbins Highly Ranked in Benchmark Litigation Asia-Pacific 2026</h3>
+            <p class="body post-card__excerpt">Obtaining marketing authorization is a fundamental requirement for bringing pharmaceutical products to the Thai market.</p>
+            <p class="post-card__foot"><time class="subhead" datetime="2026-07-01">Jul 01, 2026</time><span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></p>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="post-card">
+            <h3 class="h3 post-card__title">Thomson Reuters Country Update – Thailand: Insurance 2026</h3>
+            <p class="body post-card__excerpt">Tilleke &amp; Gibbins’ insurance specialists in Bangkok provided Thomson Reuters’ latest country update on Thailand’s regulatory framework for the insurance industry.</p>
+            <p class="post-card__foot"><time class="subhead" datetime="2026-07-30">Jul 30, 2026</time><span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></p>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ============================================================
+         SECTION: Location office (navy) + map
+         Template block tng/location-office. Fields (Location term):
+         show_loc_office (true/false). Content = the term's office
+         city child: name, phone, email, address, map_query (Google
+         Maps keyless embed, query URL-encoded; "&" must be %26).
+         One block per office if a country ever has several.
+         ============================================================ -->
+    <section class="loc-office" data-section="loc-office" data-toggle="show_loc_office">
+      <div class="loc-office__info">
+        <p class="subhead dark pro-label loc-office__label">Office</p>
+        <div class="loc-office__body">
+          <h2 class="h2 dark loc-office__city">Phnom Penh</h2>
+          <div class="loc-office__details">
+            <ul class="loc-hero__lines loc-office__lines">
+              <li><span class="loc-hero__icon"><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M6.6 2.2a1.5 1.5 0 0 0-1.9-.6L3 2.4A2.3 2.3 0 0 0 1.7 5c.9 5.7 5.6 10.4 11.3 11.3a2.3 2.3 0 0 0 2.6-1.3l.8-1.7a1.5 1.5 0 0 0-.6-1.9l-2.3-1.4a1.5 1.5 0 0 0-1.9.3l-.8.9a9.5 9.5 0 0 1-4.7-4.7l.9-.8a1.5 1.5 0 0 0 .3-1.9L6.6 2.2z"/></svg></span><a href="tel:+85523964210">+855 23 964 210</a></li>
+              <li><span class="loc-hero__icon"><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M1 5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v.4l-9 5.4-9-5.4V5zm0 2.7V15a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V7.7l-8.5 5.1a1 1 0 0 1-1 0L1 7.7z"/></svg></span><a href="mailto:cambodia@tilleke.com">cambodia@tilleke.com</a></li>
+            </ul>
+            <p class="body dark loc-office__address">15th Floor, Unit 1501, Flatiron, Street No. 102 Phnom Penh City Center, Sangkat Srah Chak, Khan Daun Penh, Phnom Penh, 120210</p>
+          </div>
+        </div>
+      </div>
+      <iframe class="loc-office__map" src="https://www.google.com/maps?q=Tilleke+%26+Gibbins,+Phnom+Penh&amp;z=14&amp;output=embed" title="Map: Phnom Penh office" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER (site-wide)
+       SCF options page: site/footer
+       Fields: logo (image/svg), social_links (repeater: network, url),
+               newsletter_heading, newsletter_form (Mailchimp/CF7 embed or
+               action url), networks (repeater: logo, url), quick_links
+               (WP menu "Footer quick links", split into 2 columns),
+               copyright, legal_links (WP menu "Footer legal")
+       ============================================================ -->
+  <footer id="footer" class="hp-footer" data-section="footer">
+    <div class="hp-footer__top">
+
+      <div class="hp-footer__brand">
+        <!-- TODO: swap for the logo SVG once supplied; this is a text stand-in -->
+        <a href="index.html" class="hp-footer__logo" aria-label="Tilleke &amp; Gibbins">
+          <span>Tilleke</span>
+          <span><em>&amp;</em>Gibbins</span>
+        </a>
+
+        <ul class="hp-footer__social">
+          <li>
+            <a href="#" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.5-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H8v3h2.5V21h3z"/></svg>
+            </a>
+          </li>
+          <li>
+            <a href="#" aria-label="YouTube">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18.3 5 12 5 12 5s-6.3 0-7.8.4A2.5 2.5 0 0 0 2.4 7.2C2 8.8 2 12 2 12s0 3.2.4 4.8a2.5 2.5 0 0 0 1.8 1.8C5.7 19 12 19 12 19s6.3 0 7.8-.4a2.5 2.5 0 0 0 1.8-1.8c.4-1.6.4-4.8.4-4.8s0-3.2-.4-4.8zM10 15V9l5.2 3L10 15z"/></svg>
+            </a>
+          </li>
+          <li>
+            <a href="#" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.9 8.7H3.6V20h3.3V8.7zM5.3 3.5a1.9 1.9 0 1 0 0 3.8 1.9 1.9 0 0 0 0-3.8zM20.4 13.1c0-3.2-1.7-4.7-4-4.7a3.4 3.4 0 0 0-3.1 1.7V8.7H10V20h3.3v-5.6c0-1.5.3-2.9 2.1-2.9 1.8 0 1.8 1.7 1.8 3V20h3.3v-6.9z"/></svg>
+            </a>
+          </li>
+        </ul>
+
+        <p class="button-label dark hp-footer__newsletter-heading">Subscribe to our newsletter</p>
+        <form class="hp-footer__form" action="#" method="post">
+          <label class="visually-hidden" for="footer-email">Your email</label>
+          <input type="email" id="footer-email" name="email" placeholder="Your email" required>
+          <button type="submit">
+            Subscribe
+            <svg viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </form>
+      </div>
+
+      <div class="hp-footer__nav">
+        <p class="subhead hp-footer__label">Networks</p>
+        <ul class="hp-footer__networks">
+          <li><a href="#"><img src="assets/lexmundi.png" alt="Lex Mundi Member" class="hp-footer__network hp-footer__network--lexmundi"></a></li>
+          <li><a href="#"><img src="assets/multilaw.png" alt="Multilaw" class="hp-footer__network hp-footer__network--multilaw"></a></li>
+          <li><a href="#"><img src="assets/dna.png" alt="Drew Network Asia" class="hp-footer__network hp-footer__network--dna"></a></li>
+        </ul>
+
+        <p class="subhead hp-footer__label hp-footer__label--links">Quick links</p>
+        <div class="hp-footer__quick">
+          <ul class="hp-footer__quick-col">
+            <li><a href="professionals.html" class="button-label dark">Professionals</a></li>
+            <li><a href="#" class="button-label dark">Services</a></li>
+            <li><a href="insights.html" class="button-label dark">Insights</a></li>
+            <li><a href="#" class="button-label dark">Locations</a></li>
+          </ul>
+          <ul class="hp-footer__quick-col">
+            <li><a href="about.html" class="button-label dark">About</a></li>
+            <li><a href="careers.html" class="button-label dark">Careers</a></li>
+            <li><a href="contact.html" class="button-label dark">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="hp-footer__bar">
+      <p class="subhead hp-footer__copyright">&copy; 2026 Tilleke &amp; Gibbins International Ltd. All rights reserved.</p>
+      <ul class="hp-footer__legal">
+        <li><a href="#" class="subhead dark">Privacy Policy</a></li>
+        <li><a href="#" class="subhead dark">Fraudulent Communications</a></li>
+        <li><a href="#" class="subhead dark">Legal Notice</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="assets/vendor/ScrollTrigger.min.js"></script>
+  <script src="assets/vendor/SplitText.min.js"></script>
+  <script src="assets/vendor/blaze-slider.min.js"></script>
+  <script src="assets/vendor/lenis.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Legal Professionals — TNG</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/vendor/blaze.css">
+  <link rel="stylesheet" href="assets/vendor/lenis.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       HEADER (site-wide, sits over the banner)
+       SCF options page: site/header
+       Fields: logo (image/svg), top_menu (WP menu "Header top":
+               About / Careers / Contact), main_menu (WP menu "Header main":
+               Professionals / Services / Insights / Locations),
+               search_label, languages (repeater: code, url),
+               locations_mega (auto from Location taxonomy: name, image,
+               link; plus extra_links repeater, e.g. Global Reach),
+               services_mega (auto from Industry and Practice taxonomies:
+               name, link; labels editable)
+       ============================================================ -->
+  <header class="site-header" data-scrolled-at="40">
+    <!-- TODO: swap for the logo SVG once supplied; this is a text stand-in -->
+    <a href="index.html" class="site-header__logo" aria-label="Tilleke &amp; Gibbins">
+      <span>Tilleke</span>
+      <span><em>&amp;</em>Gibbins</span>
+    </a>
+
+    <nav class="site-header__nav" aria-label="Main">
+      <ul class="site-header__top">
+        <li><a href="about.html" class="subhead">About</a></li>
+        <li><a href="careers.html" class="subhead">Careers</a></li>
+        <li><a href="contact.html" class="subhead">Contact</a></li>
+      </ul>
+      <ul class="site-header__main">
+        <li><a href="professionals.html" class="button-label">Professionals</a></li>
+        <li class="has-mega">
+          <a href="#" class="button-label" aria-haspopup="true">Services</a>
+          <!-- Megamenu: industries (active follows hover) | practices in two columns -->
+          <div class="site-header__mega site-header__mega--services">
+            <div class="site-header__mega-col">
+              <p class="subhead site-header__mega-label">Industries</p>
+              <ul class="site-header__mega-list">
+              <li class="is-active"><a href="service.html" class="button-label">Automotive<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+              <li><a href="#" class="button-label">Aviation<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+              <li><a href="#" class="button-label">Consumer products<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+              <li><a href="#" class="button-label">Energy<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+              <li><a href="#" class="button-label">Fintech<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+              <li><a href="#" class="button-label">Insurance<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+              <li><a href="#" class="button-label">Life Sciences<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+              <li><a href="#" class="button-label">Technology<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+              </ul>
+            </div>
+            <div class="site-header__mega-col site-header__mega-col--divided">
+              <p class="subhead site-header__mega-label">Practices</p>
+              <ul class="site-header__mega-links" style="--rows: 6;">
+              <li><a href="#" class="site-header__mega-link">Antitrust and Competition</a></li>
+              <li><a href="#" class="site-header__mega-link">Banking and Finance</a></li>
+              <li><a href="#" class="site-header__mega-link">Capital Markets</a></li>
+              <li><a href="#" class="site-header__mega-link">Compliance and Investigations</a></li>
+              <li><a href="#" class="site-header__mega-link">Corporate/M&amp;A</a></li>
+              <li><a href="#" class="site-header__mega-link">Customs and International Trade</a></li>
+              <li><a href="#" class="site-header__mega-link">Dispute Resolution and Litigation</a></li>
+              <li><a href="#" class="site-header__mega-link">Employment</a></li>
+              <li><a href="practice.html" class="site-header__mega-link">Intellectual Property</a></li>
+              <li><a href="#" class="site-header__mega-link">Real Estate</a></li>
+              <li><a href="#" class="site-header__mega-link">Regulatory Affairs</a></li>
+              <li><a href="#" class="site-header__mega-link">Tax</a></li>
+              </ul>
+            </div>
+          </div>
+        </li>
+        <li><a href="insights.html" class="button-label">Insights</a></li>
+        <li class="has-mega">
+          <a href="#" class="button-label" aria-haspopup="true">Locations</a>
+          <!-- Megamenu: hover/focus opens it; hovering a location swaps the image -->
+          <div class="site-header__mega">
+            <ul class="site-header__mega-list">
+            <li class="is-active"><a href="location.html" class="button-label">Cambodia<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            <li><a href="#" class="button-label">Indonesia<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            <li><a href="#" class="button-label">Laos<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            <li><a href="#" class="button-label">Myanmar<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            <li><a href="#" class="button-label">Thailand<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            <li><a href="#" class="button-label">Vietnam<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            <li><a href="#" class="button-label">Global Reach<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            </ul>
+            <div class="site-header__mega-media" aria-hidden="true">
+            <img src="https://picsum.photos/seed/cambodia/374/452" alt="" class="is-active">
+            <img src="https://picsum.photos/seed/indonesia/374/452" alt="">
+            <img src="https://picsum.photos/seed/laos/374/452" alt="">
+            <img src="https://picsum.photos/seed/myanmar/374/452" alt="">
+            <img src="https://picsum.photos/seed/thailand/374/452" alt="">
+            <img src="https://picsum.photos/seed/vietnam/374/452" alt="">
+            <img src="https://picsum.photos/seed/global/374/452" alt="">
+            </div>
+          </div>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="site-header__utils">
+      <button type="button" class="subhead site-header__search">
+        Search
+        <svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="7.5" cy="7.5" r="6" stroke="currentColor" stroke-width="1.5"/><path d="M12 12l4.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+      <a href="#" class="subhead site-header__lang" aria-label="Language: English">
+        ENG
+        <svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="7.5" stroke="currentColor" stroke-width="1.3"/><ellipse cx="9" cy="9" rx="3.2" ry="7.5" stroke="currentColor" stroke-width="1.3"/><path d="M1.5 9h15M2.8 5.2h12.4M2.8 12.8h12.4" stroke="currentColor" stroke-width="1.3"/></svg>
+      </a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============================================================
+         SECTION: Career path hero (navy, white header over it)
+         Career path page (child of Careers: Legal Professionals /
+         Operations Professionals / Internship), SCF block:
+         careers/path-hero
+         Fields: show_path_hero (true/false), title (text, default =
+                 page title), intro (textarea)
+         398 min, no image. Title (.h1) on the left, intro (.body, max
+         430) from 720, tops level; 76 under the intro (104 under the
+         title in the mock).
+         ============================================================ -->
+    <section class="lp-hero" data-section="path-hero" data-toggle="show_path_hero">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <p class="subhead"><a href="index.html">Home</a> / <a href="careers.html">Careers</a> / <span aria-current="page">Legal Professionals</span></p>
+      </nav>
+
+      <div class="lp-hero__content">
+        <h1 class="h1 dark">Legal Professionals</h1>
+        <p class="body dark lp-hero__intro">Lawyers at Tilleke are the benchmark of world-class legal practice in Southeast Asia. We build sustainable relationships with our clients, achieve a deep and enduring understanding of their businesses, and work together with them to let our expertise facilitate their commercial goals in the region.</p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION: Career path overview
+         SCF block: careers/path-overview (the service overview's
+         top-label layout)
+         Fields: show_path_overview (true/false), label (text), heading
+                 (textarea, .h2), text (wysiwyg, 16/22)
+         Label 18 in, 16 under the hero, rule to 12 from the right;
+         heading (max 540) 24 and text (from 729, 535 wide) 19 under
+         the rule.
+         ============================================================ -->
+    <section class="svc-overview svc-overview--top-label lp-overview" data-section="path-overview" data-toggle="show_path_overview">
+      <p class="subhead pro-label svc-overview__label">Overview</p>
+      <h2 class="h2 svc-overview__heading">We are always on the lookout for the next legal industry leaders.</h2>
+      <div class="rich-text svc-overview__text">
+        <p>Our ever-expanding team of talented lawyers includes attorneys from across Southeast Asia and around the globe. They are multilingual and hold excellent academic credentials from the world’s most respected legal and academic institutions. In addition, lawyers at Tilleke &amp; Gibbins have impressive experience, having worked on major cases and for leading companies in the region and beyond.</p>
+        <p>We offer meaningful professional growth and leadership opportunities to our team members to ensure that they stay at the top of the legal profession, and we challenge and support our lawyers to expand their expertise to new practice areas and jurisdictions. With highly skilled and knowledgeable lawyers in every legal field and a commitment to master emerging legal topics, our firm promotes the development of niche or broad practices that capitalize on our professionals’ skills and interests.</p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION: Career development (the careers page's people block)
+         SCF block: careers/people; here 99 under the overview text and
+         the text column 335 wide (fitted to the mock)
+         Fields: show_careers_people (true/false), label (text, e.g.
+                 "Career Development"), heading (text), text (wysiwyg),
+                 image (image, cover-cropped, min 1410 x 1386)
+         ============================================================ -->
+    <section class="careers-people lp-people" data-section="careers-people" data-toggle="show_careers_people">
+      <p class="subhead pro-label">Career Development</p>
+      <h2 class="h2 careers-people__heading">Enhancing your professional and<br>personal development together.</h2>
+
+      <div class="careers-people__body">
+        <div class="rich-text careers-people__text">
+          <p>We encourage all of our lawyers to develop not only as excellent practitioners but also as leaders in their field. Tilleke lawyers are respected for the breadth of their knowledge and experience, and we promote that experience by providing you with opportunities to share your insights through conferences, seminars, publications, and more. In all practices and at all levels, our practitioners hold leadership positions in chambers of commerce, charitable foundations, and bodies dedicated to furthering the legal and economic development of the region. Within the firm, we promote rising stars accordingly with pathways to leadership. By developing a consistently strong team that works and grows together, we secure a bright future for our firm to continue our legacy of excellence.</p>
+        </div>
+        <div class="careers-people__media">
+          <!-- TODO: placeholder image -->
+          <img src="https://picsum.photos/seed/tng-legal-people/1410/1386" alt="" class="careers-people__image" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION: Hear it from our team (teal texture, parallax)
+         SCF block: careers/team-stories
+         Fields: show_team_stories (true/false), heading (text), stories
+                 (repeater): role (text, the tab label), professional
+                 (post object: name, position, photo; or text fields),
+                 quote (wysiwyg), image (image, cover, min 696 x 918)
+         191 sides. Heading (.h2) 93 from the top; tabs 28 under it:
+         numbered circles (28; active red) + role (24 semibold) + name
+         (14) under it, 23 between. Card (white, 753 x 484) 63 past the
+         heading column, 91 from the top, 65 bottom: quote (.rich-text)
+         17 in, person (rule, name + grey position) on the bottom;
+         photo 348 wide, 10 / 12 / 13 in. Tabs swap the card (main.js,
+         the shared tabs handler).
+         ============================================================ -->
+    <section class="lp-team has-parallax" data-section="team-stories" data-toggle="show_team_stories">
+      <img src="assets/hp-location-bg.jpg" alt="" class="parallax-img">
+      <div class="lp-team__side">
+        <h2 class="h2 dark lp-team__heading">Hear it from<br>our team</h2>
+        <ul class="lp-team__tabs" role="tablist" aria-label="Team stories">
+          <li>
+            <button type="button" class="lp-team__tab is-active" role="tab" id="lp-team-tab-intern" aria-controls="lp-team-intern" aria-selected="true">
+              <span class="lp-team__num">01</span>
+              <span class="lp-team__role">Intern</span>
+              <span class="lp-team__name">Piyawat Vitooraporn</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="lp-team__tab" role="tab" id="lp-team-tab-associate-1" aria-controls="lp-team-associate-1" aria-selected="false" tabindex="-1">
+              <span class="lp-team__num">02</span>
+              <span class="lp-team__role">Associate</span>
+              <span class="lp-team__name">Chandavya Ing</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="lp-team__tab" role="tab" id="lp-team-tab-associate-2" aria-controls="lp-team-associate-2" aria-selected="false" tabindex="-1">
+              <span class="lp-team__num">03</span>
+              <span class="lp-team__role">Associate</span>
+              <span class="lp-team__name">Chuyen Hong Huu Le</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="lp-team__tab" role="tab" id="lp-team-tab-counsel" aria-controls="lp-team-counsel" aria-selected="false" tabindex="-1">
+              <span class="lp-team__num">04</span>
+              <span class="lp-team__role">Counsel</span>
+              <span class="lp-team__name">Michael Ramirez</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="lp-team__tab" role="tab" id="lp-team-tab-partner" aria-controls="lp-team-partner" aria-selected="false" tabindex="-1">
+              <span class="lp-team__num">05</span>
+              <span class="lp-team__role">Partner</span>
+              <span class="lp-team__name">Yuwadee Thean-ngarm</span>
+            </button>
+          </li>
+        </ul>
+      </div>
+      <div class="lp-team__panels">
+        <article class="lp-team__panel" id="lp-team-intern" role="tabpanel" aria-labelledby="lp-team-tab-intern">
+          <div class="lp-team__body">
+            <blockquote class="rich-text lp-team__quote">
+              <p>My first connection to Tilleke was an internship, and because it was such a positive experience, I chose to return as an attorney when I began my professional career.</p>
+              <p>Since then I’ve been given the chance to represent an incredible range of clients in high-stakes litigation–from the world’s biggest tech companies in trouble over user activity, to foreign embassies in need of legal assistance.</p>
+            </blockquote>
+            <p class="lp-team__person"><strong>Piyawat Vitooraporn</strong><span>Senior Associate (Former Intern)</span></p>
+          </div>
+          <img src="https://picsum.photos/seed/tng-team-intern/696/918" alt="" class="lp-team__image" loading="lazy">
+        </article>
+        <!-- TODO: placeholder quote + photo (panel 1's) -->
+        <article class="lp-team__panel" id="lp-team-associate-1" role="tabpanel" aria-labelledby="lp-team-tab-associate-1" hidden>
+          <div class="lp-team__body">
+            <blockquote class="rich-text lp-team__quote">
+              <p>My first connection to Tilleke was an internship, and because it was such a positive experience, I chose to return as an attorney when I began my professional career.</p>
+              <p>Since then I’ve been given the chance to represent an incredible range of clients in high-stakes litigation–from the world’s biggest tech companies in trouble over user activity, to foreign embassies in need of legal assistance.</p>
+            </blockquote>
+            <p class="lp-team__person"><strong>Chandavya Ing</strong><span>Associate</span></p>
+          </div>
+          <img src="https://picsum.photos/seed/tng-team-associate-1/696/918" alt="" class="lp-team__image" loading="lazy">
+        </article>
+        <!-- TODO: placeholder quote + photo (panel 1's) -->
+        <article class="lp-team__panel" id="lp-team-associate-2" role="tabpanel" aria-labelledby="lp-team-tab-associate-2" hidden>
+          <div class="lp-team__body">
+            <blockquote class="rich-text lp-team__quote">
+              <p>My first connection to Tilleke was an internship, and because it was such a positive experience, I chose to return as an attorney when I began my professional career.</p>
+              <p>Since then I’ve been given the chance to represent an incredible range of clients in high-stakes litigation–from the world’s biggest tech companies in trouble over user activity, to foreign embassies in need of legal assistance.</p>
+            </blockquote>
+            <p class="lp-team__person"><strong>Chuyen Hong Huu Le</strong><span>Associate</span></p>
+          </div>
+          <img src="https://picsum.photos/seed/tng-team-associate-2/696/918" alt="" class="lp-team__image" loading="lazy">
+        </article>
+        <!-- TODO: placeholder quote + photo (panel 1's) -->
+        <article class="lp-team__panel" id="lp-team-counsel" role="tabpanel" aria-labelledby="lp-team-tab-counsel" hidden>
+          <div class="lp-team__body">
+            <blockquote class="rich-text lp-team__quote">
+              <p>My first connection to Tilleke was an internship, and because it was such a positive experience, I chose to return as an attorney when I began my professional career.</p>
+              <p>Since then I’ve been given the chance to represent an incredible range of clients in high-stakes litigation–from the world’s biggest tech companies in trouble over user activity, to foreign embassies in need of legal assistance.</p>
+            </blockquote>
+            <p class="lp-team__person"><strong>Michael Ramirez</strong><span>Counsel</span></p>
+          </div>
+          <img src="https://picsum.photos/seed/tng-team-counsel/696/918" alt="" class="lp-team__image" loading="lazy">
+        </article>
+        <!-- TODO: placeholder quote + photo (panel 1's) -->
+        <article class="lp-team__panel" id="lp-team-partner" role="tabpanel" aria-labelledby="lp-team-tab-partner" hidden>
+          <div class="lp-team__body">
+            <blockquote class="rich-text lp-team__quote">
+              <p>My first connection to Tilleke was an internship, and because it was such a positive experience, I chose to return as an attorney when I began my professional career.</p>
+              <p>Since then I’ve been given the chance to represent an incredible range of clients in high-stakes litigation–from the world’s biggest tech companies in trouble over user activity, to foreign embassies in need of legal assistance.</p>
+            </blockquote>
+            <p class="lp-team__person"><strong>Yuwadee Thean-ngarm</strong><span>Partner</span></p>
+          </div>
+          <img src="https://picsum.photos/seed/tng-team-partner/696/918" alt="" class="lp-team__image" loading="lazy">
+        </article>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION: Opportunities for <career path>
+         Template block tng/career-path-jobs (the careers page's job
+         rows): open Job posts in this career path, newest first.
+         Fields: show_path_jobs (true/false), label (text, default
+                 "Opportunities for"), heading (default = page title)
+         Centred 842 column (299 sides), 91 top. Label, 10 to the .h2,
+         35 to the rows: 63 tall, 10 apart; title (.h4) 19 in,
+         location pill (flag + name) 30 before the red arrow. 150
+         bottom (the mock's white space; a guess).
+         OPEN QUESTION: the user thinks this list may be location-wise
+         (grouped / filtered by location); unconfirmed. Hidden when the
+         path has no open jobs.
+         ============================================================ -->
+    <section class="careers-jobs lp-jobs" data-section="path-jobs" data-toggle="show_path_jobs">
+      <p class="subhead careers-jobs__label">Opportunities for</p>
+      <h2 class="h2 careers-jobs__heading">Legal Professionals</h2>
+      <ul class="careers-jobs__list">
+        <li>
+          <a href="job.html" class="careers-jobs__row">
+            <span class="h4">Associate (Cross-Border Transactions)</span>
+            <span class="job-hero__tag lp-jobs__tag"><img src="assets/flags/thailand.svg" alt="">Thailand</span>
+            <span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a>
+        </li>
+        <!-- TODO: placeholder rows (row 1 repeated) -->
+        <li>
+          <a href="job.html" class="careers-jobs__row">
+            <span class="h4">Associate (Cross-Border Transactions)</span>
+            <span class="job-hero__tag lp-jobs__tag"><img src="assets/flags/thailand.svg" alt="">Thailand</span>
+            <span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a>
+        </li>
+        <li>
+          <a href="job.html" class="careers-jobs__row">
+            <span class="h4">Associate (Cross-Border Transactions)</span>
+            <span class="job-hero__tag lp-jobs__tag"><img src="assets/flags/thailand.svg" alt="">Thailand</span>
+            <span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a>
+        </li>
+        <li>
+          <a href="job.html" class="careers-jobs__row">
+            <span class="h4">Associate (Cross-Border Transactions)</span>
+            <span class="job-hero__tag lp-jobs__tag"><img src="assets/flags/thailand.svg" alt="">Thailand</span>
+            <span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a>
+        </li>
+        <li>
+          <a href="job.html" class="careers-jobs__row">
+            <span class="h4">Associate (Cross-Border Transactions)</span>
+            <span class="job-hero__tag lp-jobs__tag"><img src="assets/flags/thailand.svg" alt="">Thailand</span>
+            <span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ============================================================
+         SECTION: More from (grey link list)
+         SCF block: page/more-from (reusable on any parent page)
+         Fields: show_more_from (true/false), heading (text, default
+                 "More from <parent page title>"), links (repeater of
+                 link fields; default = the parent's child pages)
+         Heading (.h2) 20 in, 52 from the top; links (.h3) from 729 to
+         12 from the right, rows 40 above / below a 1px rule (first row
+         flush with the heading); 76 under the last rule.
+         ============================================================ -->
+    <section class="more-from" data-section="more-from" data-toggle="show_more_from">
+      <h2 class="h2 more-from__title">More from<br>Careers</h2>
+      <ul class="more-from__list">
+        <li><a href="#" class="h3 more-from__link">Operations Professionals<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+        <li><a href="#" class="h3 more-from__link">Internships<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+        <li><a href="careers.html#job-opportunities" class="h3 more-from__link">All Job Opportunities<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER (site-wide)
+       SCF options page: site/footer
+       Fields: logo (image/svg), social_links (repeater: network, url),
+               newsletter_heading, newsletter_form (Mailchimp/CF7 embed or
+               action url), networks (repeater: logo, url), quick_links
+               (WP menu "Footer quick links", split into 2 columns),
+               copyright, legal_links (WP menu "Footer legal")
+       ============================================================ -->
+  <footer id="footer" class="hp-footer" data-section="footer">
+    <div class="hp-footer__top">
+
+      <div class="hp-footer__brand">
+        <!-- TODO: swap for the logo SVG once supplied; this is a text stand-in -->
+        <a href="index.html" class="hp-footer__logo" aria-label="Tilleke &amp; Gibbins">
+          <span>Tilleke</span>
+          <span><em>&amp;</em>Gibbins</span>
+        </a>
+
+        <ul class="hp-footer__social">
+          <li>
+            <a href="#" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.5-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H8v3h2.5V21h3z"/></svg>
+            </a>
+          </li>
+          <li>
+            <a href="#" aria-label="YouTube">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18.3 5 12 5 12 5s-6.3 0-7.8.4A2.5 2.5 0 0 0 2.4 7.2C2 8.8 2 12 2 12s0 3.2.4 4.8a2.5 2.5 0 0 0 1.8 1.8C5.7 19 12 19 12 19s6.3 0 7.8-.4a2.5 2.5 0 0 0 1.8-1.8c.4-1.6.4-4.8.4-4.8s0-3.2-.4-4.8zM10 15V9l5.2 3L10 15z"/></svg>
+            </a>
+          </li>
+          <li>
+            <a href="#" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.9 8.7H3.6V20h3.3V8.7zM5.3 3.5a1.9 1.9 0 1 0 0 3.8 1.9 1.9 0 0 0 0-3.8zM20.4 13.1c0-3.2-1.7-4.7-4-4.7a3.4 3.4 0 0 0-3.1 1.7V8.7H10V20h3.3v-5.6c0-1.5.3-2.9 2.1-2.9 1.8 0 1.8 1.7 1.8 3V20h3.3v-6.9z"/></svg>
+            </a>
+          </li>
+        </ul>
+
+        <p class="button-label dark hp-footer__newsletter-heading">Subscribe to our newsletter</p>
+        <form class="hp-footer__form" action="#" method="post">
+          <label class="visually-hidden" for="footer-email">Your email</label>
+          <input type="email" id="footer-email" name="email" placeholder="Your email" required>
+          <button type="submit">
+            Subscribe
+            <svg viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </form>
+      </div>
+
+      <div class="hp-footer__nav">
+        <p class="subhead hp-footer__label">Networks</p>
+        <ul class="hp-footer__networks">
+          <li><a href="#"><img src="assets/lexmundi.png" alt="Lex Mundi Member" class="hp-footer__network hp-footer__network--lexmundi"></a></li>
+          <li><a href="#"><img src="assets/multilaw.png" alt="Multilaw" class="hp-footer__network hp-footer__network--multilaw"></a></li>
+          <li><a href="#"><img src="assets/dna.png" alt="Drew Network Asia" class="hp-footer__network hp-footer__network--dna"></a></li>
+        </ul>
+
+        <p class="subhead hp-footer__label hp-footer__label--links">Quick links</p>
+        <div class="hp-footer__quick">
+          <ul class="hp-footer__quick-col">
+            <li><a href="professionals.html" class="button-label dark">Professionals</a></li>
+            <li><a href="#" class="button-label dark">Services</a></li>
+            <li><a href="insights.html" class="button-label dark">Insights</a></li>
+            <li><a href="#" class="button-label dark">Locations</a></li>
+          </ul>
+          <ul class="hp-footer__quick-col">
+            <li><a href="about.html" class="button-label dark">About</a></li>
+            <li><a href="careers.html" class="button-label dark">Careers</a></li>
+            <li><a href="contact.html" class="button-label dark">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="hp-footer__bar">
+      <p class="subhead hp-footer__copyright">&copy; 2026 Tilleke &amp; Gibbins International Ltd. All rights reserved.</p>
+      <ul class="hp-footer__legal">
+        <li><a href="#" class="subhead dark">Privacy Policy</a></li>
+        <li><a href="#" class="subhead dark">Fraudulent Communications</a></li>
+        <li><a href="#" class="subhead dark">Legal Notice</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="assets/vendor/ScrollTrigger.min.js"></script>
+  <script src="assets/vendor/SplitText.min.js"></script>
+  <script src="assets/vendor/blaze-slider.min.js"></script>
+  <script src="assets/vendor/lenis.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

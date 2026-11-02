@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — TNG</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/vendor/blaze.css">
+  <link rel="stylesheet" href="assets/vendor/lenis.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       HEADER (site-wide, sits over the banner)
+       SCF options page: site/header
+       Fields: logo (image/svg), top_menu (WP menu "Header top":
+               About / Careers / Contact), main_menu (WP menu "Header main":
+               Professionals / Services / Insights / Locations),
+               search_label, languages (repeater: code, url),
+               locations_mega (auto from Location taxonomy: name, image,
+               link; plus extra_links repeater, e.g. Global Reach),
+               services_mega (auto from Industry and Practice taxonomies:
+               name, link; labels editable)
+       ============================================================ -->
+  <header class="site-header" data-scrolled-at="40">
+    <!-- TODO: swap for the logo SVG once supplied; this is a text stand-in -->
+    <a href="index.html" class="site-header__logo" aria-label="Tilleke &amp; Gibbins">
+      <span>Tilleke</span>
+      <span><em>&amp;</em>Gibbins</span>
+    </a>
+
+    <nav class="site-header__nav" aria-label="Main">
+      <ul class="site-header__top">
+        <li><a href="about.html" class="subhead">About</a></li>
+        <li><a href="careers.html" class="subhead">Careers</a></li>
+        <li><a href="contact.html" class="subhead">Contact</a></li>
+      </ul>
+      <ul class="site-header__main">
+        <li><a href="professionals.html" class="button-label">Professionals</a></li>
+        <li class="has-mega">
+          <a href="#" class="button-label" aria-haspopup="true">Services</a>
+          <!-- Megamenu: industries (active follows hover) | practices in two columns -->
+          <div class="site-header__mega site-header__mega--services">
+            <div class="site-header__mega-col">
+              <p class="subhead site-header__mega-label">Industries</p>
+              <ul class="site-header__mega-list">
+              <li class="is-active"><a href="service.html" class="button-label">Automotive<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+              <li><a href="#" class="button-label">Aviation<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+              <li><a href="#" class="button-label">Consumer products<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+              <li><a href="#" class="button-label">Energy<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+              <li><a href="#" class="button-label">Fintech<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+              <li><a href="#" class="button-label">Insurance<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+              <li><a href="#" class="button-label">Life Sciences<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+              <li><a href="#" class="button-label">Technology<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+              </ul>
+            </div>
+            <div class="site-header__mega-col site-header__mega-col--divided">
+              <p class="subhead site-header__mega-label">Practices</p>
+              <ul class="site-header__mega-links" style="--rows: 6;">
+              <li><a href="#" class="site-header__mega-link">Antitrust and Competition</a></li>
+              <li><a href="#" class="site-header__mega-link">Banking and Finance</a></li>
+              <li><a href="#" class="site-header__mega-link">Capital Markets</a></li>
+              <li><a href="#" class="site-header__mega-link">Compliance and Investigations</a></li>
+              <li><a href="#" class="site-header__mega-link">Corporate/M&amp;A</a></li>
+              <li><a href="#" class="site-header__mega-link">Customs and International Trade</a></li>
+              <li><a href="#" class="site-header__mega-link">Dispute Resolution and Litigation</a></li>
+              <li><a href="#" class="site-header__mega-link">Employment</a></li>
+              <li><a href="practice.html" class="site-header__mega-link">Intellectual Property</a></li>
+              <li><a href="#" class="site-header__mega-link">Real Estate</a></li>
+              <li><a href="#" class="site-header__mega-link">Regulatory Affairs</a></li>
+              <li><a href="#" class="site-header__mega-link">Tax</a></li>
+              </ul>
+            </div>
+          </div>
+        </li>
+        <li><a href="insights.html" class="button-label">Insights</a></li>
+        <li class="has-mega">
+          <a href="#" class="button-label" aria-haspopup="true">Locations</a>
+          <!-- Megamenu: hover/focus opens it; hovering a location swaps the image -->
+          <div class="site-header__mega">
+            <ul class="site-header__mega-list">
+            <li class="is-active"><a href="location.html" class="button-label">Cambodia<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            <li><a href="#" class="button-label">Indonesia<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            <li><a href="#" class="button-label">Laos<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            <li><a href="#" class="button-label">Myanmar<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            <li><a href="#" class="button-label">Thailand<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            <li><a href="#" class="button-label">Vietnam<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            <li><a href="#" class="button-label">Global Reach<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            </ul>
+            <div class="site-header__mega-media" aria-hidden="true">
+            <img src="https://picsum.photos/seed/cambodia/374/452" alt="" class="is-active">
+            <img src="https://picsum.photos/seed/indonesia/374/452" alt="">
+            <img src="https://picsum.photos/seed/laos/374/452" alt="">
+            <img src="https://picsum.photos/seed/myanmar/374/452" alt="">
+            <img src="https://picsum.photos/seed/thailand/374/452" alt="">
+            <img src="https://picsum.photos/seed/vietnam/374/452" alt="">
+            <img src="https://picsum.photos/seed/global/374/452" alt="">
+            </div>
+          </div>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="site-header__utils">
+      <button type="button" class="subhead site-header__search">
+        Search
+        <svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="7.5" cy="7.5" r="6" stroke="currentColor" stroke-width="1.5"/><path d="M12 12l4.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+      <a href="#" class="subhead site-header__lang" aria-label="Language: English">
+        ENG
+        <svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="7.5" stroke="currentColor" stroke-width="1.3"/><ellipse cx="9" cy="9" rx="3.2" ry="7.5" stroke="currentColor" stroke-width="1.3"/><path d="M1.5 9h15M2.8 5.2h12.4M2.8 12.8h12.4" stroke="currentColor" stroke-width="1.3"/></svg>
+      </a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============================================================
+         SECTION: About hero (navy, white header over it)
+         About page, SCF block: about/hero
+         Fields: show_about_hero (true/false), title (textarea, default =
+                 page title), intro (textarea), image (image, cover-cropped,
+                 min 1394 x 942)
+         The insight hero's frame; title + intro on the bottom: title,
+         120 to the intro (.body, max 510), 26 bottom.
+         ============================================================ -->
+    <section class="in-hero about-hero" data-section="about-hero" data-toggle="show_about_hero">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <p class="subhead"><a href="index.html">Home</a> / <span aria-current="page">About</span></p>
+      </nav>
+
+      <div class="about-hero__content">
+        <h1 class="h1 dark about-hero__title">Southeast Asia’s Premier Law Firm</h1>
+        <p class="body dark about-hero__intro">Tilleke &amp; Gibbins is a leading full-service Southeast Asian law firm proudly serving international and local businesses across six countries. We are committed to helping our clients achieve sustainable success in the region, working with them to provide unparalleled legal expertise, rooted in practical commerciality.</p>
+      </div>
+
+      <!-- TODO: placeholder image (the mock shows the teal texture; reusing the
+           6.7 MB texture here as well stopped it painting in headless Chromium) -->
+      <img src="https://picsum.photos/seed/tng-about-hero/1394/942" alt="" class="in-hero__image">
+    </section>
+
+    <!-- ============================================================
+         On-this-page tabs (pro-tabs, five columns: labels at 20 / 314 /
+         637 / 943 / 1269). Template chrome; a tab is left out when its
+         section is off.
+         ============================================================ -->
+    <nav class="pro-tabs pro-tabs--about" aria-label="On this page" data-section="pro-tabs">
+      <p class="pro-tabs__label">On this page</p>
+      <ul class="pro-tabs__list">
+        <li><a href="#overview" class="button-label pro-tabs__link is-active" aria-current="true">Overview</a></li>
+        <li><a href="#numbers" class="button-label pro-tabs__link">Our Numbers</a></li>
+        <li><a href="#code-of-conduct" class="button-label pro-tabs__link">Code of Conduct</a></li>
+        <li><a href="#vision" class="button-label pro-tabs__link">Vision and Mission</a></li>
+        <li><a href="#creed" class="button-label pro-tabs__link">Creed</a></li>
+      </ul>
+    </nav>
+
+    <!-- ============================================================
+         SECTION: About overview
+         SCF block: about/overview (the service overview's top-label
+         layout). Fields: show_about_overview (true/false), heading
+         (textarea, .h2), text (wysiwyg, 16/22)
+         ============================================================ -->
+    <section class="svc-overview svc-overview--top-label about-overview" id="overview" data-section="about-overview" data-toggle="show_about_overview">
+      <p class="subhead pro-label svc-overview__label">Overview</p>
+      <h2 class="h2 svc-overview__heading">Our commercial focus, local knowledge, and extraordinary service make us the full-service law firm of choice in Southeast Asia.</h2>
+      <div class="rich-text svc-overview__text">
+        <p>Tilleke &amp; Gibbins is a leading Southeast Asian regional law firm with over 250 lawyers and consultants practicing in Cambodia, Indonesia, Laos, Myanmar, Thailand, and Vietnam. We provide full-service legal solutions to the top investors and high-growth companies that drive economic expansion in Asia.<br>Established in Bangkok in 1890, we have since grown into the largest independent law firm in Thailand and a leading international firm across Southeast Asia due to our commercial focus, local knowledge, and extraordinary service.</p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION: About values (accordion + image)
+         SCF block: about/values
+         Fields: show_about_values (true/false), items (repeater): title
+                 (text), text (wysiwyg); image (image, cover, min 1404 x 1334)
+         Accordion 20 in, 595 wide; image 111 past it to 12 from the
+         right, 667 tall, top level with the first rule; 69 bottom.
+         One item open at a time (main.js); the first starts open.
+         ============================================================ -->
+    <section class="about-values" data-section="about-values" data-toggle="show_about_values">
+      <div class="about-acc">
+          <div class="about-acc__item is-open">
+            <h3 class="about-acc__heading"><button type="button" class="h3 about-acc__btn" aria-expanded="true" aria-controls="about-acc-commercial-focus">Commercial Focus<span class="about-acc__icon" aria-hidden="true"></span></button></h3>
+            <div class="about-acc__panel" id="about-acc-commercial-focus">
+              <div class="about-acc__inner">
+                <div class="rich-text about-acc__text"><p>Your long-term success is our utmost priority, and we take the time to learn about your unique corporate culture, operational needs, and commercial goals, to determine how we can best provide value to your organization. From highly technical experience in specific fields, to a deep understanding of your business, our team is committed to providing high-quality legal advice, tailored to meet your unique needs, in order to help you succeed.</p></div>
+              </div>
+            </div>
+          </div>
+          <!-- TODO: placeholder copy (Commercial Focus's) -->
+          <div class="about-acc__item">
+            <h3 class="about-acc__heading"><button type="button" class="h3 about-acc__btn" aria-expanded="false" aria-controls="about-acc-extraordinary-service">Extraordinary Service<span class="about-acc__icon" aria-hidden="true"></span></button></h3>
+            <div class="about-acc__panel" id="about-acc-extraordinary-service">
+              <div class="about-acc__inner">
+                <div class="rich-text about-acc__text"><p>Your long-term success is our utmost priority, and we take the time to learn about your unique corporate culture, operational needs, and commercial goals, to determine how we can best provide value to your organization.</p></div>
+              </div>
+            </div>
+          </div>
+          <!-- TODO: placeholder copy (Commercial Focus's) -->
+          <div class="about-acc__item">
+            <h3 class="about-acc__heading"><button type="button" class="h3 about-acc__btn" aria-expanded="false" aria-controls="about-acc-local-knowledge">Local Knowledge<span class="about-acc__icon" aria-hidden="true"></span></button></h3>
+            <div class="about-acc__panel" id="about-acc-local-knowledge">
+              <div class="about-acc__inner">
+                <div class="rich-text about-acc__text"><p>Your long-term success is our utmost priority, and we take the time to learn about your unique corporate culture, operational needs, and commercial goals, to determine how we can best provide value to your organization.</p></div>
+              </div>
+            </div>
+          </div>
+      </div>
+      <!-- TODO: placeholder image -->
+      <img src="https://picsum.photos/seed/tng-about/1404/1334" alt="" class="about-values__image" loading="lazy">
+    </section>
+
+    <!-- ============================================================
+         SECTION: Our numbers (teal texture, parallax)
+         SCF block: about/numbers
+         Fields: show_about_numbers (true/false), numbers (repeater, 4):
+                 value (text: counts up, keeps a suffix like "+"),
+                 label (text)
+         Staggered: row 1 at 24 from the top (items at 20 / 733), row 2
+         311 lower (380 / 1017); Roboto Condensed 198, label 14/600
+         under it; 104 bottom.
+         ============================================================ -->
+    <section class="about-numbers has-parallax" id="numbers" data-section="about-numbers" data-toggle="show_about_numbers">
+      <img src="assets/hp-location-bg.jpg" alt="" class="parallax-img">
+      <h2 class="visually-hidden">Our Numbers</h2>
+      <ul class="about-numbers__list">
+        <li class="about-numbers__item">
+          <p class="counter dark about-numbers__num">250+</p>
+          <p class="subhead dark about-numbers__label">Lawyers</p>
+        </li>
+        <li class="about-numbers__item">
+          <p class="counter dark about-numbers__num">135</p>
+          <p class="subhead dark about-numbers__label">Years of Service</p>
+        </li>
+        <li class="about-numbers__item">
+          <p class="counter dark about-numbers__num">50</p>
+          <p class="subhead dark about-numbers__label">Firm of the Year Awards (2025)</p>
+        </li>
+        <li class="about-numbers__item">
+          <p class="counter dark about-numbers__num">7</p>
+          <p class="subhead dark about-numbers__label">Offices</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ============================================================
+         SECTION: Code of conduct
+         SCF block: about/code-of-conduct (top-label layout)
+         Fields: show_about_code (true/false), heading (textarea, .h2),
+                 text (wysiwyg, 16/22), link (link/file: the code PDF)
+         Label 29 from the top, rule to 16 from the right; heading max
+         540; text from 729, 526 wide (185 from the right); link 24
+         under the text; 172 bottom.
+         ============================================================ -->
+    <section class="svc-overview svc-overview--top-label about-code" id="code-of-conduct" data-section="about-code" data-toggle="show_about_code">
+      <p class="subhead pro-label svc-overview__label">Code of Conduct</p>
+      <h2 class="h2 svc-overview__heading">Our Code of Business Conduct is intended to help give all of our stakeholders direction as to our responsibilities and the standards we are expected to uphold.</h2>
+      <div class="about-code__body">
+        <div class="rich-text svc-overview__text">
+          <p>All of us at Tilleke &amp; Gibbins have a responsibility to uphold the core values that drive our firm’s success. Foremost among these values is integrity. Our clients trust us to act with integrity in handling their most sensitive legal issues and solving their most complex business problem.</p>
+          <p>By acting with integrity and doing things the right way, everyone in the firm—from 1890 up until today—has contributed to building a strong firm with an outstanding reputation for legal knowledge and client service.</p>
+          <p>Our Code of Business Conduct serves as an overview of our expected behavior and a reminder of our obligations to our clients, to our communities, and to ourselves.</p>
+        </div>
+        <a href="#" class="button-label link-arrow about-code__link">
+          Code of Business Conduct
+          <svg viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION: Vision and mission
+         SCF block: about/vision
+         Fields: show_about_vision (true/false), items (repeater, 2):
+                 label (text: "Vision" / "Mission"), text (textarea,
+                 .h3), image (image, cover, min 1400 x 1098)
+         Tabs (.h1 buttons, 10 in; active black + red arrow, others
+         grey) | 1px rule at 350 | text 30 past it (277 wide) | image
+         67 past the text to 14 from the right, 549 tall. 90 bottom.
+         Tabs swap the text + image (main.js, the contact tabs handler).
+         ============================================================ -->
+    <section class="about-vision" id="vision" data-section="about-vision" data-toggle="show_about_vision">
+      <ul class="about-vision__tabs" role="tablist" aria-label="Vision and mission">
+        <li><button type="button" class="h1 about-vision__tab is-active" role="tab" id="about-vision-tab-vision" aria-controls="about-vision-vision" aria-selected="true">Vision<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button></li>
+        <li><button type="button" class="h1 about-vision__tab" role="tab" id="about-vision-tab-mission" aria-controls="about-vision-mission" aria-selected="false" tabindex="-1">Mission<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button></li>
+      </ul>
+      <div class="about-vision__panels">
+        <div class="about-vision__panel" id="about-vision-vision" role="tabpanel" aria-labelledby="about-vision-tab-vision">
+          <p class="h3 about-vision__text">Our objective is to be the leading regional full-service law practice serving international business and civil society</p>
+          <!-- TODO: placeholder image -->
+          <img src="https://picsum.photos/seed/tng-vision/1400/1098" alt="" class="about-vision__image" loading="lazy">
+        </div>
+          <!-- TODO: placeholder copy (Vision's) -->
+        <div class="about-vision__panel" id="about-vision-mission" role="tabpanel" aria-labelledby="about-vision-tab-mission" hidden>
+          <p class="h3 about-vision__text">Our objective is to be the leading regional full-service law practice serving international business and civil society</p>
+          <!-- TODO: placeholder image -->
+          <img src="https://picsum.photos/seed/tng-mission/1400/1098" alt="" class="about-vision__image" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION: Creed
+         SCF block: about/creed
+         Fields: show_about_creed (true/false), columns (repeater, 2):
+                 heading (text, .h2), list (wysiwyg: a bullet list)
+         Label 20 in (rule to 16 from the right); headings 26 under the
+         rule; columns from 20 (530 wide) and 729; lists 18/22 with
+         plain discs, no gap between items. 111 bottom.
+         ============================================================ -->
+    <section class="about-creed" id="creed" data-section="about-creed" data-toggle="show_about_creed">
+      <p class="subhead pro-label about-creed__label">Creed</p>
+      <div class="about-creed__col">
+        <h2 class="h2">As a Law Firm</h2>
+        <div class="rich-text about-creed__list">
+          <ul>
+            <li>We care.</li>
+            <li>We value integrity.</li>
+            <li>We are knowledgeable, dependable, responsible, perceptive, practical, realistic, competitive, community oriented.</li>
+            <li>We have style, coupled with a sense of history</li>
+            <li>We are a business, yet family.</li>
+            <li>Clients are our guests.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="about-creed__col">
+        <h2 class="h2">Our Facilities</h2>
+        <div class="rich-text about-creed__list">
+          <ul>
+            <li>Reflect: character, comfort, soul, stability, elegance.</li>
+            <li>Impress yet relax.</li>
+            <li>Are efficient yet friendly.</li>
+            <li>Are professional and reassuring.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION: More from (grey link list)
+         SCF block: page/more-from (reusable on any parent page)
+         Fields: show_more_from (true/false), heading (text, default
+                 "More from <parent page title>"), links (repeater of
+                 link fields; default = the parent's child pages)
+         Heading (.h2) 20 in, 52 from the top; links (.h3) from 729 to
+         12 from the right, rows 40 above / below a 1px rule (first row
+         flush with the heading); 76 under the last rule.
+         ============================================================ -->
+    <section class="more-from" data-section="more-from" data-toggle="show_more_from">
+      <h2 class="h2 more-from__title">More from<br>About</h2>
+      <ul class="more-from__list">
+        <li><a href="about.html" class="h3 more-from__link" aria-current="page">Overview</a></li>
+        <li><a href="#" class="h3 more-from__link">History</a></li>
+        <li><a href="awards.html" class="h3 more-from__link">Awards &amp; Rankings</a></li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER (site-wide)
+       SCF options page: site/footer
+       Fields: logo (image/svg), social_links (repeater: network, url),
+               newsletter_heading, newsletter_form (Mailchimp/CF7 embed or
+               action url), networks (repeater: logo, url), quick_links
+               (WP menu "Footer quick links", split into 2 columns),
+               copyright, legal_links (WP menu "Footer legal")
+       ============================================================ -->
+  <footer id="footer" class="hp-footer" data-section="footer">
+    <div class="hp-footer__top">
+
+      <div class="hp-footer__brand">
+        <!-- TODO: swap for the logo SVG once supplied; this is a text stand-in -->
+        <a href="index.html" class="hp-footer__logo" aria-label="Tilleke &amp; Gibbins">
+          <span>Tilleke</span>
+          <span><em>&amp;</em>Gibbins</span>
+        </a>
+
+        <ul class="hp-footer__social">
+          <li>
+            <a href="#" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.5-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H8v3h2.5V21h3z"/></svg>
+            </a>
+          </li>
+          <li>
+            <a href="#" aria-label="YouTube">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18.3 5 12 5 12 5s-6.3 0-7.8.4A2.5 2.5 0 0 0 2.4 7.2C2 8.8 2 12 2 12s0 3.2.4 4.8a2.5 2.5 0 0 0 1.8 1.8C5.7 19 12 19 12 19s6.3 0 7.8-.4a2.5 2.5 0 0 0 1.8-1.8c.4-1.6.4-4.8.4-4.8s0-3.2-.4-4.8zM10 15V9l5.2 3L10 15z"/></svg>
+            </a>
+          </li>
+          <li>
+            <a href="#" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.9 8.7H3.6V20h3.3V8.7zM5.3 3.5a1.9 1.9 0 1 0 0 3.8 1.9 1.9 0 0 0 0-3.8zM20.4 13.1c0-3.2-1.7-4.7-4-4.7a3.4 3.4 0 0 0-3.1 1.7V8.7H10V20h3.3v-5.6c0-1.5.3-2.9 2.1-2.9 1.8 0 1.8 1.7 1.8 3V20h3.3v-6.9z"/></svg>
+            </a>
+          </li>
+        </ul>
+
+        <p class="button-label dark hp-footer__newsletter-heading">Subscribe to our newsletter</p>
+        <form class="hp-footer__form" action="#" method="post">
+          <label class="visually-hidden" for="footer-email">Your email</label>
+          <input type="email" id="footer-email" name="email" placeholder="Your email" required>
+          <button type="submit">
+            Subscribe
+            <svg viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </form>
+      </div>
+
+      <div class="hp-footer__nav">
+        <p class="subhead hp-footer__label">Networks</p>
+        <ul class="hp-footer__networks">
+          <li><a href="#"><img src="assets/lexmundi.png" alt="Lex Mundi Member" class="hp-footer__network hp-footer__network--lexmundi"></a></li>
+          <li><a href="#"><img src="assets/multilaw.png" alt="Multilaw" class="hp-footer__network hp-footer__network--multilaw"></a></li>
+          <li><a href="#"><img src="assets/dna.png" alt="Drew Network Asia" class="hp-footer__network hp-footer__network--dna"></a></li>
+        </ul>
+
+        <p class="subhead hp-footer__label hp-footer__label--links">Quick links</p>
+        <div class="hp-footer__quick">
+          <ul class="hp-footer__quick-col">
+            <li><a href="professionals.html" class="button-label dark">Professionals</a></li>
+            <li><a href="#" class="button-label dark">Services</a></li>
+            <li><a href="insights.html" class="button-label dark">Insights</a></li>
+            <li><a href="#" class="button-label dark">Locations</a></li>
+          </ul>
+          <ul class="hp-footer__quick-col">
+            <li><a href="about.html" class="button-label dark">About</a></li>
+            <li><a href="careers.html" class="button-label dark">Careers</a></li>
+            <li><a href="contact.html" class="button-label dark">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="hp-footer__bar">
+      <p class="subhead hp-footer__copyright">&copy; 2026 Tilleke &amp; Gibbins International Ltd. All rights reserved.</p>
+      <ul class="hp-footer__legal">
+        <li><a href="#" class="subhead dark">Privacy Policy</a></li>
+        <li><a href="#" class="subhead dark">Fraudulent Communications</a></li>
+        <li><a href="#" class="subhead dark">Legal Notice</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="assets/vendor/ScrollTrigger.min.js"></script>
+  <script src="assets/vendor/SplitText.min.js"></script>
+  <script src="assets/vendor/blaze-slider.min.js"></script>
+  <script src="assets/vendor/lenis.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

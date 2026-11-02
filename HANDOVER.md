@@ -32,6 +32,18 @@ insight.html            insight single, Standard template: in-hero, in-bar, in-a
 insight-no-image.html   same template with the featured image off (in-hero--no-image), 3 taxonomy rows
 insight-module.html     insight single, Module template: in-hero--module, in-panels, in-findings, related professionals, in-download, in-share-row, related insights (no reading bar)
 contact.html            contact page: page-hero--compact, contact-offices (city tabs + details + Google map)
+location.html           location term page (Cambodia): loc-hero, pro-tabs--six, loc-overview, people row,
+                        insights, loc-successes, experience, awards, loc-office (map)
+service.html            industry / practice term page (Automotive): svc-hero (country tabs → contacts),
+                        pro-tabs--six, svc-overview, svc-subs, svc-successes (slider), experience,
+                        people, insights, awards
+practice.html           practice term page (Intellectual Property): service template, svc-overview--top-label
+                        with a quote, no experience section (toggled off in the mock)
+subpractice.html        subpractice = child practice term (Commercialization): service hero (4-level
+                        breadcrumb), no on-this-page tabs, top-label overview with a heading,
+                        "Representative Matters" (the experience block); rest of the mock pending
+about.html              about page: about-hero, pro-tabs--about (5), top-label overview, about-values
+                        (accordion + image), about-numbers (staggered counters), about-code
 careers.html            careers page: careers-hero, career-paths, careers-values (slider), careers-people, careers-cta, careers-jobs
 under-development.html  full-height navy placeholder (page-hero--ud): breadcrumb, h1, two link-arrows;
                         used in WP for every route with no design yet (simplified static header, no megamenus)
@@ -190,9 +202,97 @@ Placeholder images (picsum.photos) remain on the location cards, the insights fe
 - **careers-cta** (toggle `show_careers_cta`): `#eef0f3` panel 15 in from the sides, 101 top / bottom, centred `.h2` + `.link-arrow` 21 under it.
 - **careers-jobs** (toggle `show_careers_jobs`): centred 853 column, 67 top (from the CTA panel) / bottom. Grey `.subhead` label, 10 to `.h2`, 35 to the rows. Rows are links: 63 tall, bordered, 10 apart; `.h4` place 19 in, grey count 24 before a 20 red arrow, 20 from the right; card hover. Automatic from Location terms with open Job posts (+ count, filtered listing link). `.careers-jobs__list` is a stagger group; "View all" centred 35 below.
 
+## Location page (2026-11-03)
+
+`location.html`, Cambodia as the example; becomes the `taxonomy-location` term template in WP (replacing the under-development placeholder). Header megamenu "Cambodia" links to it on every page. Mostly reuse:
+
+- **loc-hero**: the `in-hero` frame + `.in-hero__image`. Title (`.h1`) 150 under the breadcrumbs, office block 91 below: name (`.body` 600) over a 465 rule (11 under), phone / email rows 14 under it (30 outlined circles `.loc-hero__icon`, 10 to the 14px text, 7 apart; `.loc-hero__lines` is a stagger group), address `.body` 50 past the email + underlined "View on map" (Google Maps link) 14 below; 23 bottom. Hero ends ~574 (mock 567). Plain navy (mock is faintly textured, like careers).
+- **pro-tabs--six**: the professional tabs in six fixed columns 226 / 254 / 241 / 259 / 214 / rest (labels at 20 / 246 / 500 / 741 / 1000 / 1214 in both the location and service mocks; the last tab's underline tail is 50 so it fits), "On this page" 14 from the top, `nowrap`, underline = 20 + label + 70. Overview / Professionals / Insights / Client Successes / Experience / Awards & Rankings.
+- **loc-overview**: `.pro-label` 33 under the tabs (rule to 20 from the right), `.h2` heading 20 in (max 500), `.rich-text` at 16/22, 545 wide ending 175 from the right, both 23 under the rule; 129 bottom. Mock copy is likely Inter: Inter Tight wraps 6/9/6 vs the mock's 7/10/6 at the measured box (kept the box).
+- **Professionals**: `.pro-related--people` (Module template block) unchanged.
+- **Insights**: `.pro-related.loc-insights` (rule above via `+`), 83 bottom.
+- **loc-successes** (Client Successes): teal texture parallax, no tint. White `.pro-label` 20 in (rule to 373, 8 under the card top); cards from 413 to 28 from the right, 32 top / 192 bottom, 20 apart (a list; repeater on the term). Card: `.h2` title max 384, 22 / 26 in, `.link-arrow` "Read more" 32 under it; `.body` text 256 (mock 252, +4 so the 8 lines hold) level with the title, 207 from the right. Built as a stack, not a slider.
+- **Experience**: the professional `pro-experience` block unchanged (cap 4 + Read more).
+- **Awards**: `.pro-related.loc-awards`, 54 top / 65 bottom.
+- **loc-office**: `--navy` strip, info 29 in: `.pro-label` "Office" 22 down (rule to 706), 20 under it the city `.h2` + at 375 the phone / email rows (hero's `.loc-hero__lines`, 10 apart) and address (max 258, fitted to the mock's 4 lines) 26 below. Map iframe 704 x 441, 9 top / bottom, 12 right, 18 past the info, `z=14`.
+- Term fields to add in WP: hero image, overview heading + text, client successes repeater (title, text, link), experience (wysiwyg), section toggles; office data comes from the existing city child term fields.
+
+## Service page (2026-11-03)
+
+`service.html`, Automotive as the example; becomes the `taxonomy-industry` / `taxonomy-practice` term template. Megamenu "Automotive" links to it on every page. Mock had no markers for the hero/overview (scale taken from the page width, 1.907).
+
+- **svc-hero**: `in-hero` frame, text on the bottom (`margin-top: auto`): `.h1`, 97 to the country tabs (`.button-label` buttons 16 apart, `rgba(159,178,197,.5)`, active white + 45-wide 2px red underline 4 under the label), 30 to the contacts (`.svc-contact` 291 wide, 1px left rule, 10 in: `.h4` name link, 6 to phone + email `.body` 13 apart), 32 bottom. Tabs are ARIA tabs driven by the contact page's handler (main.js now runs it on `.contact-offices, .svc-hero__content`). Panels are left out of the SplitText reveals (`revealTargets` skips `.svc-hero__panels`; hidden panels would split at zero width) and rise as GROUPS. Countries 2–6 repeat Cambodia's contacts (TODO). WP: term repeater contacts = location + professionals relationship. **Client rules (gelo.c, Figma comments) for industry / practice / subgroup pages:** (1) hide a country tab that has no contacts; (2) the active tab on load follows the visitor's country (Cambodia / Indonesia / Laos / Myanmar / Vietnam → that one), otherwise Thailand is the default; fall back to Thailand, then the first visible tab, if the pick is hidden. The site is behind Cloudflare (`CF-IPCountry`), but HTML may be edge-cached, so pick the tab client-side rather than in the server render. The static mock still defaults to Cambodia with all six tabs.
+- **svc-overview**: 40 under the tabs; `.h2` heading 20 in (max 470), right column from 729: `.pro-label` (rule to 95 from the right) + `.rich-text` 16/22, 543 wide, 25 under the rule. Line counts match the mock (4/12/3).
+- **svc-subs** (Subpractices): label 204 in both sides, 3 cards 333 × 249, 18 apart, 38 under the rule; card = post-card border, 130 image, `.h3` 10 under it / 12 in, red arrow 15 from right/bottom. 115 top (measured on the practice mock: overview text → label), 80 bottom. WP: child terms + an image field on each term.
+- **svc-successes**: `loc-successes` as a Blaze slider (global init), cards from 416, 42 top, min 268; prev / next = `careers-values__btn` at 60, 10 apart, 22 under; 175 bottom. Slides 2–3 repeat slide 1 (TODO). `.loc-success__title` max is now 400 (shared) so "global consumer bank" holds one line.
+- **Experience / Professionals / Insights / Awards**: the location page's blocks; professionals (`.svc-people`) 46 under the grey panel, then the stacked `pro-related` rules (66 / 54).
+
+### Practice + subpractice variants (2026-11-03)
+
+- **`svc-overview--top-label`**: the "Overview" label spans both columns (rule to 20 from the right); left item and text both 23 under the rule. Practice puts a quote there (`figure.svc-overview__quote`: `.h3` blockquote max 420 + `.subhead` source 12 under it); subpractice a `.h2` heading (max 520 on `--sub`, two lines in the mock) and 47 bottom before the grey panel.
+- **practice.html** (IP): the mock has no Experience section, so it and its tab are dropped (the template rule: no section → no tab); the remaining five tabs keep the fixed columns from the left.
+- **subpractice.html** (Commercialization): hero breadcrumb Home / Practices / Intellectual Property / Commercialization, no pro-tabs, Representative Matters = `pro-experience` with that label. Subpractice cards on the service/practice pages link here; the megamenu's "Intellectual Property" links to practice.html.
+- Client contact rules (hide empty countries, geo default) apply to all three hero variants — see the service section above.
+
+## About page (2026-11-03)
+
+Header "About" links (top row + footer quick links) point to `about.html` on every page.
+
+- **about-hero**: `in-hero` frame, title (`.h1`, max 540) + intro (`.body`, max 510) on the bottom 120 apart, 26 bottom. Image is a picsum placeholder (the mock shows the teal texture — but using `hp-location-bg.jpg` both here and in Our Numbers made headless Chromium paint neither; one use per page is fine).
+- **pro-tabs--about**: five columns 294 / 323 / 306 / 326 / rest (labels at 20 / 314 / 637 / 943 / 1269).
+- **Overview**: `svc-overview--top-label` + `.about-overview` (heading max 530, five lines).
+- **about-values**: accordion 595 wide from 20 + image 111 past it to 12 from the right (667 tall). Items between rules, `.h3` button 19 above/below (62 closed), CSS "+" that turns into "−" when open (the mock shows "+" on the open item too); panel height animates via `grid-template-rows: 0fr → 1fr`; one open at a time (main.js), refreshes ScrollTrigger after. The `.h3` buttons are excluded from SplitText (HEADINGS). Items 2–3 repeat item 1's copy (TODO). 150 top is a guess.
+- **about-numbers**: teal texture parallax, four `.counter`s (count up, keep "+") at Roboto Condensed 198 / −0.07em (key-findings style), staggered by nth-child margins: row 1 at 20 / 733, row 2 311 lower at 380 / 1017; labels `.subhead` 600 just under the digits; 24 top / 104 bottom.
+- **about-vision** (`#vision`): `.h1` tab buttons 10 in (active black + 20 red arrow 11 past, others `#c4cad2`), panels from 350 behind a 1px rule: `.h3` text 30 past it (277 wide, 5 lines like the mock) + image 67 past the text to 14 from the right, 549 tall; 90 bottom. ARIA tabs via the shared contact-tabs handler; tabs and panels are left out of SplitText (rise as GROUPS). Mission repeats Vision's copy (TODO); images are picsum.
+- **about-creed** (`#creed`): `.pro-label` (rule to 16 from the right), two columns (530 from 20; 729), `.h2` 26 under the rule, `.rich-text` lists 13 below with plain discs (18 indent, no gap between items); 111 bottom.
+- **about-code**: top-label layout, label 29 from the top (rule to 16 from the right), heading max 560 (mock 540; fitted to its six lines), text 526 wide, `.link-arrow` 24 below, 172 bottom.
+- **more-from** (reusable, last section before the footer): grey `#eef0f3`, `.h2` "More from<br>About" 20 in / 52 down; `.h3` links from 729 to 12 from the right, rows 40 above / below a 1px `#d3dae2` rule (first row flush, 11 under the heading top), 76 under the last rule; hover red. WP: a page block listing the parent's child pages (heading defaults to "More from <parent>"). History and Awards & Rankings link to `#` until those pages exist.
+
+## Insights archive (2026-11-03)
+
+`insights.html` (WP: the posts page / insight archive). Header "Insights" links (main nav + footer quick links) and the insight pages' breadcrumbs point to it.
+
+- **ins-hero**: `in-hero` frame, text on the bottom: `.h1`, 64 to the intro (`.body`, max 440: six lines like the mock), 18 to a white `.link-arrow` "Subscribe to Updates", 28 bottom. Image is the teal texture placeholder.
+- **ins-featured**: light grey `#eef0f3`; `.pro-label` "Featured" 14 from the top (rule to 16 from the right); grid of text + image (416 x 335, 21 under the rule, 19 from the right, 21 from the bottom). Text: date (`.subhead` `#718396`) 23 under the rule, 10 to the `.h2` title (links to the post), 21 to the `.body` `#718396` excerpt (max 310, 7 lines), min 98 to "Read more" pinned to the bottom (5 above the image's bottom edge). WP: post-object field picks the insight. Image is picsum.
+- **ins-filter**: the professionals filter (`pro-filter`, sticky) in a compact modifier: both rows 48 on a five-column grid, labels 14 semibold 16 in. Row 1 (`.ins-filter__bar`, 2fr 2fr 1fr): search by name, search by professionals (red 30 buttons 16 from the divider), Date button + 20 calendar icon 20 from the right. Row 2: Resources / Sort by Relevance / Industries / Practices / Locations facets (20 chevrons 17 from each divider). Open panels + date picker await design (closed state only, like professionals).
+- **ins-grid**: 90 / 204 sides / 53. Active-filter chips (`.ins-chip`: 31 pill, grey key + semibold value, x 37 past it; `.ins-chip--reset` navy, x 17 past) 2 apart, 24 to the cards; `post-card` x 3, 18 apart, rows 46 apart (title max 292 here to keep the mock's breaks); count 39 below (reuses `pro-grid__more`), View more 14 below it. 12 per page; rows 2-4 repeat row 1 (TODO). Chips and filtering are static: no JS yet.
+- **Content migration (open problem):** the live site has ~729 insights; plan a scripted import (WXR / REST / scrape → WP-CLI importer in tng-core, create-only, map categories to the shared taxonomies, sideload images, link authors to Professionals, keep slugs or redirect). Not started.
+- **Open question (ask the client):** what "Subscribe to Updates" does is unknown; the button is built and links to `#`. Likely the same newsletter signup as the footer's "Subscribe to our newsletter" (scroll to it, or a signup page / external list), so check before wiring it.
+
+## Awards & Rankings archive (2026-11-03)
+
+`awards.html` (WP: the award archive, a child page of About; breadcrumb Home / About / Awards & Rankings). About's "More from" Awards link points to it. Built from `insights.html`; differences only:
+
+- **Hero** `ins-hero--no-link`: no Subscribe link, intro 36 off the bottom. Intro copy was read off a low-res mock (TODO confirm). Hero image is picsum (mock: gold abstract).
+- **Featured** `ins-featured--no-date`: no date, the `.h2` title (max 640, 3 lines) sits where the date was; min gap to Read more 30 instead of 98 so the block stays 417. No featured image → `.ins-featured__logo` navy tile with the logo (text stand-in).
+- **Filter**: same as insights (facet labels unreadable in the mock; insights' repeated, TODO).
+- **Grid** `ins-grid--plain`: no chips (they appear only when a filter is set), no count; 54 top, View more 55 below the grid, 77 bottom; 15 cards (5 rows, placeholder copy from the mock). Cards link to `#` until the award single exists.
+- **More from About**: Overview / History / Pro Bono, each with a 20 red arrow pinned 20 from the right (`.more-from__link:has(.arrow-circle)`). More-from links are now left out of SplitText (HEADINGS) so the arrow stays on the line; the list rises as a GROUP. The About page's more-from has no arrows (its mock showed none) — check which is current.
+
+## Job single (2026-11-03)
+
+`job.html` (WP: CPT job single). Light page: `site-header--light`. "Back to Job Opportunities" → `careers.html#job-opportunities` (the careers-jobs section now has that id).
+
+- **job-hero**: 567, gradient `#f9f9fb → #adbaca` (sampled from the mock; darker than the professional hero's). Back link 123 from the top (16 semibold `link-arrow`, left chevron, 2px red underline); `.h1` 123 under its underline; navy location pill (flag + name, 26 tall) 15 under the title; Department (`dl`: 12 semibold label, 13 to a 278-wide rule, value 16) on the bottom, 32 up; apply card (white, 284 wide, 20 from the right, 26 from the bottom): `.h3` "Ready to join us?", 38 to "Please send the CV to:" + underlined email (16/22). WP fields: location term, department, apply heading/text/email (defaults from the careers options).
+- **job-intro**: summary as `.h3` centred, max 640 (7 lines like the mock), 74 above and below.
+- **job-summary**: "Position Summary" `.pro-label`, column 300 in / 292 from the right; groups = `.h3` heading (max 290) + `.rich-text` list (16/22, items 22 apart, 4px discs 18 indent, max 403 so the lines break like the mock) from 734, 16 below the heading's top; 48 under the last item, rule, 28 to the next heading (22 under the label's rule for the first). Groups 2–3 repeat group 1's list (TODO). 74 bottom is a guess (mock stops).
+- **job-cta** (last section): teal texture parallax, 537 tall. `.h2` "Ready to join us?" centred 119 from the top, `.body` text + semibold underlined email 11 below; three white cards (327 wide, 21 apart, centred, 93 under the text, 173 tall): `.h3` title (line breaks kept, `<br>` = textarea newlines) 12 / 17 in, 16 semibold `link-arrow` (2px red underline) 15 off the bottom; 85 bottom. Card links: recruitment process (`#`, no page yet), professionals (filter by the job's department), the job location's term page (`location.html` stand-in). The email's underline is drawn on SplitText's `.split-word`s (inline-blocks don't inherit `text-decoration`).
+- Careers "Jobs Available" country rows still link to `#` (no per-country listing mock yet).
+
+## Career path page: Legal Professionals (2026-11-03)
+
+`careers-legal.html` (WP: a child page of Careers; the same template should serve Operations Professionals and Internship once their mocks confirm it). The Careers "Legal Professionals" card links to it.
+
+- **lp-hero**: navy `#041f36`, 398 min, no image. `.h1` left, `.body` intro (max 430, 5 lines) from 720 with the tops level, 76 under the intro (title 104 above the hero bottom as in the mock). (The avatar bubble in the mock is a Figma comment marker, not design.)
+- **lp-overview**: `svc-overview--top-label` with overrides: label 18 in, 16 under the hero, rule to 12 from the right; `.h2` (max 540, 3 lines) 24 / text (16/22, from 729, max 535) 19 under the rule.
+- **lp-people**: the careers page's `careers-people` block, 99 under the overview text, text column 335 (`.lp-people`).
+- **lp-team** ("Hear it from our team"): teal parallax, 191 sides, 91 / 65, 640 tall. Left 243: `.h2` + ARIA tabs (28 numbered circles, active red; role 24 semibold + name 14), 69 apart. Card 63 past: white 753 x 484, quote `.rich-text` (max 304, fitted) after a ” mark, person block (rule, name + grey position) on the bottom, photo 348 wide inset 10 / 12 / 13. Tabs use the shared tabs handler (`.lp-team` added); panels are outside SplitText and rise as GROUPS; `.lp-team__panel[hidden]` needed because the panel is `display: grid`. Panels 2–5 repeat panel 1's quote; photos are picsum (TODO). The mock's "Asscociate" typo is fixed to "Associate".
+- **lp-jobs** ("Opportunities for / Legal Professionals"): the careers page's `careers-jobs` rows, centred 842 (299 sides), 91 top, 150 bottom (mock white space, a guess). Rows = job title (`.h4`) + location pill (`job-hero__tag`) 30 before the red arrow; link to the job single. WP: open Job posts in this career path. **Open question:** the user thinks this list may be location-wise (grouped / filtered by location) — unconfirmed; ask before wiring. Rows 2–5 repeat row 1 (TODO).
+- **More from Careers** (last section): the reusable `more-from` with arrows (as on awards): Operations Professionals (`#`), Internships (`#`), All Job Opportunities (`careers.html#job-opportunities`). WP default = the Careers page's other children + the jobs link.
+
 ## Frontend still to come (after or alongside WordPress)
 
-- Pages with no mockup yet: Insights archive, Awards (archive + single), Location term pages, Services, Job single / job listing, search results, 404.
+- Pages with no mockup yet: Award single, Location term pages, Services, Job listing, search results, 404.
 - Pending mockups: search state, mobile menu (nothing is responsive below desktop yet; everything is vw on 1440).
 - Placeholders to swap: logo SVG (text stand-in), picsum images (location cards, insights feature, Locations megamenu, insight hero, careers hero, careers people), `careers-medal.svg`, contact office details (5 of 6 repeat Bangkok), careers slides 2â€“3 copy, job counts.
 
