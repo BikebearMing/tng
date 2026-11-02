@@ -1,0 +1,13 @@
+/* TNG — block editor tweaks: style.css is loaded for true previews, but the
+   editor canvas must stay usable. main.js is never loaded here, so undo its
+   companion styles that expect JS (nothing hides text without it), and keep
+   full-viewport sections from swallowing the canvas. */
+
+.editor-styles-wrapper .hp-featured-banner {
+  min-height: 60vh;
+}
+
+/* The marquee never settles; keep it static in the editor */
+.editor-styles-wrapper .hp-careers__column {
+  animation: none;
+}

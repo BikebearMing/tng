@@ -1,0 +1,45 @@
+/* TNG — WordPress front-end overrides, loaded after style.css.
+   Neutralises the bits of the block theme / block markup that would fight
+   the static site's CSS. TT25's global styles are dequeued in enqueue.php;
+   these rules guard the remaining structural differences. */
+
+/* style.css keeps a leftover 200vh min-height from the static build */
+body {
+  min-height: auto !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* No layout constraints or block gaps inside our page shells */
+main.wp-block-group > * {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+.wp-block-post-content {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+.wp-block-post-content > * {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+/* Core blocks inside the insight body (.rich-text styles by tag; strip the
+   extra figure/image chrome core adds) */
+.rich-text .wp-block-image {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* Keep the sticky bars under our fixed header even if WP re-enables the
+   admin bar somewhere */
+html {
+  margin-top: 0 !important;
+}
+
+/* style.css sets explicit display on buttons, which would defeat the hidden
+   attribute the grid script toggles ("View more" when everything is shown) */
+[hidden] {
+  display: none !important;
+}

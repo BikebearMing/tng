@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tilleke &amp; Gibbins Achieves Top Results in Legal 500 Asia-Pacific 2026 Rankings — TNG</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/vendor/blaze.css">
+  <link rel="stylesheet" href="assets/vendor/lenis.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       HEADER (site-wide, sits over the banner)
+       SCF options page: site/header
+       Fields: logo (image/svg), top_menu (WP menu "Header top":
+               About / Careers / Contact), main_menu (WP menu "Header main":
+               Professionals / Services / Insights / Locations),
+               search_label, languages (repeater: code, url),
+               locations_mega (auto from Location taxonomy: name, image,
+               link; plus extra_links repeater, e.g. Global Reach),
+               services_mega (auto from Industry and Practice taxonomies:
+               name, link; labels editable)
+       ============================================================ -->
+  <header class="site-header" data-scrolled-at="40">
+    <!-- TODO: swap for the logo SVG once supplied; this is a text stand-in -->
+    <a href="index.html" class="site-header__logo" aria-label="Tilleke &amp; Gibbins">
+      <span>Tilleke</span>
+      <span><em>&amp;</em>Gibbins</span>
+    </a>
+
+    <nav class="site-header__nav" aria-label="Main">
+      <ul class="site-header__top">
+        <li><a href="#" class="subhead">About</a></li>
+        <li><a href="careers.html" class="subhead">Careers</a></li>
+        <li><a href="contact.html" class="subhead">Contact</a></li>
+      </ul>
+      <ul class="site-header__main">
+        <li><a href="professionals.html" class="button-label">Professionals</a></li>
+        <li class="has-mega">
+          <a href="#" class="button-label" aria-haspopup="true">Services</a>
+          <!-- Megamenu: industries (active follows hover) | practices in two columns -->
+          <div class="site-header__mega site-header__mega--services">
+            <div class="site-header__mega-col">
+              <p class="subhead site-header__mega-label">Industries</p>
+              <ul class="site-header__mega-list">
+              <li class="is-active"><a href="#" class="button-label">Automotive<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+              <li><a href="#" class="button-label">Aviation<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+              <li><a href="#" class="button-label">Consumer products<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+              <li><a href="#" class="button-label">Energy<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+              <li><a href="#" class="button-label">Fintech<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+              <li><a href="#" class="button-label">Insurance<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+              <li><a href="#" class="button-label">Life Sciences<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+              <li><a href="#" class="button-label">Technology<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+              </ul>
+            </div>
+            <div class="site-header__mega-col site-header__mega-col--divided">
+              <p class="subhead site-header__mega-label">Practices</p>
+              <ul class="site-header__mega-links" style="--rows: 6;">
+              <li><a href="#" class="site-header__mega-link">Antitrust and Competition</a></li>
+              <li><a href="#" class="site-header__mega-link">Banking and Finance</a></li>
+              <li><a href="#" class="site-header__mega-link">Capital Markets</a></li>
+              <li><a href="#" class="site-header__mega-link">Compliance and Investigations</a></li>
+              <li><a href="#" class="site-header__mega-link">Corporate/M&amp;A</a></li>
+              <li><a href="#" class="site-header__mega-link">Customs and International Trade</a></li>
+              <li><a href="#" class="site-header__mega-link">Dispute Resolution and Litigation</a></li>
+              <li><a href="#" class="site-header__mega-link">Employment</a></li>
+              <li><a href="#" class="site-header__mega-link">Intellectual Property</a></li>
+              <li><a href="#" class="site-header__mega-link">Real Estate</a></li>
+              <li><a href="#" class="site-header__mega-link">Regulatory Affairs</a></li>
+              <li><a href="#" class="site-header__mega-link">Tax</a></li>
+              </ul>
+            </div>
+          </div>
+        </li>
+        <li><a href="#" class="button-label">Insights</a></li>
+        <li class="has-mega">
+          <a href="#" class="button-label" aria-haspopup="true">Locations</a>
+          <!-- Megamenu: hover/focus opens it; hovering a location swaps the image -->
+          <div class="site-header__mega">
+            <ul class="site-header__mega-list">
+            <li class="is-active"><a href="#" class="button-label">Cambodia<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            <li><a href="#" class="button-label">Indonesia<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            <li><a href="#" class="button-label">Laos<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            <li><a href="#" class="button-label">Myanmar<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            <li><a href="#" class="button-label">Thailand<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            <li><a href="#" class="button-label">Vietnam<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            <li><a href="#" class="button-label">Global Reach<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            </ul>
+            <div class="site-header__mega-media" aria-hidden="true">
+            <img src="https://picsum.photos/seed/cambodia/374/452" alt="" class="is-active">
+            <img src="https://picsum.photos/seed/indonesia/374/452" alt="">
+            <img src="https://picsum.photos/seed/laos/374/452" alt="">
+            <img src="https://picsum.photos/seed/myanmar/374/452" alt="">
+            <img src="https://picsum.photos/seed/thailand/374/452" alt="">
+            <img src="https://picsum.photos/seed/vietnam/374/452" alt="">
+            <img src="https://picsum.photos/seed/global/374/452" alt="">
+            </div>
+          </div>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="site-header__utils">
+      <button type="button" class="subhead site-header__search">
+        Search
+        <svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="7.5" cy="7.5" r="6" stroke="currentColor" stroke-width="1.5"/><path d="M12 12l4.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+      <a href="#" class="subhead site-header__lang" aria-label="Language: English">
+        ENG
+        <svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="7.5" stroke="currentColor" stroke-width="1.3"/><ellipse cx="9" cy="9" rx="3.2" ry="7.5" stroke="currentColor" stroke-width="1.3"/><path d="M1.5 9h15M2.8 5.2h12.4M2.8 12.8h12.4" stroke="currentColor" stroke-width="1.3"/></svg>
+      </a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============================================================
+         SECTION: Insight hero (navy, white header over it)
+         Insight single (Site Editor template "Standard"), SCF block: insight/hero
+         Fields: show_featured_image (true/false; off, or no thumbnail =
+                 the no-image version: add .in-hero--no-image and skip the
+                 <img>, see insight-no-image.html), featured image = the post
+                 thumbnail (cover-cropped, min 1394 x 942); title = post
+                 title, date = post date
+         Rows: Location (term field: flag image), Industries, Practices =
+               the post's terms in the shared taxonomies, each pill links
+               to its term page; a row hides when the post has no terms.
+               All pills are rendered; main.js shows data-cap (3) per row
+               and adds "See more" for the rest.
+         ============================================================ -->
+    <section class="in-hero in-hero--no-image" data-section="in-hero" data-toggle="show_in_hero">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <p class="subhead"><a href="index.html">Home</a> / <a href="#">Insights</a> / <span aria-current="page">Tilleke &amp; Gibbins Achieves Top Results in Legal 500 Asia-Pacific 2026 Rankings</span></p>
+      </nav>
+
+      <div class="in-hero__intro">
+        <h1 class="h1 dark">Tilleke &amp; Gibbins Achieves Top Results in Legal 500 Asia-Pacific 2026 Rankings</h1>
+        <p class="subhead in-hero__date"><time datetime="2026-07-02">July 2, 2026</time></p>
+      </div>
+
+      <dl class="in-hero__meta" data-cap="3">
+        <div class="in-hero__row">
+          <dt class="subhead">Location</dt>
+          <dd>
+            <ul class="in-hero__tags">
+              <li><a href="#" class="in-hero__tag"><img src="assets/flags/cambodia.svg" alt="">Cambodia</a></li>
+              <li><a href="#" class="in-hero__tag"><img src="assets/flags/indonesia.svg" alt="">Indonesia</a></li>
+              <li><a href="#" class="in-hero__tag"><img src="assets/flags/laos.svg" alt="">Laos</a></li>
+              <li><a href="#" class="in-hero__tag"><img src="assets/flags/myanmar.svg" alt="">Myanmar</a></li>
+              <li><a href="#" class="in-hero__tag"><img src="assets/flags/thailand.svg" alt="">Thailand</a></li>
+              <li><a href="#" class="in-hero__tag"><img src="assets/flags/vietnam.svg" alt="">Vietnam</a></li>
+            </ul>
+          </dd>
+        </div>
+        <div class="in-hero__row">
+          <dt class="subhead">Industries</dt>
+          <dd>
+            <ul class="in-hero__tags">
+              <li><a href="#" class="in-hero__tag">Aviation</a></li>
+              <li><a href="#" class="in-hero__tag">Consumer Products</a></li>
+              <li><a href="#" class="in-hero__tag">Energy</a></li>
+              <li><a href="#" class="in-hero__tag">Fintech</a></li>
+              <li><a href="#" class="in-hero__tag">Insurance</a></li>
+              <li><a href="#" class="in-hero__tag">Life Sciences</a></li>
+              <li><a href="#" class="in-hero__tag">Technology</a></li>
+            </ul>
+          </dd>
+        </div>
+        <div class="in-hero__row">
+          <dt class="subhead">Practices</dt>
+          <dd>
+            <ul class="in-hero__tags">
+              <li><a href="#" class="in-hero__tag">Antitrust and Competition</a></li>
+              <li><a href="#" class="in-hero__tag">Banking and Finance</a></li>
+              <li><a href="#" class="in-hero__tag">Capital Markets</a></li>
+              <li><a href="#" class="in-hero__tag">Compliance and Investigations</a></li>
+              <li><a href="#" class="in-hero__tag">Corporate/M&amp;A</a></li>
+              <li><a href="#" class="in-hero__tag">Customs and International Trade</a></li>
+              <li><a href="#" class="in-hero__tag">Dispute Resolution and Litigation</a></li>
+              <li><a href="#" class="in-hero__tag">Employment</a></li>
+              <li><a href="#" class="in-hero__tag">Intellectual Property</a></li>
+              <li><a href="#" class="in-hero__tag">Real Estate</a></li>
+              <li><a href="#" class="in-hero__tag">Regulatory Affairs</a></li>
+              <li><a href="#" class="in-hero__tag">Tax</a></li>
+            </ul>
+          </dd>
+        </div>
+      </dl>
+    </section>
+
+    <!-- ============================================================
+         SECTION: Insight reading bar (sticky under the header)
+         Part of the insight single templates, not a block: title =
+         post title, date = post date. The red fill tracks scroll from
+         here to the end of <main>.
+         ============================================================ -->
+    <div class="in-bar" data-section="in-bar">
+      <p class="h4 in-bar__title">Tilleke &amp; Gibbins Achieves Top Results in Legal 500 Asia-Pacific 2026 Rankings</p>
+      <p class="subhead in-bar__date"><time datetime="2026-07-02">July 2, 2026</time></p>
+      <div class="in-bar__progress" aria-hidden="true"><span></span></div>
+    </div>
+
+    <!-- ============================================================
+         SECTION: Insight article (sidebar + body)
+         Sidebar, SCF block: insight/related-professionals
+           Fields: show_related_professionals (true/false), heading (text,
+                   default "Related professionals"), professionals
+                   (relationship → Professional). Card = professional's
+                   headshot (cropped photo, not the hero cutout), name
+                   (post title), phone, email, link to their page.
+           Share row is template chrome: Print, LinkedIn, email, copy link
+           (hrefs filled from the page URL in main.js).
+         Body: the post content, written in the WYSIWYG editor (core
+           paragraph / heading / list blocks, or an SCF wysiwyg field).
+           No classes inside .rich-text (shared WYSIWYG styles): everything is styled by element
+           (p, h2, h3, ul, ol, li, strong, a, blockquote, img, figure).
+         ============================================================ -->
+    <section class="in-article" data-section="in-article">
+      <aside class="in-article__aside">
+        <div class="in-related" data-toggle="show_related_professionals">
+          <div class="in-related__head">
+            <h2 class="h3">Related professionals</h2>
+            <!-- TODO: behaviour of the + not decided (collapse the list?) -->
+            <svg class="in-related__plus" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 1v22M1 12h22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+
+          <!-- TODO: placeholder headshots -->
+          <ul class="in-related__list">
+            <li>
+              <a href="professional.html" class="in-related__card">
+                <img src="assets/guy-1.jpg" alt="" class="in-related__img" loading="lazy">
+                <span class="in-related__info">
+                  <span class="h4 in-related__name">Athistha (Nop) Chitranukroh</span>
+                  <span class="in-related__contact">+66 2056 5600</span>
+                  <span class="in-related__contact">nop.c@tilleke.com</span>
+                </span>
+                <span class="arrow-circle in-related__arrow" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              </a>
+            </li>
+            <li>
+              <a href="professional.html" class="in-related__card">
+                <img src="assets/lady-2.jpg" alt="" class="in-related__img" loading="lazy">
+                <span class="in-related__info">
+                  <span class="h4 in-related__name">Thammapas Chanpanich</span>
+                  <span class="in-related__contact">+66 2056 5600</span>
+                  <span class="in-related__contact">nop.c@tilleke.com</span>
+                </span>
+                <span class="arrow-circle in-related__arrow" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              </a>
+            </li>
+            <li>
+              <a href="professional.html" class="in-related__card">
+                <img src="assets/lady-2.jpg" alt="" class="in-related__img" loading="lazy">
+                <span class="in-related__info">
+                  <span class="h4 in-related__name">Rada Lamsam</span>
+                  <span class="in-related__contact">+66 2056 5600</span>
+                  <span class="in-related__contact">nop.c@tilleke.com</span>
+                </span>
+                <span class="arrow-circle in-related__arrow" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              </a>
+            </li>
+            <li>
+              <a href="professional.html" class="in-related__card">
+                <img src="assets/lady-2.jpg" alt="" class="in-related__img" loading="lazy">
+                <span class="in-related__info">
+                  <span class="h4 in-related__name">Karnravee Jitvilai</span>
+                  <span class="in-related__contact">+66 2056 5600</span>
+                  <span class="in-related__contact">nop.c@tilleke.com</span>
+                </span>
+                <span class="arrow-circle in-related__arrow" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="in-share">
+          <button type="button" class="in-share__print" data-share="print">
+            Print
+            <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M5 2h10v4H5V2zM3 7h14a2 2 0 0 1 2 2v5a1 1 0 0 1-1 1h-2v3H4v-3H2a1 1 0 0 1-1-1V9a2 2 0 0 1 2-2zm3 6v4h8v-4H6zm9-4a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/></svg>
+          </button>
+          <a href="#" class="in-share__icon" data-share="linkedin" target="_blank" rel="noopener" aria-label="Share on LinkedIn">
+            <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M17 1H3a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2zM6.6 16H4V7.8h2.6V16zM5.3 6.7a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zM16 16h-2.6v-4c0-1 0-2.2-1.3-2.2s-1.6 1-1.6 2.1V16H7.9V7.8h2.5v1.1c.4-.7 1.2-1.3 2.5-1.3 2.6 0 3.1 1.7 3.1 4V16z"/></svg>
+          </a>
+          <a href="#" class="in-share__icon" data-share="email" aria-label="Share by email">
+            <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M1 5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v.4l-9 5.4-9-5.4V5zm0 2.7V15a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V7.7l-8.5 5.1a1 1 0 0 1-1 0L1 7.7z"/></svg>
+          </a>
+          <button type="button" class="in-share__icon" data-share="copy" aria-label="Copy link">
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M8.5 11.5a3.5 3.5 0 0 0 5 0l3-3a3.5 3.5 0 0 0-5-5l-1 1"/><path d="M11.5 8.5a3.5 3.5 0 0 0-5 0l-3 3a3.5 3.5 0 0 0 5 5l1-1"/></svg>
+          </button>
+        </div>
+      </aside>
+
+      <div class="in-content rich-text">
+        <p>Thailand’s Electronic Transactions Development Agency (ETDA) released a new version of the draft Act on Artificial Intelligence on July 2, 2026, for a public hearing period expected to be approximately 30 days. The draft act adopts a risk-based regulatory approach modeled in part on international frameworks—particularly the EU’s AI Act—while incorporating provisions tailored to Thailand’s regulatory landscape and digital economy objectives. If enacted in its current form, the law would introduce extraterritorial obligations, a tiered risk classification system, strict liability for AI-related damages, and new transparency requirements for AI-generated content.</p>
+
+        <h2>Scope and Extraterritorial Application</h2>
+        <p>The draft act applies to AI development, deployment, or any other action affecting people in Thailand, even if the action occurs outside the country. Of note:</p>
+        <ul>
+          <li>This extraterritorial reach creates compliance obligations for global AI companies whose systems impact Thai residents or consumers, even if the provider has no physical presence in Thailand.</li>
+          <li>Foreign AI providers serving Thai deployers or users must appoint a local coordinator or authorized representative. Depending on the type of AI system, the representative may need full authority to act on behalf of the provider without any limitation of liability.</li>
+          <li>Certain activities are exempt from the draft act’s oversight, including AI used by natural persons solely for personal or household activities, AI for educational research conducted by higher education institutions with ethics committee approval, research and development activities conducted prior to distribution or service provision, and other AI systems prescribed by royal decree.</li>
+        </ul>
+
+        <h2>Risk-Based Classification Framework</h2>
+        <p>The draft act establishes a tiered risk classification system with three main categories:</p>
+        <ul>
+          <li><strong>Prohibited AI.</strong> The act outright prohibits AI systems employing cognitive-behavioral manipulation using subliminal techniques, AI systems causing unfair broad-scale discrimination from processing irrelevant data, and other categories of serious risk as determined by announcement of a forthcoming committee that will be responsible for national AI planning.</li>
+          <li><strong>High-risk AI.</strong> High-risk AI systems are those designated by royal decree as affecting national security, health, environment, energy, telecommunications, transport, or public utilities.</li>
+          <!-- TODO: placeholder copy from here down (not from the mockup) -->
+          <li><strong>Limited-risk AI.</strong> AI systems that interact directly with people or generate content must disclose that users are dealing with AI, and AI-generated content must be labeled as such.</li>
+        </ul>
+
+        <h2>Liability and Enforcement</h2>
+        <p>The draft act imposes strict liability on providers and deployers of high-risk AI for damage caused by their systems, unless they can prove the damage resulted from force majeure or the injured party’s own actions. Regulators may order the suspension of non-compliant systems and impose administrative fines.</p>
+        <p>Businesses developing or deploying AI in Thailand should review their systems against the proposed risk categories and consider submitting comments during the public hearing period.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER (site-wide)
+       SCF options page: site/footer
+       Fields: logo (image/svg), social_links (repeater: network, url),
+               newsletter_heading, newsletter_form (Mailchimp/CF7 embed or
+               action url), networks (repeater: logo, url), quick_links
+               (WP menu "Footer quick links", split into 2 columns),
+               copyright, legal_links (WP menu "Footer legal")
+       ============================================================ -->
+  <footer id="footer" class="hp-footer" data-section="footer">
+    <div class="hp-footer__top">
+
+      <div class="hp-footer__brand">
+        <!-- TODO: swap for the logo SVG once supplied; this is a text stand-in -->
+        <a href="index.html" class="hp-footer__logo" aria-label="Tilleke &amp; Gibbins">
+          <span>Tilleke</span>
+          <span><em>&amp;</em>Gibbins</span>
+        </a>
+
+        <ul class="hp-footer__social">
+          <li>
+            <a href="#" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.5-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H8v3h2.5V21h3z"/></svg>
+            </a>
+          </li>
+          <li>
+            <a href="#" aria-label="YouTube">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18.3 5 12 5 12 5s-6.3 0-7.8.4A2.5 2.5 0 0 0 2.4 7.2C2 8.8 2 12 2 12s0 3.2.4 4.8a2.5 2.5 0 0 0 1.8 1.8C5.7 19 12 19 12 19s6.3 0 7.8-.4a2.5 2.5 0 0 0 1.8-1.8c.4-1.6.4-4.8.4-4.8s0-3.2-.4-4.8zM10 15V9l5.2 3L10 15z"/></svg>
+            </a>
+          </li>
+          <li>
+            <a href="#" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.9 8.7H3.6V20h3.3V8.7zM5.3 3.5a1.9 1.9 0 1 0 0 3.8 1.9 1.9 0 0 0 0-3.8zM20.4 13.1c0-3.2-1.7-4.7-4-4.7a3.4 3.4 0 0 0-3.1 1.7V8.7H10V20h3.3v-5.6c0-1.5.3-2.9 2.1-2.9 1.8 0 1.8 1.7 1.8 3V20h3.3v-6.9z"/></svg>
+            </a>
+          </li>
+        </ul>
+
+        <p class="button-label dark hp-footer__newsletter-heading">Subscribe to our newsletter</p>
+        <form class="hp-footer__form" action="#" method="post">
+          <label class="visually-hidden" for="footer-email">Your email</label>
+          <input type="email" id="footer-email" name="email" placeholder="Your email" required>
+          <button type="submit">
+            Subscribe
+            <svg viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </form>
+      </div>
+
+      <div class="hp-footer__nav">
+        <p class="subhead hp-footer__label">Networks</p>
+        <ul class="hp-footer__networks">
+          <li><a href="#"><img src="assets/lexmundi.png" alt="Lex Mundi Member" class="hp-footer__network hp-footer__network--lexmundi"></a></li>
+          <li><a href="#"><img src="assets/multilaw.png" alt="Multilaw" class="hp-footer__network hp-footer__network--multilaw"></a></li>
+          <li><a href="#"><img src="assets/dna.png" alt="Drew Network Asia" class="hp-footer__network hp-footer__network--dna"></a></li>
+        </ul>
+
+        <p class="subhead hp-footer__label hp-footer__label--links">Quick links</p>
+        <div class="hp-footer__quick">
+          <ul class="hp-footer__quick-col">
+            <li><a href="professionals.html" class="button-label dark">Professionals</a></li>
+            <li><a href="#" class="button-label dark">Services</a></li>
+            <li><a href="#" class="button-label dark">Insights</a></li>
+            <li><a href="#" class="button-label dark">Locations</a></li>
+          </ul>
+          <ul class="hp-footer__quick-col">
+            <li><a href="#" class="button-label dark">About</a></li>
+            <li><a href="careers.html" class="button-label dark">Careers</a></li>
+            <li><a href="contact.html" class="button-label dark">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="hp-footer__bar">
+      <p class="subhead hp-footer__copyright">&copy; 2026 Tilleke &amp; Gibbins International Ltd. All rights reserved.</p>
+      <ul class="hp-footer__legal">
+        <li><a href="#" class="subhead dark">Privacy Policy</a></li>
+        <li><a href="#" class="subhead dark">Fraudulent Communications</a></li>
+        <li><a href="#" class="subhead dark">Legal Notice</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="assets/vendor/ScrollTrigger.min.js"></script>
+  <script src="assets/vendor/SplitText.min.js"></script>
+  <script src="assets/vendor/blaze-slider.min.js"></script>
+  <script src="assets/vendor/lenis.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -35,8 +35,8 @@
     <nav class="site-header__nav" aria-label="Main">
       <ul class="site-header__top">
         <li><a href="#" class="subhead">About</a></li>
-        <li><a href="#" class="subhead">Careers</a></li>
-        <li><a href="#" class="subhead">Contact</a></li>
+        <li><a href="careers.html" class="subhead">Careers</a></li>
+        <li><a href="contact.html" class="subhead">Contact</a></li>
       </ul>
       <ul class="site-header__main">
         <li><a href="professionals.html" class="button-label">Professionals</a></li>
@@ -160,6 +160,191 @@
       <img src="assets/lady-2.jpg" alt="Aimee Van Dyk" class="pro-hero__portrait">
     </section>
 
+    <!-- ============================================================
+         SECTION: On-this-page tabs (sticky under the header)
+         Template chrome, not a block. One link per section below; a tab
+         is left out when its section is toggled off or empty. main.js
+         scrolls to the section on click and marks the tab of the section
+         in view (scrollspy).
+         ============================================================ -->
+    <nav class="pro-tabs" aria-label="On this page" data-section="pro-tabs">
+      <p class="pro-tabs__label">On this page</p>
+      <ul class="pro-tabs__list">
+        <li><a href="#overview" class="button-label pro-tabs__link is-active" aria-current="true">Overview</a></li>
+        <li><a href="#experience" class="button-label pro-tabs__link">Experience</a></li>
+        <li><a href="#insights" class="button-label pro-tabs__link">Insights</a></li>
+        <li><a href="#awards" class="button-label pro-tabs__link">Awards</a></li>
+      </ul>
+    </nav>
+
+    <!-- ============================================================
+         SECTION: Professional overview
+         SCF block: professional/overview
+         Fields: show_pro_overview (true/false), lead (textarea: the large
+                 opening paragraph), biography (wysiwyg, styled by
+                 .rich-text), education (repeater: entry = textarea, line breaks kept)
+         Industries / Practices pills = the post's terms (link to the
+         term pages); Language = the post's Language terms, plain text.
+         A facts group hides when it has nothing to show.
+         ============================================================ -->
+    <section class="pro-overview" id="overview" data-section="pro-overview" data-toggle="show_pro_overview">
+      <div class="pro-overview__bio">
+        <p class="subhead pro-label">Biography</p>
+        <p class="h3 pro-overview__lead">Aimee Van Dyk is a consultant at Tilleke &amp; Gibbins with a regional practice spanning Laos, Myanmar, and Thailand. She advises on complex, cross-border matters at the intersection of commercial transactions, disputes, and regulatory compliance, frequently across both common- and civil-law systems.</p>
+        <div class="rich-text pro-overview__text">
+          <p>Aimee works closely with clients to understand their commercial drivers and potential risk exposure, delivering practical, context-sensitive advice in unfamiliar or evolving legal and regulatory environments. Her practice covers commercial transactions and contracts, dispute strategy and resolution, market entry and regulatory compliance, and sector-specific issues, including financial services, technology, telecommunications, digital assets, consumer goods, and energy. Her matters often involve multinational structures, regional operations, or regulatory regimes that are developing or in flux.</p>
+          <p>Before joining Tilleke &amp; Gibbins, Aimee began her legal career in 2007 and, by 2011, was heading the general litigation, banking, and commercial department of a leading Johannesburg law firm. She later practiced as a member of the Johannesburg Bar, further developing her corporate and commercial litigation expertise.</p>
+          <p>Aimee is a regular contributor to legal and industry discussions and has been recognized with a Mondaq Thought Leadership Award. She was enrolled as an attorney of the High Court of South Africa before being admitted as an advocate of the High Court of South Africa.</p>
+        </div>
+      </div>
+
+      <dl class="pro-facts">
+        <div class="pro-facts__group">
+          <dt class="subhead pro-label">Industries</dt>
+          <dd>
+            <ul class="pro-facts__tags">
+              <li><a href="#" class="pro-facts__tag">Consumer Products</a></li>
+              <li><a href="#" class="pro-facts__tag">Fintech</a></li>
+              <li><a href="#" class="pro-facts__tag">Life Sciences</a></li>
+            </ul>
+          </dd>
+        </div>
+        <div class="pro-facts__group">
+          <dt class="subhead pro-label">Practices</dt>
+          <dd>
+            <ul class="pro-facts__tags">
+              <li><a href="#" class="pro-facts__tag">Banking and Finance</a></li>
+              <li><a href="#" class="pro-facts__tag">Corporate/M&amp;A</a></li>
+              <li><a href="#" class="pro-facts__tag">Dispute Resolution and Litigation</a></li>
+            </ul>
+          </dd>
+        </div>
+        <div class="pro-facts__group">
+          <dt class="subhead pro-label">Language</dt>
+          <dd class="pro-facts__text">English</dd>
+        </div>
+        <div class="pro-facts__group">
+          <dt class="subhead pro-label">Education</dt>
+          <dd>
+            <ul class="pro-facts__text pro-facts__list">
+              <li>Postgraduate Certificate in Advanced Company Law I,<br>Nelson Mandela Institute of Law/WITS University</li>
+              <li>LLB, University of Johannesburg</li>
+            </ul>
+          </dd>
+        </div>
+      </dl>
+    </section>
+
+    <!-- ============================================================
+         SECTION: Professional experience (light grey)
+         SCF block: professional/experience
+         Fields: show_pro_experience (true/false), experience (wysiwyg:
+                 a bullet list, styled by .rich-text with triangle
+                 markers here)
+         main.js shows the first data-cap (4) items and adds "Read more"
+         for the rest; without JS every item shows.
+         ============================================================ -->
+    <section class="pro-experience" id="experience" data-section="pro-experience" data-toggle="show_pro_experience">
+      <p class="subhead pro-label">Experience</p>
+      <div class="rich-text pro-experience__list" data-cap="4">
+        <ul>
+          <li>Actively advising an international group with investments in real estate, telecommunications, and corporate finance on commercial and dispute strategy across multiple ongoing matters in Myanmar, including assessment of operational and litigation risk, jurisdictional considerations, and enforcement options in a volatile regulatory environment.</li>
+          <li>Advised multinational technology and automotive companies in Laos and Myanmar on data privacy and cross-border data transfer compliance, including regulatory assessments for digital platforms and connected-vehicle subscription services.</li>
+          <li>Advised a Japanese pharmaceutical and healthcare products group on a multiparty, cross-border sales and purchase agreement governing supply and distribution arrangements across Myanmar, Thailand, and Vietnam, addressing contractual risk allocation and regulatory implications.</li>
+          <li>Advised a Japanese pharmaceutical and healthcare products group on a multiparty, cross-border sales and purchase agreement governing supply and distribution arrangements across Myanmar, Thailand, and Vietnam, addressing contractual risk allocation and regulatory implications.</li>
+          <!-- TODO: placeholder items (not from the mockup) to show Read more -->
+          <li>Represented a regional energy developer in contract disputes arising from a cross-border power supply project in Laos, including pre-arbitration negotiations and enforcement strategy.</li>
+          <li>Advised a digital asset platform on licensing requirements and market entry in Thailand, including engagement with the regulator on product structuring.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION: Professional insights
+         SCF block: professional/insights
+         Fields: show_pro_insights (true/false), heading (text, default
+                 "Insights")
+         Cards = the 3 latest Insights whose related professionals
+         (relationship field on Insight) include this professional.
+         "View all" = insights archive filtered to this professional.
+         The section hides when there are none.
+         ============================================================ -->
+    <section class="pro-related" id="insights" data-section="pro-insights" data-toggle="show_pro_insights">
+      <div class="pro-related__head">
+        <h2 class="h2 pro-related__title">Insights</h2>
+        <a href="#" class="button-label link-arrow pro-related__link">
+          View all
+          <svg viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+      <ul class="pro-related__cards">
+        <li>
+          <a href="insight.html" class="post-card">
+            <h3 class="h3 post-card__title">Thailand Legal Basics</h3>
+            <p class="body post-card__excerpt">Thailand Legal Basics, a valuable primer for foreign investors, explores all aspects of living and doing business in Thailand.</p>
+            <p class="post-card__foot"><time class="subhead" datetime="2026-12-02">Dec 02, 2026</time><span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></p>
+          </a>
+        </li>
+        <li>
+          <a href="insight.html" class="post-card">
+            <h3 class="h3 post-card__title">Marketing Authorization for Pharmaceuticals in Thailand</h3>
+            <p class="body post-card__excerpt">Obtaining marketing authorization is a fundamental requirement for bringing pharmaceutical products to the Thai market.</p>
+            <p class="post-card__foot"><time class="subhead" datetime="2026-07-01">Jul 01, 2026</time><span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></p>
+          </a>
+        </li>
+        <li>
+          <a href="insight.html" class="post-card">
+            <h3 class="h3 post-card__title">Thomson Reuters Country Update – Thailand: Insurance 2026</h3>
+            <p class="body post-card__excerpt">Tilleke &amp; Gibbins’ insurance specialists in Bangkok provided Thomson Reuters’ latest country update on Thailand’s regulatory framework for the insurance industry.</p>
+            <p class="post-card__foot"><time class="subhead" datetime="2026-07-30">Jul 30, 2026</time><span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></p>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ============================================================
+         SECTION: Professional awards & rankings
+         SCF block: professional/awards
+         Fields: show_pro_awards (true/false), heading (text, default
+                 "Awards & Rankings")
+         Cards = the 3 latest Awards whose related professionals
+         (relationship field on Award) include this professional.
+         "View all" = awards archive filtered to this professional.
+         Same .post-card as the insights above.
+         ============================================================ -->
+    <section class="pro-related" id="awards" data-section="pro-awards" data-toggle="show_pro_awards">
+      <div class="pro-related__head">
+        <h2 class="h2 pro-related__title">Awards &amp; Rankings</h2>
+        <a href="#" class="button-label link-arrow pro-related__link">
+          View all
+          <svg viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+      <ul class="pro-related__cards">
+        <li>
+          <a href="#" class="post-card">
+            <h3 class="h3 post-card__title">Tilleke &amp; Gibbins Named Regional Litigation Law Firm of the Year at the 2026 ALB SE Asia Law Awards</h3>
+            <p class="body post-card__excerpt">Thailand Legal Basics, a valuable primer for foreign investors, explores all aspects of living and doing business in Thailand.</p>
+            <p class="post-card__foot"><time class="subhead" datetime="2026-12-02">Dec 02, 2026</time><span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></p>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="post-card">
+            <h3 class="h3 post-card__title">Tilleke &amp; Gibbins Highly Ranked in Benchmark Litigation Asia-Pacific 2026</h3>
+            <p class="body post-card__excerpt">Obtaining marketing authorization is a fundamental requirement for bringing pharmaceutical products to the Thai market.</p>
+            <p class="post-card__foot"><time class="subhead" datetime="2026-07-01">Jul 01, 2026</time><span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></p>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="post-card">
+            <h3 class="h3 post-card__title">Thomson Reuters Country Update – Thailand: Insurance 2026</h3>
+            <p class="body post-card__excerpt">Tilleke &amp; Gibbins’ insurance specialists in Bangkok provided Thomson Reuters’ latest country update on Thailand’s regulatory framework for the insurance industry.</p>
+            <p class="post-card__foot"><time class="subhead" datetime="2026-07-30">Jul 30, 2026</time><span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></p>
+          </a>
+        </li>
+      </ul>
+    </section>
+
   </main>
 
   <!-- ============================================================
@@ -228,8 +413,8 @@
           </ul>
           <ul class="hp-footer__quick-col">
             <li><a href="#" class="button-label dark">About</a></li>
-            <li><a href="#" class="button-label dark">Careers</a></li>
-            <li><a href="#" class="button-label dark">Contact</a></li>
+            <li><a href="careers.html" class="button-label dark">Careers</a></li>
+            <li><a href="contact.html" class="button-label dark">Contact</a></li>
           </ul>
         </div>
       </div>

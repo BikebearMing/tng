@@ -1119,7 +1119,8 @@ button {
 }
 
 /* ============================================================
-   Header (site-wide, absolute over the banner)
+   Header (site-wide, fixed; transparent over a dark hero, white once
+   scrolled; light pages add site-header--light, see the end of this file)
    vw values are px / 1440 * 100
    ============================================================ */
 .site-header {
@@ -1327,6 +1328,9 @@ button {
   color: var(--black);
   opacity: 0;
   visibility: hidden;
+  /* closed panel must never catch the pointer: it hangs invisibly below the
+     header, over whatever is sticky there (filter bar, reading bar) */
+  pointer-events: none;
   transform: translateY(-0.417vw);
   transition: opacity 0.3s cubic-bezier(0.22, 1, 0.36, 1), transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), visibility 0s linear 0.3s;
 }
@@ -1346,6 +1350,7 @@ button {
 .has-mega.is-open .site-header__mega {
   opacity: 1;
   visibility: visible;
+  pointer-events: auto;
   transform: translateY(0);
   transition-delay: 0s;
 }
@@ -1973,4 +1978,1629 @@ button {
   max-width: none;
   object-fit: contain;
   object-position: bottom center;
+}
+
+/* ============================================================
+   Insight — hero
+   567 tall, navy. Breadcrumbs, 81 to the title (max 540 so it
+   wraps clear of the image), 17 to the date; Location / Industries
+   rows sit 23 off the bottom, 11 apart. Featured image: 697 wide,
+   81 from the top, 15 from the right and bottom, cover-cropped.
+   vw values are px / 1440 * 100
+   ============================================================ */
+.in-hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 39.375vw; /* 567 */
+  padding: var(--top-from-header) var(--sidepadding-xs) 1.597vw; /* 103 / 20 / 23 */
+  overflow: hidden;
+  background: #041f36;
+}
+
+.in-hero__intro {
+  max-width: 37.5vw; /* 540 */
+  margin-top: 5.625vw; /* 81 */
+}
+
+.in-hero__date {
+  margin-top: 1.181vw; /* 17 */
+}
+
+/* No-image version: the title gets the width the image would take */
+.in-hero--no-image .in-hero__intro {
+  max-width: 52.778vw; /* 760 */
+}
+
+/* Rows (Location / Industries / Practices): label, 1px rule at 70
+   running the full row height, 13 to the pills. Rows 11 apart;
+   wrapped pill lines 6 apart, pills 8 apart. */
+.in-hero__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.764vw; /* 11 */
+  margin: auto 0 0;
+  padding-top: 5.764vw; /* 83: minimum gap under the date */
+}
+
+.in-hero__row {
+  display: flex;
+  align-items: flex-start;
+}
+
+/* Label centred on the first line of pills (27) */
+.in-hero__row dt {
+  display: flex;
+  flex: none;
+  align-items: center;
+  width: 4.861vw; /* 70 */
+  height: 1.875vw; /* 27 */
+}
+
+.in-hero__row dd {
+  margin: 0;
+  padding-left: 0.903vw; /* 13 */
+  border-left: 1px solid rgba(159, 178, 197, 0.5);
+}
+
+.in-hero__tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.417vw 0.556vw; /* 6 / 8 */
+}
+
+/* Rows capped by main.js (data-cap on the <dl>): extras hide until
+   "See more"; without JS every pill shows */
+.in-hero__tags:not(.is-expanded) > .is-extra {
+  display: none;
+}
+
+.in-hero__more {
+  margin-left: 0.347vw; /* 5: 13 from the last pill */
+  padding: 0;
+  border: 0;
+  background: none;
+  font: 500 0.972vw/1.14 var(--font-inter-tight); /* 14 */
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  cursor: pointer;
+  transition: color 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.in-hero__more:hover {
+  color: var(--white);
+}
+
+/* Outlined pill, 27 tall; the location one carries a 17.5 flag */
+.in-hero__tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.417vw; /* 6 */
+  padding: 0.313vw 0.764vw; /* 4.5 / 11 */
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 999px;
+  font-size: 0.972vw; /* 14 */
+  font-weight: 500;
+  line-height: 1.14;
+  color: var(--white);
+  transition: background-color 0.3s cubic-bezier(0.22, 1, 0.36, 1), color 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.in-hero__tag:has(img) {
+  padding: 0.243vw 0.764vw 0.243vw 0.313vw; /* 3.5 / 11 / 3.5 / 4.5: flag keeps it 27 */
+}
+
+.in-hero__tag:hover {
+  background: var(--white);
+  color: var(--black);
+}
+
+.in-hero__tag img {
+  width: 1.215vw; /* 17.5 */
+  height: 1.215vw;
+}
+
+.in-hero__image {
+  position: absolute;
+  top: 5.625vw; /* 81 */
+  right: 1.042vw; /* 15 */
+  bottom: 1.042vw; /* 15 */
+  width: 48.403vw; /* 697 */
+  height: calc(100% - 6.667vw); /* 81 + 15 */
+  max-width: none;
+  object-fit: cover;
+  border-radius: 0.347vw;
+}
+
+/* ============================================================
+   Insight — reading bar
+   White, sticks under the compact header (72). Title 23 from the
+   top, date under it, progress 20 below: 1px grey track with a
+   3px red fill scaled by scroll (main.js). Next section sits 34
+   below the track.
+   vw values are px / 1440 * 100
+   ============================================================ */
+.in-bar {
+  position: sticky;
+  top: 5vw; /* 72: compact header */
+  z-index: 5; /* under the header (10) */
+  padding: 1.597vw var(--sidepadding-xs) 1.389vw; /* 23 / 20 / 20 */
+  background: var(--white);
+}
+
+.in-bar__date {
+  margin-top: 0.278vw; /* 4 */
+}
+
+.in-bar__progress {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: #e7eaee;
+}
+
+.in-bar__progress span {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 0.208vw; /* 3 */
+  background: var(--red);
+  transform: scaleX(0);
+  transform-origin: left center;
+}
+
+/* ============================================================
+   Insight — article: sidebar + WYSIWYG body
+   34 under the reading bar. Sidebar 191 in, 357 wide, sticks
+   34 under the bar (72 header + 83 bar + 34 = 189). Body starts
+   70 past the sidebar, 589 wide (233 from the right edge).
+   vw values are px / 1440 * 100
+   ============================================================ */
+.in-article {
+  display: grid;
+  grid-template-columns: 24.792vw 40.903vw; /* 357 / 589 */
+  column-gap: 4.861vw; /* 70 */
+  align-items: start;
+  padding: 2.361vw 0 7.361vw 13.264vw; /* 34 / 0 / 106 / 191 */
+}
+
+.in-article__aside {
+  position: sticky;
+  top: 13.125vw; /* 189 */
+}
+
+/* Related professionals: grey panel, 17 top / 10 sides and bottom */
+.in-related {
+  padding: 1.181vw 0.694vw 0.694vw; /* 17 / 10 / 10 */
+  border-radius: 0.556vw; /* 8 */
+  background: #eef0f3;
+}
+
+.in-related__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.111vw 0 0.208vw; /* 0 / 16 / 0 / 3 */
+  margin-bottom: 1.667vw; /* 24 */
+}
+
+.in-related__plus {
+  width: 1.667vw; /* 24 */
+  height: 1.667vw;
+  color: #8d9bab;
+}
+
+.in-related__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.694vw; /* 10 */
+}
+
+/* Card: 91 tall, 70 photo, text 9 off the photo and 11 down */
+.in-related__card {
+  position: relative;
+  display: flex;
+  height: 6.319vw; /* 91 */
+  overflow: hidden;
+  border-radius: 0.347vw; /* 5 */
+  background: var(--white);
+}
+
+.in-related__img {
+  flex: none;
+  width: 4.861vw; /* 70 */
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.in-related__info {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+  padding: 0.764vw 0.556vw 0 0.625vw; /* 11 / 8 / 0 / 9 */
+}
+
+.in-related__name {
+  display: block;
+  margin-bottom: 0.208vw; /* 3 */
+}
+
+.in-related__contact {
+  font-size: 0.972vw; /* 14 */
+  line-height: 1.14;
+  color: var(--black);
+}
+
+/* 18 circle, 8 from the right, 7 from the bottom */
+.in-related__arrow {
+  position: absolute;
+  right: 0.556vw; /* 8 */
+  bottom: 0.486vw; /* 7 */
+  width: 1.25vw; /* 18 */
+  height: 1.25vw;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.in-related__arrow svg {
+  width: 0.486vw; /* 7 */
+  height: 0.486vw;
+}
+
+.in-related__card:hover .in-related__arrow {
+  transform: translateX(0.208vw); /* 3 */
+}
+
+/* Share row: Print box fills the rest, then three 53 squares 8 apart.
+   Contents are positioned rather than flexed: Chromium won't flex a
+   button's children (see HANDOVER, Icons inside <button>). */
+.in-share {
+  display: flex;
+  gap: 0.556vw; /* 8 */
+  margin-top: 1.111vw; /* 16 */
+}
+
+.in-share__print,
+.in-share__icon {
+  position: relative;
+  display: block;
+  height: 3.681vw; /* 53 */
+  padding: 0;
+  border: 1px solid #e3e8ee;
+  border-radius: 0.347vw; /* 5 */
+  background: var(--white);
+  color: #8d9bab;
+  cursor: pointer;
+  transition: color 0.3s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.in-share__print:hover,
+.in-share__icon:hover {
+  border-color: #c3ccd6;
+  color: var(--black);
+}
+
+/* Label 16 in, printer 17 from the right; 17 to the icon squares */
+.in-share__print {
+  flex: 1;
+  margin-right: 0.625vw; /* 9: 8 gap + 9 = 17 */
+  padding-left: 1.111vw; /* 16 */
+  font: 500 0.972vw/1 var(--font-inter-tight); /* 14 */
+  text-align: left;
+  color: var(--black);
+}
+
+.in-share__print svg {
+  position: absolute;
+  top: 50%;
+  right: 1.181vw; /* 17 */
+  width: 1.25vw; /* 18 */
+  height: 1.319vw; /* 19 */
+  color: #8d9bab;
+  transform: translateY(-50%);
+  transition: color 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.in-share__print:hover svg {
+  color: var(--black);
+}
+
+.in-share__icon {
+  flex: none;
+  width: 3.681vw; /* 53 */
+}
+
+.in-share__icon svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1.25vw; /* 18 */
+  height: 1.25vw;
+  transform: translate(-50%, -50%);
+}
+
+.in-share__icon.is-copied {
+  border-color: var(--red);
+  color: var(--red);
+}
+
+/* ------------------------------------------------------------
+   Shared WYSIWYG copy (.rich-text): insight body, professional bio.
+   Styled by element only.
+   18 / 22 Inter Tight; blocks 23 apart; h2 mirrors .h2 with 73
+   above (106 after a list) and 27 below; bullets 5 dots, text
+   indented 27.
+   ------------------------------------------------------------ */
+.rich-text {
+  font-family: var(--font-inter-tight);
+  font-size: 1.25vw; /* 18 */
+  line-height: 1.22; /* 22 */
+  letter-spacing: 0.007vw; /* 0.1 */
+  color: var(--black);
+}
+
+.rich-text h2,
+.rich-text h3 {
+  letter-spacing: normal;
+}
+
+.rich-text > * + * {
+  margin-top: 1.597vw; /* 23 */
+}
+
+.rich-text h2 {
+  font-size: 2.778vw; /* 40 */
+  font-weight: 500;
+  line-height: 1;
+}
+
+.rich-text h3 {
+  font-size: 1.667vw; /* 24 */
+  font-weight: 600;
+  line-height: 1;
+}
+
+.rich-text > * + h2 {
+  margin-top: 5.069vw; /* 73 */
+}
+
+.rich-text > ul + h2,
+.rich-text > ol + h2 {
+  margin-top: 7.361vw; /* 106 */
+}
+
+.rich-text > * + h3 {
+  margin-top: 3.472vw; /* 50 */
+}
+
+.rich-text > h2 + *,
+.rich-text > h3 + * {
+  margin-top: 1.875vw; /* 27 */
+}
+
+.rich-text ul,
+.rich-text ol {
+  padding: 0;
+}
+
+.rich-text li {
+  position: relative;
+  padding-left: 1.875vw; /* 27 */
+}
+
+.rich-text li + li {
+  margin-top: 1.597vw; /* 23 */
+}
+
+.rich-text ul > li::before {
+  content: "";
+  position: absolute;
+  left: 0.694vw; /* 10 */
+  top: 0.59vw; /* 8.5: centred on the first line */
+  width: 0.347vw; /* 5 */
+  height: 0.347vw;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.rich-text ol {
+  counter-reset: in-ol;
+}
+
+.rich-text ol > li {
+  counter-increment: in-ol;
+}
+
+.rich-text ol > li::before {
+  content: counter(in-ol) ".";
+  position: absolute;
+  left: 0;
+  font-weight: 600;
+}
+
+.rich-text strong,
+.rich-text b {
+  font-weight: 600;
+}
+
+.rich-text a {
+  text-decoration: underline;
+  text-decoration-color: var(--red);
+  text-underline-offset: 0.2em;
+  transition: color 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.rich-text a:hover {
+  color: var(--red);
+}
+
+.rich-text blockquote {
+  margin-inline: 0;
+  padding-left: 1.389vw; /* 20 */
+  border-left: 2px solid var(--red);
+  font-size: 1.667vw; /* 24 */
+  line-height: 1.2;
+}
+
+.rich-text figure {
+  margin-inline: 0;
+}
+
+.rich-text img {
+  max-width: 100%;
+  height: auto;
+}
+
+.rich-text figcaption {
+  margin-top: 0.556vw; /* 8 */
+  font-size: 0.972vw; /* 14 */
+  color: var(--grey);
+}
+
+/* ============================================================
+   Professional — on-this-page tabs
+   White, 72 tall, sticks under the compact header (72). "On this
+   page" (12, grey) 18 from the top, tab labels 34 down. Columns
+   329 / 380 / 380 / rest, labels 20 in; the active tab carries a
+   3px red underline across its link (20 + label + 50).
+   vw values are px / 1440 * 100
+   ============================================================ */
+.pro-tabs {
+  position: sticky;
+  top: 5vw; /* 72 */
+  z-index: 5; /* under the header (10) */
+  padding-top: 2.361vw; /* 34 */
+  border-bottom: 1px solid #e7eaee;
+  background: var(--white);
+}
+
+.pro-tabs__label {
+  position: absolute;
+  top: 1.25vw; /* 18 */
+  left: var(--sidepadding-xs);
+  font-size: 0.833vw; /* 12 */
+  font-weight: 500;
+  line-height: 1.14;
+  color: var(--grey);
+}
+
+.pro-tabs__list {
+  display: grid;
+  grid-template-columns: 22.847vw 26.389vw 26.389vw 1fr; /* 329 / 380 / 380 */
+}
+
+.pro-tabs__link {
+  position: relative;
+  display: inline-block;
+  padding: 0 3.472vw 1.25vw var(--sidepadding-xs); /* 0 / 50 / 18 / 20 */
+  color: var(--grey);
+  transition: color 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.pro-tabs__link:hover,
+.pro-tabs__link.is-active {
+  color: var(--black);
+}
+
+/* Sits over the bar's bottom border */
+.pro-tabs__link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 0.208vw; /* 3 */
+  background: var(--red);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.pro-tabs__link.is-active::after {
+  transform: scaleX(1);
+}
+
+/* ============================================================
+   Professional — overview
+   60 under the tabs. Bio column 191 in, 476 wide; facts column
+   180 past it, 416 wide. Labels (.subhead) sit 10 above a grey
+   rule that draws in. Lead (.h3) 25 under the rule, body 25 under
+   the lead; 69 to the section's bottom rule.
+   vw values are px / 1440 * 100
+   ============================================================ */
+.pro-overview {
+  display: grid;
+  grid-template-columns: 33.056vw 28.889vw; /* 476 / 416 */
+  column-gap: 12.5vw; /* 180 */
+  align-items: start;
+  padding: 4.167vw 0 4.792vw 13.264vw; /* 60 / 0 / 69 / 191 */
+  border-bottom: 1px solid #e7eaee;
+}
+
+.pro-label {
+  position: relative;
+  display: block;
+  padding-bottom: 0.694vw; /* 10 */
+}
+
+.pro-label::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: #e3e8ee;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.pro-label.is-in::after {
+  transform: scaleX(1);
+}
+
+.pro-overview__lead {
+  margin-top: 1.736vw; /* 25 */
+}
+
+.pro-overview__text {
+  margin-top: 1.736vw; /* 25 */
+}
+
+/* Facts: groups 28 apart, content 12 under the rule */
+.pro-facts {
+  margin: 0;
+}
+
+.pro-facts__group + .pro-facts__group {
+  margin-top: 1.944vw; /* 28 */
+}
+
+.pro-facts dd {
+  margin: 0.833vw 0 0; /* 12 */
+}
+
+/* Navy pills, as .pro-hero__location without the flag */
+.pro-facts__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.556vw 0.417vw; /* 8 / 6 */
+}
+
+.pro-facts__tag {
+  display: inline-block;
+  padding: 0.313vw 0.625vw; /* 4.5 / 9 */
+  border-radius: 999px;
+  background: var(--black);
+  font-size: 0.972vw; /* 14 */
+  font-weight: 500;
+  line-height: 1.14;
+  color: var(--white);
+  transition: background-color 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.pro-facts__tag:hover {
+  background: var(--navy);
+}
+
+.pro-facts__text {
+  font-size: 0.972vw; /* 14 */
+  line-height: 1.14;
+  color: var(--black);
+}
+
+.pro-facts__list li + li {
+  margin-top: 1.111vw; /* 16 */
+}
+
+/* ============================================================
+   Professional — experience
+   Light grey. Label 87 in, 29 from the top, rule to 87 from the
+   right. List 56 under the rule: triangles at 364, text 32 past
+   them (408 → 1078, 362 from the right), items 46 apart. "Read
+   more" (.button-label, underlined) centred 63 under the list,
+   56 to the bottom.
+   vw values are px / 1440 * 100
+   ============================================================ */
+.pro-experience {
+  padding: 2.014vw 6.042vw 3.889vw; /* 29 / 87 / 56 */
+  background: #eef0f3;
+}
+
+/* The label rule needs more contrast on the grey panel */
+.pro-experience .pro-label::after {
+  background: #d3dae2;
+}
+
+.pro-experience__list {
+  width: 49.583vw; /* 714 */
+  margin: 3.889vw 0 0 19.236vw; /* 56 / 0 / 0 / 277: 364 from the page edge */
+}
+
+.pro-experience__list li {
+  padding-left: 3.056vw; /* 44: 12 triangle + 32 */
+}
+
+.pro-experience__list li + li {
+  margin-top: 3.194vw; /* 46 */
+}
+
+/* Triangle marker, 12 x 14, centred on the first line */
+.pro-experience__list ul > li::before {
+  left: 0;
+  top: 0.347vw; /* 5 */
+  width: 0.833vw; /* 12 */
+  height: 0.972vw; /* 14 */
+  border-radius: 0;
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+}
+
+/* Rows past the cap (main.js) hide until "Read more" */
+.pro-experience__list:not(.is-expanded) li.is-extra {
+  display: none;
+}
+
+.pro-experience__more {
+  display: block;
+  margin: 4.375vw auto 0; /* 63 */
+  padding: 0;
+  border: 0;
+  background: none;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  cursor: pointer;
+  transition: color 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.pro-experience__more:hover {
+  color: var(--red);
+}
+
+/* ============================================================
+   Professional — insights / awards (.pro-related)
+   Heading column 28 in (h2, max 250 so "Awards & Rankings" wraps,
+   "View all" 15 below), cards from 378 to 28 from the right, 3 up,
+   18 apart, tops level with the heading. 71 above and below; when
+   two sections stack: 66 to a grey rule (28 in each side, draws
+   in), 54 below it.
+   vw values are px / 1440 * 100
+   ============================================================ */
+.pro-related {
+  position: relative;
+  display: grid;
+  grid-template-columns: 24.306vw 1fr; /* 350: cards start at 378 */
+  align-items: start;
+  padding: 4.931vw 1.944vw; /* 71 / 28 */
+}
+
+.pro-related:has(+ .pro-related) {
+  padding-bottom: 4.583vw; /* 66 */
+}
+
+.pro-related + .pro-related {
+  padding-top: 3.75vw; /* 54 */
+}
+
+.pro-related + .pro-related::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 1.944vw; /* 28 */
+  right: 1.944vw;
+  height: 1px;
+  background: #e3e8ee;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.pro-related + .pro-related.is-in::before {
+  transform: scaleX(1);
+}
+
+.pro-related__title {
+  max-width: 17.361vw; /* 250 */
+}
+
+.pro-related__link {
+  gap: 1.181vw; /* 17 */
+  margin-top: 1.042vw; /* 15 */
+}
+
+.pro-related__cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25vw; /* 18 */
+}
+
+.pro-related__cards > li {
+  display: flex;
+}
+
+/* ============================================================
+   Post card (shared: professional insights / awards, later the
+   location pages). White, 1px border, 249 min tall. Title (.h3, max 285)
+   13 from the top, excerpt (.body, grey, max 260) 16 below; date
+   and 20 red arrow on the bottom edge, 15 up, arrow 14 from the
+   right.
+   vw values are px / 1440 * 100
+   ============================================================ */
+.post-card {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-height: 17.292vw; /* 249 */
+  padding: 0.903vw 0.972vw 1.042vw 0.833vw; /* 13 / 14 / 15 / 12 */
+  border: 1px solid #dfe4ea;
+  border-radius: 0.347vw; /* 5 */
+  background: var(--white);
+  transition: border-color 0.3s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.post-card:hover {
+  border-color: #c3ccd6;
+  box-shadow: 0 0.556vw 1.667vw rgba(7, 20, 35, 0.06); /* 0 8 24 */
+}
+
+/* Title width fitted to the mockup's line breaks (275–295 all match) */
+.post-card__title {
+  max-width: 19.792vw; /* 285 */
+}
+
+.post-card__excerpt {
+  max-width: 18.056vw; /* 260 */
+  margin-top: 1.111vw; /* 16 */
+  color: var(--grey);
+}
+
+.post-card__foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 1.389vw; /* 20: keeps long titles off the date */
+}
+
+.post-card .arrow-circle {
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.post-card:hover .arrow-circle {
+  transform: translateX(0.208vw); /* 3 */
+}
+
+/* ============================================================
+   Insight (Module) — hero
+   Same block as the standard hero, over a cover image instead of
+   navy. Breadcrumbs, 74 to the title, 17 to the date, 122 to the
+   lead, 44 bottom. Report card: white, 20 from the right, 32 from
+   the bottom.
+   vw values are px / 1440 * 100
+   ============================================================ */
+.in-hero--module {
+  isolation: isolate;
+  padding-bottom: 3.056vw; /* 44 */
+}
+
+.in-hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+}
+
+.in-hero--module .in-hero__intro {
+  margin-top: 5.139vw; /* 74 */
+}
+
+/* Width fitted to the mockup's three lines (465–505 all match) */
+.in-hero__lead {
+  max-width: 33.333vw; /* 480 */
+  line-height: 1.125; /* 27 */
+  margin-top: 8.472vw; /* 122 */
+}
+
+.in-hero__report {
+  position: absolute;
+  right: 1.389vw; /* 20 */
+  bottom: 2.222vw; /* 32 */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 20.833vw; /* 300 */
+  min-height: 9.444vw; /* 136 */
+  padding: 0.903vw 0.972vw 1.042vw 0.833vw; /* 13 / 14 / 15 / 12 */
+  border-radius: 0.347vw; /* 5 */
+  background: var(--white);
+  color: var(--black);
+  transition: box-shadow 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.in-hero__report .arrow-circle {
+  align-self: flex-end;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.in-hero__report:hover {
+  box-shadow: 0 0.556vw 1.667vw rgba(7, 20, 35, 0.25); /* 0 8 24 */
+}
+
+.in-hero__report:hover .arrow-circle {
+  transform: translateX(0.208vw); /* 3 */
+}
+
+/* ============================================================
+   Insight (Module) — panels
+   Teal texture (parallax), 104 top / 102 bottom. Panels 191 in
+   from both sides, 20 apart, 5 radius. Heading 23 in, 226 wide,
+   76 to a 1px rule; body 31 past the rule, 79 from the right.
+   Body copy is the shared WYSIWYG styles (18/22). Dark panel: navy, link 105
+   under the copy.
+   vw values are px / 1440 * 100
+   ============================================================ */
+.in-panels {
+  position: relative;
+  padding: 7.222vw 13.264vw 7.083vw; /* 104 / 191 / 102 */
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* Navy tint: the mockup's texture is darker than the raw image */
+.in-panels::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: rgba(7, 20, 35, 0.35);
+}
+
+.in-panels__list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.389vw; /* 20 */
+}
+
+.in-panel {
+  display: flex;
+  align-items: stretch;
+  padding: 1.458vw 5.486vw 2.292vw 1.597vw; /* 21 / 79 / 33 / 23 */
+  border-radius: 0.347vw; /* 5 */
+  background: var(--white);
+}
+
+.in-panel--dark {
+  background: var(--navy);
+}
+
+.in-panel__heading {
+  flex: none;
+  width: 15.694vw; /* 226 */
+  margin-right: 5.278vw; /* 76 */
+}
+
+.in-panel__body {
+  flex: 1;
+  min-width: 0;
+  padding-left: 2.153vw; /* 31 */
+  border-left: 1px solid rgba(159, 178, 197, 0.5);
+}
+
+.in-panel--dark .rich-text {
+  color: var(--white);
+}
+
+.in-panel__link {
+  margin-top: 7.292vw; /* 105 */
+}
+
+/* ============================================================
+   Insight (Module) — key findings
+   White, 66 top. Heading 21 in, 21 above the first rule. Rows sit
+   between 1px rules (21 in from both sides): number in Roboto
+   Condensed 220/220, 27 under it to the next rule; title starts at
+   625 (256 wide), text 126 past it, 94 from the right. Section
+   ends 115 under the last number's line box.
+   vw values are px / 1440 * 100
+   ============================================================ */
+.in-findings {
+  padding: 4.583vw var(--sidepadding-xs) 6.111vw; /* 66 / 20 / 88: +27 row = 115 */
+  background: var(--white);
+}
+
+.in-findings__heading {
+  padding-left: 0.069vw; /* 1: lands on 21 */
+}
+
+.in-findings__list {
+  margin: 1.458vw 0 0; /* 21 */
+  padding: 0;
+  list-style: none;
+}
+
+.in-findings__item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 41.944vw 17.847vw 1fr; /* 604 / 257: 256 in the mock, +1 so "Technology, geopolitics" (255.7) never wraps */
+  align-items: start;
+  padding: 0 5.069vw 1.875vw 0.069vw; /* 0 / 73: 94 from the edge / 27 / 1 */
+}
+
+.in-findings__item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0.069vw; /* 21 */
+  right: 0.069vw;
+  height: 1px;
+  background: rgba(159, 178, 197, 0.5);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.in-findings__item.is-in::before {
+  transform: scaleX(1);
+}
+
+.in-findings__num {
+  display: block;
+  font-family: var(--font-roboto-condensed);
+  font-size: 15.271vw; /* 219.896 */
+  font-weight: 500;
+  line-height: 1; /* 220 */
+  letter-spacing: -1.069vw; /* -15.393 */
+  color: var(--black);
+}
+
+.in-findings__title,
+.in-findings__text {
+  padding-top: 1.944vw; /* 28 */
+}
+
+.in-findings__text {
+  margin-left: 8.75vw; /* 126 */
+}
+
+/* ============================================================
+   Insight (Module) — related professionals
+   The professional page's related block with the grid's .pro-card:
+   heading 33 in, cards from 384 (4 across, 9 apart, 248 wide),
+   38 from the right, 61 under the cards. No top padding: the key
+   findings above already ends 115 under its last number.
+   vw values are px / 1440 * 100
+   ============================================================ */
+.pro-related--people {
+  grid-template-columns: 24.375vw 1fr; /* 351: cards start at 384 */
+  padding: 0 2.639vw 4.236vw 2.292vw; /* 0 / 38 / 61 / 33 */
+  background: var(--white);
+}
+
+.pro-related--people .pro-related__cards {
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.625vw; /* 9 */
+}
+
+/* The list items are flex (pro-related), so the card has to stretch */
+.pro-related--people .pro-card {
+  flex: 1;
+}
+
+/* ============================================================
+   Insight (Module) — download banner
+   317 tall, two halves: red link panel (label .h2 30 from the top,
+   32 in, 14 to a white circle with a red chevron) and a cover image.
+   vw values are px / 1440 * 100
+   ============================================================ */
+.in-download {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 22.014vw; /* 317 */
+}
+
+.in-download__link {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.972vw; /* 14 */
+  padding: 2.083vw 2.222vw; /* 30 / 32 */
+  background: var(--red);
+}
+
+/* Centred on the label's line (40) */
+.in-download__icon {
+  margin-top: 0.833vw; /* 12: (40 - 16) / 2 */
+  width: 1.111vw; /* 16 */
+  height: 1.111vw;
+  background: var(--white);
+  color: var(--red);
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.in-download__link:hover .in-download__icon {
+  transform: translateX(0.278vw); /* 4 */
+}
+
+.in-download__image {
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+}
+
+/* ============================================================
+   Insight (Module) — share row
+   Centred: heading (.h3), 35 to a 77-tall grey rule, 36 to the
+   standard share buttons (print box 158 wide, 19 to the icon squares). 105 above, 93 to the rule
+   that tops the related insights.
+   vw values are px / 1440 * 100
+   ============================================================ */
+.in-share-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7.292vw var(--sidepadding-xs) 6.458vw; /* 105 / 20 / 93 */
+  background: var(--white);
+}
+
+/* The rule hangs off the heading: 35 + 1 + 36 = 72 to the buttons */
+.in-share-row__heading {
+  position: relative;
+  margin-right: 5vw; /* 72 */
+}
+
+.in-share-row__heading::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: calc(100% + 2.431vw); /* 35 */
+  width: 1px;
+  height: 5.347vw; /* 77 */
+  background: #e3e8ee;
+  transform: translateY(-50%);
+}
+
+.in-share-row .in-share {
+  margin-top: 0;
+}
+
+.in-share-row .in-share__print {
+  flex: none;
+  width: 10.972vw; /* 158 */
+  margin-right: 0.764vw; /* 11: 8 gap + 11 = 19 */
+}
+
+/* ============================================================
+   Insight (Module) — related insights
+   The professional page's related block (3 post cards from 378),
+   under a grey rule 28 in from both sides, cards 33 below it.
+   vw values are px / 1440 * 100
+   ============================================================ */
+.in-related-insights {
+  padding-top: 2.292vw; /* 33 */
+  background: var(--white);
+}
+
+.in-related-insights::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 1.944vw; /* 28 */
+  right: 1.944vw;
+  height: 1px;
+  background: #e3e8ee;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.in-related-insights.is-in::before {
+  transform: scaleX(1);
+}
+
+/* ============================================================
+   Page hero — compact (contact): no min height, title 150 under
+   the breadcrumbs, 27 bottom
+   vw values are px / 1440 * 100
+   ============================================================ */
+.page-hero--compact {
+  min-height: 0;
+  padding-bottom: 1.875vw; /* 27 */
+}
+
+.page-hero--compact .page-hero__content {
+  margin-top: 10.417vw; /* 150 */
+}
+
+/* ============================================================
+   Contact — offices
+   City tabs (.h2, 5 apart) 20 in; active = black + red arrow 11
+   past the name, others grey. Panel from 409: details 281 wide,
+   42 to a 697 x 471 map, 12 from the right. 13 top / 19 bottom.
+   Details: name (.h4) 18 down, rule 11 under it; phone / email
+   rows 21 under the rule (40 circles, 12 to the text, 16 apart);
+   address 32 below (18/22).
+   vw values are px / 1440 * 100
+   ============================================================ */
+.contact-offices {
+  display: grid;
+  grid-template-columns: 1fr 70.833vw; /* panels 1020 */
+  align-items: start;
+  padding: 0.903vw 0.833vw 1.319vw var(--sidepadding-xs); /* 13 / 12 / 19 / 20 */
+  background: var(--white);
+}
+
+.contact-offices__tabs {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.347vw; /* 5 */
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Arrow is inline: a button's children can't be flex items (see HANDOVER) */
+.contact-offices__tab {
+  padding: 0;
+  border: 0;
+  background: none;
+  text-align: left;
+  color: #c4cad2;
+  cursor: pointer;
+  transition: color 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.contact-offices__tab:hover,
+.contact-offices__tab.is-active {
+  color: var(--black);
+}
+
+.contact-offices__tab .arrow-circle {
+  display: none;
+  margin-left: 0.764vw; /* 11 */
+  vertical-align: middle;
+}
+
+.contact-offices__tab.is-active .arrow-circle {
+  display: inline-grid;
+}
+
+.contact-office {
+  display: grid;
+  grid-template-columns: 1fr 48.403vw; /* 697 map */
+  column-gap: 2.917vw; /* 42 */
+  align-items: start;
+}
+
+.contact-office[hidden] {
+  display: none;
+}
+
+.contact-office__info {
+  padding-top: 1.25vw; /* 18 */
+}
+
+.contact-office__name {
+  padding-bottom: 0.764vw; /* 11 */
+  border-bottom: 1px solid #e3e8ee;
+}
+
+.contact-office__lines {
+  display: flex;
+  flex-direction: column;
+  gap: 1.111vw; /* 16 */
+  margin: 1.458vw 0 0; /* 21 */
+  padding: 0;
+  list-style: none;
+}
+
+.contact-office__lines li {
+  display: flex;
+  align-items: center;
+  gap: 0.833vw; /* 12 */
+  font-size: 1.25vw; /* 18 */
+  line-height: 1.22;
+  color: var(--black);
+}
+
+.contact-office__lines a {
+  transition: color 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.contact-office__lines a:hover {
+  color: var(--red);
+}
+
+.contact-office__icon {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 2.778vw; /* 40 */
+  height: 2.778vw;
+  border: 1px solid #dfe4ea;
+  border-radius: 50%;
+}
+
+.contact-office__icon svg {
+  width: 1.111vw; /* 16 */
+  height: 1.111vw;
+}
+
+.contact-office__address {
+  margin-top: 2.222vw; /* 32 */
+}
+
+.contact-office__map {
+  display: block;
+  width: 100%;
+  height: 32.708vw; /* 471 */
+  border: 0;
+}
+
+/* ============================================================
+   Careers — hero
+   Navy, 567 min tall, the insight hero's frame: breadcrumbs at 103,
+   image 697 wide, 81 from the top, 15 from the right and bottom.
+   Text sits on the bottom: title, 89 to the intro (max 436, 270
+   clear of the image), 20 to the link, 32 bottom.
+   vw values are px / 1440 * 100
+   ============================================================ */
+.careers-hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 39.375vw; /* 567 */
+  padding: var(--top-from-header) var(--sidepadding-xs) 2.222vw; /* 103 / 20 / 32 */
+  overflow: hidden;
+  background: #041f36;
+}
+
+.careers-hero__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: auto;
+  padding-top: 5.625vw; /* 81: minimum gap under the breadcrumbs */
+}
+
+.careers-hero__intro {
+  max-width: 30.278vw; /* 436 */
+  margin-top: 6.181vw; /* 89 */
+}
+
+.careers-hero__link {
+  gap: 1.181vw; /* 17 */
+  margin-top: 1.389vw; /* 20 */
+}
+
+.careers-hero__image {
+  position: absolute;
+  top: 5.625vw; /* 81 */
+  right: 1.042vw; /* 15 */
+  width: 48.403vw; /* 697 */
+  height: calc(100% - 6.667vw); /* 81 + 15 */
+  max-width: none;
+  object-fit: cover;
+  border-radius: 0.347vw; /* 5 */
+}
+
+/* ============================================================
+   Careers — paths
+   Three cards 18 under the hero, 18 in, 14 apart, 103 bottom.
+   Card: 1px border, 5 radius, 142 min tall; title (.h3) 18 in, the
+   20 red arrow 20 from the right on the title line; grey text
+   (max 200) 28 below.
+   vw values are px / 1440 * 100
+   ============================================================ */
+.career-paths {
+  padding: 1.25vw 1.25vw 7.153vw; /* 18 / 18 / 103 */
+  background: var(--white);
+}
+
+.career-paths__list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.972vw; /* 14 */
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.career-paths__list > li {
+  display: flex;
+}
+
+.career-card {
+  display: grid;
+  flex: 1;
+  grid-template-columns: 1fr auto;
+  align-content: start;
+  column-gap: 0.694vw; /* 10 */
+  min-height: 9.861vw; /* 142 */
+  padding: 1.528vw 1.389vw 1.389vw 1.25vw; /* 22 / 20 / 20 / 18 */
+  border: 1px solid #dfe4ea;
+  border-radius: 0.347vw; /* 5 */
+  background: var(--white);
+  transition: border-color 0.3s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.career-card:hover {
+  border-color: #c3ccd6;
+  box-shadow: 0 0.556vw 1.667vw rgba(7, 20, 35, 0.06); /* 0 8 24 */
+}
+
+.career-card .arrow-circle {
+  margin-top: 0.139vw; /* 2: centred on the 24 line */
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.career-card:hover .arrow-circle {
+  transform: translateX(0.208vw); /* 3 */
+}
+
+.career-card__text {
+  grid-column: 1 / -1;
+  max-width: 13.889vw; /* 200 */
+  margin-top: 1.944vw; /* 28 */
+  color: var(--grey);
+}
+
+/* ============================================================
+   Careers — values (heading + card slider)
+   Heading (.h2) 18 in; slider from 482 to 18 from the right, top
+   level with the heading. Card: 372 tall, 1px border, two halves:
+   title (.h3) 19 down / 21 in, text (18/22, max 440) pinned 23
+   off the bottom; outline icon 236 tall centred in the right half.
+   44 red prev / next circles 14 under the card, 14 apart; 70 bottom.
+   vw values are px / 1440 * 100
+   ============================================================ */
+.careers-values {
+  display: grid;
+  grid-template-columns: 32.222vw 1fr; /* 464: slider starts at 482 */
+  align-items: start;
+  padding: 0 1.25vw 4.861vw; /* 0 / 18 / 70 */
+  background: var(--white);
+}
+
+.careers-values__slide {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 1fr;
+  min-height: 25.833vw; /* 372 */
+  padding: 1.319vw 1.458vw 1.597vw; /* 19 / 21 / 23 */
+  border: 1px solid #dfe4ea;
+  border-radius: 0.347vw; /* 5 */
+  background: var(--white);
+}
+
+/* Width fitted so "Tilleke & Gibbins" gets its own line */
+.careers-values__heading {
+  max-width: 22.222vw; /* 320 */
+}
+
+.careers-values__title {
+  grid-column: 1;
+}
+
+/* Width fitted to the mockup's line breaks (424–431 all match) */
+.careers-values__text {
+  grid-column: 1;
+  align-self: end;
+  max-width: 29.722vw; /* 428 */
+}
+
+/* Image field: shown 236 tall at its own aspect ratio */
+.careers-values__icon {
+  grid-column: 2;
+  grid-row: 1 / 3;
+  place-self: center;
+  width: auto;
+  max-width: 100%;
+  height: 16.389vw; /* 236 */
+  object-fit: contain;
+}
+
+.careers-values__nav {
+  display: flex;
+  gap: 0.972vw; /* 14 */
+  margin-top: 0.972vw; /* 14 */
+}
+
+/* The chevron is inline: a button's children can't be flex items */
+.careers-values__btn {
+  width: 3.056vw; /* 44 */
+  height: 3.056vw;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: var(--red);
+  color: var(--white);
+  line-height: 3.056vw;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.careers-values__btn:hover {
+  background: #c92a1e;
+}
+
+.careers-values__btn svg {
+  display: inline-block;
+  width: 0.694vw; /* 10 */
+  height: 0.694vw;
+  vertical-align: middle;
+}
+
+/* ============================================================
+   Careers — people
+   Label (.pro-label: subhead + rule 10 under it) 14 down, 20 in,
+   rule to 15 from the right. Heading (.h2) 27 under the rule, text
+   40 below it (18/22 WYSIWYG, to 189 short of the centre). Image
+   from the centre (720) to 15 from the right, 693 tall, top level
+   with the text; 17 under it.
+   vw values are px / 1440 * 100
+   ============================================================ */
+.careers-people {
+  padding: 0.972vw 1.042vw 1.181vw var(--sidepadding-xs); /* 14 / 15 / 17 / 20 */
+  background: var(--white);
+}
+
+.careers-people__heading {
+  margin-top: 1.875vw; /* 27 */
+}
+
+.careers-people__body {
+  display: grid;
+  grid-template-columns: 1fr 48.958vw; /* image 720 → 1425 (705) */
+  align-items: start;
+  margin-top: 2.778vw; /* 40 */
+}
+
+/* Fitted to the mockup's line breaks (497–506 all match); ~189 short of the centre */
+.careers-people__text {
+  max-width: 34.722vw; /* 500 */
+}
+
+.careers-people__image {
+  width: 100%;
+  height: 48.125vw; /* 693 */
+  max-width: none;
+  object-fit: cover;
+}
+
+/* ============================================================
+   Careers — call to action
+   Light grey panel, 15 in from the sides, 101 top / bottom; centred
+   heading (.h2) with the link 21 under it.
+   vw values are px / 1440 * 100
+   ============================================================ */
+.careers-cta {
+  padding: 0 1.042vw; /* 0 / 15: the job opportunities below carry the gap */
+  background: var(--white);
+}
+
+.careers-cta__panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 7.014vw var(--sidepadding-xs); /* 101 / 20 */
+  background: #eef0f3;
+  text-align: center;
+}
+
+.careers-cta__link {
+  gap: 1.181vw; /* 17 */
+  margin-top: 1.458vw; /* 21 */
+}
+
+/* ============================================================
+   Careers — job opportunities
+   Centred 853 column, 67 top / bottom. Grey label, 10 to the
+   heading (.h2), 35 to the rows. Row: 63 tall, 1px border, 5
+   radius, 10 apart; place (.h4) 19 in, grey count 24 before the
+   20 red arrow, 20 from the right. "View all" centred 35 below.
+   vw values are px / 1440 * 100
+   ============================================================ */
+.careers-jobs {
+  display: flex;
+  flex-direction: column;
+  padding: 4.653vw calc((100% - 59.236vw) / 2); /* 67 / centres 853 */
+  background: var(--white);
+}
+
+.careers-jobs__heading {
+  margin-top: 0.694vw; /* 10 */
+}
+
+.careers-jobs__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.694vw; /* 10 */
+  margin: 2.431vw 0 0; /* 35 */
+  padding: 0;
+  list-style: none;
+}
+
+.careers-jobs__row {
+  display: flex;
+  align-items: center;
+  min-height: 4.375vw; /* 63 */
+  padding: 0.694vw 1.389vw 0.694vw 1.319vw; /* 10 / 20 / 10 / 19 */
+  border: 1px solid #dfe4ea;
+  border-radius: 0.347vw; /* 5 */
+  background: var(--white);
+  transition: border-color 0.3s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.careers-jobs__row:hover {
+  border-color: #c3ccd6;
+  box-shadow: 0 0.556vw 1.667vw rgba(7, 20, 35, 0.06); /* 0 8 24 */
+}
+
+.careers-jobs__count {
+  margin: 0 1.667vw 0 auto; /* 24 to the arrow */
+}
+
+.careers-jobs__row .arrow-circle {
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.careers-jobs__row:hover .arrow-circle {
+  transform: translateX(0.208vw); /* 3 */
+}
+
+.careers-jobs__link {
+  align-self: center;
+  gap: 1.181vw; /* 17 */
+  margin-top: 2.431vw; /* 35 */
+}
+
+/* ============================================================
+   Under development — full-height navy page for routes with no
+   design yet (term pages, archives, search, 404, placeholder
+   pages). Extends .page-hero.
+   ============================================================ */
+.page-hero--ud {
+  min-height: 100vh;
+}
+
+.page-hero--ud .h1 {
+  max-width: 37.014vw; /* 533 */
+}
+
+.page-hero--ud .page-hero__links {
+  display: flex;
+  gap: 2.222vw; /* 32 */
+  margin-top: 2.917vw; /* 42 */
 }
