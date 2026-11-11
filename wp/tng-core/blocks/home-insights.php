@@ -46,7 +46,7 @@ foreach ( $tng_tabs as $tng_term ) {
 			'excerpt' => get_the_excerpt( $tng_feature ),
 			'date'    => tng_card_date( $tng_feature ),
 			'url'     => get_permalink( $tng_feature ),
-			'image'   => get_the_post_thumbnail_url( $tng_feature, 'large' ) ?: 'https://picsum.photos/seed/' . rawurlencode( $tng_term->slug ) . '/1286/1034',
+			'image'   => get_the_post_thumbnail_url( $tng_feature, 'large' ) ?: tng_bundled_img( array( 'home-insights-' . $tng_term->slug . '.jpg', 'home-insights-feature.jpg' ) ),
 		) : null,
 		'list'    => array_map(
 			static function ( $p ) {

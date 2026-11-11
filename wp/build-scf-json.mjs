@@ -30,8 +30,13 @@ const relationship = (p, n, l, postType, max = '', extra = {}) => fld(p, n, 'rel
   min: '', max, elements: '', bidirectional: 0, bidirectional_target: [], ...extra,
 });
 const postObject = (p, n, l, postType) => fld(p, n, 'post_object', l, {
-  post_type: [postType], post_status: [''], taxonomy: [], return_format: 'id', multiple: 0, allow_null: 1, bidirectional: 0, ui: 1, bidirectional_target: [],
+  post_type: Array.isArray(postType) ? postType : [postType], post_status: [''], taxonomy: [], return_format: 'id', multiple: 0, allow_null: 1, bidirectional: 0, ui: 1, bidirectional_target: [],
 });
+const taxonomyField = (p, n, l, tax, extra = {}) => fld(p, n, 'taxonomy', l, {
+  taxonomy: tax, add_term: 0, save_terms: 0, load_terms: 0, return_format: 'id',
+  field_type: 'select', allow_null: 0, allow_in_bindings: 0, bidirectional: 0, multiple: 0, bidirectional_target: [], ...extra,
+});
+const number = (p, n, l, def, extra = {}) => fld(p, n, 'number', l, { default_value: def, min: '', max: '', step: 1, placeholder: '', prepend: '', append: '', ...extra });
 const repeater = (p, n, l, subs, extra = {}) => fld(p, n, 'repeater', l, {
   layout: 'block', pagination: 0, min: 0, max: 0, collapsed: '', button_label: `Add ${l.toLowerCase().replace(/s$/, '')}`,
   rows_per_page: 20, sub_fields: subs, ...extra,
@@ -260,6 +265,32 @@ group('award', 'Award', [
   relationship('awd', 'related_professionals', 'Related professionals', 'professional'),
 ], onPostType('award'));
 
+// Job
+group('job', 'Job', [
+  text('job', 'department', 'Department'),
+  postObject('job', 'career_path', 'Career path page (lists the job under "Opportunities for …")', 'page'),
+  textarea('job', 'summary', 'Summary (centred intro)', '', { rows: 4, new_lines: '' }),
+  repeater('job', 'responsibilities', 'Position summary groups', [
+    sub('job', 'responsibilities', 'heading', text, 'Heading'),
+    sub('job', 'responsibilities', 'list', wysiwyg, 'Bullet list', { media_upload: 0 }),
+  ], { button_label: 'Add group' }),
+  text('job', 'apply_email', 'Apply email (empty = Jobs → Job page settings)'),
+], onPostType('job'));
+
+// Job page settings (options sub-page under Jobs)
+group('job_settings', 'Job page settings', [
+  text('jst', 'apply_heading', 'Apply card heading', 'Ready to join us?'),
+  text('jst', 'apply_text', 'Apply card text', 'Please send the CV to:'),
+  text('jst', 'apply_email', 'Apply email', 'recruit@tilleke.com'),
+  text('jst', 'cta_heading', 'Bottom panel heading', 'Ready to join us?'),
+  image('jst', 'cta_background', 'Bottom panel background (default: teal texture)'),
+  textarea('jst', 'process_title', 'Card 1 title', 'Curious about our\nRecruitment Process?', { rows: 2 }),
+  text('jst', 'process_label', 'Card 1 link label', 'Learn More'),
+  text('jst', 'process_url', 'Card 1 link URL', '#'),
+  textarea('jst', 'role_title', "Card 2 title (links to the job's career path page)", 'Learn more\nabout your role', { rows: 2 }),
+  textarea('jst', 'location_title', "Card 3 title (%s = the job's country; links to its location page)", 'Learn more\nabout %s', { rows: 2 }),
+], onOptions('tng-job-settings'));
+
 // Location term fields
 group('location', 'Location details', [
   image('loc', 'flag', 'Flag (default: bundled flag SVG for the six countries)'),
@@ -271,11 +302,63 @@ group('location', 'Location details', [
   text('loc', 'email', 'Email'),
   textarea('loc', 'address', 'Address', '', { rows: 4 }),
   text('loc', 'map_query', 'Map query (address or place for the Google Maps embed)'),
+  tab('loc', 'tab_page', 'Location page (countries)'),
+  message('loc', 'page_note', 'Used on the country page (/location/<country>/). City terms redirect to their country page; the hero and the office strip show the first city office under the country.'),
+  image('loc', 'hero_image', 'Hero image (min 1394×942)'),
+  toggle('loc', 'show_loc_overview', 'Show overview'),
+  textarea('loc', 'overview_heading', 'Overview heading', '', { rows: 3, new_lines: '' }),
+  wysiwyg('loc', 'overview_text', 'Overview text', { media_upload: 0 }),
+  toggle('loc', 'show_loc_professionals', 'Show professionals (4 with this location)'),
+  toggle('loc', 'show_loc_insights', 'Show insights (3 latest with this location)'),
+  toggle('loc', 'show_loc_successes', 'Show client successes'),
+  repeater('loc', 'successes', 'Client successes', [
+    sub('loc', 'successes', 'title', textarea, 'Title', '', { rows: 2, new_lines: '' }),
+    sub('loc', 'successes', 'text', textarea, 'Text', '', { rows: 4, new_lines: '' }),
+    sub('loc', 'successes', 'link_url', text, '"Read more" URL (empty = no link)'),
+  ]),
+  toggle('loc', 'show_loc_experience', 'Show experience'),
+  wysiwyg('loc', 'experience', 'Experience (bullet list)', { media_upload: 0 }),
+  toggle('loc', 'show_loc_awards', 'Show awards (3 latest with this location)'),
+  toggle('loc', 'show_loc_office', 'Show office strip + map'),
 ], onTax('location'));
+
+// Industry + Practice term fields (service pages; child terms = subpractices)
+group('service', 'Service page', [
+  message('svc', 'note', 'Used on the industry / practice page. A child term (a subpractice) shows the hero, the overview and the experience only, labelled "Representative Matters".'),
+  tab('svc', 'tab_hero', 'Hero'),
+  image('svc', 'hero_image', 'Hero image (min 1394×942)'),
+  repeater('svc', 'contacts', 'Contacts by country', [
+    sub('svc', 'contacts', 'location', taxonomyField, 'Country', 'location'),
+    sub('svc', 'contacts', 'people', relationship, 'People', 'professional', 4),
+  ], { button_label: 'Add country' }),
+  message('svc', 'contacts_note', "Countries with no people are hidden. The tab that opens first follows the visitor's country (Cambodia, Indonesia, Laos, Myanmar, Vietnam); everyone else sees Thailand."),
+  tab('svc', 'tab_overview', 'Overview'),
+  toggle('svc', 'show_svc_overview', 'Show overview'),
+  textarea('svc', 'overview_heading', 'Heading (industries, subpractices)', '', { rows: 3, new_lines: '' }),
+  textarea('svc', 'quote', 'Quote (practices: shown instead of the heading when filled)', '', { rows: 3, new_lines: '' }),
+  text('svc', 'quote_source', 'Quote source'),
+  wysiwyg('svc', 'overview_text', 'Overview text', { media_upload: 0 }),
+  tab('svc', 'tab_sections', 'Sections'),
+  toggle('svc', 'show_svc_subpractices', 'Show subpractices (child terms)'),
+  image('svc', 'card_image', 'Card image when listed as a subpractice (min 666×260)'),
+  toggle('svc', 'show_svc_successes', 'Show client successes'),
+  repeater('svc', 'successes', 'Client successes', [
+    sub('svc', 'successes', 'title', textarea, 'Title', '', { rows: 2, new_lines: '' }),
+    sub('svc', 'successes', 'text', textarea, 'Text', '', { rows: 4, new_lines: '' }),
+    sub('svc', 'successes', 'link_url', text, '"Read more" URL (empty = no link)'),
+  ]),
+  toggle('svc', 'show_svc_experience', 'Show experience'),
+  text('svc', 'experience_label', 'Experience label (empty = "Experience", or "Representative Matters" on a subpractice)'),
+  wysiwyg('svc', 'experience', 'Experience (bullet list)', { media_upload: 0 }),
+  toggle('svc', 'show_svc_professionals', 'Show professionals (4 with this term)'),
+  toggle('svc', 'show_svc_insights', 'Show insights (3 latest with this term)'),
+  toggle('svc', 'show_svc_awards', 'Show awards (3 latest with this term)'),
+], [[{ param: 'taxonomy', operator: '==', value: 'industry' }], [{ param: 'taxonomy', operator: '==', value: 'practice' }]]);
 
 // Site Header options
 group('site_header', 'Site Header', [
-  image('hdr', 'logo', 'Logo (SVG/PNG; empty = text stand-in)'),
+  image('hdr', 'logo', 'Logo on dark — white wordmark, shown over dark heroes (SVG/PNG; also used by the footer; empty = text stand-in)'),
+  image('hdr', 'logo_dark', 'Logo on white — navy wordmark, shown once the header turns white on scroll and on light pages (empty = bundled navy logo)'),
   repeater('hdr', 'top_links', 'Top row links', [
     sub('hdr', 'top_links', 'label', text, 'Label'),
     sub('hdr', 'top_links', 'url', text, 'URL'),
@@ -290,7 +373,7 @@ group('site_header', 'Site Header', [
 
 // Site Footer options
 group('site_footer', 'Site Footer', [
-  image('ftr', 'logo', 'Logo (empty = text stand-in)'),
+  image('ftr', 'logo', 'Logo — white wordmark (same image as Header → Logo on dark: changing one changes both; empty = text stand-in)'),
   repeater('ftr', 'social_links', 'Social links', [
     sub('ftr', 'social_links', 'network', select, 'Network', { facebook: 'Facebook', youtube: 'YouTube', linkedin: 'LinkedIn' }, 'facebook'),
     sub('ftr', 'social_links', 'url', text, 'URL'),
@@ -434,6 +517,7 @@ group('block_careers_people', 'Block: Careers people', [
   text('cpe', 'heading', 'Heading', 'We value people for who they are.'),
   wysiwyg('cpe', 'text', 'Text', { media_upload: 0 }),
   image('cpe', 'image', 'Image (min 1410×1386)'),
+  select('cpe', 'variant', 'Layout', { default: 'Careers page', path: 'Career path page (99 top, narrower text)' }, 'default'),
 ], onBlock('acf/careers-people'));
 
 group('block_careers_cta', 'Block: Careers CTA', [
@@ -450,6 +534,179 @@ group('block_careers_jobs', 'Block: Job opportunities', [
   text('cjo', 'view_all_label', 'View all label', 'View all'),
   text('cjo', 'view_all_url', 'View all URL', '#'),
 ], onBlock('acf/careers-jobs'));
+
+
+/* ---- About / archive / career path page blocks (2026-11-03) ---- */
+
+group('block_about_hero', 'Block: About hero', [
+  toggle('abh', 'show_about_hero', 'Show section'),
+  text('abh', 'title', 'Title (empty = page title)'),
+  textarea('abh', 'intro', 'Intro', '', { rows: 4, new_lines: '' }),
+  image('abh', 'image', 'Image (min 1394×942)'),
+], onBlock('acf/about-hero'));
+
+group('block_page_tabs', 'Block: On this page tabs', [
+  toggle('ptb', 'show_page_tabs', 'Show section'),
+  repeater('ptb', 'tabs', 'Tabs', [
+    sub('ptb', 'tabs', 'label', text, 'Label'),
+    sub('ptb', 'tabs', 'anchor', text, 'Section anchor (e.g. overview)'),
+  ], { button_label: 'Add tab' }),
+], onBlock('acf/page-tabs'));
+
+group('block_overview', 'Block: Overview (label + heading + text)', [
+  toggle('ovw', 'show_overview', 'Show section'),
+  select('ovw', 'variant', 'Style', { about: 'About overview', code: 'Code of conduct (with link)', path: 'Career path overview', info: 'About child page (Pro Bono / CSR / museum)' }, 'about'),
+  text('ovw', 'section_id', 'Anchor (for the tabs, e.g. overview)'),
+  text('ovw', 'label', 'Label', 'Overview'),
+  textarea('ovw', 'heading', 'Heading', '', { rows: 3, new_lines: '' }),
+  wysiwyg('ovw', 'text', 'Text', { media_upload: 0 }),
+  text('ovw', 'link_label', 'Link label (code of conduct style)'),
+  text('ovw', 'link_url', 'Link URL (e.g. the PDF)'),
+  toggle('ovw', 'show_image', 'Image under the heading (About child page style; CSR)', 0),
+  image('ovw', 'image', 'Image under the heading (min 728×364; empty = bundled CSR photo)'),
+], onBlock('acf/overview'));
+
+group('block_about_values', 'Block: About values (accordion + image)', [
+  toggle('abv', 'show_about_values', 'Show section'),
+  repeater('abv', 'items', 'Items', [
+    sub('abv', 'items', 'title', text, 'Title'),
+    sub('abv', 'items', 'text', wysiwyg, 'Text', { media_upload: 0 }),
+  ], { button_label: 'Add item' }),
+  image('abv', 'image', 'Image (min 1404×1334)'),
+], onBlock('acf/about-values'));
+
+group('block_about_numbers', 'Block: Our numbers', [
+  toggle('abn', 'show_about_numbers', 'Show section'),
+  image('abn', 'background', 'Background (default: teal texture)'),
+  repeater('abn', 'numbers', 'Numbers (4)', [
+    sub('abn', 'numbers', 'value', text, 'Value (counts up; keeps a suffix like "+")'),
+    sub('abn', 'numbers', 'label', text, 'Label'),
+  ], { button_label: 'Add number', max: 4 }),
+], onBlock('acf/about-numbers'));
+
+group('block_about_vision', 'Block: Vision and mission', [
+  toggle('abvi', 'show_about_vision', 'Show section'),
+  repeater('abvi', 'items', 'Tabs', [
+    sub('abvi', 'items', 'label', text, 'Tab label'),
+    sub('abvi', 'items', 'text', textarea, 'Text', '', { rows: 4, new_lines: '' }),
+    sub('abvi', 'items', 'image', image, 'Image (min 1400×1098)'),
+  ], { button_label: 'Add tab' }),
+], onBlock('acf/about-vision'));
+
+group('block_about_creed', 'Block: Creed', [
+  toggle('abc', 'show_about_creed', 'Show section'),
+  text('abc', 'label', 'Label', 'Creed'),
+  repeater('abc', 'columns', 'Columns (2)', [
+    sub('abc', 'columns', 'heading', text, 'Heading'),
+    sub('abc', 'columns', 'list', wysiwyg, 'Bullet list', { media_upload: 0 }),
+  ], { button_label: 'Add column', max: 2 }),
+], onBlock('acf/about-creed'));
+
+group('block_more_from', 'Block: More from', [
+  toggle('mfr', 'show_more_from', 'Show section'),
+  textarea('mfr', 'heading', 'Heading (empty = "More from <parent page>")', '', { rows: 2 }),
+  toggle('mfr', 'arrows', 'Red arrows on the rows', 0),
+  repeater('mfr', 'links', 'Links (empty = the parent page + its other child pages)', [
+    sub('mfr', 'links', 'label', text, 'Label'),
+    sub('mfr', 'links', 'url', text, 'URL'),
+  ], { button_label: 'Add link' }),
+], onBlock('acf/more-from'));
+
+group('block_archive_hero', 'Block: Archive hero (insights / awards)', [
+  toggle('arh', 'show_archive_hero', 'Show section'),
+  text('arh', 'title', 'Title (empty = page title)'),
+  textarea('arh', 'intro', 'Intro', '', { rows: 4, new_lines: '' }),
+  text('arh', 'link_label', 'Link label (empty = no link)'),
+  text('arh', 'link_url', 'Link URL'),
+  image('arh', 'image', 'Image (min 1394×942)'),
+], onBlock('acf/archive-hero'));
+
+group('block_archive_featured', 'Block: Featured post', [
+  toggle('arf', 'show_archive_featured', 'Show section'),
+  text('arf', 'label', 'Label', 'Featured'),
+  postObject('arf', 'featured_post', 'Post (insight or award; empty = the latest of the fallback type)', ['insight', 'award']),
+  select('arf', 'fallback_type', 'Fallback type when empty', { insight: 'Latest insight', award: 'Latest award' }, 'insight'),
+], onBlock('acf/archive-featured'));
+
+group('block_archive_filter', 'Block: Archive filter', [
+  toggle('arfl', 'show_archive_filter', 'Show section'),
+  message('arfl', 'note', 'Search by name and search by professional filter the grid below (the page reloads with the filter; chips show what is active). The facet dropdowns and the date picker await their design.'),
+], onBlock('acf/archive-filter'));
+
+group('block_archive_grid', 'Block: Archive grid', [
+  toggle('arg', 'show_archive_grid', 'Show section'),
+  select('arg', 'source', 'Posts', { insight: 'Insights', award: 'Awards' }, 'insight'),
+  number('arg', 'page_size', 'Cards per page', 12, { min: 3, max: 60 }),
+  toggle('arg', 'show_count', 'Show "Showing X out of Y results"', 1),
+], onBlock('acf/archive-grid'));
+
+group('block_path_hero', 'Block: Career path hero', [
+  toggle('pth', 'show_path_hero', 'Show section'),
+  text('pth', 'title', 'Title (empty = page title)'),
+  textarea('pth', 'intro', 'Intro', '', { rows: 4, new_lines: '' }),
+], onBlock('acf/path-hero'));
+
+group('block_team_stories', 'Block: Hear it from our team', [
+  toggle('tms', 'show_team_stories', 'Show section'),
+  textarea('tms', 'heading', 'Heading', 'Hear it from\nour team', { rows: 2 }),
+  image('tms', 'background', 'Background (default: teal texture)'),
+  repeater('tms', 'stories', 'Stories (tabs)', [
+    sub('tms', 'stories', 'role', text, 'Tab label (role)'),
+    sub('tms', 'stories', 'name', text, 'Name'),
+    sub('tms', 'stories', 'position', text, 'Position (under the quote)'),
+    sub('tms', 'stories', 'quote', wysiwyg, 'Quote', { media_upload: 0 }),
+    sub('tms', 'stories', 'image', image, 'Photo (min 696×918)'),
+  ], { button_label: 'Add story' }),
+], onBlock('acf/team-stories'));
+
+group('block_path_jobs', 'Block: Opportunities for (career path jobs)', [
+  toggle('pjb', 'show_path_jobs', 'Show section'),
+  text('pjb', 'label', 'Label', 'Opportunities for'),
+  text('pjb', 'heading', 'Heading (empty = page title)'),
+  message('pjb', 'note', 'Lists the Jobs whose "Career path page" is this page. Hidden when there are none.'),
+], onBlock('acf/path-jobs'));
+
+/* ---- About child pages: Pro Bono, CSR, Museum of Counterfeit Goods (1.1.2) ---- */
+
+group('block_info_hero', 'Block: About child page hero (contact)', [
+  toggle('ifh', 'show_info_hero', 'Show section'),
+  text('ifh', 'title', 'Title (empty = page title)'),
+  textarea('ifh', 'label', 'Contact label (e.g. "Pro Bono contact", or the museum booking intro)', '', { rows: 2, new_lines: '' }),
+  text('ifh', 'contact_name', 'Contact name (optional)'),
+  textarea('ifh', 'hours', 'Opening hours (optional; line breaks kept)', '', { rows: 2, new_lines: '' }),
+  text('ifh', 'phone', 'Phone (optional)'),
+  text('ifh', 'email', 'Email (optional)'),
+  image('ifh', 'image', 'Image (min 1394×942; empty = bundled photo for this page)'),
+], onBlock('acf/info-hero'));
+
+group('block_mus_audience', 'Block: Museum audiences (2 x 2)', [
+  toggle('mau', 'show_museum_audiences', 'Show section'),
+  repeater('mau', 'items', 'Audiences (4)', [
+    sub('mau', 'items', 'title', text, 'Title'),
+    sub('mau', 'items', 'text', wysiwyg, 'Text', { media_upload: 0 }),
+  ], { button_label: 'Add audience' }),
+], onBlock('acf/mus-audience'));
+
+group('block_mus_collection', 'Block: Museum collection', [
+  toggle('mco', 'show_museum_collection', 'Show section'),
+  text('mco', 'label', 'Label', 'Collection'),
+  textarea('mco', 'quote', 'Quote', '', { rows: 2, new_lines: '' }),
+  text('mco', 'source', 'Quote source (e.g. "– Lonely Planet")'),
+  wysiwyg('mco', 'text', 'Text', { media_upload: 0 }),
+  image('mco', 'image', 'Image (min 1432×1060; empty = bundled photo)'),
+], onBlock('acf/mus-collection'));
+
+group('block_mus_cases', 'Block: Museum case studies (slider)', [
+  toggle('mca', 'show_museum_cases', 'Show section'),
+  text('mca', 'label', 'Label', 'Case Studies'),
+  image('mca', 'background', 'Background (default: teal texture)'),
+  repeater('mca', 'items', 'Case studies (slides)', [
+    sub('mca', 'items', 'title', textarea, 'Title', '', { rows: 2, new_lines: '' }),
+    sub('mca', 'items', 'text', textarea, 'Text', '', { rows: 4, new_lines: '' }),
+    sub('mca', 'items', 'image', image, 'Image (min 1000×796; empty = bundled photo)'),
+    sub('mca', 'items', 'link_url', text, '"Read more" URL (empty = no link)'),
+  ], { button_label: 'Add case study' }),
+], onBlock('acf/mus-cases'));
 
 writeFileSync(new URL('./scf-import.json', import.meta.url), JSON.stringify(out, null, 2));
 console.log(`Wrote ${out.length} objects (${out.filter(o => o.key.startsWith('group_')).length} field groups, ${out.filter(o => o.key.startsWith('post_type_')).length} post types, ${out.filter(o => o.key.startsWith('taxonomy_')).length} taxonomies)`);

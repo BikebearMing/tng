@@ -3604,3 +3604,1935 @@ button {
   gap: 2.222vw; /* 32 */
   margin-top: 2.917vw; /* 42 */
 }
+
+/* ============================================================
+   Location — hero
+   The insight hero's frame (navy, 567 min, image 697 wide at
+   81 / 15 / 15). Title 150 under the breadcrumbs, office block
+   91 below it: name (14/600), rule 11 under it spanning 465;
+   phone / email rows 14 under the rule (30 outlined circles, 10
+   to the text, 7 apart); address 50 past the email, "View on map"
+   14 under it; 23 bottom.
+   vw values are px / 1440 * 100
+   ============================================================ */
+.loc-hero__title {
+  margin-top: 10.417vw; /* 150 */
+}
+
+.loc-hero__office {
+  width: 32.292vw; /* 465 */
+  margin-top: 6.319vw; /* 91 */
+}
+
+.loc-hero__office-name {
+  padding-bottom: 0.764vw; /* 11 */
+  border-bottom: 1px solid rgba(159, 178, 197, 0.5);
+  font-weight: 600;
+}
+
+.loc-hero__office-body {
+  display: flex;
+  align-items: flex-start;
+  gap: 3.472vw; /* 50 */
+  margin-top: 0.972vw; /* 14 */
+}
+
+.loc-hero__lines {
+  display: flex;
+  flex: none;
+  flex-direction: column;
+  gap: 0.486vw; /* 7 */
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.loc-hero__lines li {
+  display: flex;
+  align-items: center;
+  gap: 0.694vw; /* 10 */
+  font-size: 0.972vw; /* 14 */
+  line-height: 1.14;
+  color: var(--white);
+}
+
+.loc-hero__lines a,
+.loc-hero__map {
+  transition: opacity 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.loc-hero__lines a:hover,
+.loc-hero__map:hover {
+  opacity: 0.7;
+}
+
+.loc-hero__icon {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 2.083vw; /* 30 */
+  height: 2.083vw;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+}
+
+.loc-hero__icon svg {
+  width: 0.833vw; /* 12 */
+  height: 0.833vw;
+}
+
+.loc-hero__map {
+  display: inline-block;
+  margin-top: 0.972vw; /* 14 */
+  font-size: 0.972vw; /* 14 */
+  font-weight: 600;
+  line-height: 1.14;
+  color: var(--white);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+/* ============================================================
+   Location / service — on-this-page tabs: pro-tabs in six columns
+   (226 / 254 / 241 / 259 / 214 / rest: labels at 20, 246, 500, 741,
+   1000, 1214 in both mockups), "On this page" 14 from the top,
+   underline 20 + label + 70
+   vw values are px / 1440 * 100
+   ============================================================ */
+.pro-tabs--six .pro-tabs__label {
+  top: 0.972vw; /* 14 */
+}
+
+.pro-tabs--six .pro-tabs__list {
+  grid-template-columns: 15.694vw 17.639vw 16.736vw 17.986vw 14.861vw 1fr; /* 226 / 254 / 241 / 259 / 214 */
+}
+
+.pro-tabs--six .pro-tabs__link {
+  padding-right: 4.861vw; /* 70 */
+  white-space: nowrap;
+}
+
+/* The last column (rest, ~246) can't take "Awards & Rankings" + 70 */
+.pro-tabs--six li:last-child .pro-tabs__link {
+  padding-right: 3.472vw; /* 50 */
+}
+
+/* ============================================================
+   Location — overview
+   Label 33 under the tabs (rule to 20 from the right). Heading
+   (.h2) 20 in; text 545 wide, ending 175 from the right, at
+   16/22; both 23 under the rule. 129 to the professionals row.
+   vw values are px / 1440 * 100
+   ============================================================ */
+.loc-overview {
+  display: grid;
+  grid-template-columns: 1fr 37.847vw; /* 545 */
+  column-gap: 3.472vw; /* 50 */
+  align-items: start;
+  padding: 2.292vw 12.153vw 8.958vw var(--sidepadding-xs); /* 33 / 175 / 129 / 20 */
+}
+
+.loc-overview__label {
+  grid-column: 1 / -1;
+  margin-right: -10.764vw; /* rule runs to 20 from the right */
+}
+
+.loc-overview__heading {
+  max-width: 34.722vw; /* 500 */
+  margin-top: 1.597vw; /* 23 */
+}
+
+.loc-overview__text {
+  margin-top: 1.597vw; /* 23 */
+  font-size: 1.111vw; /* 16 */
+  line-height: 1.375; /* 22 */
+}
+
+/* Location — insights: the related block, 83 to the client successes */
+.loc-insights {
+  padding-bottom: 5.764vw; /* 83 */
+}
+
+/* ============================================================
+   Location — client successes
+   Teal texture (parallax), no tint. Label 20 in, rule to 373,
+   8 below the card top; cards from 413 to 28 from the right,
+   20 apart, 32 from the top, 192 to the bottom. Card: white,
+   title (.h2, max 400) 22 / 26 in, "Read more" 32 under it, 22
+   bottom; text (.body) 256 wide, 207 from the right, level with
+   the title.
+   vw values are px / 1440 * 100
+   ============================================================ */
+.loc-successes {
+  position: relative;
+  display: grid;
+  grid-template-columns: 27.292vw 1fr; /* 393: cards start at 413 */
+  align-items: start;
+  padding: 2.222vw 1.944vw 13.333vw var(--sidepadding-xs); /* 32 / 28 / 192 / 20 */
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.loc-successes__label {
+  width: 24.514vw; /* 353: rule ends at 373 */
+  margin-top: 0.556vw; /* 8 */
+}
+
+.loc-successes .pro-label::after {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.loc-successes__list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.389vw; /* 20 */
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.loc-success {
+  display: grid;
+  grid-template-columns: 1fr 17.778vw; /* 256 (mock 252; +4 so the 8 lines hold) */
+  grid-template-rows: auto 1fr;
+  column-gap: 2.778vw; /* 40 minimum */
+  padding: 1.528vw 14.375vw 1.528vw 1.806vw; /* 22 / 207 / 22 / 26 */
+  border-radius: 0.347vw; /* 5 */
+  background: var(--white);
+}
+
+.loc-success__title {
+  max-width: 27.778vw; /* 400: mock 384, but the service mock's "global consumer bank" needs ~386 */
+}
+
+.loc-success__link {
+  grid-row: 2;
+  align-self: end;
+  justify-self: start;
+  margin-top: 2.222vw; /* 32 */
+}
+
+.loc-success__text {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  margin-top: 0.278vw; /* 4: level with the title's cap height */
+}
+
+/* Location — awards: the related block, 54 under the grey
+   experience panel, 65 to the office strip */
+.loc-awards {
+  padding-top: 3.75vw; /* 54 */
+  padding-bottom: 4.514vw; /* 65 */
+}
+
+/* ============================================================
+   Location — office
+   Navy strip. Map 704 x 441, 9 from the top and bottom, 12 from
+   the right, 18 past the info column. Info 29 in: "Office" label
+   22 down (rule to 706), then the city (.h2) and, 375 from the
+   left edge of the column, phone / email rows (30 circles, 10
+   apart) with the address (.body, max 258) 26 below; 20 under
+   the rule.
+   vw values are px / 1440 * 100
+   ============================================================ */
+.loc-office {
+  display: grid;
+  grid-template-columns: 1fr 48.889vw; /* 704 */
+  column-gap: 1.25vw; /* 18 */
+  align-items: start;
+  padding: 0.625vw 0.833vw 0.625vw 2.014vw; /* 9 / 12 / 9 / 29 */
+  background: var(--navy);
+}
+
+.loc-office__label {
+  margin-top: 0.903vw; /* 13: 22 from the top */
+}
+
+.loc-office .pro-label::after {
+  background: rgba(159, 178, 197, 0.5);
+}
+
+.loc-office__body {
+  display: grid;
+  grid-template-columns: 26.042vw 1fr; /* 375 */
+  align-items: start;
+  margin-top: 1.389vw; /* 20 */
+}
+
+.loc-office__lines {
+  gap: 0.694vw; /* 10 */
+}
+
+.loc-office__address {
+  max-width: 17.917vw; /* 258: fitted to the mock's 4 lines (mock box 283) */
+  margin-top: 1.806vw; /* 26 */
+}
+
+.loc-office__map {
+  display: block;
+  width: 100%;
+  height: 30.625vw; /* 441 */
+  border: 0;
+  border-radius: 0.347vw; /* 5 */
+}
+
+/* ============================================================
+   Service — hero
+   The insight hero's frame; text stacked on the bottom: title,
+   97 to the country tabs (.button-label, 16 apart, grey; active
+   white with a 45 red underline 4 under the label), 30 to the
+   contacts (291 apart, 1px rule on the left, 10 to the text:
+   name .h4, 6 to phone + email .body 13 apart); 32 bottom.
+   vw values are px / 1440 * 100
+   ============================================================ */
+.svc-hero {
+  padding-bottom: 2.222vw; /* 32 */
+}
+
+.svc-hero__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: auto;
+  padding-top: 5.625vw; /* 81: minimum gap under the breadcrumbs */
+}
+
+.svc-hero__places {
+  display: flex;
+  gap: 1.111vw; /* 16 */
+  margin: 6.736vw 0 0; /* 97 */
+  padding: 0;
+  list-style: none;
+}
+
+.svc-hero__place {
+  position: relative;
+  padding: 0 0 0.417vw; /* 6: underline 4 under the label */
+  border: 0;
+  background: none;
+  color: rgba(159, 178, 197, 0.5);
+  cursor: pointer;
+  transition: color 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.svc-hero__place:hover,
+.svc-hero__place.is-active {
+  color: var(--white);
+}
+
+.svc-hero__place::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 3.125vw; /* 45 */
+  height: 2px;
+  background: var(--red);
+  transform: translateX(-50%) scaleX(0);
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.svc-hero__place.is-active::after {
+  transform: translateX(-50%) scaleX(1);
+}
+
+.svc-hero__panels {
+  margin-top: 2.083vw; /* 30 */
+}
+
+.svc-hero__contacts {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.svc-hero__contacts[hidden] {
+  display: none;
+}
+
+.svc-contact {
+  width: 20.208vw; /* 291 */
+  padding-left: 0.694vw; /* 10 */
+  border-left: 1px solid rgba(159, 178, 197, 0.5);
+}
+
+.svc-contact__name {
+  display: block;
+  transition: opacity 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.svc-contact__lines {
+  display: flex;
+  gap: 0.903vw; /* 13 */
+  margin-top: 0.417vw; /* 6 */
+}
+
+.svc-contact__name:hover,
+.svc-contact__lines a:hover {
+  opacity: 0.7;
+}
+
+/* ============================================================
+   Service — overview
+   40 under the tabs. Heading (.h2) 20 in, max 470; label + text
+   from 729: label rule to 95 from the right, text (16/22) 543
+   wide, 25 under the rule.
+   vw values are px / 1440 * 100
+   ============================================================ */
+.svc-overview {
+  display: grid;
+  grid-template-columns: 1fr 42.778vw; /* 616: from 729 */
+  align-items: start;
+  padding: 2.778vw 6.597vw 0 var(--sidepadding-xs); /* 40 / 95 / 0 / 20 */
+}
+
+.svc-overview__heading {
+  max-width: 32.639vw; /* 470 */
+}
+
+.svc-overview__text {
+  max-width: 37.708vw; /* 543 */
+  margin-top: 1.736vw; /* 25 */
+  font-size: 1.111vw; /* 16 */
+  line-height: 1.375; /* 22 */
+}
+
+/* Top-label layout (practice, subpractice): the label runs full
+   width (rule to 20 from the right); quote or heading on the left
+   and the text from 729, both 23 under the rule. Quote = .h3, max
+   420, source (.subhead) 12 under it. Subpractice: 47 bottom. */
+.svc-overview--top-label .svc-overview__label {
+  grid-column: 1 / -1;
+  margin-right: -5.208vw; /* 75: 20 from the right */
+}
+
+.svc-overview--top-label .svc-overview__heading,
+.svc-overview--top-label .svc-overview__text {
+  margin-top: 1.597vw; /* 23 */
+}
+
+.svc-overview__quote {
+  max-width: 29.167vw; /* 420 */
+  margin: 1.597vw 0 0; /* 23 */
+}
+
+.svc-overview__quote blockquote {
+  margin: 0;
+}
+
+.svc-overview__quote figcaption {
+  margin-top: 0.833vw; /* 12 */
+}
+
+.svc-overview--sub {
+  padding-bottom: 3.264vw; /* 47 */
+}
+
+/* Two lines in the mock: "…real value / from your intellectual assets." */
+.svc-overview--sub .svc-overview__heading {
+  max-width: 36.111vw; /* 520 */
+}
+
+/* ============================================================
+   Service — subpractices
+   Label 204 in from both sides, cards 38 under the rule: 3 across,
+   333 wide, 18 apart, 249 tall. Card: post-card border, 130 image
+   on top, title (.h3) 10 under it, 12 in; red arrow 15 from the
+   right and bottom. 115 top (from the practice mock), 80 bottom.
+   vw values are px / 1440 * 100
+   ============================================================ */
+.svc-subs {
+  padding: 7.986vw 14.167vw 5.556vw; /* 115 (from the overview text) / 204 / 80 */
+}
+
+.svc-subs__list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25vw; /* 18 */
+  margin: 2.639vw 0 0; /* 38 */
+  padding: 0;
+  list-style: none;
+}
+
+.svc-subs__list > li {
+  display: flex;
+}
+
+.svc-sub-card {
+  position: relative;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-height: 17.292vw; /* 249 */
+  overflow: hidden;
+  border: 1px solid #dfe4ea;
+  border-radius: 0.347vw; /* 5 */
+  background: var(--white);
+  transition: border-color 0.3s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.svc-sub-card:hover {
+  border-color: #c3ccd6;
+  box-shadow: 0 0.556vw 1.667vw rgba(7, 20, 35, 0.06); /* 0 8 24 */
+}
+
+.svc-sub-card__img {
+  width: 100%;
+  height: 9.028vw; /* 130 */
+  object-fit: cover;
+}
+
+.svc-sub-card__title {
+  margin: 0.694vw 3.472vw 0 0.833vw; /* 10 / 50 / 0 / 12 */
+}
+
+.svc-sub-card .arrow-circle {
+  position: absolute;
+  right: 1.042vw; /* 15 */
+  bottom: 1.042vw; /* 15 */
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.svc-sub-card:hover .arrow-circle {
+  transform: translateX(0.208vw); /* 3 */
+}
+
+/* ============================================================
+   Service — client successes (slider)
+   The location block as a Blaze slider: cards from 416, 42 from
+   the top, min 268 tall; label 39 from the top. Prev / next 60
+   red circles 22 under the card, 10 apart; 175 bottom.
+   vw values are px / 1440 * 100
+   ============================================================ */
+.svc-successes {
+  grid-template-columns: 27.5vw 1fr; /* 396: cards start at 416 */
+  padding-top: 2.917vw; /* 42 */
+  padding-bottom: 12.153vw; /* 175 */
+}
+
+.svc-successes .loc-successes__label {
+  margin-top: -0.208vw; /* 39 from the top */
+}
+
+.svc-successes__slider {
+  min-width: 0;
+}
+
+.svc-successes .loc-success {
+  min-height: 18.611vw; /* 268 */
+}
+
+.svc-successes__nav {
+  display: flex;
+  gap: 0.694vw; /* 10 */
+  margin-top: 1.528vw; /* 22 */
+}
+
+.svc-successes__btn {
+  width: 4.167vw; /* 60 */
+  height: 4.167vw;
+  line-height: 4.167vw;
+}
+
+.svc-successes__btn svg {
+  width: 0.833vw; /* 12 */
+  height: 0.833vw;
+}
+
+/* Service — professionals: 46 under the grey experience panel */
+.svc-people {
+  padding-top: 3.194vw; /* 46 */
+}
+
+/* ============================================================
+   About — hero
+   The insight hero's frame; title (.h1, max 540) and intro on the
+   bottom, 120 apart; intro .body max 510; 26 bottom.
+   vw values are px / 1440 * 100
+   ============================================================ */
+.about-hero {
+  padding-bottom: 1.806vw; /* 26 */
+}
+
+.about-hero__content {
+  margin-top: auto;
+  padding-top: 5.625vw; /* 81: minimum gap under the breadcrumbs */
+}
+
+.about-hero__title {
+  max-width: 37.5vw; /* 540 */
+}
+
+.about-hero__intro {
+  max-width: 35.417vw; /* 510 */
+  margin-top: 8.333vw; /* 120 */
+}
+
+/* About — on-this-page tabs: five columns, labels at 20 / 314 /
+   637 / 943 / 1269 */
+.pro-tabs--about .pro-tabs__list {
+  grid-template-columns: 20.417vw 22.431vw 21.25vw 22.639vw 1fr; /* 294 / 323 / 306 / 326 */
+}
+
+.pro-tabs--about .pro-tabs__link {
+  white-space: nowrap;
+}
+
+/* About — overview: heading max 530 (five lines in the mock) */
+.about-overview .svc-overview__heading {
+  max-width: 36.806vw; /* 530 */
+}
+
+/* ============================================================
+   About — values (accordion + image)
+   Accordion 20 in, 595 wide; image 111 past it, to 12 from the
+   right, 667 tall, top level with the first rule. Items between
+   1px rules: title (.h3) 19 above and below (62 closed), "+" on
+   the right; open text (18/22) 15 under the title, 20 bottom.
+   150 top (guess: the mock slice starts at the first rule), 69
+   bottom.
+   vw values are px / 1440 * 100
+   ============================================================ */
+.about-values {
+  display: grid;
+  grid-template-columns: 41.319vw 1fr; /* 595 */
+  column-gap: 7.708vw; /* 111 */
+  align-items: start;
+  padding: 10.417vw 0.833vw 4.792vw var(--sidepadding-xs); /* 150 / 12 / 69 / 20 */
+}
+
+.about-acc {
+  border-top: 1px solid #dbe1e8;
+}
+
+.about-acc__item {
+  border-bottom: 1px solid #dbe1e8;
+}
+
+.about-acc__heading {
+  margin: 0;
+}
+
+/* Icon is absolute: a button's children can't be flex items */
+.about-acc__btn {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 1.319vw 2.778vw 1.319vw 0; /* 19 / 40 / 19 / 0 */
+  border: 0;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+}
+
+.about-acc__icon {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 1.389vw; /* 20 */
+  height: 1.389vw;
+  transform: translateY(-50%);
+}
+
+.about-acc__icon::before,
+.about-acc__icon::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 1.5px;
+  margin-top: -0.75px;
+  background: #8a97a6;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.about-acc__icon::after {
+  transform: rotate(90deg);
+}
+
+.about-acc__item.is-open .about-acc__icon::after {
+  transform: rotate(0deg);
+}
+
+/* Height animates through the grid row (0fr ↔ 1fr) */
+.about-acc__panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.about-acc__item.is-open .about-acc__panel {
+  grid-template-rows: 1fr;
+}
+
+.about-acc__inner {
+  overflow: hidden;
+}
+
+.about-acc__text {
+  padding: 0 1.389vw 1.389vw 0; /* 0 / 20 / 20 / 0 */
+  margin-top: -0.278vw; /* 15 under the title (19 padding - 4) */
+}
+
+.about-values__image {
+  width: 100%;
+  height: 46.319vw; /* 667 */
+  object-fit: cover;
+  border-radius: 0.347vw; /* 5 */
+}
+
+/* ============================================================
+   About — our numbers
+   Teal texture (parallax), no tint. Four counters, staggered over
+   two rows: row 1 24 from the top (20 / 733), row 2 311 below it
+   (380 / 1017). Number: Roboto Condensed 198, -0.07em tracking
+   (the key-findings style); label 14/600 under it. 104 bottom.
+   vw values are px / 1440 * 100
+   ============================================================ */
+.about-numbers {
+  position: relative;
+  padding: 1.667vw 0 7.222vw; /* 24 / 0 / 104 */
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.about-numbers__list {
+  display: grid;
+  grid-template-rows: auto auto;
+  row-gap: 7.292vw; /* 105: row 2 starts 311 under row 1 */
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.about-numbers__item {
+  grid-column: 1;
+  justify-self: start;
+}
+
+.about-numbers__item:nth-child(1) { grid-row: 1; margin-left: 1.389vw; } /* 20 */
+.about-numbers__item:nth-child(2) { grid-row: 1; margin-left: 50.903vw; } /* 733 */
+.about-numbers__item:nth-child(3) { grid-row: 2; margin-left: 26.389vw; } /* 380 */
+.about-numbers__item:nth-child(4) { grid-row: 2; margin-left: 70.625vw; } /* 1017 */
+
+.about-numbers__num {
+  font-size: 13.75vw; /* 198 */
+  letter-spacing: -0.07em;
+}
+
+.about-numbers__label {
+  margin-top: -0.556vw; /* -8: sits just under the digits */
+  font-weight: 600;
+}
+
+/* ============================================================
+   About — code of conduct (top-label layout)
+   Label 29 from the top, rule to 16 from the right; heading max
+   540; text from 729, 526 wide; link 24 under it; 172 bottom.
+   vw values are px / 1440 * 100
+   ============================================================ */
+.about-code {
+  padding-top: 2.014vw; /* 29 */
+  padding-bottom: 11.944vw; /* 172 */
+}
+
+.about-code .svc-overview__label {
+  margin-right: -5.486vw; /* 79: 16 from the right */
+}
+
+.about-code .svc-overview__heading {
+  max-width: 38.889vw; /* 560: mock 540, fitted to its six lines */
+}
+
+.about-code .svc-overview__text {
+  max-width: 36.528vw; /* 526 */
+}
+
+.about-code__link {
+  margin-top: 1.667vw; /* 24 */
+}
+
+/* ============================================================
+   About — vision and mission
+   Tabs (.h1 buttons) 10 in, stacked; active black + red arrow
+   11 past the word, others grey. Panels from 350 behind a 1px
+   rule: text (.h3) 30 past it, 277 wide; image 67 past the text
+   to 14 from the right, 549 tall, top level with the tabs.
+   90 bottom (116 from the image to the creed rule).
+   vw values are px / 1440 * 100
+   ============================================================ */
+.about-vision {
+  display: grid;
+  grid-template-columns: 23.611vw 1fr; /* 340: the rule at 350 */
+  align-items: start;
+  padding: 0 0.972vw 6.25vw 0.694vw; /* 0 / 14 / 90 / 10 */
+}
+
+.about-vision__tabs {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Arrow is inline: a button's children can't be flex items */
+.about-vision__tab {
+  padding: 0;
+  border: 0;
+  background: none;
+  text-align: left;
+  color: #c4cad2;
+  cursor: pointer;
+  transition: color 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.about-vision__tab:hover,
+.about-vision__tab.is-active {
+  color: var(--black);
+}
+
+.about-vision__tab .arrow-circle {
+  display: none;
+  margin-left: 0.764vw; /* 11 */
+  vertical-align: middle;
+}
+
+.about-vision__tab.is-active .arrow-circle {
+  display: inline-grid;
+}
+
+.about-vision__panels {
+  border-left: 1px solid #e3e8ee;
+}
+
+.about-vision__panel {
+  display: grid;
+  grid-template-columns: 19.236vw 1fr; /* 277 */
+  column-gap: 4.653vw; /* 67 */
+  align-items: start;
+  padding-left: 2.083vw; /* 30 */
+}
+
+.about-vision__panel[hidden] {
+  display: none;
+}
+
+.about-vision__image {
+  width: 100%;
+  height: 38.125vw; /* 549 */
+  object-fit: cover;
+  border-radius: 0.347vw; /* 5 */
+}
+
+/* ============================================================
+   About — creed
+   Label 20 in, rule to 16 from the right; two columns (530 from
+   20, then from 729), headings (.h2) 26 under the rule, lists
+   13 below: 18/22, plain discs, text 18 past them, no gap between
+   items. 111 bottom.
+   vw values are px / 1440 * 100
+   ============================================================ */
+.about-creed {
+  display: grid;
+  grid-template-columns: 36.806vw 1fr; /* 530 */
+  column-gap: 12.431vw; /* 179: second column at 729 */
+  align-items: start;
+  padding: 0 1.111vw 7.708vw var(--sidepadding-xs); /* 0 / 16 / 111 / 20 */
+}
+
+.about-creed__label {
+  grid-column: 1 / -1;
+  margin-bottom: 1.806vw; /* 26 */
+}
+
+.about-creed__list {
+  margin-top: 0.903vw; /* 13 */
+}
+
+.about-creed__list li {
+  padding-left: 1.25vw; /* 18 */
+}
+
+.about-creed__list li + li {
+  margin-top: 0;
+}
+
+.about-creed__list ul > li::before {
+  left: 0.417vw; /* 6 */
+  top: 0.556vw; /* 8 */
+}
+
+/* ============================================================
+   More from (reusable: child-page links of a parent page)
+   Grey #eef0f3. Heading (.h2) 20 in, 52 from the top; links (.h3)
+   from 729 to 12 from the right: each row 40 above (none on the
+   first, which sits 11 under the heading's top) and 40 below a
+   1px rule; 76 under the last rule.
+   vw values are px / 1440 * 100
+   ============================================================ */
+.more-from {
+  display: grid;
+  grid-template-columns: 49.236vw 1fr; /* 709: links at 729 */
+  align-items: start;
+  padding: 3.611vw 0.833vw 5.278vw var(--sidepadding-xs); /* 52 / 12 / 76 / 20 */
+  background: #eef0f3;
+}
+
+.more-from__list {
+  margin: 0.764vw 0 0; /* 11 */
+  padding: 0;
+  list-style: none;
+}
+
+.more-from__link {
+  display: block;
+  padding: 2.778vw 0; /* 40 */
+  border-bottom: 1px solid #d3dae2;
+  transition: color 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.more-from__list > li:first-child .more-from__link {
+  padding-top: 0;
+}
+
+.more-from__link:hover {
+  color: var(--red);
+}
+
+/* ============================================================
+   Insights archive — hero
+   The insight hero's frame; text on the bottom: .h1, 64 to the
+   intro (.body, max 440), 18 to the "Subscribe to Updates"
+   link-arrow (white text, red underline), 28 bottom.
+   vw values are px / 1440 * 100
+   ============================================================ */
+.ins-hero {
+  padding-bottom: 1.944vw; /* 28 */
+}
+
+.ins-hero__content {
+  margin-top: auto;
+  padding-top: 5.625vw; /* 81: minimum gap under the breadcrumbs */
+}
+
+.ins-hero__intro {
+  max-width: 30.556vw; /* 440: six lines like the mock */
+  margin-top: 4.444vw; /* 64 */
+}
+
+.ins-hero__link {
+  margin-top: 1.25vw; /* 18 */
+}
+
+/* ============================================================
+   Insights archive — featured insight
+   Light grey. Label 14 from the top, rule to 16 from the right.
+   Image 416 x 335, 21 under the rule, 19 from the right, 21 from
+   the bottom. Text column: date 23 under the rule, 10 to the .h2
+   title, 21 to the excerpt (7 lines), min 98 to "Read more", which
+   sits 5 above the image's bottom edge.
+   ============================================================ */
+.ins-featured {
+  padding: 0.972vw 1.111vw 1.458vw var(--sidepadding-xs); /* 14 / 16 / 21 / 20 */
+  background: #eef0f3;
+}
+
+.ins-featured__post {
+  display: grid;
+  grid-template-columns: 1fr 28.889vw; /* 416 */
+  margin: 1.458vw 0.208vw 0 0; /* 21 under the rule; image 19 from the right */
+}
+
+.ins-featured__body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0.139vw 0 0.347vw; /* 2 (date 23 under the rule) / 5 */
+}
+
+.ins-featured__date,
+.ins-featured__text {
+  color: #718396;
+}
+
+.ins-featured__title {
+  margin-top: 0.694vw; /* 10 */
+}
+
+.ins-featured__title a {
+  transition: color 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* SplitText clones the link into every line of the title, so a plain
+   a:hover only reddens the line under the cursor: colour them all */
+.ins-featured__title:has(a:hover) a {
+  color: var(--red);
+}
+
+.ins-featured__text {
+  max-width: 21.528vw; /* 310 */
+  margin: 1.458vw 0 6.806vw; /* 21 / 98 */
+}
+
+.ins-featured__link {
+  margin-top: auto;
+}
+
+.ins-featured__image {
+  width: 100%;
+  height: 23.264vw; /* 335 */
+  object-fit: cover;
+  border-radius: 0.347vw;
+}
+
+/* ============================================================
+   Insights archive — filter (the professionals filter, compact)
+   Both rows 48 on a five-column grid, labels 14 semibold, 16 in.
+   Row 1 (white): search by name (2 columns), search by
+   professional (2), date (1); red search buttons 30, 16 from the
+   divider; calendar icon 20, 20 from the right.
+   Row 2 (grey): five facets, 20 chevrons 17 from each divider.
+   ============================================================ */
+.ins-filter__bar {
+  display: grid;
+  grid-template-columns: 2fr 2fr 1fr;
+  border-bottom: 1px solid #dbe2e9;
+}
+
+.ins-filter .pro-filter__search {
+  padding: 0.625vw 1.111vw; /* 9 / 16 */
+}
+
+.ins-filter .pro-filter__submit {
+  width: 2.083vw; /* 30 */
+  height: 2.083vw;
+}
+
+.ins-filter .pro-filter__submit svg {
+  width: 0.833vw; /* 12 */
+  height: 0.833vw;
+}
+
+.ins-filter input,
+.ins-filter__date,
+.ins-filter .pro-filter__facet {
+  font-family: inherit;
+  font-size: 0.972vw; /* 14 */
+  font-weight: 600;
+  line-height: 1.14;
+  letter-spacing: 0.01vw;
+  color: var(--black);
+}
+
+.ins-filter__date {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.389vw 0 1.111vw; /* 20 / 16 */
+  text-align: left;
+  transition: background-color 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.ins-filter__date:hover {
+  background: #f5f7f9;
+}
+
+.ins-filter__date svg {
+  width: 1.389vw; /* 20 */
+  height: 1.389vw;
+}
+
+.ins-filter .pro-filter__facet {
+  padding: 0.972vw 1.181vw 0.972vw 1.111vw; /* 14 / 17 / 14 / 16 */
+}
+
+/* ============================================================
+   Insights archive — grid
+   Chips 90 under the facets, 24 to the cards; post-card x 3
+   (18 apart, rows 46 apart), 204 sides. Count 39 below the grid,
+   View more 14 below it, 53 bottom.
+   ============================================================ */
+.ins-grid {
+  padding: 6.25vw 14.167vw 3.681vw; /* 90 / 204 / 53 */
+  background: var(--white);
+}
+
+.ins-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.139vw; /* 2 */
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Pill, 31 tall: grey key + semibold value, x 37 past the value */
+.ins-chip {
+  display: inline-flex;
+  align-items: center;
+  height: 2.153vw; /* 31 */
+  padding: 0 0.972vw 0 0.764vw; /* 14 / 11 */
+  border: 1px solid #c9d2db;
+  border-radius: 999px;
+  font-family: inherit;
+  font-size: 0.903vw; /* 13 */
+  line-height: 1;
+  color: var(--black);
+  transition: border-color 0.3s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.ins-chip:hover {
+  border-color: var(--black);
+}
+
+.ins-chip__key {
+  margin-right: 0.417vw; /* 6 */
+  color: #718396;
+}
+
+.ins-chip__value {
+  font-weight: 600;
+}
+
+.ins-chip svg {
+  width: 0.694vw; /* 10 */
+  height: 0.694vw;
+  margin-left: 2.569vw; /* 37 */
+}
+
+/* Reset: navy pill, white text, x 17 past the label */
+.ins-chip--reset {
+  padding: 0 0.833vw; /* 12 */
+  border-color: var(--navy);
+  background: var(--navy);
+  color: var(--white);
+}
+
+.ins-chip--reset:hover {
+  border-color: var(--red);
+  background: var(--red);
+}
+
+.ins-chip--reset svg {
+  margin-left: 1.181vw; /* 17 */
+}
+
+.ins-grid__list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3.194vw 1.25vw; /* 46 / 18 */
+  margin: 1.667vw 0 0; /* 24 */
+  padding: 0;
+  list-style: none;
+}
+
+.ins-grid__list > li {
+  display: flex;
+}
+
+.ins-grid__more {
+  margin-top: 2.708vw; /* 39 */
+}
+
+.ins-grid__more .pro-grid__view-more {
+  margin-top: 0.972vw; /* 14 */
+}
+
+/* Wider cards here: title fitted to the mock's breaks (290–295 match) */
+.ins-grid .post-card__title {
+  max-width: 20.278vw; /* 292 */
+}
+
+/* ============================================================
+   Awards & Rankings archive (awards.html): the insights archive
+   with these differences
+   ============================================================ */
+/* Hero: no link, intro 36 off the bottom */
+.ins-hero--no-link {
+  padding-bottom: 2.5vw; /* 36 */
+}
+
+/* Featured: no date, the title takes its place (23 under the rule) */
+.ins-featured--no-date .ins-featured__title {
+  max-width: 44.444vw; /* 640 */
+  margin-top: 0;
+}
+
+/* No featured image: navy tile with the logo centred */
+.ins-featured__logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--navy);
+  font-family: "Times New Roman", Times, serif;
+  font-size: 2.361vw; /* 34, the header logo */
+  line-height: 1.04;
+  letter-spacing: -0.035vw;
+  color: var(--white);
+}
+
+.ins-featured__logo span {
+  display: block;
+  width: 7.5vw; /* 108: both lines start together */
+}
+
+.ins-featured__logo em {
+  font-style: normal;
+  color: var(--red);
+}
+
+/* Grid without chips: 54 top, View more 55 below, 77 bottom */
+.ins-grid--plain {
+  padding-top: 3.75vw; /* 54 */
+  padding-bottom: 5.347vw; /* 77 */
+}
+
+.ins-grid__list:first-child {
+  margin-top: 0;
+}
+
+.ins-grid--plain .ins-grid__more {
+  margin-top: 3.819vw; /* 55 */
+}
+
+.ins-grid--plain .pro-grid__view-more {
+  margin-top: 0;
+}
+
+/* More from: a link with a red arrow pins it to the right edge */
+.more-from__link:has(.arrow-circle) {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 1.389vw; /* 20 */
+}
+
+.more-from__link .arrow-circle {
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.more-from__link:hover .arrow-circle {
+  transform: translateX(0.208vw); /* 3 */
+}
+
+/* Long featured titles (3 lines on awards): a smaller minimum gap
+   above "Read more" keeps the block at the image's height */
+.ins-featured--no-date .ins-featured__text {
+  margin-bottom: 2.083vw; /* 30 */
+}
+
+/* ============================================================
+   Job single — hero
+   567 tall, light gradient (#f9f9fb → #adbaca), navy header.
+   Back link 123 from the top (16 semibold, red underline, left
+   chevron); .h1 123 under the underline; navy location pill 15
+   under the title. Department block (label, 278 rule, value) on
+   the bottom, 32 up; apply card 284 wide, 20 from the right, 26
+   from the bottom.
+   ============================================================ */
+.job-hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: 39.375vw; /* 567 */
+  padding: 8.542vw var(--sidepadding-xs) 2.222vw; /* 123 / 20 / 32 */
+  background: linear-gradient(90deg, #f9f9fb 0%, #adbaca 100%);
+}
+
+.job-hero__back {
+  gap: 0.694vw; /* 10 */
+  font-size: 1.111vw; /* 16 */
+  font-weight: 600;
+  line-height: 1.11;
+  color: var(--black);
+}
+
+.job-hero__back::after {
+  height: 2px;
+}
+
+.job-hero__back:hover svg {
+  transform: translateX(-0.278vw); /* 4 */
+}
+
+.job-hero__title {
+  margin-top: 8.542vw; /* 123 */
+}
+
+/* Navy pill, 26 tall, flag + white name */
+.job-hero__tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.417vw; /* 6 */
+  margin-top: 1.042vw; /* 15 */
+  padding: 0.208vw 0.625vw 0.208vw 0.278vw; /* 3 / 9 / 3 / 4 */
+  border-radius: 999px;
+  background: var(--navy);
+  font-size: 0.903vw; /* 13 */
+  font-weight: 600;
+  line-height: 1.14;
+  color: var(--white);
+}
+
+.job-hero__tag img {
+  width: 1.389vw; /* 20 */
+  height: 1.389vw;
+}
+
+.job-hero__meta {
+  width: 19.306vw; /* 278 */
+  margin: auto 0 0;
+  padding-top: 2.778vw; /* 40 min under the pill */
+}
+
+.job-hero__label {
+  padding: 0 0 0.903vw 0.139vw; /* 13 to the rule; 2 in */
+  border-bottom: 1px solid #c3ccd6;
+  font-size: 0.833vw; /* 12 */
+  font-weight: 600;
+  line-height: 1.14;
+  color: var(--black);
+}
+
+.job-hero__value {
+  margin: 0.694vw 0 0; /* 10 */
+  padding-left: 0.139vw; /* 2 */
+  font-size: 1.111vw; /* 16 */
+  line-height: 1.22;
+  color: var(--black);
+}
+
+.job-apply {
+  position: absolute;
+  right: 1.389vw; /* 20 */
+  bottom: 1.806vw; /* 26 */
+  width: 19.722vw; /* 284 */
+  padding: 0.833vw 1.042vw 1.042vw; /* 12 / 15 / 15 */
+  border-radius: 0.347vw; /* 5 */
+  background: var(--white);
+}
+
+.job-apply__text {
+  margin-top: 2.639vw; /* 38 */
+  font-size: 1.111vw; /* 16 */
+  line-height: 1.375; /* 22 */
+  color: var(--black);
+}
+
+.job-apply__email {
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 0.208vw; /* 3 */
+  transition: color 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.job-apply__email:hover {
+  color: var(--red);
+}
+
+/* ============================================================
+   Job single — intro: .h3 centred, max 640, 74 above and below
+   ============================================================ */
+.job-intro {
+  padding: 5.139vw var(--sidepadding-xs); /* 74 / 20 */
+  background: var(--white);
+}
+
+.job-intro__text {
+  max-width: 44.444vw; /* 640 */
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* ============================================================
+   Job single — position summary
+   Column 300 in, 292 from the right. Label with its rule; each
+   group: .h3 heading (max 290) on the left, list (16/22, items 22
+   apart, discs 18 indent) from 734, 16 below the heading's top;
+   48 under the last item, then a rule and 28 to the next heading
+   (22 under the label's rule for the first). 74 bottom.
+   ============================================================ */
+.job-summary {
+  padding: 0 20.278vw 5.139vw 20.833vw; /* 0 / 292 / 74 / 300 */
+  background: var(--white);
+}
+
+.job-summary__group {
+  display: grid;
+  grid-template-columns: 1fr 28.75vw; /* list 414 wide, from 734 */
+  align-items: start;
+  padding: 1.944vw 0 3.333vw; /* 28 / 48 */
+  border-top: 1px solid #e3e8ee;
+}
+
+.pro-label + .job-summary__group {
+  padding-top: 1.528vw; /* 22 */
+  border-top: 0;
+}
+
+.job-summary__heading {
+  max-width: 20.139vw; /* 290 */
+}
+
+.job-summary__list {
+  max-width: 27.986vw; /* 403: 385 of text, fitted to the mock's line counts */
+  margin-top: 1.111vw; /* 16 */
+  font-size: 1.111vw; /* 16 */
+  line-height: 1.375; /* 22 */
+}
+
+.job-summary__list li {
+  padding-left: 1.25vw; /* 18 */
+}
+
+.job-summary__list li + li {
+  margin-top: 1.528vw; /* 22 */
+}
+
+.job-summary__list ul > li::before {
+  left: 0.417vw; /* 6 */
+  top: 0.59vw; /* 8.5 */
+  width: 0.278vw; /* 4 */
+  height: 0.278vw;
+}
+
+/* ============================================================
+   Job single — call to action (teal texture, parallax)
+   537 tall. .h2 centred 119 from the top, text 11 below (white,
+   email semibold + underline); cards 93 under the text: white,
+   327 wide, 21 apart, centred, 173 tall; .h3 title 12 from the top
+   and 17 in; link (16 semibold, 2px red underline) 15 off the
+   bottom. 85 bottom.
+   ============================================================ */
+.job-cta {
+  position: relative;
+  padding: 8.264vw 14.375vw 5.903vw; /* 119 / 207 / 85 */
+  overflow: hidden;
+  isolation: isolate;
+  text-align: center;
+}
+
+.job-cta__text {
+  margin-top: 0.764vw; /* 11 */
+}
+
+.job-cta__email {
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 0.208vw; /* 3 */
+  transition: opacity 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.job-cta__email:hover {
+  opacity: 0.7;
+}
+
+.job-cta__list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.458vw; /* 21 */
+  margin: 6.458vw 0 0; /* 93 */
+  padding: 0;
+  list-style: none;
+  text-align: left;
+}
+
+.job-cta__list > li {
+  display: flex;
+}
+
+.job-cta__card {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: 12.014vw; /* 173 */
+  padding: 0.833vw 1.181vw 1.042vw; /* 12 / 17 / 15 */
+  border-radius: 0.347vw; /* 5 */
+  background: var(--white);
+  transition: box-shadow 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.job-cta__card:hover {
+  box-shadow: 0 0.556vw 1.667vw rgba(7, 20, 35, 0.18); /* 0 8 24 */
+}
+
+.job-cta__link {
+  margin-top: auto;
+  font-size: 1.111vw; /* 16 */
+  font-weight: 600;
+  line-height: 1.11;
+  color: var(--black);
+}
+
+.job-cta__link::after {
+  height: 2px;
+}
+
+.job-cta__card:hover .job-cta__link svg {
+  transform: translateX(0.278vw); /* 4 */
+}
+
+/* SplitText turns the words into inline-blocks, which don't inherit
+   the link's underline: draw it on each word */
+.job-cta__email .split-word {
+  text-decoration: underline;
+  text-underline-offset: 0.208vw; /* 3 */
+}
+
+/* ============================================================
+   Career path page (careers-legal.html) — hero
+   Navy, 398 min, no image. Title (.h1) on the left, intro (.body,
+   max 430) from 720 with the tops level; 76 under the intro.
+   ============================================================ */
+.lp-hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 27.639vw; /* 398 */
+  padding: var(--top-from-header) var(--sidepadding-xs) 5.278vw; /* 103 / 20 / 76 */
+  background: #041f36;
+}
+
+.lp-hero__content {
+  display: grid;
+  grid-template-columns: 48.611vw 1fr; /* intro from 720 */
+  align-items: start;
+  margin-top: auto;
+  padding-top: 5.625vw; /* 81: minimum gap under the breadcrumbs */
+}
+
+.lp-hero__intro {
+  max-width: 29.861vw; /* 430 */
+  margin-top: 0.208vw; /* 3: level with the title's caps */
+}
+
+/* Overview: top-label layout, label 18 in and 16 under the hero,
+   rule to 12 from the right; heading 24 / text 19 under the rule */
+.lp-overview {
+  grid-template-columns: 1fr 48.542vw; /* text from 729 */
+  padding: 1.111vw 0.833vw 0 1.25vw; /* 16 / 12 / 0 / 18 */
+}
+
+.lp-overview .svc-overview__label {
+  margin-right: 0;
+}
+
+.lp-overview .svc-overview__heading {
+  max-width: 37.5vw; /* 540 */
+  margin-top: 1.667vw; /* 24 */
+}
+
+.lp-overview .svc-overview__text {
+  max-width: 37.153vw; /* 535 */
+  margin-top: 1.319vw; /* 19 */
+}
+
+/* Career development: 99 under the overview text, narrower text */
+.lp-people {
+  padding-top: 6.875vw; /* 99 */
+}
+
+.lp-people .careers-people__text {
+  max-width: 23.264vw; /* 335 */
+}
+
+/* ============================================================
+   Career path page — hear it from our team (teal, parallax)
+   191 sides, 91 top, 65 bottom. Left column 243: .h2 (93 from the
+   top), tabs 28 under it, 23 apart: 28 numbered circle (active
+   red) 12 before the role (24 semibold) with the name (14) under
+   it. Card 63 past the column: white, 484 min, 12 / 10 / 13 / 17
+   padding; quote (.rich-text, max 304) after a ” mark, person
+   (rule, name + grey position) on the bottom; photo 348 wide.
+   ============================================================ */
+.lp-team {
+  position: relative;
+  display: grid;
+  grid-template-columns: 16.875vw 1fr; /* 243 */
+  column-gap: 4.375vw; /* 63 */
+  align-items: start;
+  padding: 6.319vw 13.264vw 4.514vw; /* 91 / 191 / 65 */
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.lp-team__heading {
+  margin-top: 0.139vw; /* 2: 93 from the top */
+}
+
+.lp-team__tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 1.597vw; /* 23 */
+  margin: 1.944vw 0 0; /* 28 */
+  padding: 0;
+  list-style: none;
+}
+
+.lp-team__tab {
+  display: grid;
+  grid-template-columns: 1.944vw 1fr; /* 28 */
+  column-gap: 0.833vw; /* 12 */
+  align-items: center;
+  font-family: inherit;
+  text-align: left;
+  color: var(--white);
+}
+
+.lp-team__num {
+  display: grid;
+  place-items: center;
+  width: 1.944vw; /* 28 */
+  height: 1.944vw;
+  border: 1px solid var(--white);
+  border-radius: 50%;
+  font-size: 0.833vw; /* 12 */
+  font-weight: 600;
+  line-height: 1;
+  transition: background-color 0.3s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.lp-team__tab.is-active .lp-team__num {
+  border-color: var(--red);
+  background: var(--red);
+}
+
+.lp-team__role {
+  font-size: 1.667vw; /* 24 */
+  font-weight: 600;
+  line-height: 1;
+  transition: opacity 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.lp-team__tab:not(.is-active):hover .lp-team__role {
+  opacity: 0.7;
+}
+
+.lp-team__name {
+  grid-column: 2;
+  margin-top: 0.139vw; /* 2 */
+  font-size: 0.972vw; /* 14 */
+  line-height: 1.14;
+  opacity: 0.85;
+}
+
+.lp-team__panel {
+  display: grid;
+  grid-template-columns: 1fr 24.167vw; /* photo 348 */
+  column-gap: 1.389vw; /* 20 */
+  min-height: 33.611vw; /* 484 */
+  padding: 0.833vw 0.694vw 0.903vw 1.181vw; /* 12 / 10 / 13 / 17 */
+  border-radius: 0.417vw; /* 6 */
+  background: var(--white);
+}
+
+.lp-team__panel[hidden] {
+  display: none;
+}
+
+.lp-team__body {
+  display: flex;
+  flex-direction: column;
+  padding-top: 0.486vw; /* 7: the mark 19 from the card top */
+}
+
+.lp-team__quote {
+  max-width: 21.111vw; /* 304: fitted to the mock's line breaks */
+  margin: 0;
+}
+
+.lp-team__quote::before {
+  content: "\201D";
+  display: block;
+  margin-bottom: 0.278vw; /* 4 */
+  line-height: 1;
+}
+
+.lp-team__person {
+  display: flex;
+  flex-direction: column;
+  margin-top: auto;
+  padding-top: 1.042vw; /* 15 */
+  border-top: 1px solid #dfe4ea;
+  font-size: 0.972vw; /* 14 */
+  line-height: 1.14;
+  color: var(--black);
+}
+
+.lp-team__person strong {
+  font-weight: 600;
+}
+
+.lp-team__person span {
+  color: var(--grey);
+}
+
+.lp-team__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0.347vw; /* 5 */
+}
+
+/* Career path page — opportunities: the careers job rows, centred
+   842 (299 sides), 91 top / 150 bottom; rows carry a job title and
+   the location pill (job hero's) 30 before the arrow */
+.lp-jobs {
+  padding: 6.319vw calc((100% - 58.472vw) / 2) 10.417vw; /* 91 / centres 842 / 150 */
+}
+
+.lp-jobs__tag {
+  margin: 0 2.083vw 0 auto; /* 30 to the arrow */
+}
+
+/* Archive grid without chips but with the count (insights, no filter set):
+   cards 54 under the facets, as on the awards page */
+.ins-grid--no-chips {
+  padding-top: 3.75vw; /* 54 */
+}
+
+/* No posts match the filters */
+.ins-grid__empty {
+  margin: 1.667vw 0 0; /* 24 */
+  padding: 4.167vw 0; /* 60 */
+  border-top: 1px solid #e3e8ee;
+  text-align: center;
+  color: #718396;
+}
+
+/* ============================================================
+   About child pages (Pro Bono, CSR, Museum of Counterfeit Goods)
+   No markers on these mocks: values scaled from the page width.
+   vw values are px / 1440 * 100
+   ============================================================ */
+
+/* Hero: the about hero's frame; title on the bottom, 120 to a contact
+   block (25 bottom). The block is at least 465 wide and grows with its
+   icon row: a grey label (.subhead; the museum's is a two-line intro,
+   max 420; the gap above it is 99) 10 above the location office rule;
+   then either a name (.h4,
+   13 under the rule) with phone / email 12 under it in two columns
+   (email at 242), or icon rows 24 under the rule, 40 apart. Icons are
+   the location hero's 30 outlined circles, 10 to the text (14). */
+.info-hero {
+  padding-bottom: 1.736vw; /* 25 */
+}
+
+.info-hero__content {
+  margin-top: auto;
+  padding-top: 5.625vw; /* 81: minimum gap under the breadcrumbs */
+}
+
+.info-hero__title {
+  max-width: 37.5vw; /* 540 */
+}
+
+.info-hero__contact {
+  width: max-content;
+  min-width: 32.292vw; /* 465 */
+  margin-top: 8.333vw; /* 120 */
+}
+
+/* No name: the museum's intro block sits 99 under the title */
+.info-hero__contact:not(:has(.info-hero__name)) {
+  margin-top: 6.875vw; /* 99 */
+}
+
+.info-hero__label {
+  max-width: 29.167vw; /* 420 */
+  padding-bottom: 0.694vw; /* 10 */
+  border-bottom: 1px solid rgba(159, 178, 197, 0.5);
+}
+
+.info-hero__name {
+  margin-top: 0.903vw; /* 13 */
+}
+
+.info-hero__lines {
+  display: flex;
+  align-items: center;
+  gap: 2.778vw; /* 40 */
+  margin: 1.667vw 0 0; /* 24 */
+  padding: 0;
+  list-style: none;
+}
+
+/* A named contact: phone and email in two columns, email at 242 */
+.info-hero__name + .info-hero__lines {
+  display: grid;
+  grid-template-columns: 16.806vw auto; /* 242 */
+  gap: 0;
+  margin-top: 0.833vw; /* 12 */
+}
+
+.info-hero__lines li {
+  display: flex;
+  align-items: center;
+  gap: 0.694vw; /* 10 */
+  font-size: 0.972vw; /* 14 */
+  line-height: 1.14;
+  color: var(--white);
+}
+
+.info-hero__lines a {
+  transition: opacity 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.info-hero__lines a:hover {
+  opacity: 0.7;
+}
+
+/* Overview: the top-label overview 19 under the hero (rule 45 down),
+   heading max 580, text max 525, 95 bottom. CSR: an image (364 x 182) at the foot of
+   the heading column, level with the end of the text (40 minimum
+   under the heading). */
+.info-overview {
+  padding-top: 1.319vw; /* 19 */
+  padding-bottom: 6.597vw; /* 95 */
+}
+
+.info-overview .svc-overview__heading {
+  max-width: 40.278vw; /* 580: the mocks' line breaks on all three pages */
+}
+
+.info-overview .svc-overview__text {
+  max-width: 36.458vw; /* 525: these mocks wrap narrower than the service page's 543 */
+}
+
+.info-overview__image {
+  grid-column: 1;
+  grid-row: 3;
+  align-self: end;
+  width: 25.278vw; /* 364 */
+  height: 12.639vw; /* 182 */
+  margin-top: 2.778vw; /* 40 */
+  object-fit: cover;
+  border-radius: 0.347vw; /* 5 */
+}
+
+.info-overview:has(.info-overview__image) .svc-overview__text {
+  grid-column: 2;
+  grid-row: 2 / span 2;
+}
+
+/* Museum — audiences: 2 x 2 cells, 40 apart (rows 70), straight under
+   the overview. Each cell: 1px rule, 14 to the title (.h3) and the
+   text (16/22, max 300: the mock's line breaks), which starts 329
+   into the cell. */
+.mus-audience {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4.861vw 2.778vw; /* 70 / 40 */
+  margin: 0;
+  padding: 0 var(--sidepadding-xs);
+  list-style: none;
+}
+
+.mus-audience__item {
+  display: grid;
+  grid-template-columns: 22.847vw 1fr; /* 329 */
+  align-items: start;
+  padding-top: 0.972vw; /* 14 */
+  border-top: 1px solid #e3e8ee;
+}
+
+.mus-audience__text {
+  max-width: 20.833vw; /* 300 */
+  font-size: 1.111vw; /* 16 */
+  line-height: 1.375; /* 22 */
+}
+
+/* Museum — collection: 90 under the audiences. Label rule to 12 from
+   the right; quote (.h2, max 540) 23 under it, source (.body) 12
+   under the quote, text (16/22, max 480) 40 under that; image 716 x
+   530 from 712 to 12 from the right, top level with the text; 12
+   bottom (the image sits on the case-study band). */
+.mus-collection {
+  display: grid;
+  grid-template-columns: 1fr 49.722vw; /* image 716 */
+  align-items: start;
+  padding: 6.25vw 0.833vw 0.833vw var(--sidepadding-xs); /* 90 / 12 / 12 / 20 */
+}
+
+.mus-collection__label {
+  grid-column: 1 / -1;
+}
+
+.mus-collection__quote {
+  grid-column: 1;
+  max-width: 37.5vw; /* 540 */
+  margin: 1.597vw 0 0; /* 23 */
+}
+
+.mus-collection__quote blockquote {
+  margin: 0;
+}
+
+.mus-collection__quote figcaption {
+  margin-top: 0.833vw; /* 12 */
+}
+
+.mus-collection__text {
+  grid-column: 1;
+  grid-row: 3;
+  max-width: 33.333vw; /* 480 */
+  margin-top: 2.778vw; /* 40 */
+  font-size: 1.111vw; /* 16 */
+  line-height: 1.375; /* 22 */
+}
+
+.mus-collection__image {
+  grid-column: 2;
+  grid-row: 3;
+  width: 100%;
+  height: 36.806vw; /* 530 */
+  margin-top: 2.778vw; /* 40 */
+  object-fit: cover;
+  border-radius: 0.347vw; /* 5 */
+}
+
+/* Museum — case studies: the service client-successes slider, 75
+   bottom. A card with an image: 417 tall, title (.h2) 11 from the
+   top, text (.body, max 260) 30 under it; image 500 wide, 10 in from
+   the top / right / bottom. */
+.mus-cases {
+  padding-bottom: 5.208vw; /* 75 */
+}
+
+.svc-successes .loc-success--media {
+  position: relative;
+  display: block;
+  min-height: 28.958vw; /* 417 */
+  padding: 0.764vw 39.583vw 1.667vw 1.806vw; /* 11 / 570 / 24 / 26 */
+}
+
+.loc-success--media .loc-success__title {
+  max-width: none;
+}
+
+.loc-success--media .loc-success__text {
+  max-width: 18.056vw; /* 260 */
+  margin-top: 2.083vw; /* 30 */
+}
+
+.loc-success--media .loc-success__link {
+  margin-top: 2.083vw; /* 30 */
+}
+
+.loc-success__media {
+  position: absolute;
+  top: 0.694vw; /* 10 */
+  right: 0.694vw;
+  width: 34.722vw; /* 500 */
+  height: calc(100% - 1.389vw); /* 10 top + 10 bottom */
+  max-width: none;
+  object-fit: cover;
+  border-radius: 0.347vw; /* 5 */
+}

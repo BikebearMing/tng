@@ -38,6 +38,38 @@ html {
   margin-top: 0 !important;
 }
 
+/* Header logo images (WP only; the static pages use the text stand-in).
+   Two stacked wordmarks crossfade with the header's colour: white over a
+   dark hero, navy on the white scrolled bar and on light pages. Sized like
+   the stand-in: 71 tall, 56 once scrolled. vw = px / 1440 * 100 */
+.site-header__logo-img {
+  display: block;
+  width: auto;
+  height: 4.931vw; /* 71 */
+  transition: height 0.4s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.site-header__logo-img--on-light {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.site-header.is-scrolled .site-header__logo-img {
+  height: 3.889vw; /* 56 */
+}
+
+.site-header.is-scrolled .site-header__logo-img--on-dark,
+.site-header--light .site-header__logo-img--on-dark {
+  opacity: 0;
+}
+
+.site-header.is-scrolled .site-header__logo-img--on-light,
+.site-header--light .site-header__logo-img--on-light {
+  opacity: 1;
+}
+
 /* style.css sets explicit display on buttons, which would defeat the hidden
    attribute the grid script toggles ("View more" when everything is shown) */
 [hidden] {

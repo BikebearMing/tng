@@ -38,7 +38,9 @@ add_action(
 			'tng-wp',
 			'TNG',
 			array(
-				'roster' => esc_url_raw( rest_url( 'tng/v1/roster' ) ),
+				'roster'  => esc_url_raw( rest_url( 'tng/v1/roster' ) ),
+				'archive' => esc_url_raw( rest_url( 'tng/v1/archive' ) ),
+				'geo'     => esc_url_raw( rest_url( 'tng/v1/geo' ) ),
 			)
 		);
 	}

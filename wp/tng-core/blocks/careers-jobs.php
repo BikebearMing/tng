@@ -36,7 +36,7 @@ foreach ( $tng_countries as $tng_term ) {
 	}
 }
 ?>
-<section class="careers-jobs" data-section="careers-jobs" data-toggle="show_careers_jobs">
+<section class="careers-jobs" id="job-opportunities" data-section="careers-jobs" data-toggle="show_careers_jobs">
 	<p class="subhead careers-jobs__label"><?php echo esc_html( tng_field( 'label', 'See Where You Fit in' ) ); ?></p>
 	<h2 class="h2 careers-jobs__heading"><?php echo esc_html( tng_field( 'heading', 'Job Opportunities' ) ); ?></h2>
 	<ul class="careers-jobs__list">

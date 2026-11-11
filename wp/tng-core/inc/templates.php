@@ -8,6 +8,10 @@
  *  - single-professional:     professional single.
  *  - single-insight:          insight single, Standard.
  *  - single-insight-module:   insight single, Module (assigned per post).
+ *  - taxonomy-location:       country page (city terms redirect to it).
+ *  - taxonomy-industry /
+ *    taxonomy-practice:       service pages (a child term = subpractice).
+ *  - single-job:              job single (light header).
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -81,7 +85,6 @@ add_action(
 			'taxonomy'     => 'Taxonomy term',
 			'archive'      => 'Archive',
 			'single-award' => 'Award',
-			'single-job'   => 'Job',
 		) as $tng_slug => $tng_title ) {
 			register_block_template(
 				'tng-core//' . $tng_slug,
@@ -102,6 +105,65 @@ add_action(
 				}
 			);
 		}
+
+		register_block_template(
+			'tng-core//taxonomy-location',
+			array(
+				'title'       => 'Location (country)',
+				'description' => 'Country page: hero + office, tabs, overview, professionals, insights, client successes, experience, awards, office strip.',
+				'content'     => tng_template_shell(
+					'<!-- wp:tng/loc-hero /-->'
+					. '<!-- wp:tng/term-tabs /-->'
+					. '<!-- wp:tng/term-overview /-->'
+					. '<!-- wp:tng/term-professionals /-->'
+					. '<!-- wp:tng/term-insights /-->'
+					. '<!-- wp:tng/term-successes /-->'
+					. '<!-- wp:tng/term-experience /-->'
+					. '<!-- wp:tng/term-awards /-->'
+					. '<!-- wp:tng/loc-office /-->'
+				),
+			)
+		);
+
+		$tng_service = tng_template_shell(
+			'<!-- wp:tng/svc-hero /-->'
+			. '<!-- wp:tng/term-tabs /-->'
+			. '<!-- wp:tng/term-overview /-->'
+			. '<!-- wp:tng/term-subs /-->'
+			. '<!-- wp:tng/term-successes /-->'
+			. '<!-- wp:tng/term-experience /-->'
+			. '<!-- wp:tng/term-professionals /-->'
+			. '<!-- wp:tng/term-insights /-->'
+			. '<!-- wp:tng/term-awards /-->'
+		);
+		foreach ( array(
+			'industry' => 'Industry',
+			'practice' => 'Practice',
+		) as $tng_tax => $tng_title ) {
+			register_block_template(
+				'tng-core//taxonomy-' . $tng_tax,
+				array(
+					'title'       => $tng_title . ' page',
+					'description' => 'Service page: hero + contacts by country, tabs, overview, subpractices, client successes, experience, professionals, insights, awards. A child term shows hero, overview and experience only.',
+					'content'     => $tng_service,
+				)
+			);
+		}
+
+		register_block_template(
+			'tng-core//single-job',
+			array(
+				'title'       => 'Job',
+				'description' => 'Job single: hero + apply card, summary, position summary, call to action.',
+				'content'     => tng_template_shell(
+					'<!-- wp:tng/job-hero /-->'
+					. '<!-- wp:tng/job-intro /-->'
+					. '<!-- wp:tng/job-summary /-->'
+					. '<!-- wp:tng/job-cta /-->',
+					true // navy header over the pale hero
+				),
+			)
+		);
 
 		register_block_template(
 			'tng-core//single-insight-module',

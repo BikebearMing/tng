@@ -4,11 +4,13 @@
  *
  * Two families:
  *  - acf/* page blocks: carry their own SCF field group (location: block),
- *    used on the Home / Professionals / Contact / Careers pages. The client
- *    edits fields per block instance.
+ *    used on the Home / Professionals / Contact / Careers / About / Insights /
+ *    Awards / career path / About child (Pro Bono, CSR, museum) pages.
+ *    The client edits fields per block instance.
  *  - tng/* template blocks: no block fields; they render from the current
- *    post's SCF fields (professional and insight singles) or from the
- *    options pages (header / footer). They live in the plugin-registered
+ *    post's / term's SCF fields (professional, insight and job singles;
+ *    location, industry and practice pages) or from the options pages
+ *    (header / footer / job settings). They live in the plugin-registered
  *    Site Editor templates.
  *
  * Every render template outputs the exact section markup of the static HTML.
@@ -36,6 +38,25 @@ function tng_acf_blocks() {
 		'careers-people'       => 'TNG: Careers people',
 		'careers-cta'          => 'TNG: Careers CTA',
 		'careers-jobs'         => 'TNG: Job opportunities',
+		'about-hero'           => 'TNG: About hero',
+		'page-tabs'            => 'TNG: On this page tabs',
+		'overview'             => 'TNG: Overview (label + heading + text)',
+		'about-values'         => 'TNG: About values (accordion)',
+		'about-numbers'        => 'TNG: Our numbers',
+		'about-vision'         => 'TNG: Vision and mission',
+		'about-creed'          => 'TNG: Creed',
+		'more-from'            => 'TNG: More from',
+		'archive-hero'         => 'TNG: Archive hero',
+		'archive-featured'     => 'TNG: Featured post',
+		'archive-filter'       => 'TNG: Archive filter',
+		'archive-grid'         => 'TNG: Archive grid',
+		'path-hero'            => 'TNG: Career path hero',
+		'team-stories'         => 'TNG: Hear it from our team',
+		'path-jobs'            => 'TNG: Opportunities for (jobs)',
+		'info-hero'            => 'TNG: About child page hero (contact)',
+		'mus-audience'         => 'TNG: Museum audiences (2 x 2)',
+		'mus-collection'       => 'TNG: Museum collection',
+		'mus-cases'            => 'TNG: Museum case studies (slider)',
 	);
 }
 
@@ -110,6 +131,21 @@ add_action(
 			'module-download',
 			'module-share',
 			'module-insights',
+			'loc-hero',
+			'loc-office',
+			'svc-hero',
+			'term-tabs',
+			'term-overview',
+			'term-subs',
+			'term-successes',
+			'term-experience',
+			'term-professionals',
+			'term-insights',
+			'term-awards',
+			'job-hero',
+			'job-intro',
+			'job-summary',
+			'job-cta',
 		) as $name ) {
 			register_block_type(
 				'tng/' . $name,

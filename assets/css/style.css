@@ -4563,7 +4563,13 @@ button {
   margin-top: 0.694vw; /* 10 */
 }
 
-.ins-featured__title a:hover {
+.ins-featured__title a {
+  transition: color 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* SplitText clones the link into every line of the title, so a plain
+   a:hover only reddens the line under the cursor: colour them all */
+.ins-featured__title:has(a:hover) a {
   color: var(--red);
 }
 
@@ -5284,4 +5290,249 @@ button {
 
 .lp-jobs__tag {
   margin: 0 2.083vw 0 auto; /* 30 to the arrow */
+}
+
+/* Archive grid without chips but with the count (insights, no filter set):
+   cards 54 under the facets, as on the awards page */
+.ins-grid--no-chips {
+  padding-top: 3.75vw; /* 54 */
+}
+
+/* No posts match the filters */
+.ins-grid__empty {
+  margin: 1.667vw 0 0; /* 24 */
+  padding: 4.167vw 0; /* 60 */
+  border-top: 1px solid #e3e8ee;
+  text-align: center;
+  color: #718396;
+}
+
+/* ============================================================
+   About child pages (Pro Bono, CSR, Museum of Counterfeit Goods)
+   No markers on these mocks: values scaled from the page width.
+   vw values are px / 1440 * 100
+   ============================================================ */
+
+/* Hero: the about hero's frame; title on the bottom, 120 to a contact
+   block (25 bottom). The block is at least 465 wide and grows with its
+   icon row: a grey label (.subhead; the museum's is a two-line intro,
+   max 420; the gap above it is 99) 10 above the location office rule;
+   then either a name (.h4,
+   13 under the rule) with phone / email 12 under it in two columns
+   (email at 242), or icon rows 24 under the rule, 40 apart. Icons are
+   the location hero's 30 outlined circles, 10 to the text (14). */
+.info-hero {
+  padding-bottom: 1.736vw; /* 25 */
+}
+
+.info-hero__content {
+  margin-top: auto;
+  padding-top: 5.625vw; /* 81: minimum gap under the breadcrumbs */
+}
+
+.info-hero__title {
+  max-width: 37.5vw; /* 540 */
+}
+
+.info-hero__contact {
+  width: max-content;
+  min-width: 32.292vw; /* 465 */
+  margin-top: 8.333vw; /* 120 */
+}
+
+/* No name: the museum's intro block sits 99 under the title */
+.info-hero__contact:not(:has(.info-hero__name)) {
+  margin-top: 6.875vw; /* 99 */
+}
+
+.info-hero__label {
+  max-width: 29.167vw; /* 420 */
+  padding-bottom: 0.694vw; /* 10 */
+  border-bottom: 1px solid rgba(159, 178, 197, 0.5);
+}
+
+.info-hero__name {
+  margin-top: 0.903vw; /* 13 */
+}
+
+.info-hero__lines {
+  display: flex;
+  align-items: center;
+  gap: 2.778vw; /* 40 */
+  margin: 1.667vw 0 0; /* 24 */
+  padding: 0;
+  list-style: none;
+}
+
+/* A named contact: phone and email in two columns, email at 242 */
+.info-hero__name + .info-hero__lines {
+  display: grid;
+  grid-template-columns: 16.806vw auto; /* 242 */
+  gap: 0;
+  margin-top: 0.833vw; /* 12 */
+}
+
+.info-hero__lines li {
+  display: flex;
+  align-items: center;
+  gap: 0.694vw; /* 10 */
+  font-size: 0.972vw; /* 14 */
+  line-height: 1.14;
+  color: var(--white);
+}
+
+.info-hero__lines a {
+  transition: opacity 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.info-hero__lines a:hover {
+  opacity: 0.7;
+}
+
+/* Overview: the top-label overview 19 under the hero (rule 45 down),
+   heading max 580, text max 525, 95 bottom. CSR: an image (364 x 182) at the foot of
+   the heading column, level with the end of the text (40 minimum
+   under the heading). */
+.info-overview {
+  padding-top: 1.319vw; /* 19 */
+  padding-bottom: 6.597vw; /* 95 */
+}
+
+.info-overview .svc-overview__heading {
+  max-width: 40.278vw; /* 580: the mocks' line breaks on all three pages */
+}
+
+.info-overview .svc-overview__text {
+  max-width: 36.458vw; /* 525: these mocks wrap narrower than the service page's 543 */
+}
+
+.info-overview__image {
+  grid-column: 1;
+  grid-row: 3;
+  align-self: end;
+  width: 25.278vw; /* 364 */
+  height: 12.639vw; /* 182 */
+  margin-top: 2.778vw; /* 40 */
+  object-fit: cover;
+  border-radius: 0.347vw; /* 5 */
+}
+
+.info-overview:has(.info-overview__image) .svc-overview__text {
+  grid-column: 2;
+  grid-row: 2 / span 2;
+}
+
+/* Museum — audiences: 2 x 2 cells, 40 apart (rows 70), straight under
+   the overview. Each cell: 1px rule, 14 to the title (.h3) and the
+   text (16/22, max 300: the mock's line breaks), which starts 329
+   into the cell. */
+.mus-audience {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4.861vw 2.778vw; /* 70 / 40 */
+  margin: 0;
+  padding: 0 var(--sidepadding-xs);
+  list-style: none;
+}
+
+.mus-audience__item {
+  display: grid;
+  grid-template-columns: 22.847vw 1fr; /* 329 */
+  align-items: start;
+  padding-top: 0.972vw; /* 14 */
+  border-top: 1px solid #e3e8ee;
+}
+
+.mus-audience__text {
+  max-width: 20.833vw; /* 300 */
+  font-size: 1.111vw; /* 16 */
+  line-height: 1.375; /* 22 */
+}
+
+/* Museum — collection: 90 under the audiences. Label rule to 12 from
+   the right; quote (.h2, max 540) 23 under it, source (.body) 12
+   under the quote, text (16/22, max 480) 40 under that; image 716 x
+   530 from 712 to 12 from the right, top level with the text; 12
+   bottom (the image sits on the case-study band). */
+.mus-collection {
+  display: grid;
+  grid-template-columns: 1fr 49.722vw; /* image 716 */
+  align-items: start;
+  padding: 6.25vw 0.833vw 0.833vw var(--sidepadding-xs); /* 90 / 12 / 12 / 20 */
+}
+
+.mus-collection__label {
+  grid-column: 1 / -1;
+}
+
+.mus-collection__quote {
+  grid-column: 1;
+  max-width: 37.5vw; /* 540 */
+  margin: 1.597vw 0 0; /* 23 */
+}
+
+.mus-collection__quote blockquote {
+  margin: 0;
+}
+
+.mus-collection__quote figcaption {
+  margin-top: 0.833vw; /* 12 */
+}
+
+.mus-collection__text {
+  grid-column: 1;
+  grid-row: 3;
+  max-width: 33.333vw; /* 480 */
+  margin-top: 2.778vw; /* 40 */
+  font-size: 1.111vw; /* 16 */
+  line-height: 1.375; /* 22 */
+}
+
+.mus-collection__image {
+  grid-column: 2;
+  grid-row: 3;
+  width: 100%;
+  height: 36.806vw; /* 530 */
+  margin-top: 2.778vw; /* 40 */
+  object-fit: cover;
+  border-radius: 0.347vw; /* 5 */
+}
+
+/* Museum — case studies: the service client-successes slider, 75
+   bottom. A card with an image: 417 tall, title (.h2) 11 from the
+   top, text (.body, max 260) 30 under it; image 500 wide, 10 in from
+   the top / right / bottom. */
+.mus-cases {
+  padding-bottom: 5.208vw; /* 75 */
+}
+
+.svc-successes .loc-success--media {
+  position: relative;
+  display: block;
+  min-height: 28.958vw; /* 417 */
+  padding: 0.764vw 39.583vw 1.667vw 1.806vw; /* 11 / 570 / 24 / 26 */
+}
+
+.loc-success--media .loc-success__title {
+  max-width: none;
+}
+
+.loc-success--media .loc-success__text {
+  max-width: 18.056vw; /* 260 */
+  margin-top: 2.083vw; /* 30 */
+}
+
+.loc-success--media .loc-success__link {
+  margin-top: 2.083vw; /* 30 */
+}
+
+.loc-success__media {
+  position: absolute;
+  top: 0.694vw; /* 10 */
+  right: 0.694vw;
+  width: 34.722vw; /* 500 */
+  height: calc(100% - 1.389vw); /* 10 top + 10 bottom */
+  max-width: none;
+  object-fit: cover;
+  border-radius: 0.347vw; /* 5 */
 }

@@ -176,10 +176,36 @@ function tng_location_flag( $term ) {
 	return in_array( $term->slug, $bundled, true ) ? tng_asset( 'flags/' . $term->slug . '.svg' ) : '';
 }
 
-/** Location term image (megamenu / homepage cards) with the picsum fallback the mock uses. */
+/**
+ * Bundled design image (assets/img/, exported from Figma): URL of the first
+ * of $names that exists, else $fallback. Used as the default behind every
+ * image field, so an upload always wins.
+ */
+function tng_bundled_img( $names, $fallback = '' ) {
+	foreach ( (array) $names as $name ) {
+		if ( $name && file_exists( TNG_CORE_DIR . 'assets/img/' . $name ) ) {
+			return tng_asset( 'img/' . $name );
+		}
+	}
+	return $fallback;
+}
+
+/** Hero fallback for pages / terms with no design of their own: the brand teal texture. */
+function tng_default_hero() {
+	return tng_bundled_img( 'page-about-hero.jpg', tng_texture_url() );
+}
+
+/**
+ * Location term image (megamenu / homepage cards). Fallback: the bundled
+ * country photo, landscape card crop or portrait megamenu crop by $w / $h.
+ */
 function tng_location_image( $term, $w, $h ) {
 	$url = tng_img_url( 'image', '', 'location_' . $term->term_id );
-	return $url ? $url : 'https://picsum.photos/seed/' . rawurlencode( $term->slug ) . '/' . (int) $w . '/' . (int) $h;
+	if ( $url ) {
+		return $url;
+	}
+	$crop = $w > $h ? 'card' : 'menu';
+	return tng_bundled_img( 'loc-' . $term->slug . '-' . $crop . '.jpg', tng_bundled_img( 'loc-global-' . $crop . '.jpg' ) );
 }
 
 /** The share buttons block (Standard sidebar + Module share row). */
@@ -234,4 +260,90 @@ function tng_related_section( $args ) {
 	</section>
 	<?php
 	return ob_get_clean();
+}
+
+/** Permalink of a page by path ("about/awards-rankings"), else $fallback. */
+function tng_page_url( $path, $fallback = '#' ) {
+	$page = get_page_by_path( $path );
+	return $page ? get_permalink( $page ) : $fallback;
+}
+
+/** Breadcrumb trail of a page's ancestors, root first: [[title, url], ...]. */
+function tng_page_trail( $post_id = 0 ) {
+	$post_id = $post_id ? $post_id : get_the_ID();
+	$trail   = array();
+	foreach ( array_reverse( get_post_ancestors( $post_id ) ) as $ancestor ) {
+		$trail[] = array( get_the_title( $ancestor ), get_permalink( $ancestor ) );
+	}
+	return $trail;
+}
+
+/** URL of the child page of $parent_id whose slug matches $title (or its plural), else ''. */
+function tng_child_page_url( $parent_id, $title ) {
+	if ( ! $parent_id ) {
+		return '';
+	}
+	$slug = sanitize_title( $title );
+	foreach ( get_pages( array( 'parent' => $parent_id ) ) as $child ) {
+		if ( $child->post_name === $slug || $child->post_name === $slug . 's' ) {
+			return get_permalink( $child );
+		}
+	}
+	return '';
+}
+
+/** Down-pointing chevron (View more). */
+function tng_arrow_down() {
+	return '<svg viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M1 3l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+}
+
+/** Left-pointing chevron (back links). */
+function tng_arrow_left() {
+	return '<svg viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M7 1L3 5l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+}
+
+/** Close icon (filter chips). */
+function tng_icon_close() {
+	return '<svg viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M1.5 1.5l7 7M8.5 1.5l-7 7" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>';
+}
+
+/** Country term of a post's location (a city term resolves to its country), else null. */
+function tng_post_country( $post_id ) {
+	$terms = get_the_terms( $post_id, 'location' );
+	if ( ! is_array( $terms ) || ! $terms ) {
+		return null;
+	}
+	$term = $terms[0];
+	if ( $term->parent ) {
+		$parent = get_term( $term->parent, 'location' );
+		if ( $parent && ! is_wp_error( $parent ) ) {
+			$term = $parent;
+		}
+	}
+	return $term;
+}
+
+/** Navy location pill: flag + country name (job hero, career path job rows). */
+function tng_country_pill( $country, $class = 'job-hero__tag', $tag = 'p' ) {
+	if ( ! $country ) {
+		return '';
+	}
+	$flag = tng_location_flag( $country );
+	return '<' . $tag . ' class="' . esc_attr( $class ) . '">' . ( $flag ? '<img src="' . esc_url( $flag ) . '" alt="">' : '' ) . esc_html( $country->name ) . '</' . $tag . '>';
+}
+
+/** Teal texture used behind parallax sections. */
+function tng_texture_url() {
+	return tng_asset( 'hp-location-bg.jpg' );
+}
+
+/** An image sub-field value (url / array / attachment ID) as a URL, else $fallback. */
+function tng_img_value( $v, $fallback = '' ) {
+	if ( is_array( $v ) ) {
+		$v = isset( $v['url'] ) ? $v['url'] : '';
+	}
+	if ( is_numeric( $v ) ) {
+		$v = wp_get_attachment_image_url( (int) $v, 'full' );
+	}
+	return $v ? $v : $fallback;
 }

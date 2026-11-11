@@ -42,5 +42,14 @@ add_action(
 				'parent_slug' => 'tng-site-chrome',
 			)
 		);
+		// Apply card + call-to-action texts shared by every job page
+		acf_add_options_sub_page(
+			array(
+				'page_title'  => 'Job page settings',
+				'menu_title'  => 'Job page settings',
+				'menu_slug'   => 'tng-job-settings',
+				'parent_slug' => 'edit.php?post_type=job',
+			)
+		);
 	}
 );

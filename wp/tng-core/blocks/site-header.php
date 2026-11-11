@@ -17,7 +17,11 @@ $tng_page_url = static function ( $slug, $fallback = '#' ) {
 	return $page ? get_permalink( $page ) : $fallback;
 };
 
-$tng_logo = tng_img_url( 'logo', '', 'option' );
+// Two wordmarks: "logo" (white, over dark heroes; also the footer's, same
+// option) and "logo_dark" (navy, for the white scrolled bar and light pages).
+// No navy upload = the bundled navy copy of the white logo.
+$tng_logo      = tng_img_url( 'logo', '', 'option' );
+$tng_logo_dark = $tng_logo ? tng_img_url( 'logo_dark', tng_asset( 'header-logo-navy.png' ), 'option' ) : '';
 
 $tng_top_links = tng_field( 'top_links', array(), 'option' );
 if ( ! $tng_top_links ) {
@@ -32,9 +36,9 @@ $tng_professionals_url = tng_field( 'professionals_url', $tng_page_url( 'profess
 $tng_insights_url      = tng_field( 'insights_url', '#', 'option' );
 $tng_global_reach_url  = tng_field( 'global_reach_url', '#', 'option' );
 
-$tng_industries = get_terms( array( 'taxonomy' => 'industry', 'hide_empty' => false ) );
+$tng_industries = get_terms( array( 'taxonomy' => 'industry', 'hide_empty' => false, 'parent' => 0 ) );
 $tng_industries = is_wp_error( $tng_industries ) ? array() : $tng_industries;
-$tng_practices  = get_terms( array( 'taxonomy' => 'practice', 'hide_empty' => false ) );
+$tng_practices  = get_terms( array( 'taxonomy' => 'practice', 'hide_empty' => false, 'parent' => 0 ) );
 $tng_practices  = is_wp_error( $tng_practices ) ? array() : $tng_practices;
 $tng_locations  = get_terms( array( 'taxonomy' => 'location', 'hide_empty' => false, 'parent' => 0 ) );
 $tng_locations  = is_wp_error( $tng_locations ) ? array() : $tng_locations;
@@ -42,7 +46,8 @@ $tng_locations  = is_wp_error( $tng_locations ) ? array() : $tng_locations;
 <header class="site-header<?php echo $tng_light ? ' site-header--light' : ''; ?>" data-scrolled-at="40">
 	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="site-header__logo" aria-label="Tilleke &amp; Gibbins">
 		<?php if ( $tng_logo ) : ?>
-			<img src="<?php echo esc_url( $tng_logo ); ?>" alt="Tilleke &amp; Gibbins">
+			<img src="<?php echo esc_url( $tng_logo ); ?>" alt="Tilleke &amp; Gibbins" class="site-header__logo-img site-header__logo-img--on-dark">
+			<img src="<?php echo esc_url( $tng_logo_dark ); ?>" alt="" aria-hidden="true" class="site-header__logo-img site-header__logo-img--on-light">
 		<?php else : ?>
 			<span>Tilleke</span>
 			<span><em>&amp;</em>Gibbins</span>
@@ -92,7 +97,7 @@ $tng_locations  = is_wp_error( $tng_locations ) ? array() : $tng_locations;
 					<?php foreach ( $tng_locations as $tng_i => $tng_term ) : ?>
 					<img src="<?php echo esc_url( tng_location_image( $tng_term, 374, 452 ) ); ?>" alt=""<?php echo 0 === $tng_i ? ' class="is-active"' : ''; ?>>
 					<?php endforeach; ?>
-					<img src="https://picsum.photos/seed/global/374/452" alt="">
+					<img src="<?php echo esc_url( tng_bundled_img( 'loc-global-menu.jpg' ) ); ?>" alt="">
 					</div>
 				</div>
 			</li>

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pro Bono — TNG</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/vendor/blaze.css">
+  <link rel="stylesheet" href="assets/vendor/lenis.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       HEADER (site-wide, sits over the banner)
+       SCF options page: site/header
+       Fields: logo (image/svg), top_menu (WP menu "Header top":
+               About / Careers / Contact), main_menu (WP menu "Header main":
+               Professionals / Services / Insights / Locations),
+               search_label, languages (repeater: code, url),
+               locations_mega (auto from Location taxonomy: name, image,
+               link; plus extra_links repeater, e.g. Global Reach),
+               services_mega (auto from Industry and Practice taxonomies:
+               name, link; labels editable)
+       ============================================================ -->
+  <header class="site-header" data-scrolled-at="40">
+    <!-- TODO: swap for the logo SVG once supplied; this is a text stand-in -->
+    <a href="index.html" class="site-header__logo" aria-label="Tilleke &amp; Gibbins">
+      <span>Tilleke</span>
+      <span><em>&amp;</em>Gibbins</span>
+    </a>
+
+    <nav class="site-header__nav" aria-label="Main">
+      <ul class="site-header__top">
+        <li><a href="about.html" class="subhead">About</a></li>
+        <li><a href="careers.html" class="subhead">Careers</a></li>
+        <li><a href="contact.html" class="subhead">Contact</a></li>
+      </ul>
+      <ul class="site-header__main">
+        <li><a href="professionals.html" class="button-label">Professionals</a></li>
+        <li class="has-mega">
+          <a href="#" class="button-label" aria-haspopup="true">Services</a>
+          <!-- Megamenu: industries (active follows hover) | practices in two columns -->
+          <div class="site-header__mega site-header__mega--services">
+            <div class="site-header__mega-col">
+              <p class="subhead site-header__mega-label">Industries</p>
+              <ul class="site-header__mega-list">
+              <li class="is-active"><a href="service.html" class="button-label">Automotive<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+              <li><a href="#" class="button-label">Aviation<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+              <li><a href="#" class="button-label">Consumer products<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+              <li><a href="#" class="button-label">Energy<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+              <li><a href="#" class="button-label">Fintech<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+              <li><a href="#" class="button-label">Insurance<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+              <li><a href="#" class="button-label">Life Sciences<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+              <li><a href="#" class="button-label">Technology<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+              </ul>
+            </div>
+            <div class="site-header__mega-col site-header__mega-col--divided">
+              <p class="subhead site-header__mega-label">Practices</p>
+              <ul class="site-header__mega-links" style="--rows: 6;">
+              <li><a href="#" class="site-header__mega-link">Antitrust and Competition</a></li>
+              <li><a href="#" class="site-header__mega-link">Banking and Finance</a></li>
+              <li><a href="#" class="site-header__mega-link">Capital Markets</a></li>
+              <li><a href="#" class="site-header__mega-link">Compliance and Investigations</a></li>
+              <li><a href="#" class="site-header__mega-link">Corporate/M&amp;A</a></li>
+              <li><a href="#" class="site-header__mega-link">Customs and International Trade</a></li>
+              <li><a href="#" class="site-header__mega-link">Dispute Resolution and Litigation</a></li>
+              <li><a href="#" class="site-header__mega-link">Employment</a></li>
+              <li><a href="practice.html" class="site-header__mega-link">Intellectual Property</a></li>
+              <li><a href="#" class="site-header__mega-link">Real Estate</a></li>
+              <li><a href="#" class="site-header__mega-link">Regulatory Affairs</a></li>
+              <li><a href="#" class="site-header__mega-link">Tax</a></li>
+              </ul>
+            </div>
+          </div>
+        </li>
+        <li><a href="insights.html" class="button-label">Insights</a></li>
+        <li class="has-mega">
+          <a href="#" class="button-label" aria-haspopup="true">Locations</a>
+          <!-- Megamenu: hover/focus opens it; hovering a location swaps the image -->
+          <div class="site-header__mega">
+            <ul class="site-header__mega-list">
+            <li class="is-active"><a href="location.html" class="button-label">Cambodia<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            <li><a href="#" class="button-label">Indonesia<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            <li><a href="#" class="button-label">Laos<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            <li><a href="#" class="button-label">Myanmar<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            <li><a href="#" class="button-label">Thailand<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            <li><a href="#" class="button-label">Vietnam<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            <li><a href="#" class="button-label">Global Reach<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            </ul>
+            <div class="site-header__mega-media" aria-hidden="true">
+            <img src="assets/img/loc-cambodia-menu.jpg" alt="" class="is-active">
+            <img src="assets/img/loc-indonesia-menu.jpg" alt="">
+            <img src="assets/img/loc-laos-menu.jpg" alt="">
+            <img src="assets/img/loc-myanmar-menu.jpg" alt="">
+            <img src="assets/img/loc-thailand-menu.jpg" alt="">
+            <img src="assets/img/loc-vietnam-menu.jpg" alt="">
+            <img src="assets/img/loc-global-menu.jpg" alt="">
+            </div>
+          </div>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="site-header__utils">
+      <button type="button" class="subhead site-header__search">
+        Search
+        <svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="7.5" cy="7.5" r="6" stroke="currentColor" stroke-width="1.5"/><path d="M12 12l4.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+      <a href="#" class="subhead site-header__lang" aria-label="Language: English">
+        ENG
+        <svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="7.5" stroke="currentColor" stroke-width="1.3"/><ellipse cx="9" cy="9" rx="3.2" ry="7.5" stroke="currentColor" stroke-width="1.3"/><path d="M1.5 9h15M2.8 5.2h12.4M2.8 12.8h12.4" stroke="currentColor" stroke-width="1.3"/></svg>
+      </a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============================================================
+         SECTION: Page hero (navy, white header over it)
+         About child pages, SCF block: page/hero
+         Fields: show_page_hero (true/false), title (textarea, default =
+                 page title), image (image, cover-cropped, min 1394 x 942),
+                 label (textarea: "Pro Bono contact", or the museum's
+                 booking intro), name (text, optional), hours (textarea,
+                 optional, line breaks kept), phone (text), email (email)
+         The about hero's frame; title on the bottom, 120 to the contact
+         block: label, rule, name, then the icon rows (hours / phone /
+         email). A row is left out when its field is empty.
+         ============================================================ -->
+    <section class="in-hero info-hero" data-section="info-hero" data-toggle="show_page_hero">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <p class="subhead"><a href="index.html">Home</a> / <a href="about.html">About</a> / <span aria-current="page">Pro Bono</span></p>
+      </nav>
+
+      <div class="info-hero__content">
+        <h1 class="h1 dark info-hero__title">Pro Bono</h1>
+        <div class="info-hero__contact">
+          <p class="subhead info-hero__label">Pro Bono contact</p>
+          <p class="h4 dark info-hero__name">Eric Meyer</p>
+          <ul class="info-hero__lines">
+            <li><span class="loc-hero__icon"><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M6.6 2.2a1.5 1.5 0 0 0-1.9-.6L3 2.4A2.3 2.3 0 0 0 1.7 5c.9 5.7 5.6 10.4 11.3 11.3a2.3 2.3 0 0 0 2.6-1.3l.8-1.7a1.5 1.5 0 0 0-.6-1.9l-2.3-1.4a1.5 1.5 0 0 0-1.9.3l-.8.9a9.5 9.5 0 0 1-4.7-4.7l.9-.8a1.5 1.5 0 0 0 .3-1.9L6.6 2.2z"/></svg></span><a href="tel:+6620565797">+66 2056 5797</a></li>
+            <li><span class="loc-hero__icon"><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M1 5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v.4l-9 5.4-9-5.4V5zm0 2.7V15a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V7.7l-8.5 5.1a1 1 0 0 1-1 0L1 7.7z"/></svg></span><a href="mailto:eric.m@tilleke.com">eric.m@tilleke.com</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- TODO: placeholder image -->
+      <img src="assets/img/about-pro-bono-hero.jpg" alt="" class="in-hero__image">
+    </section>
+
+    <!-- ============================================================
+         SECTION: Overview
+         SCF block: page/overview (the service overview's top-label
+         layout, 19 under the hero). Fields: show_page_overview
+         (true/false), label (text, default "Overview"), heading
+         (textarea, .h2), text (wysiwyg, 16/22), image (image, optional,
+         min 728 x 364: sits at the foot of the heading column, level
+         with the end of the text)
+         ============================================================ -->
+    <section class="svc-overview svc-overview--top-label info-overview" id="overview" data-section="info-overview" data-toggle="show_page_overview">
+      <p class="subhead pro-label svc-overview__label">Overview</p>
+      <h2 class="h2 svc-overview__heading">Tilleke &amp; Gibbins assesses each pro bono request carefully to ensure that our work has the maximum positive impact on the organizations that need it most.</h2>
+      <div class="rich-text svc-overview__text">
+        <p>Tilleke &amp; Gibbins has one of Southeast Asia’s most active pro bono practices. We provide extensive support to NGOs and social enterprises in Cambodia, Indonesia, Laos, Myanmar, Thailand, and Vietnam to ensure that they are able to continue their vital work unfettered by legal compliance issues in their corporate structures, labor and employment practices, and other legal matters. We assess each pro bono request carefully to ensure that our work has the maximum positive impact on the organizations that need it most.</p>
+        <p>We also work side by side with numerous global pro bono organizations such as TrustLaw and the Lex Mundi Pro Bono Foundation to assist with global legal research projects on areas of socio-legal development that help to fight injustices across our three core pillars of education, human health, and sustainability.</p>
+        <p>Our dedication to pro bono work has been recognized on the international stage with awards from institutions and global organizations such as the <a href="#">Thomson Reuters Foundation</a>, the <a href="#">Chambers and Partners Diversity &amp; Inclusion Initiative</a>, the <a href="#">Cyrus R. Vance Center for International Justice</a>, and various others.</p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION: More from (grey link list)
+         SCF block: page/more-from (reusable on any parent page)
+         Fields: show_more_from (true/false), heading (text, default
+                 "More from <parent page title>"), arrows (true/false: the
+                 red arrow on each row, on here), links (repeater of link
+                 fields; default = the parent's child pages)
+         ============================================================ -->
+    <section class="more-from" data-section="more-from" data-toggle="show_more_from">
+      <h2 class="h2 more-from__title">More from<br>About</h2>
+      <ul class="more-from__list">
+        <li><a href="about.html" class="h3 more-from__link">Overview<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+        <li><a href="#" class="h3 more-from__link">History<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+        <li><a href="csr.html" class="h3 more-from__link">CSR<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER (site-wide)
+       SCF options page: site/footer
+       Fields: logo (image/svg), social_links (repeater: network, url),
+               newsletter_heading, newsletter_form (Mailchimp/CF7 embed or
+               action url), networks (repeater: logo, url), quick_links
+               (WP menu "Footer quick links", split into 2 columns),
+               copyright, legal_links (WP menu "Footer legal")
+       ============================================================ -->
+  <footer id="footer" class="hp-footer" data-section="footer">
+    <div class="hp-footer__top">
+
+      <div class="hp-footer__brand">
+        <!-- TODO: swap for the logo SVG once supplied; this is a text stand-in -->
+        <a href="index.html" class="hp-footer__logo" aria-label="Tilleke &amp; Gibbins">
+          <span>Tilleke</span>
+          <span><em>&amp;</em>Gibbins</span>
+        </a>
+
+        <ul class="hp-footer__social">
+          <li>
+            <a href="#" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.5-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H8v3h2.5V21h3z"/></svg>
+            </a>
+          </li>
+          <li>
+            <a href="#" aria-label="YouTube">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18.3 5 12 5 12 5s-6.3 0-7.8.4A2.5 2.5 0 0 0 2.4 7.2C2 8.8 2 12 2 12s0 3.2.4 4.8a2.5 2.5 0 0 0 1.8 1.8C5.7 19 12 19 12 19s6.3 0 7.8-.4a2.5 2.5 0 0 0 1.8-1.8c.4-1.6.4-4.8.4-4.8s0-3.2-.4-4.8zM10 15V9l5.2 3L10 15z"/></svg>
+            </a>
+          </li>
+          <li>
+            <a href="#" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.9 8.7H3.6V20h3.3V8.7zM5.3 3.5a1.9 1.9 0 1 0 0 3.8 1.9 1.9 0 0 0 0-3.8zM20.4 13.1c0-3.2-1.7-4.7-4-4.7a3.4 3.4 0 0 0-3.1 1.7V8.7H10V20h3.3v-5.6c0-1.5.3-2.9 2.1-2.9 1.8 0 1.8 1.7 1.8 3V20h3.3v-6.9z"/></svg>
+            </a>
+          </li>
+        </ul>
+
+        <p class="button-label dark hp-footer__newsletter-heading">Subscribe to our newsletter</p>
+        <form class="hp-footer__form" action="#" method="post">
+          <label class="visually-hidden" for="footer-email">Your email</label>
+          <input type="email" id="footer-email" name="email" placeholder="Your email" required>
+          <button type="submit">
+            Subscribe
+            <svg viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </form>
+      </div>
+
+      <div class="hp-footer__nav">
+        <p class="subhead hp-footer__label">Networks</p>
+        <ul class="hp-footer__networks">
+          <li><a href="#"><img src="assets/lexmundi.png" alt="Lex Mundi Member" class="hp-footer__network hp-footer__network--lexmundi"></a></li>
+          <li><a href="#"><img src="assets/multilaw.png" alt="Multilaw" class="hp-footer__network hp-footer__network--multilaw"></a></li>
+          <li><a href="#"><img src="assets/dna.png" alt="Drew Network Asia" class="hp-footer__network hp-footer__network--dna"></a></li>
+        </ul>
+
+        <p class="subhead hp-footer__label hp-footer__label--links">Quick links</p>
+        <div class="hp-footer__quick">
+          <ul class="hp-footer__quick-col">
+            <li><a href="professionals.html" class="button-label dark">Professionals</a></li>
+            <li><a href="#" class="button-label dark">Services</a></li>
+            <li><a href="insights.html" class="button-label dark">Insights</a></li>
+            <li><a href="#" class="button-label dark">Locations</a></li>
+          </ul>
+          <ul class="hp-footer__quick-col">
+            <li><a href="about.html" class="button-label dark">About</a></li>
+            <li><a href="careers.html" class="button-label dark">Careers</a></li>
+            <li><a href="contact.html" class="button-label dark">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="hp-footer__bar">
+      <p class="subhead hp-footer__copyright">&copy; 2026 Tilleke &amp; Gibbins International Ltd. All rights reserved.</p>
+      <ul class="hp-footer__legal">
+        <li><a href="#" class="subhead dark">Privacy Policy</a></li>
+        <li><a href="#" class="subhead dark">Fraudulent Communications</a></li>
+        <li><a href="#" class="subhead dark">Legal Notice</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="assets/vendor/ScrollTrigger.min.js"></script>
+  <script src="assets/vendor/SplitText.min.js"></script>
+  <script src="assets/vendor/blaze-slider.min.js"></script>
+  <script src="assets/vendor/lenis.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

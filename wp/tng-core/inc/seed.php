@@ -31,7 +31,7 @@ function tng_seed_page() {
 	?>
 	<div class="wrap">
 		<h1>TNG Seed</h1>
-		<p>Creates the demo content: terms (with office details), professionals, insights, awards, jobs, the four pages, options values, permalinks and the front page. Safe to run more than once.</p>
+		<p>Creates the demo content: terms (with office details), professionals, insights, awards, jobs, the pages (Home, Professionals, Contact, Careers, About, Insights, Awards &amp; Rankings, Pro Bono, CSR, Museum of Counterfeit Goods, Legal Professionals + placeholders), term page content, options values, permalinks and the front page. Create-only: nothing that exists is changed (a page still holding only the under-development placeholder gets its real content). Safe to run more than once.</p>
 		<form method="post">
 			<?php wp_nonce_field( 'tng_seed' ); ?>
 			<p><button class="button button-primary" name="tng_seed" value="1">Seed content</button></p>
@@ -594,10 +594,474 @@ function tng_seed_all() {
 	}
 	$log[] = 'Option links healed to the new placeholder pages';
 
+	tng_seed_v110( $log );
+	tng_seed_v112( $log );
+
 	flush_rewrite_rules();
 	tng_bust_roster();
 	remove_filter( 'wp_insert_post_data', 'tng_seed_keep_publish' );
 	$log[] = 'Rewrite rules flushed, roster cache cleared. Done.';
 
 	return $log;
+}
+
+/* ---------------- 1.1.0: About, Insights, Awards, career path, terms, jobs ---------------- */
+
+/**
+ * Page seeding for 1.1.0. Same contract as the rest of the seeder: nothing
+ * that exists is ever changed, with ONE guarded exception — a page whose
+ * content is still exactly the untouched under-development placeholder block
+ * (About, Insights) gets its real content. Anything an editor typed stays.
+ */
+function tng_seed_page_content( $title, $content, $args = array() ) {
+	$placeholder = '<!-- wp:tng/under-development /-->';
+	$id          = tng_seed_find_post( 'page', $title );
+	if ( ! $id ) {
+		list( $id ) = tng_seed_post( 'page', $title, array_merge( $args, array( 'post_content' => $content ) ) );
+		update_post_meta( $id, '_wp_page_template', 'tng-blank' );
+		return array( $id, 'created' );
+	}
+	if ( $content !== $placeholder && trim( (string) get_post_field( 'post_content', $id ) ) === $placeholder ) {
+		wp_update_post( wp_slash( array( 'ID' => $id, 'post_content' => $content ) ) ); // keeps a revision
+		return array( $id, 'filled (was the placeholder)' );
+	}
+	return array( $id, 'kept' );
+}
+
+/** Term field values, written only when the term has none yet (create-only). */
+function tng_seed_term_fields( $ref, $check, $fields ) {
+	if ( get_field( $check, $ref ) ) {
+		return false;
+	}
+	foreach ( $fields as $key => $value ) {
+		update_field( $key, $value, $ref );
+	}
+	return true;
+}
+
+function tng_seed_v110( &$log ) {
+	$t = static function ( $tax, $name, $parent = 0 ) {
+		return tng_seed_term( $tax, $name, $parent );
+	};
+
+	/* ---- terms: IP subpractices ---- */
+	$ip   = $t( 'practice', 'Intellectual Property' );
+	$subs = array();
+	foreach ( array( 'Commercialization', 'Trademarks', 'Patents' ) as $n ) {
+		$subs[ $n ] = $t( 'practice', $n, $ip );
+	}
+	$loc = array();
+	foreach ( array( 'Cambodia', 'Indonesia', 'Laos', 'Myanmar', 'Thailand', 'Vietnam' ) as $n ) {
+		$loc[ $n ] = $t( 'location', $n );
+	}
+	$automotive = $t( 'industry', 'Automotive' );
+	$corporate  = $t( 'practice', 'Corporate/M&A' );
+
+	/* ---- professionals: the Cambodia contacts from the service mock ---- */
+	$pros = array();
+	foreach ( array(
+		'Jay Cohen'  => array( 'Partner', 'jay.c@tilleke.com' ),
+		'David Mol'  => array( 'Consultant', 'david.m@tilleke.com' ),
+	) as $name => $def ) {
+		list( $id, $new ) = tng_seed_post( 'professional', $name );
+		$pros[ $name ]    = $id;
+		if ( $new ) {
+			update_field( 'field_tng_pro_position_title', $def[0], $id );
+			update_field( 'field_tng_pro_phone', '+855 23 964 210', $id );
+			update_field( 'field_tng_pro_email', $def[1], $id );
+			wp_set_object_terms( $id, array( $loc['Cambodia'] ), 'location' );
+			wp_set_object_terms( $id, array( $automotive ), 'industry' );
+			wp_set_object_terms( $id, array( $ip, $corporate ), 'practice' );
+			wp_set_object_terms( $id, 'English', 'language' );
+			wp_set_object_terms( $id, $def[0], 'position' );
+		}
+	}
+	foreach ( array( 'Alan Adcock', 'Alisa Koovimol', 'Athistha (Nop) Chitranukroh', 'Aimee Van Dyk' ) as $name ) {
+		$pros[ $name ] = tng_seed_find_post( 'professional', $name );
+	}
+	$log[] = '1.1.0: professionals Jay Cohen + David Mol (Cambodia) ensured';
+
+	/* ---- insights + awards tagged for the term pages ---- */
+	$generic = tng_seed_paragraphs( array(
+		'Tilleke &amp; Gibbins advises international and local businesses across Southeast Asia. This update summarizes the key developments and what they mean for companies operating in the region.',
+		'For more information, please contact our team.',
+	) );
+	$tagged = array(
+		array( 'insight', 'Cambodia Updates Trademark Registration Procedures', '2026-11-20 10:00:00', 'Cambodia’s Department of Intellectual Property has updated its trademark filing and examination procedures. Here is what brand owners need to know.', array( 'Cambodia' ), array( $ip ), array(), 'Jay Cohen' ),
+		array( 'insight', 'Doing Business in Cambodia 2026', '2026-10-15 10:00:00', 'A practical overview of market entry, investment incentives, and regulatory requirements for foreign investors in Cambodia.', array( 'Cambodia' ), array( $corporate ), array(), 'David Mol' ),
+		array( 'insight', 'Protecting Automotive Designs and Trademarks in Southeast Asia', '2026-11-10 10:00:00', 'How automotive manufacturers and parts suppliers can secure design, patent, and trademark protection across the region.', array( 'Thailand' ), array( $ip ), array( $automotive ), 'Alan Adcock' ),
+		array( 'award', 'Tilleke & Gibbins Named Cambodia Law Firm of the Year 2026', '2026-11-01 10:00:00', 'Tilleke &amp; Gibbins has been named Cambodia Law Firm of the Year, recognizing the strength of its Phnom Penh team across corporate, regulatory, and intellectual property work.', array( 'Cambodia' ), array( $ip ), array( $automotive ), 'Jay Cohen' ),
+		array( 'award', 'Tilleke & Gibbins Recognized in IP Stars 2026', '2026-10-20 10:00:00', 'Tilleke &amp; Gibbins and its practitioners have again been recognized in the IP Stars rankings for trademark, patent, and enforcement work.', array( 'Thailand' ), array( $ip ), array(), 'Alan Adcock' ),
+	);
+	foreach ( $tagged as $p ) {
+		list( $type, $title, $date, $excerpt, $countries, $practices, $industries, $person ) = $p;
+		list( $id, $new ) = tng_seed_post( $type, $title, array( 'post_date' => $date, 'post_excerpt' => $excerpt, 'post_content' => $generic ) );
+		if ( ! $new ) {
+			continue;
+		}
+		wp_set_object_terms( $id, array_map( function ( $n ) use ( $loc ) { return $loc[ $n ]; }, $countries ), 'location' );
+		if ( $practices ) {
+			wp_set_object_terms( $id, $practices, 'practice' );
+		}
+		if ( $industries ) {
+			wp_set_object_terms( $id, $industries, 'industry' );
+		}
+		if ( ! empty( $pros[ $person ] ) ) {
+			update_field( 'insight' === $type ? 'field_tng_ins_related_professionals' : 'field_tng_awd_related_professionals', array( $pros[ $person ] ), $id );
+		}
+	}
+	$log[] = '1.1.0: tagged insights (3) + awards (2) for the location / service pages ensured';
+
+	/* ---- term page content (only terms that have none yet) ---- */
+	$experience = '<ul><li>Actively advising an international group with investments in real estate, telecommunications, and corporate finance on commercial and dispute strategy across multiple ongoing matters in Myanmar, including assessment of operational and litigation risk, jurisdictional considerations, and enforcement options in a volatile regulatory environment.</li><li>Advised multinational technology and automotive companies in Laos and Myanmar on data privacy and cross-border data transfer compliance, including regulatory assessments for digital platforms and connected-vehicle subscription services.</li><li>Advised a Japanese pharmaceutical and healthcare products group on a multiparty, cross-border sales and purchase agreement governing supply and distribution arrangements across Myanmar, Thailand, and Vietnam, addressing contractual risk allocation and regulatory implications.</li><li>Advised a Japanese pharmaceutical and healthcare products group on a multiparty, cross-border sales and purchase agreement governing supply and distribution arrangements across Myanmar, Thailand, and Vietnam, addressing contractual risk allocation and regulatory implications.</li><li>Represented a regional energy developer in contract disputes arising from a cross-border power supply project in Laos, including pre-arbitration negotiations and enforcement strategy.</li><li>Advised a digital asset platform on licensing requirements and market entry in Thailand, including engagement with the regulator on product structuring.</li></ul>';
+	$bank_text  = 'Advised a major U.S.-based consumer bank on its market entry into Cambodia, Laos, and Myanmar, including advice on offshore banking services, banking regulations, permitted banking operations, foreign exchange regulations, securities markets, doing business, and tax in each jurisdiction.';
+	$bank_rows  = array_fill( 0, 3, array( 'title' => 'Emerging jurisdiction market entry for global consumer bank', 'text' => $bank_text, 'link_url' => '' ) );
+
+	$done = array();
+	if ( tng_seed_term_fields( 'location_' . $loc['Cambodia'], 'overview_text', array(
+		'field_tng_loc_overview_heading' => 'Trusted and innovative legal advisors in the emerging economy of Cambodia.',
+		'field_tng_loc_overview_text'    => '<p>Built on a strong local foundation, Tilleke &amp; Gibbins office in Phnom Penh has grown into one of the strongest legal outfits on the ground in Cambodia. The firm’s 16-person team in Phnom Penh comprises a mix of local and foreign legal advisors and other business professionals to provide our clients with well-rounded legal, business, and cultural advice to help them achieve their objectives in the jurisdiction.</p><p>Under the leadership of partner Jay Cohen, a practitioner with over 15 years of experience in Asia, the firm’s Phnom Penh office handles a full range of corporate and commercial, intellectual property, and regulatory services to a wide range of clients. On the commercial side this includes market entry for multinationals, commercial transactions (M&amp;As, JVs, and business partnerships), labor and employment, and key regulatory matters for highly regulated industries—especially banking and finance, technology, telecommunications, media, e-commerce, energy, consumer goods, and life sciences (e.g., pharmaceuticals and medical devices).</p><p>Beyond this corporate and commercial work, the firm also boasts a market-leading intellectual property (IP) practice, which clients often see as a key differentiator between our firm and other corporate and commercial firms in the country. Our IP practice seamlessly compliments our strategic market entry advice and sets the firm apart as a premium one-stop shop for all legal needs in Cambodia.</p>',
+		'field_tng_loc_successes'        => array( array( 'title' => 'Tilleke & Gibbins Supports CAEX with Strategic Investments from OKX Ventures and HashKey Capital', 'text' => $bank_text, 'link_url' => '' ) ),
+		'field_tng_loc_experience'       => $experience,
+	) ) ) {
+		$done[] = 'Cambodia';
+	}
+
+	$contact = static function ( $country, $names ) use ( $loc, $pros ) {
+		return array(
+			'location' => $loc[ $country ],
+			'people'   => array_values( array_filter( array_map( function ( $n ) use ( $pros ) { return isset( $pros[ $n ] ) ? $pros[ $n ] : 0; }, $names ) ) ),
+		);
+	};
+
+	if ( tng_seed_term_fields( 'industry_' . $automotive, 'overview_text', array(
+		'field_tng_svc_overview_heading' => 'Driving growth across Southeast Asia for leading players in the global automotive industry.',
+		'field_tng_svc_overview_text'    => '<p>Tilleke &amp; Gibbins acts for clients across the automotive value chain, from upstream automotive and automotive parts manufacturers to downstream automotive distribution and sales dealerships, offering a one-stop service for a full range of legal matters in Southeast Asia.</p><p>At the start, our multidisciplinary team helps automotive industry players structure and implement market entry models, including assisting with M&amp;A transactions and joint ventures, obtaining licenses and investment incentives, and protecting valuable designs, patents, and trademarks. For manufacturers, we also regularly assist with land acquisition and factory construction in industrial estates and special economic zones. Once companies are set up and operating, we continue to work closely with our clients to maintain regulatory compliance across the region, advising on antitrust and trade competition, employment, import and export, tax, and other general corporate matters. And when complications occur, we also represent automotive clients in dispute resolution, including commercial and IP litigation, product liability claims, and class actions.</p><p>Our full-service legal expertise enables clients to capitalize on opportunities for success in the region, driving growth across Southeast Asia for leading players in the global automotive industry.</p>',
+		'field_tng_svc_contacts'         => array(
+			$contact( 'Cambodia', array( 'Jay Cohen', 'David Mol' ) ),
+			$contact( 'Thailand', array( 'Alan Adcock', 'Athistha (Nop) Chitranukroh' ) ),
+			$contact( 'Vietnam', array( 'Athistha (Nop) Chitranukroh' ) ),
+		),
+		'field_tng_svc_successes'        => $bank_rows,
+		'field_tng_svc_experience'       => $experience,
+	) ) ) {
+		$done[] = 'Automotive';
+	}
+
+	if ( tng_seed_term_fields( 'practice_' . $ip, 'overview_text', array(
+		'field_tng_svc_quote'         => '“Flawless cooperation between six regional offices ensures a consistently top-class service across the region”',
+		'field_tng_svc_quote_source'  => 'Intellectual Asset Management',
+		'field_tng_svc_overview_text' => '<p>We help creators strategically position, protect, and profit from intellectual assets in diverse markets worldwide. Our success on our clients’ behalf has led to global recognition as a leading intellectual property practice by such surveys as Asialaw Profiles, Chambers Asia Pacific, The Legal 500 Asia Pacific, Managing Intellectual Property, Practical Law Company, World Trademark Review, Asia IP, Asian Legal Business, and others.</p><p>We are versatile practitioners—well-educated in the overlapping fields of science, technology, and the law by top universities and real-world practice in one of the toughest IP regions in the world. Our IP group includes lawyers and patent agents with backgrounds in chemistry, biology, computer science, food science, materials science, and physics; support personnel including investigators and government/police liaisons; and technical specialists in various scientific fields, on an as-needed basis.</p>',
+		'field_tng_svc_contacts'      => array(
+			$contact( 'Thailand', array( 'Alan Adcock', 'Alisa Koovimol' ) ),
+			$contact( 'Cambodia', array( 'Jay Cohen' ) ),
+		),
+		'field_tng_svc_successes'     => $bank_rows,
+	) ) ) {
+		$done[] = 'Intellectual Property';
+	}
+
+	if ( tng_seed_term_fields( 'practice_' . $subs['Commercialization'], 'overview_text', array(
+		'field_tng_svc_overview_heading' => 'We help you get real value from your intellectual assets.',
+		'field_tng_svc_overview_text'    => '<p>Our practitioners have extensive experience in IP licensing and contracts, including agreements relating to franchising, licensing, distributorship, technology transfer, confidentiality, joint venture, and collaboration.</p><p>In addition, the firm’s expertise extends to IP due diligence issues, such as searches for infringement, audits to identify and protect IP assets including trade secrets, advice to avoid disputes when terminating dealers or distributors, consents and assignments for IP created by employees or contractors (work for hire), valuation of IP assets, IP risk assessments and management, and freedom-to-practice investigations.</p><p>In collaboration with our technology group, we provide services related to the clearance and licensing of intellectual property as it relates to film, television, radio, and internet content.</p>',
+		'field_tng_svc_contacts'         => array( $contact( 'Thailand', array( 'Alan Adcock' ) ) ),
+		'field_tng_svc_experience'       => $experience,
+	) ) ) {
+		$done[] = 'Commercialization';
+	}
+	$log[] = '1.1.0: term page content filled for: ' . ( $done ? implode( ', ', $done ) : 'none (all already had content)' );
+
+	/* ---- pages ---- */
+	$ud      = '<!-- wp:tng/under-development /-->';
+	$about   = tng_seed_find_post( 'page', 'About' );
+	$careers = tng_seed_find_post( 'page', 'Careers' );
+
+	list( $history ) = tng_seed_page_content( 'History', $ud, array( 'post_parent' => $about, 'menu_order' => 1 ) );
+	list( $awards_page, $awards_state ) = tng_seed_page_content( 'Awards & Rankings', $ud, array( 'post_parent' => $about, 'menu_order' => 2, 'post_name' => 'awards-rankings' ) );
+	list( $pro_bono ) = tng_seed_page_content( 'Pro Bono', $ud, array( 'post_parent' => $about, 'menu_order' => 3 ) );
+	list( $legal, $legal_state ) = tng_seed_page_content( 'Legal Professionals', $ud, array( 'post_parent' => $careers, 'menu_order' => 1 ) );
+	list( $operations ) = tng_seed_page_content( 'Operations Professionals', $ud, array( 'post_parent' => $careers, 'menu_order' => 2 ) );
+	list( $internships ) = tng_seed_page_content( 'Internships', $ud, array( 'post_parent' => $careers, 'menu_order' => 3 ) );
+
+	$url = static function ( $id ) {
+		return $id ? get_permalink( $id ) : '#';
+	};
+
+	// About
+	$about_content = tng_seed_block( 'acf/about-hero', tng_seed_data( 'abh', array(
+		'title' => 'Southeast Asia’s Premier Law Firm',
+		'intro' => 'Tilleke & Gibbins is a leading full-service Southeast Asian law firm proudly serving international and local businesses across six countries. We are committed to helping our clients achieve sustainable success in the region, working with them to provide unparalleled legal expertise, rooted in practical commerciality.',
+	) ) )
+	. tng_seed_block( 'acf/page-tabs', tng_seed_flat( 'ptb', 'tabs', array(
+		array( 'label' => 'Overview', 'anchor' => 'overview' ),
+		array( 'label' => 'Our Numbers', 'anchor' => 'numbers' ),
+		array( 'label' => 'Code of Conduct', 'anchor' => 'code-of-conduct' ),
+		array( 'label' => 'Vision and Mission', 'anchor' => 'vision' ),
+		array( 'label' => 'Creed', 'anchor' => 'creed' ),
+	), array( 'label', 'anchor' ) ) )
+	. tng_seed_block( 'acf/overview', tng_seed_data( 'ovw', array(
+		'variant'    => 'about',
+		'section_id' => 'overview',
+		'label'      => 'Overview',
+		'heading'    => 'Our commercial focus, local knowledge, and extraordinary service make us the full-service law firm of choice in Southeast Asia.',
+		'text'       => '<p>Tilleke &amp; Gibbins is a leading Southeast Asian regional law firm with over 250 lawyers and consultants practicing in Cambodia, Indonesia, Laos, Myanmar, Thailand, and Vietnam. We provide full-service legal solutions to the top investors and high-growth companies that drive economic expansion in Asia.<br>Established in Bangkok in 1890, we have since grown into the largest independent law firm in Thailand and a leading international firm across Southeast Asia due to our commercial focus, local knowledge, and extraordinary service.</p>',
+	) ) )
+	. tng_seed_block( 'acf/about-values', tng_seed_flat( 'abv', 'items', array(
+		array( 'title' => 'Commercial Focus', 'text' => '<p>Your long-term success is our utmost priority, and we take the time to learn about your unique corporate culture, operational needs, and commercial goals, to determine how we can best provide value to your organization. From highly technical experience in specific fields, to a deep understanding of your business, our team is committed to providing high-quality legal advice, tailored to meet your unique needs, in order to help you succeed.</p>' ),
+		array( 'title' => 'Extraordinary Service', 'text' => '<p>Your long-term success is our utmost priority, and we take the time to learn about your unique corporate culture, operational needs, and commercial goals, to determine how we can best provide value to your organization.</p>' ),
+		array( 'title' => 'Local Knowledge', 'text' => '<p>Your long-term success is our utmost priority, and we take the time to learn about your unique corporate culture, operational needs, and commercial goals, to determine how we can best provide value to your organization.</p>' ),
+	), array( 'title', 'text' ) ) )
+	. tng_seed_block( 'acf/about-numbers', tng_seed_flat( 'abn', 'numbers', array(
+		array( 'value' => '250+', 'label' => 'Lawyers' ),
+		array( 'value' => '135', 'label' => 'Years of Service' ),
+		array( 'value' => '50', 'label' => 'Firm of the Year Awards (2025)' ),
+		array( 'value' => '7', 'label' => 'Offices' ),
+	), array( 'value', 'label' ) ) )
+	. tng_seed_block( 'acf/overview', tng_seed_data( 'ovw', array(
+		'variant'    => 'code',
+		'section_id' => 'code-of-conduct',
+		'label'      => 'Code of Conduct',
+		'heading'    => 'Our Code of Business Conduct is intended to help give all of our stakeholders direction as to our responsibilities and the standards we are expected to uphold.',
+		'text'       => '<p>All of us at Tilleke &amp; Gibbins have a responsibility to uphold the core values that drive our firm’s success. Foremost among these values is integrity. Our clients trust us to act with integrity in handling their most sensitive legal issues and solving their most complex business problem.</p><p>By acting with integrity and doing things the right way, everyone in the firm—from 1890 up until today—has contributed to building a strong firm with an outstanding reputation for legal knowledge and client service.</p><p>Our Code of Business Conduct serves as an overview of our expected behavior and a reminder of our obligations to our clients, to our communities, and to ourselves.</p>',
+		'link_label' => 'Code of Business Conduct',
+		'link_url'   => '#',
+	) ) )
+	. tng_seed_block( 'acf/about-vision', tng_seed_flat( 'abvi', 'items', array(
+		array( 'label' => 'Vision', 'text' => 'Our objective is to be the leading regional full-service law practice serving international business and civil society' ),
+		array( 'label' => 'Mission', 'text' => 'Our objective is to be the leading regional full-service law practice serving international business and civil society' ),
+	), array( 'label', 'text' ) ) )
+	. tng_seed_block( 'acf/about-creed', array_merge(
+		tng_seed_data( 'abc', array( 'label' => 'Creed' ) ),
+		tng_seed_flat( 'abc', 'columns', array(
+			array( 'heading' => 'As a Law Firm', 'list' => '<ul><li>We care.</li><li>We value integrity.</li><li>We are knowledgeable, dependable, responsible, perceptive, practical, realistic, competitive, community oriented.</li><li>We have style, coupled with a sense of history</li><li>We are a business, yet family.</li><li>Clients are our guests.</li></ul>' ),
+			array( 'heading' => 'Our Facilities', 'list' => '<ul><li>Reflect: character, comfort, soul, stability, elegance.</li><li>Impress yet relax.</li><li>Are efficient yet friendly.</li><li>Are professional and reassuring.</li></ul>' ),
+		), array( 'heading', 'list' ) )
+	) )
+	. tng_seed_block( 'acf/more-from', tng_seed_flat( 'mfr', 'links', array(
+		array( 'label' => 'Overview', 'url' => $url( $about ) ),
+		array( 'label' => 'History', 'url' => $url( $history ) ),
+		array( 'label' => 'Awards & Rankings', 'url' => $url( $awards_page ) ),
+	), array( 'label', 'url' ) ) );
+	list( , $about_state ) = tng_seed_page_content( 'About', $about_content );
+
+	// Insights (archive page)
+	$insights_content = tng_seed_block( 'acf/archive-hero', tng_seed_data( 'arh', array(
+		'title'      => 'Insights',
+		'intro'      => 'Tilleke & Gibbins provides regular updates on all of the latest legal developments in Southeast Asia, ensuring that you have the up-to-date knowledge you need to navigate the ever-changing legal landscape affecting your business. You can browse our entire library of publications below, or subscribe to receive the latest legal developments straight to your inbox.',
+		'link_label' => 'Subscribe to Updates',
+		'link_url'   => '#',
+	) ) )
+	. tng_seed_block( 'acf/archive-featured', tng_seed_data( 'arf', array(
+		'featured_post' => tng_seed_find_post( 'insight', 'Thailand Legal Basics' ),
+		'fallback_type' => 'insight',
+	) ) )
+	. tng_seed_block( 'acf/archive-filter' )
+	. tng_seed_block( 'acf/archive-grid', tng_seed_data( 'arg', array( 'source' => 'insight', 'page_size' => '12', 'show_count' => '1' ) ) );
+	list( , $insights_state ) = tng_seed_page_content( 'Insights', $insights_content );
+
+	// Awards & Rankings (child of About)
+	$awards_content = tng_seed_block( 'acf/archive-hero', tng_seed_data( 'arh', array(
+		'title' => 'Awards & Rankings',
+		'intro' => 'Tilleke & Gibbins is consistently recognized by the world’s leading independent legal industry organizations as an elite firm in every jurisdiction in which we work. These accolades come only after rigorous research and client interviews, and give our clients confidence that they are working with one of the most trusted firms in Southeast Asia. Catch up on our latest awards and rankings below.',
+	) ) )
+	. tng_seed_block( 'acf/archive-featured', tng_seed_data( 'arf', array(
+		'featured_post' => tng_seed_find_post( 'award', 'Tilleke & Gibbins Named Regional Litigation Law Firm of the Year at the 2026 ALB SE Asia Law Awards' ),
+		'fallback_type' => 'award',
+	) ) )
+	. tng_seed_block( 'acf/archive-filter' )
+	. tng_seed_block( 'acf/archive-grid', tng_seed_data( 'arg', array( 'source' => 'award', 'page_size' => '15', 'show_count' => '0' ) ) )
+	. tng_seed_block( 'acf/more-from', array_merge(
+		tng_seed_data( 'mfr', array( 'arrows' => '1' ) ),
+		tng_seed_flat( 'mfr', 'links', array(
+			array( 'label' => 'Overview', 'url' => $url( $about ) ),
+			array( 'label' => 'History', 'url' => $url( $history ) ),
+			array( 'label' => 'Pro Bono', 'url' => $url( $pro_bono ) ),
+		), array( 'label', 'url' ) )
+	) );
+	list( , $awards_state ) = tng_seed_page_content( 'Awards & Rankings', $awards_content );
+
+	// Legal Professionals (career path, child of Careers)
+	$quote = '<p>My first connection to Tilleke was an internship, and because it was such a positive experience, I chose to return as an attorney when I began my professional career.</p><p>Since then I’ve been given the chance to represent an incredible range of clients in high-stakes litigation–from the world’s biggest tech companies in trouble over user activity, to foreign embassies in need of legal assistance.</p>';
+	$legal_content = tng_seed_block( 'acf/path-hero', tng_seed_data( 'pth', array(
+		'intro' => 'Lawyers at Tilleke are the benchmark of world-class legal practice in Southeast Asia. We build sustainable relationships with our clients, achieve a deep and enduring understanding of their businesses, and work together with them to let our expertise facilitate their commercial goals in the region.',
+	) ) )
+	. tng_seed_block( 'acf/overview', tng_seed_data( 'ovw', array(
+		'variant' => 'path',
+		'label'   => 'Overview',
+		'heading' => 'We are always on the lookout for the next legal industry leaders.',
+		'text'    => '<p>Our ever-expanding team of talented lawyers includes attorneys from across Southeast Asia and around the globe. They are multilingual and hold excellent academic credentials from the world’s most respected legal and academic institutions. In addition, lawyers at Tilleke &amp; Gibbins have impressive experience, having worked on major cases and for leading companies in the region and beyond.</p><p>We offer meaningful professional growth and leadership opportunities to our team members to ensure that they stay at the top of the legal profession, and we challenge and support our lawyers to expand their expertise to new practice areas and jurisdictions. With highly skilled and knowledgeable lawyers in every legal field and a commitment to master emerging legal topics, our firm promotes the development of niche or broad practices that capitalize on our professionals’ skills and interests.</p>',
+	) ) )
+	. tng_seed_block( 'acf/careers-people', tng_seed_data( 'cpe', array(
+		'variant' => 'path',
+		'label'   => 'Career Development',
+		'heading' => 'Enhancing your professional and<br>personal development together.',
+		'text'    => '<p>We encourage all of our lawyers to develop not only as excellent practitioners but also as leaders in their field. Tilleke lawyers are respected for the breadth of their knowledge and experience, and we promote that experience by providing you with opportunities to share your insights through conferences, seminars, publications, and more. In all practices and at all levels, our practitioners hold leadership positions in chambers of commerce, charitable foundations, and bodies dedicated to furthering the legal and economic development of the region. Within the firm, we promote rising stars accordingly with pathways to leadership. By developing a consistently strong team that works and grows together, we secure a bright future for our firm to continue our legacy of excellence.</p>',
+	) ) )
+	. tng_seed_block( 'acf/team-stories', tng_seed_flat( 'tms', 'stories', array(
+		array( 'role' => 'Intern', 'name' => 'Piyawat Vitooraporn', 'position' => 'Senior Associate (Former Intern)', 'quote' => $quote ),
+		array( 'role' => 'Associate', 'name' => 'Chandavya Ing', 'position' => 'Associate', 'quote' => $quote ),
+		array( 'role' => 'Associate', 'name' => 'Chuyen Hong Huu Le', 'position' => 'Associate', 'quote' => $quote ),
+		array( 'role' => 'Counsel', 'name' => 'Michael Ramirez', 'position' => 'Counsel', 'quote' => $quote ),
+		array( 'role' => 'Partner', 'name' => 'Yuwadee Thean-ngarm', 'position' => 'Partner', 'quote' => $quote ),
+	), array( 'role', 'name', 'position', 'quote' ) ) )
+	. tng_seed_block( 'acf/path-jobs' )
+	. tng_seed_block( 'acf/more-from', array_merge(
+		tng_seed_data( 'mfr', array( 'arrows' => '1' ) ),
+		tng_seed_flat( 'mfr', 'links', array(
+			array( 'label' => 'Operations Professionals', 'url' => $url( $operations ) ),
+			array( 'label' => 'Internships', 'url' => $url( $internships ) ),
+			array( 'label' => 'All Job Opportunities', 'url' => $url( $careers ) . '#job-opportunities' ),
+		), array( 'label', 'url' ) )
+	) );
+	list( , $legal_state ) = tng_seed_page_content( 'Legal Professionals', $legal_content );
+
+	$log[] = '1.1.0 pages: About ' . $about_state . ', Insights ' . $insights_state . ', Awards & Rankings ' . $awards_state . ', Legal Professionals ' . $legal_state . '; placeholders ensured: History, Pro Bono, Operations Professionals, Internships';
+
+	/* ---- jobs with the full job page fields ---- */
+	$resp_list = '<ul><li>Assist with the preparation, organization, and submission of trademark-related documents and government fees to the Vietnam IP Office and other relevant authorities.</li><li>Maintain accurate trademark records, filing information, mailing lists, and matter data within the Firm’s internal systems.</li><li>Support trademark professionals in the administration of trademark filings, renewals, recordals, and related procedures.</li><li>Calculate government fees and service charges for trademark and related IP matters.</li><li>Keep records of all administrative documentation and ensure matter information remains accurate and current.</li></ul>';
+	$jobs = array(
+		array( 'Assistant, Trademark Executive', 'Thailand', 'Administrative', $operations, 'Reporting to the Head of Trademark Group and other designated supervisors, the Assistant, Trademark Executive supports trademark administration, client correspondence, filings, and related operational activities. The role provides an excellent opportunity to build practical experience in intellectual property practice, legal administration, and client service.', array( 'Trademark Administration & Case Management', 'Documentation & Client Support', 'Operational & Team Support' ) ),
+		array( 'Associate (Cross-Border Transactions)', 'Thailand', 'Corporate and Commercial', $legal, 'Working with partners across our regional offices, the Associate advises international clients on cross-border transactions, market entry, and corporate structuring in Southeast Asia.', array( 'Transactions', 'Client Advisory' ) ),
+		array( 'Associate (Dispute Resolution)', 'Vietnam', 'Dispute Resolution', $legal, 'The Associate supports our dispute resolution team on commercial litigation and arbitration matters for international and local clients in Vietnam.', array( 'Litigation & Arbitration', 'Client Advisory' ) ),
+		array( 'Senior Associate (Intellectual Property)', 'Cambodia', 'Intellectual Property', $legal, 'The Senior Associate leads trademark, patent, and enforcement matters for clients in Cambodia, working closely with our regional IP group.', array( 'IP Prosecution & Enforcement', 'Team Leadership' ) ),
+	);
+	$made = 0;
+	foreach ( $jobs as $j ) {
+		list( $title, $country, $dept, $path, $summary, $groups ) = $j;
+		list( $id, $new ) = tng_seed_post( 'job', $title, array( 'post_content' => '' ) );
+		if ( ! $new ) {
+			continue;
+		}
+		$made++;
+		wp_set_object_terms( $id, array( $loc[ $country ] ), 'location' );
+		update_field( 'field_tng_job_department', $dept, $id );
+		if ( $path ) {
+			update_field( 'field_tng_job_career_path', $path, $id );
+		}
+		update_field( 'field_tng_job_summary', $summary, $id );
+		update_field(
+			'field_tng_job_responsibilities',
+			array_map(
+				function ( $h ) use ( $resp_list ) {
+					return array( 'heading' => $h, 'list' => $resp_list );
+				},
+				$groups
+			),
+			$id
+		);
+	}
+	$log[] = '1.1.0: jobs with full job-page fields: ' . $made . ' new (career paths: Legal Professionals, Operations Professionals)';
+}
+
+/* ---------------- 1.1.2: About child pages (Pro Bono, CSR, museum) ---------------- */
+
+/**
+ * Same create-only contract as 1.1.0: Pro Bono exists as the under-development
+ * placeholder (filled only while it is still exactly that); CSR and the museum
+ * are created when no page of that title exists. Nothing else is touched.
+ */
+function tng_seed_v112( &$log ) {
+	$about = tng_seed_find_post( 'page', 'About' );
+	if ( ! $about ) {
+		$log[] = '1.1.2: no About page, About child pages skipped';
+		return;
+	}
+	$url = static function ( $id ) {
+		return $id ? get_permalink( $id ) : '#';
+	};
+	$history = tng_seed_find_post( 'page', 'History' );
+	$awards  = tng_seed_find_post( 'page', 'Awards & Rankings' );
+
+	$more_from = static function ( $links ) {
+		return tng_seed_block( 'acf/more-from', array_merge(
+			tng_seed_data( 'mfr', array( 'arrows' => '1' ) ),
+			tng_seed_flat( 'mfr', 'links', $links, array( 'label', 'url' ) )
+		) );
+	};
+
+	// CSR first, so Pro Bono's "More from" can link to it
+	$csr_content = tng_seed_block( 'acf/info-hero', tng_seed_data( 'ifh', array(
+		'label'        => 'CSR contact',
+		'contact_name' => 'Yuwadee Thean-ngarm',
+		'phone'        => '+959 772 446 602',
+		'email'        => 'yuwadee.t@tilleke.com',
+	) ) )
+	. tng_seed_block( 'acf/overview', tng_seed_data( 'ovw', array(
+		'variant'    => 'info',
+		'section_id' => 'overview',
+		'label'      => 'Overview',
+		'heading'    => 'Tilleke & Gibbins is dedicated to giving back to the communities in which we live and work.',
+		'text'       => '<p>Across Southeast Asia, Tilleke &amp; Gibbins takes its duty to corporate social responsibility seriously, focusing on the firm’s three community pillars of education, human health, and sustainability. We take part in dozens of activities every year including regular support of rural schools through equipment donations and volunteering, reforestation and wildlife preservation projects, and long partnerships with numerous organizations that seek to improve the health and quality of life of society’s least protected people.</p><p>In addition, Tilleke &amp; Gibbins has a longstanding commitment to equality, and regularly partners with organizations that work tirelessly to support women and the LGBT+ community in business and law. While we pride ourselves on being one of Asia’s most inclusive and meritocratic workplaces, we recognize that our position comes with a duty to lead by example, and we do so at every opportunity.</p><p>Our CSR activities are not prescriptive, however, and when unforeseen events such as flooding, natural disasters, and disease outbreaks occur, Tilleke &amp; Gibbins’ staff come together to help assist those affected in any way we can, from donations to on-the-ground support. In short, Tilleke &amp; Gibbins is dedicated to giving back to the communities in which we live and work.</p>',
+		'show_image' => '1',
+	) ) )
+	. $more_from( array(
+		array( 'label' => 'Overview', 'url' => $url( $about ) ),
+		array( 'label' => 'History', 'url' => $url( $history ) ),
+		array( 'label' => 'Awards & Rankings', 'url' => $url( $awards ) ),
+	) );
+	list( $csr, $csr_state ) = tng_seed_page_content( 'CSR', $csr_content, array( 'post_parent' => $about, 'menu_order' => 4, 'post_name' => 'csr' ) );
+
+	// Pro Bono (the 1.1.0 placeholder)
+	$pro_bono_content = tng_seed_block( 'acf/info-hero', tng_seed_data( 'ifh', array(
+		'label'        => 'Pro Bono contact',
+		'contact_name' => 'Eric Meyer',
+		'phone'        => '+66 2056 5797',
+		'email'        => 'eric.m@tilleke.com',
+	) ) )
+	. tng_seed_block( 'acf/overview', tng_seed_data( 'ovw', array(
+		'variant'    => 'info',
+		'section_id' => 'overview',
+		'label'      => 'Overview',
+		'heading'    => 'Tilleke & Gibbins assesses each pro bono request carefully to ensure that our work has the maximum positive impact on the organizations that need it most.',
+		'text'       => '<p>Tilleke &amp; Gibbins has one of Southeast Asia’s most active pro bono practices. We provide extensive support to NGOs and social enterprises in Cambodia, Indonesia, Laos, Myanmar, Thailand, and Vietnam to ensure that they are able to continue their vital work unfettered by legal compliance issues in their corporate structures, labor and employment practices, and other legal matters. We assess each pro bono request carefully to ensure that our work has the maximum positive impact on the organizations that need it most.</p><p>We also work side by side with numerous global pro bono organizations such as TrustLaw and the Lex Mundi Pro Bono Foundation to assist with global legal research projects on areas of socio-legal development that help to fight injustices across our three core pillars of education, human health, and sustainability.</p><p>Our dedication to pro bono work has been recognized on the international stage with awards from institutions and global organizations such as the <a href="#">Thomson Reuters Foundation</a>, the <a href="#">Chambers and Partners Diversity &amp; Inclusion Initiative</a>, the <a href="#">Cyrus R. Vance Center for International Justice</a>, and various others.</p>',
+	) ) )
+	. $more_from( array(
+		array( 'label' => 'Overview', 'url' => $url( $about ) ),
+		array( 'label' => 'History', 'url' => $url( $history ) ),
+		array( 'label' => 'CSR', 'url' => $url( $csr ) ),
+	) );
+	list( , $pro_bono_state ) = tng_seed_page_content( 'Pro Bono', $pro_bono_content, array( 'post_parent' => $about, 'menu_order' => 3 ) );
+
+	// Museum of Counterfeit Goods (slides 2-3 repeat slide 1, as on the mock)
+	$case = array(
+		'title' => 'Enforcement Campaigns for HAVAIANAS Flip-Flop Sandals',
+		'text'  => 'Due to their unique design, HAVAIANAS flip-flop sandals have become very popular among Thai people and tourists, especially at tourist attractions and beach areas. This has resulted in the widespread distribution of counterfeit HAVAIANAS sandals across Thailand. The counterfeit products use similar, infringing designs, and are offered at prices which are three to four times lower than genuine HAVAIANAS sandals, but with very inferior quality.',
+	);
+	$museum_content = tng_seed_block( 'acf/info-hero', tng_seed_data( 'ifh', array(
+		'label' => 'Please book your visit a minimum of five working days in advance. Visitors from the general public are welcome on:',
+		'hours' => "Mondays at 2 pm &\nThursdays at 10 am",
+		'phone' => '+66 2056 5555',
+		'email' => 'museum.t@tilleke.com',
+	) ) )
+	. tng_seed_block( 'acf/overview', tng_seed_data( 'ovw', array(
+		'variant'    => 'info',
+		'section_id' => 'overview',
+		'label'      => 'Overview',
+		'heading'    => 'Our museum educates visitors about the value of intellectual property and why protecting it is important.',
+		'text'       => '<p>Forming part of the Tilleke &amp; Gibbins Corporate Social Responsibility program, the Tilleke &amp; Gibbins Museum of Counterfeit Goods welcomes hundreds of visitors each year for guided tours, led by our experienced intellectual property attorneys.</p><p>The lectures and tours dispel the myth that IP infringement is a victimless crime. Visitors learn about how fake products jeopardize health and safety both for the consumers who buy them and for the workers who produce them. Our efforts educate people on how counterfeiting is closely tied up to other forms of organized crime, including drugs, firearms, human trafficking, and even terrorism. We also explain how counterfeiting and piracy rob the government of tax revenue and impose greater costs on legitimate taxpayers due to the burden of enforcement, while stifling innovation and damaging overall economic development. We welcome a range of visitors to our museum:</p>',
+	) ) )
+	. tng_seed_block( 'acf/mus-audience', tng_seed_flat( 'mau', 'items', array(
+		array( 'title' => 'Professionals', 'text' => '<p>The team provides advanced brand-awareness training on behalf of our clients for intellectual property practitioners, Thai and foreign police, judges, members of the diplomatic corps, and other government officials. During these events, professionals will receive in-depth training on how to differentiate between genuine and counterfeit goods, thus further building the capacity of the participants and helping them to succeed in their difficult work.</p>' ),
+		array( 'title' => 'Students', 'text' => '<p>The museum often hosts large classes of university students from a range of faculties, including law, design, architecture, and other fields that depend on the protection of creative ideas for their success. Visiting students have the opportunity to learn from experienced IP lawyers about the basics of intellectual property and the practical implications of piracy and counterfeiting.</p>' ),
+		array( 'title' => 'Public', 'text' => '<p>The museum is open to members of the general public at designated dates and times. Visits are always subject to an advance booking, and this booking should be made a minimum of five working days in advance. To schedule a visit, please contact the Museum of Counterfeit Goods at <a href="mailto:museum@tilleke.com">museum@tilleke.com</a>.</p>' ),
+		array( 'title' => 'Media', 'text' => '<p>The museum has attracted significant media attention, and numerous major foreign television broadcasting companies (including CNN and BBC) have featured the museum in their documentaries concerning the counterfeit situation in Thailand. Many local and international newspapers and magazines have also published articles on the museum, including The Christian Science Monitor and TIME magazine.</p>' ),
+	), array( 'title', 'text' ) ) )
+	. tng_seed_block( 'acf/mus-collection', tng_seed_data( 'mco', array(
+		'label'  => 'Collection',
+		'quote'  => '“A mind-boggling array of counterfeit merchandise”',
+		'source' => '– Lonely Planet',
+		'text'   => '<p>Established in 1989 by David Lyman, Chairman and Chief Values Officer, the Tilleke &amp; Gibbins Museum of Counterfeit Goods has grown from a collection of approximately 100 products when it was first created to more than 4,000 IP-infringing goods today, making it one of the largest of its kind in the world. The museum houses a collection covering 14 broad categories of goods, including clothing, footwear, watches and eyewear, accessories, cosmetics and perfumes, food and household products, drugs, alcohol and cigarettes, copyrighted works, stationery and office supplies, automotive parts, tools, electrical devices, and miscellaneous products.</p>',
+	) ) )
+	. tng_seed_block( 'acf/mus-cases', array_merge(
+		tng_seed_data( 'mca', array( 'label' => 'Case Studies' ) ),
+		tng_seed_flat( 'mca', 'items', array( $case, $case, $case ), array( 'title', 'text' ) )
+	) )
+	. $more_from( array(
+		array( 'label' => 'Overview', 'url' => $url( $about ) ),
+		array( 'label' => 'History', 'url' => $url( $history ) ),
+		array( 'label' => 'Awards & Rankings', 'url' => $url( $awards ) ),
+	) );
+	list( , $museum_state ) = tng_seed_page_content( 'Museum of Counterfeit Goods', $museum_content, array( 'post_parent' => $about, 'menu_order' => 5, 'post_name' => 'museum-of-counterfeit-goods' ) );
+
+	$log[] = '1.1.2 About child pages: Pro Bono ' . $pro_bono_state . ', CSR ' . $csr_state . ', Museum of Counterfeit Goods ' . $museum_state;
 }

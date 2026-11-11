@@ -80,6 +80,8 @@ const GROUPS = [
   '.pro-hero__locations',
   '.pro-hero__contacts',
   '.loc-hero__lines',
+  '.info-hero__lines',
+  '.mus-audience',
   '.loc-successes__list',
   '.svc-hero__places',
   '.svc-hero__panels',
@@ -477,6 +479,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // mission tabs use the same pattern.
   document.querySelectorAll('.contact-offices, .svc-hero__content, .about-vision, .lp-team').forEach((section) => {
     const tabs = [...section.querySelectorAll('[role="tab"]')];
+    const tablist = section.querySelector('[role="tablist"]');
+    if (!tabs.length || !tablist) return; // e.g. a service hero with no contacts
     const select = (tab) => {
       tabs.forEach((t) => {
         const on = t === tab;
@@ -501,7 +505,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (tab && !tab.classList.contains('is-active')) select(tab);
     });
     // Arrow keys move between tabs (WAI-ARIA tabs pattern)
-    section.querySelector('[role="tablist"]').addEventListener('keydown', (e) => {
+    tablist.addEventListener('keydown', (e) => {
       const i = tabs.indexOf(document.activeElement);
       if (i < 0 || !['ArrowDown', 'ArrowUp', 'ArrowRight', 'ArrowLeft'].includes(e.key)) return;
       e.preventDefault();

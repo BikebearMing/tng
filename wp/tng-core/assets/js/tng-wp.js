@@ -4,6 +4,11 @@
 //    (search + alphabet + "View more"); facet dropdowns wait for their design.
 //  - homepage insights tabs: swap the feature card + list per industry from
 //    the JSON the block embeds.
+//  - insights / awards archive: "View more" appends the next page from
+//    /tng/v1/archive with the page's filters (filters themselves are plain
+//    GET links / a GET form, handled server-side).
+//  - service hero: pick the visitor's country tab (/tng/v1/geo; client rule:
+//    KH / ID / LA / MM / VN -> that country, everyone else -> Thailand).
 
 (function () {
   'use strict';
@@ -174,5 +179,96 @@
         show(Number(tab.dataset.tabIndex) || 0);
       });
     });
+  });
+  /* ---------------- insights / awards archive: View more ---------------- */
+  document.querySelectorAll('.ins-grid[data-type]').forEach(function (grid) {
+    if (!window.TNG || !TNG.archive) return;
+    var list = grid.querySelector('.ins-grid__list');
+    var more = grid.querySelector('.pro-grid__view-more');
+    var count = grid.querySelector('.pro-grid__count');
+    if (!list || !more) return;
+    var size = Number(grid.dataset.pageSize) || 12;
+    var total = Number(grid.dataset.total) || 0;
+    var params = {};
+    try {
+      params = JSON.parse(grid.dataset.params || '{}') || {};
+    } catch (e) {
+      params = {};
+    }
+    var page = 1;
+
+    more.addEventListener('click', function () {
+      if (more.disabled) return;
+      more.disabled = true;
+      var url = new URL(TNG.archive, window.location.href);
+      url.searchParams.set('type', grid.dataset.type);
+      url.searchParams.set('page', String(page + 1));
+      url.searchParams.set('per_page', String(size));
+      Object.keys(params).forEach(function (k) {
+        url.searchParams.set(k, params[k]);
+      });
+      fetch(url.toString())
+        .then(function (r) { return r.json(); })
+        .then(function (data) {
+          page += 1;
+          var tmp = document.createElement('ul');
+          tmp.innerHTML = (data && data.html) || '';
+          var items = Array.prototype.slice.call(tmp.children);
+          items.forEach(function (li) { list.appendChild(li); });
+          if (window.gsap && items.length) {
+            gsap.from(items, { autoAlpha: 0, y: 30, duration: 0.6, ease: 'power3.out', stagger: 0.06 });
+          }
+          total = Number(data && data.total) || total;
+          var shown = list.children.length;
+          if (count) {
+            count.innerHTML = 'Showing <strong>' + shown + '</strong> out of <strong>' + total + '</strong> results';
+          }
+          more.hidden = !(data && data.more);
+          more.disabled = false;
+          if (window.ScrollTrigger) ScrollTrigger.refresh();
+        })
+        .catch(function () {
+          more.disabled = false;
+        });
+    });
+  });
+
+  /* ---------------- service hero: visitor's country tab ---------------- */
+  // Runs after main.js's DOMContentLoaded handler (registered earlier), so the
+  // tab buttons already switch panels when clicked.
+  document.addEventListener('DOMContentLoaded', function () {
+    var places = document.querySelector('.svc-hero__places[data-geo]');
+    if (!places || !window.TNG || !TNG.geo) return;
+    var MAP = { KH: 'cambodia', ID: 'indonesia', LA: 'laos', MM: 'myanmar', VN: 'vietnam' };
+
+    function pick(code) {
+      var want = MAP[String(code || '').toUpperCase()] || 'thailand';
+      var btn =
+        places.querySelector('[data-country="' + want + '"]') ||
+        places.querySelector('[data-country="thailand"]') ||
+        places.querySelector('[role="tab"]');
+      if (btn && !btn.classList.contains('is-active')) btn.click();
+    }
+
+    var cached = null;
+    try {
+      cached = window.sessionStorage.getItem('tngGeo');
+    } catch (e) {
+      cached = null;
+    }
+    if (cached !== null) {
+      pick(cached);
+      return;
+    }
+    fetch(TNG.geo, { credentials: 'omit' })
+      .then(function (r) { return r.json(); })
+      .then(function (data) {
+        var code = (data && data.country) || '';
+        try {
+          window.sessionStorage.setItem('tngGeo', code);
+        } catch (e) { /* private mode */ }
+        pick(code);
+      })
+      .catch(function () { /* keep the server default (Thailand) */ });
   });
 })();

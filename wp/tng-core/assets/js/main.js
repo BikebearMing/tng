@@ -43,7 +43,7 @@ document.querySelectorAll('.site-header__mega').forEach((mega) => {
    ------------------------------------------------------------ */
 // Contact office tabs and panels are left out: tab buttons can't hold split
 // lines, and hidden panels would split at zero width. They rise as groups.
-const HEADINGS = '.h1, .h2:not(.contact-offices__tab), .h3:not(.hp-insights__tab), .h4:not(.contact-office__name), .counter-label, .in-findings__num';
+const HEADINGS = '.h1:not(.about-vision__tab), .h2:not(.contact-offices__tab), .h3:not(.hp-insights__tab, .about-acc__btn, .more-from__link), .h4:not(.contact-office__name), .counter-label, .in-findings__num';
 const BODY = '.body, .subhead:not(a)';
 const REVEAL_START = 'top 88%';
 const EASE = 'power3.out';
@@ -79,6 +79,22 @@ const GROUPS = [
   '.hp-footer__quick-col',
   '.pro-hero__locations',
   '.pro-hero__contacts',
+  '.loc-hero__lines',
+  '.info-hero__lines',
+  '.mus-audience',
+  '.loc-successes__list',
+  '.svc-hero__places',
+  '.svc-hero__panels',
+  '.svc-subs__list',
+  '.about-acc',
+  '.about-vision__tabs',
+  '.about-vision__panels',
+  '.more-from__list',
+  '.ins-chips',
+  '.ins-grid__list',
+  '.job-cta__list',
+  '.lp-team__tabs',
+  '.lp-team__panels',
   '.in-hero__meta',
   '.in-panels__list',
   '.contact-offices__tabs',
@@ -249,8 +265,10 @@ function drawRules() {
 // and revealing a label inside a closed (visibility: hidden) menu would make
 // it hit-testable again — hovering the sticky bar under the header would pop
 // the menu open.
+// Service hero contacts and the about vision / mission text sit in tab panels
+// (mostly hidden, so they'd split at zero width); they rise as groups instead.
 function revealTargets(selector) {
-  return [...document.querySelectorAll(selector)].filter((el) => !el.closest('.site-header'));
+  return [...document.querySelectorAll(selector)].filter((el) => !el.closest('.site-header, .svc-hero__panels, .about-vision__panels, .lp-team__panels'));
 }
 
 // Hide text targets right away so nothing flashes before the split runs
@@ -456,9 +474,13 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Contact offices: a city tab shows its panel (details + map); the rest stay
-  // hidden, so their lazy map iframes never load until opened
-  document.querySelectorAll('.contact-offices').forEach((section) => {
+  // hidden, so their lazy map iframes never load until opened. The service
+  // hero's country tabs (contacts per location) and the about page's vision /
+  // mission tabs use the same pattern.
+  document.querySelectorAll('.contact-offices, .svc-hero__content, .about-vision, .lp-team').forEach((section) => {
     const tabs = [...section.querySelectorAll('[role="tab"]')];
+    const tablist = section.querySelector('[role="tablist"]');
+    if (!tabs.length || !tablist) return; // e.g. a service hero with no contacts
     const select = (tab) => {
       tabs.forEach((t) => {
         const on = t === tab;
@@ -469,7 +491,10 @@ document.addEventListener('DOMContentLoaded', () => {
         panel.hidden = !on;
         panel.classList.toggle('is-active', on);
         if (on) {
-          gsap.fromTo([...panel.querySelector('.contact-office__info').children, panel.querySelector('.contact-office__map')],
+          const parts = panel.matches('.contact-office')
+            ? [...panel.querySelector('.contact-office__info').children, panel.querySelector('.contact-office__map')]
+            : [...panel.children];
+          gsap.fromTo(parts,
             { y: 20, autoAlpha: 0 },
             { y: 0, autoAlpha: 1, duration: 0.6, ease: EASE, stagger: 0.06, overwrite: true });
         }
@@ -480,13 +505,29 @@ document.addEventListener('DOMContentLoaded', () => {
       if (tab && !tab.classList.contains('is-active')) select(tab);
     });
     // Arrow keys move between tabs (WAI-ARIA tabs pattern)
-    section.querySelector('[role="tablist"]').addEventListener('keydown', (e) => {
+    tablist.addEventListener('keydown', (e) => {
       const i = tabs.indexOf(document.activeElement);
       if (i < 0 || !['ArrowDown', 'ArrowUp', 'ArrowRight', 'ArrowLeft'].includes(e.key)) return;
       e.preventDefault();
       const next = tabs[(i + (['ArrowDown', 'ArrowRight'].includes(e.key) ? 1 : tabs.length - 1)) % tabs.length];
       next.focus();
       select(next);
+    });
+  });
+
+  // About accordion: one item open at a time; the panel height animates in CSS
+  document.querySelectorAll('.about-acc').forEach((acc) => {
+    acc.addEventListener('click', (e) => {
+      const btn = e.target.closest('.about-acc__btn');
+      if (!btn) return;
+      const item = btn.closest('.about-acc__item');
+      const open = !item.classList.contains('is-open');
+      acc.querySelectorAll('.about-acc__item').forEach((it) => {
+        const on = it === item && open;
+        it.classList.toggle('is-open', on);
+        it.querySelector('.about-acc__btn').setAttribute('aria-expanded', on ? 'true' : 'false');
+      });
+      setTimeout(() => ScrollTrigger.refresh(), 550); // after the height transition
     });
   });
 

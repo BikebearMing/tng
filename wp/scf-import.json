@@ -1891,6 +1891,413 @@
     "show_in_rest": 0
   },
   {
+    "key": "group_tng_job",
+    "title": "Job",
+    "fields": [
+      {
+        "key": "field_tng_job_department",
+        "label": "Department",
+        "name": "department",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "",
+        "maxlength": "",
+        "placeholder": "",
+        "prepend": "",
+        "append": ""
+      },
+      {
+        "key": "field_tng_job_career_path",
+        "label": "Career path page (lists the job under \"Opportunities for …\")",
+        "name": "career_path",
+        "aria-label": "",
+        "type": "post_object",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "post_type": [
+          "page"
+        ],
+        "post_status": [
+          ""
+        ],
+        "taxonomy": [],
+        "return_format": "id",
+        "multiple": 0,
+        "allow_null": 1,
+        "bidirectional": 0,
+        "ui": 1,
+        "bidirectional_target": []
+      },
+      {
+        "key": "field_tng_job_summary",
+        "label": "Summary (centred intro)",
+        "name": "summary",
+        "aria-label": "",
+        "type": "textarea",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "",
+        "maxlength": "",
+        "rows": 4,
+        "placeholder": "",
+        "new_lines": ""
+      },
+      {
+        "key": "field_tng_job_responsibilities",
+        "label": "Position summary groups",
+        "name": "responsibilities",
+        "aria-label": "",
+        "type": "repeater",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "layout": "block",
+        "pagination": 0,
+        "min": 0,
+        "max": 0,
+        "collapsed": "",
+        "button_label": "Add group",
+        "rows_per_page": 20,
+        "sub_fields": [
+          {
+            "key": "field_tng_job_responsibilities_heading",
+            "label": "Heading",
+            "name": "heading",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+              "width": "",
+              "class": "",
+              "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "parent_repeater": "field_tng_job_responsibilities"
+          },
+          {
+            "key": "field_tng_job_responsibilities_list",
+            "label": "Bullet list",
+            "name": "list",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+              "width": "",
+              "class": "",
+              "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 0,
+            "delay": 0,
+            "parent_repeater": "field_tng_job_responsibilities"
+          }
+        ]
+      },
+      {
+        "key": "field_tng_job_apply_email",
+        "label": "Apply email (empty = Jobs → Job page settings)",
+        "name": "apply_email",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "",
+        "maxlength": "",
+        "placeholder": "",
+        "prepend": "",
+        "append": ""
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "post_type",
+          "operator": "==",
+          "value": "job"
+        }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0
+  },
+  {
+    "key": "group_tng_job_settings",
+    "title": "Job page settings",
+    "fields": [
+      {
+        "key": "field_tng_jst_apply_heading",
+        "label": "Apply card heading",
+        "name": "apply_heading",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "Ready to join us?",
+        "maxlength": "",
+        "placeholder": "",
+        "prepend": "",
+        "append": ""
+      },
+      {
+        "key": "field_tng_jst_apply_text",
+        "label": "Apply card text",
+        "name": "apply_text",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "Please send the CV to:",
+        "maxlength": "",
+        "placeholder": "",
+        "prepend": "",
+        "append": ""
+      },
+      {
+        "key": "field_tng_jst_apply_email",
+        "label": "Apply email",
+        "name": "apply_email",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "recruit@tilleke.com",
+        "maxlength": "",
+        "placeholder": "",
+        "prepend": "",
+        "append": ""
+      },
+      {
+        "key": "field_tng_jst_cta_heading",
+        "label": "Bottom panel heading",
+        "name": "cta_heading",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "Ready to join us?",
+        "maxlength": "",
+        "placeholder": "",
+        "prepend": "",
+        "append": ""
+      },
+      {
+        "key": "field_tng_jst_cta_background",
+        "label": "Bottom panel background (default: teal texture)",
+        "name": "cta_background",
+        "aria-label": "",
+        "type": "image",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "return_format": "url",
+        "library": "all",
+        "min_width": "",
+        "min_height": "",
+        "min_size": "",
+        "max_width": "",
+        "max_height": "",
+        "max_size": "",
+        "mime_types": "",
+        "preview_size": "medium"
+      },
+      {
+        "key": "field_tng_jst_process_title",
+        "label": "Card 1 title",
+        "name": "process_title",
+        "aria-label": "",
+        "type": "textarea",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "Curious about our\nRecruitment Process?",
+        "maxlength": "",
+        "rows": 2,
+        "placeholder": "",
+        "new_lines": "br"
+      },
+      {
+        "key": "field_tng_jst_process_label",
+        "label": "Card 1 link label",
+        "name": "process_label",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "Learn More",
+        "maxlength": "",
+        "placeholder": "",
+        "prepend": "",
+        "append": ""
+      },
+      {
+        "key": "field_tng_jst_process_url",
+        "label": "Card 1 link URL",
+        "name": "process_url",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "#",
+        "maxlength": "",
+        "placeholder": "",
+        "prepend": "",
+        "append": ""
+      },
+      {
+        "key": "field_tng_jst_role_title",
+        "label": "Card 2 title (links to the job's career path page)",
+        "name": "role_title",
+        "aria-label": "",
+        "type": "textarea",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "Learn more\nabout your role",
+        "maxlength": "",
+        "rows": 2,
+        "placeholder": "",
+        "new_lines": "br"
+      },
+      {
+        "key": "field_tng_jst_location_title",
+        "label": "Card 3 title (%s = the job's country; links to its location page)",
+        "name": "location_title",
+        "aria-label": "",
+        "type": "textarea",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "Learn more\nabout %s",
+        "maxlength": "",
+        "rows": 2,
+        "placeholder": "",
+        "new_lines": "br"
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "options_page",
+          "operator": "==",
+          "value": "tng-job-settings"
+        }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0
+  },
+  {
     "key": "group_tng_location",
     "title": "Location details",
     "fields": [
@@ -2081,6 +2488,353 @@
         "placeholder": "",
         "prepend": "",
         "append": ""
+      },
+      {
+        "key": "field_tng_loc_tab_page",
+        "label": "Location page (countries)",
+        "name": "tab_page",
+        "aria-label": "",
+        "type": "tab",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "placement": "top",
+        "endpoint": 0
+      },
+      {
+        "key": "field_tng_loc_page_note",
+        "label": "",
+        "name": "page_note",
+        "aria-label": "",
+        "type": "message",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "message": "Used on the country page (/location/<country>/). City terms redirect to their country page; the hero and the office strip show the first city office under the country.",
+        "new_lines": "wpautop",
+        "esc_html": 0
+      },
+      {
+        "key": "field_tng_loc_hero_image",
+        "label": "Hero image (min 1394×942)",
+        "name": "hero_image",
+        "aria-label": "",
+        "type": "image",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "return_format": "url",
+        "library": "all",
+        "min_width": "",
+        "min_height": "",
+        "min_size": "",
+        "max_width": "",
+        "max_height": "",
+        "max_size": "",
+        "mime_types": "",
+        "preview_size": "medium"
+      },
+      {
+        "key": "field_tng_loc_show_loc_overview",
+        "label": "Show overview",
+        "name": "show_loc_overview",
+        "aria-label": "",
+        "type": "true_false",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "message": "",
+        "default_value": 1,
+        "ui": 1,
+        "ui_on_text": "",
+        "ui_off_text": ""
+      },
+      {
+        "key": "field_tng_loc_overview_heading",
+        "label": "Overview heading",
+        "name": "overview_heading",
+        "aria-label": "",
+        "type": "textarea",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "",
+        "maxlength": "",
+        "rows": 3,
+        "placeholder": "",
+        "new_lines": ""
+      },
+      {
+        "key": "field_tng_loc_overview_text",
+        "label": "Overview text",
+        "name": "overview_text",
+        "aria-label": "",
+        "type": "wysiwyg",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "",
+        "tabs": "all",
+        "toolbar": "full",
+        "media_upload": 0,
+        "delay": 0
+      },
+      {
+        "key": "field_tng_loc_show_loc_professionals",
+        "label": "Show professionals (4 with this location)",
+        "name": "show_loc_professionals",
+        "aria-label": "",
+        "type": "true_false",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "message": "",
+        "default_value": 1,
+        "ui": 1,
+        "ui_on_text": "",
+        "ui_off_text": ""
+      },
+      {
+        "key": "field_tng_loc_show_loc_insights",
+        "label": "Show insights (3 latest with this location)",
+        "name": "show_loc_insights",
+        "aria-label": "",
+        "type": "true_false",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "message": "",
+        "default_value": 1,
+        "ui": 1,
+        "ui_on_text": "",
+        "ui_off_text": ""
+      },
+      {
+        "key": "field_tng_loc_show_loc_successes",
+        "label": "Show client successes",
+        "name": "show_loc_successes",
+        "aria-label": "",
+        "type": "true_false",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "message": "",
+        "default_value": 1,
+        "ui": 1,
+        "ui_on_text": "",
+        "ui_off_text": ""
+      },
+      {
+        "key": "field_tng_loc_successes",
+        "label": "Client successes",
+        "name": "successes",
+        "aria-label": "",
+        "type": "repeater",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "layout": "block",
+        "pagination": 0,
+        "min": 0,
+        "max": 0,
+        "collapsed": "",
+        "button_label": "Add client successe",
+        "rows_per_page": 20,
+        "sub_fields": [
+          {
+            "key": "field_tng_loc_successes_title",
+            "label": "Title",
+            "name": "title",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+              "width": "",
+              "class": "",
+              "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "rows": 2,
+            "placeholder": "",
+            "new_lines": "",
+            "parent_repeater": "field_tng_loc_successes"
+          },
+          {
+            "key": "field_tng_loc_successes_text",
+            "label": "Text",
+            "name": "text",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+              "width": "",
+              "class": "",
+              "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "rows": 4,
+            "placeholder": "",
+            "new_lines": "",
+            "parent_repeater": "field_tng_loc_successes"
+          },
+          {
+            "key": "field_tng_loc_successes_link_url",
+            "label": "\"Read more\" URL (empty = no link)",
+            "name": "link_url",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+              "width": "",
+              "class": "",
+              "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "parent_repeater": "field_tng_loc_successes"
+          }
+        ]
+      },
+      {
+        "key": "field_tng_loc_show_loc_experience",
+        "label": "Show experience",
+        "name": "show_loc_experience",
+        "aria-label": "",
+        "type": "true_false",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "message": "",
+        "default_value": 1,
+        "ui": 1,
+        "ui_on_text": "",
+        "ui_off_text": ""
+      },
+      {
+        "key": "field_tng_loc_experience",
+        "label": "Experience (bullet list)",
+        "name": "experience",
+        "aria-label": "",
+        "type": "wysiwyg",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "",
+        "tabs": "all",
+        "toolbar": "full",
+        "media_upload": 0,
+        "delay": 0
+      },
+      {
+        "key": "field_tng_loc_show_loc_awards",
+        "label": "Show awards (3 latest with this location)",
+        "name": "show_loc_awards",
+        "aria-label": "",
+        "type": "true_false",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "message": "",
+        "default_value": 1,
+        "ui": 1,
+        "ui_on_text": "",
+        "ui_off_text": ""
+      },
+      {
+        "key": "field_tng_loc_show_loc_office",
+        "label": "Show office strip + map",
+        "name": "show_loc_office",
+        "aria-label": "",
+        "type": "true_false",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "message": "",
+        "default_value": 1,
+        "ui": 1,
+        "ui_on_text": "",
+        "ui_off_text": ""
       }
     ],
     "location": [
@@ -2103,13 +2857,636 @@
     "show_in_rest": 0
   },
   {
+    "key": "group_tng_service",
+    "title": "Service page",
+    "fields": [
+      {
+        "key": "field_tng_svc_note",
+        "label": "",
+        "name": "note",
+        "aria-label": "",
+        "type": "message",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "message": "Used on the industry / practice page. A child term (a subpractice) shows the hero, the overview and the experience only, labelled \"Representative Matters\".",
+        "new_lines": "wpautop",
+        "esc_html": 0
+      },
+      {
+        "key": "field_tng_svc_tab_hero",
+        "label": "Hero",
+        "name": "tab_hero",
+        "aria-label": "",
+        "type": "tab",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "placement": "top",
+        "endpoint": 0
+      },
+      {
+        "key": "field_tng_svc_hero_image",
+        "label": "Hero image (min 1394×942)",
+        "name": "hero_image",
+        "aria-label": "",
+        "type": "image",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "return_format": "url",
+        "library": "all",
+        "min_width": "",
+        "min_height": "",
+        "min_size": "",
+        "max_width": "",
+        "max_height": "",
+        "max_size": "",
+        "mime_types": "",
+        "preview_size": "medium"
+      },
+      {
+        "key": "field_tng_svc_contacts",
+        "label": "Contacts by country",
+        "name": "contacts",
+        "aria-label": "",
+        "type": "repeater",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "layout": "block",
+        "pagination": 0,
+        "min": 0,
+        "max": 0,
+        "collapsed": "",
+        "button_label": "Add country",
+        "rows_per_page": 20,
+        "sub_fields": [
+          {
+            "key": "field_tng_svc_contacts_location",
+            "label": "Country",
+            "name": "location",
+            "aria-label": "",
+            "type": "taxonomy",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+              "width": "",
+              "class": "",
+              "id": ""
+            },
+            "taxonomy": "location",
+            "add_term": 0,
+            "save_terms": 0,
+            "load_terms": 0,
+            "return_format": "id",
+            "field_type": "select",
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "bidirectional": 0,
+            "multiple": 0,
+            "bidirectional_target": [],
+            "parent_repeater": "field_tng_svc_contacts"
+          },
+          {
+            "key": "field_tng_svc_contacts_people",
+            "label": "People",
+            "name": "people",
+            "aria-label": "",
+            "type": "relationship",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+              "width": "",
+              "class": "",
+              "id": ""
+            },
+            "post_type": [
+              "professional"
+            ],
+            "post_status": [
+              ""
+            ],
+            "taxonomy": [],
+            "filters": [
+              "search"
+            ],
+            "return_format": "id",
+            "min": "",
+            "max": 4,
+            "elements": "",
+            "bidirectional": 0,
+            "bidirectional_target": [],
+            "parent_repeater": "field_tng_svc_contacts"
+          }
+        ]
+      },
+      {
+        "key": "field_tng_svc_contacts_note",
+        "label": "",
+        "name": "contacts_note",
+        "aria-label": "",
+        "type": "message",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "message": "Countries with no people are hidden. The tab that opens first follows the visitor's country (Cambodia, Indonesia, Laos, Myanmar, Vietnam); everyone else sees Thailand.",
+        "new_lines": "wpautop",
+        "esc_html": 0
+      },
+      {
+        "key": "field_tng_svc_tab_overview",
+        "label": "Overview",
+        "name": "tab_overview",
+        "aria-label": "",
+        "type": "tab",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "placement": "top",
+        "endpoint": 0
+      },
+      {
+        "key": "field_tng_svc_show_svc_overview",
+        "label": "Show overview",
+        "name": "show_svc_overview",
+        "aria-label": "",
+        "type": "true_false",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "message": "",
+        "default_value": 1,
+        "ui": 1,
+        "ui_on_text": "",
+        "ui_off_text": ""
+      },
+      {
+        "key": "field_tng_svc_overview_heading",
+        "label": "Heading (industries, subpractices)",
+        "name": "overview_heading",
+        "aria-label": "",
+        "type": "textarea",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "",
+        "maxlength": "",
+        "rows": 3,
+        "placeholder": "",
+        "new_lines": ""
+      },
+      {
+        "key": "field_tng_svc_quote",
+        "label": "Quote (practices: shown instead of the heading when filled)",
+        "name": "quote",
+        "aria-label": "",
+        "type": "textarea",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "",
+        "maxlength": "",
+        "rows": 3,
+        "placeholder": "",
+        "new_lines": ""
+      },
+      {
+        "key": "field_tng_svc_quote_source",
+        "label": "Quote source",
+        "name": "quote_source",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "",
+        "maxlength": "",
+        "placeholder": "",
+        "prepend": "",
+        "append": ""
+      },
+      {
+        "key": "field_tng_svc_overview_text",
+        "label": "Overview text",
+        "name": "overview_text",
+        "aria-label": "",
+        "type": "wysiwyg",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "",
+        "tabs": "all",
+        "toolbar": "full",
+        "media_upload": 0,
+        "delay": 0
+      },
+      {
+        "key": "field_tng_svc_tab_sections",
+        "label": "Sections",
+        "name": "tab_sections",
+        "aria-label": "",
+        "type": "tab",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "placement": "top",
+        "endpoint": 0
+      },
+      {
+        "key": "field_tng_svc_show_svc_subpractices",
+        "label": "Show subpractices (child terms)",
+        "name": "show_svc_subpractices",
+        "aria-label": "",
+        "type": "true_false",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "message": "",
+        "default_value": 1,
+        "ui": 1,
+        "ui_on_text": "",
+        "ui_off_text": ""
+      },
+      {
+        "key": "field_tng_svc_card_image",
+        "label": "Card image when listed as a subpractice (min 666×260)",
+        "name": "card_image",
+        "aria-label": "",
+        "type": "image",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "return_format": "url",
+        "library": "all",
+        "min_width": "",
+        "min_height": "",
+        "min_size": "",
+        "max_width": "",
+        "max_height": "",
+        "max_size": "",
+        "mime_types": "",
+        "preview_size": "medium"
+      },
+      {
+        "key": "field_tng_svc_show_svc_successes",
+        "label": "Show client successes",
+        "name": "show_svc_successes",
+        "aria-label": "",
+        "type": "true_false",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "message": "",
+        "default_value": 1,
+        "ui": 1,
+        "ui_on_text": "",
+        "ui_off_text": ""
+      },
+      {
+        "key": "field_tng_svc_successes",
+        "label": "Client successes",
+        "name": "successes",
+        "aria-label": "",
+        "type": "repeater",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "layout": "block",
+        "pagination": 0,
+        "min": 0,
+        "max": 0,
+        "collapsed": "",
+        "button_label": "Add client successe",
+        "rows_per_page": 20,
+        "sub_fields": [
+          {
+            "key": "field_tng_svc_successes_title",
+            "label": "Title",
+            "name": "title",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+              "width": "",
+              "class": "",
+              "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "rows": 2,
+            "placeholder": "",
+            "new_lines": "",
+            "parent_repeater": "field_tng_svc_successes"
+          },
+          {
+            "key": "field_tng_svc_successes_text",
+            "label": "Text",
+            "name": "text",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+              "width": "",
+              "class": "",
+              "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "rows": 4,
+            "placeholder": "",
+            "new_lines": "",
+            "parent_repeater": "field_tng_svc_successes"
+          },
+          {
+            "key": "field_tng_svc_successes_link_url",
+            "label": "\"Read more\" URL (empty = no link)",
+            "name": "link_url",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+              "width": "",
+              "class": "",
+              "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "parent_repeater": "field_tng_svc_successes"
+          }
+        ]
+      },
+      {
+        "key": "field_tng_svc_show_svc_experience",
+        "label": "Show experience",
+        "name": "show_svc_experience",
+        "aria-label": "",
+        "type": "true_false",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "message": "",
+        "default_value": 1,
+        "ui": 1,
+        "ui_on_text": "",
+        "ui_off_text": ""
+      },
+      {
+        "key": "field_tng_svc_experience_label",
+        "label": "Experience label (empty = \"Experience\", or \"Representative Matters\" on a subpractice)",
+        "name": "experience_label",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "",
+        "maxlength": "",
+        "placeholder": "",
+        "prepend": "",
+        "append": ""
+      },
+      {
+        "key": "field_tng_svc_experience",
+        "label": "Experience (bullet list)",
+        "name": "experience",
+        "aria-label": "",
+        "type": "wysiwyg",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "",
+        "tabs": "all",
+        "toolbar": "full",
+        "media_upload": 0,
+        "delay": 0
+      },
+      {
+        "key": "field_tng_svc_show_svc_professionals",
+        "label": "Show professionals (4 with this term)",
+        "name": "show_svc_professionals",
+        "aria-label": "",
+        "type": "true_false",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "message": "",
+        "default_value": 1,
+        "ui": 1,
+        "ui_on_text": "",
+        "ui_off_text": ""
+      },
+      {
+        "key": "field_tng_svc_show_svc_insights",
+        "label": "Show insights (3 latest with this term)",
+        "name": "show_svc_insights",
+        "aria-label": "",
+        "type": "true_false",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "message": "",
+        "default_value": 1,
+        "ui": 1,
+        "ui_on_text": "",
+        "ui_off_text": ""
+      },
+      {
+        "key": "field_tng_svc_show_svc_awards",
+        "label": "Show awards (3 latest with this term)",
+        "name": "show_svc_awards",
+        "aria-label": "",
+        "type": "true_false",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "message": "",
+        "default_value": 1,
+        "ui": 1,
+        "ui_on_text": "",
+        "ui_off_text": ""
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "taxonomy",
+          "operator": "==",
+          "value": "industry"
+        }
+      ],
+      [
+        {
+          "param": "taxonomy",
+          "operator": "==",
+          "value": "practice"
+        }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0
+  },
+  {
     "key": "group_tng_site_header",
     "title": "Site Header",
     "fields": [
       {
         "key": "field_tng_hdr_logo",
-        "label": "Logo (SVG/PNG; empty = text stand-in)",
+        "label": "Logo on dark — white wordmark, shown over dark heroes (SVG/PNG; also used by the footer; empty = text stand-in)",
         "name": "logo",
+        "aria-label": "",
+        "type": "image",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "return_format": "url",
+        "library": "all",
+        "min_width": "",
+        "min_height": "",
+        "min_size": "",
+        "max_width": "",
+        "max_height": "",
+        "max_size": "",
+        "mime_types": "",
+        "preview_size": "medium"
+      },
+      {
+        "key": "field_tng_hdr_logo_dark",
+        "label": "Logo on white — navy wordmark, shown once the header turns white on scroll and on light pages (empty = bundled navy logo)",
+        "name": "logo_dark",
         "aria-label": "",
         "type": "image",
         "instructions": "",
@@ -2343,7 +3720,7 @@
     "fields": [
       {
         "key": "field_tng_ftr_logo",
-        "label": "Logo (empty = text stand-in)",
+        "label": "Logo — white wordmark (same image as Header → Logo on dark: changing one changes both; empty = text stand-in)",
         "name": "logo",
         "aria-label": "",
         "type": "image",
@@ -4623,6 +6000,32 @@
         "max_size": "",
         "mime_types": "",
         "preview_size": "medium"
+      },
+      {
+        "key": "field_tng_cpe_variant",
+        "label": "Layout",
+        "name": "variant",
+        "aria-label": "",
+        "type": "select",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "choices": {
+          "default": "Careers page",
+          "path": "Career path page (99 top, narrower text)"
+        },
+        "default_value": "default",
+        "allow_null": 0,
+        "multiple": 0,
+        "ui": 0,
+        "return_format": "value",
+        "ajax": 0,
+        "placeholder": ""
       }
     ],
     "location": [
@@ -4859,6 +6262,2649 @@
           "param": "block",
           "operator": "==",
           "value": "acf/careers-jobs"
+        }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0
+  },
+  {
+    "key": "group_tng_block_about_hero",
+    "title": "Block: About hero",
+    "fields": [
+      {
+        "key": "field_tng_abh_show_about_hero",
+        "label": "Show section",
+        "name": "show_about_hero",
+        "aria-label": "",
+        "type": "true_false",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "message": "",
+        "default_value": 1,
+        "ui": 1,
+        "ui_on_text": "",
+        "ui_off_text": ""
+      },
+      {
+        "key": "field_tng_abh_title",
+        "label": "Title (empty = page title)",
+        "name": "title",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "",
+        "maxlength": "",
+        "placeholder": "",
+        "prepend": "",
+        "append": ""
+      },
+      {
+        "key": "field_tng_abh_intro",
+        "label": "Intro",
+        "name": "intro",
+        "aria-label": "",
+        "type": "textarea",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "",
+        "maxlength": "",
+        "rows": 4,
+        "placeholder": "",
+        "new_lines": ""
+      },
+      {
+        "key": "field_tng_abh_image",
+        "label": "Image (min 1394×942)",
+        "name": "image",
+        "aria-label": "",
+        "type": "image",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "return_format": "url",
+        "library": "all",
+        "min_width": "",
+        "min_height": "",
+        "min_size": "",
+        "max_width": "",
+        "max_height": "",
+        "max_size": "",
+        "mime_types": "",
+        "preview_size": "medium"
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "block",
+          "operator": "==",
+          "value": "acf/about-hero"
+        }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0
+  },
+  {
+    "key": "group_tng_block_page_tabs",
+    "title": "Block: On this page tabs",
+    "fields": [
+      {
+        "key": "field_tng_ptb_show_page_tabs",
+        "label": "Show section",
+        "name": "show_page_tabs",
+        "aria-label": "",
+        "type": "true_false",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "message": "",
+        "default_value": 1,
+        "ui": 1,
+        "ui_on_text": "",
+        "ui_off_text": ""
+      },
+      {
+        "key": "field_tng_ptb_tabs",
+        "label": "Tabs",
+        "name": "tabs",
+        "aria-label": "",
+        "type": "repeater",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "layout": "block",
+        "pagination": 0,
+        "min": 0,
+        "max": 0,
+        "collapsed": "",
+        "button_label": "Add tab",
+        "rows_per_page": 20,
+        "sub_fields": [
+          {
+            "key": "field_tng_ptb_tabs_label",
+            "label": "Label",
+            "name": "label",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+              "width": "",
+              "class": "",
+              "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "parent_repeater": "field_tng_ptb_tabs"
+          },
+          {
+            "key": "field_tng_ptb_tabs_anchor",
+            "label": "Section anchor (e.g. overview)",
+            "name": "anchor",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+              "width": "",
+              "class": "",
+              "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "parent_repeater": "field_tng_ptb_tabs"
+          }
+        ]
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "block",
+          "operator": "==",
+          "value": "acf/page-tabs"
+        }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0
+  },
+  {
+    "key": "group_tng_block_overview",
+    "title": "Block: Overview (label + heading + text)",
+    "fields": [
+      {
+        "key": "field_tng_ovw_show_overview",
+        "label": "Show section",
+        "name": "show_overview",
+        "aria-label": "",
+        "type": "true_false",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "message": "",
+        "default_value": 1,
+        "ui": 1,
+        "ui_on_text": "",
+        "ui_off_text": ""
+      },
+      {
+        "key": "field_tng_ovw_variant",
+        "label": "Style",
+        "name": "variant",
+        "aria-label": "",
+        "type": "select",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "choices": {
+          "about": "About overview",
+          "code": "Code of conduct (with link)",
+          "path": "Career path overview",
+          "info": "About child page (Pro Bono / CSR / museum)"
+        },
+        "default_value": "about",
+        "allow_null": 0,
+        "multiple": 0,
+        "ui": 0,
+        "return_format": "value",
+        "ajax": 0,
+        "placeholder": ""
+      },
+      {
+        "key": "field_tng_ovw_section_id",
+        "label": "Anchor (for the tabs, e.g. overview)",
+        "name": "section_id",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "",
+        "maxlength": "",
+        "placeholder": "",
+        "prepend": "",
+        "append": ""
+      },
+      {
+        "key": "field_tng_ovw_label",
+        "label": "Label",
+        "name": "label",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "Overview",
+        "maxlength": "",
+        "placeholder": "",
+        "prepend": "",
+        "append": ""
+      },
+      {
+        "key": "field_tng_ovw_heading",
+        "label": "Heading",
+        "name": "heading",
+        "aria-label": "",
+        "type": "textarea",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "",
+        "maxlength": "",
+        "rows": 3,
+        "placeholder": "",
+        "new_lines": ""
+      },
+      {
+        "key": "field_tng_ovw_text",
+        "label": "Text",
+        "name": "text",
+        "aria-label": "",
+        "type": "wysiwyg",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "",
+        "tabs": "all",
+        "toolbar": "full",
+        "media_upload": 0,
+        "delay": 0
+      },
+      {
+        "key": "field_tng_ovw_link_label",
+        "label": "Link label (code of conduct style)",
+        "name": "link_label",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "",
+        "maxlength": "",
+        "placeholder": "",
+        "prepend": "",
+        "append": ""
+      },
+      {
+        "key": "field_tng_ovw_link_url",
+        "label": "Link URL (e.g. the PDF)",
+        "name": "link_url",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "",
+        "maxlength": "",
+        "placeholder": "",
+        "prepend": "",
+        "append": ""
+      },
+      {
+        "key": "field_tng_ovw_show_image",
+        "label": "Image under the heading (About child page style; CSR)",
+        "name": "show_image",
+        "aria-label": "",
+        "type": "true_false",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "message": "",
+        "default_value": 0,
+        "ui": 1,
+        "ui_on_text": "",
+        "ui_off_text": ""
+      },
+      {
+        "key": "field_tng_ovw_image",
+        "label": "Image under the heading (min 728×364; empty = bundled CSR photo)",
+        "name": "image",
+        "aria-label": "",
+        "type": "image",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "return_format": "url",
+        "library": "all",
+        "min_width": "",
+        "min_height": "",
+        "min_size": "",
+        "max_width": "",
+        "max_height": "",
+        "max_size": "",
+        "mime_types": "",
+        "preview_size": "medium"
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "block",
+          "operator": "==",
+          "value": "acf/overview"
+        }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0
+  },
+  {
+    "key": "group_tng_block_about_values",
+    "title": "Block: About values (accordion + image)",
+    "fields": [
+      {
+        "key": "field_tng_abv_show_about_values",
+        "label": "Show section",
+        "name": "show_about_values",
+        "aria-label": "",
+        "type": "true_false",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "message": "",
+        "default_value": 1,
+        "ui": 1,
+        "ui_on_text": "",
+        "ui_off_text": ""
+      },
+      {
+        "key": "field_tng_abv_items",
+        "label": "Items",
+        "name": "items",
+        "aria-label": "",
+        "type": "repeater",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "layout": "block",
+        "pagination": 0,
+        "min": 0,
+        "max": 0,
+        "collapsed": "",
+        "button_label": "Add item",
+        "rows_per_page": 20,
+        "sub_fields": [
+          {
+            "key": "field_tng_abv_items_title",
+            "label": "Title",
+            "name": "title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+              "width": "",
+              "class": "",
+              "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "parent_repeater": "field_tng_abv_items"
+          },
+          {
+            "key": "field_tng_abv_items_text",
+            "label": "Text",
+            "name": "text",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+              "width": "",
+              "class": "",
+              "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 0,
+            "delay": 0,
+            "parent_repeater": "field_tng_abv_items"
+          }
+        ]
+      },
+      {
+        "key": "field_tng_abv_image",
+        "label": "Image (min 1404×1334)",
+        "name": "image",
+        "aria-label": "",
+        "type": "image",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "return_format": "url",
+        "library": "all",
+        "min_width": "",
+        "min_height": "",
+        "min_size": "",
+        "max_width": "",
+        "max_height": "",
+        "max_size": "",
+        "mime_types": "",
+        "preview_size": "medium"
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "block",
+          "operator": "==",
+          "value": "acf/about-values"
+        }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0
+  },
+  {
+    "key": "group_tng_block_about_numbers",
+    "title": "Block: Our numbers",
+    "fields": [
+      {
+        "key": "field_tng_abn_show_about_numbers",
+        "label": "Show section",
+        "name": "show_about_numbers",
+        "aria-label": "",
+        "type": "true_false",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "message": "",
+        "default_value": 1,
+        "ui": 1,
+        "ui_on_text": "",
+        "ui_off_text": ""
+      },
+      {
+        "key": "field_tng_abn_background",
+        "label": "Background (default: teal texture)",
+        "name": "background",
+        "aria-label": "",
+        "type": "image",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "return_format": "url",
+        "library": "all",
+        "min_width": "",
+        "min_height": "",
+        "min_size": "",
+        "max_width": "",
+        "max_height": "",
+        "max_size": "",
+        "mime_types": "",
+        "preview_size": "medium"
+      },
+      {
+        "key": "field_tng_abn_numbers",
+        "label": "Numbers (4)",
+        "name": "numbers",
+        "aria-label": "",
+        "type": "repeater",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "layout": "block",
+        "pagination": 0,
+        "min": 0,
+        "max": 4,
+        "collapsed": "",
+        "button_label": "Add number",
+        "rows_per_page": 20,
+        "sub_fields": [
+          {
+            "key": "field_tng_abn_numbers_value",
+            "label": "Value (counts up; keeps a suffix like \"+\")",
+            "name": "value",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+              "width": "",
+              "class": "",
+              "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "parent_repeater": "field_tng_abn_numbers"
+          },
+          {
+            "key": "field_tng_abn_numbers_label",
+            "label": "Label",
+            "name": "label",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+              "width": "",
+              "class": "",
+              "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "parent_repeater": "field_tng_abn_numbers"
+          }
+        ]
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "block",
+          "operator": "==",
+          "value": "acf/about-numbers"
+        }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0
+  },
+  {
+    "key": "group_tng_block_about_vision",
+    "title": "Block: Vision and mission",
+    "fields": [
+      {
+        "key": "field_tng_abvi_show_about_vision",
+        "label": "Show section",
+        "name": "show_about_vision",
+        "aria-label": "",
+        "type": "true_false",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "message": "",
+        "default_value": 1,
+        "ui": 1,
+        "ui_on_text": "",
+        "ui_off_text": ""
+      },
+      {
+        "key": "field_tng_abvi_items",
+        "label": "Tabs",
+        "name": "items",
+        "aria-label": "",
+        "type": "repeater",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "layout": "block",
+        "pagination": 0,
+        "min": 0,
+        "max": 0,
+        "collapsed": "",
+        "button_label": "Add tab",
+        "rows_per_page": 20,
+        "sub_fields": [
+          {
+            "key": "field_tng_abvi_items_label",
+            "label": "Tab label",
+            "name": "label",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+              "width": "",
+              "class": "",
+              "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "parent_repeater": "field_tng_abvi_items"
+          },
+          {
+            "key": "field_tng_abvi_items_text",
+            "label": "Text",
+            "name": "text",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+              "width": "",
+              "class": "",
+              "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "rows": 4,
+            "placeholder": "",
+            "new_lines": "",
+            "parent_repeater": "field_tng_abvi_items"
+          },
+          {
+            "key": "field_tng_abvi_items_image",
+            "label": "Image (min 1400×1098)",
+            "name": "image",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+              "width": "",
+              "class": "",
+              "id": ""
+            },
+            "return_format": "url",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "preview_size": "medium",
+            "parent_repeater": "field_tng_abvi_items"
+          }
+        ]
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "block",
+          "operator": "==",
+          "value": "acf/about-vision"
+        }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0
+  },
+  {
+    "key": "group_tng_block_about_creed",
+    "title": "Block: Creed",
+    "fields": [
+      {
+        "key": "field_tng_abc_show_about_creed",
+        "label": "Show section",
+        "name": "show_about_creed",
+        "aria-label": "",
+        "type": "true_false",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "message": "",
+        "default_value": 1,
+        "ui": 1,
+        "ui_on_text": "",
+        "ui_off_text": ""
+      },
+      {
+        "key": "field_tng_abc_label",
+        "label": "Label",
+        "name": "label",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "Creed",
+        "maxlength": "",
+        "placeholder": "",
+        "prepend": "",
+        "append": ""
+      },
+      {
+        "key": "field_tng_abc_columns",
+        "label": "Columns (2)",
+        "name": "columns",
+        "aria-label": "",
+        "type": "repeater",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "layout": "block",
+        "pagination": 0,
+        "min": 0,
+        "max": 2,
+        "collapsed": "",
+        "button_label": "Add column",
+        "rows_per_page": 20,
+        "sub_fields": [
+          {
+            "key": "field_tng_abc_columns_heading",
+            "label": "Heading",
+            "name": "heading",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+              "width": "",
+              "class": "",
+              "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "parent_repeater": "field_tng_abc_columns"
+          },
+          {
+            "key": "field_tng_abc_columns_list",
+            "label": "Bullet list",
+            "name": "list",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+              "width": "",
+              "class": "",
+              "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 0,
+            "delay": 0,
+            "parent_repeater": "field_tng_abc_columns"
+          }
+        ]
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "block",
+          "operator": "==",
+          "value": "acf/about-creed"
+        }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0
+  },
+  {
+    "key": "group_tng_block_more_from",
+    "title": "Block: More from",
+    "fields": [
+      {
+        "key": "field_tng_mfr_show_more_from",
+        "label": "Show section",
+        "name": "show_more_from",
+        "aria-label": "",
+        "type": "true_false",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "message": "",
+        "default_value": 1,
+        "ui": 1,
+        "ui_on_text": "",
+        "ui_off_text": ""
+      },
+      {
+        "key": "field_tng_mfr_heading",
+        "label": "Heading (empty = \"More from <parent page>\")",
+        "name": "heading",
+        "aria-label": "",
+        "type": "textarea",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "",
+        "maxlength": "",
+        "rows": 2,
+        "placeholder": "",
+        "new_lines": "br"
+      },
+      {
+        "key": "field_tng_mfr_arrows",
+        "label": "Red arrows on the rows",
+        "name": "arrows",
+        "aria-label": "",
+        "type": "true_false",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "message": "",
+        "default_value": 0,
+        "ui": 1,
+        "ui_on_text": "",
+        "ui_off_text": ""
+      },
+      {
+        "key": "field_tng_mfr_links",
+        "label": "Links (empty = the parent page + its other child pages)",
+        "name": "links",
+        "aria-label": "",
+        "type": "repeater",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "layout": "block",
+        "pagination": 0,
+        "min": 0,
+        "max": 0,
+        "collapsed": "",
+        "button_label": "Add link",
+        "rows_per_page": 20,
+        "sub_fields": [
+          {
+            "key": "field_tng_mfr_links_label",
+            "label": "Label",
+            "name": "label",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+              "width": "",
+              "class": "",
+              "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "parent_repeater": "field_tng_mfr_links"
+          },
+          {
+            "key": "field_tng_mfr_links_url",
+            "label": "URL",
+            "name": "url",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+              "width": "",
+              "class": "",
+              "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "parent_repeater": "field_tng_mfr_links"
+          }
+        ]
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "block",
+          "operator": "==",
+          "value": "acf/more-from"
+        }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0
+  },
+  {
+    "key": "group_tng_block_archive_hero",
+    "title": "Block: Archive hero (insights / awards)",
+    "fields": [
+      {
+        "key": "field_tng_arh_show_archive_hero",
+        "label": "Show section",
+        "name": "show_archive_hero",
+        "aria-label": "",
+        "type": "true_false",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "message": "",
+        "default_value": 1,
+        "ui": 1,
+        "ui_on_text": "",
+        "ui_off_text": ""
+      },
+      {
+        "key": "field_tng_arh_title",
+        "label": "Title (empty = page title)",
+        "name": "title",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "",
+        "maxlength": "",
+        "placeholder": "",
+        "prepend": "",
+        "append": ""
+      },
+      {
+        "key": "field_tng_arh_intro",
+        "label": "Intro",
+        "name": "intro",
+        "aria-label": "",
+        "type": "textarea",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "",
+        "maxlength": "",
+        "rows": 4,
+        "placeholder": "",
+        "new_lines": ""
+      },
+      {
+        "key": "field_tng_arh_link_label",
+        "label": "Link label (empty = no link)",
+        "name": "link_label",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "",
+        "maxlength": "",
+        "placeholder": "",
+        "prepend": "",
+        "append": ""
+      },
+      {
+        "key": "field_tng_arh_link_url",
+        "label": "Link URL",
+        "name": "link_url",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "",
+        "maxlength": "",
+        "placeholder": "",
+        "prepend": "",
+        "append": ""
+      },
+      {
+        "key": "field_tng_arh_image",
+        "label": "Image (min 1394×942)",
+        "name": "image",
+        "aria-label": "",
+        "type": "image",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "return_format": "url",
+        "library": "all",
+        "min_width": "",
+        "min_height": "",
+        "min_size": "",
+        "max_width": "",
+        "max_height": "",
+        "max_size": "",
+        "mime_types": "",
+        "preview_size": "medium"
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "block",
+          "operator": "==",
+          "value": "acf/archive-hero"
+        }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0
+  },
+  {
+    "key": "group_tng_block_archive_featured",
+    "title": "Block: Featured post",
+    "fields": [
+      {
+        "key": "field_tng_arf_show_archive_featured",
+        "label": "Show section",
+        "name": "show_archive_featured",
+        "aria-label": "",
+        "type": "true_false",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "message": "",
+        "default_value": 1,
+        "ui": 1,
+        "ui_on_text": "",
+        "ui_off_text": ""
+      },
+      {
+        "key": "field_tng_arf_label",
+        "label": "Label",
+        "name": "label",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "Featured",
+        "maxlength": "",
+        "placeholder": "",
+        "prepend": "",
+        "append": ""
+      },
+      {
+        "key": "field_tng_arf_featured_post",
+        "label": "Post (insight or award; empty = the latest of the fallback type)",
+        "name": "featured_post",
+        "aria-label": "",
+        "type": "post_object",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "post_type": [
+          "insight",
+          "award"
+        ],
+        "post_status": [
+          ""
+        ],
+        "taxonomy": [],
+        "return_format": "id",
+        "multiple": 0,
+        "allow_null": 1,
+        "bidirectional": 0,
+        "ui": 1,
+        "bidirectional_target": []
+      },
+      {
+        "key": "field_tng_arf_fallback_type",
+        "label": "Fallback type when empty",
+        "name": "fallback_type",
+        "aria-label": "",
+        "type": "select",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "choices": {
+          "insight": "Latest insight",
+          "award": "Latest award"
+        },
+        "default_value": "insight",
+        "allow_null": 0,
+        "multiple": 0,
+        "ui": 0,
+        "return_format": "value",
+        "ajax": 0,
+        "placeholder": ""
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "block",
+          "operator": "==",
+          "value": "acf/archive-featured"
+        }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0
+  },
+  {
+    "key": "group_tng_block_archive_filter",
+    "title": "Block: Archive filter",
+    "fields": [
+      {
+        "key": "field_tng_arfl_show_archive_filter",
+        "label": "Show section",
+        "name": "show_archive_filter",
+        "aria-label": "",
+        "type": "true_false",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "message": "",
+        "default_value": 1,
+        "ui": 1,
+        "ui_on_text": "",
+        "ui_off_text": ""
+      },
+      {
+        "key": "field_tng_arfl_note",
+        "label": "",
+        "name": "note",
+        "aria-label": "",
+        "type": "message",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "message": "Search by name and search by professional filter the grid below (the page reloads with the filter; chips show what is active). The facet dropdowns and the date picker await their design.",
+        "new_lines": "wpautop",
+        "esc_html": 0
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "block",
+          "operator": "==",
+          "value": "acf/archive-filter"
+        }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0
+  },
+  {
+    "key": "group_tng_block_archive_grid",
+    "title": "Block: Archive grid",
+    "fields": [
+      {
+        "key": "field_tng_arg_show_archive_grid",
+        "label": "Show section",
+        "name": "show_archive_grid",
+        "aria-label": "",
+        "type": "true_false",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "message": "",
+        "default_value": 1,
+        "ui": 1,
+        "ui_on_text": "",
+        "ui_off_text": ""
+      },
+      {
+        "key": "field_tng_arg_source",
+        "label": "Posts",
+        "name": "source",
+        "aria-label": "",
+        "type": "select",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "choices": {
+          "insight": "Insights",
+          "award": "Awards"
+        },
+        "default_value": "insight",
+        "allow_null": 0,
+        "multiple": 0,
+        "ui": 0,
+        "return_format": "value",
+        "ajax": 0,
+        "placeholder": ""
+      },
+      {
+        "key": "field_tng_arg_page_size",
+        "label": "Cards per page",
+        "name": "page_size",
+        "aria-label": "",
+        "type": "number",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": 12,
+        "min": 3,
+        "max": 60,
+        "step": 1,
+        "placeholder": "",
+        "prepend": "",
+        "append": ""
+      },
+      {
+        "key": "field_tng_arg_show_count",
+        "label": "Show \"Showing X out of Y results\"",
+        "name": "show_count",
+        "aria-label": "",
+        "type": "true_false",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "message": "",
+        "default_value": 1,
+        "ui": 1,
+        "ui_on_text": "",
+        "ui_off_text": ""
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "block",
+          "operator": "==",
+          "value": "acf/archive-grid"
+        }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0
+  },
+  {
+    "key": "group_tng_block_path_hero",
+    "title": "Block: Career path hero",
+    "fields": [
+      {
+        "key": "field_tng_pth_show_path_hero",
+        "label": "Show section",
+        "name": "show_path_hero",
+        "aria-label": "",
+        "type": "true_false",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "message": "",
+        "default_value": 1,
+        "ui": 1,
+        "ui_on_text": "",
+        "ui_off_text": ""
+      },
+      {
+        "key": "field_tng_pth_title",
+        "label": "Title (empty = page title)",
+        "name": "title",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "",
+        "maxlength": "",
+        "placeholder": "",
+        "prepend": "",
+        "append": ""
+      },
+      {
+        "key": "field_tng_pth_intro",
+        "label": "Intro",
+        "name": "intro",
+        "aria-label": "",
+        "type": "textarea",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "",
+        "maxlength": "",
+        "rows": 4,
+        "placeholder": "",
+        "new_lines": ""
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "block",
+          "operator": "==",
+          "value": "acf/path-hero"
+        }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0
+  },
+  {
+    "key": "group_tng_block_team_stories",
+    "title": "Block: Hear it from our team",
+    "fields": [
+      {
+        "key": "field_tng_tms_show_team_stories",
+        "label": "Show section",
+        "name": "show_team_stories",
+        "aria-label": "",
+        "type": "true_false",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "message": "",
+        "default_value": 1,
+        "ui": 1,
+        "ui_on_text": "",
+        "ui_off_text": ""
+      },
+      {
+        "key": "field_tng_tms_heading",
+        "label": "Heading",
+        "name": "heading",
+        "aria-label": "",
+        "type": "textarea",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "Hear it from\nour team",
+        "maxlength": "",
+        "rows": 2,
+        "placeholder": "",
+        "new_lines": "br"
+      },
+      {
+        "key": "field_tng_tms_background",
+        "label": "Background (default: teal texture)",
+        "name": "background",
+        "aria-label": "",
+        "type": "image",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "return_format": "url",
+        "library": "all",
+        "min_width": "",
+        "min_height": "",
+        "min_size": "",
+        "max_width": "",
+        "max_height": "",
+        "max_size": "",
+        "mime_types": "",
+        "preview_size": "medium"
+      },
+      {
+        "key": "field_tng_tms_stories",
+        "label": "Stories (tabs)",
+        "name": "stories",
+        "aria-label": "",
+        "type": "repeater",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "layout": "block",
+        "pagination": 0,
+        "min": 0,
+        "max": 0,
+        "collapsed": "",
+        "button_label": "Add story",
+        "rows_per_page": 20,
+        "sub_fields": [
+          {
+            "key": "field_tng_tms_stories_role",
+            "label": "Tab label (role)",
+            "name": "role",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+              "width": "",
+              "class": "",
+              "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "parent_repeater": "field_tng_tms_stories"
+          },
+          {
+            "key": "field_tng_tms_stories_name",
+            "label": "Name",
+            "name": "name",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+              "width": "",
+              "class": "",
+              "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "parent_repeater": "field_tng_tms_stories"
+          },
+          {
+            "key": "field_tng_tms_stories_position",
+            "label": "Position (under the quote)",
+            "name": "position",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+              "width": "",
+              "class": "",
+              "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "parent_repeater": "field_tng_tms_stories"
+          },
+          {
+            "key": "field_tng_tms_stories_quote",
+            "label": "Quote",
+            "name": "quote",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+              "width": "",
+              "class": "",
+              "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 0,
+            "delay": 0,
+            "parent_repeater": "field_tng_tms_stories"
+          },
+          {
+            "key": "field_tng_tms_stories_image",
+            "label": "Photo (min 696×918)",
+            "name": "image",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+              "width": "",
+              "class": "",
+              "id": ""
+            },
+            "return_format": "url",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "preview_size": "medium",
+            "parent_repeater": "field_tng_tms_stories"
+          }
+        ]
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "block",
+          "operator": "==",
+          "value": "acf/team-stories"
+        }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0
+  },
+  {
+    "key": "group_tng_block_path_jobs",
+    "title": "Block: Opportunities for (career path jobs)",
+    "fields": [
+      {
+        "key": "field_tng_pjb_show_path_jobs",
+        "label": "Show section",
+        "name": "show_path_jobs",
+        "aria-label": "",
+        "type": "true_false",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "message": "",
+        "default_value": 1,
+        "ui": 1,
+        "ui_on_text": "",
+        "ui_off_text": ""
+      },
+      {
+        "key": "field_tng_pjb_label",
+        "label": "Label",
+        "name": "label",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "Opportunities for",
+        "maxlength": "",
+        "placeholder": "",
+        "prepend": "",
+        "append": ""
+      },
+      {
+        "key": "field_tng_pjb_heading",
+        "label": "Heading (empty = page title)",
+        "name": "heading",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "",
+        "maxlength": "",
+        "placeholder": "",
+        "prepend": "",
+        "append": ""
+      },
+      {
+        "key": "field_tng_pjb_note",
+        "label": "",
+        "name": "note",
+        "aria-label": "",
+        "type": "message",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "message": "Lists the Jobs whose \"Career path page\" is this page. Hidden when there are none.",
+        "new_lines": "wpautop",
+        "esc_html": 0
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "block",
+          "operator": "==",
+          "value": "acf/path-jobs"
+        }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0
+  },
+  {
+    "key": "group_tng_block_info_hero",
+    "title": "Block: About child page hero (contact)",
+    "fields": [
+      {
+        "key": "field_tng_ifh_show_info_hero",
+        "label": "Show section",
+        "name": "show_info_hero",
+        "aria-label": "",
+        "type": "true_false",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "message": "",
+        "default_value": 1,
+        "ui": 1,
+        "ui_on_text": "",
+        "ui_off_text": ""
+      },
+      {
+        "key": "field_tng_ifh_title",
+        "label": "Title (empty = page title)",
+        "name": "title",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "",
+        "maxlength": "",
+        "placeholder": "",
+        "prepend": "",
+        "append": ""
+      },
+      {
+        "key": "field_tng_ifh_label",
+        "label": "Contact label (e.g. \"Pro Bono contact\", or the museum booking intro)",
+        "name": "label",
+        "aria-label": "",
+        "type": "textarea",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "",
+        "maxlength": "",
+        "rows": 2,
+        "placeholder": "",
+        "new_lines": ""
+      },
+      {
+        "key": "field_tng_ifh_contact_name",
+        "label": "Contact name (optional)",
+        "name": "contact_name",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "",
+        "maxlength": "",
+        "placeholder": "",
+        "prepend": "",
+        "append": ""
+      },
+      {
+        "key": "field_tng_ifh_hours",
+        "label": "Opening hours (optional; line breaks kept)",
+        "name": "hours",
+        "aria-label": "",
+        "type": "textarea",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "",
+        "maxlength": "",
+        "rows": 2,
+        "placeholder": "",
+        "new_lines": ""
+      },
+      {
+        "key": "field_tng_ifh_phone",
+        "label": "Phone (optional)",
+        "name": "phone",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "",
+        "maxlength": "",
+        "placeholder": "",
+        "prepend": "",
+        "append": ""
+      },
+      {
+        "key": "field_tng_ifh_email",
+        "label": "Email (optional)",
+        "name": "email",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "",
+        "maxlength": "",
+        "placeholder": "",
+        "prepend": "",
+        "append": ""
+      },
+      {
+        "key": "field_tng_ifh_image",
+        "label": "Image (min 1394×942; empty = bundled photo for this page)",
+        "name": "image",
+        "aria-label": "",
+        "type": "image",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "return_format": "url",
+        "library": "all",
+        "min_width": "",
+        "min_height": "",
+        "min_size": "",
+        "max_width": "",
+        "max_height": "",
+        "max_size": "",
+        "mime_types": "",
+        "preview_size": "medium"
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "block",
+          "operator": "==",
+          "value": "acf/info-hero"
+        }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0
+  },
+  {
+    "key": "group_tng_block_mus_audience",
+    "title": "Block: Museum audiences (2 x 2)",
+    "fields": [
+      {
+        "key": "field_tng_mau_show_museum_audiences",
+        "label": "Show section",
+        "name": "show_museum_audiences",
+        "aria-label": "",
+        "type": "true_false",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "message": "",
+        "default_value": 1,
+        "ui": 1,
+        "ui_on_text": "",
+        "ui_off_text": ""
+      },
+      {
+        "key": "field_tng_mau_items",
+        "label": "Audiences (4)",
+        "name": "items",
+        "aria-label": "",
+        "type": "repeater",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "layout": "block",
+        "pagination": 0,
+        "min": 0,
+        "max": 0,
+        "collapsed": "",
+        "button_label": "Add audience",
+        "rows_per_page": 20,
+        "sub_fields": [
+          {
+            "key": "field_tng_mau_items_title",
+            "label": "Title",
+            "name": "title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+              "width": "",
+              "class": "",
+              "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "parent_repeater": "field_tng_mau_items"
+          },
+          {
+            "key": "field_tng_mau_items_text",
+            "label": "Text",
+            "name": "text",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+              "width": "",
+              "class": "",
+              "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 0,
+            "delay": 0,
+            "parent_repeater": "field_tng_mau_items"
+          }
+        ]
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "block",
+          "operator": "==",
+          "value": "acf/mus-audience"
+        }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0
+  },
+  {
+    "key": "group_tng_block_mus_collection",
+    "title": "Block: Museum collection",
+    "fields": [
+      {
+        "key": "field_tng_mco_show_museum_collection",
+        "label": "Show section",
+        "name": "show_museum_collection",
+        "aria-label": "",
+        "type": "true_false",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "message": "",
+        "default_value": 1,
+        "ui": 1,
+        "ui_on_text": "",
+        "ui_off_text": ""
+      },
+      {
+        "key": "field_tng_mco_label",
+        "label": "Label",
+        "name": "label",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "Collection",
+        "maxlength": "",
+        "placeholder": "",
+        "prepend": "",
+        "append": ""
+      },
+      {
+        "key": "field_tng_mco_quote",
+        "label": "Quote",
+        "name": "quote",
+        "aria-label": "",
+        "type": "textarea",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "",
+        "maxlength": "",
+        "rows": 2,
+        "placeholder": "",
+        "new_lines": ""
+      },
+      {
+        "key": "field_tng_mco_source",
+        "label": "Quote source (e.g. \"– Lonely Planet\")",
+        "name": "source",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "",
+        "maxlength": "",
+        "placeholder": "",
+        "prepend": "",
+        "append": ""
+      },
+      {
+        "key": "field_tng_mco_text",
+        "label": "Text",
+        "name": "text",
+        "aria-label": "",
+        "type": "wysiwyg",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "",
+        "tabs": "all",
+        "toolbar": "full",
+        "media_upload": 0,
+        "delay": 0
+      },
+      {
+        "key": "field_tng_mco_image",
+        "label": "Image (min 1432×1060; empty = bundled photo)",
+        "name": "image",
+        "aria-label": "",
+        "type": "image",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "return_format": "url",
+        "library": "all",
+        "min_width": "",
+        "min_height": "",
+        "min_size": "",
+        "max_width": "",
+        "max_height": "",
+        "max_size": "",
+        "mime_types": "",
+        "preview_size": "medium"
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "block",
+          "operator": "==",
+          "value": "acf/mus-collection"
+        }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0
+  },
+  {
+    "key": "group_tng_block_mus_cases",
+    "title": "Block: Museum case studies (slider)",
+    "fields": [
+      {
+        "key": "field_tng_mca_show_museum_cases",
+        "label": "Show section",
+        "name": "show_museum_cases",
+        "aria-label": "",
+        "type": "true_false",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "message": "",
+        "default_value": 1,
+        "ui": 1,
+        "ui_on_text": "",
+        "ui_off_text": ""
+      },
+      {
+        "key": "field_tng_mca_label",
+        "label": "Label",
+        "name": "label",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "Case Studies",
+        "maxlength": "",
+        "placeholder": "",
+        "prepend": "",
+        "append": ""
+      },
+      {
+        "key": "field_tng_mca_background",
+        "label": "Background (default: teal texture)",
+        "name": "background",
+        "aria-label": "",
+        "type": "image",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "return_format": "url",
+        "library": "all",
+        "min_width": "",
+        "min_height": "",
+        "min_size": "",
+        "max_width": "",
+        "max_height": "",
+        "max_size": "",
+        "mime_types": "",
+        "preview_size": "medium"
+      },
+      {
+        "key": "field_tng_mca_items",
+        "label": "Case studies (slides)",
+        "name": "items",
+        "aria-label": "",
+        "type": "repeater",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "layout": "block",
+        "pagination": 0,
+        "min": 0,
+        "max": 0,
+        "collapsed": "",
+        "button_label": "Add case study",
+        "rows_per_page": 20,
+        "sub_fields": [
+          {
+            "key": "field_tng_mca_items_title",
+            "label": "Title",
+            "name": "title",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+              "width": "",
+              "class": "",
+              "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "rows": 2,
+            "placeholder": "",
+            "new_lines": "",
+            "parent_repeater": "field_tng_mca_items"
+          },
+          {
+            "key": "field_tng_mca_items_text",
+            "label": "Text",
+            "name": "text",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+              "width": "",
+              "class": "",
+              "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "rows": 4,
+            "placeholder": "",
+            "new_lines": "",
+            "parent_repeater": "field_tng_mca_items"
+          },
+          {
+            "key": "field_tng_mca_items_image",
+            "label": "Image (min 1000×796; empty = bundled photo)",
+            "name": "image",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+              "width": "",
+              "class": "",
+              "id": ""
+            },
+            "return_format": "url",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "preview_size": "medium",
+            "parent_repeater": "field_tng_mca_items"
+          },
+          {
+            "key": "field_tng_mca_items_link_url",
+            "label": "\"Read more\" URL (empty = no link)",
+            "name": "link_url",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+              "width": "",
+              "class": "",
+              "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "parent_repeater": "field_tng_mca_items"
+          }
+        ]
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "block",
+          "operator": "==",
+          "value": "acf/mus-cases"
         }
       ]
     ],
