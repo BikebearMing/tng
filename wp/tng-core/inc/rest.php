@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-const TNG_ROSTER_TRANSIENT = 'tng_roster_v1';
+const TNG_ROSTER_TRANSIENT = 'tng_roster_v2'; // v2: + slug (the insights / awards type-ahead)
 
 function tng_build_roster() {
 	$posts  = get_posts(
@@ -35,13 +35,15 @@ function tng_build_roster() {
 			$names         = array_merge( $names, wp_list_pluck( $t, 'name' ) );
 		}
 
-		// Alphabet filter is by surname: last word of the name.
-		$words   = preg_split( '/\s+/', trim( $p->post_title ) );
+		// Alphabet filter is by surname: last word of the name, a bracketed
+		// part left out ("Haruno Suzuki (Fukatsu)" files under S).
+		$words   = preg_split( '/\s+/', trim( preg_replace( '/\([^)]*\)/', '', $p->post_title ) ) );
 		$surname = $words ? end( $words ) : '';
 
 		$roster[] = array(
 			'id'       => $p->ID,
 			'name'     => $p->post_title,
+			'slug'     => $p->post_name,
 			'url'      => get_permalink( $p ),
 			'position' => tng_pro_position( $p->ID ),
 			'photo'    => tng_pro_photo( $p->ID ),

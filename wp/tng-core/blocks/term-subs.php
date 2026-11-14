@@ -31,7 +31,7 @@ if ( is_wp_error( $tng_kids ) || ! $tng_kids ) {
 		<?php foreach ( $tng_kids as $tng_kid ) : ?>
 		<li>
 			<a href="<?php echo esc_url( tng_term_link( $tng_kid ) ); ?>" class="svc-sub-card">
-				<img src="<?php echo esc_url( tng_img_url( 'card_image', tng_bundled_img( array( $tng_kid->taxonomy . '-' . $tng_kid->slug . '-card.jpg', 'sub-card.jpg' ) ), tng_term_ref( $tng_kid ) ) ); ?>" alt="" class="svc-sub-card__img" loading="lazy">
+				<img src="<?php echo esc_url( tng_img_url( 'card_image', tng_bundled_img( array( $tng_kid->taxonomy . '-' . $tng_kid->slug . '-card.jpg', 'sub-card.jpg' ) ), tng_term_ref( $tng_kid ), 'medium_large' ) ); ?>" alt="" class="svc-sub-card__img" loading="lazy">
 				<h3 class="h3 svc-sub-card__title"><?php echo esc_html( $tng_kid->name ); ?></h3>
 				<?php echo tng_arrow_circle( true ); ?>
 			</a>

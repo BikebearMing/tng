@@ -1,8 +1,9 @@
 <?php
 /**
  * acf/archive-grid — insights / awards grid: active-filter chips, post cards
- * (3 across), count + "View more" (tng-wp.js appends the next page from
- * /wp-json/tng/v1/archive with the same filters).
+ * (3 across), count + "View more". Server-rendered from the query string;
+ * main.js re-renders it in place from /wp-json/tng/v1/archive when the
+ * filter bar changes and appends the next page on "View more".
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -27,12 +28,12 @@ if ( ! $tng_chips ) {
 	$tng_class .= $tng_count ? ' ins-grid--no-chips' : ' ins-grid--plain';
 }
 ?>
-<section class="<?php echo esc_attr( $tng_class ); ?>" id="results" data-section="archive-grid" data-toggle="show_archive_grid" data-type="<?php echo esc_attr( $tng_type ); ?>" data-page-size="<?php echo esc_attr( $tng_size ); ?>" data-total="<?php echo esc_attr( $tng_total ); ?>" data-params="<?php echo esc_attr( wp_json_encode( (object) $tng_params ) ); ?>">
+<section class="<?php echo esc_attr( $tng_class ); ?>" id="results" data-section="archive-grid" data-toggle="show_archive_grid" data-type="<?php echo esc_attr( $tng_type ); ?>" data-page-size="<?php echo esc_attr( $tng_size ); ?>" data-total="<?php echo esc_attr( $tng_total ); ?>" data-params="<?php echo esc_attr( wp_json_encode( (object) $tng_params ) ); ?>" data-source="<?php echo esc_url( rest_url( 'tng/v1/archive' ) ); ?>" data-count="<?php echo $tng_count ? '1' : '0'; ?>">
 	<?php if ( $tng_chips ) : ?>
 	<ul class="ins-chips" aria-label="Active filters">
 		<?php foreach ( $tng_chips as $tng_chip ) : ?>
 		<li>
-			<a href="<?php echo esc_url( $tng_chip[2] ); ?>" class="ins-chip" aria-label="<?php echo esc_attr( 'Remove filter: ' . $tng_chip[0] . ', ' . $tng_chip[1] ); ?>">
+			<a href="<?php echo esc_url( $tng_chip[2] ); ?>" class="ins-chip" data-key="<?php echo esc_attr( $tng_chip[3] ); ?>" aria-label="<?php echo esc_attr( 'Remove filter: ' . $tng_chip[0] . ', ' . $tng_chip[1] ); ?>">
 				<span class="ins-chip__key"><?php echo esc_html( $tng_chip[0] ); ?></span>
 				<span class="ins-chip__value"><?php echo esc_html( $tng_chip[1] ); ?></span>
 				<?php echo tng_icon_close(); ?>
@@ -57,12 +58,13 @@ if ( ! $tng_chips ) {
 	<?php endif; ?>
 
 	<div class="pro-grid__more ins-grid__more">
-		<?php if ( $tng_count && $tng_total ) : ?>
-		<p class="pro-grid__count">Showing <strong><?php echo esc_html( min( $tng_size, $tng_total ) ); ?></strong> out of <strong><?php echo esc_html( $tng_total ); ?></strong> results</p>
+		<?php if ( $tng_count ) : ?>
+		<p class="pro-grid__count"<?php echo $tng_total ? '' : ' hidden'; ?>>Showing <strong><?php echo esc_html( min( $tng_size, $tng_total ) ); ?></strong> out of <strong><?php echo esc_html( $tng_total ); ?></strong> results</p>
 		<?php endif; ?>
 		<button type="button" class="button-label link-arrow pro-grid__view-more"<?php echo $tng_total > $tng_size ? '' : ' hidden'; ?>>
 			View more
 			<?php echo tng_arrow_down(); ?>
 		</button>
 	</div>
+	<p class="visually-hidden" role="status" aria-live="polite" data-status></p>
 </section>

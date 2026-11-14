@@ -6,12 +6,14 @@
  *  - tng-blank:               pages (Home, Professionals, Contact, Careers) —
  *                             header + raw post content + footer, no theme layout.
  *  - single-professional:     professional single.
- *  - single-insight:          insight single, Standard.
+ *  - single-insight:          insight single, Standard (+ the download banner when it has a PDF).
  *  - single-insight-module:   insight single, Module (assigned per post).
  *  - taxonomy-location:       country page (city terms redirect to it).
  *  - taxonomy-industry /
  *    taxonomy-practice:       service pages (a child term = subpractice).
  *  - single-job:              job single (light header).
+ *  - tng-text:                legal / text pages (assigned per page).
+ *  - single-award:            award single.
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -70,7 +72,18 @@ add_action(
 					'<!-- wp:tng/insight-hero /-->'
 					. '<!-- wp:tng/insight-bar /-->'
 					. '<!-- wp:tng/insight-article /-->'
+					. '<!-- wp:tng/module-download /-->' // the article's PDF (module_report); hides without one
 				),
+			)
+		);
+
+		register_block_template(
+			'tng-core//tng-text',
+			array(
+				'title'       => 'TNG Text page',
+				'description' => 'Legal / text page: navy title hero, "Legal information" nav (every page on this template) and the page content.',
+				'post_types'  => array( 'page' ),
+				'content'     => tng_template_shell( '<!-- wp:tng/text-page /-->' ),
 			)
 		);
 
@@ -78,13 +91,27 @@ add_action(
 		// 404/search use plugin-only slugs pushed to the top of the hierarchy,
 		// because the theme ships its own 404/search templates and a theme
 		// template always beats a plugin template with the same slug.
+		register_block_template(
+			'tng-core//tng-404',
+			array(
+				'title'       => 'TNG Not found',
+				'description' => '404: the navy hero with a search field and links.',
+				'content'     => tng_template_shell( '<!-- wp:tng/not-found /-->' ),
+			)
+		);
+		register_block_template(
+			'tng-core//tng-search',
+			array(
+				'title'       => 'TNG Search results',
+				'description' => 'Site search: query field, type pills, grouped results (inc/search.php).',
+				'content'     => tng_template_shell( '<!-- wp:tng/search-results /-->' ),
+			)
+		);
+
 		$tng_ud = tng_template_shell( '<!-- wp:tng/under-development /-->' );
 		foreach ( array(
-			'tng-404'      => 'Not found',
-			'tng-search'   => 'Search results',
 			'taxonomy'     => 'Taxonomy term',
 			'archive'      => 'Archive',
-			'single-award' => 'Award',
 		) as $tng_slug => $tng_title ) {
 			register_block_template(
 				'tng-core//' . $tng_slug,
@@ -151,6 +178,20 @@ add_action(
 		}
 
 		register_block_template(
+			'tng-core//single-award',
+			array(
+				'title'       => 'Award',
+				'description' => 'Award single: the no-image insight hero, reading bar, related professionals + article, more awards.',
+				'content'     => tng_template_shell(
+					'<!-- wp:tng/insight-hero /-->'
+					. '<!-- wp:tng/insight-bar /-->'
+					. '<!-- wp:tng/insight-article /-->'
+					. '<!-- wp:tng/award-more /-->'
+				),
+			)
+		);
+
+				register_block_template(
 			'tng-core//single-job',
 			array(
 				'title'       => 'Job',
@@ -183,4 +224,23 @@ add_action(
 			)
 		);
 	}
+);
+
+// A page or post written in another language (_tng_lang: the desks, imported
+// ja / zh insights) gets <main lang>, so fonts and screen readers switch and
+// main.js leaves its CJK copy out of the SplitText reveals.
+add_filter(
+	'render_block_core/group',
+	function ( $html, $block ) {
+		if ( empty( $block['attrs']['tagName'] ) || 'main' !== $block['attrs']['tagName'] || ! is_singular() ) {
+			return $html;
+		}
+		$lang = (string) get_post_meta( get_queried_object_id(), '_tng_lang', true );
+		if ( '' === $lang || 'en' === $lang ) {
+			return $html;
+		}
+		return preg_replace( '/<main\b/', '<main lang="' . esc_attr( $lang ) . '"', $html, 1 );
+	},
+	10,
+	2
 );

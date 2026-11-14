@@ -21,7 +21,7 @@ $tng_email   = tng_field( 'apply_email', '', $tng_id );
 $tng_email   = $tng_email ? $tng_email : tng_field( 'apply_email', 'recruit@tilleke.com', 'option' );
 ?>
 <section class="job-hero" data-section="job-hero">
-	<a href="<?php echo esc_url( tng_page_url( 'careers' ) . '#job-opportunities' ); ?>" class="link-arrow job-hero__back">
+	<a href="<?php echo esc_url( tng_jobs_url() ); ?>" class="link-arrow job-hero__back">
 		<?php echo tng_arrow_left(); ?>
 		Back to Job Opportunities
 	</a>

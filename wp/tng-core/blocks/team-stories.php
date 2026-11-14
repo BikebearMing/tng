@@ -28,7 +28,7 @@ $tng_slug = static function ( $i ) {
 	return 'story-' . ( $i + 1 );
 };
 ?>
-<section class="lp-team has-parallax" data-section="team-stories" data-toggle="show_team_stories">
+<section class="lp-team has-parallax<?php echo tng_block_class( $block ); ?>" data-section="team-stories" data-toggle="show_team_stories">
 	<img src="<?php echo esc_url( tng_img_url( 'background', tng_texture_url() ) ); ?>" alt="" class="parallax-img">
 	<div class="lp-team__side">
 		<h2 class="h2 dark lp-team__heading"><?php echo wp_kses( tng_field( 'heading', 'Hear it from<br />our team' ), array( 'br' => array() ) ); ?></h2>

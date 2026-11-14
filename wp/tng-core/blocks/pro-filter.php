@@ -1,8 +1,9 @@
 <?php
 /**
- * acf/pro-filter — search, A–Z, facet dropdowns (closed state; the open panel
- * has no design yet). Search + alphabet filter the roster client-side
- * (assets/js/tng-wp.js).
+ * acf/pro-filter — search, A–Z, facet dropdowns. main.js opens the facet
+ * panels; search, alphabet and facets filter the roster client-side
+ * (assets/js/tng-wp.js), with the state in the URL (q, letter, ind, prac,
+ * pos, loc, lang).
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -31,12 +32,19 @@ if ( ! tng_show( 'show_pro_filter' ) ) {
 		</div>
 
 		<div class="pro-filter__facets">
-		<?php foreach ( array( 'Industries', 'Practices', 'Positions', 'Locations', 'Languages' ) as $tng_facet ) : ?>
-		<button type="button" class="button-label pro-filter__facet" aria-expanded="false">
-			<span><?php echo esc_html( $tng_facet ); ?></span>
-			<span class="pro-filter__chevron" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M1 3l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-		</button>
-		<?php endforeach; ?>
+		<?php
+		$tng_down = '<span class="pro-filter__chevron" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M1 3l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>';
+		foreach ( array(
+			'ind'  => array( 'industry', 'Industries', 'All industries' ),
+			'prac' => array( 'practice', 'Practices', 'All practices' ),
+			'pos'  => array( 'position', 'Positions', 'All positions' ),
+			'loc'  => array( 'location', 'Locations', 'All locations' ),
+			'lang' => array( 'language', 'Languages', 'All languages' ),
+		) as $tng_key => $tng_f ) {
+			$tng_opts = tng_filter_term_options( $tng_f[0], 'professional', $tng_f[2], $tng_ids );
+			echo tng_filter_dropdown( $tng_key, $tng_f[1], $tng_opts, '', array( 'class' => 'button-label pro-filter__facet', 'icon' => $tng_down, 'ids' => $tng_ids, 'tax' => $tng_f[0] ) ); // phpcs:ignore
+		}
+		?>
 		</div>
 	</form>
 </section>

@@ -1556,6 +1556,32 @@ button {
   opacity: 0.6;
 }
 
+/* ------------------------------------------------------------
+   Top-row dropdown (About / Careers): a tiny megamenu. Same card,
+   shadow, hover / focus opening and row reveal; one column of
+   practice-style links, sized to its content. Hangs 12 below the top
+   link (3 under the rule); padding 14 / 20 / 14 / 16, so the links
+   line up with the top link's text. Rows 11 apart.
+   ------------------------------------------------------------ */
+.site-header__mega--mini {
+  top: calc(100% + 0.833vw); /* 12 */
+  left: -1.111vw; /* 16 */
+  width: max-content;
+  padding: 0.972vw 1.389vw 0.972vw 1.111vw; /* 14 / 20 / 14 / 16 */
+}
+
+.site-header__mega--mini::before {
+  height: 0.833vw; /* 12, the gap */
+}
+
+.site-header__mega--mini .site-header__mega-links {
+  display: block;
+}
+
+.site-header__mega--mini li + li {
+  margin-top: 0.764vw; /* 11 */
+}
+
 /* ============================================================
    Page hero (inner pages): breadcrumbs, then title and intro
    sitting on the bottom edge. Navy, under the header.
@@ -5390,7 +5416,7 @@ button {
 }
 
 /* Overview: the top-label overview 19 under the hero (rule 45 down),
-   heading max 580, text max 525, 95 bottom. CSR: an image (364 x 182) at the foot of
+   heading max 585, text 18/22 max 540 19 under the rule (Figma), 95 bottom. CSR: an image (364 x 182) at the foot of
    the heading column, level with the end of the text (40 minimum
    under the heading). */
 .info-overview {
@@ -5399,11 +5425,14 @@ button {
 }
 
 .info-overview .svc-overview__heading {
-  max-width: 40.278vw; /* 580: the mocks' line breaks on all three pages */
+  max-width: 40.625vw; /* 585 (Figma) */
 }
 
 .info-overview .svc-overview__text {
-  max-width: 36.458vw; /* 525: these mocks wrap narrower than the service page's 543 */
+  max-width: 37.5vw; /* 540 (Figma) */
+  margin-top: 1.319vw; /* 19 */
+  font-size: 1.25vw; /* 18 */
+  line-height: 1.222; /* 22 */
 }
 
 .info-overview__image {
@@ -5444,9 +5473,9 @@ button {
 }
 
 .mus-audience__text {
-  max-width: 20.833vw; /* 300 */
-  font-size: 1.111vw; /* 16 */
-  line-height: 1.375; /* 22 */
+  max-width: 24.028vw; /* 346 (Figma) */
+  font-size: 1.25vw; /* 18 */
+  line-height: 1.222; /* 22 */
 }
 
 /* Museum — collection: 90 under the audiences. Label rule to 12 from
@@ -5482,10 +5511,10 @@ button {
 .mus-collection__text {
   grid-column: 1;
   grid-row: 3;
-  max-width: 33.333vw; /* 480 */
+  max-width: 35vw; /* 504 (Figma) */
   margin-top: 2.778vw; /* 40 */
-  font-size: 1.111vw; /* 16 */
-  line-height: 1.375; /* 22 */
+  font-size: 1.25vw; /* 18 */
+  line-height: 1.222; /* 22 */
 }
 
 .mus-collection__image {
@@ -5535,4 +5564,932 @@ button {
   max-width: none;
   object-fit: cover;
   border-radius: 0.347vw; /* 5 */
+}
+
+/* ============================================================
+   About child page — Textile Collection: gallery
+   Column 299 in from both sides (842). Label + rule (.pro-label)
+   147 under the overview text (its 95 bottom + 52); 3 x 3 grid of
+   273 squares 12 across / 10 down, 32 under the rule; social circles
+   (45, 10 apart) centred 34 under the grid; 147 bottom (173 to the
+   next section's rule).
+   vw values are px / 1440 * 100
+   ============================================================ */
+.tex-gallery {
+  padding: 3.611vw 20.764vw 10.208vw; /* 52 / 299 / 147 */
+}
+
+.tex-gallery__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.694vw 0.833vw; /* 10 / 12 */
+  margin: 2.222vw 0 0; /* 32 */
+  padding: 0;
+  list-style: none;
+}
+
+.tex-gallery__image {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 0.347vw; /* 5 */
+}
+
+.tex-gallery__social {
+  display: flex;
+  justify-content: center;
+  gap: 0.694vw; /* 10 */
+  margin: 2.361vw 0 0; /* 34 */
+  padding: 0;
+  list-style: none;
+}
+
+.tex-gallery__social a {
+  display: grid;
+  place-items: center;
+  width: 3.125vw; /* 45 */
+  height: 3.125vw;
+  border: 1px solid #c4cad2;
+  border-radius: 50%;
+  color: var(--black);
+  transition: background 0.3s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.3s cubic-bezier(0.22, 1, 0.36, 1), color 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.tex-gallery__social a:hover {
+  background: var(--navy);
+  border-color: var(--navy);
+  color: var(--white);
+}
+
+.tex-gallery__social svg {
+  width: 1.389vw; /* 20 */
+  height: 1.389vw;
+}
+
+/* Textile Collection — History: the museum collection block with a
+   heading (.h2, max 540) instead of the quote, straight under the
+   gallery. Heading 27 under the rule, text 27 under it; image 134 under the rule; 24 bottom. */
+.mus-collection--heading {
+  grid-template-rows: auto auto auto 1fr; /* the image's extra height goes to the last row */
+  padding-top: 0;
+  padding-bottom: 1.667vw; /* 24 */
+}
+
+.mus-collection__heading {
+  grid-column: 1;
+  max-width: 37.5vw; /* 540 */
+  margin-top: 1.875vw; /* 27 */
+}
+
+.mus-collection--heading .mus-collection__text {
+  margin-top: 1.875vw; /* 27 */
+}
+
+.mus-collection--heading .mus-collection__image {
+  grid-row: 2 / 5;
+  margin-top: 9.306vw; /* 134 */
+}
+
+/* ============================================================
+   Careers — Job Opportunities (all open positions; no mock)
+   The career path job list (lp-jobs: centred 842, rows 63 tall,
+   10 apart) with country filter pills 35 under the heading and the
+   rows 24 under the pills. Pills: 32 tall, 8 apart, outlined; flag
+   20; count grey; the active one navy (the job pill's colours).
+   vw values are px / 1440 * 100
+   ============================================================ */
+.job-list__filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.556vw; /* 8 */
+  margin: 2.431vw 0 0; /* 35 */
+  padding: 0;
+  list-style: none;
+}
+
+.job-list__pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.417vw; /* 6 */
+  height: 2.222vw; /* 32 */
+  padding: 0 0.833vw; /* 12 */
+  border: 1px solid #dfe4ea;
+  border-radius: 999px;
+  font-size: 0.903vw; /* 13 */
+  font-weight: 600;
+  line-height: 1;
+  color: var(--navy);
+  transition: border-color 0.3s cubic-bezier(0.22, 1, 0.36, 1), background 0.3s cubic-bezier(0.22, 1, 0.36, 1), color 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.job-list__pill:has(img) {
+  padding-left: 0.417vw; /* 6 */
+}
+
+.job-list__pill img {
+  width: 1.389vw; /* 20 */
+  height: 1.389vw;
+}
+
+.job-list__pill:hover {
+  border-color: #c3ccd6;
+}
+
+.job-list__pill[aria-current] {
+  border-color: var(--navy);
+  background: var(--navy);
+  color: var(--white);
+}
+
+.job-list__count {
+  font-weight: 400;
+  color: #718396;
+}
+
+.job-list__pill[aria-current] .job-list__count {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.job-list .careers-jobs__list {
+  margin-top: 1.667vw; /* 24 */
+}
+
+.job-list__empty {
+  margin-top: 1.667vw; /* 24 */
+  padding: 2.778vw 0; /* 40 */
+  border-top: 1px solid #e3e8ee;
+  color: #718396;
+}
+
+
+/* ############################################################
+   PAGES WITH NO MOCKUP (merged from pages.css, 2026-11-13)
+   ############################################################ */
+
+/* ============================================================
+   Pages with no mockup (built 2026-11-13 in the site's style):
+   text pages (Privacy Policy, Legal Notice, Fraudulent
+   Communications, data protection notices), Operations
+   Professionals, Internships, History, Services, Award single,
+   404, Search results, Global Reach, Recruitment Process.
+   Desktop rules (vw on a 1440 base, px in comments). Their phone /
+   tablet rules live in assets/css/responsive/pages.css.
+   Everything else reuses existing blocks; only page modifiers and
+   the few new parts (txt-nav, hist-timeline, svc-index, srch-*,
+   reach-network) live here.
+   ============================================================ */
+
+/* ============================================================
+   Text page — hero + body
+   Hero: the career path hero (lp-hero) with the title only.
+   Body: the insight article grid (aside 357 from 191, body 589,
+   70 apart), 80 under the hero, 106 bottom; the aside sticks 40
+   under the compact header (no reading bar on these pages).
+   vw values are px / 1440 * 100
+   ============================================================ */
+.txt-article {
+  padding-top: 5.556vw; /* 80 */
+}
+
+.txt-article .in-article__aside {
+  top: 7.778vw; /* 112: 72 header + 40 */
+}
+
+/* Legal nav: the related-professionals panel (grey, 8 radius) with
+   white 56 rows; the current page is navy. Children indent 16
+   under their parent as plain 15 / 600 links. */
+.txt-nav {
+  padding: 1.181vw 0.694vw 0.694vw; /* 17 / 10 / 10 */
+  border-radius: 0.556vw; /* 8 */
+  background: #eef0f3;
+}
+
+.txt-nav__heading {
+  padding: 0 1.111vw 0 0.208vw; /* 0 / 16 / 0 / 3 */
+  margin-bottom: 1.667vw; /* 24 */
+}
+
+.txt-nav__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.txt-nav__link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.833vw; /* 12 */
+  min-height: 3.889vw; /* 56 */
+  padding: 0.833vw 1.111vw; /* 12 / 16 */
+  border-radius: 0.347vw; /* 5 */
+  background: var(--white);
+  transition: color 0.3s cubic-bezier(0.22, 1, 0.36, 1), background 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.txt-nav__link:hover {
+  color: var(--red);
+}
+
+.txt-nav__link .arrow-circle {
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.txt-nav__link:hover .arrow-circle {
+  transform: translateX(0.208vw); /* 3 */
+}
+
+.txt-nav__link[aria-current] {
+  background: var(--navy);
+  color: var(--white);
+}
+
+.txt-nav__sub {
+  margin: 0.417vw 0 0.278vw; /* 6 / 4 */
+  padding: 0 0 0 1.111vw; /* 16 */
+  list-style: none;
+}
+
+.txt-nav__sublink {
+  position: relative;
+  display: block;
+  padding: 0.556vw 1.111vw 0.556vw 1.111vw; /* 8 / 16 */
+  font-size: 1.042vw; /* 15 */
+  font-weight: 600;
+  line-height: 1.2;
+  color: #718396;
+  transition: color 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* 1px guide on the left; the current child gets a 3px red one */
+.txt-nav__sublink::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 1px;
+  background: #d3dae2;
+}
+
+.txt-nav__sublink:hover,
+.txt-nav__sublink[aria-current] {
+  color: var(--black);
+}
+
+.txt-nav__sublink[aria-current]::before {
+  width: 0.208vw; /* 3 */
+  background: var(--red);
+}
+
+/* Legal copy: h2 at the .h3 size (long documents need many headings),
+   tables ruled like the job rows (1px #dfe4ea), 16 / 22 cells */
+.txt-content h2 {
+  font-size: 1.667vw; /* 24 */
+  font-weight: 600;
+}
+
+.txt-content > * + h2,
+.txt-content > ul + h2,
+.txt-content > ol + h2 {
+  margin-top: 3.472vw; /* 50 */
+}
+
+.txt-content > h2 + * {
+  margin-top: 1.25vw; /* 18 */
+}
+
+.txt-content h3 {
+  font-size: 1.25vw; /* 18 */
+}
+
+.txt-content > * + h3 {
+  margin-top: 2.222vw; /* 32 */
+}
+
+.txt-content > h3 + * {
+  margin-top: 0.833vw; /* 12 */
+}
+
+.txt-content li + li {
+  margin-top: 0.833vw; /* 12 */
+}
+
+.txt-content table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1.111vw; /* 16 */
+  line-height: 1.375; /* 22 */
+}
+
+.txt-content th,
+.txt-content td {
+  padding: 0.833vw 0.833vw 0.833vw 0; /* 12 / 12 / 12 / 0 */
+  border-bottom: 1px solid #dfe4ea;
+  text-align: left;
+  vertical-align: top;
+}
+
+.txt-content th {
+  border-bottom-color: var(--black);
+  font-weight: 600;
+}
+
+.txt-content td > * + *,
+.txt-content th > * + * {
+  margin-top: 0.556vw; /* 8 */
+}
+
+/* ============================================================
+   Career path pages — Operations Professionals, Internships
+   Same blocks as careers-legal.html. Internships adds the job
+   summary block as "Internship Programs" (99 under the overview,
+   like the career development block; paragraphs 16 / 22 with 16
+   between them) and the careers CTA panel with a line of text
+   (16 under the heading) before the mailto link.
+   vw values are px / 1440 * 100
+   ============================================================ */
+.lp-programs {
+  padding-top: 6.875vw; /* 99 */
+}
+
+.lp-programs .job-summary__list > * + * {
+  margin-top: 1.111vw; /* 16 */
+}
+
+.lp-apply__text {
+  margin-top: 1.111vw; /* 16 */
+  font-size: 1.111vw; /* 16 */
+  line-height: 1.375; /* 22 */
+}
+
+.lp-apply .careers-cta__link {
+  margin-top: 0.556vw; /* 8 */
+}
+
+/* The panel follows the teal team block: same 15 inset on top as on the sides */
+.lp-apply {
+  padding-top: 1.042vw; /* 15 */
+}
+
+/* Long quotes (operations stories): use the card's full text column */
+.lp-team--long .lp-team__quote {
+  max-width: none;
+}
+
+/* ============================================================
+   History — overview + timeline
+   Timeline = the Module template's key findings rows (rules draw
+   in via RULES) with years for numbers: year (Roboto Condensed
+   500, 96 / 0.9, -0.05em) 20 in, 20 under the rule; title (.h3,
+   max 300) at 350 and text (16 / 22, max 540) at 729, both 28
+   under the rule; 40 to the next rule. A 60 x 3 red tick sits on
+   each rule over the year and draws in with it.
+   vw values are px / 1440 * 100
+   ============================================================ */
+.hist-overview {
+  padding-bottom: 6.597vw; /* 95 */
+}
+
+.hist-timeline {
+  padding-top: 4.583vw; /* 66 */
+  border-top: 1px solid #e7eaee;
+}
+
+.hist-timeline__list {
+  margin-top: 2.778vw; /* 40 */
+}
+
+.hist-timeline .hist-timeline__item {
+  grid-template-columns: 22.917vw 24.931vw 1fr; /* 330 / 359: text at 729 */
+  padding: 0 0 2.778vw; /* 40 */
+}
+
+.hist-timeline .hist-timeline__item::before {
+  left: 0;
+  right: 0;
+  background: #e3e8ee;
+}
+
+.hist-timeline .hist-timeline__item::after {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 4.167vw; /* 60 */
+  height: 3px;
+  background: var(--red);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.2s;
+}
+
+.hist-timeline .hist-timeline__item.is-in::after {
+  transform: scaleX(1);
+}
+
+.hist-timeline .hist-timeline__year {
+  padding-top: 1.389vw; /* 20 */
+  font-size: 6.667vw; /* 96 */
+  line-height: 0.9;
+  letter-spacing: -0.05em;
+}
+
+.hist-timeline .in-findings__title {
+  max-width: 20.833vw; /* 300 */
+}
+
+.hist-timeline .in-findings__text {
+  max-width: 37.5vw; /* 540 */
+  margin-left: 1.389vw; /* 20: lands on 729 */
+  font-size: 1.111vw; /* 16 */
+  line-height: 1.375; /* 22 */
+}
+
+.hist-book {
+  padding-top: 4.583vw; /* 66 */
+  border-top: 1px solid #e7eaee;
+}
+
+/* ============================================================
+   Services — industries / practices index
+   The "More from" block as a directory: heading (.h2) 20 in,
+   sticky 40 under the compact header; rows from 729, 24 above /
+   below the rule (40 on more-from). Industries on white,
+   practices on the usual grey.
+   vw values are px / 1440 * 100
+   ============================================================ */
+.svc-index {
+  padding-top: 5.556vw; /* 80 */
+  padding-bottom: 6.944vw; /* 100 */
+}
+
+.svc-index--light {
+  background: var(--white);
+}
+
+.svc-index__title {
+  position: sticky;
+  top: 7.778vw; /* 112: 72 header + 40 */
+}
+
+.svc-index .more-from__link {
+  padding: 1.667vw 0; /* 24 */
+}
+
+.svc-index .more-from__list > li:first-child .more-from__link {
+  padding-top: 0;
+}
+
+.svc-index--light .more-from__link {
+  border-bottom-color: #e3e8ee;
+}
+
+/* ============================================================
+   Search results
+   Hero: the career path hero; from 720 the query field (the
+   footer's newsletter field, 436 wide) and the count 16 under it.
+   Type tabs: the job list's country pills in a white strip, sticky
+   under the compact header, 16 / 20 padding, rule under it.
+   Groups: stacked pro-related rows (professionals = the people
+   row with four .pro-cards, then insights / awards post cards,
+   pages as the careers job rows with a grey path before the arrow).
+   vw values are px / 1440 * 100
+   ============================================================ */
+.srch-hero__side {
+  max-width: 30.278vw; /* 436 */
+}
+
+.hp-footer__form.srch-form {
+  width: 100%;
+  margin-top: 0;
+}
+
+.srch-hero__count {
+  margin-top: 1.111vw; /* 16 */
+}
+
+.srch-tabs {
+  position: sticky;
+  top: 5vw; /* 72 */
+  z-index: 5;
+  padding: 1.111vw var(--sidepadding-xs); /* 16 / 20 */
+  border-bottom: 1px solid #e7eaee;
+  background: var(--white);
+}
+
+.srch-tabs .srch-tabs__list {
+  margin: 0;
+}
+
+.pro-related--people.srch-group--people {
+  grid-template-columns: 24.306vw 1fr; /* 350, as the other rows */
+  padding: 4.931vw 1.944vw; /* 71 / 28 */
+}
+
+.srch-group--people .pro-related__cards {
+  gap: 1.25vw; /* 18, as the post cards */
+}
+
+.srch-group .srch-pages {
+  margin: 0;
+}
+
+/* ============================================================
+   Global Reach — networks
+   Grey panel (the more-from grey) after the overview: heading
+   (.h2) 20 in, 66 top. Each network: label + rule (the top-label
+   overview), 23 under it a navy logo tile (364 x 182, the CSR
+   image size; logo at 1.5x its 1x file) on the left and from 729
+   the text (18 / 22, max 540) + link-arrow 24 below; 66 between
+   networks, 95 bottom.
+   vw values are px / 1440 * 100
+   ============================================================ */
+.reach-networks {
+  padding: 4.583vw var(--sidepadding-xs) 6.597vw; /* 66 / 20 / 95 */
+  background: #eef0f3;
+}
+
+.reach-networks__heading {
+  max-width: 48.611vw; /* 700 */
+}
+
+/* Recruitment process: the CTA panel sits between the steps and the
+   grey more-from, so it keeps white space under it */
+.rec-cta {
+  padding-bottom: 6.111vw; /* 88 */
+}
+
+.reach-network {
+  display: grid;
+  grid-template-columns: 49.236vw 1fr; /* 709: text at 729 */
+  align-items: start;
+  margin-top: 4.583vw; /* 66 */
+}
+
+.reach-network__label {
+  grid-column: 1 / -1;
+}
+
+.reach-network__label::after {
+  background: #d3dae2;
+}
+
+.reach-network__logo {
+  display: grid;
+  place-items: center;
+  width: 25.278vw; /* 364 */
+  height: 12.639vw; /* 182 */
+  margin-top: 1.597vw; /* 23 */
+  border-radius: 0.347vw; /* 5 */
+  background: var(--navy);
+}
+
+.reach-network__logo-img--lexmundi {
+  width: 12.083vw; /* 174 */
+}
+
+.reach-network__logo-img--multilaw {
+  width: 11.667vw; /* 168 */
+}
+
+.reach-network__logo-img--dna {
+  width: 15.208vw; /* 219 */
+}
+
+.reach-network__body {
+  margin-top: 1.597vw; /* 23 */
+}
+
+.reach-network__text {
+  max-width: 37.5vw; /* 540 */
+}
+
+.reach-network__link {
+  margin-top: 1.667vw; /* 24 */
+}
+
+/* ============================================================
+   Japan Desk / China Desk
+   info-hero with one or two named contacts (a second name sits 20
+   under the first one's lines); key contacts = the job summary
+   groups (name + grey position 10 under it | bio), 95 under the
+   overview; about-the-firm = the careers CTA panel with its label
+   10 over the heading, 95 bottom before the experience block.
+   vw values are px / 1440 * 100
+   ============================================================ */
+.desk-hero .info-hero__lines + .info-hero__name {
+  margin-top: 1.389vw; /* 20 */
+}
+
+.desk-contacts {
+  padding-top: 6.597vw; /* 95 */
+}
+
+.desk-contacts__position {
+  margin-top: 0.694vw; /* 10 */
+}
+
+.desk-contacts .job-summary__list > * + * {
+  margin-top: 1.111vw; /* 16 */
+}
+
+.desk-about {
+  padding-bottom: 6.597vw; /* 95 */
+}
+
+.desk-about__heading {
+  margin-top: 0.694vw; /* 10 */
+}
+
+/* ============================================================
+   404 — the under-development hero with a search field
+   Title, 24 to the text (max 436), 32 to the field (436), 42 to
+   the links.
+   vw values are px / 1440 * 100
+   ============================================================ */
+.nf-hero__text {
+  max-width: 30.278vw; /* 436 */
+  margin-top: 1.667vw; /* 24 */
+}
+
+.hp-footer__form.nf-hero__form {
+  width: 30.278vw; /* 436 */
+  margin-top: 2.222vw; /* 32 */
+}
+
+.nf-hero .page-hero__main {
+  grid-column: 1 / -1;
+}
+
+.nf-hero .page-hero__links {
+  flex-wrap: wrap;
+}
+
+/* ============================================================
+   Imported articles (old site, 2026-11-14)
+   Old bodies carry tables and long bare links: tables are ruled
+   like the legal pages (.txt-content), long words wrap instead of
+   widening the column.
+   vw values are px / 1440 * 100
+   ============================================================ */
+.rich-text {
+  overflow-wrap: break-word;
+}
+
+.rich-text table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1.111vw; /* 16 */
+  line-height: 1.375; /* 22 */
+}
+
+.rich-text th,
+.rich-text td {
+  padding: 0.833vw 0.833vw 0.833vw 0; /* 12 / 12 / 12 / 0 */
+  border-bottom: 1px solid #dfe4ea;
+  text-align: left;
+  vertical-align: top;
+}
+
+.rich-text th {
+  border-bottom-color: var(--black);
+  font-weight: 600;
+}
+
+.rich-text td > * + *,
+.rich-text th > * + * {
+  margin-top: 0.556vw; /* 8 */
+}
+
+.rich-text hr {
+  border: 0;
+  border-top: 1px solid #dfe4ea;
+}
+
+/* Self-hosted video interviews (Retail in the Metaverse): column width, 16:9 */
+.rich-text video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  background: var(--black);
+}
+
+/* Former professionals (no page on the new site): name only, no photo / link */
+.in-related__card--former {
+  height: auto;
+}
+
+.in-related__card--former .in-related__info {
+  padding-bottom: 0.764vw; /* 11 */
+}
+
+/* ==========================================================================
+   Keyboard focus (QA 2026-11-14): the footer email and the filter search
+   fields drop their own outline, so their row shows the focus instead
+   ========================================================================== */
+.hp-footer__form:focus-within {
+  outline: 2px solid var(--white);
+  outline-offset: 2px;
+}
+
+.pro-filter__search:focus-within {
+  outline: 2px solid var(--navy);
+  outline-offset: -2px;
+}
+
+/* Imported article tables wider than the column (main.js adds .is-wide) */
+.rich-text table.is-wide {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+/* ==========================================================================
+   Filter bars — open panels (no mockup; designed 2026-11-14 in the site's
+   style). One component for every bar (professionals, insights, awards):
+   the megamenu's white card (8 radius, soft shadow, rows rising in), rows
+   with the header's grey pill on hover, the selected row marked with the
+   red circle (here a tick). Panels hang 6 under their cell, at least as
+   wide as it; main.js places them (inside the sticky .pro-filter) and caps
+   their height to the screen, scrolling inside (data-lenis-prevent).
+   The closed bar is unchanged.
+   ========================================================================== */
+.flt-panel {
+  position: absolute;
+  z-index: 2;
+  width: max-content;
+  max-width: 26.389vw; /* 380 */
+  margin: 0.417vw 0 0; /* 6 under the cell */
+  padding: 0.417vw; /* 6 */
+  list-style: none;
+  background: var(--white);
+  border-radius: 0.556vw; /* 8 */
+  box-shadow: 0 0.694vw 2.083vw rgba(7, 20, 35, 0.16);
+  color: var(--black);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.flt-panel[hidden],
+.pro-grid__count[hidden],
+.pro-grid__view-more[hidden],
+.ins-grid__list[hidden],
+.ins-grid__empty[hidden] {
+  display: none;
+}
+
+.flt-panel__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* The "All …" row, then a rule */
+.flt-panel__list > li:first-child {
+  margin-bottom: 0.417vw; /* 6 */
+  padding-bottom: 0.417vw; /* 6 */
+  border-bottom: 1px solid #e3e8ee;
+}
+
+/* Row: 36 tall, 14 semibold like the facet labels, tick 20 on the right */
+.flt-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.833vw; /* 12 */
+  width: 100%;
+  min-height: 2.5vw; /* 36 */
+  padding: 0.486vw 0.556vw 0.486vw 0.833vw; /* 7 / 8 / 7 / 12 */
+  border-radius: 0.417vw; /* 6 */
+  font-family: inherit;
+  font-size: 0.972vw; /* 14 */
+  font-weight: 500;
+  line-height: 1.14;
+  text-align: left;
+  color: var(--black);
+  cursor: pointer;
+  transition: background-color 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.flt-option:hover,
+.flt-option[aria-selected="true"] {
+  background: #eef0f3;
+}
+
+.flt-option:focus-visible {
+  background: #eef0f3;
+  outline: 2px solid var(--navy);
+  outline-offset: -2px;
+}
+
+.flt-option[aria-pressed="true"] {
+  font-weight: 600;
+}
+
+/* Selected: the megamenu's red circle, with a white tick */
+.flt-option__tick {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 1.389vw; /* 20 */
+  height: 1.389vw;
+  border-radius: 50%;
+  background: var(--red);
+  color: var(--white);
+  opacity: 0;
+  transform: scale(0.6);
+  transition: opacity 0.3s cubic-bezier(0.22, 1, 0.36, 1), transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.flt-option__tick svg {
+  width: 0.694vw; /* 10 */
+  height: 0.694vw;
+}
+
+.flt-option[aria-pressed="true"] .flt-option__tick {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Date: years in three columns, "Any year" across the top */
+.flt-panel--years .flt-panel__list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.139vw; /* 2 */
+}
+
+.flt-panel--years .flt-panel__list > li:first-child {
+  grid-column: 1 / -1;
+}
+
+/* Professional type-ahead: name over position, under the whole field */
+.flt-option--pro {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0.139vw; /* 2 */
+  min-height: 3.333vw; /* 48 */
+}
+
+.flt-option__name {
+  font-weight: 600;
+}
+
+.flt-option__meta {
+  font-size: 0.833vw; /* 12 */
+  font-weight: 400;
+  color: #5d6f82;
+}
+
+.flt-panel__empty {
+  padding: 0.833vw; /* 12 */
+  font-size: 0.972vw; /* 14 */
+  color: #5d6f82;
+}
+
+/* Open trigger keeps its hover shade; chevron already flips */
+.pro-filter__facet[aria-expanded="true"] {
+  background: #e4e8ed;
+}
+
+.ins-filter__date[aria-expanded="true"] {
+  background: #f5f7f9;
+}
+
+/* A panel sits between two facets in the DOM: keep their divider */
+.flt-panel + .pro-filter__facet {
+  border-left: 1px solid #dbe2e9;
+}
+
+/* Awards: no Resources facet, four columns */
+.pro-filter__facets--four {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* Results updating */
+.ins-grid__list,
+.pro-grid__list {
+  transition: opacity 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.ins-grid.is-loading .ins-grid__list {
+  opacity: 0.4;
+}
+
+/* Professionals: no match */
+.pro-grid__empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.389vw; /* 20 */
+}
+
+.pro-grid__empty[hidden] {
+  display: none;
+}
+
+.pro-grid__empty .body {
+  margin: 0;
 }

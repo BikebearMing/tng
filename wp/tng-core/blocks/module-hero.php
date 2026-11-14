@@ -31,7 +31,7 @@ if ( is_array( $tng_report ) ) {
 <section class="in-hero in-hero--module" data-section="in-hero-module" data-toggle="show_in_hero_module">
 	<img src="<?php echo esc_url( $tng_bg ); ?>" alt="" class="in-hero__bg">
 
-	<?php echo tng_breadcrumbs( get_the_title( $tng_id ), array( array( 'Insights', '#' ) ) ); ?>
+	<?php echo tng_breadcrumbs( get_the_title( $tng_id ), array( array( 'Insights', tng_page_url( 'insights' ) ) ) ); ?>
 
 	<div class="in-hero__intro">
 		<h1 class="h1 dark"><?php echo esc_html( get_the_title( $tng_id ) ); ?></h1>

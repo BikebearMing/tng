@@ -20,12 +20,14 @@ if ( tng_show( 'show_related_professionals', $tng_id ) ) {
 		}
 	}
 }
+// Former professionals (no page on the new site): plain names after the linked cards.
+$tng_former = tng_show( 'show_related_professionals', $tng_id ) ? tng_former_authors( $tng_id ) : array();
 
 $tng_content = apply_filters( 'the_content', get_the_content( null, false, $tng_id ) );
 ?>
 <section class="in-article" data-section="in-article">
 	<aside class="in-article__aside">
-		<?php if ( $tng_related ) : ?>
+		<?php if ( $tng_related || $tng_former ) : ?>
 		<div class="in-related" data-toggle="show_related_professionals">
 			<div class="in-related__head">
 				<h2 class="h3"><?php echo esc_html( tng_field( 'related_heading', 'Related professionals', $tng_id ) ); ?></h2>
@@ -50,6 +52,15 @@ $tng_content = apply_filters( 'the_content', get_the_content( null, false, $tng_
 					</a>
 				</li>
 				<?php endforeach; ?>
+				<?php foreach ( $tng_former as $tng_name ) : ?>
+				<li>
+					<span class="in-related__card in-related__card--former">
+						<span class="in-related__info">
+							<span class="h4 in-related__name"><?php echo esc_html( $tng_name ); ?></span>
+						</span>
+					</span>
+				</li>
+				<?php endforeach; ?>
 			</ul>
 		</div>
 		<?php endif; ?>
@@ -59,7 +70,7 @@ $tng_content = apply_filters( 'the_content', get_the_content( null, false, $tng_
 		</div>
 	</aside>
 
-	<div class="in-content rich-text">
+	<div class="in-content rich-text<?php echo 'award' === get_post_type( $tng_id ) ? ' txt-content' : ''; ?>">
 		<?php echo $tng_content; // phpcs:ignore -- post content, already filtered ?>
 	</div>
 </section>

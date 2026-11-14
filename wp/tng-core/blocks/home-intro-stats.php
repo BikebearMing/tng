@@ -36,7 +36,7 @@ $tng_locations = is_wp_error( $tng_locations ) ? array() : $tng_locations;
 		<div class="hp-intro__text">
 			<h2 class="h2 dark"><?php echo esc_html( $tng_heading ); ?></h2>
 			<p class="body dark"><?php echo esc_html( $tng_body ); ?></p>
-			<a href="<?php echo esc_url( tng_field( 'cta_url', '#' ) ); ?>" class="button-label dark link-arrow hp-intro__link">
+			<a href="<?php echo esc_url( tng_link_or( tng_field( 'cta_url', '#' ), tng_page_url( 'about' ) ) ); ?>" class="button-label dark link-arrow hp-intro__link">
 				<?php echo esc_html( tng_field( 'cta_label', 'Explore' ) ); ?>
 				<?php echo tng_arrow( 1.5 ); ?>
 			</a>

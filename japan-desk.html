@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ジャパンデスク — TNG</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/vendor/blaze.css">
+  <link rel="stylesheet" href="assets/vendor/lenis.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       HEADER (site-wide, sits over the banner)
+       SCF options page: site/header
+       Fields: logo (image/svg), top_menu (WP menu "Header top":
+               About / Careers / Contact), main_menu (WP menu "Header main":
+               Professionals / Services / Insights / Locations),
+               search_label, languages (repeater: code, url),
+               locations_mega (auto from Location taxonomy: name, image,
+               link; plus extra_links repeater, e.g. Global Reach),
+               services_mega (auto from Industry and Practice taxonomies:
+               name, link; labels editable)
+       ============================================================ -->
+  <header class="site-header" data-scrolled-at="40">
+    <!-- TODO: swap for the logo SVG once supplied; this is a text stand-in -->
+    <a href="index.html" class="site-header__logo" aria-label="Tilleke &amp; Gibbins">
+      <span>Tilleke</span>
+      <span><em>&amp;</em>Gibbins</span>
+    </a>
+
+    <nav class="site-header__nav" id="site-nav" aria-label="Main">
+      <ul class="site-header__top">
+        <li class="has-mega">
+          <a href="about.html" class="subhead" aria-haspopup="true">About</a>
+          <!-- Tiny megamenu: the page's child pages (WP: published children, Page Attributes → Order) -->
+          <div class="site-header__mega site-header__mega--mini">
+            <ul class="site-header__mega-links">
+            <li><a href="about-history.html" class="site-header__mega-link">History</a></li>
+            <li><a href="awards.html" class="site-header__mega-link">Awards &amp; Rankings</a></li>
+            <li><a href="pro-bono.html" class="site-header__mega-link">Pro Bono</a></li>
+            <li><a href="csr.html" class="site-header__mega-link">CSR</a></li>
+            <li><a href="museum.html" class="site-header__mega-link">Museum of Counterfeit Goods</a></li>
+            <li><a href="textile-collection.html" class="site-header__mega-link">Textile Collection</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="has-mega">
+          <a href="careers.html" class="subhead" aria-haspopup="true">Careers</a>
+          <!-- Tiny megamenu: the page's child pages (WP: published children, Page Attributes → Order) -->
+          <div class="site-header__mega site-header__mega--mini">
+            <ul class="site-header__mega-links">
+            <li><a href="careers-legal.html" class="site-header__mega-link">Legal Professionals</a></li>
+            <li><a href="careers-operations.html" class="site-header__mega-link">Operations Professionals</a></li>
+            <li><a href="careers-internships.html" class="site-header__mega-link">Internships</a></li>
+            <li><a href="job-opportunities.html" class="site-header__mega-link">Job Opportunities</a></li>
+            <li><a href="recruitment-process.html" class="site-header__mega-link">Our Recruitment Process</a></li>
+            </ul>
+          </div>
+        </li>
+        <li><a href="contact.html" class="subhead">Contact</a></li>
+      </ul>
+      <ul class="site-header__main">
+        <li><a href="professionals.html" class="button-label">Professionals</a></li>
+        <li class="has-mega">
+          <a href="#" class="button-label" aria-haspopup="true">Services</a>
+          <!-- Megamenu: industries (active follows hover) | practices in two columns -->
+          <div class="site-header__mega site-header__mega--services">
+            <div class="site-header__mega-col">
+              <p class="subhead site-header__mega-label">Industries</p>
+              <ul class="site-header__mega-list">
+              <li class="is-active"><a href="service.html" class="button-label">Automotive<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+              <li><a href="#" class="button-label">Aviation<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+              <li><a href="#" class="button-label">Consumer products<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+              <li><a href="#" class="button-label">Energy<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+              <li><a href="#" class="button-label">Fintech<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+              <li><a href="#" class="button-label">Insurance<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+              <li><a href="#" class="button-label">Life Sciences<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+              <li><a href="#" class="button-label">Technology<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+              </ul>
+            </div>
+            <div class="site-header__mega-col site-header__mega-col--divided">
+              <p class="subhead site-header__mega-label">Practices</p>
+              <ul class="site-header__mega-links" style="--rows: 6;">
+              <li><a href="#" class="site-header__mega-link">Antitrust and Competition</a></li>
+              <li><a href="#" class="site-header__mega-link">Banking and Finance</a></li>
+              <li><a href="#" class="site-header__mega-link">Capital Markets</a></li>
+              <li><a href="#" class="site-header__mega-link">Compliance and Investigations</a></li>
+              <li><a href="#" class="site-header__mega-link">Corporate/M&amp;A</a></li>
+              <li><a href="#" class="site-header__mega-link">Customs and International Trade</a></li>
+              <li><a href="#" class="site-header__mega-link">Dispute Resolution and Litigation</a></li>
+              <li><a href="#" class="site-header__mega-link">Employment</a></li>
+              <li><a href="practice.html" class="site-header__mega-link">Intellectual Property</a></li>
+              <li><a href="#" class="site-header__mega-link">Real Estate</a></li>
+              <li><a href="#" class="site-header__mega-link">Regulatory Affairs</a></li>
+              <li><a href="#" class="site-header__mega-link">Tax</a></li>
+              </ul>
+            </div>
+          </div>
+        </li>
+        <li><a href="insights.html" class="button-label">Insights</a></li>
+        <li class="has-mega">
+          <a href="#" class="button-label" aria-haspopup="true">Locations</a>
+          <!-- Megamenu: hover/focus opens it; hovering a location swaps the image -->
+          <div class="site-header__mega">
+            <ul class="site-header__mega-list">
+            <li class="is-active"><a href="location.html" class="button-label">Cambodia<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            <li><a href="#" class="button-label">Indonesia<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            <li><a href="#" class="button-label">Laos<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            <li><a href="#" class="button-label">Myanmar<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            <li><a href="#" class="button-label">Thailand<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            <li><a href="#" class="button-label">Vietnam<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            <li><a href="#" class="button-label">Global Reach<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            </ul>
+            <div class="site-header__mega-media" aria-hidden="true">
+            <img src="assets/img/loc-cambodia-menu.jpg" alt="" class="is-active">
+            <img src="assets/img/loc-indonesia-menu.jpg" alt="">
+            <img src="assets/img/loc-laos-menu.jpg" alt="">
+            <img src="assets/img/loc-myanmar-menu.jpg" alt="">
+            <img src="assets/img/loc-thailand-menu.jpg" alt="">
+            <img src="assets/img/loc-vietnam-menu.jpg" alt="">
+            <img src="assets/img/loc-global-menu.jpg" alt="">
+            </div>
+          </div>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="site-header__utils">
+      <a href="search.html" class="subhead site-header__search">
+        Search
+        <svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="7.5" cy="7.5" r="6" stroke="currentColor" stroke-width="1.5"/><path d="M12 12l4.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </a>
+      <a href="#" class="subhead site-header__lang" aria-label="Language: English">
+        ENG
+        <svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="7.5" stroke="currentColor" stroke-width="1.3"/><ellipse cx="9" cy="9" rx="3.2" ry="7.5" stroke="currentColor" stroke-width="1.3"/><path d="M1.5 9h15M2.8 5.2h12.4M2.8 12.8h12.4" stroke="currentColor" stroke-width="1.3"/></svg>
+      </a>
+    </div>
+
+    <button type="button" class="site-header__toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Menu"><span></span><span></span></button>
+  </header>
+
+  <main lang="ja">
+
+    <!-- ============================================================
+         Desk landing page (ja; copy verbatim from the old /japan-desk/).
+         <main lang="ja"> so screen readers and fonts switch.
+         Reuses: info-hero (contacts), info-overview, job-summary
+         (key contacts: name + position | bio), careers-cta (about the
+         firm), pro-experience (cap 4 + Read more), pro-related (latest
+         3 insights in this language). The old page's counters were
+         broken ("+ 50", "0") and are left out.
+         CJK copy: main.js leaves :lang(ja) / :lang(zh) text out of the
+         SplitText reveals (SplitText splits on spaces, so mixed CJK /
+         Latin copy broke into ragged lines).
+         ============================================================ -->
+
+    <!-- SECTION: Hero. SCF block: page/info-hero (label, contacts =
+         professionals relationship: name, phone, email) -->
+    <section class="in-hero info-hero desk-hero" data-section="info-hero" data-toggle="show_page_hero">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <p class="subhead"><a href="index.html">Home</a> / <span aria-current="page">ジャパンデスク</span></p>
+      </nav>
+
+      <div class="info-hero__content">
+        <h1 class="h1 dark info-hero__title">ジャパンデスク</h1>
+        <div class="info-hero__contact">
+          <p class="subhead info-hero__label">連絡先</p>
+          <p class="h4 dark info-hero__name">大竹徳成</p>
+          <ul class="info-hero__lines">
+            <li><span class="loc-hero__icon"><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M6.6 2.2a1.5 1.5 0 0 0-1.9-.6L3 2.4A2.3 2.3 0 0 0 1.7 5c.9 5.7 5.6 10.4 11.3 11.3a2.3 2.3 0 0 0 2.6-1.3l.8-1.7a1.5 1.5 0 0 0-.6-1.9l-2.3-1.4a1.5 1.5 0 0 0-1.9.3l-.8.9a9.5 9.5 0 0 1-4.7-4.7l.9-.8a1.5 1.5 0 0 0 .3-1.9L6.6 2.2z"/></svg></span><a href="tel:+6620565749">+66 2056 5749</a></li>
+            <li><span class="loc-hero__icon"><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M1 5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v.4l-9 5.4-9-5.4V5zm0 2.7V15a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V7.7l-8.5 5.1a1 1 0 0 1-1 0L1 7.7z"/></svg></span><a href="mailto:tokunari.o@tilleke.com">tokunari.o@tilleke.com</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- TODO: placeholder image (Thailand hero; the old page had none) -->
+      <img src="assets/img/loc-thailand-hero.jpg" alt="" class="in-hero__image">
+    </section>
+
+    <!-- SECTION: Overview. SCF block: page/overview -->
+    <section class="svc-overview svc-overview--top-label info-overview" id="overview" data-section="info-overview" data-toggle="show_page_overview">
+      <p class="subhead pro-label svc-overview__label">概要</p>
+      <h2 class="h2 svc-overview__heading">1世紀以上にわたり、<br>日本の投資家の東南アジア進出を支援</h2>
+      <div class="rich-text svc-overview__text">
+        <p>Tilleke &amp; Gibbins は、カンボジア、インドネシア、ラオス、ミャンマー、タイ、ベトナムに拠点を有し、合計250 人以上の法律専門家を擁する、東南アジアを代表する総合法律事務所です。 当事務所は、アジアの経済拡大を牽引する日本の投資家や企業に法的ソリューションを提供しています。 1890年にバンコクで設立された当事務所は、タイで最も古い、最大規模の法律事務所の1つであるとともに、ベトナムにおける最初の外国認可法律事務所です。</p>
+        <p>当事務所のジャパンデスクには、日本語対応の法律専門家が在籍しています。また、当事務所は、日本を代表する大企業並びにFortune Global 500に選出されたグローバル企業、投資家及びスタートアップ企業に対し、東南アジアにおけるあらゆる法的事項についてアドバイスを行ってきた豊富な経験を持つ法律専門家で構成されています。 Tilleke &amp; Gibbinsは、東南アジア全体の現地の法律や規制に関する包括的な知識と、日本のビジネスニーズや文化に対する深い理解とのバランスを保ちながら、日本のお客様が東南アジアにおいて優れた成果を上げるために必要な提案及び優れたクライアントサービスを提供いたします。</p>
+      </div>
+    </section>
+
+    <!-- SECTION: Key contacts. The job summary block (job-summary):
+         groups of name (.h3, links to the professional) + position |
+         biography. SCF block: page/key-contacts (new; repeater of
+         professional + bio wysiwyg) -->
+    <section class="job-summary desk-contacts" data-section="key-contacts" data-toggle="show_key_contacts">
+      <p class="subhead pro-label">連絡先</p>
+      <div class="job-summary__group">
+        <div>
+          <h3 class="h3 job-summary__heading"><a href="professional.html">大竹徳成</a></h3>
+          <p class="subhead desk-contacts__position">コンサルタント</p>
+        </div>
+        <div class="rich-text job-summary__list">
+          <p>大竹徳成氏は、Tilleke &amp; Gibbinsの知的財産グループのコンサルタントであり、ジャパンデスクの共同責任者です。 20年近くの経験を持つ日本の弁理士であり、化学、制御システム、電気および機械工学、ロボット工学、計測工学、およびソフトウェアに関する国際特許出願、内外出願および外内出願の手続においてクライアントを支援しています。 彼の専門知識は、侵害分析、特許調査、特許明細書作成、特許翻訳 (日英/英日) および特許出願に関連するその他の幅広い事項をカバーしています。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: About the firm. SCF block: careers/cta -->
+    <section class="careers-cta desk-about" data-section="careers-cta" data-toggle="show_careers_cta">
+      <div class="careers-cta__panel">
+        <p class="subhead">当事務所について</p>
+        <h2 class="h2 careers-cta__heading desk-about__heading">東南アジアのリーディン グ・ローファーム</h2>
+        <a href="about.html" class="button-label link-arrow careers-cta__link">
+          当事務所の詳細
+          <svg viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- SECTION: Experience. SCF block: the experience block (wysiwyg list) -->
+    <section class="pro-experience" id="experience" data-section="desk-experience" data-toggle="show_desk_experience">
+      <p class="subhead pro-label">実績</p>
+      <div class="rich-text pro-experience__list" data-cap="4">
+        <ul>
+          <li>日本の化粧品会社に対し、タイのヘアケア会社およびそのタイとベトナムの子会社 4 社の複雑な株式および資産買収についてアドバイスを提供</li>
+          <li>日本の大手不動産開発会社による、タイ・チョンブリ市のサービスアパートメントを保有する3社の株式取得を支援</li>
+          <li>日本の上場企業のシンガポール海外部門に対し、タイの化学会社の株式の60%を6億7,000万バーツで取得することについて助言</li>
+          <li>オフィスおよびその他のビジネス機器の日本に本社を置くプロバイダーを代理し、日本の大手多国籍電気企業との合併におけるタイ側業務の監督</li>
+          <li>日本の電気会社に対して、ベトナムの外国投資企業の資産を（資産または株式の取得を通じて）取得するための潜在的な構造についてアドバイスを提供</li>
+          <li>異なる区分の類似商標の登録を申請した相手方当事者からクライアントの知的財産権を保護するために、インドネシアの商標局 (TMO: Trademark Office) への商標異議申し立ての準備および提出を支援</li>
+          <li>日本の大手食品・バイオテクノロジー企業に依頼され、タイの侵害者に対してクライアントの知的財産権を行使するための大規模な模倣品掃討プロジェクトを実施し、150,000 点を超える模倣品を押収</li>
+          <li>恒久的な施設に関するタイ歳入局との紛争において、100%日系タイ企業を代理して成功を収めた。 最終的に、歳入局は私たちの主張に同意し、クライアントは税金や手数料を課されることから免れた。</li>
+          <li>さまざまな産業用・製造用機器および関連ソリューションを提供する日本に本社を置く大手プロバイダーのタイ子会社を代理し、タイにおける自社製品の販売契約の見直しの実施</li>
+          <li>日本の製造業者に対し、総額48億円相当の合併に関してタイの合併制度についての助言</li>
+          <li>タイ・バンコクの画期的な住宅開発プロジェクトの中央ユーティリティプラント建設に関する12億8,000万バーツの契約のレビューおよび交渉において、タイと日本の企業を支援</li>
+          <li>大手インターネット企業による、タイの個人データ保護法に基づく規制を遵守するための現地データプライバシー担当者として任命</li>
+          <li>カンボジアにおける40MWの太陽光発電所の入札を支援するとともに、カンボジアのルーフトップ太陽光発電事業の実行可能なビジネスモデルと規制要件についてアドバイスするために、日本の世界的なエネルギー会社に雇われました</li>
+          <li>日本の大手自動車企業に対して、ラオスの現地パートナーとの販売枠組みの基礎を形成するテンプレート販売契約の見直しおよび修正を支援</li>
+          <li>タイの上場クレジットカード事業者とのシンジケートタームローン取引を主導する日本の大手銀行の支援（ このローンは借手の資産によって担保されていなかった）</li>
+          <li>日本の大手銀行2行を代理し、総額約1億9,000万ドル相当のシンジケートローン融資の担保書類の作成を担当</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SECTION: Insights. Template block: latest 3 insights in this
+         language (the old desk lists its own JA / ZH posts) -->
+    <section class="pro-related desk-insights" id="insights" data-section="desk-insights" data-toggle="show_desk_insights">
+      <div class="pro-related__head">
+        <h2 class="h2 pro-related__title">インサイト</h2>
+        <a href="insights.html" class="button-label link-arrow pro-related__link">
+          View all
+          <svg viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+      <ul class="pro-related__cards">
+        <li>
+          <a href="insight.html" class="post-card">
+            <h3 class="h3 post-card__title">ベトナムの電子商取引法がオンライン知的財産権の執行を再構築</h3>
+            <p class="body post-card__excerpt">2026年7月1日に施行されたベトナムの新しい電子商取引法は、施行令第248/2026/ND-CP号（政令248号）とともに、オンライン知的財産権の執行に対する同国の取り組みにおける重要な進展を示しており、仲介者の責任に関する受動的なモデルから、プラットフォームが侵害防止においてより積極的な役割を果たすことを期待するモデルへの明確な転換を反映している。</p>
+            <p class="post-card__foot"><time class="subhead" datetime="2026-08-18">Aug 18, 2026</time><span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></p>
+          </a>
+        </li>
+        <li>
+          <a href="insight.html" class="post-card">
+            <h3 class="h3 post-card__title">タイにおける持続可能な包装に関する商標の視点</h3>
+            <p class="body post-card__excerpt">リサイクル、アップサイクル、詰め替えの包装モデルは、廃棄物の削減、二酸化炭素排出量の低減、持続可能な製品に対する消費者の需要への対応策として広く推進されている。</p>
+            <p class="post-card__foot"><time class="subhead" datetime="2026-08-18">Aug 18, 2026</time><span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></p>
+          </a>
+        </li>
+        <li>
+          <a href="insight.html" class="post-card">
+            <h3 class="h3 post-card__title">インドネシアにおける新たな知的財産料金体系は、知的財産を商業的資産として重視する姿勢の表れである</h3>
+            <p class="body post-card__excerpt">インドネシアは、知的財産関連の政府サービスの料金体系を改定し、知的財産権所有者、ライセンシー、資金貸付業者、デジタルプラットフォーム、および国内で事業を展開する企業に影響を及ぼしている。</p>
+            <p class="post-card__foot"><time class="subhead" datetime="2026-08-18">Aug 18, 2026</time><span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></p>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER (site-wide)
+       SCF options page: site/footer
+       Fields: logo (image/svg), social_links (repeater: network, url),
+               newsletter_heading, newsletter_form (Mailchimp/CF7 embed or
+               action url), networks (repeater: logo, url), quick_links
+               (WP menu "Footer quick links", split into 2 columns),
+               copyright, legal_links (WP menu "Footer legal")
+       ============================================================ -->
+  <footer id="footer" class="hp-footer" data-section="footer">
+    <div class="hp-footer__top">
+
+      <div class="hp-footer__brand">
+        <!-- TODO: swap for the logo SVG once supplied; this is a text stand-in -->
+        <a href="index.html" class="hp-footer__logo" aria-label="Tilleke &amp; Gibbins">
+          <span>Tilleke</span>
+          <span><em>&amp;</em>Gibbins</span>
+        </a>
+
+        <ul class="hp-footer__social">
+          <li>
+            <a href="https://www.facebook.com/tillekegibbins" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.5-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H8v3h2.5V21h3z"/></svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.youtube.com/channel/UCRQKPcy9kYGdYqFVkqzSqVA" aria-label="YouTube">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18.3 5 12 5 12 5s-6.3 0-7.8.4A2.5 2.5 0 0 0 2.4 7.2C2 8.8 2 12 2 12s0 3.2.4 4.8a2.5 2.5 0 0 0 1.8 1.8C5.7 19 12 19 12 19s6.3 0 7.8-.4a2.5 2.5 0 0 0 1.8-1.8c.4-1.6.4-4.8.4-4.8s0-3.2-.4-4.8zM10 15V9l5.2 3L10 15z"/></svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/company/tilleke-gibbins/" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.9 8.7H3.6V20h3.3V8.7zM5.3 3.5a1.9 1.9 0 1 0 0 3.8 1.9 1.9 0 0 0 0-3.8zM20.4 13.1c0-3.2-1.7-4.7-4-4.7a3.4 3.4 0 0 0-3.1 1.7V8.7H10V20h3.3v-5.6c0-1.5.3-2.9 2.1-2.9 1.8 0 1.8 1.7 1.8 3V20h3.3v-6.9z"/></svg>
+            </a>
+          </li>
+        </ul>
+
+        <p class="button-label dark hp-footer__newsletter-heading">Subscribe to our newsletter</p>
+        <form class="hp-footer__form" action="https://tilleke.us7.list-manage.com/subscribe/post?u=266a11a0874fa0c222f4b20fd&amp;id=2fba872045" method="post" target="_blank">
+          <label class="visually-hidden" for="footer-email">Your email</label>
+          <input type="email" id="footer-email" name="EMAIL" placeholder="Your email" autocomplete="email" required>
+          <div class="visually-hidden" aria-hidden="true"><input type="text" name="b_266a11a0874fa0c222f4b20fd_2fba872045" tabindex="-1" value=""></div>
+          <button type="submit">
+            Subscribe
+            <svg viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </form>
+      </div>
+
+      <div class="hp-footer__nav">
+        <p class="subhead hp-footer__label">Networks</p>
+        <ul class="hp-footer__networks">
+          <li><a href="https://www.lexmundi.com/"><img src="assets/lexmundi.png" alt="Lex Mundi Member" class="hp-footer__network hp-footer__network--lexmundi"></a></li>
+          <li><a href="https://www.multilaw.com/"><img src="assets/multilaw.png" alt="Multilaw" class="hp-footer__network hp-footer__network--multilaw"></a></li>
+          <li><a href="https://www.drewnetworkasia.com/"><img src="assets/dna.png" alt="Drew Network Asia" class="hp-footer__network hp-footer__network--dna"></a></li>
+        </ul>
+
+        <p class="subhead hp-footer__label hp-footer__label--links">Quick links</p>
+        <div class="hp-footer__quick">
+          <ul class="hp-footer__quick-col">
+            <li><a href="professionals.html" class="button-label dark">Professionals</a></li>
+            <li><a href="services.html" class="button-label dark">Services</a></li>
+            <li><a href="insights.html" class="button-label dark">Insights</a></li>
+            <li><a href="global-reach.html" class="button-label dark">Locations</a></li>
+          </ul>
+          <ul class="hp-footer__quick-col">
+            <li><a href="about.html" class="button-label dark">About</a></li>
+            <li><a href="careers.html" class="button-label dark">Careers</a></li>
+            <li><a href="contact.html" class="button-label dark">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="hp-footer__bar">
+      <p class="subhead hp-footer__copyright">&copy; 2026 Tilleke &amp; Gibbins International Ltd. All rights reserved.</p>
+      <ul class="hp-footer__legal">
+        <li><a href="privacy-policy.html" class="subhead dark">Privacy Policy</a></li>
+        <li><a href="fraudulent-communications.html" class="subhead dark">Fraudulent Communications</a></li>
+        <li><a href="legal-notice.html" class="subhead dark">Legal Notice</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="assets/vendor/ScrollTrigger.min.js"></script>
+  <script src="assets/vendor/SplitText.min.js"></script>
+  <script src="assets/vendor/blaze-slider.min.js"></script>
+  <script src="assets/vendor/lenis.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

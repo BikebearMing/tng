@@ -29,6 +29,7 @@ echo tng_related_section( // phpcs:ignore
 		'data_section' => 'pro-awards',
 		'data_toggle'  => 'show_pro_awards',
 		'heading'      => tng_field( 'awards_heading', 'Awards & Rankings', $tng_id ),
+		'link_url'     => add_query_arg( 'pro', get_post_field( 'post_name', $tng_id ), tng_page_url( 'about/awards-rankings' ) ) . '#results',
 		'cards'        => $tng_cards,
 	)
 );

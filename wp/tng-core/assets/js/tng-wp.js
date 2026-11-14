@@ -1,12 +1,11 @@
 // TNG — WordPress-only wiring. Loads after main.js (which owns all the
 // active-state toggles and reveals); this file only swaps data:
 //  - professionals grid: client-side filtering of the roster endpoint
-//    (search + alphabet + "View more"); facet dropdowns wait for their design.
+//    (search + alphabet + facet panels + "View more"), state in the URL
+//    (q, letter, ind, prac, pos, loc, lang; pushState, Back replays it).
 //  - homepage insights tabs: swap the feature card + list per industry from
 //    the JSON the block embeds.
-//  - insights / awards archive: "View more" appends the next page from
-//    /tng/v1/archive with the page's filters (filters themselves are plain
-//    GET links / a GET form, handled server-side).
+//  (The insights / awards archive bar + grid live in main.js: initArchive.)
 //  - service hero: pick the visitor's country tab (/tng/v1/geo; client rule:
 //    KH / ID / LA / MM / VN -> that country, everyone else -> Thailand).
 
@@ -25,14 +24,15 @@
   /* ---------------- professionals grid ---------------- */
   var grid = document.querySelector('.pro-grid');
   var filter = document.querySelector('.pro-filter');
-  if (grid && window.TNG && TNG.roster) {
+  if (grid && !grid.classList.contains('srch-results') && window.TNG && TNG.roster) { // not the search results' professionals grid
     var list = grid.querySelector('.pro-grid__list');
     var countEl = grid.querySelector('.pro-grid__count');
     var moreBtn = grid.querySelector('.pro-grid__view-more');
     var pageSize = Number(grid.dataset.pageSize) || 15;
 
     var roster = null;
-    var state = { q: '', letter: '', shown: pageSize };
+    var state = { q: '', letter: '', facets: {}, shown: pageSize };
+    var FACET_KEYS = ['ind', 'prac', 'pos', 'loc', 'lang'];
 
     function card(p) {
       // Position may contain <br> from the textarea field; it is site-authored.
@@ -52,7 +52,11 @@
       return roster.filter(function (p) {
         if (state.letter && p.letter !== state.letter) return false;
         if (q && p.search.indexOf(q) === -1) return false;
-        return true;
+        return Object.keys(state.facets).every(function (k) {
+          var f = state.facets[k];
+          var mine = (p.terms && p.terms[f.tax]) || [];
+          return mine.some(function (id) { return f.ids.indexOf(id) !== -1; });
+        });
       });
     }
 
@@ -71,8 +75,68 @@
           'Showing <strong>' + slice.length + '</strong> out of <strong>' + all.length + '</strong> results';
       }
       if (moreBtn) moreBtn.hidden = all.length <= state.shown;
+      var empty = grid.querySelector('.pro-grid__empty');
+      if (!all.length && !empty) {
+        empty = document.createElement('div');
+        empty.className = 'ins-grid__empty pro-grid__empty';
+        empty.innerHTML = '<p class="body">No professionals match these filters.</p>' +
+          '<button type="button" class="button-label link-arrow is-in">Clear all filters</button>';
+        empty.querySelector('button').addEventListener('click', function () { setAll({}); push(); });
+        list.after(empty);
+      }
+      if (empty) empty.hidden = all.length > 0;
+      if (countEl) countEl.hidden = !all.length;
+      var live = grid.querySelector('[data-status]');
+      if (live) live.textContent = all.length ? all.length + ' professionals' : 'No professionals match these filters';
       if (window.ScrollTrigger) ScrollTrigger.refresh();
     }
+
+    // URL <-> state. Facet values are slugs; the panel option holds the term ids.
+    function panelOf(key) { return filter && filter.querySelector('.flt-panel[data-key="' + key + '"]'); }
+    function setFacetState(key, value) {
+      var panel = panelOf(key);
+      var opt = panel && value ? panel.querySelector('.flt-option[data-value="' + CSS.escape(value) + '"]') : null;
+      if (opt && opt.dataset.ids) {
+        state.facets[key] = { tax: panel.dataset.tax, slug: value, ids: opt.dataset.ids.split(',').map(Number) };
+      } else {
+        delete state.facets[key];
+      }
+      if (panel && typeof setFacet === 'function') setFacet(panel, state.facets[key] ? value : '');
+    }
+    function setAll(p) {
+      state.q = p.q || '';
+      if (search) search.value = state.q;
+      state.letter = (p.letter || '').toUpperCase();
+      if (filter) {
+        filter.querySelectorAll('.pro-filter__alpha button').forEach(function (b) {
+          var on = b.textContent.trim() === state.letter;
+          b.classList.toggle('is-active', on);
+          b.setAttribute('aria-pressed', on ? 'true' : 'false');
+        });
+      }
+      FACET_KEYS.forEach(function (k) { setFacetState(k, p[k] || ''); });
+      apply();
+    }
+    function fromUrl() {
+      var sp = new URLSearchParams(window.location.search);
+      var p = {};
+      ['q', 'letter'].concat(FACET_KEYS).forEach(function (k) { if (sp.get(k)) p[k] = sp.get(k); });
+      return p;
+    }
+    function toUrl() {
+      var sp = new URLSearchParams();
+      if (state.q.trim()) sp.set('q', state.q.trim());
+      if (state.letter) sp.set('letter', state.letter);
+      FACET_KEYS.forEach(function (k) { if (state.facets[k]) sp.set(k, state.facets[k].slug); });
+      var qs = sp.toString();
+      return window.location.pathname + (qs ? '?' + qs : '');
+    }
+    function push(replace) {
+      var url = toUrl();
+      if (url === window.location.pathname + window.location.search) return;
+      window.history[replace ? 'replaceState' : 'pushState']({ tngPros: true }, '', url);
+    }
+    window.addEventListener('popstate', function () { setAll(fromUrl()); });
 
     function load() {
       if (roster) return Promise.resolve(roster);
@@ -102,6 +166,7 @@
           debounce = setTimeout(function () {
             state.q = search.value;
             apply();
+            push(true); // typing replaces the entry instead of filling the history
           }, 150);
         });
       }
@@ -109,6 +174,12 @@
         e.preventDefault();
         state.q = search ? search.value : '';
         apply();
+        push(true);
+      });
+      filter.addEventListener('tng:facet', function (e) {
+        setFacetState(e.detail.key, e.detail.value);
+        apply();
+        push();
       });
       // main.js toggles the active state first (its listener was attached
       // earlier); read the result afterwards.
@@ -122,10 +193,14 @@
             var active = alpha.querySelector('button.is-active');
             state.letter = active ? active.textContent.trim() : '';
             apply();
+            push();
           }, 0);
         });
       }
     }
+    // A shared / bookmarked URL: filter the server-rendered first page now
+    var initial = fromUrl();
+    if (Object.keys(initial).length) setAll(initial);
   }
 
   /* ---------------- homepage insights tabs ---------------- */
@@ -180,59 +255,6 @@
       });
     });
   });
-  /* ---------------- insights / awards archive: View more ---------------- */
-  document.querySelectorAll('.ins-grid[data-type]').forEach(function (grid) {
-    if (!window.TNG || !TNG.archive) return;
-    var list = grid.querySelector('.ins-grid__list');
-    var more = grid.querySelector('.pro-grid__view-more');
-    var count = grid.querySelector('.pro-grid__count');
-    if (!list || !more) return;
-    var size = Number(grid.dataset.pageSize) || 12;
-    var total = Number(grid.dataset.total) || 0;
-    var params = {};
-    try {
-      params = JSON.parse(grid.dataset.params || '{}') || {};
-    } catch (e) {
-      params = {};
-    }
-    var page = 1;
-
-    more.addEventListener('click', function () {
-      if (more.disabled) return;
-      more.disabled = true;
-      var url = new URL(TNG.archive, window.location.href);
-      url.searchParams.set('type', grid.dataset.type);
-      url.searchParams.set('page', String(page + 1));
-      url.searchParams.set('per_page', String(size));
-      Object.keys(params).forEach(function (k) {
-        url.searchParams.set(k, params[k]);
-      });
-      fetch(url.toString())
-        .then(function (r) { return r.json(); })
-        .then(function (data) {
-          page += 1;
-          var tmp = document.createElement('ul');
-          tmp.innerHTML = (data && data.html) || '';
-          var items = Array.prototype.slice.call(tmp.children);
-          items.forEach(function (li) { list.appendChild(li); });
-          if (window.gsap && items.length) {
-            gsap.from(items, { autoAlpha: 0, y: 30, duration: 0.6, ease: 'power3.out', stagger: 0.06 });
-          }
-          total = Number(data && data.total) || total;
-          var shown = list.children.length;
-          if (count) {
-            count.innerHTML = 'Showing <strong>' + shown + '</strong> out of <strong>' + total + '</strong> results';
-          }
-          more.hidden = !(data && data.more);
-          more.disabled = false;
-          if (window.ScrollTrigger) ScrollTrigger.refresh();
-        })
-        .catch(function () {
-          more.disabled = false;
-        });
-    });
-  });
-
   /* ---------------- service hero: visitor's country tab ---------------- */
   // Runs after main.js's DOMContentLoaded handler (registered earlier), so the
   // tab buttons already switch panels when clicked.

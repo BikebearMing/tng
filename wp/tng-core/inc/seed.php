@@ -31,7 +31,7 @@ function tng_seed_page() {
 	?>
 	<div class="wrap">
 		<h1>TNG Seed</h1>
-		<p>Creates the demo content: terms (with office details), professionals, insights, awards, jobs, the pages (Home, Professionals, Contact, Careers, About, Insights, Awards &amp; Rankings, Pro Bono, CSR, Museum of Counterfeit Goods, Legal Professionals + placeholders), term page content, options values, permalinks and the front page. Create-only: nothing that exists is changed (a page still holding only the under-development placeholder gets its real content). Safe to run more than once.</p>
+		<p>Creates the demo content: terms (with office details), professionals, insights, awards, jobs, the pages (Home, Professionals, Contact, Careers, About, Insights, Awards &amp; Rankings, Pro Bono, CSR, Museum of Counterfeit Goods, Textile Collection, Legal Professionals, Job Opportunities, the legal / text pages, Operations Professionals, Internships, Recruitment Process, History, Services, Global Reach, Japan / China Desk + placeholders), term page content, options values, permalinks and the front page. Create-only: nothing that exists is changed (a page still holding only the under-development placeholder gets its real content). Safe to run more than once.</p>
 		<form method="post">
 			<?php wp_nonce_field( 'tng_seed' ); ?>
 			<p><button class="button button-primary" name="tng_seed" value="1">Seed content</button></p>
@@ -83,6 +83,12 @@ function tng_seed_post( $type, $title, $args = array() ) {
 	// STRICTLY create-only: an existing post is never touched, whatever it
 	// holds now belongs to the editors (block image fields live in page
 	// content, so any update here would wipe their selections — it did once).
+	// Once the importer retired the demo (op retire_demo), never recreate it:
+	// the trashed demo posts are invisible to tng_seed_find_post().
+	$retired = get_option( 'tng_demo_retired' ); // true (all types, 1.2.x) or the list of retired types
+	if ( $retired && in_array( $type, is_array( $retired ) ? $retired : array( 'professional', 'insight', 'award', 'job' ), true ) ) {
+		return array( 0, false );
+	}
 	$id = tng_seed_find_post( $type, $title );
 	if ( $id ) {
 		return array( $id, false );
@@ -201,27 +207,16 @@ function tng_seed_all() {
 
 	// Offices = city terms under their country. Bangkok's details are the
 	// mock's; the other five repeat them (TODO: real office details).
-	$bangkok_addr = "Supalai Grand Tower,\n26th Floor, 1011 Rama 3\nRoad, Chongnonsi,\nYannawa, Bangkok 10120";
-	$offices      = array(
-		array( 'Bangkok', 'Thailand', 'Supalai Grand Tower, 1011 Rama 3 Road, Bangkok' ),
-		array( 'Hanoi', 'Vietnam', 'Tilleke & Gibbins, Hanoi' ),
-		array( 'Ho Chi Minh City', 'Vietnam', 'Tilleke & Gibbins, Ho Chi Minh City' ),
-		array( 'Phnom Penh', 'Cambodia', 'Tilleke & Gibbins, Phnom Penh' ),
-		array( 'Vientiane', 'Laos', 'Tilleke & Gibbins, Vientiane' ),
-		array( 'Yangon', 'Myanmar', 'Tilleke & Gibbins, Yangon' ),
-	);
-	foreach ( $offices as $o ) {
+	foreach ( tng_seed_mock_offices() as $o ) {
 		$tid = tng_seed_term( 'location', $o[0], $loc[ $o[1] ] );
 		$ref = 'location_' . $tid;
 		// only fill offices that were never configured — edits are the user's
 		if ( get_field( 'office_name', $ref ) ) {
 			continue;
 		}
-		update_field( 'field_tng_loc_office_name', 'Tilleke & Gibbins International Ltd.', $ref );
-		update_field( 'field_tng_loc_phone', '+855 23 964 210', $ref );
-		update_field( 'field_tng_loc_email', 'cambodia@tilleke.com', $ref );
-		update_field( 'field_tng_loc_address', $bangkok_addr, $ref );
-		update_field( 'field_tng_loc_map_query', $o[2], $ref );
+		foreach ( tng_seed_mock_office_values( $o[2] ) as $name => $value ) {
+			update_field( 'field_tng_loc_' . $name, $value, $ref );
+		}
 	}
 	$log[] = 'Terms seeded (industries, practices, positions, languages, categories, locations + offices)';
 
@@ -262,7 +257,7 @@ function tng_seed_all() {
 
 	// Aimee's full profile (from professional.html) — only when never filled
 	$aimee = $pro_ids['Aimee Van Dyk'];
-	if ( ! get_field( 'lead', $aimee ) ) {
+	if ( $aimee && ! get_field( 'lead', $aimee ) ) {
 	update_field( 'field_tng_pro_lead', 'Aimee Van Dyk is a consultant at Tilleke & Gibbins with a regional practice spanning Laos, Myanmar, and Thailand. She advises on complex, cross-border matters at the intersection of commercial transactions, disputes, and regulatory compliance, frequently across both common- and civil-law systems.', $aimee );
 	update_field(
 		'field_tng_pro_biography',
@@ -397,7 +392,7 @@ function tng_seed_all() {
 	) );
 
 	// Module template data for the Global Disputes Forecast — first run only
-	if ( ! get_post_meta( $in_forecast, '_wp_page_template', true ) ) {
+	if ( $in_forecast && ! get_post_meta( $in_forecast, '_wp_page_template', true ) ) {
 	update_post_meta( $in_forecast, '_wp_page_template', 'single-insight-module' );
 	update_field( 'field_tng_mod_module_lead', 'Geopolitical pressures, expanding disputes risk and cross-border complexities: Are organizations ready for the year ahead?', $in_forecast );
 	update_field(
@@ -596,6 +591,10 @@ function tng_seed_all() {
 
 	tng_seed_v110( $log );
 	tng_seed_v112( $log );
+	tng_seed_v114( $log );
+	tng_seed_v115( $log );
+	tng_seed_v130( $log );
+	tng_seed_v131( $log );
 
 	flush_rewrite_rules();
 	tng_bust_roster();
@@ -637,6 +636,67 @@ function tng_seed_term_fields( $ref, $check, $fields ) {
 		update_field( $key, $value, $ref );
 	}
 	return true;
+}
+
+/**
+ * The mock copy TNG Seed writes into term fields (name => value), keyed
+ * "<taxonomy>:<slug>". Shared with the importer (inc/import.php): a term
+ * field still holding exactly this value counts as empty and may be
+ * replaced by the real content. Contacts are not here (they point at demo
+ * professionals by ID; the importer checks those separately).
+ */
+function tng_seed_mock_term_values() {
+	$experience = '<ul><li>Actively advising an international group with investments in real estate, telecommunications, and corporate finance on commercial and dispute strategy across multiple ongoing matters in Myanmar, including assessment of operational and litigation risk, jurisdictional considerations, and enforcement options in a volatile regulatory environment.</li><li>Advised multinational technology and automotive companies in Laos and Myanmar on data privacy and cross-border data transfer compliance, including regulatory assessments for digital platforms and connected-vehicle subscription services.</li><li>Advised a Japanese pharmaceutical and healthcare products group on a multiparty, cross-border sales and purchase agreement governing supply and distribution arrangements across Myanmar, Thailand, and Vietnam, addressing contractual risk allocation and regulatory implications.</li><li>Advised a Japanese pharmaceutical and healthcare products group on a multiparty, cross-border sales and purchase agreement governing supply and distribution arrangements across Myanmar, Thailand, and Vietnam, addressing contractual risk allocation and regulatory implications.</li><li>Represented a regional energy developer in contract disputes arising from a cross-border power supply project in Laos, including pre-arbitration negotiations and enforcement strategy.</li><li>Advised a digital asset platform on licensing requirements and market entry in Thailand, including engagement with the regulator on product structuring.</li></ul>';
+	$bank_text  = 'Advised a major U.S.-based consumer bank on its market entry into Cambodia, Laos, and Myanmar, including advice on offshore banking services, banking regulations, permitted banking operations, foreign exchange regulations, securities markets, doing business, and tax in each jurisdiction.';
+	$bank_rows  = array_fill( 0, 3, array( 'title' => 'Emerging jurisdiction market entry for global consumer bank', 'text' => $bank_text, 'link_url' => '' ) );
+	return array(
+		'location:cambodia' => array(
+			'overview_heading' => 'Trusted and innovative legal advisors in the emerging economy of Cambodia.',
+			'overview_text'    => '<p>Built on a strong local foundation, Tilleke &amp; Gibbins office in Phnom Penh has grown into one of the strongest legal outfits on the ground in Cambodia. The firm’s 16-person team in Phnom Penh comprises a mix of local and foreign legal advisors and other business professionals to provide our clients with well-rounded legal, business, and cultural advice to help them achieve their objectives in the jurisdiction.</p><p>Under the leadership of partner Jay Cohen, a practitioner with over 15 years of experience in Asia, the firm’s Phnom Penh office handles a full range of corporate and commercial, intellectual property, and regulatory services to a wide range of clients. On the commercial side this includes market entry for multinationals, commercial transactions (M&amp;As, JVs, and business partnerships), labor and employment, and key regulatory matters for highly regulated industries—especially banking and finance, technology, telecommunications, media, e-commerce, energy, consumer goods, and life sciences (e.g., pharmaceuticals and medical devices).</p><p>Beyond this corporate and commercial work, the firm also boasts a market-leading intellectual property (IP) practice, which clients often see as a key differentiator between our firm and other corporate and commercial firms in the country. Our IP practice seamlessly compliments our strategic market entry advice and sets the firm apart as a premium one-stop shop for all legal needs in Cambodia.</p>',
+			'successes'        => array( array( 'title' => 'Tilleke & Gibbins Supports CAEX with Strategic Investments from OKX Ventures and HashKey Capital', 'text' => $bank_text, 'link_url' => '' ) ),
+			'experience'       => $experience,
+		),
+		'industry:automotive' => array(
+			'overview_heading' => 'Driving growth across Southeast Asia for leading players in the global automotive industry.',
+			'overview_text'    => '<p>Tilleke &amp; Gibbins acts for clients across the automotive value chain, from upstream automotive and automotive parts manufacturers to downstream automotive distribution and sales dealerships, offering a one-stop service for a full range of legal matters in Southeast Asia.</p><p>At the start, our multidisciplinary team helps automotive industry players structure and implement market entry models, including assisting with M&amp;A transactions and joint ventures, obtaining licenses and investment incentives, and protecting valuable designs, patents, and trademarks. For manufacturers, we also regularly assist with land acquisition and factory construction in industrial estates and special economic zones. Once companies are set up and operating, we continue to work closely with our clients to maintain regulatory compliance across the region, advising on antitrust and trade competition, employment, import and export, tax, and other general corporate matters. And when complications occur, we also represent automotive clients in dispute resolution, including commercial and IP litigation, product liability claims, and class actions.</p><p>Our full-service legal expertise enables clients to capitalize on opportunities for success in the region, driving growth across Southeast Asia for leading players in the global automotive industry.</p>',
+			'successes'        => $bank_rows,
+			'experience'       => $experience,
+		),
+		'practice:intellectual-property' => array(
+			'quote'         => '“Flawless cooperation between six regional offices ensures a consistently top-class service across the region”',
+			'quote_source'  => 'Intellectual Asset Management',
+			'overview_text' => '<p>We help creators strategically position, protect, and profit from intellectual assets in diverse markets worldwide. Our success on our clients’ behalf has led to global recognition as a leading intellectual property practice by such surveys as Asialaw Profiles, Chambers Asia Pacific, The Legal 500 Asia Pacific, Managing Intellectual Property, Practical Law Company, World Trademark Review, Asia IP, Asian Legal Business, and others.</p><p>We are versatile practitioners—well-educated in the overlapping fields of science, technology, and the law by top universities and real-world practice in one of the toughest IP regions in the world. Our IP group includes lawyers and patent agents with backgrounds in chemistry, biology, computer science, food science, materials science, and physics; support personnel including investigators and government/police liaisons; and technical specialists in various scientific fields, on an as-needed basis.</p>',
+			'successes'     => $bank_rows,
+		),
+		'practice:commercialization' => array(
+			'overview_heading' => 'We help you get real value from your intellectual assets.',
+			'overview_text'    => '<p>Our practitioners have extensive experience in IP licensing and contracts, including agreements relating to franchising, licensing, distributorship, technology transfer, confidentiality, joint venture, and collaboration.</p><p>In addition, the firm’s expertise extends to IP due diligence issues, such as searches for infringement, audits to identify and protect IP assets including trade secrets, advice to avoid disputes when terminating dealers or distributors, consents and assignments for IP created by employees or contractors (work for hire), valuation of IP assets, IP risk assessments and management, and freedom-to-practice investigations.</p><p>In collaboration with our technology group, we provide services related to the clearance and licensing of intellectual property as it relates to film, television, radio, and internet content.</p>',
+			'experience'       => $experience,
+		),
+	);
+}
+
+/** City offices TNG Seed creates: [city, country, map query]. */
+function tng_seed_mock_offices() {
+	return array(
+		array( 'Bangkok', 'Thailand', 'Supalai Grand Tower, 1011 Rama 3 Road, Bangkok' ),
+		array( 'Hanoi', 'Vietnam', 'Tilleke & Gibbins, Hanoi' ),
+		array( 'Ho Chi Minh City', 'Vietnam', 'Tilleke & Gibbins, Ho Chi Minh City' ),
+		array( 'Phnom Penh', 'Cambodia', 'Tilleke & Gibbins, Phnom Penh' ),
+		array( 'Vientiane', 'Laos', 'Tilleke & Gibbins, Vientiane' ),
+		array( 'Yangon', 'Myanmar', 'Tilleke & Gibbins, Yangon' ),
+	);
+}
+
+/** The mock office details TNG Seed writes on a city term (Bangkok's, repeated). */
+function tng_seed_mock_office_values( $map_query ) {
+	return array(
+		'office_name' => 'Tilleke & Gibbins International Ltd.',
+		'phone'       => '+855 23 964 210',
+		'email'       => 'cambodia@tilleke.com',
+		'address'     => "Supalai Grand Tower,\n26th Floor, 1011 Rama 3\nRoad, Chongnonsi,\nYannawa, Bangkok 10120",
+		'map_query'   => $map_query,
+	);
 }
 
 function tng_seed_v110( &$log ) {
@@ -713,61 +773,43 @@ function tng_seed_v110( &$log ) {
 	$log[] = '1.1.0: tagged insights (3) + awards (2) for the location / service pages ensured';
 
 	/* ---- term page content (only terms that have none yet) ---- */
-	$experience = '<ul><li>Actively advising an international group with investments in real estate, telecommunications, and corporate finance on commercial and dispute strategy across multiple ongoing matters in Myanmar, including assessment of operational and litigation risk, jurisdictional considerations, and enforcement options in a volatile regulatory environment.</li><li>Advised multinational technology and automotive companies in Laos and Myanmar on data privacy and cross-border data transfer compliance, including regulatory assessments for digital platforms and connected-vehicle subscription services.</li><li>Advised a Japanese pharmaceutical and healthcare products group on a multiparty, cross-border sales and purchase agreement governing supply and distribution arrangements across Myanmar, Thailand, and Vietnam, addressing contractual risk allocation and regulatory implications.</li><li>Advised a Japanese pharmaceutical and healthcare products group on a multiparty, cross-border sales and purchase agreement governing supply and distribution arrangements across Myanmar, Thailand, and Vietnam, addressing contractual risk allocation and regulatory implications.</li><li>Represented a regional energy developer in contract disputes arising from a cross-border power supply project in Laos, including pre-arbitration negotiations and enforcement strategy.</li><li>Advised a digital asset platform on licensing requirements and market entry in Thailand, including engagement with the regulator on product structuring.</li></ul>';
-	$bank_text  = 'Advised a major U.S.-based consumer bank on its market entry into Cambodia, Laos, and Myanmar, including advice on offshore banking services, banking regulations, permitted banking operations, foreign exchange regulations, securities markets, doing business, and tax in each jurisdiction.';
-	$bank_rows  = array_fill( 0, 3, array( 'title' => 'Emerging jurisdiction market entry for global consumer bank', 'text' => $bank_text, 'link_url' => '' ) );
-
-	$done = array();
-	if ( tng_seed_term_fields( 'location_' . $loc['Cambodia'], 'overview_text', array(
-		'field_tng_loc_overview_heading' => 'Trusted and innovative legal advisors in the emerging economy of Cambodia.',
-		'field_tng_loc_overview_text'    => '<p>Built on a strong local foundation, Tilleke &amp; Gibbins office in Phnom Penh has grown into one of the strongest legal outfits on the ground in Cambodia. The firm’s 16-person team in Phnom Penh comprises a mix of local and foreign legal advisors and other business professionals to provide our clients with well-rounded legal, business, and cultural advice to help them achieve their objectives in the jurisdiction.</p><p>Under the leadership of partner Jay Cohen, a practitioner with over 15 years of experience in Asia, the firm’s Phnom Penh office handles a full range of corporate and commercial, intellectual property, and regulatory services to a wide range of clients. On the commercial side this includes market entry for multinationals, commercial transactions (M&amp;As, JVs, and business partnerships), labor and employment, and key regulatory matters for highly regulated industries—especially banking and finance, technology, telecommunications, media, e-commerce, energy, consumer goods, and life sciences (e.g., pharmaceuticals and medical devices).</p><p>Beyond this corporate and commercial work, the firm also boasts a market-leading intellectual property (IP) practice, which clients often see as a key differentiator between our firm and other corporate and commercial firms in the country. Our IP practice seamlessly compliments our strategic market entry advice and sets the firm apart as a premium one-stop shop for all legal needs in Cambodia.</p>',
-		'field_tng_loc_successes'        => array( array( 'title' => 'Tilleke & Gibbins Supports CAEX with Strategic Investments from OKX Ventures and HashKey Capital', 'text' => $bank_text, 'link_url' => '' ) ),
-		'field_tng_loc_experience'       => $experience,
-	) ) ) {
-		$done[] = 'Cambodia';
-	}
-
+	$mock    = tng_seed_mock_term_values();
 	$contact = static function ( $country, $names ) use ( $loc, $pros ) {
 		return array(
 			'location' => $loc[ $country ],
 			'people'   => array_values( array_filter( array_map( function ( $n ) use ( $pros ) { return isset( $pros[ $n ] ) ? $pros[ $n ] : 0; }, $names ) ) ),
 		);
 	};
-
-	if ( tng_seed_term_fields( 'industry_' . $automotive, 'overview_text', array(
-		'field_tng_svc_overview_heading' => 'Driving growth across Southeast Asia for leading players in the global automotive industry.',
-		'field_tng_svc_overview_text'    => '<p>Tilleke &amp; Gibbins acts for clients across the automotive value chain, from upstream automotive and automotive parts manufacturers to downstream automotive distribution and sales dealerships, offering a one-stop service for a full range of legal matters in Southeast Asia.</p><p>At the start, our multidisciplinary team helps automotive industry players structure and implement market entry models, including assisting with M&amp;A transactions and joint ventures, obtaining licenses and investment incentives, and protecting valuable designs, patents, and trademarks. For manufacturers, we also regularly assist with land acquisition and factory construction in industrial estates and special economic zones. Once companies are set up and operating, we continue to work closely with our clients to maintain regulatory compliance across the region, advising on antitrust and trade competition, employment, import and export, tax, and other general corporate matters. And when complications occur, we also represent automotive clients in dispute resolution, including commercial and IP litigation, product liability claims, and class actions.</p><p>Our full-service legal expertise enables clients to capitalize on opportunities for success in the region, driving growth across Southeast Asia for leading players in the global automotive industry.</p>',
-		'field_tng_svc_contacts'         => array(
+	$contacts = array(
+		'industry:automotive'            => array(
 			$contact( 'Cambodia', array( 'Jay Cohen', 'David Mol' ) ),
 			$contact( 'Thailand', array( 'Alan Adcock', 'Athistha (Nop) Chitranukroh' ) ),
 			$contact( 'Vietnam', array( 'Athistha (Nop) Chitranukroh' ) ),
 		),
-		'field_tng_svc_successes'        => $bank_rows,
-		'field_tng_svc_experience'       => $experience,
-	) ) ) {
-		$done[] = 'Automotive';
-	}
-
-	if ( tng_seed_term_fields( 'practice_' . $ip, 'overview_text', array(
-		'field_tng_svc_quote'         => '“Flawless cooperation between six regional offices ensures a consistently top-class service across the region”',
-		'field_tng_svc_quote_source'  => 'Intellectual Asset Management',
-		'field_tng_svc_overview_text' => '<p>We help creators strategically position, protect, and profit from intellectual assets in diverse markets worldwide. Our success on our clients’ behalf has led to global recognition as a leading intellectual property practice by such surveys as Asialaw Profiles, Chambers Asia Pacific, The Legal 500 Asia Pacific, Managing Intellectual Property, Practical Law Company, World Trademark Review, Asia IP, Asian Legal Business, and others.</p><p>We are versatile practitioners—well-educated in the overlapping fields of science, technology, and the law by top universities and real-world practice in one of the toughest IP regions in the world. Our IP group includes lawyers and patent agents with backgrounds in chemistry, biology, computer science, food science, materials science, and physics; support personnel including investigators and government/police liaisons; and technical specialists in various scientific fields, on an as-needed basis.</p>',
-		'field_tng_svc_contacts'      => array(
+		'practice:intellectual-property' => array(
 			$contact( 'Thailand', array( 'Alan Adcock', 'Alisa Koovimol' ) ),
 			$contact( 'Cambodia', array( 'Jay Cohen' ) ),
 		),
-		'field_tng_svc_successes'     => $bank_rows,
-	) ) ) {
-		$done[] = 'Intellectual Property';
-	}
-
-	if ( tng_seed_term_fields( 'practice_' . $subs['Commercialization'], 'overview_text', array(
-		'field_tng_svc_overview_heading' => 'We help you get real value from your intellectual assets.',
-		'field_tng_svc_overview_text'    => '<p>Our practitioners have extensive experience in IP licensing and contracts, including agreements relating to franchising, licensing, distributorship, technology transfer, confidentiality, joint venture, and collaboration.</p><p>In addition, the firm’s expertise extends to IP due diligence issues, such as searches for infringement, audits to identify and protect IP assets including trade secrets, advice to avoid disputes when terminating dealers or distributors, consents and assignments for IP created by employees or contractors (work for hire), valuation of IP assets, IP risk assessments and management, and freedom-to-practice investigations.</p><p>In collaboration with our technology group, we provide services related to the clearance and licensing of intellectual property as it relates to film, television, radio, and internet content.</p>',
-		'field_tng_svc_contacts'         => array( $contact( 'Thailand', array( 'Alan Adcock' ) ) ),
-		'field_tng_svc_experience'       => $experience,
-	) ) ) {
-		$done[] = 'Commercialization';
+		'practice:commercialization'     => array( $contact( 'Thailand', array( 'Alan Adcock' ) ) ),
+	);
+	$targets = array(
+		'location:cambodia'              => array( 'Cambodia', 'location_' . $loc['Cambodia'], 'loc' ),
+		'industry:automotive'            => array( 'Automotive', 'industry_' . $automotive, 'svc' ),
+		'practice:intellectual-property' => array( 'Intellectual Property', 'practice_' . $ip, 'svc' ),
+		'practice:commercialization'     => array( 'Commercialization', 'practice_' . $subs['Commercialization'], 'svc' ),
+	);
+	$done = array();
+	foreach ( $targets as $key => $target ) {
+		$fields = array();
+		foreach ( $mock[ $key ] as $name => $value ) {
+			$fields[ 'field_tng_' . $target[2] . '_' . $name ] = $value;
+		}
+		if ( isset( $contacts[ $key ] ) ) {
+			$fields['field_tng_svc_contacts'] = $contacts[ $key ];
+		}
+		if ( tng_seed_term_fields( $target[1], 'overview_text', $fields ) ) {
+			$done[] = $target[0];
+		}
 	}
 	$log[] = '1.1.0: term page content filled for: ' . ( $done ? implode( ', ', $done ) : 'none (all already had content)' );
 
@@ -1064,4 +1106,245 @@ function tng_seed_v112( &$log ) {
 	list( , $museum_state ) = tng_seed_page_content( 'Museum of Counterfeit Goods', $museum_content, array( 'post_parent' => $about, 'menu_order' => 5, 'post_name' => 'museum-of-counterfeit-goods' ) );
 
 	$log[] = '1.1.2 About child pages: Pro Bono ' . $pro_bono_state . ', CSR ' . $csr_state . ', Museum of Counterfeit Goods ' . $museum_state;
+}
+
+/* ---------------- 1.1.4: About child page Textile Collection ---------------- */
+
+/**
+ * Create-only, like 1.1.2: the page is created under About when no page of
+ * that title exists; nothing else is touched. Images fall back to the bundled
+ * Figma exports (info-hero / mus-collection by slug, tex-gallery's nine).
+ * The social links are placeholders ('#') until the collection's accounts
+ * are known.
+ */
+function tng_seed_v114( &$log ) {
+	$about = tng_seed_find_post( 'page', 'About' );
+	if ( ! $about ) {
+		$log[] = '1.1.4: no About page, Textile Collection skipped';
+		return;
+	}
+	$url = static function ( $id ) {
+		return $id ? get_permalink( $id ) : '#';
+	};
+
+	$content = tng_seed_block( 'acf/info-hero', tng_seed_data( 'ifh', array(
+		'label'        => 'Inquiries',
+		'contact_name' => 'Wipawee Tiyawes',
+		'phone'        => '+66 2056 5577',
+		'email'        => 'wipawee.t@tilleke.com',
+	) ) )
+	. tng_seed_block( 'acf/overview', tng_seed_data( 'ovw', array(
+		'variant'    => 'info',
+		'section_id' => 'overview',
+		'label'      => 'Overview',
+		'heading'    => 'We maintain a diverse collection of textiles to represent Southeast Asia’s rich cultures, and open them to the public to educate people on this ancient and beautiful art form.',
+		'text'       => '<p>The mission of our textile collection is to collect, display, and preserve the textiles, in proximity to the geographical area in which they were created. Fabrics from various ethnic groups constituting Thailand’s diverse peoples form the foundation of the collection, supplemented by textiles from neighboring countries, including Cambodia, Indonesia, Laos, Malaysia, Myanmar, and Vietnam—plus some Indian and southern Chinese pieces for comparative study.</p><p>Originally starting with just 50 pieces, the wide selection of clothing types, ceremonial items, and domestic accessories now forms one of the largest collections of its kind in the world. Pieces from the collection are permanently on display in Tilleke &amp; Gibbins’ Bangkok office, and we are also proud to regularly loan pieces to both local and international exhibitions. They can also be viewed by individual scholars and are available for educational events such as lectures and special activities.</p><p>Our textile storage room adheres to international museum standards for handling and maintaining a textile collection. It is windowless to prevent sunlight damage to the textiles, and is instead illuminated by LED lighting. Temperature and humidity are carefully controlled, and advanced air filtration and fire suppression systems are in place. It is also equipped with a special freezer (used to treat newly acquired pieces), storage trays that accommodate 20–30 textiles each, and materials such as acid-free tissue paper and Mylar, which are used for safely storing the textiles.</p>',
+	) ) )
+	. tng_seed_block( 'acf/tex-gallery', array_merge(
+		tng_seed_data( 'txg', array( 'label' => 'Tilleke & Gibbins’ Textile Collection' ) ),
+		tng_seed_flat( 'txg', 'socials', array(
+			array( 'network' => 'instagram', 'url' => '#' ),
+			array( 'network' => 'facebook', 'url' => '#' ),
+			array( 'network' => 'x', 'url' => '#' ),
+			array( 'network' => 'linkedin', 'url' => '#' ),
+		), array( 'network', 'url' ) )
+	) )
+	. tng_seed_block( 'acf/mus-collection', tng_seed_data( 'mco', array(
+		'label'   => 'History',
+		'heading' => 'Interior design ideas become a museum-quality collection.',
+		'text'    => '<p>The Textile Collection began in 1987, when David Lyman chose to decorate the firm’s previous offices at the Tilleke &amp; Gibbins Building and Tonson Building with traditional Southeast Asian textiles. The further acquisition of 78 rare textiles of museum quality from northeastern Laos four years later changed the initial objective of using textiles as permanent office decoration to creating a collection of textiles to preserve culture and educate the public.<br>Tilleke &amp; Gibbins’ Textile Collection is now one of the largest and most impressive in Thailand, containing over 2,000 museum-quality Southeast Asian textiles representing the diverse cultures of Southeast Asia. A number of pieces are exhibited on the walls of the firm’s head office in Bangkok, with the demonstration pieces rotating regularly to make the collection’s many treasures available to viewers. The collection today is an affirmation of Tilleke &amp; Gibbins’ deep connection to and support for the culture of our home region.</p>',
+	) ) )
+	. tng_seed_block( 'acf/more-from', array_merge(
+		tng_seed_data( 'mfr', array( 'arrows' => '1' ) ),
+		tng_seed_flat( 'mfr', 'links', array(
+			array( 'label' => 'Overview', 'url' => $url( $about ) ),
+			array( 'label' => 'History', 'url' => $url( tng_seed_find_post( 'page', 'History' ) ) ),
+			array( 'label' => 'Awards & Rankings', 'url' => $url( tng_seed_find_post( 'page', 'Awards & Rankings' ) ) ),
+		), array( 'label', 'url' ) )
+	) );
+	list( , $state ) = tng_seed_page_content( 'Textile Collection', $content, array( 'post_parent' => $about, 'menu_order' => 6, 'post_name' => 'textile-collection' ) );
+
+	$log[] = '1.1.4 About child page: Textile Collection ' . $state;
+}
+
+/* ---------------- 1.1.5: Careers → Job Opportunities ---------------- */
+
+/**
+ * Create-only: the all-jobs page is created under Careers when no page of
+ * that title exists (no mock: career path hero + job list + More from).
+ */
+function tng_seed_v115( &$log ) {
+	$careers = tng_seed_find_post( 'page', 'Careers' );
+	if ( ! $careers ) {
+		$log[] = '1.1.5: no Careers page, Job Opportunities skipped';
+		return;
+	}
+	$url = static function ( $title ) {
+		$id = tng_seed_find_post( 'page', $title );
+		return $id ? get_permalink( $id ) : '#';
+	};
+	$content = tng_seed_block( 'acf/path-hero', tng_seed_data( 'pth', array(
+		'intro' => 'We are always seeking great people to grow our amazing team. Browse our open positions across Southeast Asia, or filter them by country.',
+	) ) )
+	. tng_seed_block( 'acf/job-list' )
+	. tng_seed_block( 'acf/more-from', array_merge(
+		tng_seed_data( 'mfr', array( 'arrows' => '1' ) ),
+		tng_seed_flat( 'mfr', 'links', array(
+			array( 'label' => 'Legal Professionals', 'url' => $url( 'Legal Professionals' ) ),
+			array( 'label' => 'Operations Professionals', 'url' => $url( 'Operations Professionals' ) ),
+			array( 'label' => 'Internships', 'url' => $url( 'Internships' ) ),
+		), array( 'label', 'url' ) )
+	) );
+	list( , $state ) = tng_seed_page_content( 'Job Opportunities', $content, array( 'post_parent' => $careers, 'menu_order' => 4, 'post_name' => 'job-opportunities' ) );
+	$log[] = '1.1.5 Careers page: Job Opportunities ' . $state;
+}
+
+/* ---------------- 1.3.0: pages with no mock ---------------- */
+
+/**
+ * Page at a path (old site URLs kept: no redirects needed). Create-only, with
+ * the one guarded exception of an untouched under-development placeholder.
+ * The parent is the page at the path's dirname (it must exist).
+ * Returns [id, state]; state = created / filled (was the placeholder) / kept /
+ * skipped (no parent).
+ */
+function tng_seed_page_at( $path, $title, $content, $template = 'tng-blank', $args = array() ) {
+	$placeholder = '<!-- wp:tng/under-development /-->';
+	$page        = get_page_by_path( $path );
+	if ( $page ) {
+		if ( trim( (string) $page->post_content ) === $placeholder ) {
+			wp_update_post( wp_slash( array( 'ID' => $page->ID, 'post_content' => $content ) ) ); // keeps a revision
+			update_post_meta( $page->ID, '_wp_page_template', $template );
+			return array( $page->ID, 'filled (was the placeholder)' );
+		}
+		return array( $page->ID, 'kept' );
+	}
+	$parent = 0;
+	if ( false !== strpos( $path, '/' ) ) {
+		$parent_page = get_page_by_path( dirname( $path ) );
+		if ( ! $parent_page ) {
+			return array( 0, 'skipped (no parent page ' . dirname( $path ) . ')' );
+		}
+		$parent = $parent_page->ID;
+	}
+	$id = wp_insert_post(
+		wp_slash(
+			array_merge(
+				array(
+					'post_type'    => 'page',
+					'post_status'  => 'publish',
+					'post_title'   => $title,
+					'post_name'    => basename( $path ),
+					'post_parent'  => $parent,
+					'post_content' => $content,
+				),
+				$args
+			)
+		)
+	);
+	if ( ! $id || is_wp_error( $id ) ) {
+		return array( 0, 'failed' );
+	}
+	update_post_meta( $id, '_wp_page_template', $template );
+	return array( (int) $id, 'created' );
+}
+
+/**
+ * Page content from a seed spec (wp/tng-core/seed/<name>.json, generated
+ * from the static page): a list of blocks
+ *   { "block": "acf/overview", "prefix": "ovw", "className": "hist-overview",
+ *     "data": { field: value }, "repeaters": { name: [ {sub: value} ] } }
+ * Strings may hold {page:<path>} (that page's URL, "#" if missing),
+ * {term:<taxonomy>/<slug>} (a term link) and {professional:<name>} (the ID).
+ */
+function tng_seed_spec( $name ) {
+	$spec = json_decode( (string) file_get_contents( TNG_CORE_DIR . 'seed/' . $name . '.json' ), true );
+	$fill = static function ( $v ) use ( &$fill ) {
+		if ( is_array( $v ) ) {
+			return array_map( $fill, $v );
+		}
+		return preg_replace_callback(
+			'/\{(page|term|professional):([^}]+)\}/',
+			static function ( $m ) {
+				if ( 'page' === $m[1] ) {
+					return tng_page_url( $m[2] );
+				}
+				if ( 'professional' === $m[1] ) { // ID of the published professional with that exact name, else ''
+					$ids = get_posts( array( 'post_type' => 'professional', 'title' => $m[2], 'posts_per_page' => 1, 'fields' => 'ids' ) );
+					return $ids ? (string) $ids[0] : '';
+				}
+				list( $tax, $slug ) = explode( '/', $m[2], 2 );
+				$term = get_term_by( 'slug', $slug, $tax );
+				return $term ? tng_term_link( $term ) : '#';
+			},
+			(string) $v
+		);
+	};
+	$out = '';
+	foreach ( (array) $spec as $b ) {
+		$p    = isset( $b['prefix'] ) ? $b['prefix'] : '';
+		$data = $p && ! empty( $b['data'] ) ? tng_seed_data( $p, $fill( $b['data'] ) ) : array();
+		foreach ( isset( $b['repeaters'] ) ? $b['repeaters'] : array() as $rep => $rows ) {
+			$subs = array();
+			foreach ( $rows as $row ) {
+				$subs = array_unique( array_merge( $subs, array_keys( $row ) ) );
+			}
+			$data = array_merge( $data, tng_seed_flat( $p, $rep, $fill( $rows ), $subs ) );
+		}
+		$block = tng_seed_block( $b['block'], $data );
+		if ( ! empty( $b['className'] ) ) { // Advanced → Additional CSS class
+			$block = preg_replace( '/^<!-- wp:([a-z\/-]+) \{/', '<!-- wp:$1 {"className":"' . esc_attr( $b['className'] ) . '",', $block, 1 );
+		}
+		$out .= $block;
+	}
+	return $out;
+}
+
+function tng_seed_v130( &$log ) {
+	// Legal / text pages: the copy is core blocks (wp/tng-core/seed/*.html,
+	// from the static pages), edited like any page.
+	$text_pages = array(
+		// path => [title, menu label, seed file, menu order]
+		'privacy-policy-term-of-use'                         => array( 'Privacy Policy', '', 'privacy-policy', 1 ),
+		'privacy-policy-term-of-use/pdpp_candidates'         => array( 'Personal Data Protection Policy for Candidates', 'Candidates', 'privacy-candidates', 1 ),
+		'privacy-policy-term-of-use/pdpp_clients'            => array( 'Personal Data Protection Policy for Clients', 'Clients', 'privacy-clients', 2 ),
+		'privacy-policy-term-of-use/pdpd_contract-parties'   => array( 'Personal Data Protection Policy for Contract Parties', 'Contract Parties', 'privacy-contract-parties', 3 ),
+		'privacy-policy-term-of-use/pdpd_video-surveillance' => array( 'Personal Data Protection Policy for Video Surveillance', 'Video Surveillance', 'privacy-video-surveillance', 4 ),
+		'legal-notice'                                       => array( 'Legal Notice', '', 'legal-notice', 2 ),
+		'legal-notice/affiliates-partner-firms'              => array( 'Tilleke & Gibbins Affiliates and Partner Firms', 'Affiliates and Partner Firms', 'legal-notice-affiliates', 1 ),
+		'fraudulent-communications'                          => array( 'Fraudulent Communications', '', 'fraudulent-communications', 3 ),
+	);
+	foreach ( $text_pages as $path => $p ) {
+		$content = (string) file_get_contents( TNG_CORE_DIR . 'seed/' . $p[2] . '.html' );
+		list( $id, $state ) = tng_seed_page_at( $path, $p[0], $content, 'tng-text', array( 'menu_order' => $p[3] ) );
+		if ( 'created' === $state && $p[1] ) {
+			update_field( 'field_tng_txp_nav_label', $p[1], $id );
+		}
+		$log[] = '1.3.0 text page /' . $path . '/: ' . $state;
+	}
+}
+
+/**
+ * 1.3.1+: pages built from block specs (seed/<spec>.json). Each fills its
+ * untouched placeholder or is created at its path; anything else is kept.
+ */
+function tng_seed_v131( &$log ) {
+	$pages = array(
+		// path => [title, spec, menu order, page language (optional)]
+		'careers/operations-professionals' => array( 'Operations Professionals', 'careers-operations', 2 ),
+		'careers/internships'              => array( 'Internships', 'careers-internships', 3 ),
+		'careers/recruitment-process'      => array( 'Our Recruitment Process', 'recruitment-process', 5 ),
+		'about/history'                    => array( 'History', 'about-history', 1 ),
+		'services'                         => array( 'Services', 'services', 0 ),
+		'global-reach'                     => array( 'Global Reach', 'global-reach', 0 ),
+		'japan-desk'                       => array( 'ジャパンデスク', 'japan-desk', 0, 'ja' ),
+		'china-desk'                       => array( '中国业务组', 'china-desk', 0, 'zh-Hans' ),
+	);
+	foreach ( $pages as $path => $p ) {
+		list( $id, $state ) = tng_seed_page_at( $path, $p[0], tng_seed_spec( $p[1] ), 'tng-blank', array( 'menu_order' => $p[2] ) );
+		if ( ! empty( $p[3] ) && in_array( $state, array( 'created', 'filled (was the placeholder)' ), true ) ) {
+			update_post_meta( $id, '_tng_lang', $p[3] ); // <main lang> (templates.php)
+		}
+		$log[] = '1.3.x page /' . $path . '/: ' . $state;
+	}
 }

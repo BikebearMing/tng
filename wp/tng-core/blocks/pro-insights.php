@@ -29,6 +29,7 @@ echo tng_related_section( // phpcs:ignore
 		'data_section' => 'pro-insights',
 		'data_toggle'  => 'show_pro_insights',
 		'heading'      => tng_field( 'insights_heading', 'Insights', $tng_id ),
+		'link_url'     => add_query_arg( 'pro', get_post_field( 'post_name', $tng_id ), tng_page_url( 'insights' ) ) . '#results', // the archive's professional filter
 		'cards'        => $tng_cards,
 	)
 );

@@ -1,7 +1,7 @@
 <?php
 /**
  * Front-end and editor assets. Order mirrors the static HTML exactly:
- * fonts, blaze.css, lenis.css, style.css (+ WP overrides), then
+ * fonts, blaze.css, lenis.css, style.css (+ WP overrides), responsive.css, then
  * gsap → ScrollTrigger → SplitText → blaze-slider → lenis → main.js → tng-wp.js.
  */
 
@@ -21,6 +21,9 @@ add_action(
 		wp_enqueue_style( 'tng-lenis', tng_asset( 'vendor/lenis.css' ), array(), $v );
 		wp_enqueue_style( 'tng-style', tng_asset( 'css/style.css' ), array( 'tng-blaze', 'tng-lenis' ), $v );
 		wp_enqueue_style( 'tng-wp-overrides', tng_asset( 'css/wp-overrides.css' ), array( 'tng-style' ), $v );
+		// Phone / tablet layer (below 1200). Not in the editor: its canvas is often
+		// narrower than 1200 and would flip block previews to the phone layout.
+		wp_enqueue_style( 'tng-responsive', tng_asset( 'css/responsive.css' ), array( 'tng-wp-overrides' ), $v );
 
 		foreach ( array(
 			'tng-gsap'          => 'vendor/gsap.min.js',

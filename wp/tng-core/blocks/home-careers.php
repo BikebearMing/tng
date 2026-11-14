@@ -50,7 +50,7 @@ if ( count( $tng_col_down ) < 2 ) {
 <section class="hp-careers" data-section="careers" data-toggle="show_careers">
 	<div class="hp-careers__intro">
 		<h2 class="h2 dark"><?php echo esc_html( tng_field( 'heading', 'Build your career with Tilleke & Gibbins' ) ); ?></h2>
-		<a href="<?php echo esc_url( tng_field( 'cta_url', '#' ) ); ?>" class="button-label dark link-arrow">
+		<a href="<?php echo esc_url( tng_link_or( tng_field( 'cta_url', '#' ), tng_jobs_url() ) ); ?>" class="button-label dark link-arrow">
 			<?php echo esc_html( tng_field( 'cta_label', 'Explore opportunities' ) ); ?>
 			<?php echo tng_arrow( 1.5 ); ?>
 		</a>

@@ -30,9 +30,9 @@ $tng_heading = tng_field( 'heading', '' );
 $tng_text    = tng_field( 'text', '' );
 $tng_link    = tng_field( 'link_label', '' );
 ?>
-<section class="svc-overview svc-overview--top-label <?php echo esc_attr( $tng_c[0] ); ?>"<?php echo $tng_id ? ' id="' . esc_attr( $tng_id ) . '"' : ''; ?> data-section="<?php echo esc_attr( $tng_c[1] ); ?>" data-toggle="<?php echo esc_attr( $tng_c[2] ); ?>">
+<section class="svc-overview svc-overview--top-label <?php echo esc_attr( $tng_c[0] ); ?><?php echo tng_block_class( $block ); ?>"<?php echo $tng_id ? ' id="' . esc_attr( $tng_id ) . '"' : ''; ?> data-section="<?php echo esc_attr( $tng_c[1] ); ?>" data-toggle="<?php echo esc_attr( $tng_c[2] ); ?>">
 	<p class="subhead pro-label svc-overview__label"><?php echo esc_html( tng_field( 'label', 'Overview' ) ); ?></p>
-	<h2 class="h2 svc-overview__heading"><?php echo esc_html( $tng_heading ); ?></h2>
+	<h2 class="h2 svc-overview__heading"><?php echo nl2br( esc_html( trim( $tng_heading ) ), false ); ?></h2>
 	<?php if ( 'info' === $tng_variant && get_field( 'show_image' ) ) : ?>
 	<img src="<?php echo esc_url( tng_img_url( 'image', tng_asset( 'img/about-csr-planting.jpg' ) ) ); ?>" alt="" class="info-overview__image">
 	<?php endif; ?>
@@ -42,7 +42,7 @@ $tng_link    = tng_field( 'link_label', '' );
 			<?php echo wp_kses_post( $tng_text ); ?>
 		</div>
 		<?php if ( $tng_link ) : ?>
-		<a href="<?php echo esc_url( tng_field( 'link_url', '#' ) ); ?>" class="button-label link-arrow about-code__link">
+		<a href="<?php echo esc_url( tng_link_or( tng_field( 'link_url', '#' ), tng_code_of_conduct_url() ) ); ?>" class="button-label link-arrow about-code__link">
 			<?php echo esc_html( $tng_link ); ?>
 			<?php echo tng_arrow( 1.5 ); ?>
 		</a>
@@ -50,7 +50,7 @@ $tng_link    = tng_field( 'link_label', '' );
 	</div>
 	<?php else : ?>
 	<div class="rich-text svc-overview__text">
-		<?php echo wp_kses_post( $tng_text ); ?>
+		<?php echo tng_heal_text_links( wp_kses_post( $tng_text ) ); // phpcs:ignore -- kses'd ?>
 	</div>
 	<?php endif; ?>
 </section>

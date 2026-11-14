@@ -91,6 +91,15 @@ function tng_term_posts( $post_type, $term, $count = 3 ) {
 
 /** Professionals tagged with the term, ordered by position (partners first) then name. */
 function tng_term_professionals( $term, $count = 4 ) {
+	// The visibility check and the section both call this: rank once per term.
+	static $memo = array();
+	if ( ! isset( $memo[ $term->term_id ] ) ) {
+		$memo[ $term->term_id ] = tng_term_professionals_ranked( $term );
+	}
+	return array_slice( $memo[ $term->term_id ], 0, $count );
+}
+
+function tng_term_professionals_ranked( $term ) {
 	$ids = get_posts(
 		array(
 			'post_type'      => 'professional',
@@ -107,20 +116,21 @@ function tng_term_professionals( $term, $count = 4 ) {
 			),
 		)
 	);
-	$rank = array( 'partner' => 0, 'counsel' => 1, 'consultant' => 2, 'senior-associate' => 3, 'associate' => 4 );
+	update_object_term_cache( $ids, 'professional' ); // one query, not one per professional
+	// Seniority order of the old site's position facet. A position term not
+	// listed here (added later in wp-admin) sorts after these; no position last.
+	$rank  = array_flip( array( 'partner', 'counsel', 'consultant', 'regulatory-consultant', 'senior-associate', 'associate', 'patent-agent', 'patent-specialist', 'trademark-specialist', 'operations-professionals' ) );
 	$keyed = array();
 	foreach ( $ids as $i => $id ) {
-		$best = 9;
+		$best = 99;
 		$positions = get_the_terms( $id, 'position' );
 		foreach ( is_array( $positions ) ? $positions : array() as $p ) {
-			if ( isset( $rank[ $p->slug ] ) ) {
-				$best = min( $best, $rank[ $p->slug ] );
-			}
+			$best = min( $best, isset( $rank[ $p->slug ] ) ? $rank[ $p->slug ] : 50 );
 		}
 		$keyed[] = array( $best, $i, $id );
 	}
 	sort( $keyed ); // position rank, then the title order from the query
-	return array_slice( wp_list_pluck( $keyed, 2 ), 0, $count );
+	return wp_list_pluck( $keyed, 2 );
 }
 
 /** Rows of the term's client successes repeater that have a title. */
@@ -226,6 +236,26 @@ add_action(
 				wp_safe_redirect( tng_term_link( $parent ), 301 );
 				exit;
 			}
+		}
+	}
+);
+
+/*
+ * Taxonomy archives with no design of their own (they showed the "under
+ * development" placeholder): send them to the list that already filters by
+ * them. 302, so a designed archive can take the URL over later.
+ */
+add_action(
+	'template_redirect',
+	function () {
+		if ( is_tax( 'insight_category' ) ) {
+			$term = get_queried_object();
+			wp_safe_redirect( add_query_arg( 'res', $term->slug, tng_page_url( 'insights', home_url( '/insights/' ) ) ) . '#results', 302 );
+			exit;
+		}
+		if ( is_tax( array( 'position', 'language' ) ) ) {
+			wp_safe_redirect( tng_page_url( 'professionals', home_url( '/professionals/' ) ), 302 );
+			exit;
 		}
 	}
 );

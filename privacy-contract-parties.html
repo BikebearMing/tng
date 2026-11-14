@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Data Protection Policy for Contract Parties — TNG</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/vendor/blaze.css">
+  <link rel="stylesheet" href="assets/vendor/lenis.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       HEADER (site-wide, sits over the banner)
+       SCF options page: site/header
+       Fields: logo (image/svg), top_menu (WP menu "Header top":
+               About / Careers / Contact), main_menu (WP menu "Header main":
+               Professionals / Services / Insights / Locations),
+               search_label, languages (repeater: code, url),
+               locations_mega (auto from Location taxonomy: name, image,
+               link; plus extra_links repeater, e.g. Global Reach),
+               services_mega (auto from Industry and Practice taxonomies:
+               name, link; labels editable)
+       ============================================================ -->
+  <header class="site-header" data-scrolled-at="40">
+    <!-- TODO: swap for the logo SVG once supplied; this is a text stand-in -->
+    <a href="index.html" class="site-header__logo" aria-label="Tilleke &amp; Gibbins">
+      <span>Tilleke</span>
+      <span><em>&amp;</em>Gibbins</span>
+    </a>
+
+    <nav class="site-header__nav" id="site-nav" aria-label="Main">
+      <ul class="site-header__top">
+        <li class="has-mega">
+          <a href="about.html" class="subhead" aria-haspopup="true">About</a>
+          <!-- Tiny megamenu: the page's child pages (WP: published children, Page Attributes → Order) -->
+          <div class="site-header__mega site-header__mega--mini">
+            <ul class="site-header__mega-links">
+            <li><a href="about-history.html" class="site-header__mega-link">History</a></li>
+            <li><a href="awards.html" class="site-header__mega-link">Awards &amp; Rankings</a></li>
+            <li><a href="pro-bono.html" class="site-header__mega-link">Pro Bono</a></li>
+            <li><a href="csr.html" class="site-header__mega-link">CSR</a></li>
+            <li><a href="museum.html" class="site-header__mega-link">Museum of Counterfeit Goods</a></li>
+            <li><a href="textile-collection.html" class="site-header__mega-link">Textile Collection</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="has-mega">
+          <a href="careers.html" class="subhead" aria-haspopup="true">Careers</a>
+          <!-- Tiny megamenu: the page's child pages (WP: published children, Page Attributes → Order) -->
+          <div class="site-header__mega site-header__mega--mini">
+            <ul class="site-header__mega-links">
+            <li><a href="careers-legal.html" class="site-header__mega-link">Legal Professionals</a></li>
+            <li><a href="careers-operations.html" class="site-header__mega-link">Operations Professionals</a></li>
+            <li><a href="careers-internships.html" class="site-header__mega-link">Internships</a></li>
+            <li><a href="job-opportunities.html" class="site-header__mega-link">Job Opportunities</a></li>
+            <li><a href="recruitment-process.html" class="site-header__mega-link">Our Recruitment Process</a></li>
+            </ul>
+          </div>
+        </li>
+        <li><a href="contact.html" class="subhead">Contact</a></li>
+      </ul>
+      <ul class="site-header__main">
+        <li><a href="professionals.html" class="button-label">Professionals</a></li>
+        <li class="has-mega">
+          <a href="#" class="button-label" aria-haspopup="true">Services</a>
+          <!-- Megamenu: industries (active follows hover) | practices in two columns -->
+          <div class="site-header__mega site-header__mega--services">
+            <div class="site-header__mega-col">
+              <p class="subhead site-header__mega-label">Industries</p>
+              <ul class="site-header__mega-list">
+              <li class="is-active"><a href="service.html" class="button-label">Automotive<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+              <li><a href="#" class="button-label">Aviation<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+              <li><a href="#" class="button-label">Consumer products<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+              <li><a href="#" class="button-label">Energy<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+              <li><a href="#" class="button-label">Fintech<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+              <li><a href="#" class="button-label">Insurance<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+              <li><a href="#" class="button-label">Life Sciences<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+              <li><a href="#" class="button-label">Technology<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+              </ul>
+            </div>
+            <div class="site-header__mega-col site-header__mega-col--divided">
+              <p class="subhead site-header__mega-label">Practices</p>
+              <ul class="site-header__mega-links" style="--rows: 6;">
+              <li><a href="#" class="site-header__mega-link">Antitrust and Competition</a></li>
+              <li><a href="#" class="site-header__mega-link">Banking and Finance</a></li>
+              <li><a href="#" class="site-header__mega-link">Capital Markets</a></li>
+              <li><a href="#" class="site-header__mega-link">Compliance and Investigations</a></li>
+              <li><a href="#" class="site-header__mega-link">Corporate/M&amp;A</a></li>
+              <li><a href="#" class="site-header__mega-link">Customs and International Trade</a></li>
+              <li><a href="#" class="site-header__mega-link">Dispute Resolution and Litigation</a></li>
+              <li><a href="#" class="site-header__mega-link">Employment</a></li>
+              <li><a href="practice.html" class="site-header__mega-link">Intellectual Property</a></li>
+              <li><a href="#" class="site-header__mega-link">Real Estate</a></li>
+              <li><a href="#" class="site-header__mega-link">Regulatory Affairs</a></li>
+              <li><a href="#" class="site-header__mega-link">Tax</a></li>
+              </ul>
+            </div>
+          </div>
+        </li>
+        <li><a href="insights.html" class="button-label">Insights</a></li>
+        <li class="has-mega">
+          <a href="#" class="button-label" aria-haspopup="true">Locations</a>
+          <!-- Megamenu: hover/focus opens it; hovering a location swaps the image -->
+          <div class="site-header__mega">
+            <ul class="site-header__mega-list">
+            <li class="is-active"><a href="location.html" class="button-label">Cambodia<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            <li><a href="#" class="button-label">Indonesia<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            <li><a href="#" class="button-label">Laos<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            <li><a href="#" class="button-label">Myanmar<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            <li><a href="#" class="button-label">Thailand<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            <li><a href="#" class="button-label">Vietnam<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            <li><a href="#" class="button-label">Global Reach<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            </ul>
+            <div class="site-header__mega-media" aria-hidden="true">
+            <img src="assets/img/loc-cambodia-menu.jpg" alt="" class="is-active">
+            <img src="assets/img/loc-indonesia-menu.jpg" alt="">
+            <img src="assets/img/loc-laos-menu.jpg" alt="">
+            <img src="assets/img/loc-myanmar-menu.jpg" alt="">
+            <img src="assets/img/loc-thailand-menu.jpg" alt="">
+            <img src="assets/img/loc-vietnam-menu.jpg" alt="">
+            <img src="assets/img/loc-global-menu.jpg" alt="">
+            </div>
+          </div>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="site-header__utils">
+      <a href="search.html" class="subhead site-header__search">
+        Search
+        <svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="7.5" cy="7.5" r="6" stroke="currentColor" stroke-width="1.5"/><path d="M12 12l4.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </a>
+      <a href="#" class="subhead site-header__lang" aria-label="Language: English">
+        ENG
+        <svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="7.5" stroke="currentColor" stroke-width="1.3"/><ellipse cx="9" cy="9" rx="3.2" ry="7.5" stroke="currentColor" stroke-width="1.3"/><path d="M1.5 9h15M2.8 5.2h12.4M2.8 12.8h12.4" stroke="currentColor" stroke-width="1.3"/></svg>
+      </a>
+    </div>
+
+    <button type="button" class="site-header__toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Menu"><span></span><span></span></button>
+  </header>
+
+  <main>
+
+    <!-- ============================================================
+         SECTION: Text page hero (the career path hero: navy, no image)
+         Plain text page template (Privacy Policy, Legal Notice,
+         Fraudulent Communications, data protection notices), SCF block:
+         careers/path-hero reused as page/text-hero
+         Fields: show_path_hero (true/false), title (text, default =
+                 page title), intro (textarea, optional)
+         ============================================================ -->
+    <section class="lp-hero txt-hero" data-section="text-hero" data-toggle="show_path_hero">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <p class="subhead"><a href="index.html">Home</a> / <a href="privacy-policy.html">Privacy Policy</a> / <span aria-current="page">Personal Data Protection Policy for Contract Parties</span></p>
+      </nav>
+
+      <div class="lp-hero__content">
+        <h1 class="h1 dark">Personal Data Protection Policy for Contract Parties</h1>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION: Text page body
+         Template block tng/text-page: sidebar + the page content.
+         Sidebar (sticky): "Legal information" nav = a WP menu
+           ("Footer legal" + child pages); the current page is navy
+           (aria-current), its children indent under it.
+         Body: post content in the WYSIWYG editor (.rich-text, styled by
+           element: p, h2, h3, h4, ul, ol, table, a, strong).
+         Grid of the insight article (aside 357 from 191, body 589,
+         70 apart); 80 under the hero.
+         ============================================================ -->
+    <section class="in-article txt-article" data-section="text-page">
+      <aside class="in-article__aside">
+        <nav class="txt-nav" aria-label="Legal information">
+          <h2 class="h3 txt-nav__heading">Legal information</h2>
+          <ul class="in-related__list txt-nav__list">
+            <li>
+              <a href="privacy-policy.html" class="button-label txt-nav__link">Privacy Policy<span class="arrow-circle" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+              <ul class="txt-nav__sub">
+                <li><a href="privacy-candidates.html" class="txt-nav__sublink">Candidates</a></li>
+                <li><a href="privacy-clients.html" class="txt-nav__sublink">Clients</a></li>
+                <li><a href="privacy-contract-parties.html" class="txt-nav__sublink" aria-current="page">Contract Parties</a></li>
+                <li><a href="privacy-video-surveillance.html" class="txt-nav__sublink">Video Surveillance</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="legal-notice.html" class="button-label txt-nav__link">Legal Notice<span class="arrow-circle" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+              <ul class="txt-nav__sub">
+                <li><a href="legal-notice-affiliates.html" class="txt-nav__sublink">Affiliates and Partner Firms</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="fraudulent-communications.html" class="button-label txt-nav__link">Fraudulent Communications<span class="arrow-circle" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+      <div class="in-content rich-text txt-content">
+        <p>This Personal Data Protection Policy for Contract Parties (“<strong>Policy</strong>”) explains how Tilleke &amp; Gibbins International Ltd. and our <a href="legal-notice-affiliates.html">Affiliates and Partner Firms</a> (collectively “<strong>Tilleke</strong>”, “<strong>we</strong>”, “<strong>us</strong>” or “<strong>our</strong>”) collect, use, disclose, transfer, and otherwise process (“<strong>process</strong>” or “<strong>processing</strong>”) your Personal Data in the course of our business, in accordance with the Personal Data Protection Act B.E. 2562 (2019) (“<strong>PDPA</strong>”).</p>
+        <p>We advise you to read this Policy in its entirety.</p>
+        <h2>1. When does this Policy apply to you?</h2><p>This Policy applies to you if you are (a) an individual who is our outsource service provider, supplier, vendor, business partner, contractor, or subcontractor (collectively called a “<strong>Individual Contract Party(ies)</strong>”); or (b) an individual who is associated with our corporate outsource service provider, supplier, vendor, business partner, contractor, or subcontractor (“<strong>Corporate Contract Party(ies)</strong>”), e.g. authorized person(s)/director(s), authorized representative(s), and/or contact person(s) (collectively called “<strong>Associated Person(s)</strong>”. Throughout this Policy, Individual Contract Party(ies) and/or Corporate Contract Party(ies) may be referred to individually or collectively as the “<strong>Contract Party(ies)</strong>”.</p>
+        <h2>2. What types of Personal Data does Tilleke collect and process from you?</h2>
+        <p><strong>(a) General Personal Data</strong>: Tilleke collects various types of your Personal Data that can be used to identify you, either directly or indirectly (“<strong>Personal Data</strong>”), including the following:</p>
+        <p>a. Personal Data may include your name, surname, national identification number, passport number, tax identification number, company, title, job description, and contact details, such as your email address, telephone number, business address, and bank account number and details as well as images and motions captured by video cameras that are installed at our premises.</p>
+        <p>b. Any other categories of Personal Data that may be provided or included within any emails and other communications between you and Tilleke.</p>
+        <p>c. Personal Data that we learn or obtain about you from our dealings with you.</p>
+        <p>d. Personal Data that we obtain from any government-issued documents that you provide to us, including your passport, house registration, tax-related documents, and national identification card.</p>
+        <p>e. Personal Data that we learn about you from economic or trade sanctions lists.</p>
+        <p><strong>(b) </strong>Tilleke does not aim or have any intention to collect Personal Data that is not necessary for, or not relevant to, our business operations, or our purposes relating to the processing of Personal Data, and especially Personal Data which are considered as sensitive personal data pursuant to Section 26 of the PDPA (“Sensitive Personal Data”).</p>
+        <p>If you are required to provide us with a copy of a Thai national identification card, Tilleke encourages you to blind, or cross out, the Sensitive Personal Data on your identification card (i.e. religion and/or blood type related data), before delivering such document to us. If the copy of your Thai national identification card that has been delivered to Tilleke still contains such data, Tilleke will blind or cross it out from the documents ourselves. The blinding or crossing-out of such data on the copy of your Thai national identification card will be conducted merely for the purpose of refraining from the collection of any unnecessary or irrelevant Personal Data, and without any criminal intent.</p>
+        <p><strong>(c) </strong>Where a Corporate Contract Party provides Tilleke with the Personal Data of its Associated Person, the Corporate Contract Party warrants that it has duly informed such Associated Person about the information in relation to the processing of the Personal Data as specified in this Policy and obtained proper and informed consent from such Associated Person (if required), or that the collection and disclosure of the Personal Data of such Associated Person can rely on any other legal basis which enables Tilleke to process such Personal Data for the purposes specified in this Policy.</p>
+        <h2>3. Why does Tilleke collect and process your Personal Data?</h2><p>Tilleke collects your Personal Data for different purposes, relying on various lawful bases, as set out below:</p>
+        <p><strong>(a) Contractual Necessity <em>(Only applicable to Individual Contract Parties)</em></strong>: <br>a. Tilleke collects and processes your Personal Data in order to enter into and take any necessary steps to enter into a contract with you as per your request.</p>
+        <p>b. Tilleke collects and processes your Personal Data for the purposes of performing Tilleke’s obligations and duties under such contract which include, without limitation, to make necessary payments for your products and/or services.</p>
+        <p>c. Where the processing of Personal Data relies on contractual necessity as a legal basis, failure to provide required or necessary Personal Data may result in Tilleke being unable to perform its obligations under the contract with you, or to proceed with any of your requests in relation to the contract, either in part or in whole. In other words, Tilleke may not be able to obtain your products or services, or may not be able to arrange for payments for your products or services.</p>
+        <p><strong>(b) Legal Obligation:</strong><br>a. Tilleke processes the Personal Data of Individual Contract Parties and Associated Persons in order to comply with applicable law or regulation, and to comply with orders of the court, competent authorities, and/or government agencies. In particular, for Individual Contract Parties, Tilleke may need to process your Personal Data for accounting and tax filing purposes.</p>
+        <p>b. Where the processing of Personal Data relies on legal obligation as a legal basis, failure to provide required or necessary Personal Data may result in Tilleke being unable to perform its obligations or duties under applicable laws or regulations, either in part or in whole, or it may cause Tilleke and/or you to be in violation of applicable law or regulation, or an order of a court, competent authority, and/or government agency.</p>
+        <p><strong>(c) Legitimate Interest:</strong><br>a. In the event that the contract will be or is entered into by and between a Corporate Contract Party and Tilleke, Tilleke processes Personal Data of Associated Persons in order to make necessary determination and undertake necessary steps to enter into the contract as well as to perform Tilleke’s obligations under the contract.</p>
+        <p>b. Tilleke processes Personal Data of Individual Contract Parties and Associated Persons in order to manage and administer our business, and to manage our relationships with our Contract Parties.</p>
+        <p>c. Tilleke processes Personal Data of Individual Contract Parties and Associated Persons to undertake risk management activities in connection with the operation of the business of Tilleke and the relevant contracts with the Contract Parties.</p>
+        <p>d. Tilleke processes Personal Data of Individual Contract Parties and Associated Persons to detect, prevent, investigate, and prosecute fraud and/or the criminal activity.</p>
+        <p>e. Tilleke collects Personal Data of Individual Contract Parties and Associated Persons while visiting Tilleke’s premises, including your images and motions captured by video cameras that are installed at our premises in order to protect property, personnel, rights, and interests of Tilleke.</p>
+        <p>f. Tilleke processes Personal Data of Individual Contract Parties and Associated Persons in order to grant access to our premises and systems.</p>
+        <p>g. Tilleke processes Personal Data of Individual Contract Parties and Associated Persons to manage our information technology and to ensure the security of our systems.</p>
+        <p>h. Tilleke collects Personal Data of Individual Contract Parties and Associated Persons in order to conduct compliance activities, such as assessing and managing risk in accordance with our internal policies such as in relation to fraud, anti-money laundering, anti-bribery, etc. If you are unwilling to provide your Personal Data in these circumstances, then we may be unable to receive (or continue receiving) the relevant products or services from the Contract Party or other persons/entities with which you are associated.</p>
+        <p><strong>(d) Legal Claims:</strong> Tilleke processes Personal Data of Individual Contract Parties and Associated Persons when it is necessary for the establishment, compliance, exercising, or defense of legal claims by Tilleke.</p>
+        <h2>4. Where does Tilleke collect your Personal Data?</h2>
+        <p><strong>(a) Individual Contract Parties</strong><br>a. <u><em>Directly from you:</em></u> We normally collect your Personal Data directly from you before, during, and after the contract term between you and Tilleke.</p>
+        <p>b. <u><em>Third Parties:</em></u> We may collect your Personal Data from online public sources, court orders, court judgments, orders of the competent authorities, and any other governmental agencies.</p>
+        <p><strong>(b) Associated Persons</strong><br>a. <u><em>Directly from you:</em></u> We normally collect your Personal Data directly from you before, during, and after the contract term between the Corporate Contract Party with whom you are associated and Tilleke.</p>
+        <p>b. <u><em>Third Parties:</em></u> We may also collect your Personal Data from online public sources, your colleagues or employers, court orders, court judgments, orders of the competent authorities, and any other governmental agencies.</p>
+        <h2>5. To whom does Tilleke disclose your Personal Data?</h2>
+        <p>(a) Tilleke discloses Personal Data of the Individual Contract Party and the Associated Person to our Affiliates and Partner Firms, both within and outside Thailand, for purposes relating to the acquisition of products and/or services from the Contract Party.</p>
+        <p>(b) Tilleke may disclose Personal Data of the Individual Contract Party and the Associated Person if Tilleke is compelled or required to do so under applicable law or in response to an order of a court, competent authority, or, government agency, both in Thailand and overseas, including, without limitation, the Revenue Department.</p>
+        <p>(c) Tilleke discloses Personal Data of the Contract Party and the Associated Person to any person or entity who provides services to Tilleke such as information technology service providers, auditors, accounting firms, etc.</p>
+        <h2>6. Where does Tilleke transfer your Personal Data?</h2>
+        <p>(a) We regularly transfer your Personal Data to our Affiliates and Partner Firms, and in certain circumstances, to third parties (e.g. service providers), which are located outside Thailand, and which may have different data protection standards to those prescribed by the data protection authority in Thailand. Notwithstanding that, we ensure that we will protect your Personal Data by implementing adequate personal data protection standards for the transfer of your Personal Data outside Thailand. We will also ensure that any entity to whom your Personal Data will be disclosed will implement adequate personal data protection standards, and where your Personal Data will be transferred within our Affiliates and Partner Firms, we will use the relevant data transfer mechanisms (e.g., binding corporate rules or other mechanisms as the applicable data protection laws may require or otherwise permit). In addition, your Personal Data is primarily transferred to our Affiliates and Partner Firms located in Cambodia, Indonesia, Laos, Myanmar, and Vietnam.</p>
+        <p>(b) In all cases, we will transfer your Personal Data only where it is permitted and in compliance with the PDPA.</p>
+        <h2>7. For how long does Tilleke retain your Personal Data?</h2>
+        <p>We retain your Personal Data for as long as is required in order to fulfil our contractual obligations, or for the performance of our services to our Contract Party, and for 10 years after the cessation of the contractual relationship between us and the Contract Party, or the last performance of our services or communication, whichever is later, unless otherwise agreed with you in writing, or required or permitted by applicable law.</p>
+        <p>Where we process your Personal Data in connection with a legal obligation, your Personal Data will be retained for the duration of the prescribed legal retention period, as stipulated under the applicable law.</p>
+        <h2>8. What are your rights in relation to your Personal Data?</h2><p>You are entitled to:</p>
+        <p>(a) Request to have access to and obtain a copy of your Personal Data, and to request the disclosure of the source of the Personal Data, in the event that your Personal Data was collected without your consent;</p>
+        <p>(b) Receive your Personal Data in a commonly used and machine-readable format (if any), and to have your Personal Data in said format transmitted to another Data Controller;</p>
+        <p>(c) Request that your Personal Data be deleted, destroyed, or de-identified;</p>
+        <p>(d) Object to the collection, use, and disclosure of your Personal Data;</p>
+        <p>(e) Request that the processing of your Personal Data be suspended;</p>
+        <p>(f) Request that your Personal Data be corrected, updated, or completed;</p>
+        <p>(g) Withdraw your consent at any time, provided that there is no other legal ground for Tilleke to continue with the processing of your Personal Data; and</p>
+        <p>(h) Lodge complaints to the Office of Personal Data Protection Commission and any other competent authorities</p>
+        <p>Your request may be refused, and the exercise of your rights is subject to the conditions and limitations prescribed by law.</p>
+        <h2>9. Changes to this Policy</h2><p>Tilleke may amend, change, or update this Policy from time to time, whereby Tilleke will notify you about such changes via your selected communication channel or any other communication channels as Tilleke deems appropriate. In the event that the amendment, change, or update will affect the purposes for which your Personal Data has originally been collected, Tilleke will notify you about such changes and obtain your consent (if applicable), prior to such changes becoming effective.</p>
+        <h2>10. How can you contact us?</h2><p>If you have any inquiries in relation to your Personal Data, or you would like to exercise any of your rights, you may contact us at:</p>
+        <p><strong>Tilleke &amp; Gibbins International Ltd.</strong></p>
+        <p>Supalai Grand Tower, 26th Floor<br>1011 Rama 3 Road, Chongnonsi, Yannawa<br>Bangkok 10120, Thailand<br>T: +66 2056 5555<br>F: +66 2056 5678<br>Email: <a href="mailto:privacy@tilleke.com">privacy@tilleke.com</a></p>
+        <p>Or you may contact our Data Protection Officer at:</p>
+        <p>Papitchya Supinananda<br>T: +66 2056 5555<br>F: +66 2056 5678<br>Email: <a href="mailto:privacy@tilleke.com">privacy@tilleke.com</a></p>
+        <p>This Policy is effective from June 1, 2022, onward.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER (site-wide)
+       SCF options page: site/footer
+       Fields: logo (image/svg), social_links (repeater: network, url),
+               newsletter_heading, newsletter_form (Mailchimp/CF7 embed or
+               action url), networks (repeater: logo, url), quick_links
+               (WP menu "Footer quick links", split into 2 columns),
+               copyright, legal_links (WP menu "Footer legal")
+       ============================================================ -->
+  <footer id="footer" class="hp-footer" data-section="footer">
+    <div class="hp-footer__top">
+
+      <div class="hp-footer__brand">
+        <!-- TODO: swap for the logo SVG once supplied; this is a text stand-in -->
+        <a href="index.html" class="hp-footer__logo" aria-label="Tilleke &amp; Gibbins">
+          <span>Tilleke</span>
+          <span><em>&amp;</em>Gibbins</span>
+        </a>
+
+        <ul class="hp-footer__social">
+          <li>
+            <a href="https://www.facebook.com/tillekegibbins" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.5-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H8v3h2.5V21h3z"/></svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.youtube.com/channel/UCRQKPcy9kYGdYqFVkqzSqVA" aria-label="YouTube">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18.3 5 12 5 12 5s-6.3 0-7.8.4A2.5 2.5 0 0 0 2.4 7.2C2 8.8 2 12 2 12s0 3.2.4 4.8a2.5 2.5 0 0 0 1.8 1.8C5.7 19 12 19 12 19s6.3 0 7.8-.4a2.5 2.5 0 0 0 1.8-1.8c.4-1.6.4-4.8.4-4.8s0-3.2-.4-4.8zM10 15V9l5.2 3L10 15z"/></svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/company/tilleke-gibbins/" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.9 8.7H3.6V20h3.3V8.7zM5.3 3.5a1.9 1.9 0 1 0 0 3.8 1.9 1.9 0 0 0 0-3.8zM20.4 13.1c0-3.2-1.7-4.7-4-4.7a3.4 3.4 0 0 0-3.1 1.7V8.7H10V20h3.3v-5.6c0-1.5.3-2.9 2.1-2.9 1.8 0 1.8 1.7 1.8 3V20h3.3v-6.9z"/></svg>
+            </a>
+          </li>
+        </ul>
+
+        <p class="button-label dark hp-footer__newsletter-heading">Subscribe to our newsletter</p>
+        <form class="hp-footer__form" action="https://tilleke.us7.list-manage.com/subscribe/post?u=266a11a0874fa0c222f4b20fd&amp;id=2fba872045" method="post" target="_blank">
+          <label class="visually-hidden" for="footer-email">Your email</label>
+          <input type="email" id="footer-email" name="EMAIL" placeholder="Your email" autocomplete="email" required>
+          <div class="visually-hidden" aria-hidden="true"><input type="text" name="b_266a11a0874fa0c222f4b20fd_2fba872045" tabindex="-1" value=""></div>
+          <button type="submit">
+            Subscribe
+            <svg viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </form>
+      </div>
+
+      <div class="hp-footer__nav">
+        <p class="subhead hp-footer__label">Networks</p>
+        <ul class="hp-footer__networks">
+          <li><a href="https://www.lexmundi.com/"><img src="assets/lexmundi.png" alt="Lex Mundi Member" class="hp-footer__network hp-footer__network--lexmundi"></a></li>
+          <li><a href="https://www.multilaw.com/"><img src="assets/multilaw.png" alt="Multilaw" class="hp-footer__network hp-footer__network--multilaw"></a></li>
+          <li><a href="https://www.drewnetworkasia.com/"><img src="assets/dna.png" alt="Drew Network Asia" class="hp-footer__network hp-footer__network--dna"></a></li>
+        </ul>
+
+        <p class="subhead hp-footer__label hp-footer__label--links">Quick links</p>
+        <div class="hp-footer__quick">
+          <ul class="hp-footer__quick-col">
+            <li><a href="professionals.html" class="button-label dark">Professionals</a></li>
+            <li><a href="services.html" class="button-label dark">Services</a></li>
+            <li><a href="insights.html" class="button-label dark">Insights</a></li>
+            <li><a href="global-reach.html" class="button-label dark">Locations</a></li>
+          </ul>
+          <ul class="hp-footer__quick-col">
+            <li><a href="about.html" class="button-label dark">About</a></li>
+            <li><a href="careers.html" class="button-label dark">Careers</a></li>
+            <li><a href="contact.html" class="button-label dark">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="hp-footer__bar">
+      <p class="subhead hp-footer__copyright">&copy; 2026 Tilleke &amp; Gibbins International Ltd. All rights reserved.</p>
+      <ul class="hp-footer__legal">
+        <li><a href="privacy-policy.html" class="subhead dark">Privacy Policy</a></li>
+        <li><a href="fraudulent-communications.html" class="subhead dark">Fraudulent Communications</a></li>
+        <li><a href="legal-notice.html" class="subhead dark">Legal Notice</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="assets/vendor/ScrollTrigger.min.js"></script>
+  <script src="assets/vendor/SplitText.min.js"></script>
+  <script src="assets/vendor/blaze-slider.min.js"></script>
+  <script src="assets/vendor/lenis.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

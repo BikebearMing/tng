@@ -40,10 +40,17 @@ if ( ! $tng_links ) {
 
 $tng_arrows = (bool) get_field( 'arrows' );
 ?>
-<section class="more-from" data-section="more-from" data-toggle="show_more_from">
+<section class="more-from<?php echo tng_block_class( $block ); ?>" data-section="more-from" data-toggle="show_more_from">
 	<h2 class="h2 more-from__title"><?php echo $tng_heading; // phpcs:ignore ?></h2>
 	<ul class="more-from__list">
-		<?php foreach ( $tng_links as $tng_link ) : $tng_url = ! empty( $tng_link['url'] ) ? $tng_link['url'] : '#'; ?>
+		<?php
+		foreach ( $tng_links as $tng_link ) :
+			$tng_url = tng_heal_url( isset( $tng_link['url'] ) ? $tng_link['url'] : '', $tng_link['label'], $tng_parent );
+			// Seeded before the Job Opportunities page existed: careers/#job-opportunities
+			if ( '#job-opportunities' === strstr( $tng_url, '#' ) ) {
+				$tng_url = tng_jobs_url();
+			}
+			?>
 		<li><a href="<?php echo esc_url( $tng_url ); ?>" class="h3 more-from__link"<?php echo untrailingslashit( $tng_url ) === $tng_here ? ' aria-current="page"' : ''; ?>><?php echo esc_html( $tng_link['label'] ); ?><?php echo $tng_arrows ? tng_arrow_circle( true ) : ''; // phpcs:ignore ?></a></li>
 		<?php endforeach; ?>
 	</ul>

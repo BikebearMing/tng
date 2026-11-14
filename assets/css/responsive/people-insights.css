@@ -1,0 +1,1014 @@
+/* ============================================================
+   TNG responsive: Professionals + Insights (family B)
+   Owns: professionals, professional, insights, awards, insight, insight-no-image, insight-module <main>
+   Rules: temporary/migration/responsive-spec.md sections 0.4, 0.5
+   and "Foundation provides". Two queries only:
+   @media (max-width: 1199px) and
+   @media (min-width: 768px) and (max-width: 1199px)
+   Lengths: calc(N * var(--u)), N = px on the 390 design.
+   ============================================================ */
+
+@media (max-width: 1199px) {
+
+  /* ==========================================================
+     Professionals filter (+ insights / awards .ins-filter)
+     Not sticky. Search row, then the alphabet as a 13 x 2 grid
+     (every letter visible, 27 x 44 taps), then the facets as a
+     swipe strip of pills on the grey band.
+     ========================================================== */
+  /* Not sticky; relative so the open panels hang from it */
+  .pro-filter {
+    position: relative;
+    top: auto; /* style.css's sticky top (5vw) would shift a relative bar */
+  }
+
+  /* Open panels: full width between the gutters, under their row
+     (main.js sets top / max-height); 44 rows, 15 type */
+  .flt-panel {
+    left: var(--sidepadding-xs);
+    right: var(--sidepadding-xs);
+    width: auto;
+    max-width: none;
+    margin-top: calc(6 * var(--u)); /* 6 */
+    padding: calc(6 * var(--u)); /* 6 */
+    border-radius: calc(8 * var(--u)); /* 8 */
+    box-shadow: 0 calc(10 * var(--u)) calc(30 * var(--u)) rgba(7, 20, 35, 0.18);
+  }
+
+  .flt-panel__list > li:first-child {
+    margin-bottom: calc(6 * var(--u)); /* 6 */
+    padding-bottom: calc(6 * var(--u)); /* 6 */
+  }
+
+  .flt-option {
+    gap: calc(12 * var(--u)); /* 12 */
+    min-height: calc(44 * var(--u)); /* 44: tap target */
+    padding: calc(8 * var(--u)) calc(10 * var(--u)) calc(8 * var(--u)) calc(14 * var(--u)); /* 8 / 10 / 8 / 14 */
+    border-radius: calc(6 * var(--u)); /* 6 */
+    font-size: calc(15 * var(--u)); /* 15 */
+    line-height: 1.2;
+  }
+
+  .flt-option__tick {
+    width: calc(20 * var(--u)); /* 20 */
+    height: calc(20 * var(--u));
+  }
+
+  .flt-option__tick svg {
+    width: calc(10 * var(--u)); /* 10 */
+    height: calc(10 * var(--u));
+  }
+
+  .flt-panel--years .flt-panel__list {
+    gap: calc(2 * var(--u)); /* 2 */
+  }
+
+  .flt-option--pro {
+    gap: calc(2 * var(--u)); /* 2 */
+    min-height: calc(52 * var(--u)); /* 52 */
+  }
+
+  .flt-option__meta {
+    font-size: calc(13 * var(--u)); /* 13 */
+  }
+
+  .flt-panel__empty {
+    padding: calc(12 * var(--u)); /* 12 */
+    font-size: calc(15 * var(--u)); /* 15 */
+  }
+
+  /* A set facet pill turns navy, like the job list's active country */
+  .pro-filter .pro-filter__facet.is-set {
+    border-color: var(--navy);
+    background: var(--navy);
+    color: var(--white);
+  }
+
+  .pro-filter .pro-filter__facet.is-set .pro-filter__chevron {
+    background: var(--white);
+    color: var(--navy);
+  }
+
+  .pro-grid__empty {
+    gap: calc(16 * var(--u)); /* 16 */
+  }
+
+  .pro-filter__bar {
+    grid-template-columns: 1fr;
+  }
+
+  .pro-filter__search {
+    gap: calc(12 * var(--u)); /* 12 */
+    padding: calc(8 * var(--u)) calc(12 * var(--u)) calc(8 * var(--u)) calc(20 * var(--u)); /* 8 / 12 / 8 / 20 */
+    border-right: 0;
+    border-bottom: 1px solid #dbe2e9;
+  }
+
+  /* 16 minimum: iOS zooms into smaller inputs on focus */
+  .pro-filter__search input,
+  .ins-filter input {
+    height: calc(40 * var(--u)); /* 40: the whole row is the tap target */
+    font-size: max(16px, calc(16 * var(--u))); /* 16 */
+    line-height: 1.2;
+  }
+
+  .pro-filter__submit,
+  .ins-filter .pro-filter__submit {
+    width: calc(44 * var(--u)); /* 44: minimum tap size */
+    height: calc(44 * var(--u));
+  }
+
+  .pro-filter__submit svg,
+  .ins-filter .pro-filter__submit svg {
+    width: calc(15 * var(--u)); /* 15 */
+    height: calc(15 * var(--u));
+  }
+
+  .pro-filter__alpha {
+    display: grid;
+    grid-template-columns: repeat(13, 1fr);
+    gap: 0;
+    padding: calc(6 * var(--u)) calc(20 * var(--u)); /* 6 / 20 */
+  }
+
+  .pro-filter__alpha button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: calc(44 * var(--u)); /* 44: minimum tap height */
+    font-size: calc(15 * var(--u)); /* 15 */
+  }
+
+  .pro-filter__alpha button::after {
+    left: calc(50% - 6 * var(--u)); /* 12 wide, centred under the letter */
+    right: calc(50% - 6 * var(--u));
+    bottom: calc(5 * var(--u)); /* 5 */
+    height: 2px;
+  }
+
+  .pro-filter__facets {
+    display: flex;
+    gap: calc(8 * var(--u)); /* 8 */
+    padding: calc(12 * var(--u)) calc(20 * var(--u)); /* 12 / 20 */
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    scroll-padding-inline: calc(20 * var(--u));
+    scrollbar-width: none;
+  }
+
+  .pro-filter__facets::-webkit-scrollbar {
+    display: none;
+  }
+
+  .pro-filter__facet,
+  .ins-filter .pro-filter__facet {
+    flex: none;
+    gap: calc(10 * var(--u)); /* 10 */
+    height: calc(44 * var(--u)); /* 44: minimum tap height (was 40) */
+    padding: 0 calc(10 * var(--u)) 0 calc(16 * var(--u)); /* 10 / 16 */
+    border: 1px solid #dbe2e9;
+    border-radius: 999px;
+    background: var(--white);
+    font-size: calc(15 * var(--u)); /* 15 */
+    font-weight: 600;
+    line-height: 1.2;
+    white-space: nowrap;
+    scroll-snap-align: start;
+  }
+
+  .pro-filter__facet + .pro-filter__facet {
+    border-left: 1px solid #dbe2e9;
+  }
+
+  .pro-filter__chevron {
+    width: calc(20 * var(--u)); /* 20 */
+    height: calc(20 * var(--u));
+  }
+
+  .pro-filter__chevron svg {
+    width: calc(8 * var(--u)); /* 8 */
+    height: calc(8 * var(--u));
+  }
+
+  /* Insights / awards: name search full width; professionals search
+     and Date share the second row */
+  .ins-filter__bar {
+    grid-template-columns: 1fr auto;
+  }
+
+  .ins-filter .pro-filter__search:first-child {
+    grid-column: 1 / -1;
+  }
+
+  .ins-filter .pro-filter__search + .pro-filter__search {
+    border-right: 1px solid #dbe2e9;
+    border-bottom: 0;
+  }
+
+  .ins-filter .pro-filter__search {
+    padding: calc(8 * var(--u)) calc(12 * var(--u)) calc(8 * var(--u)) calc(20 * var(--u)); /* 8 / 12 / 8 / 20 */
+  }
+
+  .ins-filter__date {
+    gap: calc(12 * var(--u)); /* 12 */
+    padding: 0 calc(20 * var(--u)) 0 calc(16 * var(--u)); /* 20 / 16 */
+    font-size: calc(15 * var(--u)); /* 15 */
+  }
+
+  .ins-filter__date svg {
+    width: calc(20 * var(--u)); /* 20 */
+    height: calc(20 * var(--u));
+  }
+
+  /* ==========================================================
+     Professionals grid: 2 columns (tablet: as many 200+ columns
+     as fit), count + View more centred
+     ========================================================== */
+  .pro-grid {
+    padding: calc(24 * var(--u)) calc(20 * var(--u)) calc(56 * var(--u)); /* 24 / 20 / 56 */
+  }
+
+  .pro-grid__list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: calc(20 * var(--u)) calc(8 * var(--u)); /* 20 / 8 */
+  }
+
+  .pro-grid__more {
+    margin-top: calc(40 * var(--u)); /* 40 */
+  }
+
+  .pro-grid__count {
+    font-size: calc(15 * var(--u)); /* 15 */
+    line-height: 1.3;
+  }
+
+  .pro-grid__view-more {
+    gap: calc(12 * var(--u)); /* 12 */
+    margin-top: calc(12 * var(--u)); /* 12 */
+    padding-right: calc(4 * var(--u)); /* 4 */
+  }
+
+  /* ==========================================================
+     Professional hero: stacked text, contacts in a column, the
+     portrait in flow at the end standing on the hero's floor.
+     Cutouts (transparent) and studio photos both fill a 4:5 box,
+     cropped from the top; the photo gets rounded top corners.
+     ========================================================== */
+  .pro-hero {
+    min-height: 0;
+    padding: var(--top-from-header) var(--sidepadding-xs) 0; /* 100 / 20 / 0 */
+  }
+
+  .pro-hero__intro {
+    margin-top: calc(40 * var(--u)); /* 40 */
+  }
+
+  .pro-hero__position {
+    margin-top: calc(8 * var(--u)); /* 8 */
+    font-size: calc(17 * var(--u)); /* 17 */
+    line-height: 1.2;
+  }
+
+  .pro-hero__locations {
+    gap: calc(6 * var(--u)); /* 6 */
+    margin-top: calc(14 * var(--u)); /* 14 */
+  }
+
+  .pro-hero__location {
+    gap: calc(6 * var(--u)); /* 6 */
+    padding: calc(4 * var(--u)) calc(10 * var(--u)) calc(4 * var(--u)) calc(4 * var(--u)); /* 4 / 10 / 4 / 4: 26 tall */
+    font-size: calc(14 * var(--u)); /* 14 */
+  }
+
+  .pro-hero__location img {
+    width: calc(18 * var(--u)); /* 18 */
+    height: calc(18 * var(--u));
+  }
+
+  .pro-hero__contacts {
+    flex-direction: column;
+    gap: calc(10 * var(--u)); /* 10 */
+    margin-top: calc(28 * var(--u)); /* 28 */
+  }
+
+  .pro-hero__contacts a {
+    gap: calc(12 * var(--u)); /* 12 */
+    font-size: calc(16 * var(--u)); /* 16 */
+    line-height: 1.2;
+    overflow-wrap: anywhere;
+  }
+
+  .pro-hero__icon {
+    flex: none;
+    width: calc(40 * var(--u)); /* 40 */
+    height: calc(40 * var(--u));
+  }
+
+  .pro-hero__icon svg {
+    width: calc(16 * var(--u)); /* 16 */
+    height: calc(16 * var(--u));
+  }
+
+  .pro-hero__portrait {
+    position: static;
+    align-self: center;
+    width: 80%;
+    height: auto;
+    aspect-ratio: 4 / 5;
+    margin-top: calc(32 * var(--u)); /* 32 */
+    object-fit: cover;
+    object-position: center top;
+    border-radius: calc(5 * var(--u)) calc(5 * var(--u)) 0 0; /* 5: visible on photos only */
+  }
+
+  /* ==========================================================
+     Professional overview: bio, then facts
+     ========================================================== */
+  .pro-overview {
+    grid-template-columns: 1fr;
+    row-gap: calc(40 * var(--u)); /* 40 */
+    padding: calc(40 * var(--u)) calc(20 * var(--u)) calc(56 * var(--u)); /* 40 / 20 / 56 */
+  }
+
+  .pro-overview__lead,
+  .pro-overview__text {
+    margin-top: calc(20 * var(--u)); /* 20 */
+  }
+
+  .pro-facts__group + .pro-facts__group {
+    margin-top: calc(28 * var(--u)); /* 28 */
+  }
+
+  .pro-facts dd {
+    margin: calc(12 * var(--u)) 0 0; /* 12 */
+  }
+
+  .pro-facts__tags {
+    gap: calc(8 * var(--u)) calc(6 * var(--u)); /* 8 / 6 */
+  }
+
+  .pro-facts__tag {
+    padding: calc(5 * var(--u)) calc(12 * var(--u)); /* 5 / 12: 26 tall */
+    font-size: calc(14 * var(--u)); /* 14 */
+  }
+
+  .pro-facts__text {
+    font-size: calc(15 * var(--u)); /* 15 */
+    line-height: 1.4;
+  }
+
+  .pro-facts__list li + li {
+    margin-top: calc(12 * var(--u)); /* 12 */
+  }
+
+  /* ==========================================================
+     Insights / awards hero (ins-hero on the C1 in-hero frame)
+     ========================================================== */
+  .ins-hero__content {
+    padding-top: calc(40 * var(--u)); /* 40 */
+  }
+
+  .ins-hero__intro {
+    max-width: none;
+    margin-top: calc(24 * var(--u)); /* 24 */
+  }
+
+  .ins-hero__link {
+    margin-top: calc(16 * var(--u)); /* 16 */
+  }
+
+  /* ==========================================================
+     Featured insight / award: image (or logo tile) first, then
+     date, title, excerpt, Read more
+     ========================================================== */
+  .ins-featured {
+    padding: calc(24 * var(--u)) calc(20 * var(--u)) calc(32 * var(--u)); /* 24 / 20 / 32 */
+  }
+
+  .ins-featured__post {
+    grid-template-columns: 1fr;
+    row-gap: calc(20 * var(--u)); /* 20 */
+    margin: calc(20 * var(--u)) 0 0; /* 20 */
+  }
+
+  .ins-featured__image {
+    order: -1;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    border-radius: calc(5 * var(--u)); /* 5 */
+  }
+
+  .ins-featured__body {
+    padding: 0;
+  }
+
+  .ins-featured__title {
+    margin-top: calc(8 * var(--u)); /* 8 */
+  }
+
+  .ins-featured__text,
+  .ins-featured--no-date .ins-featured__text {
+    max-width: none;
+    margin: calc(16 * var(--u)) 0 calc(20 * var(--u)); /* 16 / 20 */
+  }
+
+  .ins-featured--no-date .ins-featured__title {
+    max-width: none;
+    margin-top: 0;
+  }
+
+  .ins-featured__logo {
+    font-size: calc(32 * var(--u)); /* 32 */
+    letter-spacing: calc(-0.5 * var(--u));
+  }
+
+  .ins-featured__logo span {
+    width: 3.18em; /* both lines start together (108 at 34) */
+  }
+
+  /* ==========================================================
+     Insights / awards grid: chips wrap, 1 column (tablet 2)
+     ========================================================== */
+  .ins-grid {
+    padding: calc(32 * var(--u)) calc(20 * var(--u)) calc(56 * var(--u)); /* 32 / 20 / 56 */
+  }
+
+  .ins-chips {
+    gap: calc(6 * var(--u)); /* 6 */
+  }
+
+  .ins-chip {
+    height: calc(44 * var(--u)); /* 44: tap target (was 36) */
+    padding: 0 calc(12 * var(--u)) 0 calc(14 * var(--u)); /* 12 / 14 */
+    font-size: calc(13 * var(--u)); /* 13 */
+  }
+
+  .ins-chip__key {
+    margin-right: calc(6 * var(--u)); /* 6 */
+  }
+
+  .ins-chip svg {
+    width: calc(10 * var(--u)); /* 10 */
+    height: calc(10 * var(--u));
+    margin-left: calc(16 * var(--u)); /* 16 */
+  }
+
+  .ins-chip--reset {
+    padding: 0 calc(14 * var(--u)); /* 14 */
+  }
+
+  .ins-chip--reset svg {
+    margin-left: calc(12 * var(--u)); /* 12 */
+  }
+
+  .ins-grid__list {
+    grid-template-columns: 1fr;
+    gap: calc(12 * var(--u)); /* 12 */
+    margin-top: calc(20 * var(--u)); /* 20 */
+  }
+
+  .ins-grid .post-card__title {
+    max-width: none;
+  }
+
+  /* One column: cards take their content's height */
+  .ins-grid .post-card {
+    min-height: 0;
+  }
+
+  .ins-grid__more,
+  .ins-grid--plain .ins-grid__more {
+    margin-top: calc(32 * var(--u)); /* 32 */
+  }
+
+  .ins-grid__more .pro-grid__view-more {
+    margin-top: calc(12 * var(--u)); /* 12 */
+  }
+
+  .ins-grid__empty {
+    margin-top: calc(20 * var(--u)); /* 20 */
+    padding: calc(40 * var(--u)) 0; /* 40 */
+  }
+
+  /* ==========================================================
+     Insight hero: date, Location / Industries / Practices rows
+     (label, rule, wrapped pills as on desktop)
+     ========================================================== */
+  .in-hero__date {
+    margin-top: calc(12 * var(--u)); /* 12 */
+  }
+
+  .in-hero__meta {
+    gap: calc(12 * var(--u)); /* 12 */
+    padding-top: calc(32 * var(--u)); /* 32 */
+  }
+
+  .in-hero__row dt {
+    width: calc(80 * var(--u)); /* 80 */
+    height: calc(26 * var(--u)); /* 26: centred on the first pill line */
+  }
+
+  .in-hero__row dd {
+    min-width: 0;
+    padding-left: calc(12 * var(--u)); /* 12 */
+  }
+
+  .in-hero__tags {
+    gap: calc(8 * var(--u)) calc(6 * var(--u)); /* 8 / 6 */
+  }
+
+  .in-hero__tag {
+    gap: calc(6 * var(--u)); /* 6 */
+    padding: calc(4 * var(--u)) calc(11 * var(--u)); /* 4 / 11: 26 tall */
+    font-size: calc(14 * var(--u)); /* 14, as the other taxonomy pills */
+    line-height: 1.2;
+  }
+
+  .in-hero__tag:has(img) {
+    padding: calc(3 * var(--u)) calc(10 * var(--u)) calc(3 * var(--u)) calc(4 * var(--u)); /* 3 / 10 / 3 / 4, as .pro-hero__location */
+  }
+
+  .in-hero__tag img {
+    width: calc(18 * var(--u)); /* 18 */
+    height: calc(18 * var(--u));
+  }
+
+  .in-hero__more {
+    margin-left: calc(4 * var(--u)); /* 4 */
+    padding: calc(5 * var(--u)) 0; /* 5: tap height */
+    font-size: calc(13 * var(--u)); /* 13 */
+  }
+
+  /* ==========================================================
+     Reading bar: sticky under the 60 bar, title on one line with
+     a fade on the right (SplitText lines, so no text-overflow);
+     the date hides on phones
+     ========================================================== */
+  .in-bar {
+    top: var(--header-h);
+    padding: calc(14 * var(--u)) calc(20 * var(--u)) calc(15 * var(--u)); /* 14 / 20 / 15 */
+  }
+
+  .in-bar__title {
+    overflow: hidden;
+    white-space: nowrap;
+    -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 40 * var(--u)), transparent);
+    mask-image: linear-gradient(to right, #000 calc(100% - 40 * var(--u)), transparent);
+  }
+
+  .in-bar__date {
+    display: none;
+  }
+
+  .in-bar__progress span {
+    height: 3px;
+  }
+
+  /* ==========================================================
+     Insight article: body first, then related professionals and
+     share (not sticky)
+     ========================================================== */
+  .in-article {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: calc(40 * var(--u)); /* 40 */
+    padding: calc(28 * var(--u)) calc(20 * var(--u)) calc(56 * var(--u)); /* 28 / 20 / 56 */
+  }
+
+  .in-article__aside {
+    position: static;
+    order: 1;
+  }
+
+  .in-related {
+    padding: calc(16 * var(--u)) calc(10 * var(--u)) calc(10 * var(--u)); /* 16 / 10 / 10 */
+    border-radius: calc(8 * var(--u)); /* 8 */
+  }
+
+  .in-related__head {
+    padding: 0 calc(8 * var(--u)) 0 calc(6 * var(--u)); /* 8 / 6 */
+    margin-bottom: calc(16 * var(--u)); /* 16 */
+  }
+
+  .in-related__plus {
+    width: calc(20 * var(--u)); /* 20 */
+    height: calc(20 * var(--u));
+  }
+
+  .in-related__list {
+    gap: calc(8 * var(--u)); /* 8 */
+  }
+
+  .in-related__card {
+    height: auto;
+    min-height: calc(96 * var(--u)); /* 96 */
+    border-radius: calc(5 * var(--u)); /* 5 */
+  }
+
+  .in-related__img {
+    width: calc(76 * var(--u)); /* 76 */
+    height: auto;
+    align-self: stretch;
+  }
+
+  .in-related__info {
+    padding: calc(12 * var(--u)) calc(36 * var(--u)) calc(12 * var(--u)) calc(12 * var(--u)); /* 12 / 36 (arrow) / 12 / 12 */
+  }
+
+  .in-related__name {
+    margin-bottom: calc(4 * var(--u)); /* 4 */
+  }
+
+  .in-related__contact {
+    font-size: calc(14 * var(--u)); /* 14 */
+    line-height: 1.3;
+    overflow-wrap: anywhere;
+  }
+
+  .in-related__card--former {
+    min-height: 0;
+  }
+
+  .in-related__card--former .in-related__info {
+    padding-right: calc(12 * var(--u)); /* 12: no arrow */
+  }
+
+  .in-related__arrow {
+    right: calc(10 * var(--u)); /* 10 */
+    bottom: calc(10 * var(--u));
+    width: calc(20 * var(--u)); /* 20 */
+    height: calc(20 * var(--u));
+  }
+
+  .in-related__arrow svg {
+    width: calc(8 * var(--u)); /* 8 */
+    height: calc(8 * var(--u));
+  }
+
+  /* Share: Print fills the row, then three 48 squares */
+  .in-share {
+    gap: calc(8 * var(--u)); /* 8 */
+    margin-top: calc(12 * var(--u)); /* 12 */
+  }
+
+  .in-share__print,
+  .in-share__icon {
+    height: calc(48 * var(--u)); /* 48 */
+    border-radius: calc(5 * var(--u)); /* 5 */
+  }
+
+  .in-share__print {
+    margin-right: calc(4 * var(--u)); /* 4 */
+    padding-left: calc(16 * var(--u)); /* 16 */
+    font-size: calc(15 * var(--u)); /* 15 */
+  }
+
+  .in-share__print svg {
+    right: calc(16 * var(--u)); /* 16 */
+    width: calc(18 * var(--u)); /* 18 */
+    height: calc(19 * var(--u)); /* 19 */
+  }
+
+  .in-share__icon {
+    width: calc(48 * var(--u)); /* 48 */
+  }
+
+  .in-share__icon svg {
+    width: calc(18 * var(--u)); /* 18 */
+    height: calc(18 * var(--u));
+  }
+
+  /* ==========================================================
+     Module hero: lead, then the report card in flow
+     ========================================================== */
+  .in-hero--module .in-hero__intro {
+    margin-top: calc(40 * var(--u)); /* 40 */
+  }
+
+  .in-hero__lead {
+    max-width: none;
+    margin-top: calc(32 * var(--u)); /* 32 */
+    line-height: 1.2;
+  }
+
+  .in-hero__report {
+    position: static;
+    width: auto;
+    min-height: calc(100 * var(--u)); /* 100 */
+    margin-top: calc(32 * var(--u)); /* 32 */
+    padding: calc(14 * var(--u)) calc(14 * var(--u)) calc(14 * var(--u)) calc(16 * var(--u)); /* 14 / 14 / 14 / 16 */
+    border-radius: calc(5 * var(--u)); /* 5 */
+  }
+
+  /* ==========================================================
+     Module panels: full width; heading, rule, text stacked
+     ========================================================== */
+  .in-panels {
+    padding: calc(56 * var(--u)) calc(20 * var(--u)); /* 56 / 20 */
+  }
+
+  .in-panels__list {
+    gap: calc(12 * var(--u)); /* 12 */
+  }
+
+  .in-panel {
+    flex-direction: column;
+    padding: calc(20 * var(--u)) calc(20 * var(--u)) calc(24 * var(--u)); /* 20 / 20 / 24 */
+    border-radius: calc(5 * var(--u)); /* 5 */
+  }
+
+  .in-panel__heading {
+    width: auto;
+    margin: 0 0 calc(16 * var(--u)); /* 16 */
+  }
+
+  .in-panel__body {
+    padding: calc(16 * var(--u)) 0 0; /* 16 */
+    border-left: 0;
+    border-top: 1px solid rgba(159, 178, 197, 0.5);
+  }
+
+  .in-panel__link {
+    margin-top: calc(32 * var(--u)); /* 32 */
+  }
+
+  /* ==========================================================
+     Module key findings: numeral, title, text stacked
+     ========================================================== */
+  .in-findings {
+    padding: calc(40 * var(--u)) calc(20 * var(--u)) calc(12 * var(--u)); /* 40 / 20 / 12: the people row adds 40 */
+  }
+
+  .in-findings__heading {
+    padding-left: 0;
+  }
+
+  .in-findings__list {
+    margin-top: calc(16 * var(--u)); /* 16 */
+  }
+
+  .in-findings__item {
+    grid-template-columns: minmax(0, 1fr);
+    padding: calc(12 * var(--u)) 0 calc(28 * var(--u)); /* 12 / 28 */
+  }
+
+  .in-findings__item::before {
+    left: 0;
+    right: 0;
+  }
+
+  .in-findings__num {
+    font-size: calc(96 * var(--u)); /* 96 */
+    letter-spacing: calc(-6 * var(--u)); /* -6 */
+  }
+
+  .in-findings__title,
+  .in-findings__text {
+    padding-top: 0;
+  }
+
+  .in-findings__title {
+    margin-top: calc(12 * var(--u)); /* 12 */
+  }
+
+  .in-findings__text {
+    margin: calc(12 * var(--u)) 0 0; /* 12 */
+  }
+
+  /* ==========================================================
+     Module download banner: red block, then the image
+     ========================================================== */
+  .in-download {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+
+  .in-download__link {
+    min-height: calc(160 * var(--u)); /* 160 */
+    gap: calc(12 * var(--u)); /* 12 */
+    padding: calc(24 * var(--u)) calc(20 * var(--u)); /* 24 / 20 */
+  }
+
+  .in-download__icon {
+    flex: none;
+    margin-top: calc(6 * var(--u)); /* 6: centred on the 32 line */
+    width: calc(20 * var(--u)); /* 20 */
+    height: calc(20 * var(--u));
+  }
+
+  .in-download__image {
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+
+  /* ==========================================================
+     Module share row: centred column, rule hidden
+     ========================================================== */
+  .in-share-row {
+    flex-direction: column;
+    gap: calc(20 * var(--u)); /* 20 */
+    padding: calc(48 * var(--u)) calc(20 * var(--u)) calc(40 * var(--u)); /* 48 / 20 / 40 */
+  }
+
+  .in-share-row__heading {
+    margin-right: 0;
+    text-align: center;
+  }
+
+  .in-share-row__heading::after {
+    display: none;
+  }
+
+  .in-share-row .in-share__print {
+    width: calc(140 * var(--u)); /* 140 */
+    margin-right: calc(4 * var(--u)); /* 4 */
+  }
+
+  /* Related insights: the grey rule on the 20 gutters */
+  .in-related-insights::before {
+    left: calc(20 * var(--u)); /* 20 */
+    right: calc(20 * var(--u));
+  }
+}
+
+/* ============================================================
+   Tablet (768 to 1199): wider grids, side by side where desktop is
+   ============================================================ */
+@media (min-width: 768px) and (max-width: 1199px) {
+  /* Open panels hang from their pill / field again (main.js sets left and
+     min-width), up to 360 wide */
+  .flt-panel {
+    right: auto;
+    width: max-content;
+    max-width: calc(360 * var(--u)); /* 360 */
+  }
+
+  .pro-filter__alpha {
+    grid-template-columns: repeat(26, 1fr);
+  }
+
+  /* Facets: tighter pills so all five fit one row from 768; wrap as a fallback */
+  .pro-filter__facets {
+    flex-wrap: wrap;
+    gap: calc(6 * var(--u)); /* 6 */
+  }
+
+  .pro-filter__facet,
+  .ins-filter .pro-filter__facet {
+    gap: calc(8 * var(--u)); /* 8 */
+    padding: 0 calc(8 * var(--u)) 0 calc(14 * var(--u)); /* 8 / 14 */
+    font-size: calc(14 * var(--u)); /* 14 */
+  }
+
+  .ins-filter__bar {
+    grid-template-columns: 2fr 2fr 1fr;
+  }
+
+  .ins-filter .pro-filter__search:first-child {
+    grid-column: auto;
+  }
+
+  .ins-filter .pro-filter__search {
+    border-right: 1px solid #dbe2e9;
+    border-bottom: 0;
+  }
+
+  .pro-grid__list {
+    grid-template-columns: repeat(auto-fill, minmax(calc(200 * var(--u)), 1fr)); /* 3 at 768, 4 at 1024, 5 at 1199 */
+    gap: calc(24 * var(--u)) calc(10 * var(--u)); /* 24 / 10 */
+  }
+
+  /* Hero: text left, portrait right on the floor */
+  .pro-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) min(40%, calc(340 * var(--u))); /* portrait up to 374 */
+    grid-template-rows: auto auto 1fr;
+    column-gap: calc(40 * var(--u)); /* 40 */
+  }
+
+  .pro-hero .breadcrumbs {
+    grid-column: 1 / -1;
+  }
+
+  .pro-hero__intro {
+    grid-column: 1;
+    grid-row: 2;
+    margin-top: calc(56 * var(--u)); /* 56 */
+  }
+
+  .pro-hero__contacts {
+    grid-column: 1;
+    grid-row: 3;
+    align-self: end;
+    margin: calc(32 * var(--u)) 0; /* 32 */
+  }
+
+  .pro-hero__portrait {
+    grid-column: 2;
+    grid-row: 2 / 4;
+    align-self: end;
+    width: 100%;
+    margin-top: calc(24 * var(--u)); /* 24 */
+  }
+
+  .pro-overview {
+    grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+    column-gap: calc(48 * var(--u)); /* 48 */
+  }
+
+  /* Featured: text left, image right, as on desktop */
+  .ins-featured__post {
+    grid-template-columns: minmax(0, 1fr) 42%;
+    column-gap: calc(32 * var(--u)); /* 32 */
+  }
+
+  .ins-featured__image {
+    order: 0;
+    aspect-ratio: 3 / 2;
+  }
+
+  .ins-featured__text,
+  .ins-featured--no-date .ins-featured__text {
+    margin-bottom: calc(32 * var(--u)); /* 32 */
+  }
+
+  .ins-featured__link {
+    margin-top: auto;
+  }
+
+  .ins-grid__list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: calc(16 * var(--u)); /* 16 */
+  }
+
+  .ins-grid .post-card {
+    min-height: calc(220 * var(--u)); /* 220 */
+  }
+
+  /* Article: one centred reading column */
+  .in-article {
+    padding-inline: max(calc(20 * var(--u)), calc((100% - 720 * var(--u)) / 2));
+  }
+
+  .in-related__list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .in-bar__date {
+    display: block;
+  }
+
+  /* Module */
+  .in-hero__lead {
+    max-width: calc(560 * var(--u)); /* 560 */
+  }
+
+  .in-hero__report {
+    align-self: flex-start;
+    width: calc(300 * var(--u)); /* 300 */
+  }
+
+  .in-panel {
+    flex-direction: row;
+  }
+
+  .in-panel__heading {
+    width: calc(180 * var(--u)); /* 180 */
+    margin: 0 calc(24 * var(--u)) 0 0; /* 24 */
+  }
+
+  .in-panel__body {
+    padding: 0 0 0 calc(24 * var(--u)); /* 24 */
+    border-top: 0;
+    border-left: 1px solid rgba(159, 178, 197, 0.5);
+  }
+
+  .in-findings__item {
+    grid-template-columns: calc(150 * var(--u)) minmax(0, 1fr); /* 150 */
+    column-gap: calc(24 * var(--u)); /* 24 */
+  }
+
+  .in-findings__num {
+    grid-row: 1 / 3;
+  }
+
+  .in-findings__title,
+  .in-findings__text {
+    grid-column: 2;
+  }
+
+  .in-findings__title {
+    margin-top: calc(16 * var(--u)); /* 16 */
+  }
+
+  .in-download {
+    grid-template-columns: 1fr 1fr;
+    height: calc(240 * var(--u)); /* 240 */
+  }
+
+  .in-download__image {
+    height: 100%;
+    aspect-ratio: auto;
+  }
+}

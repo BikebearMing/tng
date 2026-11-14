@@ -1,0 +1,4622 @@
+/* ============================================================
+   TNG responsive: pages with no mockup (text pages, Operations
+   Professionals, Internships, Recruitment Process, History,
+   Services, Award single, 404, Search results, Global Reach,
+   Japan / China Desk). Desktop rules: the "PAGES WITH NO MOCKUP"
+   section at the end of style.css.
+   ============================================================ */
+
+/* ============================================================
+   Small layout (phone + tablet): 0 to 1199
+   ============================================================ */
+@media (max-width: 1199px) {
+  /* Career path pages */
+  .lp-programs {
+    padding-top: calc(40 * var(--u)); /* 40 */
+  }
+
+  .lp-programs .job-summary__list > * + * {
+    margin-top: calc(14 * var(--u)); /* 14 */
+  }
+
+  .lp-apply__text {
+    margin-top: calc(14 * var(--u)); /* 14 */
+    font-size: calc(16 * var(--u)); /* 16 */
+  }
+
+  .lp-apply .careers-cta__link {
+    margin-top: calc(8 * var(--u)); /* 8 */
+  }
+
+  .lp-apply {
+    padding-top: 0;
+  }
+
+  .rec-cta {
+    padding-bottom: calc(56 * var(--u)); /* 56 */
+  }
+
+  /* History */
+  .hist-overview {
+    padding-bottom: calc(56 * var(--u)); /* 56 */
+  }
+
+  .hist-timeline {
+    padding: calc(40 * var(--u)) calc(20 * var(--u)) calc(24 * var(--u)); /* 40 / 20 / 24 */
+  }
+
+  .hist-timeline__list {
+    margin-top: calc(24 * var(--u)); /* 24 */
+  }
+
+  .hist-timeline .hist-timeline__item {
+    grid-template-columns: minmax(0, 1fr);
+    padding: calc(16 * var(--u)) 0 calc(32 * var(--u)); /* 16 / 32 */
+  }
+
+  .hist-timeline .hist-timeline__item::after {
+    width: calc(40 * var(--u)); /* 40 */
+  }
+
+  .hist-timeline .hist-timeline__year {
+    padding-top: 0;
+    font-size: calc(56 * var(--u)); /* 56 */
+    letter-spacing: -0.04em;
+  }
+
+  .hist-timeline .in-findings__title,
+  .hist-timeline .in-findings__text {
+    max-width: none;
+  }
+
+  .hist-timeline .in-findings__text {
+    margin-left: 0;
+    font-size: calc(16 * var(--u)); /* 16 */
+  }
+
+  .hist-book {
+    padding-top: calc(40 * var(--u)); /* 40 */
+  }
+
+  /* Services index: the stacked more-from, rows 16 above / below */
+  .svc-index__title {
+    position: static;
+  }
+
+  .svc-index .more-from__link {
+    padding: calc(16 * var(--u)) 0; /* 16 */
+  }
+
+  .svc-index .more-from__list > li:first-child .more-from__link {
+    padding-top: calc(16 * var(--u)); /* 16 */
+  }
+
+  .svc-index .more-from__list {
+    margin-top: calc(8 * var(--u)); /* 8 */
+  }
+
+  /* Search: field full width; pills a swipe strip under the header */
+  .srch-hero__side {
+    max-width: none;
+  }
+
+  .srch-hero__count {
+    margin-top: calc(14 * var(--u)); /* 14 */
+  }
+
+  .srch-tabs {
+    top: var(--header-h);
+    padding: calc(12 * var(--u)) 0; /* 12 */
+  }
+
+  .srch-tabs .srch-tabs__list {
+    flex-wrap: nowrap;
+    gap: calc(8 * var(--u)); /* 8 */
+    padding-inline: calc(20 * var(--u)); /* 20 */
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    scroll-padding-inline: calc(20 * var(--u));
+    scrollbar-width: none;
+  }
+
+  .srch-tabs .srch-tabs__list::-webkit-scrollbar {
+    display: none;
+  }
+
+  .srch-tabs .srch-tabs__list > li {
+    flex: none;
+    white-space: nowrap;
+    scroll-snap-align: start;
+  }
+
+  .pro-related--people.srch-group--people {
+    display: block;
+    padding: calc(40 * var(--u)) calc(20 * var(--u)); /* 40 / 20 */
+  }
+
+  .srch-group--people .pro-related__cards {
+    gap: calc(16 * var(--u)) calc(8 * var(--u)); /* 16 / 8 */
+  }
+
+  .srch-group .srch-pages {
+    margin-top: calc(24 * var(--u)); /* 24 */
+  }
+
+  /* Page rows: title over the grey path, arrow on the right */
+  .srch-pages .careers-jobs__row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    column-gap: calc(16 * var(--u)); /* 16 */
+    row-gap: calc(4 * var(--u)); /* 4 */
+  }
+
+  .srch-pages .careers-jobs__count {
+    grid-row: 2;
+    margin: 0;
+    font-size: calc(14 * var(--u)); /* 14 */
+  }
+
+  .srch-pages .careers-jobs__row .arrow-circle {
+    grid-column: 2;
+    grid-row: 1 / 3;
+  }
+
+  /* Global Reach: label, tile, text stacked */
+  .reach-networks {
+    padding: calc(40 * var(--u)) calc(20 * var(--u)) calc(56 * var(--u)); /* 40 / 20 / 56 */
+  }
+
+  .reach-networks__heading {
+    max-width: none;
+  }
+
+  .reach-network {
+    grid-template-columns: minmax(0, 1fr);
+    margin-top: calc(40 * var(--u)); /* 40 */
+  }
+
+  .reach-network__logo {
+    width: 100%;
+    height: calc(150 * var(--u)); /* 150 */
+    margin-top: calc(20 * var(--u)); /* 20 */
+    border-radius: calc(5 * var(--u)); /* 5 */
+  }
+
+  .reach-network__logo-img--lexmundi {
+    width: calc(150 * var(--u)); /* 150 */
+  }
+
+  .reach-network__logo-img--multilaw {
+    width: calc(145 * var(--u)); /* 145 */
+  }
+
+  .reach-network__logo-img--dna {
+    width: calc(190 * var(--u)); /* 190 */
+  }
+
+  .reach-network__body {
+    margin-top: calc(20 * var(--u)); /* 20 */
+  }
+
+  .reach-network__text {
+    max-width: none;
+  }
+
+  .reach-network__link {
+    margin-top: calc(20 * var(--u)); /* 20 */
+  }
+
+  /* Desks */
+  .desk-hero .info-hero__lines + .info-hero__name {
+    margin-top: calc(20 * var(--u)); /* 20 */
+  }
+
+  .desk-contacts {
+    padding-top: calc(40 * var(--u)); /* 40 */
+  }
+
+  .desk-contacts__position {
+    margin-top: calc(8 * var(--u)); /* 8 */
+  }
+
+  .desk-contacts .job-summary__list > * + * {
+    margin-top: calc(14 * var(--u)); /* 14 */
+  }
+
+  .desk-about {
+    padding-bottom: calc(40 * var(--u)); /* 40 */
+  }
+
+  .desk-about__heading {
+    margin-top: calc(10 * var(--u)); /* 10 */
+  }
+
+  /* 404 */
+  .nf-hero__text {
+    max-width: none;
+    margin-top: calc(20 * var(--u)); /* 20 */
+  }
+
+  .hp-footer__form.nf-hero__form {
+    width: 100%;
+    margin-top: calc(28 * var(--u)); /* 28 */
+  }
+
+  /* Text page: the article stack (aside first, as the insight page) */
+  .txt-article {
+    padding-top: calc(32 * var(--u)); /* 32 */
+  }
+
+  .txt-nav {
+    padding: calc(16 * var(--u)) calc(10 * var(--u)) calc(10 * var(--u)); /* 16 / 10 / 10 */
+    border-radius: calc(8 * var(--u)); /* 8 */
+  }
+
+  .txt-nav__heading {
+    padding: 0 calc(6 * var(--u)); /* 6 */
+    margin-bottom: calc(16 * var(--u)); /* 16 */
+  }
+
+  .txt-nav__link {
+    gap: calc(12 * var(--u)); /* 12 */
+    min-height: calc(52 * var(--u)); /* 52 */
+    padding: calc(12 * var(--u)) calc(16 * var(--u)); /* 12 / 16 */
+    border-radius: calc(5 * var(--u)); /* 5 */
+  }
+
+  .txt-nav__sub {
+    margin: calc(6 * var(--u)) 0 calc(4 * var(--u)); /* 6 / 4 */
+    padding-left: calc(16 * var(--u)); /* 16 */
+  }
+
+  .txt-nav__sublink {
+    padding: calc(12 * var(--u)) calc(16 * var(--u)); /* 12 / 16: 44 tap height */
+    font-size: calc(15 * var(--u)); /* 15 */
+  }
+
+  .txt-nav__sublink[aria-current]::before {
+    width: 3px;
+  }
+
+  .txt-content h2 {
+    font-size: calc(22 * var(--u)); /* 22 */
+  }
+
+  .txt-content > * + h2,
+  .txt-content > ul + h2,
+  .txt-content > ol + h2 {
+    margin-top: calc(36 * var(--u)); /* 36 */
+  }
+
+  .txt-content > h2 + * {
+    margin-top: calc(14 * var(--u)); /* 14 */
+  }
+
+  .txt-content h3 {
+    font-size: calc(17 * var(--u)); /* 17 */
+  }
+
+  .txt-content > * + h3 {
+    margin-top: calc(24 * var(--u)); /* 24 */
+  }
+
+  .txt-content > h3 + * {
+    margin-top: calc(10 * var(--u)); /* 10 */
+  }
+
+  .txt-content li + li {
+    margin-top: calc(10 * var(--u)); /* 10 */
+  }
+
+  .txt-content table {
+    font-size: calc(14 * var(--u)); /* 14 */
+  }
+
+  .txt-content th,
+  .txt-content td {
+    min-width: calc(140 * var(--u)); /* 140: columns stay readable, the table scrolls */
+    padding: calc(10 * var(--u)) calc(10 * var(--u)) calc(10 * var(--u)) 0; /* 10 */
+  }
+}
+
+/* ============================================================
+   Tablet: 768 to 1199 (grids and side-by-side only)
+   ============================================================ */
+@media (min-width: 768px) and (max-width: 1199px) {
+  /* Text page: nav and copy side by side (beats the article's
+     one-column tablet rule, which loads later) */
+  .in-article.txt-article {
+    grid-template-columns: calc(240 * var(--u)) minmax(0, 1fr); /* 240 */
+    column-gap: calc(40 * var(--u)); /* 40 */
+    padding-inline: calc(20 * var(--u)); /* 20 */
+  }
+
+  .txt-nav .txt-nav__list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Global Reach: logo tile beside the text */
+  .reach-network {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
+    column-gap: calc(40 * var(--u)); /* 40 */
+  }
+
+  /* History: year column beside title + text */
+  .hist-timeline .hist-timeline__item {
+    grid-template-columns: calc(150 * var(--u)) minmax(0, 1fr); /* 150 */
+    column-gap: calc(24 * var(--u)); /* 24 */
+  }
+
+  .hist-timeline .hist-timeline__year {
+    grid-row: 1 / 3;
+  }
+
+  .hist-timeline .in-findings__title {
+    margin-top: 0;
+  }
+
+  .txt-article .in-article__aside {
+    position: sticky;
+    top: calc(var(--header-h) + 24 * var(--u)); /* header + 24 */
+    order: 0;
+  }
+}
+/* ============================================================
+   TNG responsive: foundation (root vars, type, header, mobile menu,
+   footer, under-development, shared components C1 to C13)
+   Spec: temporary/migration/responsive-spec.md ("Foundation provides").
+
+   style.css (desktop, vw on 1440) is untouched. Everything here sits in
+   one of two queries:
+     @media (max-width: 1199px)                        small layout (phone + tablet)
+     @media (min-width: 768px) and (max-width: 1199px) tablet grids only
+   Lengths: calc(N * var(--u)), N = px on the 390 design (1 design px,
+   capped at 1.1px from 429 wide). Hairlines stay 1px.
+   ============================================================ */
+
+/* New elements only (can't touch desktop layout). The header prefix beats
+   style.css's ".site-header__main a { display: inline-flex }", which showed
+   "All services" inside the desktop megamenu. */
+.site-header__toggle,
+.site-header .site-header__mega-all {
+  display: none;
+}
+
+@media (max-width: 1199px) {
+
+  /* ==========================================================
+     Base: root vars, type classes, globals
+     ========================================================== */
+  :root {
+    --u: min(calc(100vw / 390), 1.1px); /* 1 design px */
+    --header-h: calc(60 * var(--u)); /* 60: one bar height, no compact state */
+    --sidepadding-xs: calc(20 * var(--u)); /* 20 */
+    --sidepaddong-m: calc(20 * var(--u)); /* 20: one gutter on small screens */
+    --top-from-header: calc(100 * var(--u)); /* 100: 60 header + 40 */
+  }
+
+  body {
+    min-height: 0; /* style.css leftover 200vh */
+  }
+
+  .h1 {
+    font-size: calc(40 * var(--u)); /* 40 */
+    line-height: 1;
+  }
+
+  .h2 {
+    font-size: calc(30 * var(--u)); /* 30 */
+    line-height: 1.07;
+  }
+
+  .h3 {
+    font-size: calc(20 * var(--u)); /* 20 */
+    line-height: 1.15;
+  }
+
+  .h4 {
+    font-size: calc(17 * var(--u)); /* 17 */
+    line-height: 1.2;
+  }
+
+  .body {
+    font-size: calc(15 * var(--u)); /* 15 */
+    line-height: 1.4;
+  }
+
+  .subhead {
+    font-size: calc(13 * var(--u)); /* 13 */
+    line-height: 1.3;
+    letter-spacing: 0;
+  }
+
+  .button-label {
+    font-size: calc(16 * var(--u)); /* 16 */
+    line-height: 1.2;
+    letter-spacing: 0;
+  }
+
+  .counter {
+    font-size: calc(72 * var(--u)); /* 72 */
+    letter-spacing: calc(-3.5 * var(--u)); /* -3.5 */
+  }
+
+  .counter-label {
+    font-size: calc(15 * var(--u)); /* 15 */
+    line-height: 1.2;
+    letter-spacing: calc(-0.4 * var(--u)); /* -0.4 */
+  }
+
+  /* ==========================================================
+     Header bar: 60 tall in every state
+     ========================================================== */
+  .site-header,
+  .site-header.is-scrolled {
+    height: var(--header-h);
+  }
+
+  /* Hash links (#results from filters / chips, Careers → #job-opportunities)
+     land under the fixed bar; desktop sections have enough top padding */
+  #results,
+  #job-opportunities {
+    scroll-margin-top: var(--header-h);
+  }
+
+  .site-header__logo,
+  .site-header.is-scrolled .site-header__logo {
+    top: calc(9 * var(--u)); /* 9 */
+    left: calc(20 * var(--u)); /* 20 */
+    font-size: calc(20 * var(--u)); /* 20: two lines = 42 */
+  }
+
+  /* WP logo images (wp-overrides.css sizes them in vw) */
+  .site-header__logo-img,
+  .site-header.is-scrolled .site-header__logo-img {
+    height: calc(42 * var(--u)); /* 42 */
+  }
+
+  .site-header__nav::before {
+    display: none;
+  }
+
+  /* Search + language: 44 icon buttons; labels keep their accessible names */
+  .site-header__utils,
+  .site-header.is-scrolled .site-header__utils {
+    top: 50%;
+    right: calc(64 * var(--u)); /* 64: clears the toggle */
+    gap: calc(4 * var(--u)); /* 4 */
+  }
+
+  .site-header__utils a,
+  .site-header__utils button {
+    justify-content: center;
+    width: calc(44 * var(--u)); /* 44 */
+    height: calc(44 * var(--u));
+    font-size: 0;
+  }
+
+  .site-header__utils svg {
+    width: calc(20 * var(--u)); /* 20 */
+    height: calc(20 * var(--u));
+  }
+
+  .site-header__search svg {
+    margin-left: 0;
+  }
+
+  .site-header__lang {
+    gap: 0;
+  }
+
+  /* Menu toggle: two bars that turn into an X */
+  .site-header__toggle {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: calc(10 * var(--u)); /* 10 */
+    width: calc(44 * var(--u)); /* 44 */
+    height: calc(44 * var(--u));
+    color: inherit;
+    transform: translateY(-50%);
+  }
+
+  .site-header__toggle span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: calc(22 * var(--u)); /* 22 */
+    height: 2px;
+    margin: -1px 0 0 calc(-11 * var(--u)); /* centred */
+    background: currentColor;
+    transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .site-header__toggle span:first-child {
+    transform: translateY(calc(-3.5 * var(--u))); /* 7 apart */
+  }
+
+  .site-header__toggle span:last-child {
+    transform: translateY(calc(3.5 * var(--u)));
+  }
+
+  .site-header__toggle[aria-expanded="true"] span:first-child {
+    transform: rotate(45deg);
+  }
+
+  .site-header__toggle[aria-expanded="true"] span:last-child {
+    transform: rotate(-45deg);
+  }
+
+  /* Menu open: white bar + white panel read as one sheet */
+  .site-header.is-menu-open {
+    color: var(--black);
+    background: var(--white);
+  }
+
+  .site-header.is-menu-open .site-header__logo-img--on-dark {
+    opacity: 0;
+  }
+
+  .site-header.is-menu-open .site-header__logo-img--on-light {
+    opacity: 1;
+  }
+
+  /* ==========================================================
+     Menu panel: the desktop nav, full screen under the bar;
+     megamenus become accordions (main.js toggles .is-open)
+     ========================================================== */
+  .site-header__nav {
+    position: fixed;
+    top: var(--header-h);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    padding: calc(8 * var(--u)) calc(20 * var(--u)) calc(40 * var(--u)); /* 8 / 20 / 40 */
+    background: var(--white);
+    color: var(--black);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(calc(-8 * var(--u))); /* 8 */
+    transition: opacity 0.3s cubic-bezier(0.22, 1, 0.36, 1), transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), visibility 0s linear 0.3s;
+  }
+
+  .site-header.is-menu-open .site-header__nav {
+    visibility: visible;
+    opacity: 1;
+    transform: none;
+    transition-delay: 0s;
+  }
+
+  .site-header__main,
+  .site-header.is-scrolled .site-header__main {
+    position: static;
+    display: block;
+    order: 1;
+  }
+
+  .site-header__main > li {
+    display: block;
+    border-bottom: 1px solid #e7eaee;
+  }
+
+  .site-header__main > li > a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: calc(16 * var(--u)) 0; /* 16 */
+    margin: 0;
+    border-radius: 0;
+    background: none;
+    font-size: calc(24 * var(--u)); /* 24 */
+    line-height: 1.1;
+  }
+
+  /* No hover pill in the panel (sticks on touch) */
+  .site-header.is-menu-open .site-header__main a:hover {
+    background: none;
+  }
+
+  /* Accordion chevron: down, flips up when open */
+  .has-mega > a::after {
+    content: "";
+    flex: none;
+    width: calc(8 * var(--u)); /* 8 */
+    height: calc(8 * var(--u));
+    margin: 0 calc(4 * var(--u)) calc(4 * var(--u)) 0;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    transform: rotate(45deg);
+    transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), margin 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .has-mega.is-open > a::after {
+    margin-bottom: calc(-4 * var(--u));
+    transform: rotate(-135deg);
+  }
+
+  /* Panels: closed by display, so the desktop :hover / :focus-within
+     rules (opacity / visibility only) can't open them on touch */
+  .site-header__mega {
+    position: static;
+    display: none;
+    padding: 0 0 calc(20 * var(--u)); /* 20 */
+    border-radius: 0;
+    box-shadow: none;
+    opacity: 1;
+    visibility: inherit; /* stays hidden while the panel is closed */
+    pointer-events: auto;
+    transform: none;
+    transition: none;
+  }
+
+  .has-mega:hover .site-header__mega,
+  .has-mega:focus-within .site-header__mega,
+  .has-mega.is-open .site-header__mega {
+    visibility: inherit;
+  }
+
+  .has-mega.is-open .site-header__mega {
+    display: block;
+  }
+
+  .site-header__mega::before,
+  .site-header__mega-media,
+  .site-header__mega-list .arrow-circle {
+    display: none;
+  }
+
+  .site-header__mega li {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  /* "All services" row (main.js adds it when the trigger has a real URL) */
+  .site-header__main .site-header__mega-all,
+  .site-header__top .site-header__mega-all {
+    display: flex;
+    align-items: center;
+    gap: calc(8 * var(--u)); /* 8 */
+    width: max-content;
+    margin: 0 0 calc(16 * var(--u)); /* 16 */
+    border-radius: 0;
+    padding: calc(4 * var(--u)) 0 calc(6 * var(--u)); /* 4 / 6 */
+    border-bottom: 1px solid var(--red);
+    font-size: calc(16 * var(--u)); /* 16 */
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  .site-header__mega-all svg {
+    width: calc(10 * var(--u)); /* 10 */
+    height: calc(10 * var(--u));
+  }
+
+  /* Locations / industries lists */
+  .site-header__mega-list,
+  .site-header__mega--services .site-header__mega-list {
+    width: auto;
+    margin: 0;
+  }
+
+  .site-header__mega-list li + li,
+  .site-header__mega--services .site-header__mega-list li + li {
+    margin-top: calc(4 * var(--u)); /* 4 + 2 x 4 padding = 12 between rows */
+  }
+
+  .site-header .site-header__mega-list a {
+    padding: calc(4 * var(--u)) 0; /* 4 */
+    font-size: calc(18 * var(--u)); /* 18 */
+    line-height: 1.2;
+    white-space: normal;
+    color: var(--black);
+  }
+
+  /* Practices */
+  .site-header__mega-col--divided {
+    margin-top: calc(20 * var(--u)); /* 20 */
+    padding: 0;
+  }
+
+  .site-header__mega-col--divided::before {
+    display: none;
+  }
+
+  .site-header .site-header__mega-label {
+    margin-bottom: calc(10 * var(--u)); /* 10 */
+    color: var(--grey);
+  }
+
+  .site-header__mega-links {
+    display: block;
+  }
+
+  .site-header__mega-links li + li {
+    margin-top: calc(4 * var(--u)); /* 4 */
+  }
+
+  .site-header__main .site-header__mega-link,
+  .site-header__top .site-header__mega-link {
+    margin: 0;
+    padding: calc(4 * var(--u)) 0; /* 4 */
+    border-radius: 0;
+    font-size: calc(16 * var(--u)); /* 16 */
+    font-weight: 500;
+    line-height: 1.2;
+    white-space: normal;
+  }
+
+  /* About / Careers / Contact under the main list */
+  .site-header__top,
+  .site-header.is-scrolled .site-header__top {
+    position: static;
+    order: 2;
+    display: flex;
+    justify-content: flex-start;
+    gap: calc(24 * var(--u)); /* 24 */
+    margin-top: calc(20 * var(--u)); /* 20 + 8 padding = 28 */
+  }
+
+  .site-header__top a {
+    padding: calc(8 * var(--u)) 0; /* 8 */
+    font-size: calc(16 * var(--u)); /* 16 */
+    font-weight: 600;
+  }
+
+  /* Top-row dropdowns (About / Careers): the row stays one line of tabs;
+     the li flattens into it, so an open panel drops in under the whole row */
+  .site-header__top,
+  .site-header.is-scrolled .site-header__top {
+    flex-wrap: wrap;
+    row-gap: calc(8 * var(--u)); /* 8 */
+  }
+
+  .site-header__top > .has-mega {
+    display: contents;
+  }
+
+  .site-header__top .has-mega > a {
+    gap: calc(8 * var(--u)); /* 8 to the chevron */
+  }
+
+  .site-header__top .site-header__mega {
+    order: 1;
+    flex-basis: 100%;
+    padding: calc(8 * var(--u)) 0 0; /* 8 */
+  }
+
+  /* ==========================================================
+     Footer
+     ========================================================== */
+  .hp-footer__top {
+    grid-template-columns: 1fr;
+    padding: calc(40 * var(--u)) calc(20 * var(--u)) calc(32 * var(--u)); /* 40 / 20 / 32 */
+  }
+
+  .hp-footer__logo {
+    font-size: calc(40 * var(--u)); /* 40: two lines = 83 */
+  }
+
+  .hp-footer__social {
+    gap: calc(12 * var(--u)); /* 12 */
+    margin-top: calc(24 * var(--u)); /* 24 */
+  }
+
+  .hp-footer__social a {
+    width: calc(44 * var(--u)); /* 44 */
+    height: calc(44 * var(--u));
+  }
+
+  .hp-footer__social svg {
+    width: calc(18 * var(--u)); /* 18 */
+    height: calc(18 * var(--u));
+  }
+
+  .hp-footer__newsletter-heading {
+    margin-top: calc(40 * var(--u)); /* 40 */
+  }
+
+  .hp-footer__form {
+    width: 100%;
+    height: calc(56 * var(--u)); /* 56 */
+    margin-top: calc(10 * var(--u)); /* 10 */
+    padding: 0 calc(8 * var(--u)) 0 calc(16 * var(--u)); /* 8 / 16 */
+    border-radius: calc(10 * var(--u)); /* 10 */
+  }
+
+  .hp-footer__form input {
+    font-size: max(16px, calc(16 * var(--u))); /* 16: no iOS focus zoom */
+  }
+
+  .hp-footer__form button {
+    gap: calc(10 * var(--u)); /* 10 */
+    height: calc(40 * var(--u)); /* 40 */
+    padding: 0 calc(14 * var(--u)) 0 calc(16 * var(--u)); /* 14 / 16 */
+    border-radius: calc(8 * var(--u)); /* 8 */
+    font-size: calc(15 * var(--u)); /* 15 */
+  }
+
+  .hp-footer__form button svg {
+    width: calc(8 * var(--u)); /* 8 */
+    height: calc(8 * var(--u));
+  }
+
+  .hp-footer__nav {
+    margin-top: calc(40 * var(--u)); /* 40 */
+  }
+
+  .hp-footer__networks {
+    flex-wrap: wrap;
+    gap: calc(24 * var(--u)); /* 24 */
+    margin-top: calc(20 * var(--u)); /* 20 */
+  }
+
+  .hp-footer__networks li + li,
+  .hp-footer__networks li:last-child {
+    margin-left: 0;
+  }
+
+  .hp-footer__network--lexmundi {
+    width: calc(92 * var(--u)); /* 92 */
+    height: calc(36 * var(--u)); /* 36 */
+  }
+
+  .hp-footer__network--multilaw {
+    width: calc(90 * var(--u)); /* 90 */
+    height: calc(50 * var(--u)); /* 50 */
+  }
+
+  .hp-footer__network--dna {
+    width: calc(117 * var(--u)); /* 117 */
+    height: calc(27 * var(--u)); /* 27 */
+  }
+
+  .hp-footer__label--links {
+    margin-top: calc(40 * var(--u)); /* 40 */
+  }
+
+  .hp-footer__quick {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: calc(20 * var(--u)); /* 20 */
+    margin-top: calc(12 * var(--u)); /* 12 + 4 padding = 16 */
+  }
+
+  .hp-footer__quick-col + .hp-footer__quick-col {
+    margin-left: 0;
+  }
+
+  .hp-footer__quick-col li + li {
+    margin-top: 0;
+  }
+
+  .hp-footer__quick-col a {
+    padding: calc(4 * var(--u)) 0; /* 4: rows 8 apart, 27 tap height */
+  }
+
+  .hp-footer__bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: calc(7 * var(--u)); /* 7 + 5 padding = 12 */
+    padding: calc(16 * var(--u)) calc(20 * var(--u)) calc(24 * var(--u)); /* 16 / 20 / 24 */
+  }
+
+  .hp-footer__legal {
+    flex-wrap: wrap;
+    column-gap: calc(20 * var(--u)); /* 20 */
+  }
+
+  .hp-footer__legal li:nth-child(2),
+  .hp-footer__legal li:nth-child(3) {
+    margin-left: 0;
+  }
+
+  .hp-footer__legal a {
+    display: inline-block;
+    padding: calc(5 * var(--u)) 0; /* 5: 24+ tap height at 360 */
+  }
+
+  /* ==========================================================
+     C13 Links and circles
+     ========================================================== */
+  .link-arrow {
+    gap: calc(6 * var(--u)); /* 6 */
+    padding-top: calc(4 * var(--u)); /* 4: 24+ tap height */
+    padding-bottom: calc(4 * var(--u)); /* 4: underline under */
+  }
+
+  .link-arrow svg {
+    width: calc(10 * var(--u)); /* 10 */
+    height: calc(10 * var(--u));
+  }
+
+  .arrow-circle {
+    width: calc(20 * var(--u)); /* 20 */
+    height: calc(20 * var(--u));
+  }
+
+  .arrow-circle svg {
+    width: calc(8 * var(--u)); /* 8 */
+    height: calc(8 * var(--u));
+  }
+
+  .arrow-circle--lg {
+    width: calc(24 * var(--u)); /* 24 */
+    height: calc(24 * var(--u));
+  }
+
+  .arrow-circle--lg svg {
+    width: calc(10 * var(--u)); /* 10 */
+    height: calc(10 * var(--u));
+  }
+
+  .hp-featured-banner__icon {
+    right: calc(12 * var(--u)); /* 12 */
+    bottom: calc(12 * var(--u));
+    width: calc(20 * var(--u)); /* 20 */
+    height: calc(20 * var(--u));
+  }
+
+  .hp-featured-banner__icon svg {
+    width: calc(8 * var(--u)); /* 8 */
+    height: calc(8 * var(--u));
+  }
+
+  /* ==========================================================
+     C1 Hero frame: in-hero, page-hero, breadcrumbs
+     ========================================================== */
+  .breadcrumbs {
+    padding-left: calc(10 * var(--u)); /* 10: 4 dot + 6 */
+  }
+
+  /* Dot centred on the first line (13 x 1.3), so a wrapped trail keeps it there */
+  .breadcrumbs::before {
+    top: calc(8.5 * var(--u)); /* 8.5 */
+    width: calc(4 * var(--u)); /* 4 */
+    height: calc(4 * var(--u));
+  }
+
+  .breadcrumbs a {
+    padding: calc(14 * var(--u)) 0; /* 14: 44 tap height, inline so layout doesn't move */
+  }
+
+  .in-hero {
+    min-height: 0;
+    padding: var(--top-from-header) var(--sidepadding-xs) calc(24 * var(--u)); /* 100 / 20 / 24 */
+  }
+
+  .in-hero__intro,
+  .in-hero--no-image .in-hero__intro {
+    max-width: none;
+    margin-top: calc(40 * var(--u)); /* 40 */
+  }
+
+  /* Last child of the hero, so in flow it lands under the text */
+  .in-hero__image {
+    position: static;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    margin-top: calc(32 * var(--u)); /* 32 */
+    border-radius: calc(5 * var(--u)); /* 5 */
+  }
+
+  .page-hero {
+    min-height: 0;
+    padding: var(--top-from-header) var(--sidepadding-xs) calc(24 * var(--u)); /* 100 / 20 / 24 */
+  }
+
+  .page-hero__content,
+  .page-hero--compact .page-hero__content {
+    grid-template-columns: 1fr;
+    row-gap: calc(24 * var(--u)); /* 24 */
+    margin-top: calc(40 * var(--u)); /* 40 */
+  }
+
+  .page-hero__intro {
+    max-width: none;
+  }
+
+  .page-hero--compact {
+    padding-bottom: calc(24 * var(--u)); /* 24 */
+  }
+
+  /* ==========================================================
+     Under development (page-hero--ud; after C1, it overrides .page-hero)
+     ========================================================== */
+  .page-hero--ud {
+    min-height: 100svh;
+  }
+
+  .page-hero--ud .h1 {
+    max-width: none;
+  }
+
+  .page-hero--ud .page-hero__links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: calc(16 * var(--u)); /* 16 */
+    margin-top: calc(32 * var(--u)); /* 32 */
+  }
+
+  /* ==========================================================
+     C2 On-this-page tabs: sticky scroll strip under the bar
+     ========================================================== */
+  .pro-tabs {
+    top: var(--header-h);
+    padding-top: 0;
+  }
+
+  .pro-tabs__label {
+    display: none;
+  }
+
+  .pro-tabs__list,
+  .pro-tabs--six .pro-tabs__list,
+  .pro-tabs--about .pro-tabs__list {
+    position: relative; /* main.js reads offsetLeft from here */
+    display: flex;
+    flex-wrap: nowrap;
+    gap: calc(24 * var(--u)); /* 24 */
+    height: calc(48 * var(--u)); /* 48 */
+    padding-inline: calc(20 * var(--u)); /* 20 */
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x proximity;
+    scroll-padding-inline: calc(20 * var(--u));
+    scrollbar-width: none;
+  }
+
+  .pro-tabs__list::-webkit-scrollbar {
+    display: none;
+  }
+
+  .pro-tabs__list > li {
+    display: flex;
+    flex: none;
+    scroll-snap-align: start;
+  }
+
+  .pro-tabs__link,
+  .pro-tabs--six .pro-tabs__link,
+  .pro-tabs--six li:last-child .pro-tabs__link {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    font-size: calc(15 * var(--u)); /* 15 */
+    white-space: nowrap;
+  }
+
+  /* Underline: the label's width, on the bar's bottom edge */
+  .pro-tabs__link::after {
+    bottom: 0;
+    height: 3px;
+  }
+
+  /* ==========================================================
+     C3 Overview (two-column / top label)
+     ========================================================== */
+  .svc-overview {
+    grid-template-columns: 1fr;
+    padding: calc(40 * var(--u)) calc(20 * var(--u)) calc(56 * var(--u)); /* 40 / 20 / 56 */
+  }
+
+  .svc-overview--top-label .svc-overview__label {
+    margin-right: 0;
+  }
+
+  .svc-overview__heading,
+  .svc-overview--sub .svc-overview__heading,
+  .svc-overview__quote {
+    max-width: none;
+  }
+
+  .svc-overview--top-label .svc-overview__heading,
+  .svc-overview__quote {
+    margin-top: calc(20 * var(--u)); /* 20 under the rule */
+  }
+
+  .svc-overview__body,
+  .svc-overview--top-label .svc-overview__text {
+    margin-top: calc(24 * var(--u)); /* 24 under the heading */
+  }
+
+  .svc-overview__text {
+    max-width: none;
+    margin-top: calc(20 * var(--u)); /* 20 under the rule */
+    font-size: calc(16 * var(--u)); /* 16 */
+    line-height: 1.5; /* 24 */
+  }
+
+  .svc-overview__quote figcaption {
+    margin-top: calc(12 * var(--u)); /* 12 */
+  }
+
+  /* ==========================================================
+     C4 Label + rule
+     ========================================================== */
+  .pro-label {
+    padding-bottom: calc(8 * var(--u)); /* 8 */
+  }
+
+  /* ==========================================================
+     C5 Related row, C6 post card, C7 pro card
+     ========================================================== */
+  .pro-related,
+  .pro-related--people {
+    display: block;
+    padding: calc(40 * var(--u)) calc(20 * var(--u)); /* 40 / 20 */
+  }
+
+  .pro-related:has(+ .pro-related) {
+    padding-bottom: calc(40 * var(--u)); /* 40 */
+  }
+
+  .pro-related + .pro-related {
+    padding-top: calc(40 * var(--u)); /* 40 */
+  }
+
+  .pro-related + .pro-related::before {
+    left: calc(20 * var(--u)); /* 20 */
+    right: calc(20 * var(--u));
+  }
+
+  .pro-related__head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: calc(8 * var(--u)) calc(16 * var(--u)); /* 8 / 16 */
+  }
+
+  .pro-related__title {
+    max-width: none;
+  }
+
+  .pro-related__link {
+    gap: calc(12 * var(--u)); /* 12 */
+    margin-top: 0;
+  }
+
+  /* Post cards: a swipe strip that bleeds to the screen edges */
+  .pro-related__cards {
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    grid-auto-columns: 82%;
+    gap: calc(12 * var(--u)); /* 12 */
+    margin: calc(24 * var(--u)) calc(-20 * var(--u)) 0; /* 24 / bleed 20 */
+    padding: 0 calc(20 * var(--u)); /* 20 */
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: calc(20 * var(--u));
+    scrollbar-width: none;
+  }
+
+  .pro-related__cards::-webkit-scrollbar {
+    display: none;
+  }
+
+  .pro-related__cards > li {
+    scroll-snap-align: start;
+  }
+
+  /* People: a plain 2-column grid */
+  .pro-related--people .pro-related__cards {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-flow: row;
+    grid-auto-columns: auto;
+    gap: calc(16 * var(--u)) calc(8 * var(--u)); /* 16 / 8 */
+    margin: calc(24 * var(--u)) 0 0; /* 24 */
+    padding: 0;
+    overflow: visible;
+    scroll-snap-type: none;
+  }
+
+  .post-card {
+    min-height: calc(220 * var(--u)); /* 220 */
+    padding: calc(16 * var(--u)); /* 16 */
+    border-radius: calc(5 * var(--u)); /* 5 */
+  }
+
+  .post-card__title,
+  .post-card__excerpt {
+    max-width: none;
+  }
+
+  .post-card__excerpt {
+    margin-top: calc(12 * var(--u)); /* 12 */
+  }
+
+  .post-card__foot {
+    padding-top: calc(20 * var(--u)); /* 20 */
+  }
+
+  .pro-card {
+    border-radius: calc(4 * var(--u)); /* 4 */
+  }
+
+  .pro-card__info {
+    min-height: 0;
+    padding: calc(10 * var(--u)) calc(10 * var(--u)) calc(12 * var(--u)); /* 10 / 10 / 12 */
+  }
+
+  .pro-card__name {
+    gap: calc(8 * var(--u)); /* 8 */
+    font-size: calc(15 * var(--u)); /* 15 */
+    line-height: 1.2;
+  }
+
+  .pro-card__position {
+    padding-top: calc(6 * var(--u)); /* 6 */
+  }
+
+  /* ==========================================================
+     C12 Rich text (before C8: the experience list overrides it)
+     ========================================================== */
+  .rich-text {
+    font-size: calc(16 * var(--u)); /* 16 */
+    line-height: 1.5; /* 24 */
+    letter-spacing: 0;
+  }
+
+  .rich-text > * + * {
+    margin-top: calc(16 * var(--u)); /* 16 */
+  }
+
+  .rich-text h2 {
+    font-size: calc(30 * var(--u)); /* 30, as .h2 */
+    line-height: 1.07;
+  }
+
+  .rich-text h3 {
+    font-size: calc(20 * var(--u)); /* 20 */
+    line-height: 1.15;
+  }
+
+  .rich-text > * + h2,
+  .rich-text > ul + h2,
+  .rich-text > ol + h2 {
+    margin-top: calc(40 * var(--u)); /* 40 */
+  }
+
+  .rich-text > * + h3 {
+    margin-top: calc(32 * var(--u)); /* 32 */
+  }
+
+  .rich-text > h2 + *,
+  .rich-text > h3 + * {
+    margin-top: calc(16 * var(--u)); /* 16 */
+  }
+
+  .rich-text li {
+    padding-left: calc(20 * var(--u)); /* 20 */
+  }
+
+  .rich-text li + li {
+    margin-top: calc(12 * var(--u)); /* 12 */
+  }
+
+  .rich-text ul > li::before {
+    left: calc(6 * var(--u)); /* 6 */
+    top: calc(10 * var(--u)); /* 10: centred on the 24 line */
+    width: calc(5 * var(--u)); /* 5 */
+    height: calc(5 * var(--u));
+  }
+
+  .rich-text blockquote {
+    padding-left: calc(16 * var(--u)); /* 16 */
+    font-size: calc(20 * var(--u)); /* 20 */
+  }
+
+  .rich-text figcaption {
+    margin-top: calc(8 * var(--u)); /* 8 */
+    font-size: calc(13 * var(--u)); /* 13 */
+  }
+
+  /* In-text links: 24 tap height (inline padding, the line doesn't move) */
+  .rich-text a {
+    padding: calc(2 * var(--u)) 0; /* 2 */
+  }
+
+  .rich-text iframe,
+  .rich-text video {
+    max-width: 100%;
+  }
+
+  /* Wide tables scroll sideways instead of widening the page */
+  .rich-text table {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  .rich-text table {
+    font-size: calc(14 * var(--u)); /* 14 */
+  }
+
+  .rich-text th,
+  .rich-text td {
+    min-width: calc(140 * var(--u)); /* 140: columns stay readable, the table scrolls */
+    padding: calc(10 * var(--u)) calc(10 * var(--u)) calc(10 * var(--u)) 0; /* 10 */
+  }
+
+  /* ==========================================================
+     C8 Experience list
+     ========================================================== */
+  .pro-experience {
+    padding: calc(32 * var(--u)) calc(20 * var(--u)) calc(40 * var(--u)); /* 32 / 20 / 40 */
+  }
+
+  .pro-experience__list {
+    width: auto;
+    margin: calc(24 * var(--u)) 0 0; /* 24 */
+  }
+
+  .pro-experience__list li {
+    padding-left: calc(24 * var(--u)); /* 24: 10 marker + 14 */
+  }
+
+  .pro-experience__list li + li {
+    margin-top: calc(20 * var(--u)); /* 20 */
+  }
+
+  .pro-experience__list ul > li::before {
+    top: calc(6 * var(--u)); /* 6: centred on the first line */
+    width: calc(10 * var(--u)); /* 10 */
+    height: calc(12 * var(--u)); /* 12 */
+  }
+
+  .pro-experience__more {
+    margin-top: calc(32 * var(--u)); /* 32 */
+    padding: calc(4 * var(--u)) 0; /* 4: tap height */
+  }
+
+  /* ==========================================================
+     C9 Client successes (stack + Blaze slider)
+     ========================================================== */
+  .loc-successes,
+  .svc-successes {
+    display: block;
+    padding: calc(32 * var(--u)) calc(20 * var(--u)) calc(56 * var(--u)); /* 32 / 20 / 56 */
+  }
+
+  .loc-successes__label,
+  .svc-successes .loc-successes__label {
+    width: auto;
+    margin: 0 0 calc(24 * var(--u)); /* 24 */
+  }
+
+  .loc-successes__list {
+    gap: calc(12 * var(--u)); /* 12 */
+  }
+
+  /* Card: title, text, Read more */
+  .loc-success,
+  .svc-successes .loc-success {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: 0;
+    padding: calc(20 * var(--u)); /* 20 */
+    border-radius: calc(5 * var(--u)); /* 5 */
+  }
+
+  .loc-success__title {
+    max-width: none;
+  }
+
+  .loc-success__text {
+    order: 1;
+    margin-top: calc(12 * var(--u)); /* 12 */
+  }
+
+  .loc-success__link {
+    order: 2;
+    align-self: flex-start;
+    margin-top: calc(20 * var(--u)); /* 20 */
+  }
+
+  .svc-successes__nav {
+    gap: calc(10 * var(--u)); /* 10 */
+    margin-top: calc(20 * var(--u)); /* 20 */
+  }
+
+  .svc-successes__btn {
+    width: calc(44 * var(--u)); /* 44 */
+    height: calc(44 * var(--u));
+    line-height: calc(44 * var(--u));
+  }
+
+  .svc-successes__btn svg {
+    width: calc(10 * var(--u)); /* 10 */
+    height: calc(10 * var(--u));
+  }
+
+  /* ==========================================================
+     C10 More from
+     ========================================================== */
+  .more-from {
+    display: block;
+    padding: calc(40 * var(--u)) calc(20 * var(--u)) calc(56 * var(--u)); /* 40 / 20 / 56 */
+  }
+
+  .more-from__list {
+    margin-top: calc(24 * var(--u)); /* 24 */
+  }
+
+  .more-from__link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: calc(16 * var(--u)); /* 16 */
+    padding: calc(20 * var(--u)) 0; /* 20 */
+  }
+
+  /* Red chevron on the right of each row */
+  .more-from__link::after {
+    content: "";
+    flex: none;
+    width: calc(8 * var(--u)); /* 8 */
+    height: calc(8 * var(--u));
+    margin-right: calc(4 * var(--u)); /* 4 */
+    border-right: 2px solid var(--red);
+    border-bottom: 2px solid var(--red);
+    transform: rotate(-45deg);
+  }
+
+  /* Rows that carry their own red arrow circle: no chevron, circle on the right edge */
+  .more-from__link:has(.arrow-circle) {
+    padding-right: 0;
+  }
+
+  .more-from__link:has(.arrow-circle)::after {
+    display: none;
+  }
+
+  /* ==========================================================
+     C11 Icon contact lines
+     ========================================================== */
+  .loc-hero__lines {
+    gap: calc(12 * var(--u)); /* 12 */
+  }
+
+  .loc-hero__lines li {
+    gap: calc(12 * var(--u)); /* 12 */
+    font-size: calc(15 * var(--u)); /* 15 */
+    line-height: 1.3;
+    min-width: 0;
+    overflow-wrap: break-word; /* long emails break only when they overflow */
+  }
+
+  .loc-hero__icon {
+    width: calc(36 * var(--u)); /* 36 */
+    height: calc(36 * var(--u));
+  }
+
+  .loc-hero__icon svg {
+    width: calc(14 * var(--u)); /* 14 */
+    height: calc(14 * var(--u));
+  }
+
+  .loc-hero__map {
+    margin-top: calc(14 * var(--u)); /* 14 */
+    font-size: calc(15 * var(--u)); /* 15 */
+  }
+}
+
+/* ============================================================
+   Tablet (768 to 1199): wider grids, side by side where desktop is
+   ============================================================ */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .hp-footer__top {
+    grid-template-columns: 1fr 1fr;
+    column-gap: calc(40 * var(--u)); /* 40 */
+  }
+
+  .hp-footer__nav {
+    margin-top: 0;
+  }
+
+  /* 16 / 9, capped so a landscape tablet still sees the text above it */
+  .in-hero__image {
+    aspect-ratio: 16 / 9;
+    max-height: calc(440 * var(--u)); /* 440 (484 at the 1.1 cap) */
+  }
+
+  .svc-overview {
+    grid-template-columns: 1fr 1.4fr;
+    column-gap: calc(40 * var(--u)); /* 40 */
+  }
+
+  .svc-overview__body {
+    margin-top: 0;
+  }
+
+  .svc-overview--top-label .svc-overview__heading,
+  .svc-overview--top-label .svc-overview__quote,
+  .svc-overview--top-label .svc-overview__text {
+    margin-top: calc(24 * var(--u)); /* 24 under the rule */
+  }
+
+  .pro-related__cards {
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-flow: row;
+    grid-auto-columns: auto;
+    margin: calc(24 * var(--u)) 0 0;
+    padding: 0;
+    overflow: visible;
+    scroll-snap-type: none;
+  }
+
+  .pro-related--people .pro-related__cards {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ==========================================================
+   Print (the insight share row has a Print button): the fixed
+   header and the reading bar would repeat on every sheet; drop
+   them and the parts that only make sense on screen.
+   ========================================================== */
+@media print {
+  .site-header,
+  .hp-footer,
+  .in-bar,
+  .in-share,
+  [data-section="in-share-row"],
+  [data-section="in-download"],
+  [data-section="in-related-insights"],
+  .more-from {
+    display: none !important;
+  }
+}
+/* ============================================================
+   TNG responsive: Home (family A)
+   Owns: index.html <main> (hp-* sections)
+   Rules: temporary/migration/responsive-spec.md sections 0.4, 0.5
+   and "Foundation provides". Two queries only:
+   @media (max-width: 1199px) and
+   @media (min-width: 768px) and (max-width: 1199px)
+   ============================================================ */
+
+@media (max-width: 1199px) {
+
+  /* ==========================================================
+     Featured banner: text under the bar, recent insights stacked
+     ========================================================== */
+  .hp-featured-banner {
+    gap: calc(40 * var(--u)); /* 40: never closer than this to the panel */
+    min-height: min(100svh, 900px);
+    padding: var(--top-from-header) calc(12 * var(--u)) calc(12 * var(--u)); /* 100 / 12 / 12 */
+  }
+
+  .hp-featured-banner__content {
+    max-width: none;
+    padding: 0 calc(8 * var(--u)); /* 8: text on the 20 gutter */
+  }
+
+  .hp-featured-banner__content .h1 {
+    margin-top: calc(12 * var(--u)); /* 12 */
+  }
+
+  .hp-featured-banner__link {
+    margin-top: calc(20 * var(--u)); /* 20 */
+  }
+
+  .hp-featured-banner__panel {
+    border-radius: calc(5 * var(--u)); /* 5 */
+  }
+
+  .hp-featured-banner__panel-head {
+    padding: calc(4 * var(--u)) calc(16 * var(--u)); /* 4 / 16 */
+    border-bottom-left-radius: calc(5 * var(--u));
+    border-bottom-right-radius: calc(5 * var(--u));
+  }
+
+  .hp-featured-banner__view-all {
+    gap: calc(4 * var(--u)); /* 4 */
+    padding: calc(6 * var(--u)) 0; /* 6: tap height */
+  }
+
+  .hp-featured-banner__view-all svg {
+    width: calc(8 * var(--u)); /* 8 */
+    height: calc(8 * var(--u));
+  }
+
+  .hp-featured-banner__list {
+    grid-template-columns: 1fr;
+  }
+
+  .hp-featured-banner__item {
+    padding: calc(14 * var(--u)) calc(16 * var(--u)) calc(14 * var(--u)); /* 14 / 16 / 14 */
+  }
+
+  .hp-featured-banner__item .h4 {
+    padding-right: calc(28 * var(--u)); /* 28: clear of the icon */
+  }
+
+  .hp-featured-banner__item .subhead {
+    padding-top: calc(10 * var(--u)); /* 10 */
+  }
+
+  /* Dividers turn horizontal: a rule across the top of each row, drawn left to right */
+  .hp-featured-banner__item + .hp-featured-banner__item::before {
+    top: 0;
+    bottom: auto;
+    left: calc(16 * var(--u)); /* 16 */
+    right: calc(16 * var(--u));
+    width: auto;
+    height: 1px;
+    transform: scaleX(0);
+    transform-origin: left center;
+  }
+
+  .hp-featured-banner__item.is-in::before {
+    transform: scaleX(1);
+  }
+
+  .hp-featured-banner__item .hp-featured-banner__icon {
+    right: calc(16 * var(--u)); /* 16 */
+    bottom: calc(14 * var(--u)); /* 14: level with the date */
+  }
+
+  /* ==========================================================
+     Intro + counters: stacked; regional presence: 2-column cards
+     ========================================================== */
+  .hp-intro {
+    padding: calc(56 * var(--u)) calc(12 * var(--u)) calc(12 * var(--u)); /* 56 / 12 / 12 */
+  }
+
+  .hp-intro__top {
+    flex-direction: column;
+    gap: calc(40 * var(--u)); /* 40 */
+    padding: 0 calc(8 * var(--u)); /* 8 → 20 with the section padding */
+  }
+
+  .hp-intro__text,
+  .hp-intro__text .body {
+    max-width: none;
+  }
+
+  .hp-intro__text .body {
+    margin-top: calc(16 * var(--u)); /* 16 */
+  }
+
+  .hp-intro__link {
+    min-width: calc(70 * var(--u)); /* 70 */
+    margin-top: calc(16 * var(--u)); /* 16 */
+  }
+
+  .hp-intro__counters {
+    grid-template-columns: 1fr 1fr;
+    column-gap: calc(20 * var(--u)); /* 20 */
+    row-gap: calc(32 * var(--u)); /* 32 */
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .hp-intro__counters .counter-label {
+    margin-top: calc(4 * var(--u)); /* 4 */
+  }
+
+  .hp-intro__panel {
+    grid-template-columns: 1fr;
+    row-gap: calc(24 * var(--u)); /* 24 */
+    margin-top: calc(56 * var(--u)); /* 56 */
+    padding: calc(24 * var(--u)) calc(8 * var(--u)) calc(8 * var(--u)); /* 24 / 8 / 8 */
+    border-radius: calc(5 * var(--u)); /* 5 */
+  }
+
+  .hp-intro__panel > .h2 {
+    padding: 0 calc(8 * var(--u)); /* 8: on the 20 gutter */
+  }
+
+  .hp-intro__locations {
+    grid-template-columns: repeat(2, 1fr);
+    gap: calc(8 * var(--u)); /* 8 */
+  }
+
+  .hp-intro__location img {
+    width: calc(100% - calc(16 * var(--u))); /* 8 in each side */
+    border-radius: calc(5 * var(--u)); /* 5 */
+  }
+
+  .hp-intro__location-name {
+    gap: calc(8 * var(--u)); /* 8 */
+    margin-top: calc(-8 * var(--u)); /* 8 under the photo */
+    padding: calc(16 * var(--u)) calc(10 * var(--u)) calc(14 * var(--u)) calc(12 * var(--u)); /* 16 / 10 / 14 / 12 */
+    border-radius: calc(5 * var(--u));
+  }
+
+  .hp-intro__location-name .hp-featured-banner__icon {
+    flex: none;
+    width: calc(20 * var(--u)); /* 20 */
+    height: calc(20 * var(--u));
+  }
+
+  .hp-intro__location-name .hp-featured-banner__icon svg {
+    width: calc(8 * var(--u)); /* 8 */
+    height: calc(8 * var(--u));
+  }
+
+  /* ==========================================================
+     Insights: tabs as a swipe strip, feature card under its image,
+     list full width, View all at the end.
+     tng-wp.js re-renders .hp-insights__body on WP: classes only.
+     ========================================================== */
+  .hp-insights {
+    display: flex;
+    flex-direction: column;
+    padding: calc(56 * var(--u)) calc(20 * var(--u)); /* 56 / 20 */
+  }
+
+  .hp-insights__label {
+    padding-bottom: calc(8 * var(--u)); /* 8 */
+  }
+
+  /* Its children (tab list, View all) join the section's column */
+  .hp-insights__tabs {
+    display: contents;
+  }
+
+  .hp-insights__tab-list {
+    order: 1;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: calc(24 * var(--u)); /* 24 */
+    margin: calc(16 * var(--u)) calc(-20 * var(--u)) 0; /* 16 / bleed to the screen edge */
+    padding-inline: calc(20 * var(--u)); /* 20 */
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    scroll-padding-inline: calc(20 * var(--u));
+    scrollbar-width: none;
+  }
+
+  .hp-insights__tab-list::-webkit-scrollbar {
+    display: none;
+  }
+
+  .hp-insights__tab-list > li {
+    flex: none;
+    scroll-snap-align: start;
+  }
+
+  .hp-insights__tab {
+    padding: calc(4 * var(--u)) 0 calc(10 * var(--u)); /* 4 / 10: 37 tap height */
+    white-space: nowrap;
+  }
+
+  .hp-insights__tab.is-active::after {
+    height: 2px;
+  }
+
+  .hp-insights__body {
+    order: 2;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    margin-top: calc(20 * var(--u)); /* 20 */
+  }
+
+  .hp-insights__feature {
+    display: block;
+    width: auto;
+    height: auto;
+  }
+
+  .hp-insights__feature img {
+    height: auto;
+    aspect-ratio: 4 / 3;
+    border-radius: calc(5 * var(--u)); /* 5 */
+  }
+
+  /* Card: in flow under the image, no overlap */
+  .hp-insights__card {
+    position: static;
+    width: auto;
+    padding: calc(16 * var(--u)) 0 calc(20 * var(--u)); /* 16 / 20 */
+    border-radius: 0;
+  }
+
+  .hp-insights__card .h3,
+  .hp-insights__card .body {
+    max-width: none;
+  }
+
+  .hp-insights__card .body {
+    margin-top: calc(12 * var(--u)); /* 12 */
+  }
+
+  .hp-insights__card-foot {
+    margin-top: calc(20 * var(--u)); /* 20 */
+  }
+
+  .hp-insights__list {
+    margin-right: 0;
+    border-top: 1px solid #e3e8ee;
+  }
+
+  .hp-insights__item a {
+    flex-direction: column;
+    gap: calc(8 * var(--u)); /* 8 */
+    padding: calc(16 * var(--u)) calc(32 * var(--u)) calc(18 * var(--u)) 0; /* 16 / 32 (arrow) / 18 */
+  }
+
+  .hp-insights__item .h4 {
+    max-width: none;
+  }
+
+  .hp-insights__item .arrow-circle {
+    bottom: calc(18 * var(--u)); /* 18: level with the date */
+  }
+
+  .hp-insights__tabs > .link-arrow {
+    order: 3;
+    align-self: flex-start;
+    margin-top: calc(24 * var(--u)); /* 24 */
+  }
+
+  /* ==========================================================
+     Careers: text, marquee in flow (420 tall), then the note row
+     ========================================================== */
+  .hp-careers {
+    justify-content: flex-start;
+    height: auto;
+    padding: calc(56 * var(--u)) calc(20 * var(--u)) calc(32 * var(--u)); /* 56 / 20 / 32 */
+  }
+
+  .hp-careers__intro .h2 {
+    max-width: none;
+  }
+
+  .hp-careers__intro .link-arrow {
+    gap: calc(12 * var(--u)); /* 12 */
+    margin-top: calc(16 * var(--u)); /* 16 */
+  }
+
+  .hp-careers__marquee {
+    position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    order: 1;
+    gap: calc(8 * var(--u)); /* 8 */
+    height: calc(420 * var(--u)); /* 420 */
+    margin-top: calc(32 * var(--u)); /* 32 */
+    border-radius: calc(5 * var(--u)); /* 5 */
+  }
+
+  .hp-careers__column {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .hp-careers__column img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 221 / 287;
+    margin-bottom: calc(8 * var(--u)); /* 8, on each item so the loop distance is exact */
+  }
+
+  .hp-careers__foot {
+    order: 2;
+    width: auto;
+    margin-top: calc(32 * var(--u)); /* 32 */
+    padding-top: calc(16 * var(--u)); /* 16 */
+  }
+
+  .hp-careers__note {
+    flex: 1;
+    max-width: none;
+  }
+
+  .hp-careers__rule {
+    margin: 0 calc(20 * var(--u)) 0 calc(16 * var(--u)); /* 20 / 16 */
+  }
+
+  .hp-careers__badge {
+    width: calc(96 * var(--u)); /* 96 */
+    height: calc(96 * var(--u));
+  }
+
+  /* ==========================================================
+     Awards: grey panel stacked
+     ========================================================== */
+  .hp-awards {
+    padding: calc(40 * var(--u)) calc(12 * var(--u)) calc(12 * var(--u)); /* 40 / 12 / 12 */
+  }
+
+  .hp-awards__label {
+    padding: 0 0 calc(10 * var(--u)) calc(8 * var(--u)); /* 10 below, on the 20 gutter */
+  }
+
+  .hp-awards__panel {
+    flex-direction: column;
+    padding: calc(24 * var(--u)) calc(8 * var(--u)) calc(8 * var(--u)); /* 24 / 8 / 8 */
+    border-radius: calc(5 * var(--u)); /* 5 */
+  }
+
+  .hp-awards__main,
+  .hp-awards__text {
+    width: auto;
+    margin-left: 0;
+    padding: 0 calc(8 * var(--u)); /* 8: text on the 20 gutter */
+  }
+
+  .hp-awards__logo {
+    width: calc(80 * var(--u)); /* 80 */
+    height: calc(80 * var(--u));
+    margin-top: calc(20 * var(--u)); /* 20 */
+  }
+
+  .hp-awards__text {
+    margin-top: calc(20 * var(--u)); /* 20 */
+  }
+
+  .hp-awards__text .link-arrow {
+    gap: calc(12 * var(--u)); /* 12 */
+    margin-top: calc(12 * var(--u)); /* 12 */
+  }
+
+  .hp-awards__card {
+    width: auto;
+    min-height: calc(120 * var(--u)); /* 120 */
+    margin: calc(32 * var(--u)) 0 0; /* 32 */
+    padding: calc(16 * var(--u)) calc(56 * var(--u)) calc(16 * var(--u)) calc(16 * var(--u)); /* 16, 56 clear of the arrow */
+    border-radius: calc(5 * var(--u)); /* 5 */
+  }
+
+  .hp-awards__card .arrow-circle {
+    right: calc(16 * var(--u)); /* 16 */
+    bottom: calc(16 * var(--u));
+  }
+}
+
+/* ============================================================
+   Tablet (768 to 1199): side by side where desktop is
+   ============================================================ */
+@media (min-width: 768px) and (max-width: 1199px) {
+
+  /* Featured banner: recent insights 2 x 2 */
+  .hp-featured-banner__list {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hp-featured-banner__item + .hp-featured-banner__item::before {
+    display: none;
+  }
+
+  /* Vertical rule between the columns (desktop style), horizontal between the rows */
+  .hp-featured-banner__item:nth-child(2n)::after,
+  .hp-featured-banner__item:nth-child(n + 3)::before {
+    content: "";
+    position: absolute;
+    background: #e3e8ee;
+    transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .hp-featured-banner__item:nth-child(2n)::after {
+    top: calc(14 * var(--u)); /* 14 */
+    bottom: calc(14 * var(--u));
+    left: 0;
+    width: 1px;
+    transform: scaleY(0);
+    transform-origin: center top;
+  }
+
+  .hp-featured-banner__item:nth-child(n + 3)::before {
+    display: block;
+    top: 0;
+    left: calc(16 * var(--u)); /* 16 */
+    right: calc(16 * var(--u));
+    height: 1px;
+    transform: scaleX(0);
+    transform-origin: left center;
+  }
+
+  .hp-featured-banner__item.is-in:nth-child(2n)::after {
+    transform: scaleY(1);
+  }
+
+  .hp-featured-banner__item.is-in:nth-child(n + 3)::before {
+    transform: scaleX(1);
+  }
+
+  /* Intro: text left, counters right */
+  .hp-intro__top {
+    flex-direction: row;
+    gap: calc(40 * var(--u)); /* 40 */
+  }
+
+  .hp-intro__text,
+  .hp-intro__counters {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  .hp-intro__locations {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Insights: feature left, list right */
+  .hp-insights__body {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: calc(24 * var(--u)); /* 24 */
+  }
+
+  .hp-insights__feature,
+  .hp-insights__list {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  .hp-insights__card {
+    padding-bottom: 0;
+  }
+
+  /* Careers: the desktop layout, marquee on the right half */
+  .hp-careers {
+    justify-content: space-between;
+    min-height: calc(480 * var(--u)); /* 480 */
+  }
+
+  .hp-careers__intro,
+  .hp-careers__foot {
+    width: 48%;
+  }
+
+  .hp-careers__foot {
+    max-width: calc(400 * var(--u)); /* 400 */
+  }
+
+  .hp-careers__marquee {
+    position: absolute;
+    top: 0;
+    right: calc(20 * var(--u)); /* 20 */
+    bottom: 0;
+    width: calc(46% - calc(20 * var(--u)));
+    height: auto;
+    margin-top: 0;
+    border-radius: 0;
+  }
+
+  /* Awards: heading | text, card full width under them */
+  .hp-awards__panel {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: calc(32 * var(--u)); /* 32 */
+  }
+
+  .hp-awards__text {
+    margin-top: 0;
+  }
+
+  .hp-awards__card {
+    grid-column: 1 / -1;
+    min-height: calc(80 * var(--u)); /* 80: one line of text at this width */
+  }
+}
+/* ============================================================
+   TNG responsive: Professionals + Insights (family B)
+   Owns: professionals, professional, insights, awards, insight, insight-no-image, insight-module <main>
+   Rules: temporary/migration/responsive-spec.md sections 0.4, 0.5
+   and "Foundation provides". Two queries only:
+   @media (max-width: 1199px) and
+   @media (min-width: 768px) and (max-width: 1199px)
+   Lengths: calc(N * var(--u)), N = px on the 390 design.
+   ============================================================ */
+
+@media (max-width: 1199px) {
+
+  /* ==========================================================
+     Professionals filter (+ insights / awards .ins-filter)
+     Not sticky. Search row, then the alphabet as a 13 x 2 grid
+     (every letter visible, 27 x 44 taps), then the facets as a
+     swipe strip of pills on the grey band.
+     ========================================================== */
+  /* Not sticky; relative so the open panels hang from it */
+  .pro-filter {
+    position: relative;
+    top: auto; /* style.css's sticky top (5vw) would shift a relative bar */
+  }
+
+  /* Open panels: full width between the gutters, under their row
+     (main.js sets top / max-height); 44 rows, 15 type */
+  .flt-panel {
+    left: var(--sidepadding-xs);
+    right: var(--sidepadding-xs);
+    width: auto;
+    max-width: none;
+    margin-top: calc(6 * var(--u)); /* 6 */
+    padding: calc(6 * var(--u)); /* 6 */
+    border-radius: calc(8 * var(--u)); /* 8 */
+    box-shadow: 0 calc(10 * var(--u)) calc(30 * var(--u)) rgba(7, 20, 35, 0.18);
+  }
+
+  .flt-panel__list > li:first-child {
+    margin-bottom: calc(6 * var(--u)); /* 6 */
+    padding-bottom: calc(6 * var(--u)); /* 6 */
+  }
+
+  .flt-option {
+    gap: calc(12 * var(--u)); /* 12 */
+    min-height: calc(44 * var(--u)); /* 44: tap target */
+    padding: calc(8 * var(--u)) calc(10 * var(--u)) calc(8 * var(--u)) calc(14 * var(--u)); /* 8 / 10 / 8 / 14 */
+    border-radius: calc(6 * var(--u)); /* 6 */
+    font-size: calc(15 * var(--u)); /* 15 */
+    line-height: 1.2;
+  }
+
+  .flt-option__tick {
+    width: calc(20 * var(--u)); /* 20 */
+    height: calc(20 * var(--u));
+  }
+
+  .flt-option__tick svg {
+    width: calc(10 * var(--u)); /* 10 */
+    height: calc(10 * var(--u));
+  }
+
+  .flt-panel--years .flt-panel__list {
+    gap: calc(2 * var(--u)); /* 2 */
+  }
+
+  .flt-option--pro {
+    gap: calc(2 * var(--u)); /* 2 */
+    min-height: calc(52 * var(--u)); /* 52 */
+  }
+
+  .flt-option__meta {
+    font-size: calc(13 * var(--u)); /* 13 */
+  }
+
+  .flt-panel__empty {
+    padding: calc(12 * var(--u)); /* 12 */
+    font-size: calc(15 * var(--u)); /* 15 */
+  }
+
+  /* A set facet pill turns navy, like the job list's active country */
+  .pro-filter .pro-filter__facet.is-set {
+    border-color: var(--navy);
+    background: var(--navy);
+    color: var(--white);
+  }
+
+  .pro-filter .pro-filter__facet.is-set .pro-filter__chevron {
+    background: var(--white);
+    color: var(--navy);
+  }
+
+  .pro-grid__empty {
+    gap: calc(16 * var(--u)); /* 16 */
+  }
+
+  .pro-filter__bar {
+    grid-template-columns: 1fr;
+  }
+
+  .pro-filter__search {
+    gap: calc(12 * var(--u)); /* 12 */
+    padding: calc(8 * var(--u)) calc(12 * var(--u)) calc(8 * var(--u)) calc(20 * var(--u)); /* 8 / 12 / 8 / 20 */
+    border-right: 0;
+    border-bottom: 1px solid #dbe2e9;
+  }
+
+  /* 16 minimum: iOS zooms into smaller inputs on focus */
+  .pro-filter__search input,
+  .ins-filter input {
+    height: calc(40 * var(--u)); /* 40: the whole row is the tap target */
+    font-size: max(16px, calc(16 * var(--u))); /* 16 */
+    line-height: 1.2;
+  }
+
+  .pro-filter__submit,
+  .ins-filter .pro-filter__submit {
+    width: calc(44 * var(--u)); /* 44: minimum tap size */
+    height: calc(44 * var(--u));
+  }
+
+  .pro-filter__submit svg,
+  .ins-filter .pro-filter__submit svg {
+    width: calc(15 * var(--u)); /* 15 */
+    height: calc(15 * var(--u));
+  }
+
+  .pro-filter__alpha {
+    display: grid;
+    grid-template-columns: repeat(13, 1fr);
+    gap: 0;
+    padding: calc(6 * var(--u)) calc(20 * var(--u)); /* 6 / 20 */
+  }
+
+  .pro-filter__alpha button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: calc(44 * var(--u)); /* 44: minimum tap height */
+    font-size: calc(15 * var(--u)); /* 15 */
+  }
+
+  .pro-filter__alpha button::after {
+    left: calc(50% - 6 * var(--u)); /* 12 wide, centred under the letter */
+    right: calc(50% - 6 * var(--u));
+    bottom: calc(5 * var(--u)); /* 5 */
+    height: 2px;
+  }
+
+  .pro-filter__facets {
+    display: flex;
+    gap: calc(8 * var(--u)); /* 8 */
+    padding: calc(12 * var(--u)) calc(20 * var(--u)); /* 12 / 20 */
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    scroll-padding-inline: calc(20 * var(--u));
+    scrollbar-width: none;
+  }
+
+  .pro-filter__facets::-webkit-scrollbar {
+    display: none;
+  }
+
+  .pro-filter__facet,
+  .ins-filter .pro-filter__facet {
+    flex: none;
+    gap: calc(10 * var(--u)); /* 10 */
+    height: calc(44 * var(--u)); /* 44: minimum tap height (was 40) */
+    padding: 0 calc(10 * var(--u)) 0 calc(16 * var(--u)); /* 10 / 16 */
+    border: 1px solid #dbe2e9;
+    border-radius: 999px;
+    background: var(--white);
+    font-size: calc(15 * var(--u)); /* 15 */
+    font-weight: 600;
+    line-height: 1.2;
+    white-space: nowrap;
+    scroll-snap-align: start;
+  }
+
+  .pro-filter__facet + .pro-filter__facet {
+    border-left: 1px solid #dbe2e9;
+  }
+
+  .pro-filter__chevron {
+    width: calc(20 * var(--u)); /* 20 */
+    height: calc(20 * var(--u));
+  }
+
+  .pro-filter__chevron svg {
+    width: calc(8 * var(--u)); /* 8 */
+    height: calc(8 * var(--u));
+  }
+
+  /* Insights / awards: name search full width; professionals search
+     and Date share the second row */
+  .ins-filter__bar {
+    grid-template-columns: 1fr auto;
+  }
+
+  .ins-filter .pro-filter__search:first-child {
+    grid-column: 1 / -1;
+  }
+
+  .ins-filter .pro-filter__search + .pro-filter__search {
+    border-right: 1px solid #dbe2e9;
+    border-bottom: 0;
+  }
+
+  .ins-filter .pro-filter__search {
+    padding: calc(8 * var(--u)) calc(12 * var(--u)) calc(8 * var(--u)) calc(20 * var(--u)); /* 8 / 12 / 8 / 20 */
+  }
+
+  .ins-filter__date {
+    gap: calc(12 * var(--u)); /* 12 */
+    padding: 0 calc(20 * var(--u)) 0 calc(16 * var(--u)); /* 20 / 16 */
+    font-size: calc(15 * var(--u)); /* 15 */
+  }
+
+  .ins-filter__date svg {
+    width: calc(20 * var(--u)); /* 20 */
+    height: calc(20 * var(--u));
+  }
+
+  /* ==========================================================
+     Professionals grid: 2 columns (tablet: as many 200+ columns
+     as fit), count + View more centred
+     ========================================================== */
+  .pro-grid {
+    padding: calc(24 * var(--u)) calc(20 * var(--u)) calc(56 * var(--u)); /* 24 / 20 / 56 */
+  }
+
+  .pro-grid__list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: calc(20 * var(--u)) calc(8 * var(--u)); /* 20 / 8 */
+  }
+
+  .pro-grid__more {
+    margin-top: calc(40 * var(--u)); /* 40 */
+  }
+
+  .pro-grid__count {
+    font-size: calc(15 * var(--u)); /* 15 */
+    line-height: 1.3;
+  }
+
+  .pro-grid__view-more {
+    gap: calc(12 * var(--u)); /* 12 */
+    margin-top: calc(12 * var(--u)); /* 12 */
+    padding-right: calc(4 * var(--u)); /* 4 */
+  }
+
+  /* ==========================================================
+     Professional hero: stacked text, contacts in a column, the
+     portrait in flow at the end standing on the hero's floor.
+     Cutouts (transparent) and studio photos both fill a 4:5 box,
+     cropped from the top; the photo gets rounded top corners.
+     ========================================================== */
+  .pro-hero {
+    min-height: 0;
+    padding: var(--top-from-header) var(--sidepadding-xs) 0; /* 100 / 20 / 0 */
+  }
+
+  .pro-hero__intro {
+    margin-top: calc(40 * var(--u)); /* 40 */
+  }
+
+  .pro-hero__position {
+    margin-top: calc(8 * var(--u)); /* 8 */
+    font-size: calc(17 * var(--u)); /* 17 */
+    line-height: 1.2;
+  }
+
+  .pro-hero__locations {
+    gap: calc(6 * var(--u)); /* 6 */
+    margin-top: calc(14 * var(--u)); /* 14 */
+  }
+
+  .pro-hero__location {
+    gap: calc(6 * var(--u)); /* 6 */
+    padding: calc(4 * var(--u)) calc(10 * var(--u)) calc(4 * var(--u)) calc(4 * var(--u)); /* 4 / 10 / 4 / 4: 26 tall */
+    font-size: calc(14 * var(--u)); /* 14 */
+  }
+
+  .pro-hero__location img {
+    width: calc(18 * var(--u)); /* 18 */
+    height: calc(18 * var(--u));
+  }
+
+  .pro-hero__contacts {
+    flex-direction: column;
+    gap: calc(10 * var(--u)); /* 10 */
+    margin-top: calc(28 * var(--u)); /* 28 */
+  }
+
+  .pro-hero__contacts a {
+    gap: calc(12 * var(--u)); /* 12 */
+    font-size: calc(16 * var(--u)); /* 16 */
+    line-height: 1.2;
+    overflow-wrap: anywhere;
+  }
+
+  .pro-hero__icon {
+    flex: none;
+    width: calc(40 * var(--u)); /* 40 */
+    height: calc(40 * var(--u));
+  }
+
+  .pro-hero__icon svg {
+    width: calc(16 * var(--u)); /* 16 */
+    height: calc(16 * var(--u));
+  }
+
+  .pro-hero__portrait {
+    position: static;
+    align-self: center;
+    width: 80%;
+    height: auto;
+    aspect-ratio: 4 / 5;
+    margin-top: calc(32 * var(--u)); /* 32 */
+    object-fit: cover;
+    object-position: center top;
+    border-radius: calc(5 * var(--u)) calc(5 * var(--u)) 0 0; /* 5: visible on photos only */
+  }
+
+  /* ==========================================================
+     Professional overview: bio, then facts
+     ========================================================== */
+  .pro-overview {
+    grid-template-columns: 1fr;
+    row-gap: calc(40 * var(--u)); /* 40 */
+    padding: calc(40 * var(--u)) calc(20 * var(--u)) calc(56 * var(--u)); /* 40 / 20 / 56 */
+  }
+
+  .pro-overview__lead,
+  .pro-overview__text {
+    margin-top: calc(20 * var(--u)); /* 20 */
+  }
+
+  .pro-facts__group + .pro-facts__group {
+    margin-top: calc(28 * var(--u)); /* 28 */
+  }
+
+  .pro-facts dd {
+    margin: calc(12 * var(--u)) 0 0; /* 12 */
+  }
+
+  .pro-facts__tags {
+    gap: calc(8 * var(--u)) calc(6 * var(--u)); /* 8 / 6 */
+  }
+
+  .pro-facts__tag {
+    padding: calc(5 * var(--u)) calc(12 * var(--u)); /* 5 / 12: 26 tall */
+    font-size: calc(14 * var(--u)); /* 14 */
+  }
+
+  .pro-facts__text {
+    font-size: calc(15 * var(--u)); /* 15 */
+    line-height: 1.4;
+  }
+
+  .pro-facts__list li + li {
+    margin-top: calc(12 * var(--u)); /* 12 */
+  }
+
+  /* ==========================================================
+     Insights / awards hero (ins-hero on the C1 in-hero frame)
+     ========================================================== */
+  .ins-hero__content {
+    padding-top: calc(40 * var(--u)); /* 40 */
+  }
+
+  .ins-hero__intro {
+    max-width: none;
+    margin-top: calc(24 * var(--u)); /* 24 */
+  }
+
+  .ins-hero__link {
+    margin-top: calc(16 * var(--u)); /* 16 */
+  }
+
+  /* ==========================================================
+     Featured insight / award: image (or logo tile) first, then
+     date, title, excerpt, Read more
+     ========================================================== */
+  .ins-featured {
+    padding: calc(24 * var(--u)) calc(20 * var(--u)) calc(32 * var(--u)); /* 24 / 20 / 32 */
+  }
+
+  .ins-featured__post {
+    grid-template-columns: 1fr;
+    row-gap: calc(20 * var(--u)); /* 20 */
+    margin: calc(20 * var(--u)) 0 0; /* 20 */
+  }
+
+  .ins-featured__image {
+    order: -1;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    border-radius: calc(5 * var(--u)); /* 5 */
+  }
+
+  .ins-featured__body {
+    padding: 0;
+  }
+
+  .ins-featured__title {
+    margin-top: calc(8 * var(--u)); /* 8 */
+  }
+
+  .ins-featured__text,
+  .ins-featured--no-date .ins-featured__text {
+    max-width: none;
+    margin: calc(16 * var(--u)) 0 calc(20 * var(--u)); /* 16 / 20 */
+  }
+
+  .ins-featured--no-date .ins-featured__title {
+    max-width: none;
+    margin-top: 0;
+  }
+
+  .ins-featured__logo {
+    font-size: calc(32 * var(--u)); /* 32 */
+    letter-spacing: calc(-0.5 * var(--u));
+  }
+
+  .ins-featured__logo span {
+    width: 3.18em; /* both lines start together (108 at 34) */
+  }
+
+  /* ==========================================================
+     Insights / awards grid: chips wrap, 1 column (tablet 2)
+     ========================================================== */
+  .ins-grid {
+    padding: calc(32 * var(--u)) calc(20 * var(--u)) calc(56 * var(--u)); /* 32 / 20 / 56 */
+  }
+
+  .ins-chips {
+    gap: calc(6 * var(--u)); /* 6 */
+  }
+
+  .ins-chip {
+    height: calc(44 * var(--u)); /* 44: tap target (was 36) */
+    padding: 0 calc(12 * var(--u)) 0 calc(14 * var(--u)); /* 12 / 14 */
+    font-size: calc(13 * var(--u)); /* 13 */
+  }
+
+  .ins-chip__key {
+    margin-right: calc(6 * var(--u)); /* 6 */
+  }
+
+  .ins-chip svg {
+    width: calc(10 * var(--u)); /* 10 */
+    height: calc(10 * var(--u));
+    margin-left: calc(16 * var(--u)); /* 16 */
+  }
+
+  .ins-chip--reset {
+    padding: 0 calc(14 * var(--u)); /* 14 */
+  }
+
+  .ins-chip--reset svg {
+    margin-left: calc(12 * var(--u)); /* 12 */
+  }
+
+  .ins-grid__list {
+    grid-template-columns: 1fr;
+    gap: calc(12 * var(--u)); /* 12 */
+    margin-top: calc(20 * var(--u)); /* 20 */
+  }
+
+  .ins-grid .post-card__title {
+    max-width: none;
+  }
+
+  /* One column: cards take their content's height */
+  .ins-grid .post-card {
+    min-height: 0;
+  }
+
+  .ins-grid__more,
+  .ins-grid--plain .ins-grid__more {
+    margin-top: calc(32 * var(--u)); /* 32 */
+  }
+
+  .ins-grid__more .pro-grid__view-more {
+    margin-top: calc(12 * var(--u)); /* 12 */
+  }
+
+  .ins-grid__empty {
+    margin-top: calc(20 * var(--u)); /* 20 */
+    padding: calc(40 * var(--u)) 0; /* 40 */
+  }
+
+  /* ==========================================================
+     Insight hero: date, Location / Industries / Practices rows
+     (label, rule, wrapped pills as on desktop)
+     ========================================================== */
+  .in-hero__date {
+    margin-top: calc(12 * var(--u)); /* 12 */
+  }
+
+  .in-hero__meta {
+    gap: calc(12 * var(--u)); /* 12 */
+    padding-top: calc(32 * var(--u)); /* 32 */
+  }
+
+  .in-hero__row dt {
+    width: calc(80 * var(--u)); /* 80 */
+    height: calc(26 * var(--u)); /* 26: centred on the first pill line */
+  }
+
+  .in-hero__row dd {
+    min-width: 0;
+    padding-left: calc(12 * var(--u)); /* 12 */
+  }
+
+  .in-hero__tags {
+    gap: calc(8 * var(--u)) calc(6 * var(--u)); /* 8 / 6 */
+  }
+
+  .in-hero__tag {
+    gap: calc(6 * var(--u)); /* 6 */
+    padding: calc(4 * var(--u)) calc(11 * var(--u)); /* 4 / 11: 26 tall */
+    font-size: calc(14 * var(--u)); /* 14, as the other taxonomy pills */
+    line-height: 1.2;
+  }
+
+  .in-hero__tag:has(img) {
+    padding: calc(3 * var(--u)) calc(10 * var(--u)) calc(3 * var(--u)) calc(4 * var(--u)); /* 3 / 10 / 3 / 4, as .pro-hero__location */
+  }
+
+  .in-hero__tag img {
+    width: calc(18 * var(--u)); /* 18 */
+    height: calc(18 * var(--u));
+  }
+
+  .in-hero__more {
+    margin-left: calc(4 * var(--u)); /* 4 */
+    padding: calc(5 * var(--u)) 0; /* 5: tap height */
+    font-size: calc(13 * var(--u)); /* 13 */
+  }
+
+  /* ==========================================================
+     Reading bar: sticky under the 60 bar, title on one line with
+     a fade on the right (SplitText lines, so no text-overflow);
+     the date hides on phones
+     ========================================================== */
+  .in-bar {
+    top: var(--header-h);
+    padding: calc(14 * var(--u)) calc(20 * var(--u)) calc(15 * var(--u)); /* 14 / 20 / 15 */
+  }
+
+  .in-bar__title {
+    overflow: hidden;
+    white-space: nowrap;
+    -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 40 * var(--u)), transparent);
+    mask-image: linear-gradient(to right, #000 calc(100% - 40 * var(--u)), transparent);
+  }
+
+  .in-bar__date {
+    display: none;
+  }
+
+  .in-bar__progress span {
+    height: 3px;
+  }
+
+  /* ==========================================================
+     Insight article: body first, then related professionals and
+     share (not sticky)
+     ========================================================== */
+  .in-article {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: calc(40 * var(--u)); /* 40 */
+    padding: calc(28 * var(--u)) calc(20 * var(--u)) calc(56 * var(--u)); /* 28 / 20 / 56 */
+  }
+
+  .in-article__aside {
+    position: static;
+    order: 1;
+  }
+
+  .in-related {
+    padding: calc(16 * var(--u)) calc(10 * var(--u)) calc(10 * var(--u)); /* 16 / 10 / 10 */
+    border-radius: calc(8 * var(--u)); /* 8 */
+  }
+
+  .in-related__head {
+    padding: 0 calc(8 * var(--u)) 0 calc(6 * var(--u)); /* 8 / 6 */
+    margin-bottom: calc(16 * var(--u)); /* 16 */
+  }
+
+  .in-related__plus {
+    width: calc(20 * var(--u)); /* 20 */
+    height: calc(20 * var(--u));
+  }
+
+  .in-related__list {
+    gap: calc(8 * var(--u)); /* 8 */
+  }
+
+  .in-related__card {
+    height: auto;
+    min-height: calc(96 * var(--u)); /* 96 */
+    border-radius: calc(5 * var(--u)); /* 5 */
+  }
+
+  .in-related__img {
+    width: calc(76 * var(--u)); /* 76 */
+    height: auto;
+    align-self: stretch;
+  }
+
+  .in-related__info {
+    padding: calc(12 * var(--u)) calc(36 * var(--u)) calc(12 * var(--u)) calc(12 * var(--u)); /* 12 / 36 (arrow) / 12 / 12 */
+  }
+
+  .in-related__name {
+    margin-bottom: calc(4 * var(--u)); /* 4 */
+  }
+
+  .in-related__contact {
+    font-size: calc(14 * var(--u)); /* 14 */
+    line-height: 1.3;
+    overflow-wrap: anywhere;
+  }
+
+  .in-related__card--former {
+    min-height: 0;
+  }
+
+  .in-related__card--former .in-related__info {
+    padding-right: calc(12 * var(--u)); /* 12: no arrow */
+  }
+
+  .in-related__arrow {
+    right: calc(10 * var(--u)); /* 10 */
+    bottom: calc(10 * var(--u));
+    width: calc(20 * var(--u)); /* 20 */
+    height: calc(20 * var(--u));
+  }
+
+  .in-related__arrow svg {
+    width: calc(8 * var(--u)); /* 8 */
+    height: calc(8 * var(--u));
+  }
+
+  /* Share: Print fills the row, then three 48 squares */
+  .in-share {
+    gap: calc(8 * var(--u)); /* 8 */
+    margin-top: calc(12 * var(--u)); /* 12 */
+  }
+
+  .in-share__print,
+  .in-share__icon {
+    height: calc(48 * var(--u)); /* 48 */
+    border-radius: calc(5 * var(--u)); /* 5 */
+  }
+
+  .in-share__print {
+    margin-right: calc(4 * var(--u)); /* 4 */
+    padding-left: calc(16 * var(--u)); /* 16 */
+    font-size: calc(15 * var(--u)); /* 15 */
+  }
+
+  .in-share__print svg {
+    right: calc(16 * var(--u)); /* 16 */
+    width: calc(18 * var(--u)); /* 18 */
+    height: calc(19 * var(--u)); /* 19 */
+  }
+
+  .in-share__icon {
+    width: calc(48 * var(--u)); /* 48 */
+  }
+
+  .in-share__icon svg {
+    width: calc(18 * var(--u)); /* 18 */
+    height: calc(18 * var(--u));
+  }
+
+  /* ==========================================================
+     Module hero: lead, then the report card in flow
+     ========================================================== */
+  .in-hero--module .in-hero__intro {
+    margin-top: calc(40 * var(--u)); /* 40 */
+  }
+
+  .in-hero__lead {
+    max-width: none;
+    margin-top: calc(32 * var(--u)); /* 32 */
+    line-height: 1.2;
+  }
+
+  .in-hero__report {
+    position: static;
+    width: auto;
+    min-height: calc(100 * var(--u)); /* 100 */
+    margin-top: calc(32 * var(--u)); /* 32 */
+    padding: calc(14 * var(--u)) calc(14 * var(--u)) calc(14 * var(--u)) calc(16 * var(--u)); /* 14 / 14 / 14 / 16 */
+    border-radius: calc(5 * var(--u)); /* 5 */
+  }
+
+  /* ==========================================================
+     Module panels: full width; heading, rule, text stacked
+     ========================================================== */
+  .in-panels {
+    padding: calc(56 * var(--u)) calc(20 * var(--u)); /* 56 / 20 */
+  }
+
+  .in-panels__list {
+    gap: calc(12 * var(--u)); /* 12 */
+  }
+
+  .in-panel {
+    flex-direction: column;
+    padding: calc(20 * var(--u)) calc(20 * var(--u)) calc(24 * var(--u)); /* 20 / 20 / 24 */
+    border-radius: calc(5 * var(--u)); /* 5 */
+  }
+
+  .in-panel__heading {
+    width: auto;
+    margin: 0 0 calc(16 * var(--u)); /* 16 */
+  }
+
+  .in-panel__body {
+    padding: calc(16 * var(--u)) 0 0; /* 16 */
+    border-left: 0;
+    border-top: 1px solid rgba(159, 178, 197, 0.5);
+  }
+
+  .in-panel__link {
+    margin-top: calc(32 * var(--u)); /* 32 */
+  }
+
+  /* ==========================================================
+     Module key findings: numeral, title, text stacked
+     ========================================================== */
+  .in-findings {
+    padding: calc(40 * var(--u)) calc(20 * var(--u)) calc(12 * var(--u)); /* 40 / 20 / 12: the people row adds 40 */
+  }
+
+  .in-findings__heading {
+    padding-left: 0;
+  }
+
+  .in-findings__list {
+    margin-top: calc(16 * var(--u)); /* 16 */
+  }
+
+  .in-findings__item {
+    grid-template-columns: minmax(0, 1fr);
+    padding: calc(12 * var(--u)) 0 calc(28 * var(--u)); /* 12 / 28 */
+  }
+
+  .in-findings__item::before {
+    left: 0;
+    right: 0;
+  }
+
+  .in-findings__num {
+    font-size: calc(96 * var(--u)); /* 96 */
+    letter-spacing: calc(-6 * var(--u)); /* -6 */
+  }
+
+  .in-findings__title,
+  .in-findings__text {
+    padding-top: 0;
+  }
+
+  .in-findings__title {
+    margin-top: calc(12 * var(--u)); /* 12 */
+  }
+
+  .in-findings__text {
+    margin: calc(12 * var(--u)) 0 0; /* 12 */
+  }
+
+  /* ==========================================================
+     Module download banner: red block, then the image
+     ========================================================== */
+  .in-download {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+
+  .in-download__link {
+    min-height: calc(160 * var(--u)); /* 160 */
+    gap: calc(12 * var(--u)); /* 12 */
+    padding: calc(24 * var(--u)) calc(20 * var(--u)); /* 24 / 20 */
+  }
+
+  .in-download__icon {
+    flex: none;
+    margin-top: calc(6 * var(--u)); /* 6: centred on the 32 line */
+    width: calc(20 * var(--u)); /* 20 */
+    height: calc(20 * var(--u));
+  }
+
+  .in-download__image {
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+
+  /* ==========================================================
+     Module share row: centred column, rule hidden
+     ========================================================== */
+  .in-share-row {
+    flex-direction: column;
+    gap: calc(20 * var(--u)); /* 20 */
+    padding: calc(48 * var(--u)) calc(20 * var(--u)) calc(40 * var(--u)); /* 48 / 20 / 40 */
+  }
+
+  .in-share-row__heading {
+    margin-right: 0;
+    text-align: center;
+  }
+
+  .in-share-row__heading::after {
+    display: none;
+  }
+
+  .in-share-row .in-share__print {
+    width: calc(140 * var(--u)); /* 140 */
+    margin-right: calc(4 * var(--u)); /* 4 */
+  }
+
+  /* Related insights: the grey rule on the 20 gutters */
+  .in-related-insights::before {
+    left: calc(20 * var(--u)); /* 20 */
+    right: calc(20 * var(--u));
+  }
+}
+
+/* ============================================================
+   Tablet (768 to 1199): wider grids, side by side where desktop is
+   ============================================================ */
+@media (min-width: 768px) and (max-width: 1199px) {
+  /* Open panels hang from their pill / field again (main.js sets left and
+     min-width), up to 360 wide */
+  .flt-panel {
+    right: auto;
+    width: max-content;
+    max-width: calc(360 * var(--u)); /* 360 */
+  }
+
+  .pro-filter__alpha {
+    grid-template-columns: repeat(26, 1fr);
+  }
+
+  /* Facets: tighter pills so all five fit one row from 768; wrap as a fallback */
+  .pro-filter__facets {
+    flex-wrap: wrap;
+    gap: calc(6 * var(--u)); /* 6 */
+  }
+
+  .pro-filter__facet,
+  .ins-filter .pro-filter__facet {
+    gap: calc(8 * var(--u)); /* 8 */
+    padding: 0 calc(8 * var(--u)) 0 calc(14 * var(--u)); /* 8 / 14 */
+    font-size: calc(14 * var(--u)); /* 14 */
+  }
+
+  .ins-filter__bar {
+    grid-template-columns: 2fr 2fr 1fr;
+  }
+
+  .ins-filter .pro-filter__search:first-child {
+    grid-column: auto;
+  }
+
+  .ins-filter .pro-filter__search {
+    border-right: 1px solid #dbe2e9;
+    border-bottom: 0;
+  }
+
+  .pro-grid__list {
+    grid-template-columns: repeat(auto-fill, minmax(calc(200 * var(--u)), 1fr)); /* 3 at 768, 4 at 1024, 5 at 1199 */
+    gap: calc(24 * var(--u)) calc(10 * var(--u)); /* 24 / 10 */
+  }
+
+  /* Hero: text left, portrait right on the floor */
+  .pro-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) min(40%, calc(340 * var(--u))); /* portrait up to 374 */
+    grid-template-rows: auto auto 1fr;
+    column-gap: calc(40 * var(--u)); /* 40 */
+  }
+
+  .pro-hero .breadcrumbs {
+    grid-column: 1 / -1;
+  }
+
+  .pro-hero__intro {
+    grid-column: 1;
+    grid-row: 2;
+    margin-top: calc(56 * var(--u)); /* 56 */
+  }
+
+  .pro-hero__contacts {
+    grid-column: 1;
+    grid-row: 3;
+    align-self: end;
+    margin: calc(32 * var(--u)) 0; /* 32 */
+  }
+
+  .pro-hero__portrait {
+    grid-column: 2;
+    grid-row: 2 / 4;
+    align-self: end;
+    width: 100%;
+    margin-top: calc(24 * var(--u)); /* 24 */
+  }
+
+  .pro-overview {
+    grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+    column-gap: calc(48 * var(--u)); /* 48 */
+  }
+
+  /* Featured: text left, image right, as on desktop */
+  .ins-featured__post {
+    grid-template-columns: minmax(0, 1fr) 42%;
+    column-gap: calc(32 * var(--u)); /* 32 */
+  }
+
+  .ins-featured__image {
+    order: 0;
+    aspect-ratio: 3 / 2;
+  }
+
+  .ins-featured__text,
+  .ins-featured--no-date .ins-featured__text {
+    margin-bottom: calc(32 * var(--u)); /* 32 */
+  }
+
+  .ins-featured__link {
+    margin-top: auto;
+  }
+
+  .ins-grid__list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: calc(16 * var(--u)); /* 16 */
+  }
+
+  .ins-grid .post-card {
+    min-height: calc(220 * var(--u)); /* 220 */
+  }
+
+  /* Article: one centred reading column */
+  .in-article {
+    padding-inline: max(calc(20 * var(--u)), calc((100% - 720 * var(--u)) / 2));
+  }
+
+  .in-related__list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .in-bar__date {
+    display: block;
+  }
+
+  /* Module */
+  .in-hero__lead {
+    max-width: calc(560 * var(--u)); /* 560 */
+  }
+
+  .in-hero__report {
+    align-self: flex-start;
+    width: calc(300 * var(--u)); /* 300 */
+  }
+
+  .in-panel {
+    flex-direction: row;
+  }
+
+  .in-panel__heading {
+    width: calc(180 * var(--u)); /* 180 */
+    margin: 0 calc(24 * var(--u)) 0 0; /* 24 */
+  }
+
+  .in-panel__body {
+    padding: 0 0 0 calc(24 * var(--u)); /* 24 */
+    border-top: 0;
+    border-left: 1px solid rgba(159, 178, 197, 0.5);
+  }
+
+  .in-findings__item {
+    grid-template-columns: calc(150 * var(--u)) minmax(0, 1fr); /* 150 */
+    column-gap: calc(24 * var(--u)); /* 24 */
+  }
+
+  .in-findings__num {
+    grid-row: 1 / 3;
+  }
+
+  .in-findings__title,
+  .in-findings__text {
+    grid-column: 2;
+  }
+
+  .in-findings__title {
+    margin-top: calc(16 * var(--u)); /* 16 */
+  }
+
+  .in-download {
+    grid-template-columns: 1fr 1fr;
+    height: calc(240 * var(--u)); /* 240 */
+  }
+
+  .in-download__image {
+    height: 100%;
+    aspect-ratio: auto;
+  }
+}
+/* ============================================================
+   TNG responsive: Services + Locations + Contact (family C)
+   Owns: service, practice, subpractice, location, contact <main>
+   Rules: temporary/migration/responsive-spec.md sections 0.4, 0.5
+   and "Foundation provides". Two queries only:
+   @media (max-width: 1199px) and
+   @media (min-width: 768px) and (max-width: 1199px)
+   Lengths: calc(N * var(--u)), N = px on the 390 design.
+   ============================================================ */
+
+@media (max-width: 1199px) {
+
+  /* ==========================================================
+     Service hero (service, practice, subpractice): country tabs
+     wrap (never a scroll strip: tng-wp.js clicks the visitor's
+     tab, which must stay visible), contacts stacked
+     ========================================================== */
+  .svc-hero__content {
+    padding-top: calc(40 * var(--u)); /* 40 under the breadcrumbs */
+  }
+
+  /* A long single-word term ("Telecommunications") breaks instead of overflowing */
+  .svc-hero .h1,
+  .loc-hero__title {
+    overflow-wrap: break-word;
+  }
+
+  .svc-hero__places {
+    flex-wrap: wrap;
+    column-gap: calc(20 * var(--u)); /* 20 */
+    margin: calc(12.5 * var(--u)) 0 0; /* 12.5 + 11.5 tab padding = 24 */
+  }
+
+  .svc-hero__place {
+    padding: calc(11.5 * var(--u)) 0 calc(13.5 * var(--u)); /* 11.5 / 13.5: 44 tap height */
+  }
+
+  /* Underline 4 under the label, 32 wide */
+  .svc-hero__place::after {
+    bottom: calc(4 * var(--u)); /* 4 */
+    width: calc(32 * var(--u)); /* 32 */
+  }
+
+  .svc-hero__panels {
+    margin-top: calc(12.5 * var(--u)); /* 12.5: + 3.5 taller tab = 16 as before */
+    align-self: stretch;
+  }
+
+  .svc-hero__contacts {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: calc(16 * var(--u)); /* 16 */
+  }
+
+  .svc-contact {
+    width: auto;
+    min-width: 0;
+    padding-left: calc(12 * var(--u)); /* 12 */
+  }
+
+  .svc-contact__name {
+    display: inline-block;
+    padding: calc(2 * var(--u)) 0; /* 2: 24 tap height */
+  }
+
+  .svc-contact__lines {
+    flex-wrap: wrap;
+    column-gap: calc(16 * var(--u)); /* 16 */
+    row-gap: 0;
+    margin-top: calc(2 * var(--u)); /* 2 + 2 padding */
+  }
+
+  .svc-contact__lines a {
+    display: inline-block;
+    padding: calc(2 * var(--u)) 0; /* 2: 24+ tap height */
+    overflow-wrap: anywhere;
+  }
+
+  /* ==========================================================
+     Service subpractices: 1 column of cards (tablet 3)
+     ========================================================== */
+  .svc-subs {
+    padding: calc(40 * var(--u)) calc(20 * var(--u)) calc(56 * var(--u)); /* 40 / 20 / 56 */
+  }
+
+  /* The overview above already ends on 56 */
+  .svc-overview + .svc-subs {
+    padding-top: 0;
+  }
+
+  .svc-subs__list {
+    grid-template-columns: 1fr;
+    gap: calc(12 * var(--u)); /* 12 */
+    margin-top: calc(24 * var(--u)); /* 24 */
+  }
+
+  .svc-sub-card {
+    min-height: 0;
+    border-radius: calc(5 * var(--u)); /* 5 */
+  }
+
+  .svc-sub-card__img {
+    height: auto;
+    aspect-ratio: 16 / 7;
+  }
+
+  /* Arrow sits beside the title's last line, never over it */
+  .svc-sub-card__title {
+    margin: calc(14 * var(--u)) calc(56 * var(--u)) calc(18 * var(--u)) calc(16 * var(--u)); /* 14 / 56 / 18 / 16 */
+  }
+
+  .svc-sub-card .arrow-circle {
+    right: calc(16 * var(--u)); /* 16 */
+    bottom: calc(16 * var(--u));
+  }
+
+  /* Slider arrows: 44, scoped so a later .careers-values__btn rule
+     (same buttons carry both classes) can't resize them here */
+  .svc-successes .svc-successes__btn {
+    width: calc(44 * var(--u)); /* 44 */
+    height: calc(44 * var(--u));
+    line-height: calc(44 * var(--u));
+  }
+
+  .svc-successes .svc-successes__btn svg {
+    width: calc(10 * var(--u)); /* 10 */
+    height: calc(10 * var(--u));
+  }
+
+  /* ==========================================================
+     Location hero: office block full width, stacked
+     ========================================================== */
+  .loc-hero__title {
+    margin-top: calc(40 * var(--u)); /* 40 */
+  }
+
+  .loc-hero__office {
+    width: auto;
+    margin-top: calc(32 * var(--u)); /* 32 */
+  }
+
+  .loc-hero__office-name {
+    padding-bottom: calc(10 * var(--u)); /* 10 */
+  }
+
+  .loc-hero__office-body {
+    flex-direction: column;
+    gap: calc(20 * var(--u)); /* 20 */
+    margin-top: calc(16 * var(--u)); /* 16 */
+  }
+
+  .loc-hero .loc-hero__lines a,
+  .loc-office .loc-hero__lines a {
+    display: inline-block;
+    min-width: 0;
+    padding: calc(4 * var(--u)) 0; /* 4: 27 tap height */
+  }
+
+  .loc-hero__map {
+    padding: calc(4 * var(--u)) 0; /* 4: tap height */
+  }
+
+  /* ==========================================================
+     Location overview: 1 column (tablet: heading | text)
+     ========================================================== */
+  .loc-overview {
+    grid-template-columns: 1fr;
+    padding: calc(40 * var(--u)) calc(20 * var(--u)) calc(56 * var(--u)); /* 40 / 20 / 56 */
+  }
+
+  /* The professionals row brings its own 40 top: 56 between */
+  .loc-overview:has(+ .pro-related) {
+    padding-bottom: calc(16 * var(--u)); /* 16 */
+  }
+
+  .loc-overview__label {
+    margin-right: 0;
+  }
+
+  .loc-overview__heading {
+    max-width: none;
+    margin-top: calc(20 * var(--u)); /* 20 under the rule */
+  }
+
+  .loc-overview__text {
+    margin-top: calc(24 * var(--u)); /* 24 under the heading */
+    font-size: calc(16 * var(--u)); /* 16 */
+    line-height: 1.5; /* 24 */
+  }
+
+  /* ==========================================================
+     Location office: navy strip, info then the map
+     ========================================================== */
+  .loc-office {
+    grid-template-columns: 1fr;
+    row-gap: calc(28 * var(--u)); /* 28 */
+    padding: calc(32 * var(--u)) calc(20 * var(--u)) calc(20 * var(--u)); /* 32 / 20 / 20 */
+  }
+
+  .loc-office__label {
+    margin-top: 0;
+  }
+
+  .loc-office__body {
+    grid-template-columns: 1fr;
+    row-gap: calc(20 * var(--u)); /* 20 */
+    margin-top: calc(20 * var(--u)); /* 20 */
+  }
+
+  .loc-office__lines {
+    gap: calc(8 * var(--u)); /* 8 + 2 x 4 link padding */
+  }
+
+  .loc-office__address {
+    max-width: none;
+    margin-top: calc(20 * var(--u)); /* 20 */
+  }
+
+  .loc-office__map {
+    height: auto;
+    aspect-ratio: 4 / 3;
+    border-radius: calc(5 * var(--u)); /* 5 */
+  }
+
+  /* ==========================================================
+     Contact offices: city tabs = scroll strip, panel stacked
+     ========================================================== */
+  .contact-offices {
+    display: block;
+    padding: calc(16 * var(--u)) calc(20 * var(--u)) calc(56 * var(--u)); /* 16 / 20 / 56 */
+  }
+
+  .contact-offices__tabs {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: calc(24 * var(--u)); /* 24 */
+    margin-inline: calc(-20 * var(--u)); /* bleed to the screen edge */
+    padding-inline: calc(20 * var(--u));
+    border-bottom: 1px solid #e3e8ee;
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    scroll-padding-inline: calc(20 * var(--u));
+    scrollbar-width: none;
+  }
+
+  .contact-offices__tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .contact-offices__tabs > li {
+    flex: none;
+    scroll-snap-align: start;
+  }
+
+  /* .h2 at 24 here; the underline is the label's width */
+  .contact-offices__tab {
+    position: relative;
+    padding: calc(10 * var(--u)) 0 calc(12 * var(--u)); /* 10 / 12 */
+    font-size: calc(24 * var(--u)); /* 24 */
+    white-space: nowrap;
+  }
+
+  .contact-offices__tab::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 3px;
+    background: var(--red);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .contact-offices__tab.is-active::after {
+    transform: scaleX(1);
+  }
+
+  .contact-offices__tab.is-active .arrow-circle {
+    display: none;
+  }
+
+  .contact-office {
+    grid-template-columns: 1fr;
+    row-gap: calc(24 * var(--u)); /* 24 */
+  }
+
+  .contact-office__info {
+    padding-top: calc(24 * var(--u)); /* 24 */
+  }
+
+  .contact-office__name {
+    padding-bottom: calc(10 * var(--u)); /* 10 */
+  }
+
+  .contact-office__lines {
+    gap: calc(8 * var(--u)); /* 8 + 2 x 4 link padding */
+    margin-top: calc(16 * var(--u)); /* 16 */
+  }
+
+  .contact-office__lines li {
+    gap: calc(12 * var(--u)); /* 12 */
+    min-width: 0;
+    font-size: calc(15 * var(--u)); /* 15 */
+    line-height: 1.3;
+    overflow-wrap: anywhere;
+  }
+
+  .contact-office__lines a {
+    display: inline-block;
+    padding: calc(4 * var(--u)) 0; /* 4: 27 tap height */
+  }
+
+  .contact-office__icon {
+    width: calc(36 * var(--u)); /* 36 */
+    height: calc(36 * var(--u));
+  }
+
+  .contact-office__icon svg {
+    width: calc(14 * var(--u)); /* 14 */
+    height: calc(14 * var(--u));
+  }
+
+  .contact-office__address {
+    margin-top: calc(20 * var(--u)); /* 20 */
+  }
+
+  .contact-office__map {
+    height: auto;
+    aspect-ratio: 4 / 3;
+  }
+}
+
+/* ============================================================
+   Tablet (768 to 1199): wider grids, side by side where desktop is
+   ============================================================ */
+@media (min-width: 768px) and (max-width: 1199px) {
+  /* 2 columns at 768, 3 from ~1000; few contacts stay left-aligned */
+  .svc-hero__contacts {
+    grid-template-columns: repeat(auto-fill, minmax(calc(280 * var(--u)), 1fr)); /* 280 min */
+    column-gap: calc(24 * var(--u)); /* 24 */
+  }
+
+  .svc-subs__list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .svc-sub-card__img {
+    aspect-ratio: 16 / 9;
+  }
+
+  .loc-hero__office {
+    max-width: calc(560 * var(--u)); /* 560 */
+  }
+
+  .loc-hero__office-body {
+    flex-direction: row;
+    gap: calc(40 * var(--u)); /* 40 */
+  }
+
+  .loc-overview {
+    grid-template-columns: 1fr 1.4fr;
+    column-gap: calc(40 * var(--u)); /* 40, as C3 */
+  }
+
+  .loc-overview__text {
+    margin-top: calc(20 * var(--u)); /* level with the heading */
+  }
+
+  /* Info | map, as on desktop */
+  .loc-office {
+    grid-template-columns: 1fr 1.4fr;
+    column-gap: calc(32 * var(--u)); /* 32 */
+    padding-top: calc(20 * var(--u)); /* 20: map 20 from the top, as the sides */
+  }
+
+  .loc-office__label {
+    margin-top: calc(12 * var(--u)); /* 12 */
+  }
+
+  .contact-office {
+    grid-template-columns: 1fr 1.6fr;
+    column-gap: calc(32 * var(--u)); /* 32 */
+  }
+
+  .contact-office__map {
+    margin-top: calc(24 * var(--u)); /* level with the info */
+  }
+}
+/* ============================================================
+   TNG responsive: About (family D)
+   Owns: about, pro-bono, csr, museum, textile-collection <main>
+   Rules: temporary/migration/responsive-spec.md sections 0.4, 0.5
+   and "Foundation provides". Two queries only:
+   @media (max-width: 1199px) and
+   @media (min-width: 768px) and (max-width: 1199px)
+   ============================================================ */
+
+@media (max-width: 1199px) {
+
+  /* ==========================================================
+     About hero: title, intro 24 under it
+     ========================================================== */
+  .about-hero__content,
+  .info-hero__content {
+    padding-top: calc(40 * var(--u)); /* 40 under the breadcrumbs, as every hero */
+  }
+
+  .about-hero__title,
+  .about-hero__intro,
+  .info-hero__title {
+    max-width: none;
+  }
+
+  .about-hero__intro {
+    margin-top: calc(24 * var(--u)); /* 24 */
+  }
+
+  /* ==========================================================
+     About overview / code of conduct: C3 without the vw caps
+     ========================================================== */
+  .about-overview .svc-overview__heading,
+  .about-code .svc-overview__heading,
+  .about-code .svc-overview__text {
+    max-width: none;
+  }
+
+  .about-code__link {
+    margin-top: calc(20 * var(--u)); /* 20 */
+  }
+
+  /* ==========================================================
+     About values: accordion, then the image 4 / 3
+     ========================================================== */
+  .about-values {
+    display: block;
+    padding: 0 calc(20 * var(--u)) calc(56 * var(--u)); /* 0 / 20 / 56: the overview's 56 bottom is the gap */
+  }
+
+  .about-acc__btn {
+    padding: calc(18 * var(--u)) calc(40 * var(--u)) calc(18 * var(--u)) 0; /* 18 / 40 / 18 / 0: 60 tap rows */
+  }
+
+  .about-acc__icon {
+    width: calc(16 * var(--u)); /* 16 */
+    height: calc(16 * var(--u));
+  }
+
+  .about-acc__text {
+    padding: 0 0 calc(20 * var(--u)); /* 20 */
+    margin-top: calc(-6 * var(--u)); /* 12 under the title */
+  }
+
+  .about-values__image {
+    height: auto;
+    aspect-ratio: 4 / 3;
+    margin-top: calc(32 * var(--u)); /* 32 */
+    border-radius: calc(5 * var(--u)); /* 5 */
+  }
+
+  /* ==========================================================
+     About numbers: plain 2 x 2, no stagger
+     ========================================================== */
+  .about-numbers {
+    padding: calc(56 * var(--u)) calc(20 * var(--u)); /* 56 / 20, as the other teal bands */
+  }
+
+  .about-numbers__list {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: none;
+    gap: calc(32 * var(--u)) calc(16 * var(--u)); /* 32 / 16 */
+  }
+
+  .about-numbers__item:nth-child(n) {
+    grid-row: auto;
+    grid-column: auto;
+    margin-left: 0;
+  }
+
+  .about-numbers__num {
+    font-size: calc(80 * var(--u)); /* 80: "250+" fits a half column */
+  }
+
+  .about-numbers__label {
+    margin-top: calc(4 * var(--u)); /* 4 */
+  }
+
+  /* ==========================================================
+     About vision: tabs in one row, rule, then text + image
+     ========================================================== */
+  .about-vision {
+    display: block;
+    padding: 0 calc(20 * var(--u)) calc(56 * var(--u)); /* 0 / 20 / 56 */
+  }
+
+  .about-vision__tabs {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    column-gap: calc(24 * var(--u)); /* 24 */
+  }
+
+  .about-vision__tab .arrow-circle {
+    margin-left: calc(8 * var(--u)); /* 8 */
+  }
+
+  .about-vision__panels {
+    margin-top: calc(20 * var(--u)); /* 20 */
+    padding-top: calc(24 * var(--u)); /* 24 */
+    border-left: 0;
+    border-top: 1px solid #e3e8ee;
+  }
+
+  .about-vision__panel {
+    display: block;
+    padding-left: 0;
+  }
+
+  .about-vision__image {
+    height: auto;
+    aspect-ratio: 4 / 3;
+    margin-top: calc(24 * var(--u)); /* 24 */
+    border-radius: calc(5 * var(--u)); /* 5 */
+  }
+
+  /* ==========================================================
+     About creed: one column
+     ========================================================== */
+  .about-creed {
+    grid-template-columns: 1fr;
+    row-gap: calc(32 * var(--u)); /* 32 between the columns */
+    padding: 0 calc(20 * var(--u)) calc(56 * var(--u)); /* 0 / 20 / 56 */
+  }
+
+  .about-creed__label {
+    margin-bottom: calc(-12 * var(--u)); /* 20 to the first heading */
+  }
+
+  .about-creed__list {
+    margin-top: calc(16 * var(--u)); /* 16 */
+  }
+
+  /* ==========================================================
+     Info hero (pro bono, CSR, museum, textile): contact block
+     full width, lines stacked
+     ========================================================== */
+  .info-hero__contact,
+  .info-hero__contact:not(:has(.info-hero__name)) {
+    width: auto;
+    min-width: 0;
+    margin-top: calc(40 * var(--u)); /* 40 */
+  }
+
+  .info-hero__label {
+    max-width: none;
+    padding-bottom: calc(10 * var(--u)); /* 10 */
+  }
+
+  .info-hero__name {
+    margin-top: calc(12 * var(--u)); /* 12 */
+  }
+
+  .info-hero__lines,
+  .info-hero__name + .info-hero__lines {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: calc(12 * var(--u)); /* 12 */
+    margin-top: calc(16 * var(--u)); /* 16 */
+  }
+
+  .info-hero__lines:not(:has(li)) {
+    display: none;
+  }
+
+  .info-hero__lines li {
+    gap: calc(12 * var(--u)); /* 12 */
+    font-size: calc(15 * var(--u)); /* 15 */
+    line-height: 1.3;
+  }
+
+  /* Tap height: inline padding grows the hit area, not the row */
+  .info-hero__lines a {
+    padding: calc(8 * var(--u)) 0; /* 8: 36 tall, the icon's height */
+  }
+
+  /* ==========================================================
+     Info overview: C3 without the vw caps; CSR image after the text
+     ========================================================== */
+  .info-overview .svc-overview__heading,
+  .info-overview .svc-overview__text {
+    max-width: none;
+  }
+
+  .info-overview .svc-overview__text {
+    margin-top: calc(24 * var(--u)); /* 24 under the heading */
+    font-size: calc(16 * var(--u)); /* 16 */
+    line-height: 1.5; /* 24 */
+  }
+
+  .info-overview:has(.info-overview__image) .svc-overview__text {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  .info-overview__image {
+    grid-row: 4;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 2 / 1;
+    margin-top: calc(32 * var(--u)); /* 32 */
+    border-radius: calc(5 * var(--u)); /* 5 */
+  }
+
+  /* ==========================================================
+     Museum audiences: one column; cell = rule, title, text
+     ========================================================== */
+  .mus-audience {
+    grid-template-columns: 1fr;
+    gap: calc(32 * var(--u)); /* 32 */
+    padding: 0 calc(20 * var(--u)); /* 20 */
+  }
+
+  .mus-audience__item {
+    display: block;
+    padding-top: calc(16 * var(--u)); /* 16 */
+  }
+
+  .mus-audience__text {
+    max-width: none;
+    margin-top: calc(12 * var(--u)); /* 12 */
+    font-size: calc(16 * var(--u)); /* 16 */
+    line-height: 1.5; /* 24 */
+  }
+
+  /* ==========================================================
+     Museum collection (+ textile history heading variant):
+     quote / heading, text, image 4 / 3
+     ========================================================== */
+  .mus-collection,
+  .mus-collection--heading {
+    display: block;
+    padding: calc(56 * var(--u)) calc(20 * var(--u)) calc(12 * var(--u)); /* 56 / 20 / 12: image sits on the case band */
+  }
+
+  .mus-collection--heading {
+    padding-top: 0;
+    padding-bottom: calc(56 * var(--u)); /* 56 */
+  }
+
+  .mus-collection__quote,
+  .mus-collection__heading {
+    max-width: none;
+    margin-top: calc(20 * var(--u)); /* 20 under the rule */
+  }
+
+  .mus-collection__quote figcaption {
+    margin-top: calc(12 * var(--u)); /* 12 */
+  }
+
+  .mus-collection__text,
+  .mus-collection--heading .mus-collection__text {
+    max-width: none;
+    margin-top: calc(24 * var(--u)); /* 24 */
+    font-size: calc(16 * var(--u)); /* 16 */
+    line-height: 1.5; /* 24 */
+  }
+
+  .mus-collection__image,
+  .mus-collection--heading .mus-collection__image {
+    display: block;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    margin-top: calc(32 * var(--u)); /* 32 */
+    border-radius: calc(5 * var(--u)); /* 5 */
+  }
+
+  /* ==========================================================
+     Museum cases: the media card's image in flow, on top,
+     10 in from the card edge (as desktop)
+     ========================================================== */
+  .loc-success__media {
+    position: static;
+    order: -1;
+    width: calc(100% + 20 * var(--u)); /* card padding 20 - 10 inset, both sides */
+    height: auto;
+    aspect-ratio: 4 / 3;
+    margin: calc(-10 * var(--u)) calc(-10 * var(--u)) calc(20 * var(--u)); /* 10 inset / 20 to the title */
+    border-radius: calc(5 * var(--u)); /* 5 */
+  }
+
+  /* .h2 title inside a card: one step down so it stays 2 to 3 lines */
+  .loc-success--media .loc-success__title {
+    font-size: calc(24 * var(--u)); /* 24 */
+    line-height: 1.1;
+  }
+
+  .loc-success--media .loc-success__text {
+    max-width: none;
+    margin-top: calc(12 * var(--u)); /* 12 */
+  }
+
+  .loc-success--media .loc-success__link {
+    margin-top: calc(20 * var(--u)); /* 20 */
+  }
+
+  /* ==========================================================
+     Textile gallery: 3 x 3 kept, 6 gap; 44 social circles
+     ========================================================== */
+  .tex-gallery {
+    padding: 0 calc(20 * var(--u)) calc(56 * var(--u)); /* 0 / 20 / 56: the overview's 56 bottom is the gap */
+  }
+
+  .tex-gallery__grid {
+    gap: calc(6 * var(--u)); /* 6 */
+    margin-top: calc(20 * var(--u)); /* 20 */
+  }
+
+  .tex-gallery__image {
+    border-radius: calc(4 * var(--u)); /* 4 */
+  }
+
+  .tex-gallery__social {
+    gap: calc(10 * var(--u)); /* 10 */
+    margin-top: calc(24 * var(--u)); /* 24 */
+  }
+
+  .tex-gallery__social a {
+    width: calc(44 * var(--u)); /* 44 */
+    height: calc(44 * var(--u));
+  }
+
+  .tex-gallery__social svg {
+    width: calc(18 * var(--u)); /* 18 */
+    height: calc(18 * var(--u));
+  }
+}
+
+/* ============================================================
+   Tablet (768 to 1199): side by side where desktop is
+   ============================================================ */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .about-values {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: calc(40 * var(--u)); /* 40 */
+  }
+
+  .about-values__image {
+    aspect-ratio: 1;
+    margin-top: 0;
+  }
+
+  .about-vision__panel {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    column-gap: calc(40 * var(--u)); /* 40 */
+  }
+
+  .about-vision__image {
+    margin-top: 0;
+  }
+
+  .about-creed {
+    grid-template-columns: 1fr 1fr;
+    column-gap: calc(40 * var(--u)); /* 40 */
+  }
+
+  .info-hero__lines,
+  .info-hero__name + .info-hero__lines {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: calc(12 * var(--u)) calc(32 * var(--u)); /* 12 / 32 */
+  }
+
+  /* CSR: desktop placement (image at the foot of the heading column) */
+  .info-overview:has(.info-overview__image) .svc-overview__text {
+    grid-column: 2;
+    grid-row: 2 / span 2;
+  }
+
+  .info-overview__image {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  .mus-audience {
+    grid-template-columns: 1fr 1fr;
+    gap: calc(40 * var(--u)) calc(32 * var(--u)); /* 40 / 32 */
+  }
+
+  /* Collection: desktop's text | image, image from the quote down */
+  .mus-collection,
+  .mus-collection--heading {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: calc(40 * var(--u)); /* 40 */
+  }
+
+  .mus-collection__image,
+  .mus-collection--heading .mus-collection__image {
+    grid-row: 2 / span 3;
+    aspect-ratio: 4 / 3;
+    margin-top: calc(20 * var(--u)); /* 20: level with the quote */
+  }
+
+  /* Case card: text | image, as desktop; image 10 in from the edges */
+  .svc-successes .loc-success--media {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto 1fr;
+    column-gap: calc(24 * var(--u)); /* 24 */
+  }
+
+  .loc-success--media .loc-success__title,
+  .loc-success--media .loc-success__text,
+  .loc-success--media .loc-success__link {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .loc-success__media {
+    grid-column: 2;
+    grid-row: 1 / -1;
+    align-self: stretch;
+    width: calc(100% + 10 * var(--u));
+    min-height: calc(280 * var(--u)); /* 280 */
+    aspect-ratio: auto;
+    contain: size; /* the photo's own height doesn't stretch the card */
+    margin: calc(-10 * var(--u)) calc(-10 * var(--u)) calc(-10 * var(--u)) 0; /* 10 in */
+  }
+
+  /* Gallery: the desktop's centred column, at most 760 wide */
+  .tex-gallery {
+    padding-inline: max(calc(20 * var(--u)), calc(50% - 380px));
+  }
+
+  .tex-gallery__grid {
+    gap: calc(10 * var(--u)); /* 10 */
+  }
+}
+/* ============================================================
+   TNG responsive: Careers (family E)
+   Owns: careers, careers-legal, job-opportunities, job <main>
+   Rules: temporary/migration/responsive-spec.md sections 0.4, 0.5
+   and "Foundation provides". Two queries only:
+   @media (max-width: 1199px) and
+   @media (min-width: 768px) and (max-width: 1199px)
+   ============================================================ */
+
+@media (max-width: 1199px) {
+
+  /* ==========================================================
+     Careers hero: text, then the image in flow (as C1)
+     ========================================================== */
+  .careers-hero {
+    min-height: 0;
+    padding: var(--top-from-header) var(--sidepadding-xs) calc(24 * var(--u)); /* 100 / 20 / 24 */
+  }
+
+  .careers-hero__content {
+    margin-top: 0;
+    padding-top: calc(40 * var(--u)); /* 40 under the breadcrumbs */
+  }
+
+  .careers-hero__intro {
+    max-width: none;
+    margin-top: calc(24 * var(--u)); /* 24 */
+  }
+
+  .careers-hero__link {
+    gap: calc(12 * var(--u)); /* 12 */
+    margin-top: calc(16 * var(--u)); /* 16 */
+  }
+
+  .careers-hero__image {
+    position: static;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    margin-top: calc(32 * var(--u)); /* 32 */
+    border-radius: calc(5 * var(--u)); /* 5 */
+  }
+
+  /* ==========================================================
+     Career paths: cards stacked (tablet: 3 across)
+     ========================================================== */
+  .career-paths {
+    padding: calc(20 * var(--u)) calc(20 * var(--u)) calc(56 * var(--u)); /* 20 / 20 / 56 */
+  }
+
+  .career-paths__list {
+    grid-template-columns: minmax(0, 1fr);
+    gap: calc(12 * var(--u)); /* 12 */
+  }
+
+  .career-card {
+    column-gap: calc(12 * var(--u)); /* 12 */
+    min-height: calc(132 * var(--u)); /* 132 */
+    padding: calc(20 * var(--u)); /* 20 */
+    border-radius: calc(5 * var(--u)); /* 5 */
+  }
+
+  .career-card .arrow-circle {
+    margin-top: 0;
+  }
+
+  .career-card__text {
+    max-width: none;
+    margin-top: calc(20 * var(--u)); /* 20 */
+  }
+
+  /* ==========================================================
+     Careers values: heading on top; slide = title, icon, text
+     (tablet: the desktop two halves)
+     ========================================================== */
+  .careers-values {
+    grid-template-columns: minmax(0, 1fr); /* the Blaze track must not widen the page */
+    row-gap: calc(24 * var(--u)); /* 24 */
+    padding: 0 calc(20 * var(--u)) calc(56 * var(--u)); /* 0 / 20 / 56 */
+  }
+
+  .careers-values__heading {
+    max-width: none;
+  }
+
+  .careers-values__slide {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: none;
+    align-content: start;
+    min-height: 0;
+    padding: calc(20 * var(--u)); /* 20 */
+    border-radius: calc(5 * var(--u)); /* 5 */
+  }
+
+  .careers-values__icon {
+    order: 1;
+    grid-column: 1;
+    grid-row: auto;
+    height: calc(140 * var(--u)); /* 140 */
+    margin: calc(24 * var(--u)) 0; /* 24 */
+  }
+
+  .careers-values__text {
+    order: 2;
+    align-self: start;
+    max-width: none;
+  }
+
+  .careers-values__nav {
+    gap: calc(10 * var(--u)); /* 10 */
+    margin-top: calc(16 * var(--u)); /* 16 */
+  }
+
+  .careers-values__btn {
+    width: calc(44 * var(--u)); /* 44 */
+    height: calc(44 * var(--u));
+    line-height: calc(44 * var(--u));
+  }
+
+  .careers-values__btn svg {
+    width: calc(10 * var(--u)); /* 10 */
+    height: calc(10 * var(--u));
+  }
+
+  /* ==========================================================
+     Careers people (+ lp-people): text, then the image
+     ========================================================== */
+  .careers-people {
+    padding: calc(16 * var(--u)) calc(20 * var(--u)) calc(56 * var(--u)); /* 16 / 20 / 56 */
+  }
+
+  .careers-people__heading {
+    margin-top: calc(20 * var(--u)); /* 20 */
+  }
+
+  .careers-people__body {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: calc(32 * var(--u)); /* 32 */
+    margin-top: calc(24 * var(--u)); /* 24 */
+  }
+
+  .careers-people__text,
+  .lp-people .careers-people__text {
+    max-width: none;
+  }
+
+  .careers-people__image {
+    height: auto;
+    aspect-ratio: 4 / 5;
+    border-radius: calc(5 * var(--u)); /* 5 */
+  }
+
+  .lp-people {
+    padding-top: calc(16 * var(--u)); /* 16: the overview above carries 56 */
+  }
+
+  /* ==========================================================
+     Careers CTA: grey panel
+     ========================================================== */
+  .careers-cta {
+    padding: 0 calc(20 * var(--u)); /* 0 / 20 */
+  }
+
+  .careers-cta__panel {
+    padding: calc(56 * var(--u)) calc(20 * var(--u)); /* 56 / 20 */
+    border-radius: calc(5 * var(--u)); /* 5 */
+  }
+
+  .careers-cta__link {
+    gap: calc(12 * var(--u)); /* 12 */
+    margin-top: calc(20 * var(--u)); /* 20 */
+  }
+
+  /* ==========================================================
+     Job rows: careers (place + count + arrow on one line),
+     career path + job list (title, pill under it, arrow right)
+     ========================================================== */
+  .careers-jobs,
+  .lp-jobs {
+    padding: calc(56 * var(--u)) calc(20 * var(--u)); /* 56 / 20 */
+  }
+
+  .careers-jobs__heading {
+    margin-top: calc(8 * var(--u)); /* 8 */
+  }
+
+  .careers-jobs__list {
+    gap: calc(10 * var(--u)); /* 10 */
+    margin-top: calc(24 * var(--u)); /* 24 */
+  }
+
+  .careers-jobs__row {
+    gap: calc(12 * var(--u)); /* 12 */
+    min-height: calc(60 * var(--u)); /* 60 */
+    padding: calc(12 * var(--u)) calc(16 * var(--u)); /* 12 / 16 */
+    border-radius: calc(5 * var(--u)); /* 5 */
+  }
+
+  .careers-jobs__count {
+    margin: 0 0 0 auto;
+    white-space: nowrap;
+  }
+
+  .careers-jobs__row .arrow-circle {
+    flex: none;
+  }
+
+  .careers-jobs__link {
+    gap: calc(12 * var(--u)); /* 12 */
+    margin-top: calc(24 * var(--u)); /* 24 */
+  }
+
+  .lp-jobs .careers-jobs__row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    row-gap: calc(8 * var(--u)); /* 8 */
+    padding-block: calc(14 * var(--u)); /* 14 */
+  }
+
+  .lp-jobs .careers-jobs__row > .h4 {
+    grid-column: 1;
+  }
+
+  .lp-jobs__tag {
+    grid-column: 1;
+    justify-self: start;
+    margin: 0;
+  }
+
+  .lp-jobs .careers-jobs__row .arrow-circle {
+    grid-column: 2;
+    grid-row: 1 / 3;
+  }
+
+  /* Location pill (job hero + rows) */
+  .job-hero__tag {
+    gap: calc(6 * var(--u)); /* 6 */
+    margin-top: calc(12 * var(--u)); /* 12 */
+    padding: calc(3 * var(--u)) calc(10 * var(--u)) calc(3 * var(--u)) calc(4 * var(--u)); /* 3 / 10 / 3 / 4 */
+    font-size: calc(13 * var(--u)); /* 13 */
+  }
+
+  .job-hero__tag img {
+    width: calc(20 * var(--u)); /* 20 */
+    height: calc(20 * var(--u));
+  }
+
+  /* Job list: country pills wrap, 44 tall (tap target; was 36) */
+  .job-list__filter {
+    gap: calc(8 * var(--u)); /* 8 */
+    margin-top: calc(24 * var(--u)); /* 24 */
+  }
+
+  .job-list__pill {
+    gap: calc(6 * var(--u)); /* 6 */
+    height: calc(44 * var(--u)); /* 44 */
+    padding: 0 calc(14 * var(--u)); /* 14 */
+    font-size: calc(13 * var(--u)); /* 13, as .ins-chip */
+  }
+
+  .job-list__pill:has(img) {
+    padding-left: calc(8 * var(--u)); /* 8 */
+  }
+
+  .job-list__pill img {
+    width: calc(20 * var(--u)); /* 20 */
+    height: calc(20 * var(--u));
+  }
+
+  .job-list .careers-jobs__list {
+    margin-top: calc(20 * var(--u)); /* 20 */
+  }
+
+  .job-list__empty {
+    margin-top: calc(20 * var(--u)); /* 20 */
+    padding: calc(32 * var(--u)) 0; /* 32 */
+  }
+
+  /* ==========================================================
+     Career path hero (lp-hero): stacked (tablet: side by side)
+     ========================================================== */
+  .lp-hero {
+    min-height: 0;
+    padding: var(--top-from-header) var(--sidepadding-xs) calc(40 * var(--u)); /* 100 / 20 / 40 */
+  }
+
+  .lp-hero__content {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: calc(24 * var(--u)); /* 24 */
+    margin-top: 0;
+    padding-top: calc(40 * var(--u)); /* 40 under the breadcrumbs */
+  }
+
+  .lp-hero__intro {
+    max-width: none;
+    margin-top: 0;
+  }
+
+  /* Career path overview: C3 with the page's vw overrides undone */
+  .lp-overview .svc-overview__heading {
+    max-width: none;
+    margin-top: calc(20 * var(--u)); /* 20 under the rule */
+  }
+
+  .lp-overview .svc-overview__text {
+    max-width: none;
+    margin-top: calc(24 * var(--u)); /* 24 under the heading */
+  }
+
+  /* ==========================================================
+     Hear it from our team: heading, tab strip, card (photo first)
+     ========================================================== */
+  .lp-team {
+    display: block;
+    padding: calc(56 * var(--u)) calc(20 * var(--u)); /* 56 / 20 */
+  }
+
+  .lp-team__heading {
+    margin-top: 0;
+  }
+
+  /* Scroll strip (C15) */
+  .lp-team__tabs {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: calc(24 * var(--u)); /* 24 */
+    margin: calc(24 * var(--u)) calc(-20 * var(--u)) 0; /* 24 / bleed 20 */
+    padding: 0 calc(20 * var(--u)); /* 20 */
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    scroll-padding-inline: calc(20 * var(--u));
+    scrollbar-width: none;
+  }
+
+  .lp-team__tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .lp-team__tabs > li {
+    flex: none;
+    scroll-snap-align: start;
+  }
+
+  .lp-team__tab {
+    grid-template-columns: calc(28 * var(--u)) auto; /* 28 */
+    column-gap: calc(10 * var(--u)); /* 10 */
+    min-height: calc(44 * var(--u)); /* 44 */
+    white-space: nowrap;
+  }
+
+  .lp-team__num {
+    width: calc(28 * var(--u)); /* 28 */
+    height: calc(28 * var(--u));
+    font-size: calc(12 * var(--u)); /* 12 */
+  }
+
+  .lp-team__role {
+    font-size: calc(20 * var(--u)); /* 20 */
+  }
+
+  .lp-team__name {
+    margin-top: calc(2 * var(--u)); /* 2 */
+    font-size: calc(13 * var(--u)); /* 13 */
+  }
+
+  .lp-team__panels {
+    margin-top: calc(24 * var(--u)); /* 24 */
+  }
+
+  .lp-team__panel {
+    grid-template-columns: minmax(0, 1fr);
+    min-height: 0;
+    padding: calc(10 * var(--u)); /* 10 */
+    border-radius: calc(6 * var(--u)); /* 6 */
+  }
+
+  .lp-team__image {
+    order: -1;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    border-radius: calc(5 * var(--u)); /* 5 */
+  }
+
+  .lp-team__body {
+    padding: calc(20 * var(--u)) calc(10 * var(--u)) calc(10 * var(--u)); /* 20 / 10 / 10 */
+  }
+
+  .lp-team__quote {
+    max-width: none;
+  }
+
+  .lp-team__quote::before {
+    margin-bottom: calc(4 * var(--u)); /* 4 */
+  }
+
+  .lp-team__person {
+    margin-top: calc(24 * var(--u)); /* 24 min */
+    padding-top: calc(14 * var(--u)); /* 14 */
+    font-size: calc(14 * var(--u)); /* 14 */
+    line-height: 1.3;
+  }
+
+  /* ==========================================================
+     Job hero: stacked, apply card last in flow
+     ========================================================== */
+  .job-hero {
+    min-height: 0;
+    padding: var(--top-from-header) var(--sidepadding-xs) calc(24 * var(--u)); /* 100 / 20 / 24 */
+  }
+
+  .job-hero__back {
+    gap: calc(8 * var(--u)); /* 8 */
+    font-size: calc(15 * var(--u)); /* 15 */
+  }
+
+  .job-hero__back:hover svg {
+    transform: translateX(calc(-4 * var(--u))); /* 4 */
+  }
+
+  .job-hero__title {
+    margin-top: calc(40 * var(--u)); /* 40 */
+  }
+
+  .job-hero__meta {
+    width: calc(278 * var(--u)); /* 278 */
+    max-width: 100%;
+    margin-top: calc(32 * var(--u)); /* 32 */
+    padding-top: 0;
+  }
+
+  .job-hero__label {
+    padding: 0 0 calc(10 * var(--u)) calc(2 * var(--u)); /* 10 / 2 */
+    font-size: calc(13 * var(--u)); /* 13 */
+  }
+
+  .job-hero__value {
+    margin-top: calc(8 * var(--u)); /* 8 */
+    padding-left: calc(2 * var(--u)); /* 2 */
+    font-size: calc(16 * var(--u)); /* 16 */
+  }
+
+  .job-apply {
+    position: static;
+    align-self: stretch;
+    width: auto;
+    margin-top: calc(32 * var(--u)); /* 32 */
+    padding: calc(16 * var(--u)) calc(16 * var(--u)) calc(18 * var(--u)); /* 16 / 16 / 18 */
+    border-radius: calc(5 * var(--u)); /* 5 */
+  }
+
+  .job-apply__text {
+    margin-top: calc(16 * var(--u)); /* 16 */
+    font-size: calc(16 * var(--u)); /* 16 */
+  }
+
+  .job-apply__email,
+  .job-cta__email {
+    display: inline-block;
+    padding: calc(2 * var(--u)) 0; /* 24+ tap height */
+    text-underline-offset: calc(3 * var(--u)); /* 3 */
+  }
+
+  /* ==========================================================
+     Job intro + position summary
+     ========================================================== */
+  .job-intro {
+    padding: calc(56 * var(--u)) calc(20 * var(--u)); /* 56 / 20 */
+  }
+
+  .job-intro__text {
+    max-width: none;
+  }
+
+  .job-summary {
+    padding: 0 calc(20 * var(--u)) calc(40 * var(--u)); /* 0 / 20 / 40 */
+  }
+
+  .job-summary__group {
+    grid-template-columns: minmax(0, 1fr);
+    padding: calc(24 * var(--u)) 0 calc(32 * var(--u)); /* 24 / 32 */
+  }
+
+  .pro-label + .job-summary__group {
+    padding-top: calc(20 * var(--u)); /* 20 */
+  }
+
+  .job-summary__heading {
+    max-width: none;
+  }
+
+  .job-summary__list {
+    max-width: none;
+    margin-top: calc(16 * var(--u)); /* 16 */
+  }
+
+  /* ==========================================================
+     Job CTA (teal): heading, text, cards stacked (tablet: 3)
+     ========================================================== */
+  .job-cta {
+    padding: calc(56 * var(--u)) calc(20 * var(--u)); /* 56 / 20 */
+  }
+
+  .job-cta__text {
+    margin-top: calc(12 * var(--u)); /* 12 */
+  }
+
+  .job-cta__email .split-word {
+    text-underline-offset: calc(3 * var(--u)); /* 3 */
+  }
+
+  .job-cta__list {
+    grid-template-columns: minmax(0, 1fr);
+    gap: calc(12 * var(--u)); /* 12 */
+    margin-top: calc(32 * var(--u)); /* 32 */
+  }
+
+  .job-cta__card {
+    min-height: calc(140 * var(--u)); /* 140 */
+    padding: calc(16 * var(--u)) calc(16 * var(--u)) calc(14 * var(--u)); /* 16 / 16 / 14 */
+    border-radius: calc(5 * var(--u)); /* 5 */
+  }
+
+  .job-cta__link {
+    padding-top: calc(24 * var(--u)); /* 24 min under the title */
+    font-size: calc(16 * var(--u)); /* 16 */
+  }
+
+  .job-cta__card:hover .job-cta__link svg {
+    transform: translateX(calc(4 * var(--u))); /* 4 */
+  }
+}
+
+/* ============================================================
+   Tablet (768 to 1199): wider grids, side by side where desktop is
+   ============================================================ */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .careers-hero__image {
+    aspect-ratio: 16 / 9;
+    max-height: calc(440 * var(--u)); /* 440: as the C1 hero image */
+  }
+
+  .career-paths__list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  /* Slide: title + text left, icon right (the desktop halves) */
+  .careers-values__slide {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.7fr);
+    grid-template-rows: auto 1fr;
+    column-gap: calc(24 * var(--u)); /* 24 */
+    min-height: calc(280 * var(--u)); /* 280 */
+  }
+
+  .careers-values__icon {
+    grid-column: 2;
+    grid-row: 1 / 3;
+    height: calc(180 * var(--u)); /* 180 */
+    margin: 0;
+  }
+
+  .careers-values__text {
+    align-self: end;
+    margin-top: calc(24 * var(--u)); /* 24 */
+  }
+
+  /* Text | image (the desktop halves); the image stays in view
+     beside long text */
+  .careers-people__body {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    column-gap: calc(32 * var(--u)); /* 32 */
+  }
+
+  .careers-people__media {
+    position: sticky;
+    top: calc(var(--header-h) + 24 * var(--u)); /* 24 under the bar */
+  }
+
+  /* Job rows: a centred column, one line per row */
+  .careers-jobs,
+  .lp-jobs {
+    padding-inline: calc((100% - 600 * var(--u)) / 2); /* centres 600 */
+  }
+
+  .lp-jobs .careers-jobs__row {
+    display: flex;
+  }
+
+  .lp-jobs__tag {
+    margin: 0 calc(8 * var(--u)) 0 auto; /* 8 + 12 gap to the arrow */
+  }
+
+  .lp-hero__content {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    column-gap: calc(40 * var(--u)); /* 40 */
+  }
+
+  .lp-hero__intro {
+    margin-top: calc(4 * var(--u)); /* 4: level with the title's caps */
+  }
+
+  .lp-overview .svc-overview__heading,
+  .lp-overview .svc-overview__text {
+    margin-top: calc(24 * var(--u)); /* 24 under the rule */
+  }
+
+  /* Card: quote left, photo right (the desktop layout) */
+  .lp-team__panel {
+    grid-template-columns: minmax(0, 1fr) calc(300 * var(--u)); /* 300 */
+    column-gap: calc(16 * var(--u)); /* 16 */
+  }
+
+  .lp-team__image {
+    order: 0;
+    aspect-ratio: 3 / 4;
+  }
+
+  .lp-team__body {
+    padding: calc(10 * var(--u)) 0 calc(4 * var(--u)) calc(8 * var(--u)); /* 10 / 0 / 4 / 8 */
+  }
+
+  .lp-team__quote {
+    max-width: calc(520 * var(--u)); /* 520: readable lines at 1199 */
+  }
+
+  .lp-team__person {
+    margin-top: auto;
+  }
+
+  .job-apply {
+    align-self: flex-start;
+    width: calc(320 * var(--u)); /* 320 */
+  }
+
+  .job-intro__text {
+    max-width: calc(560 * var(--u)); /* 560 */
+  }
+
+  .job-summary__group {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
+    column-gap: calc(40 * var(--u)); /* 40 */
+  }
+
+  .job-summary__list {
+    margin-top: calc(4 * var(--u)); /* 4: level with the heading */
+  }
+
+  .job-cta__list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  /* Three narrow cards at 768: room for a department name on one line */
+  .job-cta__card {
+    padding-inline: calc(14 * var(--u)); /* 14 */
+  }
+
+  .job-cta__link {
+    font-size: calc(15 * var(--u)); /* 15 */
+  }
+}

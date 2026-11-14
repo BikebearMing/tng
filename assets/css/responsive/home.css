@@ -1,0 +1,527 @@
+/* ============================================================
+   TNG responsive: Home (family A)
+   Owns: index.html <main> (hp-* sections)
+   Rules: temporary/migration/responsive-spec.md sections 0.4, 0.5
+   and "Foundation provides". Two queries only:
+   @media (max-width: 1199px) and
+   @media (min-width: 768px) and (max-width: 1199px)
+   ============================================================ */
+
+@media (max-width: 1199px) {
+
+  /* ==========================================================
+     Featured banner: text under the bar, recent insights stacked
+     ========================================================== */
+  .hp-featured-banner {
+    gap: calc(40 * var(--u)); /* 40: never closer than this to the panel */
+    min-height: min(100svh, 900px);
+    padding: var(--top-from-header) calc(12 * var(--u)) calc(12 * var(--u)); /* 100 / 12 / 12 */
+  }
+
+  .hp-featured-banner__content {
+    max-width: none;
+    padding: 0 calc(8 * var(--u)); /* 8: text on the 20 gutter */
+  }
+
+  .hp-featured-banner__content .h1 {
+    margin-top: calc(12 * var(--u)); /* 12 */
+  }
+
+  .hp-featured-banner__link {
+    margin-top: calc(20 * var(--u)); /* 20 */
+  }
+
+  .hp-featured-banner__panel {
+    border-radius: calc(5 * var(--u)); /* 5 */
+  }
+
+  .hp-featured-banner__panel-head {
+    padding: calc(4 * var(--u)) calc(16 * var(--u)); /* 4 / 16 */
+    border-bottom-left-radius: calc(5 * var(--u));
+    border-bottom-right-radius: calc(5 * var(--u));
+  }
+
+  .hp-featured-banner__view-all {
+    gap: calc(4 * var(--u)); /* 4 */
+    padding: calc(6 * var(--u)) 0; /* 6: tap height */
+  }
+
+  .hp-featured-banner__view-all svg {
+    width: calc(8 * var(--u)); /* 8 */
+    height: calc(8 * var(--u));
+  }
+
+  .hp-featured-banner__list {
+    grid-template-columns: 1fr;
+  }
+
+  .hp-featured-banner__item {
+    padding: calc(14 * var(--u)) calc(16 * var(--u)) calc(14 * var(--u)); /* 14 / 16 / 14 */
+  }
+
+  .hp-featured-banner__item .h4 {
+    padding-right: calc(28 * var(--u)); /* 28: clear of the icon */
+  }
+
+  .hp-featured-banner__item .subhead {
+    padding-top: calc(10 * var(--u)); /* 10 */
+  }
+
+  /* Dividers turn horizontal: a rule across the top of each row, drawn left to right */
+  .hp-featured-banner__item + .hp-featured-banner__item::before {
+    top: 0;
+    bottom: auto;
+    left: calc(16 * var(--u)); /* 16 */
+    right: calc(16 * var(--u));
+    width: auto;
+    height: 1px;
+    transform: scaleX(0);
+    transform-origin: left center;
+  }
+
+  .hp-featured-banner__item.is-in::before {
+    transform: scaleX(1);
+  }
+
+  .hp-featured-banner__item .hp-featured-banner__icon {
+    right: calc(16 * var(--u)); /* 16 */
+    bottom: calc(14 * var(--u)); /* 14: level with the date */
+  }
+
+  /* ==========================================================
+     Intro + counters: stacked; regional presence: 2-column cards
+     ========================================================== */
+  .hp-intro {
+    padding: calc(56 * var(--u)) calc(12 * var(--u)) calc(12 * var(--u)); /* 56 / 12 / 12 */
+  }
+
+  .hp-intro__top {
+    flex-direction: column;
+    gap: calc(40 * var(--u)); /* 40 */
+    padding: 0 calc(8 * var(--u)); /* 8 → 20 with the section padding */
+  }
+
+  .hp-intro__text,
+  .hp-intro__text .body {
+    max-width: none;
+  }
+
+  .hp-intro__text .body {
+    margin-top: calc(16 * var(--u)); /* 16 */
+  }
+
+  .hp-intro__link {
+    min-width: calc(70 * var(--u)); /* 70 */
+    margin-top: calc(16 * var(--u)); /* 16 */
+  }
+
+  .hp-intro__counters {
+    grid-template-columns: 1fr 1fr;
+    column-gap: calc(20 * var(--u)); /* 20 */
+    row-gap: calc(32 * var(--u)); /* 32 */
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .hp-intro__counters .counter-label {
+    margin-top: calc(4 * var(--u)); /* 4 */
+  }
+
+  .hp-intro__panel {
+    grid-template-columns: 1fr;
+    row-gap: calc(24 * var(--u)); /* 24 */
+    margin-top: calc(56 * var(--u)); /* 56 */
+    padding: calc(24 * var(--u)) calc(8 * var(--u)) calc(8 * var(--u)); /* 24 / 8 / 8 */
+    border-radius: calc(5 * var(--u)); /* 5 */
+  }
+
+  .hp-intro__panel > .h2 {
+    padding: 0 calc(8 * var(--u)); /* 8: on the 20 gutter */
+  }
+
+  .hp-intro__locations {
+    grid-template-columns: repeat(2, 1fr);
+    gap: calc(8 * var(--u)); /* 8 */
+  }
+
+  .hp-intro__location img {
+    width: calc(100% - calc(16 * var(--u))); /* 8 in each side */
+    border-radius: calc(5 * var(--u)); /* 5 */
+  }
+
+  .hp-intro__location-name {
+    gap: calc(8 * var(--u)); /* 8 */
+    margin-top: calc(-8 * var(--u)); /* 8 under the photo */
+    padding: calc(16 * var(--u)) calc(10 * var(--u)) calc(14 * var(--u)) calc(12 * var(--u)); /* 16 / 10 / 14 / 12 */
+    border-radius: calc(5 * var(--u));
+  }
+
+  .hp-intro__location-name .hp-featured-banner__icon {
+    flex: none;
+    width: calc(20 * var(--u)); /* 20 */
+    height: calc(20 * var(--u));
+  }
+
+  .hp-intro__location-name .hp-featured-banner__icon svg {
+    width: calc(8 * var(--u)); /* 8 */
+    height: calc(8 * var(--u));
+  }
+
+  /* ==========================================================
+     Insights: tabs as a swipe strip, feature card under its image,
+     list full width, View all at the end.
+     tng-wp.js re-renders .hp-insights__body on WP: classes only.
+     ========================================================== */
+  .hp-insights {
+    display: flex;
+    flex-direction: column;
+    padding: calc(56 * var(--u)) calc(20 * var(--u)); /* 56 / 20 */
+  }
+
+  .hp-insights__label {
+    padding-bottom: calc(8 * var(--u)); /* 8 */
+  }
+
+  /* Its children (tab list, View all) join the section's column */
+  .hp-insights__tabs {
+    display: contents;
+  }
+
+  .hp-insights__tab-list {
+    order: 1;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: calc(24 * var(--u)); /* 24 */
+    margin: calc(16 * var(--u)) calc(-20 * var(--u)) 0; /* 16 / bleed to the screen edge */
+    padding-inline: calc(20 * var(--u)); /* 20 */
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    scroll-padding-inline: calc(20 * var(--u));
+    scrollbar-width: none;
+  }
+
+  .hp-insights__tab-list::-webkit-scrollbar {
+    display: none;
+  }
+
+  .hp-insights__tab-list > li {
+    flex: none;
+    scroll-snap-align: start;
+  }
+
+  .hp-insights__tab {
+    padding: calc(4 * var(--u)) 0 calc(10 * var(--u)); /* 4 / 10: 37 tap height */
+    white-space: nowrap;
+  }
+
+  .hp-insights__tab.is-active::after {
+    height: 2px;
+  }
+
+  .hp-insights__body {
+    order: 2;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    margin-top: calc(20 * var(--u)); /* 20 */
+  }
+
+  .hp-insights__feature {
+    display: block;
+    width: auto;
+    height: auto;
+  }
+
+  .hp-insights__feature img {
+    height: auto;
+    aspect-ratio: 4 / 3;
+    border-radius: calc(5 * var(--u)); /* 5 */
+  }
+
+  /* Card: in flow under the image, no overlap */
+  .hp-insights__card {
+    position: static;
+    width: auto;
+    padding: calc(16 * var(--u)) 0 calc(20 * var(--u)); /* 16 / 20 */
+    border-radius: 0;
+  }
+
+  .hp-insights__card .h3,
+  .hp-insights__card .body {
+    max-width: none;
+  }
+
+  .hp-insights__card .body {
+    margin-top: calc(12 * var(--u)); /* 12 */
+  }
+
+  .hp-insights__card-foot {
+    margin-top: calc(20 * var(--u)); /* 20 */
+  }
+
+  .hp-insights__list {
+    margin-right: 0;
+    border-top: 1px solid #e3e8ee;
+  }
+
+  .hp-insights__item a {
+    flex-direction: column;
+    gap: calc(8 * var(--u)); /* 8 */
+    padding: calc(16 * var(--u)) calc(32 * var(--u)) calc(18 * var(--u)) 0; /* 16 / 32 (arrow) / 18 */
+  }
+
+  .hp-insights__item .h4 {
+    max-width: none;
+  }
+
+  .hp-insights__item .arrow-circle {
+    bottom: calc(18 * var(--u)); /* 18: level with the date */
+  }
+
+  .hp-insights__tabs > .link-arrow {
+    order: 3;
+    align-self: flex-start;
+    margin-top: calc(24 * var(--u)); /* 24 */
+  }
+
+  /* ==========================================================
+     Careers: text, marquee in flow (420 tall), then the note row
+     ========================================================== */
+  .hp-careers {
+    justify-content: flex-start;
+    height: auto;
+    padding: calc(56 * var(--u)) calc(20 * var(--u)) calc(32 * var(--u)); /* 56 / 20 / 32 */
+  }
+
+  .hp-careers__intro .h2 {
+    max-width: none;
+  }
+
+  .hp-careers__intro .link-arrow {
+    gap: calc(12 * var(--u)); /* 12 */
+    margin-top: calc(16 * var(--u)); /* 16 */
+  }
+
+  .hp-careers__marquee {
+    position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    order: 1;
+    gap: calc(8 * var(--u)); /* 8 */
+    height: calc(420 * var(--u)); /* 420 */
+    margin-top: calc(32 * var(--u)); /* 32 */
+    border-radius: calc(5 * var(--u)); /* 5 */
+  }
+
+  .hp-careers__column {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .hp-careers__column img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 221 / 287;
+    margin-bottom: calc(8 * var(--u)); /* 8, on each item so the loop distance is exact */
+  }
+
+  .hp-careers__foot {
+    order: 2;
+    width: auto;
+    margin-top: calc(32 * var(--u)); /* 32 */
+    padding-top: calc(16 * var(--u)); /* 16 */
+  }
+
+  .hp-careers__note {
+    flex: 1;
+    max-width: none;
+  }
+
+  .hp-careers__rule {
+    margin: 0 calc(20 * var(--u)) 0 calc(16 * var(--u)); /* 20 / 16 */
+  }
+
+  .hp-careers__badge {
+    width: calc(96 * var(--u)); /* 96 */
+    height: calc(96 * var(--u));
+  }
+
+  /* ==========================================================
+     Awards: grey panel stacked
+     ========================================================== */
+  .hp-awards {
+    padding: calc(40 * var(--u)) calc(12 * var(--u)) calc(12 * var(--u)); /* 40 / 12 / 12 */
+  }
+
+  .hp-awards__label {
+    padding: 0 0 calc(10 * var(--u)) calc(8 * var(--u)); /* 10 below, on the 20 gutter */
+  }
+
+  .hp-awards__panel {
+    flex-direction: column;
+    padding: calc(24 * var(--u)) calc(8 * var(--u)) calc(8 * var(--u)); /* 24 / 8 / 8 */
+    border-radius: calc(5 * var(--u)); /* 5 */
+  }
+
+  .hp-awards__main,
+  .hp-awards__text {
+    width: auto;
+    margin-left: 0;
+    padding: 0 calc(8 * var(--u)); /* 8: text on the 20 gutter */
+  }
+
+  .hp-awards__logo {
+    width: calc(80 * var(--u)); /* 80 */
+    height: calc(80 * var(--u));
+    margin-top: calc(20 * var(--u)); /* 20 */
+  }
+
+  .hp-awards__text {
+    margin-top: calc(20 * var(--u)); /* 20 */
+  }
+
+  .hp-awards__text .link-arrow {
+    gap: calc(12 * var(--u)); /* 12 */
+    margin-top: calc(12 * var(--u)); /* 12 */
+  }
+
+  .hp-awards__card {
+    width: auto;
+    min-height: calc(120 * var(--u)); /* 120 */
+    margin: calc(32 * var(--u)) 0 0; /* 32 */
+    padding: calc(16 * var(--u)) calc(56 * var(--u)) calc(16 * var(--u)) calc(16 * var(--u)); /* 16, 56 clear of the arrow */
+    border-radius: calc(5 * var(--u)); /* 5 */
+  }
+
+  .hp-awards__card .arrow-circle {
+    right: calc(16 * var(--u)); /* 16 */
+    bottom: calc(16 * var(--u));
+  }
+}
+
+/* ============================================================
+   Tablet (768 to 1199): side by side where desktop is
+   ============================================================ */
+@media (min-width: 768px) and (max-width: 1199px) {
+
+  /* Featured banner: recent insights 2 x 2 */
+  .hp-featured-banner__list {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hp-featured-banner__item + .hp-featured-banner__item::before {
+    display: none;
+  }
+
+  /* Vertical rule between the columns (desktop style), horizontal between the rows */
+  .hp-featured-banner__item:nth-child(2n)::after,
+  .hp-featured-banner__item:nth-child(n + 3)::before {
+    content: "";
+    position: absolute;
+    background: #e3e8ee;
+    transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .hp-featured-banner__item:nth-child(2n)::after {
+    top: calc(14 * var(--u)); /* 14 */
+    bottom: calc(14 * var(--u));
+    left: 0;
+    width: 1px;
+    transform: scaleY(0);
+    transform-origin: center top;
+  }
+
+  .hp-featured-banner__item:nth-child(n + 3)::before {
+    display: block;
+    top: 0;
+    left: calc(16 * var(--u)); /* 16 */
+    right: calc(16 * var(--u));
+    height: 1px;
+    transform: scaleX(0);
+    transform-origin: left center;
+  }
+
+  .hp-featured-banner__item.is-in:nth-child(2n)::after {
+    transform: scaleY(1);
+  }
+
+  .hp-featured-banner__item.is-in:nth-child(n + 3)::before {
+    transform: scaleX(1);
+  }
+
+  /* Intro: text left, counters right */
+  .hp-intro__top {
+    flex-direction: row;
+    gap: calc(40 * var(--u)); /* 40 */
+  }
+
+  .hp-intro__text,
+  .hp-intro__counters {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  .hp-intro__locations {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Insights: feature left, list right */
+  .hp-insights__body {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: calc(24 * var(--u)); /* 24 */
+  }
+
+  .hp-insights__feature,
+  .hp-insights__list {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  .hp-insights__card {
+    padding-bottom: 0;
+  }
+
+  /* Careers: the desktop layout, marquee on the right half */
+  .hp-careers {
+    justify-content: space-between;
+    min-height: calc(480 * var(--u)); /* 480 */
+  }
+
+  .hp-careers__intro,
+  .hp-careers__foot {
+    width: 48%;
+  }
+
+  .hp-careers__foot {
+    max-width: calc(400 * var(--u)); /* 400 */
+  }
+
+  .hp-careers__marquee {
+    position: absolute;
+    top: 0;
+    right: calc(20 * var(--u)); /* 20 */
+    bottom: 0;
+    width: calc(46% - calc(20 * var(--u)));
+    height: auto;
+    margin-top: 0;
+    border-radius: 0;
+  }
+
+  /* Awards: heading | text, card full width under them */
+  .hp-awards__panel {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: calc(32 * var(--u)); /* 32 */
+  }
+
+  .hp-awards__text {
+    margin-top: 0;
+  }
+
+  .hp-awards__card {
+    grid-column: 1 / -1;
+    min-height: calc(80 * var(--u)); /* 80: one line of text at this width */
+  }
+}

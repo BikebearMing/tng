@@ -1,0 +1,14 @@
+/* TNG responsive layer (static pages). Loads after style.css.
+   Only @imports; each file lives in assets/css/responsive/.
+   WP deploy concatenates them in this order into
+   wp/tng-core/assets/css/responsive.css. */
+/* pages.css first: its rules were written to load before the family files
+   (the pages-with-no-mockup layer sat between style.css and this file),
+   so they keep that cascade order */
+@import url("responsive/pages.css");
+@import url("responsive/foundation.css");
+@import url("responsive/home.css");
+@import url("responsive/people-insights.css");
+@import url("responsive/services.css");
+@import url("responsive/about.css");
+@import url("responsive/careers.css");

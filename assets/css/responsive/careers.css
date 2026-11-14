@@ -1,0 +1,660 @@
+/* ============================================================
+   TNG responsive: Careers (family E)
+   Owns: careers, careers-legal, job-opportunities, job <main>
+   Rules: temporary/migration/responsive-spec.md sections 0.4, 0.5
+   and "Foundation provides". Two queries only:
+   @media (max-width: 1199px) and
+   @media (min-width: 768px) and (max-width: 1199px)
+   ============================================================ */
+
+@media (max-width: 1199px) {
+
+  /* ==========================================================
+     Careers hero: text, then the image in flow (as C1)
+     ========================================================== */
+  .careers-hero {
+    min-height: 0;
+    padding: var(--top-from-header) var(--sidepadding-xs) calc(24 * var(--u)); /* 100 / 20 / 24 */
+  }
+
+  .careers-hero__content {
+    margin-top: 0;
+    padding-top: calc(40 * var(--u)); /* 40 under the breadcrumbs */
+  }
+
+  .careers-hero__intro {
+    max-width: none;
+    margin-top: calc(24 * var(--u)); /* 24 */
+  }
+
+  .careers-hero__link {
+    gap: calc(12 * var(--u)); /* 12 */
+    margin-top: calc(16 * var(--u)); /* 16 */
+  }
+
+  .careers-hero__image {
+    position: static;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    margin-top: calc(32 * var(--u)); /* 32 */
+    border-radius: calc(5 * var(--u)); /* 5 */
+  }
+
+  /* ==========================================================
+     Career paths: cards stacked (tablet: 3 across)
+     ========================================================== */
+  .career-paths {
+    padding: calc(20 * var(--u)) calc(20 * var(--u)) calc(56 * var(--u)); /* 20 / 20 / 56 */
+  }
+
+  .career-paths__list {
+    grid-template-columns: minmax(0, 1fr);
+    gap: calc(12 * var(--u)); /* 12 */
+  }
+
+  .career-card {
+    column-gap: calc(12 * var(--u)); /* 12 */
+    min-height: calc(132 * var(--u)); /* 132 */
+    padding: calc(20 * var(--u)); /* 20 */
+    border-radius: calc(5 * var(--u)); /* 5 */
+  }
+
+  .career-card .arrow-circle {
+    margin-top: 0;
+  }
+
+  .career-card__text {
+    max-width: none;
+    margin-top: calc(20 * var(--u)); /* 20 */
+  }
+
+  /* ==========================================================
+     Careers values: heading on top; slide = title, icon, text
+     (tablet: the desktop two halves)
+     ========================================================== */
+  .careers-values {
+    grid-template-columns: minmax(0, 1fr); /* the Blaze track must not widen the page */
+    row-gap: calc(24 * var(--u)); /* 24 */
+    padding: 0 calc(20 * var(--u)) calc(56 * var(--u)); /* 0 / 20 / 56 */
+  }
+
+  .careers-values__heading {
+    max-width: none;
+  }
+
+  .careers-values__slide {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: none;
+    align-content: start;
+    min-height: 0;
+    padding: calc(20 * var(--u)); /* 20 */
+    border-radius: calc(5 * var(--u)); /* 5 */
+  }
+
+  .careers-values__icon {
+    order: 1;
+    grid-column: 1;
+    grid-row: auto;
+    height: calc(140 * var(--u)); /* 140 */
+    margin: calc(24 * var(--u)) 0; /* 24 */
+  }
+
+  .careers-values__text {
+    order: 2;
+    align-self: start;
+    max-width: none;
+  }
+
+  .careers-values__nav {
+    gap: calc(10 * var(--u)); /* 10 */
+    margin-top: calc(16 * var(--u)); /* 16 */
+  }
+
+  .careers-values__btn {
+    width: calc(44 * var(--u)); /* 44 */
+    height: calc(44 * var(--u));
+    line-height: calc(44 * var(--u));
+  }
+
+  .careers-values__btn svg {
+    width: calc(10 * var(--u)); /* 10 */
+    height: calc(10 * var(--u));
+  }
+
+  /* ==========================================================
+     Careers people (+ lp-people): text, then the image
+     ========================================================== */
+  .careers-people {
+    padding: calc(16 * var(--u)) calc(20 * var(--u)) calc(56 * var(--u)); /* 16 / 20 / 56 */
+  }
+
+  .careers-people__heading {
+    margin-top: calc(20 * var(--u)); /* 20 */
+  }
+
+  .careers-people__body {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: calc(32 * var(--u)); /* 32 */
+    margin-top: calc(24 * var(--u)); /* 24 */
+  }
+
+  .careers-people__text,
+  .lp-people .careers-people__text {
+    max-width: none;
+  }
+
+  .careers-people__image {
+    height: auto;
+    aspect-ratio: 4 / 5;
+    border-radius: calc(5 * var(--u)); /* 5 */
+  }
+
+  .lp-people {
+    padding-top: calc(16 * var(--u)); /* 16: the overview above carries 56 */
+  }
+
+  /* ==========================================================
+     Careers CTA: grey panel
+     ========================================================== */
+  .careers-cta {
+    padding: 0 calc(20 * var(--u)); /* 0 / 20 */
+  }
+
+  .careers-cta__panel {
+    padding: calc(56 * var(--u)) calc(20 * var(--u)); /* 56 / 20 */
+    border-radius: calc(5 * var(--u)); /* 5 */
+  }
+
+  .careers-cta__link {
+    gap: calc(12 * var(--u)); /* 12 */
+    margin-top: calc(20 * var(--u)); /* 20 */
+  }
+
+  /* ==========================================================
+     Job rows: careers (place + count + arrow on one line),
+     career path + job list (title, pill under it, arrow right)
+     ========================================================== */
+  .careers-jobs,
+  .lp-jobs {
+    padding: calc(56 * var(--u)) calc(20 * var(--u)); /* 56 / 20 */
+  }
+
+  .careers-jobs__heading {
+    margin-top: calc(8 * var(--u)); /* 8 */
+  }
+
+  .careers-jobs__list {
+    gap: calc(10 * var(--u)); /* 10 */
+    margin-top: calc(24 * var(--u)); /* 24 */
+  }
+
+  .careers-jobs__row {
+    gap: calc(12 * var(--u)); /* 12 */
+    min-height: calc(60 * var(--u)); /* 60 */
+    padding: calc(12 * var(--u)) calc(16 * var(--u)); /* 12 / 16 */
+    border-radius: calc(5 * var(--u)); /* 5 */
+  }
+
+  .careers-jobs__count {
+    margin: 0 0 0 auto;
+    white-space: nowrap;
+  }
+
+  .careers-jobs__row .arrow-circle {
+    flex: none;
+  }
+
+  .careers-jobs__link {
+    gap: calc(12 * var(--u)); /* 12 */
+    margin-top: calc(24 * var(--u)); /* 24 */
+  }
+
+  .lp-jobs .careers-jobs__row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    row-gap: calc(8 * var(--u)); /* 8 */
+    padding-block: calc(14 * var(--u)); /* 14 */
+  }
+
+  .lp-jobs .careers-jobs__row > .h4 {
+    grid-column: 1;
+  }
+
+  .lp-jobs__tag {
+    grid-column: 1;
+    justify-self: start;
+    margin: 0;
+  }
+
+  .lp-jobs .careers-jobs__row .arrow-circle {
+    grid-column: 2;
+    grid-row: 1 / 3;
+  }
+
+  /* Location pill (job hero + rows) */
+  .job-hero__tag {
+    gap: calc(6 * var(--u)); /* 6 */
+    margin-top: calc(12 * var(--u)); /* 12 */
+    padding: calc(3 * var(--u)) calc(10 * var(--u)) calc(3 * var(--u)) calc(4 * var(--u)); /* 3 / 10 / 3 / 4 */
+    font-size: calc(13 * var(--u)); /* 13 */
+  }
+
+  .job-hero__tag img {
+    width: calc(20 * var(--u)); /* 20 */
+    height: calc(20 * var(--u));
+  }
+
+  /* Job list: country pills wrap, 44 tall (tap target; was 36) */
+  .job-list__filter {
+    gap: calc(8 * var(--u)); /* 8 */
+    margin-top: calc(24 * var(--u)); /* 24 */
+  }
+
+  .job-list__pill {
+    gap: calc(6 * var(--u)); /* 6 */
+    height: calc(44 * var(--u)); /* 44 */
+    padding: 0 calc(14 * var(--u)); /* 14 */
+    font-size: calc(13 * var(--u)); /* 13, as .ins-chip */
+  }
+
+  .job-list__pill:has(img) {
+    padding-left: calc(8 * var(--u)); /* 8 */
+  }
+
+  .job-list__pill img {
+    width: calc(20 * var(--u)); /* 20 */
+    height: calc(20 * var(--u));
+  }
+
+  .job-list .careers-jobs__list {
+    margin-top: calc(20 * var(--u)); /* 20 */
+  }
+
+  .job-list__empty {
+    margin-top: calc(20 * var(--u)); /* 20 */
+    padding: calc(32 * var(--u)) 0; /* 32 */
+  }
+
+  /* ==========================================================
+     Career path hero (lp-hero): stacked (tablet: side by side)
+     ========================================================== */
+  .lp-hero {
+    min-height: 0;
+    padding: var(--top-from-header) var(--sidepadding-xs) calc(40 * var(--u)); /* 100 / 20 / 40 */
+  }
+
+  .lp-hero__content {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: calc(24 * var(--u)); /* 24 */
+    margin-top: 0;
+    padding-top: calc(40 * var(--u)); /* 40 under the breadcrumbs */
+  }
+
+  .lp-hero__intro {
+    max-width: none;
+    margin-top: 0;
+  }
+
+  /* Career path overview: C3 with the page's vw overrides undone */
+  .lp-overview .svc-overview__heading {
+    max-width: none;
+    margin-top: calc(20 * var(--u)); /* 20 under the rule */
+  }
+
+  .lp-overview .svc-overview__text {
+    max-width: none;
+    margin-top: calc(24 * var(--u)); /* 24 under the heading */
+  }
+
+  /* ==========================================================
+     Hear it from our team: heading, tab strip, card (photo first)
+     ========================================================== */
+  .lp-team {
+    display: block;
+    padding: calc(56 * var(--u)) calc(20 * var(--u)); /* 56 / 20 */
+  }
+
+  .lp-team__heading {
+    margin-top: 0;
+  }
+
+  /* Scroll strip (C15) */
+  .lp-team__tabs {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: calc(24 * var(--u)); /* 24 */
+    margin: calc(24 * var(--u)) calc(-20 * var(--u)) 0; /* 24 / bleed 20 */
+    padding: 0 calc(20 * var(--u)); /* 20 */
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    scroll-padding-inline: calc(20 * var(--u));
+    scrollbar-width: none;
+  }
+
+  .lp-team__tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .lp-team__tabs > li {
+    flex: none;
+    scroll-snap-align: start;
+  }
+
+  .lp-team__tab {
+    grid-template-columns: calc(28 * var(--u)) auto; /* 28 */
+    column-gap: calc(10 * var(--u)); /* 10 */
+    min-height: calc(44 * var(--u)); /* 44 */
+    white-space: nowrap;
+  }
+
+  .lp-team__num {
+    width: calc(28 * var(--u)); /* 28 */
+    height: calc(28 * var(--u));
+    font-size: calc(12 * var(--u)); /* 12 */
+  }
+
+  .lp-team__role {
+    font-size: calc(20 * var(--u)); /* 20 */
+  }
+
+  .lp-team__name {
+    margin-top: calc(2 * var(--u)); /* 2 */
+    font-size: calc(13 * var(--u)); /* 13 */
+  }
+
+  .lp-team__panels {
+    margin-top: calc(24 * var(--u)); /* 24 */
+  }
+
+  .lp-team__panel {
+    grid-template-columns: minmax(0, 1fr);
+    min-height: 0;
+    padding: calc(10 * var(--u)); /* 10 */
+    border-radius: calc(6 * var(--u)); /* 6 */
+  }
+
+  .lp-team__image {
+    order: -1;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    border-radius: calc(5 * var(--u)); /* 5 */
+  }
+
+  .lp-team__body {
+    padding: calc(20 * var(--u)) calc(10 * var(--u)) calc(10 * var(--u)); /* 20 / 10 / 10 */
+  }
+
+  .lp-team__quote {
+    max-width: none;
+  }
+
+  .lp-team__quote::before {
+    margin-bottom: calc(4 * var(--u)); /* 4 */
+  }
+
+  .lp-team__person {
+    margin-top: calc(24 * var(--u)); /* 24 min */
+    padding-top: calc(14 * var(--u)); /* 14 */
+    font-size: calc(14 * var(--u)); /* 14 */
+    line-height: 1.3;
+  }
+
+  /* ==========================================================
+     Job hero: stacked, apply card last in flow
+     ========================================================== */
+  .job-hero {
+    min-height: 0;
+    padding: var(--top-from-header) var(--sidepadding-xs) calc(24 * var(--u)); /* 100 / 20 / 24 */
+  }
+
+  .job-hero__back {
+    gap: calc(8 * var(--u)); /* 8 */
+    font-size: calc(15 * var(--u)); /* 15 */
+  }
+
+  .job-hero__back:hover svg {
+    transform: translateX(calc(-4 * var(--u))); /* 4 */
+  }
+
+  .job-hero__title {
+    margin-top: calc(40 * var(--u)); /* 40 */
+  }
+
+  .job-hero__meta {
+    width: calc(278 * var(--u)); /* 278 */
+    max-width: 100%;
+    margin-top: calc(32 * var(--u)); /* 32 */
+    padding-top: 0;
+  }
+
+  .job-hero__label {
+    padding: 0 0 calc(10 * var(--u)) calc(2 * var(--u)); /* 10 / 2 */
+    font-size: calc(13 * var(--u)); /* 13 */
+  }
+
+  .job-hero__value {
+    margin-top: calc(8 * var(--u)); /* 8 */
+    padding-left: calc(2 * var(--u)); /* 2 */
+    font-size: calc(16 * var(--u)); /* 16 */
+  }
+
+  .job-apply {
+    position: static;
+    align-self: stretch;
+    width: auto;
+    margin-top: calc(32 * var(--u)); /* 32 */
+    padding: calc(16 * var(--u)) calc(16 * var(--u)) calc(18 * var(--u)); /* 16 / 16 / 18 */
+    border-radius: calc(5 * var(--u)); /* 5 */
+  }
+
+  .job-apply__text {
+    margin-top: calc(16 * var(--u)); /* 16 */
+    font-size: calc(16 * var(--u)); /* 16 */
+  }
+
+  .job-apply__email,
+  .job-cta__email {
+    display: inline-block;
+    padding: calc(2 * var(--u)) 0; /* 24+ tap height */
+    text-underline-offset: calc(3 * var(--u)); /* 3 */
+  }
+
+  /* ==========================================================
+     Job intro + position summary
+     ========================================================== */
+  .job-intro {
+    padding: calc(56 * var(--u)) calc(20 * var(--u)); /* 56 / 20 */
+  }
+
+  .job-intro__text {
+    max-width: none;
+  }
+
+  .job-summary {
+    padding: 0 calc(20 * var(--u)) calc(40 * var(--u)); /* 0 / 20 / 40 */
+  }
+
+  .job-summary__group {
+    grid-template-columns: minmax(0, 1fr);
+    padding: calc(24 * var(--u)) 0 calc(32 * var(--u)); /* 24 / 32 */
+  }
+
+  .pro-label + .job-summary__group {
+    padding-top: calc(20 * var(--u)); /* 20 */
+  }
+
+  .job-summary__heading {
+    max-width: none;
+  }
+
+  .job-summary__list {
+    max-width: none;
+    margin-top: calc(16 * var(--u)); /* 16 */
+  }
+
+  /* ==========================================================
+     Job CTA (teal): heading, text, cards stacked (tablet: 3)
+     ========================================================== */
+  .job-cta {
+    padding: calc(56 * var(--u)) calc(20 * var(--u)); /* 56 / 20 */
+  }
+
+  .job-cta__text {
+    margin-top: calc(12 * var(--u)); /* 12 */
+  }
+
+  .job-cta__email .split-word {
+    text-underline-offset: calc(3 * var(--u)); /* 3 */
+  }
+
+  .job-cta__list {
+    grid-template-columns: minmax(0, 1fr);
+    gap: calc(12 * var(--u)); /* 12 */
+    margin-top: calc(32 * var(--u)); /* 32 */
+  }
+
+  .job-cta__card {
+    min-height: calc(140 * var(--u)); /* 140 */
+    padding: calc(16 * var(--u)) calc(16 * var(--u)) calc(14 * var(--u)); /* 16 / 16 / 14 */
+    border-radius: calc(5 * var(--u)); /* 5 */
+  }
+
+  .job-cta__link {
+    padding-top: calc(24 * var(--u)); /* 24 min under the title */
+    font-size: calc(16 * var(--u)); /* 16 */
+  }
+
+  .job-cta__card:hover .job-cta__link svg {
+    transform: translateX(calc(4 * var(--u))); /* 4 */
+  }
+}
+
+/* ============================================================
+   Tablet (768 to 1199): wider grids, side by side where desktop is
+   ============================================================ */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .careers-hero__image {
+    aspect-ratio: 16 / 9;
+    max-height: calc(440 * var(--u)); /* 440: as the C1 hero image */
+  }
+
+  .career-paths__list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  /* Slide: title + text left, icon right (the desktop halves) */
+  .careers-values__slide {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.7fr);
+    grid-template-rows: auto 1fr;
+    column-gap: calc(24 * var(--u)); /* 24 */
+    min-height: calc(280 * var(--u)); /* 280 */
+  }
+
+  .careers-values__icon {
+    grid-column: 2;
+    grid-row: 1 / 3;
+    height: calc(180 * var(--u)); /* 180 */
+    margin: 0;
+  }
+
+  .careers-values__text {
+    align-self: end;
+    margin-top: calc(24 * var(--u)); /* 24 */
+  }
+
+  /* Text | image (the desktop halves); the image stays in view
+     beside long text */
+  .careers-people__body {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    column-gap: calc(32 * var(--u)); /* 32 */
+  }
+
+  .careers-people__media {
+    position: sticky;
+    top: calc(var(--header-h) + 24 * var(--u)); /* 24 under the bar */
+  }
+
+  /* Job rows: a centred column, one line per row */
+  .careers-jobs,
+  .lp-jobs {
+    padding-inline: calc((100% - 600 * var(--u)) / 2); /* centres 600 */
+  }
+
+  .lp-jobs .careers-jobs__row {
+    display: flex;
+  }
+
+  .lp-jobs__tag {
+    margin: 0 calc(8 * var(--u)) 0 auto; /* 8 + 12 gap to the arrow */
+  }
+
+  .lp-hero__content {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    column-gap: calc(40 * var(--u)); /* 40 */
+  }
+
+  .lp-hero__intro {
+    margin-top: calc(4 * var(--u)); /* 4: level with the title's caps */
+  }
+
+  .lp-overview .svc-overview__heading,
+  .lp-overview .svc-overview__text {
+    margin-top: calc(24 * var(--u)); /* 24 under the rule */
+  }
+
+  /* Card: quote left, photo right (the desktop layout) */
+  .lp-team__panel {
+    grid-template-columns: minmax(0, 1fr) calc(300 * var(--u)); /* 300 */
+    column-gap: calc(16 * var(--u)); /* 16 */
+  }
+
+  .lp-team__image {
+    order: 0;
+    aspect-ratio: 3 / 4;
+  }
+
+  .lp-team__body {
+    padding: calc(10 * var(--u)) 0 calc(4 * var(--u)) calc(8 * var(--u)); /* 10 / 0 / 4 / 8 */
+  }
+
+  .lp-team__quote {
+    max-width: calc(520 * var(--u)); /* 520: readable lines at 1199 */
+  }
+
+  .lp-team__person {
+    margin-top: auto;
+  }
+
+  .job-apply {
+    align-self: flex-start;
+    width: calc(320 * var(--u)); /* 320 */
+  }
+
+  .job-intro__text {
+    max-width: calc(560 * var(--u)); /* 560 */
+  }
+
+  .job-summary__group {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
+    column-gap: calc(40 * var(--u)); /* 40 */
+  }
+
+  .job-summary__list {
+    margin-top: calc(4 * var(--u)); /* 4: level with the heading */
+  }
+
+  .job-cta__list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  /* Three narrow cards at 768: room for a department name on one line */
+  .job-cta__card {
+    padding-inline: calc(14 * var(--u)); /* 14 */
+  }
+
+  .job-cta__link {
+    font-size: calc(15 * var(--u)); /* 15 */
+  }
+}

@@ -23,7 +23,7 @@ $tng_locations = is_array( $tng_locations ) ? array_values( array_filter( $tng_l
 $tng_pros_page = get_page_by_path( 'professionals' );
 $tng_trail     = $tng_pros_page ? array( array( 'Professional', get_permalink( $tng_pros_page ) ) ) : array();
 
-$tng_portrait = tng_img_url( 'portrait', tng_portrait_fallback( $tng_id ), $tng_id );
+$tng_portrait = tng_img_url( 'portrait', tng_portrait_fallback( $tng_id ), $tng_id, 'large' ); // 1024 tall: the originals run to 1 MB
 ?>
 <section class="pro-hero" data-section="pro-hero" data-toggle="show_pro_hero">
 	<?php echo tng_breadcrumbs( $tng_name, $tng_trail ); ?>

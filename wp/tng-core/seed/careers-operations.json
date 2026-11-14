@@ -1,0 +1,91 @@
+[
+ {
+  "block": "acf/path-hero",
+  "prefix": "pth",
+  "data": {
+   "intro": "Our operations professionals collaborate with lawyers to keep Tilleke at the pinnacle of the legal industry in Southeast Asia. With a high level of professionalism and meticulous dedication to our client-focused mission, they are key to the sustainable growth of our firm."
+  }
+ },
+ {
+  "block": "acf/overview",
+  "prefix": "ovw",
+  "data": {
+   "variant": "path",
+   "label": "Overview",
+   "heading": "Our devoted professional staff members are essential to our success.",
+   "text": "<p>Our professional staff are valued assets of our commercial, IP, and litigation groups, and our business support team is charged with ensuring the smooth operation of our firm, allowing attorneys to focus on what they do best—representing clients.</p><p>We are always on the lookout for skilled professionals with exceptional language skills; technical, professional, or scientific expertise; experience with filing and docketing patents and trademarks; practical licensing and registration experience; and every other non-legal function that ensures our firm can deliver value to our clients. Our professional teams work closely with attorneys to deliver superior service to our clients.</p><p>Professionals at Tilleke &amp; Gibbins also manage our firm’s day-to-day business affairs, and we recruit the very best specialists in accounting, administration, client service, facilities, human resources, IT, marketing and business development, knowledge services, translation, and records management.</p>"
+  }
+ },
+ {
+  "block": "acf/careers-people",
+  "prefix": "cpe",
+  "data": {
+   "variant": "path",
+   "label": "Career Development",
+   "heading": "Your development is our development.",
+   "text": "<p>While we recruit the best from a range of industries and top universities, we also promote from within. Many of our business operations teams are led by professionals who built their careers at our firm, and we dedicate significant resources to training our staff on their particular roles and responsibilities, various aspects of our business, and techniques for achieving career success at Tilleke &amp; Gibbins. The skills and expertise they gain allow them to further our business as well as their careers.</p><p>For these reasons and more, we enjoy a very low employee turnover rate. Many of our esteemed professionals have served at our firm for decades.</p>"
+  }
+ },
+ {
+  "block": "acf/team-stories",
+  "prefix": "tms",
+  "data": {
+   "heading": "Hear it from\nour team"
+  },
+  "repeaters": {
+   "stories": [
+    {
+     "role": "Legal Support",
+     "name": "Varitsara Manutat",
+     "position": "Consultant",
+     "quote": "<p>Tilleke has been a wonderful place to start my career. Stepping into the professional world at a company with deep local roots and an expansive international outlook has broadened my horizons while giving me a chance to develop my own professional skills and connections. I really feel like I’ve learned a lot here, and I look forward to a great career in the international community.</p>"
+    },
+    {
+     "role": "IT",
+     "name": "Hai Manh Le",
+     "position": "Information Systems Engineer",
+     "quote": "<p>Working at Tilleke has given me the opportunity to take on responsibilities far beyond daily tech-support matters. For example, I was asked to be deeply involved in project planning and management when our Ho Chi Minh City and Hanoi teams moved to new offices, and I’ve also been involved in the rollout of sophisticated software systems to support our legal work—a really important task with a lot of responsibilities. Tilleke team members at every level, and across all of our offices, work together on challenges and share the satisfaction of tackling such complex, multifaceted projects.</p>"
+    },
+    {
+     "role": "Finance & Accounting",
+     "name": "Suttisak Vunnavittayasing",
+     "position": "Senior Manager, Finance & Accounting",
+     "quote": "<p>Throughout my career, Tilleke has always been dedicated to its people, providing opportunities for learning and professional advancement, and encouraging cross-departmental and cross-office work on internal firm projects. We’re also very flexible, offering great work-life balance. After many years of working in the firm’s head office in Bangkok, my partner’s job was recently relocated to Colombia, and the firm was quick to offer me the chance to work remotely after the relocation. I’m as much a part of the team now as I always have been, thanks to the personalized flexibility offered by the firm.</p>"
+    },
+    {
+     "role": "Legal Translation & Interpretation",
+     "name": "Uruphan Suwanprasop",
+     "position": "Director, Legal Translation & Interpretation",
+     "quote": "<p>Tilleke’s long history means that the organization understands and appreciates the varied, specialized parts that go into making a successful law firm. The working environment is warm and welcoming, and the firm invests in, supports, and recognizes its people by rewarding hard work and providing opportunities for team members in all career paths to progress in their academic and professional capabilities.</p>"
+    }
+   ]
+  },
+  "className": "lp-team--long"
+ },
+ {
+  "block": "acf/path-jobs"
+ },
+ {
+  "block": "acf/more-from",
+  "prefix": "mfr",
+  "data": {
+   "arrows": "1"
+  },
+  "repeaters": {
+   "links": [
+    {
+     "label": "Legal Professionals",
+     "url": "{page:careers/legal-professionals}"
+    },
+    {
+     "label": "Internships",
+     "url": "{page:careers/internships}"
+    },
+    {
+     "label": "All Job Opportunities",
+     "url": "{page:careers/job-opportunities}"
+    }
+   ]
+  }
+ }
+]

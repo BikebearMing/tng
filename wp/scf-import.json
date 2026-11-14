@@ -10,7 +10,38 @@
     "import_date": "",
     "labels": {
       "name": "Insights",
-      "singular_name": "Insight"
+      "singular_name": "Insight",
+      "menu_name": "Insights",
+      "all_items": "All Insights",
+      "add_new": "Add Insight",
+      "add_new_item": "Add Insight",
+      "edit_item": "Edit Insight",
+      "new_item": "New Insight",
+      "view_item": "View Insight",
+      "view_items": "View Insights",
+      "search_items": "Search Insights",
+      "not_found": "No insights found",
+      "not_found_in_trash": "No insights found in Trash",
+      "parent_item_colon": "Parent Insight:",
+      "archives": "Insight archives",
+      "attributes": "Insight attributes",
+      "insert_into_item": "Insert into insight",
+      "uploaded_to_this_item": "Uploaded to this insight",
+      "featured_image": "Featured image",
+      "set_featured_image": "Set featured image",
+      "remove_featured_image": "Remove featured image",
+      "use_featured_image": "Use as featured image",
+      "filter_items_list": "Filter insights list",
+      "filter_by_date": "Filter by date",
+      "items_list_navigation": "Insights list navigation",
+      "items_list": "Insights list",
+      "item_published": "Insight published.",
+      "item_published_privately": "Insight published privately.",
+      "item_reverted_to_draft": "Insight reverted to draft.",
+      "item_scheduled": "Insight scheduled.",
+      "item_updated": "Insight updated.",
+      "item_link": "Insight link",
+      "item_link_description": "A link to a insight."
     },
     "description": "",
     "public": true,
@@ -75,7 +106,38 @@
     "import_date": "",
     "labels": {
       "name": "Professionals",
-      "singular_name": "Professional"
+      "singular_name": "Professional",
+      "menu_name": "Professionals",
+      "all_items": "All Professionals",
+      "add_new": "Add Professional",
+      "add_new_item": "Add Professional",
+      "edit_item": "Edit Professional",
+      "new_item": "New Professional",
+      "view_item": "View Professional",
+      "view_items": "View Professionals",
+      "search_items": "Search Professionals",
+      "not_found": "No professionals found",
+      "not_found_in_trash": "No professionals found in Trash",
+      "parent_item_colon": "Parent Professional:",
+      "archives": "Professional archives",
+      "attributes": "Professional attributes",
+      "insert_into_item": "Insert into professional",
+      "uploaded_to_this_item": "Uploaded to this professional",
+      "featured_image": "Featured image",
+      "set_featured_image": "Set featured image",
+      "remove_featured_image": "Remove featured image",
+      "use_featured_image": "Use as featured image",
+      "filter_items_list": "Filter professionals list",
+      "filter_by_date": "Filter by date",
+      "items_list_navigation": "Professionals list navigation",
+      "items_list": "Professionals list",
+      "item_published": "Professional published.",
+      "item_published_privately": "Professional published privately.",
+      "item_reverted_to_draft": "Professional reverted to draft.",
+      "item_scheduled": "Professional scheduled.",
+      "item_updated": "Professional updated.",
+      "item_link": "Professional link",
+      "item_link_description": "A link to a professional."
     },
     "description": "",
     "public": true,
@@ -137,7 +199,38 @@
     "import_date": "",
     "labels": {
       "name": "Awards",
-      "singular_name": "Award"
+      "singular_name": "Award",
+      "menu_name": "Awards",
+      "all_items": "All Awards",
+      "add_new": "Add Award",
+      "add_new_item": "Add Award",
+      "edit_item": "Edit Award",
+      "new_item": "New Award",
+      "view_item": "View Award",
+      "view_items": "View Awards",
+      "search_items": "Search Awards",
+      "not_found": "No awards found",
+      "not_found_in_trash": "No awards found in Trash",
+      "parent_item_colon": "Parent Award:",
+      "archives": "Award archives",
+      "attributes": "Award attributes",
+      "insert_into_item": "Insert into award",
+      "uploaded_to_this_item": "Uploaded to this award",
+      "featured_image": "Featured image",
+      "set_featured_image": "Set featured image",
+      "remove_featured_image": "Remove featured image",
+      "use_featured_image": "Use as featured image",
+      "filter_items_list": "Filter awards list",
+      "filter_by_date": "Filter by date",
+      "items_list_navigation": "Awards list navigation",
+      "items_list": "Awards list",
+      "item_published": "Award published.",
+      "item_published_privately": "Award published privately.",
+      "item_reverted_to_draft": "Award reverted to draft.",
+      "item_scheduled": "Award scheduled.",
+      "item_updated": "Award updated.",
+      "item_link": "Award link",
+      "item_link_description": "A link to a award."
     },
     "description": "",
     "public": true,
@@ -199,7 +292,38 @@
     "import_date": "",
     "labels": {
       "name": "Jobs",
-      "singular_name": "Job"
+      "singular_name": "Job",
+      "menu_name": "Jobs",
+      "all_items": "All Jobs",
+      "add_new": "Add Job",
+      "add_new_item": "Add Job",
+      "edit_item": "Edit Job",
+      "new_item": "New Job",
+      "view_item": "View Job",
+      "view_items": "View Jobs",
+      "search_items": "Search Jobs",
+      "not_found": "No jobs found",
+      "not_found_in_trash": "No jobs found in Trash",
+      "parent_item_colon": "Parent Job:",
+      "archives": "Job archives",
+      "attributes": "Job attributes",
+      "insert_into_item": "Insert into job",
+      "uploaded_to_this_item": "Uploaded to this job",
+      "featured_image": "Featured image",
+      "set_featured_image": "Set featured image",
+      "remove_featured_image": "Remove featured image",
+      "use_featured_image": "Use as featured image",
+      "filter_items_list": "Filter jobs list",
+      "filter_by_date": "Filter by date",
+      "items_list_navigation": "Jobs list navigation",
+      "items_list": "Jobs list",
+      "item_published": "Job published.",
+      "item_published_privately": "Job published privately.",
+      "item_reverted_to_draft": "Job reverted to draft.",
+      "item_scheduled": "Job scheduled.",
+      "item_updated": "Job updated.",
+      "item_link": "Job link",
+      "item_link_description": "A link to a job."
     },
     "description": "",
     "public": true,
@@ -263,7 +387,26 @@
     "import_date": "",
     "labels": {
       "name": "Industries",
-      "singular_name": "Industry"
+      "singular_name": "Industry",
+      "menu_name": "Industries",
+      "all_items": "All Industries",
+      "edit_item": "Edit Industry",
+      "view_item": "View Industry",
+      "update_item": "Update Industry",
+      "add_new_item": "Add Industry",
+      "new_item_name": "New Industry name",
+      "parent_item": "Parent Industry",
+      "parent_item_colon": "Parent Industry:",
+      "search_items": "Search Industries",
+      "most_used": "Most used",
+      "not_found": "No industries found",
+      "no_terms": "No industries",
+      "filter_by_item": "Filter by industry",
+      "items_list_navigation": "Industries list navigation",
+      "items_list": "Industries list",
+      "back_to_items": "← Back to industries",
+      "item_link": "Industry link",
+      "item_link_description": "A link to a industry."
     },
     "description": "",
     "public": true,
@@ -312,7 +455,26 @@
     "import_date": "",
     "labels": {
       "name": "Practices",
-      "singular_name": "Practice"
+      "singular_name": "Practice",
+      "menu_name": "Practices",
+      "all_items": "All Practices",
+      "edit_item": "Edit Practice",
+      "view_item": "View Practice",
+      "update_item": "Update Practice",
+      "add_new_item": "Add Practice",
+      "new_item_name": "New Practice name",
+      "parent_item": "Parent Practice",
+      "parent_item_colon": "Parent Practice:",
+      "search_items": "Search Practices",
+      "most_used": "Most used",
+      "not_found": "No practices found",
+      "no_terms": "No practices",
+      "filter_by_item": "Filter by practice",
+      "items_list_navigation": "Practices list navigation",
+      "items_list": "Practices list",
+      "back_to_items": "← Back to practices",
+      "item_link": "Practice link",
+      "item_link_description": "A link to a practice."
     },
     "description": "",
     "public": true,
@@ -362,7 +524,26 @@
     "import_date": "",
     "labels": {
       "name": "Locations",
-      "singular_name": "Location"
+      "singular_name": "Location",
+      "menu_name": "Locations",
+      "all_items": "All Locations",
+      "edit_item": "Edit Location",
+      "view_item": "View Location",
+      "update_item": "Update Location",
+      "add_new_item": "Add Location",
+      "new_item_name": "New Location name",
+      "parent_item": "Parent Location",
+      "parent_item_colon": "Parent Location:",
+      "search_items": "Search Locations",
+      "most_used": "Most used",
+      "not_found": "No locations found",
+      "no_terms": "No locations",
+      "filter_by_item": "Filter by location",
+      "items_list_navigation": "Locations list navigation",
+      "items_list": "Locations list",
+      "back_to_items": "← Back to locations",
+      "item_link": "Location link",
+      "item_link_description": "A link to a location."
     },
     "description": "",
     "public": true,
@@ -409,7 +590,26 @@
     "import_date": "",
     "labels": {
       "name": "Positions",
-      "singular_name": "Position"
+      "singular_name": "Position",
+      "menu_name": "Positions",
+      "all_items": "All Positions",
+      "edit_item": "Edit Position",
+      "view_item": "View Position",
+      "update_item": "Update Position",
+      "add_new_item": "Add Position",
+      "new_item_name": "New Position name",
+      "parent_item": "Parent Position",
+      "parent_item_colon": "Parent Position:",
+      "search_items": "Search Positions",
+      "most_used": "Most used",
+      "not_found": "No positions found",
+      "no_terms": "No positions",
+      "filter_by_item": "Filter by position",
+      "items_list_navigation": "Positions list navigation",
+      "items_list": "Positions list",
+      "back_to_items": "← Back to positions",
+      "item_link": "Position link",
+      "item_link_description": "A link to a position."
     },
     "description": "",
     "public": true,
@@ -456,7 +656,26 @@
     "import_date": "",
     "labels": {
       "name": "Languages",
-      "singular_name": "Language"
+      "singular_name": "Language",
+      "menu_name": "Languages",
+      "all_items": "All Languages",
+      "edit_item": "Edit Language",
+      "view_item": "View Language",
+      "update_item": "Update Language",
+      "add_new_item": "Add Language",
+      "new_item_name": "New Language name",
+      "parent_item": "Parent Language",
+      "parent_item_colon": "Parent Language:",
+      "search_items": "Search Languages",
+      "most_used": "Most used",
+      "not_found": "No languages found",
+      "no_terms": "No languages",
+      "filter_by_item": "Filter by language",
+      "items_list_navigation": "Languages list navigation",
+      "items_list": "Languages list",
+      "back_to_items": "← Back to languages",
+      "item_link": "Language link",
+      "item_link_description": "A link to a language."
     },
     "description": "",
     "public": true,
@@ -503,7 +722,26 @@
     "import_date": "",
     "labels": {
       "name": "Insight Categories",
-      "singular_name": "Insight Category"
+      "singular_name": "Insight Category",
+      "menu_name": "Insight Categories",
+      "all_items": "All Insight Categories",
+      "edit_item": "Edit Insight Category",
+      "view_item": "View Insight Category",
+      "update_item": "Update Insight Category",
+      "add_new_item": "Add Insight Category",
+      "new_item_name": "New Insight Category name",
+      "parent_item": "Parent Insight Category",
+      "parent_item_colon": "Parent Insight Category:",
+      "search_items": "Search Insight Categories",
+      "most_used": "Most used",
+      "not_found": "No insight categories found",
+      "no_terms": "No insight categories",
+      "filter_by_item": "Filter by insight category",
+      "items_list_navigation": "Insight Categories list navigation",
+      "items_list": "Insight Categories list",
+      "back_to_items": "← Back to insight categories",
+      "item_link": "Insight Category link",
+      "item_link_description": "A link to a insight category."
     },
     "description": "",
     "public": true,
@@ -559,11 +797,11 @@
       },
       {
         "key": "field_tng_pro_portrait",
-        "label": "Portrait (transparent cutout, 4:5, min 772px wide)",
+        "label": "Portrait (4:5, min 772px wide; a transparent cutout or a photo)",
         "name": "portrait",
         "aria-label": "",
         "type": "image",
-        "instructions": "",
+        "instructions": "Empty = the default silhouette is used.",
         "required": 0,
         "conditional_logic": 0,
         "wrapper": {
@@ -579,7 +817,7 @@
         "max_width": "",
         "max_height": "",
         "max_size": "",
-        "mime_types": "png,webp",
+        "mime_types": "png,webp,jpg,jpeg",
         "preview_size": "medium"
       },
       {
@@ -988,6 +1226,122 @@
     "title": "Insight — Standard",
     "fields": [
       {
+        "key": "field_tng_ins_related_professionals",
+        "label": "Related professionals (authors)",
+        "name": "related_professionals",
+        "aria-label": "",
+        "type": "relationship",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "post_type": [
+          "professional"
+        ],
+        "post_status": [
+          "publish"
+        ],
+        "taxonomy": [],
+        "filters": [
+          "search"
+        ],
+        "return_format": "id",
+        "min": "",
+        "max": "",
+        "elements": "",
+        "bidirectional": 0,
+        "bidirectional_target": []
+      },
+      {
+        "key": "field_tng_ins_former_authors",
+        "label": "Former professionals",
+        "name": "former_authors",
+        "aria-label": "",
+        "type": "textarea",
+        "instructions": "One name per line: people credited on the old site who have no profile here. Shown without a link under Related professionals.",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "",
+        "maxlength": "",
+        "rows": 3,
+        "placeholder": "",
+        "new_lines": ""
+      },
+      {
+        "key": "field_tng_mod_module_report",
+        "label": "PDF (Download full article)",
+        "name": "module_report",
+        "aria-label": "",
+        "type": "file",
+        "instructions": "With a PDF set, a download banner closes the article. Module template: the same PDF is the report in the hero.",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "return_format": "url",
+        "library": "all",
+        "min_size": "",
+        "max_size": "",
+        "mime_types": "pdf"
+      },
+      {
+        "key": "field_tng_mod_download_label",
+        "label": "Download banner label",
+        "name": "download_label",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "Empty = \"Download full article\" (\"Download report\" on the Module template).",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "",
+        "maxlength": "",
+        "placeholder": "",
+        "prepend": "",
+        "append": ""
+      },
+      {
+        "key": "field_tng_mod_download_image",
+        "label": "Download banner image (empty = the default photo; on the Module template the hero background)",
+        "name": "download_image",
+        "aria-label": "",
+        "type": "image",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "return_format": "url",
+        "library": "all",
+        "min_width": "",
+        "min_height": "",
+        "min_size": "",
+        "max_width": "",
+        "max_height": "",
+        "max_size": "",
+        "mime_types": "",
+        "preview_size": "medium"
+      },
+      {
         "key": "field_tng_ins_show_in_hero",
         "label": "Show hero",
         "name": "show_in_hero",
@@ -1066,37 +1420,6 @@
         "placeholder": "",
         "prepend": "",
         "append": ""
-      },
-      {
-        "key": "field_tng_ins_related_professionals",
-        "label": "Related professionals",
-        "name": "related_professionals",
-        "aria-label": "",
-        "type": "relationship",
-        "instructions": "",
-        "required": 0,
-        "conditional_logic": 0,
-        "wrapper": {
-          "width": "",
-          "class": "",
-          "id": ""
-        },
-        "post_type": [
-          "professional"
-        ],
-        "post_status": [
-          ""
-        ],
-        "taxonomy": [],
-        "filters": [
-          "search"
-        ],
-        "return_format": "id",
-        "min": "",
-        "max": "",
-        "elements": "",
-        "bidirectional": 0,
-        "bidirectional_target": []
       }
     ],
     "location": [
@@ -1110,6 +1433,64 @@
     ],
     "menu_order": 0,
     "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0
+  },
+  {
+    "key": "group_tng_language",
+    "title": "Language",
+    "fields": [
+      {
+        "key": "field_tng_lng__tng_lang",
+        "label": "Language",
+        "name": "_tng_lang",
+        "aria-label": "",
+        "type": "select",
+        "instructions": "Japanese and Chinese posts stay out of the English lists (Home, Insights, Awards, service and people pages). They keep their own page; Japanese / Chinese insights show on the Japan / China Desk pages.",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "choices": {
+          "en": "English",
+          "ja": "Japanese",
+          "zh": "Chinese"
+        },
+        "default_value": "en",
+        "allow_null": 0,
+        "multiple": 0,
+        "ui": 0,
+        "return_format": "value",
+        "ajax": 0,
+        "placeholder": ""
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "post_type",
+          "operator": "==",
+          "value": "insight"
+        }
+      ],
+      [
+        {
+          "param": "post_type",
+          "operator": "==",
+          "value": "award"
+        }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "side",
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
@@ -1136,7 +1517,7 @@
           "class": "",
           "id": ""
         },
-        "message": "These fields are used when the post is assigned the \"Insight — Module\" template.",
+        "message": "Shown only on insights set to the \"Insight — Module\" template. The report PDF and the download banner label are in the \"Insight — Standard\" box.",
         "new_lines": "wpautop",
         "esc_html": 0
       },
@@ -1183,7 +1564,7 @@
         "name": "module_background",
         "aria-label": "",
         "type": "image",
-        "instructions": "",
+        "instructions": "Empty = the featured image, else the default image.",
         "required": 0,
         "conditional_logic": 0,
         "wrapper": {
@@ -1221,26 +1602,6 @@
         "rows": 3,
         "placeholder": "",
         "new_lines": ""
-      },
-      {
-        "key": "field_tng_mod_module_report",
-        "label": "Report (PDF)",
-        "name": "module_report",
-        "aria-label": "",
-        "type": "file",
-        "instructions": "",
-        "required": 0,
-        "conditional_logic": 0,
-        "wrapper": {
-          "width": "",
-          "class": "",
-          "id": ""
-        },
-        "return_format": "url",
-        "library": "all",
-        "min_size": "",
-        "max_size": "",
-        "mime_types": "pdf"
       },
       {
         "key": "field_tng_mod_module_report_label",
@@ -1660,51 +2021,6 @@
         "ui_off_text": ""
       },
       {
-        "key": "field_tng_mod_download_label",
-        "label": "Download banner label",
-        "name": "download_label",
-        "aria-label": "",
-        "type": "text",
-        "instructions": "",
-        "required": 0,
-        "conditional_logic": 0,
-        "wrapper": {
-          "width": "",
-          "class": "",
-          "id": ""
-        },
-        "default_value": "Download report",
-        "maxlength": "",
-        "placeholder": "",
-        "prepend": "",
-        "append": ""
-      },
-      {
-        "key": "field_tng_mod_download_image",
-        "label": "Download banner image (default: hero background)",
-        "name": "download_image",
-        "aria-label": "",
-        "type": "image",
-        "instructions": "",
-        "required": 0,
-        "conditional_logic": 0,
-        "wrapper": {
-          "width": "",
-          "class": "",
-          "id": ""
-        },
-        "return_format": "url",
-        "library": "all",
-        "min_width": "",
-        "min_height": "",
-        "min_size": "",
-        "max_width": "",
-        "max_height": "",
-        "max_size": "",
-        "mime_types": "",
-        "preview_size": "medium"
-      },
-      {
         "key": "field_tng_mod_show_module_share",
         "label": "Show share row",
         "name": "show_module_share",
@@ -1822,6 +2138,11 @@
           "param": "post_type",
           "operator": "==",
           "value": "insight"
+        },
+        {
+          "param": "post_template",
+          "operator": "==",
+          "value": "single-insight-module"
         }
       ]
     ],
@@ -1857,7 +2178,7 @@
           "professional"
         ],
         "post_status": [
-          ""
+          "publish"
         ],
         "taxonomy": [],
         "filters": [
@@ -1869,6 +2190,26 @@
         "elements": "",
         "bidirectional": 0,
         "bidirectional_target": []
+      },
+      {
+        "key": "field_tng_awd_former_authors",
+        "label": "Former professionals",
+        "name": "former_authors",
+        "aria-label": "",
+        "type": "textarea",
+        "instructions": "One name per line: people credited on the old site who have no profile here. Shown without a link under Related professionals.",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "",
+        "maxlength": "",
+        "rows": 3,
+        "placeholder": "",
+        "new_lines": ""
       }
     ],
     "location": [
@@ -2332,7 +2673,7 @@
         "name": "image",
         "aria-label": "",
         "type": "image",
-        "instructions": "",
+        "instructions": "Empty = the default image is used.",
         "required": 0,
         "conditional_logic": 0,
         "wrapper": {
@@ -2385,7 +2726,7 @@
           "class": "",
           "id": ""
         },
-        "message": "Office details below are used on the Contact page. They apply to city terms (children of a country).",
+        "message": "Office details below apply to city offices (children of a country); leave them empty on a country. Used on the Contact page and the country page.",
         "new_lines": "wpautop",
         "esc_html": 0
       },
@@ -2395,7 +2736,7 @@
         "name": "office_name",
         "aria-label": "",
         "type": "text",
-        "instructions": "",
+        "instructions": "Empty = \"Tilleke & Gibbins International Ltd.\"",
         "required": 0,
         "conditional_logic": 0,
         "wrapper": {
@@ -2520,7 +2861,7 @@
           "class": "",
           "id": ""
         },
-        "message": "Used on the country page (/location/<country>/). City terms redirect to their country page; the hero and the office strip show the first city office under the country.",
+        "message": "Used on the country page (/location/&lt;country&gt;/). City terms redirect to their country page; the hero and the office strip show the first city office under the country.",
         "new_lines": "wpautop",
         "esc_html": 0
       },
@@ -2530,7 +2871,7 @@
         "name": "hero_image",
         "aria-label": "",
         "type": "image",
-        "instructions": "",
+        "instructions": "Empty = the default image is used.",
         "required": 0,
         "conditional_logic": 0,
         "wrapper": {
@@ -2901,7 +3242,7 @@
         "name": "hero_image",
         "aria-label": "",
         "type": "image",
-        "instructions": "",
+        "instructions": "Empty = the default image is used.",
         "required": 0,
         "conditional_logic": 0,
         "wrapper": {
@@ -2987,7 +3328,7 @@
               "professional"
             ],
             "post_status": [
-              ""
+              "publish"
             ],
             "taxonomy": [],
             "filters": [
@@ -3181,7 +3522,7 @@
         "name": "card_image",
         "aria-label": "",
         "type": "image",
-        "instructions": "",
+        "instructions": "Empty = the default image is used.",
         "required": 0,
         "conditional_logic": 0,
         "wrapper": {
@@ -3514,7 +3855,7 @@
         "name": "top_links",
         "aria-label": "",
         "type": "repeater",
-        "instructions": "",
+        "instructions": "Leave empty and the default links come back (About, Careers, Contact). A link to a page with published child pages gets a small dropdown of them, in their order (Pages → Quick Edit → Order).",
         "required": 0,
         "conditional_logic": 0,
         "wrapper": {
@@ -3749,7 +4090,7 @@
         "name": "social_links",
         "aria-label": "",
         "type": "repeater",
-        "instructions": "",
+        "instructions": "Leave empty and the default links come back (it cannot be blanked out from here).",
         "required": 0,
         "conditional_logic": 0,
         "wrapper": {
@@ -3862,7 +4203,7 @@
         "name": "networks",
         "aria-label": "",
         "type": "repeater",
-        "instructions": "",
+        "instructions": "Leave empty and the three default network logos come back (it cannot be blanked out from here).",
         "required": 0,
         "conditional_logic": 0,
         "wrapper": {
@@ -3982,7 +4323,7 @@
         "name": "quick_links_1",
         "aria-label": "",
         "type": "repeater",
-        "instructions": "",
+        "instructions": "Leave empty and the default links come back (it cannot be blanked out from here).",
         "required": 0,
         "conditional_logic": 0,
         "wrapper": {
@@ -4048,7 +4389,7 @@
         "name": "quick_links_2",
         "aria-label": "",
         "type": "repeater",
-        "instructions": "",
+        "instructions": "Leave empty and the default links come back (it cannot be blanked out from here).",
         "required": 0,
         "conditional_logic": 0,
         "wrapper": {
@@ -4134,7 +4475,7 @@
         "name": "legal_links",
         "aria-label": "",
         "type": "repeater",
-        "instructions": "",
+        "instructions": "Leave empty and the default links come back (it cannot be blanked out from here).",
         "required": 0,
         "conditional_logic": 0,
         "wrapper": {
@@ -4224,7 +4565,7 @@
         "name": "show_featured_banner",
         "aria-label": "",
         "type": "true_false",
-        "instructions": "",
+        "instructions": "Clearing a field brings its default back; switch this off to hide the section.",
         "required": 0,
         "conditional_logic": 0,
         "wrapper": {
@@ -4372,7 +4713,7 @@
         "name": "show_intro_stats",
         "aria-label": "",
         "type": "true_false",
-        "instructions": "",
+        "instructions": "Clearing a field brings its default back; switch this off to hide the section.",
         "required": 0,
         "conditional_logic": 0,
         "wrapper": {
@@ -4652,7 +4993,7 @@
         "name": "show_insights",
         "aria-label": "",
         "type": "true_false",
-        "instructions": "",
+        "instructions": "Clearing a field brings its default back; switch this off to hide the section.",
         "required": 0,
         "conditional_logic": 0,
         "wrapper": {
@@ -4762,7 +5103,7 @@
         "name": "show_careers",
         "aria-label": "",
         "type": "true_false",
-        "instructions": "",
+        "instructions": "Clearing a field brings its default back; switch this off to hide the section.",
         "required": 0,
         "conditional_logic": 0,
         "wrapper": {
@@ -4961,7 +5302,7 @@
         "name": "show_awards",
         "aria-label": "",
         "type": "true_false",
-        "instructions": "",
+        "instructions": "Clearing a field brings its default back; switch this off to hide the section.",
         "required": 0,
         "conditional_logic": 0,
         "wrapper": {
@@ -5170,7 +5511,7 @@
         "name": "show_page_hero",
         "aria-label": "",
         "type": "true_false",
-        "instructions": "",
+        "instructions": "Clearing a field brings its default back; switch this off to hide the section.",
         "required": 0,
         "conditional_logic": 0,
         "wrapper": {
@@ -5274,7 +5615,7 @@
         "name": "show_pro_filter",
         "aria-label": "",
         "type": "true_false",
-        "instructions": "",
+        "instructions": "Clearing a field brings its default back; switch this off to hide the section.",
         "required": 0,
         "conditional_logic": 0,
         "wrapper": {
@@ -5466,7 +5807,7 @@
         "name": "show_careers_hero",
         "aria-label": "",
         "type": "true_false",
-        "instructions": "",
+        "instructions": "Clearing a field brings its default back; switch this off to hide the section.",
         "required": 0,
         "conditional_logic": 0,
         "wrapper": {
@@ -5566,7 +5907,7 @@
         "name": "image",
         "aria-label": "",
         "type": "image",
-        "instructions": "",
+        "instructions": "Empty = the default image is used.",
         "required": 0,
         "conditional_logic": 0,
         "wrapper": {
@@ -5615,7 +5956,7 @@
         "name": "show_career_paths",
         "aria-label": "",
         "type": "true_false",
-        "instructions": "",
+        "instructions": "Clearing a field brings its default back; switch this off to hide the section.",
         "required": 0,
         "conditional_logic": 0,
         "wrapper": {
@@ -5746,7 +6087,7 @@
         "name": "show_careers_values",
         "aria-label": "",
         "type": "true_false",
-        "instructions": "",
+        "instructions": "Clearing a field brings its default back; switch this off to hide the section.",
         "required": 0,
         "conditional_logic": 0,
         "wrapper": {
@@ -5850,7 +6191,7 @@
             "name": "icon",
             "aria-label": "",
             "type": "image",
-            "instructions": "",
+            "instructions": "Empty = the default image is used.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -5902,7 +6243,7 @@
         "name": "show_careers_people",
         "aria-label": "",
         "type": "true_false",
-        "instructions": "",
+        "instructions": "Clearing a field brings its default back; switch this off to hide the section.",
         "required": 0,
         "conditional_logic": 0,
         "wrapper": {
@@ -5982,7 +6323,7 @@
         "name": "image",
         "aria-label": "",
         "type": "image",
-        "instructions": "",
+        "instructions": "Empty = the default image is used.",
         "required": 0,
         "conditional_logic": 0,
         "wrapper": {
@@ -6057,7 +6398,7 @@
         "name": "show_careers_cta",
         "aria-label": "",
         "type": "true_false",
-        "instructions": "",
+        "instructions": "Clearing a field brings its default back; switch this off to hide the section.",
         "required": 0,
         "conditional_logic": 0,
         "wrapper": {
@@ -6070,6 +6411,26 @@
         "ui": 1,
         "ui_on_text": "",
         "ui_off_text": ""
+      },
+      {
+        "key": "field_tng_cct_label",
+        "label": "Label over the heading (optional)",
+        "name": "label",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "",
+        "maxlength": "",
+        "placeholder": "",
+        "prepend": "",
+        "append": ""
       },
       {
         "key": "field_tng_cct_heading",
@@ -6086,6 +6447,26 @@
           "id": ""
         },
         "default_value": "Curious about our recruitment process?",
+        "maxlength": "",
+        "placeholder": "",
+        "prepend": "",
+        "append": ""
+      },
+      {
+        "key": "field_tng_cct_text",
+        "label": "Text under the heading (optional)",
+        "name": "text",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "",
         "maxlength": "",
         "placeholder": "",
         "prepend": "",
@@ -6130,6 +6511,24 @@
         "placeholder": "",
         "prepend": "",
         "append": ""
+      },
+      {
+        "key": "field_tng_cct_class_note",
+        "label": "",
+        "name": "class_note",
+        "aria-label": "",
+        "type": "message",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "message": "Japan / China Desk \"about\" panel: Additional CSS class \"desk-about\". Internships apply panel: \"lp-apply\". (Block sidebar → Advanced → Additional CSS class. Type it again if the block is deleted and added back.)",
+        "new_lines": "wpautop",
+        "esc_html": 0
       }
     ],
     "location": [
@@ -6161,7 +6560,7 @@
         "name": "show_careers_jobs",
         "aria-label": "",
         "type": "true_false",
-        "instructions": "",
+        "instructions": "Clearing a field brings its default back; switch this off to hide the section.",
         "required": 0,
         "conditional_logic": 0,
         "wrapper": {
@@ -6285,7 +6684,7 @@
         "name": "show_about_hero",
         "aria-label": "",
         "type": "true_false",
-        "instructions": "",
+        "instructions": "Clearing a field brings its default back; switch this off to hide the section.",
         "required": 0,
         "conditional_logic": 0,
         "wrapper": {
@@ -6345,7 +6744,7 @@
         "name": "image",
         "aria-label": "",
         "type": "image",
-        "instructions": "",
+        "instructions": "Empty = the default image is used.",
         "required": 0,
         "conditional_logic": 0,
         "wrapper": {
@@ -6394,7 +6793,7 @@
         "name": "show_page_tabs",
         "aria-label": "",
         "type": "true_false",
-        "instructions": "",
+        "instructions": "Clearing a field brings its default back; switch this off to hide the section.",
         "required": 0,
         "conditional_logic": 0,
         "wrapper": {
@@ -6457,7 +6856,7 @@
             "name": "anchor",
             "aria-label": "",
             "type": "text",
-            "instructions": "",
+            "instructions": "The anchor of the section the tab jumps to, without \"#\". Fixed anchors: Our numbers = numbers, Vision and mission = vision, Creed = creed, Textile gallery = gallery, Museum case studies = case-studies, Timeline rows = timeline, Experience list = experience, Insights in this language = insights, Services index = industries or practices, Job opportunities = job-opportunities, all open jobs = open-positions. Overview blocks: whatever is typed in their \"Anchor\" field. A tab whose section is not on the page is hidden.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -6504,7 +6903,7 @@
         "name": "show_overview",
         "aria-label": "",
         "type": "true_false",
-        "instructions": "",
+        "instructions": "Clearing a field brings its default back; switch this off to hide the section.",
         "required": 0,
         "conditional_logic": 0,
         "wrapper": {
@@ -6710,6 +7109,24 @@
         "max_size": "",
         "mime_types": "",
         "preview_size": "medium"
+      },
+      {
+        "key": "field_tng_ovw_class_note",
+        "label": "",
+        "name": "class_note",
+        "aria-label": "",
+        "type": "message",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "message": "History page: the top overview needs the Additional CSS class \"hist-overview\", the book section \"hist-book\". (Block sidebar → Advanced → Additional CSS class. Type it again if the block is deleted and added back.)",
+        "new_lines": "wpautop",
+        "esc_html": 0
       }
     ],
     "location": [
@@ -6741,7 +7158,7 @@
         "name": "show_about_values",
         "aria-label": "",
         "type": "true_false",
-        "instructions": "",
+        "instructions": "Clearing a field brings its default back; switch this off to hide the section.",
         "required": 0,
         "conditional_logic": 0,
         "wrapper": {
@@ -6827,7 +7244,7 @@
         "name": "image",
         "aria-label": "",
         "type": "image",
-        "instructions": "",
+        "instructions": "Empty = the default image is used.",
         "required": 0,
         "conditional_logic": 0,
         "wrapper": {
@@ -6876,7 +7293,7 @@
         "name": "show_about_numbers",
         "aria-label": "",
         "type": "true_false",
-        "instructions": "",
+        "instructions": "Clearing a field brings its default back; switch this off to hide the section.",
         "required": 0,
         "conditional_logic": 0,
         "wrapper": {
@@ -7011,7 +7428,7 @@
         "name": "show_about_vision",
         "aria-label": "",
         "type": "true_false",
-        "instructions": "",
+        "instructions": "Clearing a field brings its default back; switch this off to hide the section.",
         "required": 0,
         "conditional_logic": 0,
         "wrapper": {
@@ -7095,7 +7512,7 @@
             "name": "image",
             "aria-label": "",
             "type": "image",
-            "instructions": "",
+            "instructions": "Empty = the default image is used.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -7147,7 +7564,7 @@
         "name": "show_about_creed",
         "aria-label": "",
         "type": "true_false",
-        "instructions": "",
+        "instructions": "Clearing a field brings its default back; switch this off to hide the section.",
         "required": 0,
         "conditional_logic": 0,
         "wrapper": {
@@ -7277,7 +7694,7 @@
         "name": "show_more_from",
         "aria-label": "",
         "type": "true_false",
-        "instructions": "",
+        "instructions": "Clearing a field brings its default back; switch this off to hide the section.",
         "required": 0,
         "conditional_logic": 0,
         "wrapper": {
@@ -7427,7 +7844,7 @@
         "name": "show_archive_hero",
         "aria-label": "",
         "type": "true_false",
-        "instructions": "",
+        "instructions": "Clearing a field brings its default back; switch this off to hide the section.",
         "required": 0,
         "conditional_logic": 0,
         "wrapper": {
@@ -7527,7 +7944,7 @@
         "name": "image",
         "aria-label": "",
         "type": "image",
-        "instructions": "",
+        "instructions": "Empty = the default image is used.",
         "required": 0,
         "conditional_logic": 0,
         "wrapper": {
@@ -7576,7 +7993,7 @@
         "name": "show_archive_featured",
         "aria-label": "",
         "type": "true_false",
-        "instructions": "",
+        "instructions": "Clearing a field brings its default back; switch this off to hide the section.",
         "required": 0,
         "conditional_logic": 0,
         "wrapper": {
@@ -7723,7 +8140,7 @@
           "class": "",
           "id": ""
         },
-        "message": "Search by name and search by professional filter the grid below (the page reloads with the filter; chips show what is active). The facet dropdowns and the date picker await their design.",
+        "message": "Filters the archive grid below: search by name (titles, then text), search by professional (type-ahead), date (year), resources (insight categories), sort, industries, practices, locations. The lists come from the terms the posts use; nothing to set here. Every filter is in the page URL, so a filtered view can be shared.",
         "new_lines": "wpautop",
         "esc_html": 0
       }
@@ -7869,7 +8286,7 @@
         "name": "show_path_hero",
         "aria-label": "",
         "type": "true_false",
-        "instructions": "",
+        "instructions": "Clearing a field brings its default back; switch this off to hide the section.",
         "required": 0,
         "conditional_logic": 0,
         "wrapper": {
@@ -7953,7 +8370,7 @@
         "name": "show_team_stories",
         "aria-label": "",
         "type": "true_false",
-        "instructions": "",
+        "instructions": "Clearing a field brings its default back; switch this off to hide the section.",
         "required": 0,
         "conditional_logic": 0,
         "wrapper": {
@@ -8124,7 +8541,7 @@
             "name": "image",
             "aria-label": "",
             "type": "image",
-            "instructions": "",
+            "instructions": "Empty = the default image is used.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -8176,7 +8593,7 @@
         "name": "show_path_jobs",
         "aria-label": "",
         "type": "true_false",
-        "instructions": "",
+        "instructions": "Clearing a field brings its default back; switch this off to hide the section.",
         "required": 0,
         "conditional_logic": 0,
         "wrapper": {
@@ -8278,7 +8695,7 @@
         "name": "show_info_hero",
         "aria-label": "",
         "type": "true_false",
-        "instructions": "",
+        "instructions": "Clearing a field brings its default back; switch this off to hide the section.",
         "required": 0,
         "conditional_logic": 0,
         "wrapper": {
@@ -8413,6 +8830,93 @@
         "append": ""
       },
       {
+        "key": "field_tng_ifh_contacts",
+        "label": "Further contacts (optional; the desks)",
+        "name": "contacts",
+        "aria-label": "",
+        "type": "repeater",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "layout": "block",
+        "pagination": 0,
+        "min": 0,
+        "max": 0,
+        "collapsed": "",
+        "button_label": "Add contact",
+        "rows_per_page": 20,
+        "sub_fields": [
+          {
+            "key": "field_tng_ifh_contacts_contact_name",
+            "label": "Name",
+            "name": "contact_name",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+              "width": "",
+              "class": "",
+              "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "parent_repeater": "field_tng_ifh_contacts"
+          },
+          {
+            "key": "field_tng_ifh_contacts_phones",
+            "label": "Phones (one per line)",
+            "name": "phones",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+              "width": "",
+              "class": "",
+              "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "rows": 2,
+            "placeholder": "",
+            "new_lines": "",
+            "parent_repeater": "field_tng_ifh_contacts"
+          },
+          {
+            "key": "field_tng_ifh_contacts_email",
+            "label": "Email",
+            "name": "email",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+              "width": "",
+              "class": "",
+              "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "parent_repeater": "field_tng_ifh_contacts"
+          }
+        ]
+      },
+      {
         "key": "field_tng_ifh_image",
         "label": "Image (min 1394×942; empty = bundled photo for this page)",
         "name": "image",
@@ -8436,6 +8940,24 @@
         "max_size": "",
         "mime_types": "",
         "preview_size": "medium"
+      },
+      {
+        "key": "field_tng_ifh_class_note",
+        "label": "",
+        "name": "class_note",
+        "aria-label": "",
+        "type": "message",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "message": "Japan / China Desk hero: Additional CSS class \"desk-hero\". (Block sidebar → Advanced → Additional CSS class. Type it again if the block is deleted and added back.)",
+        "new_lines": "wpautop",
+        "esc_html": 0
       }
     ],
     "location": [
@@ -8467,7 +8989,7 @@
         "name": "show_museum_audiences",
         "aria-label": "",
         "type": "true_false",
-        "instructions": "",
+        "instructions": "Clearing a field brings its default back; switch this off to hide the section.",
         "required": 0,
         "conditional_logic": 0,
         "wrapper": {
@@ -8577,7 +9099,7 @@
         "name": "show_museum_collection",
         "aria-label": "",
         "type": "true_false",
-        "instructions": "",
+        "instructions": "Clearing a field brings its default back; switch this off to hide the section.",
         "required": 0,
         "conditional_logic": 0,
         "wrapper": {
@@ -8610,6 +9132,26 @@
         "placeholder": "",
         "prepend": "",
         "append": ""
+      },
+      {
+        "key": "field_tng_mco_heading",
+        "label": "Heading (optional; replaces the quote, e.g. Textile Collection \"History\")",
+        "name": "heading",
+        "aria-label": "",
+        "type": "textarea",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "",
+        "maxlength": "",
+        "rows": 2,
+        "placeholder": "",
+        "new_lines": ""
       },
       {
         "key": "field_tng_mco_quote",
@@ -8726,7 +9268,7 @@
         "name": "show_museum_cases",
         "aria-label": "",
         "type": "true_false",
-        "instructions": "",
+        "instructions": "Clearing a field brings its default back; switch this off to hide the section.",
         "required": 0,
         "conditional_logic": 0,
         "wrapper": {
@@ -8905,6 +9447,1273 @@
           "param": "block",
           "operator": "==",
           "value": "acf/mus-cases"
+        }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0
+  },
+  {
+    "key": "group_tng_block_tex_gallery",
+    "title": "Block: Textile Collection gallery",
+    "fields": [
+      {
+        "key": "field_tng_txg_show_textile_gallery",
+        "label": "Show section",
+        "name": "show_textile_gallery",
+        "aria-label": "",
+        "type": "true_false",
+        "instructions": "Clearing a field brings its default back; switch this off to hide the section.",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "message": "",
+        "default_value": 1,
+        "ui": 1,
+        "ui_on_text": "",
+        "ui_off_text": ""
+      },
+      {
+        "key": "field_tng_txg_label",
+        "label": "Label",
+        "name": "label",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "Tilleke & Gibbins’ Textile Collection",
+        "maxlength": "",
+        "placeholder": "",
+        "prepend": "",
+        "append": ""
+      },
+      {
+        "key": "field_tng_txg_images",
+        "label": "Images (3 per row, square crops, min 548×548; empty = the bundled photos)",
+        "name": "images",
+        "aria-label": "",
+        "type": "gallery",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "return_format": "url",
+        "library": "all",
+        "min": "",
+        "max": "",
+        "min_width": "",
+        "min_height": "",
+        "min_size": "",
+        "max_width": "",
+        "max_height": "",
+        "max_size": "",
+        "mime_types": "",
+        "insert": "append",
+        "preview_size": "medium"
+      },
+      {
+        "key": "field_tng_txg_socials",
+        "label": "Social links",
+        "name": "socials",
+        "aria-label": "",
+        "type": "repeater",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "layout": "block",
+        "pagination": 0,
+        "min": 0,
+        "max": 0,
+        "collapsed": "",
+        "button_label": "Add social link",
+        "rows_per_page": 20,
+        "sub_fields": [
+          {
+            "key": "field_tng_txg_socials_network",
+            "label": "Network",
+            "name": "network",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+              "width": "",
+              "class": "",
+              "id": ""
+            },
+            "choices": {
+              "instagram": "Instagram",
+              "facebook": "Facebook",
+              "x": "X",
+              "linkedin": "LinkedIn",
+              "youtube": "YouTube"
+            },
+            "default_value": "instagram",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": "",
+            "parent_repeater": "field_tng_txg_socials"
+          },
+          {
+            "key": "field_tng_txg_socials_url",
+            "label": "URL (empty = not shown)",
+            "name": "url",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+              "width": "",
+              "class": "",
+              "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "parent_repeater": "field_tng_txg_socials"
+          }
+        ]
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "block",
+          "operator": "==",
+          "value": "acf/tex-gallery"
+        }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0
+  },
+  {
+    "key": "group_tng_block_job_list",
+    "title": "Block: Job opportunities (all open jobs)",
+    "fields": [
+      {
+        "key": "field_tng_jbl_show_job_list",
+        "label": "Show section",
+        "name": "show_job_list",
+        "aria-label": "",
+        "type": "true_false",
+        "instructions": "Clearing a field brings its default back; switch this off to hide the section.",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "message": "",
+        "default_value": 1,
+        "ui": 1,
+        "ui_on_text": "",
+        "ui_off_text": ""
+      },
+      {
+        "key": "field_tng_jbl_label",
+        "label": "Label",
+        "name": "label",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "See Where You Fit in",
+        "maxlength": "",
+        "placeholder": "",
+        "prepend": "",
+        "append": ""
+      },
+      {
+        "key": "field_tng_jbl_heading",
+        "label": "Heading",
+        "name": "heading",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "Open Positions",
+        "maxlength": "",
+        "placeholder": "",
+        "prepend": "",
+        "append": ""
+      },
+      {
+        "key": "field_tng_jbl_empty_text",
+        "label": "Text when there are no open jobs",
+        "name": "empty_text",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "There are no open positions right now. Please check back soon.",
+        "maxlength": "",
+        "placeholder": "",
+        "prepend": "",
+        "append": ""
+      },
+      {
+        "key": "field_tng_jbl_note",
+        "label": "",
+        "name": "note",
+        "aria-label": "",
+        "type": "message",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "message": "Lists every Job post A–Z with country filter pills (All + each country with open jobs). The Careers page country rows, its hero / \"View all\" links and each job's \"Back to Job Opportunities\" link here.",
+        "new_lines": "wpautop",
+        "esc_html": 0
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "block",
+          "operator": "==",
+          "value": "acf/job-list"
+        }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0
+  },
+  {
+    "key": "group_tng_text_page",
+    "title": "Text page",
+    "fields": [
+      {
+        "key": "field_tng_txp_nav_label",
+        "label": "Label in the \"Legal information\" menu (empty = page title)",
+        "name": "nav_label",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "",
+        "maxlength": "",
+        "placeholder": "",
+        "prepend": "",
+        "append": ""
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "page_template",
+          "operator": "==",
+          "value": "tng-text"
+        }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0
+  },
+  {
+    "key": "group_tng_block_text_groups",
+    "title": "Block: Text groups (heading | text rows)",
+    "fields": [
+      {
+        "key": "field_tng_tgr_show_text_groups",
+        "label": "Show section",
+        "name": "show_text_groups",
+        "aria-label": "",
+        "type": "true_false",
+        "instructions": "Clearing a field brings its default back; switch this off to hide the section.",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "message": "",
+        "default_value": 1,
+        "ui": 1,
+        "ui_on_text": "",
+        "ui_off_text": ""
+      },
+      {
+        "key": "field_tng_tgr_label",
+        "label": "Label",
+        "name": "label",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "",
+        "maxlength": "",
+        "placeholder": "",
+        "prepend": "",
+        "append": ""
+      },
+      {
+        "key": "field_tng_tgr_groups",
+        "label": "Groups",
+        "name": "groups",
+        "aria-label": "",
+        "type": "repeater",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "layout": "block",
+        "pagination": 0,
+        "min": 0,
+        "max": 0,
+        "collapsed": "",
+        "button_label": "Add group",
+        "rows_per_page": 20,
+        "sub_fields": [
+          {
+            "key": "field_tng_tgr_groups_heading",
+            "label": "Heading (empty = the professional's name)",
+            "name": "heading",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+              "width": "",
+              "class": "",
+              "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "parent_repeater": "field_tng_tgr_groups"
+          },
+          {
+            "key": "field_tng_tgr_groups_professional",
+            "label": "Professional (optional: the heading links to them)",
+            "name": "professional",
+            "aria-label": "",
+            "type": "post_object",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+              "width": "",
+              "class": "",
+              "id": ""
+            },
+            "post_type": [
+              "professional"
+            ],
+            "post_status": [
+              "publish"
+            ],
+            "taxonomy": [],
+            "return_format": "id",
+            "multiple": 0,
+            "allow_null": 1,
+            "bidirectional": 0,
+            "ui": 1,
+            "bidirectional_target": [],
+            "parent_repeater": "field_tng_tgr_groups"
+          },
+          {
+            "key": "field_tng_tgr_groups_position",
+            "label": "Position under the heading (optional)",
+            "name": "position",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+              "width": "",
+              "class": "",
+              "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "parent_repeater": "field_tng_tgr_groups"
+          },
+          {
+            "key": "field_tng_tgr_groups_text",
+            "label": "Text",
+            "name": "text",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+              "width": "",
+              "class": "",
+              "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 0,
+            "delay": 0,
+            "parent_repeater": "field_tng_tgr_groups"
+          }
+        ]
+      },
+      {
+        "key": "field_tng_tgr_note",
+        "label": "",
+        "name": "note",
+        "aria-label": "",
+        "type": "message",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "message": "Style: on Internships this block needs the Additional CSS class \"lp-programs\"; on the Japan / China Desk key contacts \"desk-contacts\". (Block sidebar → Advanced → Additional CSS class. Type it again if the block is deleted and added back.)",
+        "new_lines": "wpautop",
+        "esc_html": 0
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "block",
+          "operator": "==",
+          "value": "acf/text-groups"
+        }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0
+  },
+  {
+    "key": "group_tng_block_rows",
+    "title": "Block: Numbered rows (steps / timeline)",
+    "fields": [
+      {
+        "key": "field_tng_rws_show_rows",
+        "label": "Show section",
+        "name": "show_rows",
+        "aria-label": "",
+        "type": "true_false",
+        "instructions": "Clearing a field brings its default back; switch this off to hide the section.",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "message": "",
+        "default_value": 1,
+        "ui": 1,
+        "ui_on_text": "",
+        "ui_off_text": ""
+      },
+      {
+        "key": "field_tng_rws_variant",
+        "label": "Style",
+        "name": "variant",
+        "aria-label": "",
+        "type": "select",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "choices": {
+          "steps": "Steps (numbered 01, 02 …)",
+          "timeline": "Timeline (a year per row)"
+        },
+        "default_value": "steps",
+        "allow_null": 0,
+        "multiple": 0,
+        "ui": 0,
+        "return_format": "value",
+        "ajax": 0,
+        "placeholder": ""
+      },
+      {
+        "key": "field_tng_rws_heading",
+        "label": "Heading",
+        "name": "heading",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "",
+        "maxlength": "",
+        "placeholder": "",
+        "prepend": "",
+        "append": ""
+      },
+      {
+        "key": "field_tng_rws_rows",
+        "label": "Rows",
+        "name": "rows",
+        "aria-label": "",
+        "type": "repeater",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "layout": "block",
+        "pagination": 0,
+        "min": 0,
+        "max": 0,
+        "collapsed": "",
+        "button_label": "Add row",
+        "rows_per_page": 20,
+        "sub_fields": [
+          {
+            "key": "field_tng_rws_rows_number",
+            "label": "Year (timeline) or number (empty = row order)",
+            "name": "number",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+              "width": "",
+              "class": "",
+              "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "parent_repeater": "field_tng_rws_rows"
+          },
+          {
+            "key": "field_tng_rws_rows_title",
+            "label": "Title (line breaks kept)",
+            "name": "title",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+              "width": "",
+              "class": "",
+              "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "rows": 2,
+            "placeholder": "",
+            "new_lines": "br",
+            "parent_repeater": "field_tng_rws_rows"
+          },
+          {
+            "key": "field_tng_rws_rows_text",
+            "label": "Text",
+            "name": "text",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+              "width": "",
+              "class": "",
+              "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 0,
+            "delay": 0,
+            "parent_repeater": "field_tng_rws_rows"
+          }
+        ]
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "block",
+          "operator": "==",
+          "value": "acf/rows"
+        }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0
+  },
+  {
+    "key": "group_tng_block_services_index",
+    "title": "Block: Services index",
+    "fields": [
+      {
+        "key": "field_tng_svx_show_services_index",
+        "label": "Show section",
+        "name": "show_services_index",
+        "aria-label": "",
+        "type": "true_false",
+        "instructions": "Clearing a field brings its default back; switch this off to hide the section.",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "message": "",
+        "default_value": 1,
+        "ui": 1,
+        "ui_on_text": "",
+        "ui_off_text": ""
+      },
+      {
+        "key": "field_tng_svx_taxonomy",
+        "label": "List",
+        "name": "taxonomy",
+        "aria-label": "",
+        "type": "select",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "choices": {
+          "industry": "Industries",
+          "practice": "Practices"
+        },
+        "default_value": "industry",
+        "allow_null": 0,
+        "multiple": 0,
+        "ui": 0,
+        "return_format": "value",
+        "ajax": 0,
+        "placeholder": ""
+      },
+      {
+        "key": "field_tng_svx_heading",
+        "label": "Heading (empty = Industries / Practices)",
+        "name": "heading",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "",
+        "maxlength": "",
+        "placeholder": "",
+        "prepend": "",
+        "append": ""
+      },
+      {
+        "key": "field_tng_svx_note",
+        "label": "",
+        "name": "note",
+        "aria-label": "",
+        "type": "message",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "message": "Lists every top-level term A–Z, linking to its page. White background (Industries on the Services page): Additional CSS class \"svc-index--light\". (Block sidebar → Advanced → Additional CSS class. Type it again if the block is deleted and added back.)",
+        "new_lines": "wpautop",
+        "esc_html": 0
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "block",
+          "operator": "==",
+          "value": "acf/services-index"
+        }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0
+  },
+  {
+    "key": "group_tng_block_networks",
+    "title": "Block: Networks (Global Reach)",
+    "fields": [
+      {
+        "key": "field_tng_nwk_show_networks",
+        "label": "Show section",
+        "name": "show_networks",
+        "aria-label": "",
+        "type": "true_false",
+        "instructions": "Clearing a field brings its default back; switch this off to hide the section.",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "message": "",
+        "default_value": 1,
+        "ui": 1,
+        "ui_on_text": "",
+        "ui_off_text": ""
+      },
+      {
+        "key": "field_tng_nwk_heading",
+        "label": "Heading",
+        "name": "heading",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "We are proud to be a member of:",
+        "maxlength": "",
+        "placeholder": "",
+        "prepend": "",
+        "append": ""
+      },
+      {
+        "key": "field_tng_nwk_networks",
+        "label": "Networks",
+        "name": "networks",
+        "aria-label": "",
+        "type": "repeater",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "layout": "block",
+        "pagination": 0,
+        "min": 0,
+        "max": 0,
+        "collapsed": "",
+        "button_label": "Add network",
+        "rows_per_page": 20,
+        "sub_fields": [
+          {
+            "key": "field_tng_nwk_networks_title",
+            "label": "Name",
+            "name": "title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+              "width": "",
+              "class": "",
+              "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "parent_repeater": "field_tng_nwk_networks"
+          },
+          {
+            "key": "field_tng_nwk_networks_logo",
+            "label": "Logo (white, on the navy tile; empty = bundled logo for Lex Mundi / Multilaw / Drew Network Asia)",
+            "name": "logo",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+              "width": "",
+              "class": "",
+              "id": ""
+            },
+            "return_format": "url",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "preview_size": "medium",
+            "parent_repeater": "field_tng_nwk_networks"
+          },
+          {
+            "key": "field_tng_nwk_networks_logo_alt",
+            "label": "Logo alt text (empty = name)",
+            "name": "logo_alt",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+              "width": "",
+              "class": "",
+              "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "parent_repeater": "field_tng_nwk_networks"
+          },
+          {
+            "key": "field_tng_nwk_networks_text",
+            "label": "Text",
+            "name": "text",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+              "width": "",
+              "class": "",
+              "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 0,
+            "delay": 0,
+            "parent_repeater": "field_tng_nwk_networks"
+          },
+          {
+            "key": "field_tng_nwk_networks_link_label",
+            "label": "Link label",
+            "name": "link_label",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+              "width": "",
+              "class": "",
+              "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "parent_repeater": "field_tng_nwk_networks"
+          },
+          {
+            "key": "field_tng_nwk_networks_link_url",
+            "label": "Link URL",
+            "name": "link_url",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+              "width": "",
+              "class": "",
+              "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "parent_repeater": "field_tng_nwk_networks"
+          }
+        ]
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "block",
+          "operator": "==",
+          "value": "acf/networks"
+        }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0
+  },
+  {
+    "key": "group_tng_block_experience",
+    "title": "Block: Experience list",
+    "fields": [
+      {
+        "key": "field_tng_exp_show_experience",
+        "label": "Show section",
+        "name": "show_experience",
+        "aria-label": "",
+        "type": "true_false",
+        "instructions": "Clearing a field brings its default back; switch this off to hide the section.",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "message": "",
+        "default_value": 1,
+        "ui": 1,
+        "ui_on_text": "",
+        "ui_off_text": ""
+      },
+      {
+        "key": "field_tng_exp_label",
+        "label": "Label",
+        "name": "label",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "Experience",
+        "maxlength": "",
+        "placeholder": "",
+        "prepend": "",
+        "append": ""
+      },
+      {
+        "key": "field_tng_exp_text",
+        "label": "Experience (bullet list; 4 show, then \"Read more\")",
+        "name": "text",
+        "aria-label": "",
+        "type": "wysiwyg",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "",
+        "tabs": "all",
+        "toolbar": "full",
+        "media_upload": 0,
+        "delay": 0
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "block",
+          "operator": "==",
+          "value": "acf/experience"
+        }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0
+  },
+  {
+    "key": "group_tng_block_lang_insights",
+    "title": "Block: Insights in this language (desks)",
+    "fields": [
+      {
+        "key": "field_tng_lin_show_lang_insights",
+        "label": "Show section",
+        "name": "show_lang_insights",
+        "aria-label": "",
+        "type": "true_false",
+        "instructions": "Clearing a field brings its default back; switch this off to hide the section.",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "message": "",
+        "default_value": 1,
+        "ui": 1,
+        "ui_on_text": "",
+        "ui_off_text": ""
+      },
+      {
+        "key": "field_tng_lin_lang",
+        "label": "Language",
+        "name": "lang",
+        "aria-label": "",
+        "type": "select",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "choices": {
+          "ja": "Japanese",
+          "zh": "Chinese"
+        },
+        "default_value": "ja",
+        "allow_null": 0,
+        "multiple": 0,
+        "ui": 0,
+        "return_format": "value",
+        "ajax": 0,
+        "placeholder": ""
+      },
+      {
+        "key": "field_tng_lin_heading",
+        "label": "Heading",
+        "name": "heading",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "Insights",
+        "maxlength": "",
+        "placeholder": "",
+        "prepend": "",
+        "append": ""
+      },
+      {
+        "key": "field_tng_lin_link_label",
+        "label": "Link label",
+        "name": "link_label",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "View all",
+        "maxlength": "",
+        "placeholder": "",
+        "prepend": "",
+        "append": ""
+      },
+      {
+        "key": "field_tng_lin_link_url",
+        "label": "Link URL (empty = the Insights page)",
+        "name": "link_url",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "",
+        "maxlength": "",
+        "placeholder": "",
+        "prepend": "",
+        "append": ""
+      },
+      {
+        "key": "field_tng_lin_note",
+        "label": "",
+        "name": "note",
+        "aria-label": "",
+        "type": "message",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "message": "The latest 3 insights imported in this language. Hidden while there are none.",
+        "new_lines": "wpautop",
+        "esc_html": 0
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "block",
+          "operator": "==",
+          "value": "acf/lang-insights"
         }
       ]
     ],

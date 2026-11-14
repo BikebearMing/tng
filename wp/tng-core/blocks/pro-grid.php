@@ -2,7 +2,7 @@
 /**
  * acf/pro-grid — the professionals grid. The first page renders server-side
  * (so reveals fire like the static page); tng-wp.js takes over for search,
- * alphabet and "View more" using the roster endpoint.
+ * alphabet, facets and "View more" using the roster endpoint.
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -40,4 +40,5 @@ $tng_posts = get_posts(
 			<svg viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M1 3l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
 		</button>
 	</div>
+	<p class="visually-hidden" role="status" aria-live="polite" data-status></p>
 </section>

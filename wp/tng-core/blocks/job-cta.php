@@ -17,11 +17,12 @@ if ( ! $tng_id || 'job' !== get_post_type( $tng_id ) ) {
 $tng_email = tng_field( 'apply_email', '', $tng_id );
 $tng_email = $tng_email ? $tng_email : tng_field( 'apply_email', 'recruit@tilleke.com', 'option' );
 
-$tng_cards = array(
+$tng_careers = get_page_by_path( 'careers' );
+$tng_cards   = array(
 	array(
 		tng_field( 'process_title', 'Curious about our<br />Recruitment Process?', 'option' ),
 		tng_field( 'process_label', 'Learn More', 'option' ),
-		tng_field( 'process_url', '#', 'option' ),
+		tng_heal_url( tng_field( 'process_url', '#', 'option' ), 'Recruitment Process', $tng_careers ? $tng_careers->ID : 0 ),
 	),
 );
 

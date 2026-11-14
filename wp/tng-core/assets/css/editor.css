@@ -11,3 +11,10 @@
 .editor-styles-wrapper .hp-careers__column {
   animation: none;
 }
+
+/* SCF block previews: the full canvas width, not the theme's ~645 px content
+   column (heroes overlapped their text, grids wrapped). */
+.editor-styles-wrapper .is-layout-constrained > [data-type^="acf/"],
+.editor-styles-wrapper .is-layout-flow > [data-type^="acf/"] {
+  max-width: none;
+}

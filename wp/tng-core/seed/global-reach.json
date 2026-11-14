@@ -1,0 +1,86 @@
+[
+ {
+  "block": "acf/path-hero",
+  "prefix": "pth",
+  "data": {}
+ },
+ {
+  "block": "acf/overview",
+  "prefix": "ovw",
+  "data": {
+   "variant": "info",
+   "label": "Overview",
+   "heading": "Legal networks help our clients do business internationally",
+   "text": "<p>Legal networks help our clients do business internationally. We collaborate with other top law firms to provide seamless, high-quality representation in jurisdictions worldwide. We are part of three networks of associated law firms—Lex Mundi, Multilaw, and Drew Network Asia—that collectively span:</p><ul><li>Over 125 countries and other territories</li><li>Over 180 jurisdictions</li><li>6 continents</li><li>The 15 most populous countries in the world, representing 65% of the world’s population</li><li>The 6 major trading partners in ASEAN (Indonesia, Thailand, Malaysia, Singapore, Philippines, Vietnam)</li></ul>",
+   "section_id": "overview"
+  }
+ },
+ {
+  "block": "acf/networks",
+  "prefix": "nwk",
+  "data": {
+   "heading": "We are proud to be a member of:"
+  },
+  "repeaters": {
+   "networks": [
+    {
+     "title": "Lex Mundi",
+     "logo_alt": "Lex Mundi Member",
+     "text": "<p>Tilleke &amp; Gibbins is the exclusive member firm in Thailand for <a href=\"https://lexmundi.com/\">Lex Mundi</a>—the world’s leading network of independent law firms in more than 125 countries worldwide.</p><p>Lex Mundi brings the best together—law firms, lawyers, and business professionals —to provide world-class cross-border legal solutions. Member firms offer a global resource of unmatched breadth and depth, with over 22,000 lawyers worldwide.</p><p>Lex Mundi selects the top independent law firm in each jurisdiction based on leadership in, and commitment to, its local market and requires its members to maintain this level of excellence to retain membership. </p><p>Lex Mundi ensures that member firms collaborate closely to provide on-the-ground expertise and experience in every global market, wherever their clients need to operate. Coupled with innovative, collaborative software, clients receive a seamless worldwide service from Lex Mundi member firms, able to handle their most challenging cross-border transactions and disputes.</p><p>To learn more about how Lex Mundi can help you meet the challenges of doing business in virtually any market, please visit the <a href=\"https://www.lexmundi.com/\">Lex Mundi website</a>.</p>",
+     "link_label": "Visit the Lex Mundi website",
+     "link_url": "https://www.lexmundi.com/"
+    },
+    {
+     "title": "Multilaw",
+     "logo_alt": "Multilaw",
+     "text": "<p>Multilaw is a leading network of carefully selected, independent law firms that work together to fulfill clients’ international needs. Consisting of over 10,000 lawyers in more than 150 commercial centers, Multilaw is able to provide expert legal advice in complex environments around the globe.</p><p>Tilleke &amp; Gibbins was invited to join Multilaw as the exclusive member firm in Thailand and Vietnam due to our leading capabilities, professionalism, and ethical conduct. We collaborate with other Multilaw firms to deliver local insight and global reach that is tailored to individual needs.</p><p>For more information on the network, please visit the <a href=\"https://www.multilaw.com/\">Multilaw website</a>.</p>",
+     "link_label": "Visit the Multilaw website",
+     "link_url": "https://www.multilaw.com/"
+    },
+    {
+     "title": "Drew Network Asia",
+     "logo_alt": "Drew Network Asia",
+     "text": "<p>Drew Network Asia (DNA) connects leading firms in Southeast Asia to provide clients with a full range of cross-border solutions in the region. DNA member firms have over 800 fee earners and a total headcount of over 1,600 across Cambodia, Indonesia, Laos, Malaysia, Myanmar, the Philippines, Singapore, Thailand, and Vietnam. DNA operates as a single seamless, responsive, and effective partner in handling complex and time-sensitive multijurisdictional transactions and disputes in the region. </p><p>Each DNA member firm achieves client objectives by delivering sound legal advice alongside top-of-class client service. This unwavering commitment is recognized by clients and legal industry peers, as evidenced by top rankings in the world’s most prestigious legal publications.</p><p>As part of DNA, Tilleke &amp; Gibbins provides its clients with access to the top lawyers across Southeast Asia and the most effective seamless legal advice available in the region.</p><p>For more information on the network, please visit the <a href=\"https://www.drewnetworkasia.com/\">DNA website</a>.</p>",
+     "link_label": "Visit the DNA website",
+     "link_url": "https://www.drewnetworkasia.com/"
+    }
+   ]
+  }
+ },
+ {
+  "block": "acf/more-from",
+  "prefix": "mfr",
+  "data": {
+   "arrows": "1",
+   "heading": "More from\nLocations"
+  },
+  "repeaters": {
+   "links": [
+    {
+     "label": "Cambodia",
+     "url": "{term:location/cambodia}"
+    },
+    {
+     "label": "Indonesia",
+     "url": "{term:location/indonesia}"
+    },
+    {
+     "label": "Laos",
+     "url": "{term:location/laos}"
+    },
+    {
+     "label": "Myanmar",
+     "url": "{term:location/myanmar}"
+    },
+    {
+     "label": "Thailand",
+     "url": "{term:location/thailand}"
+    },
+    {
+     "label": "Vietnam",
+     "url": "{term:location/vietnam}"
+    }
+   ]
+  }
+ }
+]

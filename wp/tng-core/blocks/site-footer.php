@@ -83,7 +83,7 @@ if ( ! $tng_legal ) {
 					$tng_net = isset( $tng_social_paths[ $tng_row['network'] ] ) ? $tng_row['network'] : 'facebook';
 					?>
 				<li>
-					<a href="<?php echo esc_url( $tng_row['url'] ? $tng_row['url'] : '#' ); ?>" aria-label="<?php echo esc_attr( ucfirst( $tng_net ) ); ?>">
+					<a href="<?php echo esc_url( tng_link_or( $tng_row['url'], tng_default_social( $tng_net ) ) ); ?>" aria-label="<?php echo esc_attr( ucfirst( $tng_net ) ); ?>">
 						<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><?php echo $tng_social_paths[ $tng_net ]; // phpcs:ignore ?></svg>
 					</a>
 				</li>
@@ -91,9 +91,16 @@ if ( ! $tng_legal ) {
 			</ul>
 
 			<p class="button-label dark hp-footer__newsletter-heading"><?php echo esc_html( tng_field( 'newsletter_heading', 'Subscribe to our newsletter', 'option' ) ); ?></p>
-			<form class="hp-footer__form" action="<?php echo esc_url( tng_field( 'newsletter_action', '#', 'option' ) ); ?>" method="post">
+			<?php
+			// No action typed in Site Chrome → Footer = the client's Mailchimp list (old sign-up form)
+			$tng_nl_action = tng_link_or( tng_field( 'newsletter_action', '', 'option' ), '' );
+			?>
+			<form class="hp-footer__form" action="<?php echo esc_url( $tng_nl_action ? $tng_nl_action : tng_newsletter() ); ?>" method="post" target="_blank">
 				<label class="visually-hidden" for="footer-email">Your email</label>
-				<input type="email" id="footer-email" name="email" placeholder="Your email" required>
+				<input type="email" id="footer-email" name="EMAIL" placeholder="Your email" autocomplete="email" required>
+				<?php if ( ! $tng_nl_action ) : ?>
+				<div class="visually-hidden" aria-hidden="true"><input type="text" name="b_266a11a0874fa0c222f4b20fd_2fba872045" tabindex="-1" value=""></div>
+				<?php endif; ?>
 				<button type="submit">
 					Subscribe
 					<?php echo tng_arrow( 1.5 ); ?>
@@ -111,7 +118,7 @@ if ( ! $tng_legal ) {
 						$tng_src = $tng_src['url'];
 					}
 					?>
-				<li><a href="<?php echo esc_url( $tng_row['url'] ? $tng_row['url'] : '#' ); ?>"><img src="<?php echo esc_url( $tng_src ); ?>" alt="<?php echo esc_attr( $tng_row['name'] ); ?>" class="hp-footer__network hp-footer__network--<?php echo esc_attr( $tng_style ); ?>"></a></li>
+				<li><a href="<?php echo esc_url( tng_link_or( $tng_row['url'], tng_default_social( $tng_style ) ) ); ?>"><img src="<?php echo esc_url( $tng_src ); ?>" alt="<?php echo esc_attr( $tng_row['name'] ); ?>" class="hp-footer__network hp-footer__network--<?php echo esc_attr( $tng_style ); ?>"></a></li>
 				<?php endforeach; ?>
 			</ul>
 
@@ -120,7 +127,7 @@ if ( ! $tng_legal ) {
 				<?php foreach ( array( $tng_quick_1, $tng_quick_2 ) as $tng_col ) : ?>
 				<ul class="hp-footer__quick-col">
 					<?php foreach ( $tng_col as $tng_row ) : ?>
-					<li><a href="<?php echo esc_url( $tng_row['url'] ? $tng_row['url'] : '#' ); ?>" class="button-label dark"><?php echo esc_html( $tng_row['label'] ); ?></a></li>
+					<li><a href="<?php echo esc_url( tng_link_or( tng_heal_url( $tng_row['url'], $tng_row['label'] ), 'Locations' === $tng_row['label'] ? tng_page_url( 'global-reach' ) : '#' ) ); ?>" class="button-label dark"><?php echo esc_html( $tng_row['label'] ); ?></a></li>
 					<?php endforeach; ?>
 				</ul>
 				<?php endforeach; ?>
@@ -133,7 +140,7 @@ if ( ! $tng_legal ) {
 		<p class="subhead hp-footer__copyright"><?php echo esc_html( tng_field( 'copyright', '© 2026 Tilleke & Gibbins International Ltd. All rights reserved.', 'option' ) ); ?></p>
 		<ul class="hp-footer__legal">
 			<?php foreach ( $tng_legal as $tng_row ) : ?>
-			<li><a href="<?php echo esc_url( $tng_row['url'] ? $tng_row['url'] : '#' ); ?>" class="subhead dark"><?php echo esc_html( $tng_row['label'] ); ?></a></li>
+			<li><a href="<?php echo esc_url( tng_heal_url( $tng_row['url'], $tng_row['label'] ) ); ?>" class="subhead dark"><?php echo esc_html( $tng_row['label'] ); ?></a></li>
 			<?php endforeach; ?>
 		</ul>
 	</div>

@@ -24,7 +24,7 @@ $tng_label = tng_field( 'link_label', '' );
 		<p class="body dark ins-hero__intro"><?php echo esc_html( $tng_intro ); ?></p>
 		<?php endif; ?>
 		<?php if ( $tng_label ) : ?>
-		<a href="<?php echo esc_url( tng_field( 'link_url', '#' ) ); ?>" class="button-label dark link-arrow ins-hero__link">
+		<a href="<?php echo esc_url( tng_link_or( tng_field( 'link_url', '#' ), tng_newsletter( 'form' ) ) ); ?>" class="button-label dark link-arrow ins-hero__link">
 			<?php echo esc_html( $tng_label ); ?>
 			<?php echo tng_arrow( 1.5 ); ?>
 		</a>

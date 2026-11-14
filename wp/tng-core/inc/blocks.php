@@ -57,6 +57,14 @@ function tng_acf_blocks() {
 		'mus-audience'         => 'TNG: Museum audiences (2 x 2)',
 		'mus-collection'       => 'TNG: Museum collection',
 		'mus-cases'            => 'TNG: Museum case studies (slider)',
+		'tex-gallery'          => 'TNG: Textile Collection gallery',
+		'job-list'             => 'TNG: Job opportunities (all open jobs)',
+		'text-groups'          => 'TNG: Text groups (heading | text rows)',
+		'rows'                 => 'TNG: Numbered rows (steps / timeline)',
+		'services-index'       => 'TNG: Services index (industries / practices)',
+		'networks'             => 'TNG: Networks (Global Reach)',
+		'experience'           => 'TNG: Experience list',
+		'lang-insights'        => 'TNG: Insights in this language (desks)',
 	);
 }
 
@@ -146,6 +154,10 @@ add_action(
 			'job-intro',
 			'job-summary',
 			'job-cta',
+			'text-page',
+			'award-more',
+			'not-found',
+			'search-results',
 		) as $name ) {
 			register_block_type(
 				'tng/' . $name,

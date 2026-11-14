@@ -13,7 +13,12 @@ if ( ! tng_show( 'show_in_hero', $tng_id ) ) {
 	return;
 }
 
-$tng_image = tng_show( 'show_featured_image', $tng_id ) ? get_the_post_thumbnail_url( $tng_id, 'full' ) : '';
+$tng_award = 'award' === get_post_type( $tng_id );
+// Awards always use the no-image hero (the award single design)
+$tng_image = ! $tng_award && tng_show( 'show_featured_image', $tng_id ) ? get_the_post_thumbnail_url( $tng_id, 'full' ) : '';
+$tng_trail = $tng_award
+	? array( array( 'About', tng_page_url( 'about' ) ), array( 'Awards & Rankings', tng_page_url( 'about/awards-rankings' ) ) )
+	: array( array( 'Insights', tng_page_url( 'insights' ) ) );
 
 $tng_rows = array();
 foreach ( array(
@@ -34,7 +39,7 @@ foreach ( array(
 }
 ?>
 <section class="in-hero<?php echo $tng_image ? '' : ' in-hero--no-image'; ?>" data-section="in-hero" data-toggle="show_in_hero">
-	<?php echo tng_breadcrumbs( get_the_title( $tng_id ), array( array( 'Insights', '#' ) ) ); ?>
+	<?php echo tng_breadcrumbs( get_the_title( $tng_id ), $tng_trail ); ?>
 
 	<div class="in-hero__intro">
 		<h1 class="h1 dark"><?php echo esc_html( get_the_title( $tng_id ) ); ?></h1>

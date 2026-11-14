@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Internships — TNG</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/vendor/blaze.css">
+  <link rel="stylesheet" href="assets/vendor/lenis.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       HEADER (site-wide, sits over the banner)
+       SCF options page: site/header
+       Fields: logo (image/svg), top_menu (WP menu "Header top":
+               About / Careers / Contact), main_menu (WP menu "Header main":
+               Professionals / Services / Insights / Locations),
+               search_label, languages (repeater: code, url),
+               locations_mega (auto from Location taxonomy: name, image,
+               link; plus extra_links repeater, e.g. Global Reach),
+               services_mega (auto from Industry and Practice taxonomies:
+               name, link; labels editable)
+       ============================================================ -->
+  <header class="site-header" data-scrolled-at="40">
+    <!-- TODO: swap for the logo SVG once supplied; this is a text stand-in -->
+    <a href="index.html" class="site-header__logo" aria-label="Tilleke &amp; Gibbins">
+      <span>Tilleke</span>
+      <span><em>&amp;</em>Gibbins</span>
+    </a>
+
+    <nav class="site-header__nav" id="site-nav" aria-label="Main">
+      <ul class="site-header__top">
+        <li class="has-mega">
+          <a href="about.html" class="subhead" aria-haspopup="true">About</a>
+          <!-- Tiny megamenu: the page's child pages (WP: published children, Page Attributes → Order) -->
+          <div class="site-header__mega site-header__mega--mini">
+            <ul class="site-header__mega-links">
+            <li><a href="about-history.html" class="site-header__mega-link">History</a></li>
+            <li><a href="awards.html" class="site-header__mega-link">Awards &amp; Rankings</a></li>
+            <li><a href="pro-bono.html" class="site-header__mega-link">Pro Bono</a></li>
+            <li><a href="csr.html" class="site-header__mega-link">CSR</a></li>
+            <li><a href="museum.html" class="site-header__mega-link">Museum of Counterfeit Goods</a></li>
+            <li><a href="textile-collection.html" class="site-header__mega-link">Textile Collection</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="has-mega">
+          <a href="careers.html" class="subhead" aria-haspopup="true">Careers</a>
+          <!-- Tiny megamenu: the page's child pages (WP: published children, Page Attributes → Order) -->
+          <div class="site-header__mega site-header__mega--mini">
+            <ul class="site-header__mega-links">
+            <li><a href="careers-legal.html" class="site-header__mega-link">Legal Professionals</a></li>
+            <li><a href="careers-operations.html" class="site-header__mega-link">Operations Professionals</a></li>
+            <li><a href="careers-internships.html" class="site-header__mega-link">Internships</a></li>
+            <li><a href="job-opportunities.html" class="site-header__mega-link">Job Opportunities</a></li>
+            <li><a href="recruitment-process.html" class="site-header__mega-link">Our Recruitment Process</a></li>
+            </ul>
+          </div>
+        </li>
+        <li><a href="contact.html" class="subhead">Contact</a></li>
+      </ul>
+      <ul class="site-header__main">
+        <li><a href="professionals.html" class="button-label">Professionals</a></li>
+        <li class="has-mega">
+          <a href="#" class="button-label" aria-haspopup="true">Services</a>
+          <!-- Megamenu: industries (active follows hover) | practices in two columns -->
+          <div class="site-header__mega site-header__mega--services">
+            <div class="site-header__mega-col">
+              <p class="subhead site-header__mega-label">Industries</p>
+              <ul class="site-header__mega-list">
+              <li class="is-active"><a href="service.html" class="button-label">Automotive<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+              <li><a href="#" class="button-label">Aviation<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+              <li><a href="#" class="button-label">Consumer products<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+              <li><a href="#" class="button-label">Energy<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+              <li><a href="#" class="button-label">Fintech<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+              <li><a href="#" class="button-label">Insurance<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+              <li><a href="#" class="button-label">Life Sciences<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+              <li><a href="#" class="button-label">Technology<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+              </ul>
+            </div>
+            <div class="site-header__mega-col site-header__mega-col--divided">
+              <p class="subhead site-header__mega-label">Practices</p>
+              <ul class="site-header__mega-links" style="--rows: 6;">
+              <li><a href="#" class="site-header__mega-link">Antitrust and Competition</a></li>
+              <li><a href="#" class="site-header__mega-link">Banking and Finance</a></li>
+              <li><a href="#" class="site-header__mega-link">Capital Markets</a></li>
+              <li><a href="#" class="site-header__mega-link">Compliance and Investigations</a></li>
+              <li><a href="#" class="site-header__mega-link">Corporate/M&amp;A</a></li>
+              <li><a href="#" class="site-header__mega-link">Customs and International Trade</a></li>
+              <li><a href="#" class="site-header__mega-link">Dispute Resolution and Litigation</a></li>
+              <li><a href="#" class="site-header__mega-link">Employment</a></li>
+              <li><a href="practice.html" class="site-header__mega-link">Intellectual Property</a></li>
+              <li><a href="#" class="site-header__mega-link">Real Estate</a></li>
+              <li><a href="#" class="site-header__mega-link">Regulatory Affairs</a></li>
+              <li><a href="#" class="site-header__mega-link">Tax</a></li>
+              </ul>
+            </div>
+          </div>
+        </li>
+        <li><a href="insights.html" class="button-label">Insights</a></li>
+        <li class="has-mega">
+          <a href="#" class="button-label" aria-haspopup="true">Locations</a>
+          <!-- Megamenu: hover/focus opens it; hovering a location swaps the image -->
+          <div class="site-header__mega">
+            <ul class="site-header__mega-list">
+            <li class="is-active"><a href="location.html" class="button-label">Cambodia<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            <li><a href="#" class="button-label">Indonesia<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            <li><a href="#" class="button-label">Laos<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            <li><a href="#" class="button-label">Myanmar<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            <li><a href="#" class="button-label">Thailand<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            <li><a href="#" class="button-label">Vietnam<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            <li><a href="#" class="button-label">Global Reach<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            </ul>
+            <div class="site-header__mega-media" aria-hidden="true">
+            <img src="assets/img/loc-cambodia-menu.jpg" alt="" class="is-active">
+            <img src="assets/img/loc-indonesia-menu.jpg" alt="">
+            <img src="assets/img/loc-laos-menu.jpg" alt="">
+            <img src="assets/img/loc-myanmar-menu.jpg" alt="">
+            <img src="assets/img/loc-thailand-menu.jpg" alt="">
+            <img src="assets/img/loc-vietnam-menu.jpg" alt="">
+            <img src="assets/img/loc-global-menu.jpg" alt="">
+            </div>
+          </div>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="site-header__utils">
+      <a href="search.html" class="subhead site-header__search">
+        Search
+        <svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="7.5" cy="7.5" r="6" stroke="currentColor" stroke-width="1.5"/><path d="M12 12l4.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </a>
+      <a href="#" class="subhead site-header__lang" aria-label="Language: English">
+        ENG
+        <svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="7.5" stroke="currentColor" stroke-width="1.3"/><ellipse cx="9" cy="9" rx="3.2" ry="7.5" stroke="currentColor" stroke-width="1.3"/><path d="M1.5 9h15M2.8 5.2h12.4M2.8 12.8h12.4" stroke="currentColor" stroke-width="1.3"/></svg>
+      </a>
+    </div>
+
+    <button type="button" class="site-header__toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Menu"><span></span><span></span></button>
+  </header>
+
+  <main>
+
+    <!-- ============================================================
+         SECTION: Career path hero (navy, white header over it)
+         Career path page (child of Careers), SCF block: careers/path-hero
+         Copy from the old site (/career-role/internships/).
+         ============================================================ -->
+    <section class="lp-hero" data-section="path-hero" data-toggle="show_path_hero">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <p class="subhead"><a href="index.html">Home</a> / <a href="careers.html">Careers</a> / <span aria-current="page">Internships</span></p>
+      </nav>
+
+      <div class="lp-hero__content">
+        <h1 class="h1 dark">Internships</h1>
+        <p class="body dark lp-hero__intro">Our internship programs are geared toward professional and personal development for the next generation of lawyers. We help you build your legal career on a solid foundation.</p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION: Career path overview
+         SCF block: careers/path-overview
+         Fields: show_path_overview, label, heading, text (wysiwyg)
+         ============================================================ -->
+    <section class="svc-overview svc-overview--top-label lp-overview" data-section="path-overview" data-toggle="show_path_overview">
+      <p class="subhead pro-label svc-overview__label">About Our Internship Programs</p>
+      <h2 class="h2 svc-overview__heading">Learn through our multifaceted approach to internships</h2>
+      <div class="rich-text svc-overview__text">
+        <p>We are a growing law firm, serving clients in the vibrant economies of Cambodia, Indonesia, Laos, Myanmar, Thailand, and Vietnam. We offer law students with outstanding academic qualifications the opportunity to learn from our leading lawyers practicing in these emerging markets.</p>
+        <p>All of our interns participate directly in real cases involving sophisticated legal issues. By collaborating with expert practitioners, our interns hone their advocacy skills, including legal research, writing, and analysis. Our interns also learn about business operations in Southeast Asia, whether from a litigation, a transactional, or an IP perspective.</p>
+        <p>We seek interns who have excelled in their LLB, LLM, or JD programs. As our interns are involved in serving our diverse client base, we recruit interns with skills that enhance client service, such as fluency in foreign languages, industry experience, and study or work abroad. We encourage law students who wish to roll up their sleeves and learn through experience to apply for an internship.</p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION: Internship programs
+         The job single's summary block (job-summary): label, then
+         groups of .h3 heading + 16 / 22 text from 734, between rules.
+         SCF block: careers/path-programs (new, same fields as the job
+         summary repeater: heading (text), text (wysiwyg))
+         Fields: show_path_programs (true/false), label (text), groups
+                 (repeater)
+         99 under the overview text (as the career development block).
+         ============================================================ -->
+    <section class="job-summary lp-programs" data-section="path-programs" data-toggle="show_path_programs">
+      <p class="subhead pro-label">Internship Programs</p>
+      <div class="job-summary__group">
+        <h3 class="h3 job-summary__heading">Local Internships</h3>
+        <div class="rich-text job-summary__list">
+          <p>Our local internship program provides a legal training experience designed for aspiring lawyers. We strive to help our local talent make an impact in their own backyard, and we equip them with valuable tools to take the next step in their careers. Our comprehensive program can help instill a great sense of pride in our interns, while at the same time, facilitating professional growth in one of the most prestigious law firms in Asia. We offer an immersive two-month summer internship program for third-year law students who are at the top of their class and are ready to absorb the necessary skills and direction to jump start their professional career.</p>
+        </div>
+      </div>
+      <div class="job-summary__group">
+        <h3 class="h3 job-summary__heading">Who Should Join Our Local Internship Program?</h3>
+        <div class="rich-text job-summary__list">
+          <p>We encourage law students who wish to advance in their careers at a leading Southeast Asian law firm to apply for an internship. We help local interns who are committed to practicing in the region connect with our ever-expanding local network of clients and partners.</p>
+          <p>We do not look at interns simply as assistants who get coffee or shred documents, but instead offer a much more hands-on approach that includes legal research, hands-on practice with our top lawyers, and client contact. Thus we expect the best performance from all our interns.</p>
+        </div>
+      </div>
+      <div class="job-summary__group">
+        <h3 class="h3 job-summary__heading">International Internships</h3>
+        <div class="rich-text job-summary__list">
+          <p>Our 90-day international internship programs allow for a broad experience for aspiring lawyers from all over the world. In our offices in Bangkok, Hanoi, Ho Chi Minh City, Jakarta, Phnom Penh, Vientiane, and Yangon, our interns are exposed to multinational talent, diverse cultures, and industry-leading expertise. If you are looking for exposure in these markets and an immense professional and personal growth opportunity, then Tilleke &amp; Gibbins is the right firm for you.</p>
+        </div>
+      </div>
+      <div class="job-summary__group">
+        <h3 class="h3 job-summary__heading">Who Should Join Our Southeast Asia Internship Program</h3>
+        <div class="rich-text job-summary__list">
+          <p>We seek interns who have excelled in their LLB, LLM, or JD programs. As our interns are involved in serving our diverse client base, we recruit interns with skills that enhance client service, such as fluency in foreign languages, industry experience, and study or work abroad. Since our internships are much more than just getting coffee, we expect the best performance from all our interns as they roll up their sleeves and learn by doing.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION: Hear it from an intern (teal texture, parallax)
+         SCF block: careers/team-stories with one story
+         ============================================================ -->
+    <section class="lp-team has-parallax" data-section="team-stories" data-toggle="show_team_stories">
+      <img src="assets/hp-location-bg.jpg" alt="" class="parallax-img">
+      <div class="lp-team__side">
+        <h2 class="h2 dark lp-team__heading">Hear it from<br>an intern</h2>
+        <ul class="lp-team__tabs" role="tablist" aria-label="Team stories">
+          <li>
+            <button type="button" class="lp-team__tab is-active" role="tab" id="lp-team-tab-intern" aria-controls="lp-team-intern" aria-selected="true">
+              <span class="lp-team__num">01</span>
+              <span class="lp-team__role">Former Intern</span>
+              <span class="lp-team__name">Pongchiwat Jirayustienjinda</span>
+            </button>
+          </li>
+        </ul>
+      </div>
+      <div class="lp-team__panels">
+        <article class="lp-team__panel" id="lp-team-intern" role="tabpanel" aria-labelledby="lp-team-tab-intern">
+          <div class="lp-team__body">
+            <blockquote class="rich-text lp-team__quote">
+              <p>My internship at Tilleke &amp; Gibbins was excellent preparation for entering the legal profession. I benefited from the guidance of expert lawyers whose practical and theoretical knowledge of the law was both humbling and inspiring, and I got to be part of legal teams working on important cases. It wasn’t only work though—my fellow interns and I also collaborated on developing special projects and presentations.</p>
+            </blockquote>
+            <p class="lp-team__person"><strong>Pongchiwat Jirayustienjinda</strong><span>Former Intern</span></p>
+          </div>
+          <!-- TODO: placeholder photo (the old page has the intern's portrait, Beer-1.png) -->
+          <img src="assets/img/team-story.jpg" alt="" class="lp-team__image" loading="lazy">
+        </article>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION: Apply (the careers page's CTA panel)
+         SCF block: careers/cta
+         Fields: show_careers_cta (true/false), heading (text), text
+                 (text, optional), link (link field: mailto)
+         ============================================================ -->
+    <section class="careers-cta lp-apply" data-section="careers-cta" data-toggle="show_careers_cta">
+      <div class="careers-cta__panel">
+        <h2 class="h2 careers-cta__heading">Interested in an internship at Tilleke &amp; Gibbins?</h2>
+        <p class="body lp-apply__text">Please submit CV &amp; all related documents to</p>
+        <a href="mailto:recruit@tilleke.com" class="button-label link-arrow careers-cta__link">
+          recruit@tilleke.com
+          <svg viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION: Opportunities for <career path>
+         Template block tng/career-path-jobs (open Job posts in this
+         career path; the old site had one).
+         ============================================================ -->
+    <section class="careers-jobs lp-jobs" data-section="path-jobs" data-toggle="show_path_jobs">
+      <p class="subhead careers-jobs__label">Opportunities for</p>
+      <h2 class="h2 careers-jobs__heading">Internships</h2>
+      <ul class="careers-jobs__list">
+        <li>
+          <a href="job.html" class="careers-jobs__row">
+            <span class="h4">Summer Legal Internship</span>
+            <span class="job-hero__tag lp-jobs__tag"><img src="assets/flags/thailand.svg" alt="">Thailand</span>
+            <span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ============================================================
+         SECTION: More from (grey link list)
+         SCF block: page/more-from
+         ============================================================ -->
+    <section class="more-from" data-section="more-from" data-toggle="show_more_from">
+      <h2 class="h2 more-from__title">More from<br>Careers</h2>
+      <ul class="more-from__list">
+        <li><a href="careers-legal.html" class="h3 more-from__link">Legal Professionals<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+        <li><a href="careers-operations.html" class="h3 more-from__link">Operations Professionals<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+        <li><a href="job-opportunities.html" class="h3 more-from__link">All Job Opportunities<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER (site-wide)
+       SCF options page: site/footer
+       Fields: logo (image/svg), social_links (repeater: network, url),
+               newsletter_heading, newsletter_form (Mailchimp/CF7 embed or
+               action url), networks (repeater: logo, url), quick_links
+               (WP menu "Footer quick links", split into 2 columns),
+               copyright, legal_links (WP menu "Footer legal")
+       ============================================================ -->
+  <footer id="footer" class="hp-footer" data-section="footer">
+    <div class="hp-footer__top">
+
+      <div class="hp-footer__brand">
+        <!-- TODO: swap for the logo SVG once supplied; this is a text stand-in -->
+        <a href="index.html" class="hp-footer__logo" aria-label="Tilleke &amp; Gibbins">
+          <span>Tilleke</span>
+          <span><em>&amp;</em>Gibbins</span>
+        </a>
+
+        <ul class="hp-footer__social">
+          <li>
+            <a href="https://www.facebook.com/tillekegibbins" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.5-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H8v3h2.5V21h3z"/></svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.youtube.com/channel/UCRQKPcy9kYGdYqFVkqzSqVA" aria-label="YouTube">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18.3 5 12 5 12 5s-6.3 0-7.8.4A2.5 2.5 0 0 0 2.4 7.2C2 8.8 2 12 2 12s0 3.2.4 4.8a2.5 2.5 0 0 0 1.8 1.8C5.7 19 12 19 12 19s6.3 0 7.8-.4a2.5 2.5 0 0 0 1.8-1.8c.4-1.6.4-4.8.4-4.8s0-3.2-.4-4.8zM10 15V9l5.2 3L10 15z"/></svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/company/tilleke-gibbins/" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.9 8.7H3.6V20h3.3V8.7zM5.3 3.5a1.9 1.9 0 1 0 0 3.8 1.9 1.9 0 0 0 0-3.8zM20.4 13.1c0-3.2-1.7-4.7-4-4.7a3.4 3.4 0 0 0-3.1 1.7V8.7H10V20h3.3v-5.6c0-1.5.3-2.9 2.1-2.9 1.8 0 1.8 1.7 1.8 3V20h3.3v-6.9z"/></svg>
+            </a>
+          </li>
+        </ul>
+
+        <p class="button-label dark hp-footer__newsletter-heading">Subscribe to our newsletter</p>
+        <form class="hp-footer__form" action="https://tilleke.us7.list-manage.com/subscribe/post?u=266a11a0874fa0c222f4b20fd&amp;id=2fba872045" method="post" target="_blank">
+          <label class="visually-hidden" for="footer-email">Your email</label>
+          <input type="email" id="footer-email" name="EMAIL" placeholder="Your email" autocomplete="email" required>
+          <div class="visually-hidden" aria-hidden="true"><input type="text" name="b_266a11a0874fa0c222f4b20fd_2fba872045" tabindex="-1" value=""></div>
+          <button type="submit">
+            Subscribe
+            <svg viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </form>
+      </div>
+
+      <div class="hp-footer__nav">
+        <p class="subhead hp-footer__label">Networks</p>
+        <ul class="hp-footer__networks">
+          <li><a href="https://www.lexmundi.com/"><img src="assets/lexmundi.png" alt="Lex Mundi Member" class="hp-footer__network hp-footer__network--lexmundi"></a></li>
+          <li><a href="https://www.multilaw.com/"><img src="assets/multilaw.png" alt="Multilaw" class="hp-footer__network hp-footer__network--multilaw"></a></li>
+          <li><a href="https://www.drewnetworkasia.com/"><img src="assets/dna.png" alt="Drew Network Asia" class="hp-footer__network hp-footer__network--dna"></a></li>
+        </ul>
+
+        <p class="subhead hp-footer__label hp-footer__label--links">Quick links</p>
+        <div class="hp-footer__quick">
+          <ul class="hp-footer__quick-col">
+            <li><a href="professionals.html" class="button-label dark">Professionals</a></li>
+            <li><a href="services.html" class="button-label dark">Services</a></li>
+            <li><a href="insights.html" class="button-label dark">Insights</a></li>
+            <li><a href="global-reach.html" class="button-label dark">Locations</a></li>
+          </ul>
+          <ul class="hp-footer__quick-col">
+            <li><a href="about.html" class="button-label dark">About</a></li>
+            <li><a href="careers.html" class="button-label dark">Careers</a></li>
+            <li><a href="contact.html" class="button-label dark">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="hp-footer__bar">
+      <p class="subhead hp-footer__copyright">&copy; 2026 Tilleke &amp; Gibbins International Ltd. All rights reserved.</p>
+      <ul class="hp-footer__legal">
+        <li><a href="privacy-policy.html" class="subhead dark">Privacy Policy</a></li>
+        <li><a href="fraudulent-communications.html" class="subhead dark">Fraudulent Communications</a></li>
+        <li><a href="legal-notice.html" class="subhead dark">Legal Notice</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="assets/vendor/ScrollTrigger.min.js"></script>
+  <script src="assets/vendor/SplitText.min.js"></script>
+  <script src="assets/vendor/blaze-slider.min.js"></script>
+  <script src="assets/vendor/lenis.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

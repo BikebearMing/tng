@@ -1,0 +1,101 @@
+[
+ {
+  "block": "acf/path-hero",
+  "prefix": "pth",
+  "data": {
+   "intro": "Our internship programs are geared toward professional and personal development for the next generation of lawyers. We help you build your legal career on a solid foundation."
+  }
+ },
+ {
+  "block": "acf/overview",
+  "prefix": "ovw",
+  "data": {
+   "variant": "path",
+   "label": "About Our Internship Programs",
+   "heading": "Learn through our multifaceted approach to internships",
+   "text": "<p>We are a growing law firm, serving clients in the vibrant economies of Cambodia, Indonesia, Laos, Myanmar, Thailand, and Vietnam. We offer law students with outstanding academic qualifications the opportunity to learn from our leading lawyers practicing in these emerging markets.</p><p>All of our interns participate directly in real cases involving sophisticated legal issues. By collaborating with expert practitioners, our interns hone their advocacy skills, including legal research, writing, and analysis. Our interns also learn about business operations in Southeast Asia, whether from a litigation, a transactional, or an IP perspective.</p><p>We seek interns who have excelled in their LLB, LLM, or JD programs. As our interns are involved in serving our diverse client base, we recruit interns with skills that enhance client service, such as fluency in foreign languages, industry experience, and study or work abroad. We encourage law students who wish to roll up their sleeves and learn through experience to apply for an internship.</p>"
+  }
+ },
+ {
+  "block": "acf/text-groups",
+  "prefix": "tgr",
+  "className": "lp-programs",
+  "data": {
+   "label": "Internship Programs"
+  },
+  "repeaters": {
+   "groups": [
+    {
+     "heading": "Local Internships",
+     "text": "<p>Our local internship program provides a legal training experience designed for aspiring lawyers. We strive to help our local talent make an impact in their own backyard, and we equip them with valuable tools to take the next step in their careers. Our comprehensive program can help instill a great sense of pride in our interns, while at the same time, facilitating professional growth in one of the most prestigious law firms in Asia. We offer an immersive two-month summer internship program for third-year law students who are at the top of their class and are ready to absorb the necessary skills and direction to jump start their professional career.</p>"
+    },
+    {
+     "heading": "Who Should Join Our Local Internship Program?",
+     "text": "<p>We encourage law students who wish to advance in their careers at a leading Southeast Asian law firm to apply for an internship. We help local interns who are committed to practicing in the region connect with our ever-expanding local network of clients and partners.</p><p>We do not look at interns simply as assistants who get coffee or shred documents, but instead offer a much more hands-on approach that includes legal research, hands-on practice with our top lawyers, and client contact. Thus we expect the best performance from all our interns.</p>"
+    },
+    {
+     "heading": "International Internships",
+     "text": "<p>Our 90-day international internship programs allow for a broad experience for aspiring lawyers from all over the world. In our offices in Bangkok, Hanoi, Ho Chi Minh City, Jakarta, Phnom Penh, Vientiane, and Yangon, our interns are exposed to multinational talent, diverse cultures, and industry-leading expertise. If you are looking for exposure in these markets and an immense professional and personal growth opportunity, then Tilleke &amp; Gibbins is the right firm for you.</p>"
+    },
+    {
+     "heading": "Who Should Join Our Southeast Asia Internship Program",
+     "text": "<p>We seek interns who have excelled in their LLB, LLM, or JD programs. As our interns are involved in serving our diverse client base, we recruit interns with skills that enhance client service, such as fluency in foreign languages, industry experience, and study or work abroad. Since our internships are much more than just getting coffee, we expect the best performance from all our interns as they roll up their sleeves and learn by doing.</p>"
+    }
+   ]
+  }
+ },
+ {
+  "block": "acf/team-stories",
+  "prefix": "tms",
+  "data": {
+   "heading": "Hear it from\nan intern"
+  },
+  "repeaters": {
+   "stories": [
+    {
+     "role": "Former Intern",
+     "name": "Pongchiwat Jirayustienjinda",
+     "position": "Former Intern",
+     "quote": "<p>My internship at Tilleke &amp; Gibbins was excellent preparation for entering the legal profession. I benefited from the guidance of expert lawyers whose practical and theoretical knowledge of the law was both humbling and inspiring, and I got to be part of legal teams working on important cases. It wasn’t only work though—my fellow interns and I also collaborated on developing special projects and presentations.</p>"
+    }
+   ]
+  }
+ },
+ {
+  "block": "acf/careers-cta",
+  "prefix": "cct",
+  "className": "lp-apply",
+  "data": {
+   "heading": "Interested in an internship at Tilleke & Gibbins?",
+   "link_label": "recruit@tilleke.com",
+   "link_url": "mailto:recruit@tilleke.com",
+   "text": "Please submit CV & all related documents to"
+  }
+ },
+ {
+  "block": "acf/path-jobs"
+ },
+ {
+  "block": "acf/more-from",
+  "prefix": "mfr",
+  "data": {
+   "arrows": "1"
+  },
+  "repeaters": {
+   "links": [
+    {
+     "label": "Legal Professionals",
+     "url": "{page:careers/legal-professionals}"
+    },
+    {
+     "label": "Operations Professionals",
+     "url": "{page:careers/operations-professionals}"
+    },
+    {
+     "label": "All Job Opportunities",
+     "url": "{page:careers/job-opportunities}"
+    }
+   ]
+  }
+ }
+]

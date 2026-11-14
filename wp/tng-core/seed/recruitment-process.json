@@ -1,0 +1,75 @@
+[
+ {
+  "block": "acf/path-hero",
+  "prefix": "pth",
+  "data": {
+   "intro": "Our application process is designed to get all the information we need in order to make sure that Tilleke is the best fit for you. We make this process as clear as possible so that you can let your experience and talent shine to our recruiters. Below is a detailed rundown of the process your application will go through from beginning to end."
+  }
+ },
+ {
+  "block": "acf/rows",
+  "prefix": "rws",
+  "data": {
+   "variant": "steps",
+   "heading": "Applying to Tilleke & Gibbins"
+  },
+  "repeaters": {
+   "rows": [
+    {
+     "title": "Submit resume and\nsupporting documents",
+     "text": "<p>Submit your resume and all other related documents, such as a cover letter explaining your motivations, any relevant certificates you might have, your university transcripts, and any other supporting materials you think might help showcase your unique skills and talents to our recruiters.</p>"
+    },
+    {
+     "title": "Speak with\nour recruitment team",
+     "text": "<p>Once your application has been screened and has moved on to the next phase of the process, you will receive a phone or video call from one of our recruiters. This call will give our recruiters a chance to develop a more personal understanding of you and your communication skills.</p>"
+    },
+    {
+     "title": "Testing and interviews",
+     "text": "<p>Shortlisted applicants undergo a testing stage that helps us get an understanding of how they work and their specific skill set. These are then complemented by an in-person interview that will help our recruitment team identify the most suitable applicants. This step is crucial as it will showcase your compatibility with our core values and our working culture.</p>"
+    },
+    {
+     "title": "Feedback and results",
+     "text": "<p>We like to provide everyone with feedback on their application process, as we believe it is essential information needed for growth and development, and we therefore try to respond to every application with detailed feedback. However, there might be some instances when, due to the high volume of applicants, detailed feedback will not be available. Otherwise, the results and further details of your application will be provided at this stage.</p>"
+    }
+   ]
+  }
+ },
+ {
+  "block": "acf/careers-cta",
+  "prefix": "cct",
+  "className": "rec-cta",
+  "data": {
+   "heading": "What it is like to work at Tilleke & Gibbins?",
+   "link_label": "Learn more",
+   "link_url": "{page:careers}"
+  }
+ },
+ {
+  "block": "acf/more-from",
+  "prefix": "mfr",
+  "data": {
+   "arrows": "1"
+  },
+  "repeaters": {
+   "links": [
+    {
+     "label": "See All Job Openings",
+     "url": "{page:careers/job-opportunities}"
+    },
+    {
+     "label": "Legal Professionals",
+     "url": "{page:careers/legal-professionals}"
+    },
+    {
+     "label": "Operations Professionals",
+     "url": "{page:careers/operations-professionals}"
+    },
+    {
+     "label": "Internships",
+     "url": "{page:careers/internships}"
+    }
+   ]
+  },
+  "className": "rec-more"
+ }
+]

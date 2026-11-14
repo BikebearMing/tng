@@ -1,0 +1,364 @@
+/* ============================================================
+   TNG responsive: pages with no mockup (text pages, Operations
+   Professionals, Internships, Recruitment Process, History,
+   Services, Award single, 404, Search results, Global Reach,
+   Japan / China Desk). Desktop rules: the "PAGES WITH NO MOCKUP"
+   section at the end of style.css.
+   ============================================================ */
+
+/* ============================================================
+   Small layout (phone + tablet): 0 to 1199
+   ============================================================ */
+@media (max-width: 1199px) {
+  /* Career path pages */
+  .lp-programs {
+    padding-top: calc(40 * var(--u)); /* 40 */
+  }
+
+  .lp-programs .job-summary__list > * + * {
+    margin-top: calc(14 * var(--u)); /* 14 */
+  }
+
+  .lp-apply__text {
+    margin-top: calc(14 * var(--u)); /* 14 */
+    font-size: calc(16 * var(--u)); /* 16 */
+  }
+
+  .lp-apply .careers-cta__link {
+    margin-top: calc(8 * var(--u)); /* 8 */
+  }
+
+  .lp-apply {
+    padding-top: 0;
+  }
+
+  .rec-cta {
+    padding-bottom: calc(56 * var(--u)); /* 56 */
+  }
+
+  /* History */
+  .hist-overview {
+    padding-bottom: calc(56 * var(--u)); /* 56 */
+  }
+
+  .hist-timeline {
+    padding: calc(40 * var(--u)) calc(20 * var(--u)) calc(24 * var(--u)); /* 40 / 20 / 24 */
+  }
+
+  .hist-timeline__list {
+    margin-top: calc(24 * var(--u)); /* 24 */
+  }
+
+  .hist-timeline .hist-timeline__item {
+    grid-template-columns: minmax(0, 1fr);
+    padding: calc(16 * var(--u)) 0 calc(32 * var(--u)); /* 16 / 32 */
+  }
+
+  .hist-timeline .hist-timeline__item::after {
+    width: calc(40 * var(--u)); /* 40 */
+  }
+
+  .hist-timeline .hist-timeline__year {
+    padding-top: 0;
+    font-size: calc(56 * var(--u)); /* 56 */
+    letter-spacing: -0.04em;
+  }
+
+  .hist-timeline .in-findings__title,
+  .hist-timeline .in-findings__text {
+    max-width: none;
+  }
+
+  .hist-timeline .in-findings__text {
+    margin-left: 0;
+    font-size: calc(16 * var(--u)); /* 16 */
+  }
+
+  .hist-book {
+    padding-top: calc(40 * var(--u)); /* 40 */
+  }
+
+  /* Services index: the stacked more-from, rows 16 above / below */
+  .svc-index__title {
+    position: static;
+  }
+
+  .svc-index .more-from__link {
+    padding: calc(16 * var(--u)) 0; /* 16 */
+  }
+
+  .svc-index .more-from__list > li:first-child .more-from__link {
+    padding-top: calc(16 * var(--u)); /* 16 */
+  }
+
+  .svc-index .more-from__list {
+    margin-top: calc(8 * var(--u)); /* 8 */
+  }
+
+  /* Search: field full width; pills a swipe strip under the header */
+  .srch-hero__side {
+    max-width: none;
+  }
+
+  .srch-hero__count {
+    margin-top: calc(14 * var(--u)); /* 14 */
+  }
+
+  .srch-tabs {
+    top: var(--header-h);
+    padding: calc(12 * var(--u)) 0; /* 12 */
+  }
+
+  .srch-tabs .srch-tabs__list {
+    flex-wrap: nowrap;
+    gap: calc(8 * var(--u)); /* 8 */
+    padding-inline: calc(20 * var(--u)); /* 20 */
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    scroll-padding-inline: calc(20 * var(--u));
+    scrollbar-width: none;
+  }
+
+  .srch-tabs .srch-tabs__list::-webkit-scrollbar {
+    display: none;
+  }
+
+  .srch-tabs .srch-tabs__list > li {
+    flex: none;
+    white-space: nowrap;
+    scroll-snap-align: start;
+  }
+
+  .pro-related--people.srch-group--people {
+    display: block;
+    padding: calc(40 * var(--u)) calc(20 * var(--u)); /* 40 / 20 */
+  }
+
+  .srch-group--people .pro-related__cards {
+    gap: calc(16 * var(--u)) calc(8 * var(--u)); /* 16 / 8 */
+  }
+
+  .srch-group .srch-pages {
+    margin-top: calc(24 * var(--u)); /* 24 */
+  }
+
+  /* Page rows: title over the grey path, arrow on the right */
+  .srch-pages .careers-jobs__row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    column-gap: calc(16 * var(--u)); /* 16 */
+    row-gap: calc(4 * var(--u)); /* 4 */
+  }
+
+  .srch-pages .careers-jobs__count {
+    grid-row: 2;
+    margin: 0;
+    font-size: calc(14 * var(--u)); /* 14 */
+  }
+
+  .srch-pages .careers-jobs__row .arrow-circle {
+    grid-column: 2;
+    grid-row: 1 / 3;
+  }
+
+  /* Global Reach: label, tile, text stacked */
+  .reach-networks {
+    padding: calc(40 * var(--u)) calc(20 * var(--u)) calc(56 * var(--u)); /* 40 / 20 / 56 */
+  }
+
+  .reach-networks__heading {
+    max-width: none;
+  }
+
+  .reach-network {
+    grid-template-columns: minmax(0, 1fr);
+    margin-top: calc(40 * var(--u)); /* 40 */
+  }
+
+  .reach-network__logo {
+    width: 100%;
+    height: calc(150 * var(--u)); /* 150 */
+    margin-top: calc(20 * var(--u)); /* 20 */
+    border-radius: calc(5 * var(--u)); /* 5 */
+  }
+
+  .reach-network__logo-img--lexmundi {
+    width: calc(150 * var(--u)); /* 150 */
+  }
+
+  .reach-network__logo-img--multilaw {
+    width: calc(145 * var(--u)); /* 145 */
+  }
+
+  .reach-network__logo-img--dna {
+    width: calc(190 * var(--u)); /* 190 */
+  }
+
+  .reach-network__body {
+    margin-top: calc(20 * var(--u)); /* 20 */
+  }
+
+  .reach-network__text {
+    max-width: none;
+  }
+
+  .reach-network__link {
+    margin-top: calc(20 * var(--u)); /* 20 */
+  }
+
+  /* Desks */
+  .desk-hero .info-hero__lines + .info-hero__name {
+    margin-top: calc(20 * var(--u)); /* 20 */
+  }
+
+  .desk-contacts {
+    padding-top: calc(40 * var(--u)); /* 40 */
+  }
+
+  .desk-contacts__position {
+    margin-top: calc(8 * var(--u)); /* 8 */
+  }
+
+  .desk-contacts .job-summary__list > * + * {
+    margin-top: calc(14 * var(--u)); /* 14 */
+  }
+
+  .desk-about {
+    padding-bottom: calc(40 * var(--u)); /* 40 */
+  }
+
+  .desk-about__heading {
+    margin-top: calc(10 * var(--u)); /* 10 */
+  }
+
+  /* 404 */
+  .nf-hero__text {
+    max-width: none;
+    margin-top: calc(20 * var(--u)); /* 20 */
+  }
+
+  .hp-footer__form.nf-hero__form {
+    width: 100%;
+    margin-top: calc(28 * var(--u)); /* 28 */
+  }
+
+  /* Text page: the article stack (aside first, as the insight page) */
+  .txt-article {
+    padding-top: calc(32 * var(--u)); /* 32 */
+  }
+
+  .txt-nav {
+    padding: calc(16 * var(--u)) calc(10 * var(--u)) calc(10 * var(--u)); /* 16 / 10 / 10 */
+    border-radius: calc(8 * var(--u)); /* 8 */
+  }
+
+  .txt-nav__heading {
+    padding: 0 calc(6 * var(--u)); /* 6 */
+    margin-bottom: calc(16 * var(--u)); /* 16 */
+  }
+
+  .txt-nav__link {
+    gap: calc(12 * var(--u)); /* 12 */
+    min-height: calc(52 * var(--u)); /* 52 */
+    padding: calc(12 * var(--u)) calc(16 * var(--u)); /* 12 / 16 */
+    border-radius: calc(5 * var(--u)); /* 5 */
+  }
+
+  .txt-nav__sub {
+    margin: calc(6 * var(--u)) 0 calc(4 * var(--u)); /* 6 / 4 */
+    padding-left: calc(16 * var(--u)); /* 16 */
+  }
+
+  .txt-nav__sublink {
+    padding: calc(12 * var(--u)) calc(16 * var(--u)); /* 12 / 16: 44 tap height */
+    font-size: calc(15 * var(--u)); /* 15 */
+  }
+
+  .txt-nav__sublink[aria-current]::before {
+    width: 3px;
+  }
+
+  .txt-content h2 {
+    font-size: calc(22 * var(--u)); /* 22 */
+  }
+
+  .txt-content > * + h2,
+  .txt-content > ul + h2,
+  .txt-content > ol + h2 {
+    margin-top: calc(36 * var(--u)); /* 36 */
+  }
+
+  .txt-content > h2 + * {
+    margin-top: calc(14 * var(--u)); /* 14 */
+  }
+
+  .txt-content h3 {
+    font-size: calc(17 * var(--u)); /* 17 */
+  }
+
+  .txt-content > * + h3 {
+    margin-top: calc(24 * var(--u)); /* 24 */
+  }
+
+  .txt-content > h3 + * {
+    margin-top: calc(10 * var(--u)); /* 10 */
+  }
+
+  .txt-content li + li {
+    margin-top: calc(10 * var(--u)); /* 10 */
+  }
+
+  .txt-content table {
+    font-size: calc(14 * var(--u)); /* 14 */
+  }
+
+  .txt-content th,
+  .txt-content td {
+    min-width: calc(140 * var(--u)); /* 140: columns stay readable, the table scrolls */
+    padding: calc(10 * var(--u)) calc(10 * var(--u)) calc(10 * var(--u)) 0; /* 10 */
+  }
+}
+
+/* ============================================================
+   Tablet: 768 to 1199 (grids and side-by-side only)
+   ============================================================ */
+@media (min-width: 768px) and (max-width: 1199px) {
+  /* Text page: nav and copy side by side (beats the article's
+     one-column tablet rule, which loads later) */
+  .in-article.txt-article {
+    grid-template-columns: calc(240 * var(--u)) minmax(0, 1fr); /* 240 */
+    column-gap: calc(40 * var(--u)); /* 40 */
+    padding-inline: calc(20 * var(--u)); /* 20 */
+  }
+
+  .txt-nav .txt-nav__list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Global Reach: logo tile beside the text */
+  .reach-network {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
+    column-gap: calc(40 * var(--u)); /* 40 */
+  }
+
+  /* History: year column beside title + text */
+  .hist-timeline .hist-timeline__item {
+    grid-template-columns: calc(150 * var(--u)) minmax(0, 1fr); /* 150 */
+    column-gap: calc(24 * var(--u)); /* 24 */
+  }
+
+  .hist-timeline .hist-timeline__year {
+    grid-row: 1 / 3;
+  }
+
+  .hist-timeline .in-findings__title {
+    margin-top: 0;
+  }
+
+  .txt-article .in-article__aside {
+    position: sticky;
+    top: calc(var(--header-h) + 24 * var(--u)); /* header + 24 */
+    order: 0;
+  }
+}

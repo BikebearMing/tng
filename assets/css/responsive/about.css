@@ -1,0 +1,453 @@
+/* ============================================================
+   TNG responsive: About (family D)
+   Owns: about, pro-bono, csr, museum, textile-collection <main>
+   Rules: temporary/migration/responsive-spec.md sections 0.4, 0.5
+   and "Foundation provides". Two queries only:
+   @media (max-width: 1199px) and
+   @media (min-width: 768px) and (max-width: 1199px)
+   ============================================================ */
+
+@media (max-width: 1199px) {
+
+  /* ==========================================================
+     About hero: title, intro 24 under it
+     ========================================================== */
+  .about-hero__content,
+  .info-hero__content {
+    padding-top: calc(40 * var(--u)); /* 40 under the breadcrumbs, as every hero */
+  }
+
+  .about-hero__title,
+  .about-hero__intro,
+  .info-hero__title {
+    max-width: none;
+  }
+
+  .about-hero__intro {
+    margin-top: calc(24 * var(--u)); /* 24 */
+  }
+
+  /* ==========================================================
+     About overview / code of conduct: C3 without the vw caps
+     ========================================================== */
+  .about-overview .svc-overview__heading,
+  .about-code .svc-overview__heading,
+  .about-code .svc-overview__text {
+    max-width: none;
+  }
+
+  .about-code__link {
+    margin-top: calc(20 * var(--u)); /* 20 */
+  }
+
+  /* ==========================================================
+     About values: accordion, then the image 4 / 3
+     ========================================================== */
+  .about-values {
+    display: block;
+    padding: 0 calc(20 * var(--u)) calc(56 * var(--u)); /* 0 / 20 / 56: the overview's 56 bottom is the gap */
+  }
+
+  .about-acc__btn {
+    padding: calc(18 * var(--u)) calc(40 * var(--u)) calc(18 * var(--u)) 0; /* 18 / 40 / 18 / 0: 60 tap rows */
+  }
+
+  .about-acc__icon {
+    width: calc(16 * var(--u)); /* 16 */
+    height: calc(16 * var(--u));
+  }
+
+  .about-acc__text {
+    padding: 0 0 calc(20 * var(--u)); /* 20 */
+    margin-top: calc(-6 * var(--u)); /* 12 under the title */
+  }
+
+  .about-values__image {
+    height: auto;
+    aspect-ratio: 4 / 3;
+    margin-top: calc(32 * var(--u)); /* 32 */
+    border-radius: calc(5 * var(--u)); /* 5 */
+  }
+
+  /* ==========================================================
+     About numbers: plain 2 x 2, no stagger
+     ========================================================== */
+  .about-numbers {
+    padding: calc(56 * var(--u)) calc(20 * var(--u)); /* 56 / 20, as the other teal bands */
+  }
+
+  .about-numbers__list {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: none;
+    gap: calc(32 * var(--u)) calc(16 * var(--u)); /* 32 / 16 */
+  }
+
+  .about-numbers__item:nth-child(n) {
+    grid-row: auto;
+    grid-column: auto;
+    margin-left: 0;
+  }
+
+  .about-numbers__num {
+    font-size: calc(80 * var(--u)); /* 80: "250+" fits a half column */
+  }
+
+  .about-numbers__label {
+    margin-top: calc(4 * var(--u)); /* 4 */
+  }
+
+  /* ==========================================================
+     About vision: tabs in one row, rule, then text + image
+     ========================================================== */
+  .about-vision {
+    display: block;
+    padding: 0 calc(20 * var(--u)) calc(56 * var(--u)); /* 0 / 20 / 56 */
+  }
+
+  .about-vision__tabs {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    column-gap: calc(24 * var(--u)); /* 24 */
+  }
+
+  .about-vision__tab .arrow-circle {
+    margin-left: calc(8 * var(--u)); /* 8 */
+  }
+
+  .about-vision__panels {
+    margin-top: calc(20 * var(--u)); /* 20 */
+    padding-top: calc(24 * var(--u)); /* 24 */
+    border-left: 0;
+    border-top: 1px solid #e3e8ee;
+  }
+
+  .about-vision__panel {
+    display: block;
+    padding-left: 0;
+  }
+
+  .about-vision__image {
+    height: auto;
+    aspect-ratio: 4 / 3;
+    margin-top: calc(24 * var(--u)); /* 24 */
+    border-radius: calc(5 * var(--u)); /* 5 */
+  }
+
+  /* ==========================================================
+     About creed: one column
+     ========================================================== */
+  .about-creed {
+    grid-template-columns: 1fr;
+    row-gap: calc(32 * var(--u)); /* 32 between the columns */
+    padding: 0 calc(20 * var(--u)) calc(56 * var(--u)); /* 0 / 20 / 56 */
+  }
+
+  .about-creed__label {
+    margin-bottom: calc(-12 * var(--u)); /* 20 to the first heading */
+  }
+
+  .about-creed__list {
+    margin-top: calc(16 * var(--u)); /* 16 */
+  }
+
+  /* ==========================================================
+     Info hero (pro bono, CSR, museum, textile): contact block
+     full width, lines stacked
+     ========================================================== */
+  .info-hero__contact,
+  .info-hero__contact:not(:has(.info-hero__name)) {
+    width: auto;
+    min-width: 0;
+    margin-top: calc(40 * var(--u)); /* 40 */
+  }
+
+  .info-hero__label {
+    max-width: none;
+    padding-bottom: calc(10 * var(--u)); /* 10 */
+  }
+
+  .info-hero__name {
+    margin-top: calc(12 * var(--u)); /* 12 */
+  }
+
+  .info-hero__lines,
+  .info-hero__name + .info-hero__lines {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: calc(12 * var(--u)); /* 12 */
+    margin-top: calc(16 * var(--u)); /* 16 */
+  }
+
+  .info-hero__lines:not(:has(li)) {
+    display: none;
+  }
+
+  .info-hero__lines li {
+    gap: calc(12 * var(--u)); /* 12 */
+    font-size: calc(15 * var(--u)); /* 15 */
+    line-height: 1.3;
+  }
+
+  /* Tap height: inline padding grows the hit area, not the row */
+  .info-hero__lines a {
+    padding: calc(8 * var(--u)) 0; /* 8: 36 tall, the icon's height */
+  }
+
+  /* ==========================================================
+     Info overview: C3 without the vw caps; CSR image after the text
+     ========================================================== */
+  .info-overview .svc-overview__heading,
+  .info-overview .svc-overview__text {
+    max-width: none;
+  }
+
+  .info-overview .svc-overview__text {
+    margin-top: calc(24 * var(--u)); /* 24 under the heading */
+    font-size: calc(16 * var(--u)); /* 16 */
+    line-height: 1.5; /* 24 */
+  }
+
+  .info-overview:has(.info-overview__image) .svc-overview__text {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  .info-overview__image {
+    grid-row: 4;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 2 / 1;
+    margin-top: calc(32 * var(--u)); /* 32 */
+    border-radius: calc(5 * var(--u)); /* 5 */
+  }
+
+  /* ==========================================================
+     Museum audiences: one column; cell = rule, title, text
+     ========================================================== */
+  .mus-audience {
+    grid-template-columns: 1fr;
+    gap: calc(32 * var(--u)); /* 32 */
+    padding: 0 calc(20 * var(--u)); /* 20 */
+  }
+
+  .mus-audience__item {
+    display: block;
+    padding-top: calc(16 * var(--u)); /* 16 */
+  }
+
+  .mus-audience__text {
+    max-width: none;
+    margin-top: calc(12 * var(--u)); /* 12 */
+    font-size: calc(16 * var(--u)); /* 16 */
+    line-height: 1.5; /* 24 */
+  }
+
+  /* ==========================================================
+     Museum collection (+ textile history heading variant):
+     quote / heading, text, image 4 / 3
+     ========================================================== */
+  .mus-collection,
+  .mus-collection--heading {
+    display: block;
+    padding: calc(56 * var(--u)) calc(20 * var(--u)) calc(12 * var(--u)); /* 56 / 20 / 12: image sits on the case band */
+  }
+
+  .mus-collection--heading {
+    padding-top: 0;
+    padding-bottom: calc(56 * var(--u)); /* 56 */
+  }
+
+  .mus-collection__quote,
+  .mus-collection__heading {
+    max-width: none;
+    margin-top: calc(20 * var(--u)); /* 20 under the rule */
+  }
+
+  .mus-collection__quote figcaption {
+    margin-top: calc(12 * var(--u)); /* 12 */
+  }
+
+  .mus-collection__text,
+  .mus-collection--heading .mus-collection__text {
+    max-width: none;
+    margin-top: calc(24 * var(--u)); /* 24 */
+    font-size: calc(16 * var(--u)); /* 16 */
+    line-height: 1.5; /* 24 */
+  }
+
+  .mus-collection__image,
+  .mus-collection--heading .mus-collection__image {
+    display: block;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    margin-top: calc(32 * var(--u)); /* 32 */
+    border-radius: calc(5 * var(--u)); /* 5 */
+  }
+
+  /* ==========================================================
+     Museum cases: the media card's image in flow, on top,
+     10 in from the card edge (as desktop)
+     ========================================================== */
+  .loc-success__media {
+    position: static;
+    order: -1;
+    width: calc(100% + 20 * var(--u)); /* card padding 20 - 10 inset, both sides */
+    height: auto;
+    aspect-ratio: 4 / 3;
+    margin: calc(-10 * var(--u)) calc(-10 * var(--u)) calc(20 * var(--u)); /* 10 inset / 20 to the title */
+    border-radius: calc(5 * var(--u)); /* 5 */
+  }
+
+  /* .h2 title inside a card: one step down so it stays 2 to 3 lines */
+  .loc-success--media .loc-success__title {
+    font-size: calc(24 * var(--u)); /* 24 */
+    line-height: 1.1;
+  }
+
+  .loc-success--media .loc-success__text {
+    max-width: none;
+    margin-top: calc(12 * var(--u)); /* 12 */
+  }
+
+  .loc-success--media .loc-success__link {
+    margin-top: calc(20 * var(--u)); /* 20 */
+  }
+
+  /* ==========================================================
+     Textile gallery: 3 x 3 kept, 6 gap; 44 social circles
+     ========================================================== */
+  .tex-gallery {
+    padding: 0 calc(20 * var(--u)) calc(56 * var(--u)); /* 0 / 20 / 56: the overview's 56 bottom is the gap */
+  }
+
+  .tex-gallery__grid {
+    gap: calc(6 * var(--u)); /* 6 */
+    margin-top: calc(20 * var(--u)); /* 20 */
+  }
+
+  .tex-gallery__image {
+    border-radius: calc(4 * var(--u)); /* 4 */
+  }
+
+  .tex-gallery__social {
+    gap: calc(10 * var(--u)); /* 10 */
+    margin-top: calc(24 * var(--u)); /* 24 */
+  }
+
+  .tex-gallery__social a {
+    width: calc(44 * var(--u)); /* 44 */
+    height: calc(44 * var(--u));
+  }
+
+  .tex-gallery__social svg {
+    width: calc(18 * var(--u)); /* 18 */
+    height: calc(18 * var(--u));
+  }
+}
+
+/* ============================================================
+   Tablet (768 to 1199): side by side where desktop is
+   ============================================================ */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .about-values {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: calc(40 * var(--u)); /* 40 */
+  }
+
+  .about-values__image {
+    aspect-ratio: 1;
+    margin-top: 0;
+  }
+
+  .about-vision__panel {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    column-gap: calc(40 * var(--u)); /* 40 */
+  }
+
+  .about-vision__image {
+    margin-top: 0;
+  }
+
+  .about-creed {
+    grid-template-columns: 1fr 1fr;
+    column-gap: calc(40 * var(--u)); /* 40 */
+  }
+
+  .info-hero__lines,
+  .info-hero__name + .info-hero__lines {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: calc(12 * var(--u)) calc(32 * var(--u)); /* 12 / 32 */
+  }
+
+  /* CSR: desktop placement (image at the foot of the heading column) */
+  .info-overview:has(.info-overview__image) .svc-overview__text {
+    grid-column: 2;
+    grid-row: 2 / span 2;
+  }
+
+  .info-overview__image {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  .mus-audience {
+    grid-template-columns: 1fr 1fr;
+    gap: calc(40 * var(--u)) calc(32 * var(--u)); /* 40 / 32 */
+  }
+
+  /* Collection: desktop's text | image, image from the quote down */
+  .mus-collection,
+  .mus-collection--heading {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: calc(40 * var(--u)); /* 40 */
+  }
+
+  .mus-collection__image,
+  .mus-collection--heading .mus-collection__image {
+    grid-row: 2 / span 3;
+    aspect-ratio: 4 / 3;
+    margin-top: calc(20 * var(--u)); /* 20: level with the quote */
+  }
+
+  /* Case card: text | image, as desktop; image 10 in from the edges */
+  .svc-successes .loc-success--media {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto 1fr;
+    column-gap: calc(24 * var(--u)); /* 24 */
+  }
+
+  .loc-success--media .loc-success__title,
+  .loc-success--media .loc-success__text,
+  .loc-success--media .loc-success__link {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .loc-success__media {
+    grid-column: 2;
+    grid-row: 1 / -1;
+    align-self: stretch;
+    width: calc(100% + 10 * var(--u));
+    min-height: calc(280 * var(--u)); /* 280 */
+    aspect-ratio: auto;
+    contain: size; /* the photo's own height doesn't stretch the card */
+    margin: calc(-10 * var(--u)) calc(-10 * var(--u)) calc(-10 * var(--u)) 0; /* 10 in */
+  }
+
+  /* Gallery: the desktop's centred column, at most 760 wide */
+  .tex-gallery {
+    padding-inline: max(calc(20 * var(--u)), calc(50% - 380px));
+  }
+
+  .tex-gallery__grid {
+    gap: calc(10 * var(--u)); /* 10 */
+  }
+}

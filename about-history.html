@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>History — TNG</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/vendor/blaze.css">
+  <link rel="stylesheet" href="assets/vendor/lenis.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       HEADER (site-wide, sits over the banner)
+       SCF options page: site/header
+       Fields: logo (image/svg), top_menu (WP menu "Header top":
+               About / Careers / Contact), main_menu (WP menu "Header main":
+               Professionals / Services / Insights / Locations),
+               search_label, languages (repeater: code, url),
+               locations_mega (auto from Location taxonomy: name, image,
+               link; plus extra_links repeater, e.g. Global Reach),
+               services_mega (auto from Industry and Practice taxonomies:
+               name, link; labels editable)
+       ============================================================ -->
+  <header class="site-header" data-scrolled-at="40">
+    <!-- TODO: swap for the logo SVG once supplied; this is a text stand-in -->
+    <a href="index.html" class="site-header__logo" aria-label="Tilleke &amp; Gibbins">
+      <span>Tilleke</span>
+      <span><em>&amp;</em>Gibbins</span>
+    </a>
+
+    <nav class="site-header__nav" id="site-nav" aria-label="Main">
+      <ul class="site-header__top">
+        <li class="has-mega">
+          <a href="about.html" class="subhead" aria-haspopup="true">About</a>
+          <!-- Tiny megamenu: the page's child pages (WP: published children, Page Attributes → Order) -->
+          <div class="site-header__mega site-header__mega--mini">
+            <ul class="site-header__mega-links">
+            <li><a href="about-history.html" class="site-header__mega-link">History</a></li>
+            <li><a href="awards.html" class="site-header__mega-link">Awards &amp; Rankings</a></li>
+            <li><a href="pro-bono.html" class="site-header__mega-link">Pro Bono</a></li>
+            <li><a href="csr.html" class="site-header__mega-link">CSR</a></li>
+            <li><a href="museum.html" class="site-header__mega-link">Museum of Counterfeit Goods</a></li>
+            <li><a href="textile-collection.html" class="site-header__mega-link">Textile Collection</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="has-mega">
+          <a href="careers.html" class="subhead" aria-haspopup="true">Careers</a>
+          <!-- Tiny megamenu: the page's child pages (WP: published children, Page Attributes → Order) -->
+          <div class="site-header__mega site-header__mega--mini">
+            <ul class="site-header__mega-links">
+            <li><a href="careers-legal.html" class="site-header__mega-link">Legal Professionals</a></li>
+            <li><a href="careers-operations.html" class="site-header__mega-link">Operations Professionals</a></li>
+            <li><a href="careers-internships.html" class="site-header__mega-link">Internships</a></li>
+            <li><a href="job-opportunities.html" class="site-header__mega-link">Job Opportunities</a></li>
+            <li><a href="recruitment-process.html" class="site-header__mega-link">Our Recruitment Process</a></li>
+            </ul>
+          </div>
+        </li>
+        <li><a href="contact.html" class="subhead">Contact</a></li>
+      </ul>
+      <ul class="site-header__main">
+        <li><a href="professionals.html" class="button-label">Professionals</a></li>
+        <li class="has-mega">
+          <a href="#" class="button-label" aria-haspopup="true">Services</a>
+          <!-- Megamenu: industries (active follows hover) | practices in two columns -->
+          <div class="site-header__mega site-header__mega--services">
+            <div class="site-header__mega-col">
+              <p class="subhead site-header__mega-label">Industries</p>
+              <ul class="site-header__mega-list">
+              <li class="is-active"><a href="service.html" class="button-label">Automotive<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+              <li><a href="#" class="button-label">Aviation<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+              <li><a href="#" class="button-label">Consumer products<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+              <li><a href="#" class="button-label">Energy<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+              <li><a href="#" class="button-label">Fintech<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+              <li><a href="#" class="button-label">Insurance<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+              <li><a href="#" class="button-label">Life Sciences<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+              <li><a href="#" class="button-label">Technology<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+              </ul>
+            </div>
+            <div class="site-header__mega-col site-header__mega-col--divided">
+              <p class="subhead site-header__mega-label">Practices</p>
+              <ul class="site-header__mega-links" style="--rows: 6;">
+              <li><a href="#" class="site-header__mega-link">Antitrust and Competition</a></li>
+              <li><a href="#" class="site-header__mega-link">Banking and Finance</a></li>
+              <li><a href="#" class="site-header__mega-link">Capital Markets</a></li>
+              <li><a href="#" class="site-header__mega-link">Compliance and Investigations</a></li>
+              <li><a href="#" class="site-header__mega-link">Corporate/M&amp;A</a></li>
+              <li><a href="#" class="site-header__mega-link">Customs and International Trade</a></li>
+              <li><a href="#" class="site-header__mega-link">Dispute Resolution and Litigation</a></li>
+              <li><a href="#" class="site-header__mega-link">Employment</a></li>
+              <li><a href="practice.html" class="site-header__mega-link">Intellectual Property</a></li>
+              <li><a href="#" class="site-header__mega-link">Real Estate</a></li>
+              <li><a href="#" class="site-header__mega-link">Regulatory Affairs</a></li>
+              <li><a href="#" class="site-header__mega-link">Tax</a></li>
+              </ul>
+            </div>
+          </div>
+        </li>
+        <li><a href="insights.html" class="button-label">Insights</a></li>
+        <li class="has-mega">
+          <a href="#" class="button-label" aria-haspopup="true">Locations</a>
+          <!-- Megamenu: hover/focus opens it; hovering a location swaps the image -->
+          <div class="site-header__mega">
+            <ul class="site-header__mega-list">
+            <li class="is-active"><a href="location.html" class="button-label">Cambodia<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            <li><a href="#" class="button-label">Indonesia<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            <li><a href="#" class="button-label">Laos<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            <li><a href="#" class="button-label">Myanmar<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            <li><a href="#" class="button-label">Thailand<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            <li><a href="#" class="button-label">Vietnam<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            <li><a href="#" class="button-label">Global Reach<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+            </ul>
+            <div class="site-header__mega-media" aria-hidden="true">
+            <img src="assets/img/loc-cambodia-menu.jpg" alt="" class="is-active">
+            <img src="assets/img/loc-indonesia-menu.jpg" alt="">
+            <img src="assets/img/loc-laos-menu.jpg" alt="">
+            <img src="assets/img/loc-myanmar-menu.jpg" alt="">
+            <img src="assets/img/loc-thailand-menu.jpg" alt="">
+            <img src="assets/img/loc-vietnam-menu.jpg" alt="">
+            <img src="assets/img/loc-global-menu.jpg" alt="">
+            </div>
+          </div>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="site-header__utils">
+      <a href="search.html" class="subhead site-header__search">
+        Search
+        <svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="7.5" cy="7.5" r="6" stroke="currentColor" stroke-width="1.5"/><path d="M12 12l4.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </a>
+      <a href="#" class="subhead site-header__lang" aria-label="Language: English">
+        ENG
+        <svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="7.5" stroke="currentColor" stroke-width="1.3"/><ellipse cx="9" cy="9" rx="3.2" ry="7.5" stroke="currentColor" stroke-width="1.3"/><path d="M1.5 9h15M2.8 5.2h12.4M2.8 12.8h12.4" stroke="currentColor" stroke-width="1.3"/></svg>
+      </a>
+    </div>
+
+    <button type="button" class="site-header__toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Menu"><span></span><span></span></button>
+  </header>
+
+  <main>
+
+    <!-- ============================================================
+         SECTION: Page hero (navy, no image)
+         About child page, SCF block: careers/path-hero reused as
+         page/text-hero (title + intro, intro from 720)
+         ============================================================ -->
+    <section class="lp-hero" data-section="text-hero" data-toggle="show_path_hero">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <p class="subhead"><a href="index.html">Home</a> / <a href="about.html">About</a> / <span aria-current="page">History</span></p>
+      </nav>
+
+      <div class="lp-hero__content">
+        <h1 class="h1 dark">History</h1>
+        <p class="body dark lp-hero__intro">From the nineteenth century to the twenty-first, we have developed and grown alongside our clients in Thailand and Southeast Asia. We still hold true to our core values and never tire of deepening our legal practice and boosting the success of our clients.</p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION: Overview (the About child pages' top-label overview)
+         SCF block: page/overview
+         Fields: show_page_overview, label, heading (textarea), text
+         ============================================================ -->
+    <section class="svc-overview svc-overview--top-label info-overview hist-overview" id="overview" data-section="info-overview" data-toggle="show_page_overview">
+      <p class="subhead pro-label svc-overview__label">Overview</p>
+      <h2 class="h2 svc-overview__heading">Little did William Alfred Goone Tilleke know when he stepped ashore Siam in 1890 that he would create a law firm that would endure for over 130 years.</h2>
+      <div class="rich-text svc-overview__text">
+        <p>In 1890, William Alfred Goone Tilleke, a 31-year-old Singhalese solicitor, came to Siam (now Thailand) to build his legal career. Within four years, Tilleke made an international name for himself through his successful defense of the Siamese military commander Phra Yod Muang Khwang, whose prosecution for killing a French officer was demanded by the Franco-Siamese treaty.</p>
+        <p>Through the early twentieth century, the firm was stewarded by several British partners, including Ralph Gibbins, Samuel Brighouse, Reginald Atkinson, and Victor Jaques. Like Tilleke, each partner played a key role not only in the firm’s success, but also in the development of the Thai legal system. The firm’s partners served the Kingdom of Siam in many capacities, including as advisors to the Ministry of Justice and the Thai Royal Family.</p>
+        <p>Following World War II, Tilleke &amp; Gibbins was acquired by American lawyers Albert and Freda Lyman. Along with their Thai partner, Roland (later Rojvit) Periera, the Lymans oversaw the growth of the firm’s international client base, while ensuring that the firm remained a pillar of Thai society by contributing to the founding of the American Association of Thailand (now the American Chamber of Commerce) and the Bangkok Stock Exchange (now the Stock Exchange of Thailand).</p>
+        <p>In the 1980s, David Lyman succeeded his father as the firm’s senior partner. During this period, the firm expanded internationally, with the opening of offices in Vietnam and membership in leading international law firm networks, beginning with Lex Mundi in 1989. In 2006, Tilleke &amp; Gibbins appointed Darani Vachanavuttivong and Tiziana Sucharitkul as Managing Partners of the firm.</p>
+        <p>The history of Tilleke &amp; Gibbins is one we share with our clients, our community, and the Kingdom of Thailand.</p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION: Timeline (new; built on the Module template's key
+         findings rows)
+         SCF block: about/history-timeline (new)
+         Fields: show_history_timeline (true/false), heading (text,
+                 default "Timeline"), entries (repeater): year (text,
+                 "1890" / "1950s"), title (text), text (textarea),
+                 image (image, optional; not shown in this design)
+         Rows between 1px rules that draw in, each with a 60 red tick
+         over the rule. Year in Roboto Condensed (the counters' face)
+         96 / 0.9, 20 in; title (.h3, max 300) at 350; text 16 / 22,
+         540 wide, at 729 (the overview's text column). 28 under the
+         rule, 40 to the next one.
+         ============================================================ -->
+    <section class="in-findings hist-timeline" id="timeline" data-section="history-timeline" data-toggle="show_history_timeline">
+      <h2 class="h2 hist-timeline__heading">Timeline</h2>
+      <ol class="in-findings__list hist-timeline__list">
+        <li class="in-findings__item hist-timeline__item">
+          <p class="in-findings__num hist-timeline__year">1890</p>
+          <h3 class="h3 in-findings__title">Tilleke Arrives in Siam</h3>
+          <div class="rich-text in-findings__text">
+            <p>When the young barrister William Alfred Goone Tilleke came to Siam in 1890, his future was delicately poised. Already highly accomplished, the 31-year-old Singhalese had left behind security and prestige enjoyed in his native Ceylon to seek his fortune in Siam, Southeast Asia’s last surviving independent state. Tilleke stepped ashore at Bangkok to enter into a life that held not just promise, but also the chance, if firmly grasped, to play a significant role in the development of modern Siam.</p>
+          </div>
+        </li>
+        <li class="in-findings__item hist-timeline__item">
+          <p class="in-findings__num hist-timeline__year">1894</p>
+          <h3 class="h3 in-findings__title">Phra Yod Muang Khwang Trial</h3>
+          <div class="rich-text in-findings__text">
+            <p>William Alfred Goone Tilleke made an international name for himself as defense counsel for the Siamese military commander Phra Yod Muang Khwang—whose prosecution for killing a French officer was demanded by the Franco-Siamese treaty. At the end of Tilleke’s brilliant cross-examination, the testimony of the principal prosecution witness, Bun Chan, sounded hopelessly unconvincing. All seven judges returned a verdict of Not Guilty.</p>
+          </div>
+        </li>
+        <li class="in-findings__item hist-timeline__item">
+          <p class="in-findings__num hist-timeline__year">1902</p>
+          <h3 class="h3 in-findings__title">Gibbins Joins the Firm</h3>
+          <div class="rich-text in-findings__text">
+            <p>The Tilleke &amp; Gibbins partnership, joined by Ralph Gibbins in approximately 1902, was engaged in several famous cases, including a long trial concerning the settlement of the estate of the famous Admiral John Bush, the founder of the Bangkok Dock Company and former harbormaster.</p>
+          </div>
+        </li>
+        <li class="in-findings__item hist-timeline__item">
+          <p class="in-findings__num hist-timeline__year">1911</p>
+          <h3 class="h3 in-findings__title">Retained by the Privy Purse</h3>
+          <div class="rich-text in-findings__text">
+            <p>Tilleke &amp; Gibbins was retained by the Privy Purse to assist in managing the private financial affairs of the King and the Royal Family. To conduct this business, Samuel Brighouse made a weekly visit to the Privy Purse and, with his car emblazoned with a large crest in the shape of a bull’s head that served as an entry pass to the royal offices, he became a familiar sight in Bangkok’s burgeoning traffic. The firm continued to represent the Privy Purse until 1932, the year of the bloodless coup that changed Siam’s political system from an absolute to a constitutional monarchy.</p>
+          </div>
+        </li>
+        <li class="in-findings__item hist-timeline__item">
+          <p class="in-findings__num hist-timeline__year">1911</p>
+          <h3 class="h3 in-findings__title">Entrepreneurs in Silk, Teak, Tea, and Trade</h3>
+          <div class="rich-text in-findings__text">
+            <p>Under the leadership of Samuel Brighouse and Reginald Atkinson, beginning in 1911, the law firm of Tilleke &amp; Gibbins represented most of the leading firms in Bangkok, including The Bombay Burmah Trading Corporation Ltd., The East Asiatic Co. Ltd., The Anglo-Thai Corporation, and The Borneo Company Ltd</p>
+          </div>
+        </li>
+        <li class="in-findings__item hist-timeline__item">
+          <p class="in-findings__num hist-timeline__year">1914</p>
+          <h3 class="h3 in-findings__title">World War I</h3>
+          <div class="rich-text in-findings__text">
+            <p>Samuel Brighouse and Reginald Atkinson, equally courageous and patriotic, both wished to fight for their country in World War I. As one of them would have to stay and take care of the business in Bangkok, family history has it that the two lawyers drew lots with Atkinson being the winner or loser, depending on your point of view. Atkinson joined the Welsh Cavalry as a lieutenant and served with distinction, finishing the war at the rank of major. Following the armistice of 1918, he lost no time in returning to Bangkok.</p>
+          </div>
+        </li>
+        <li class="in-findings__item hist-timeline__item">
+          <p class="in-findings__num hist-timeline__year">1917</p>
+          <h3 class="h3 in-findings__title">The Tilleke Legacy</h3>
+          <div class="rich-text in-findings__text">
+            <p>On March 7, 1917, a few days after suffering a heart attack, William Alfred Goone Tilleke died at his home at the age of 58. Tilleke served the Kingdom of Siam in many capacities including as a public prosecutor, Attorney General, and privy councilor. Tilleke also served on the drafting committees for Penal Law, the Constitution of the Courts of Justice and Civil Procedure, and the Civil and Commercial Code. Among the many titles and royal honors bestowed upon Tilleke, the title of Phra Attakarn Prasit continues to mark the lane where Tilleke lived, Soi Attakarn Prasit (Sathorn Soi 1).</p>
+          </div>
+        </li>
+        <li class="in-findings__item hist-timeline__item">
+          <p class="in-findings__num hist-timeline__year">1931</p>
+          <h3 class="h3 in-findings__title">The Siam Observer</h3>
+          <div class="rich-text in-findings__text">
+            <p>The high profiles of Tilleke &amp; Gibbins and its partners, including new partner Victor Jaques, were reflected in The Siam Observer’s notice of Brighouse’s 50th birthday on July 11, 1931. The paper devoted no less than 22 column inches to the occasion, using the opportunity to pen a candid, yet complimentary, portrait of the birthday celebrant and noting that, “We are certain that no one who has opposed his view has regarded him as but a clean, fair and chivalrous opponent.”</p>
+          </div>
+        </li>
+        <li class="in-findings__item hist-timeline__item">
+          <p class="in-findings__num hist-timeline__year">1937</p>
+          <h3 class="h3 in-findings__title">Noxious Trades</h3>
+          <div class="rich-text in-findings__text">
+            <p>Tilleke &amp; Gibbins handled 37 court cases in 1937, the figure rising to 61 in 1940. The litigation was wide ranging, from the formation of companies to debt, bankruptcy, motor accidents, murder, attempted murder, and one case involving the Asiatic Petroleum Company, intriguingly referred to as “dangerous or noxious trades.”</p>
+          </div>
+        </li>
+        <li class="in-findings__item hist-timeline__item">
+          <p class="in-findings__num hist-timeline__year">1941</p>
+          <h3 class="h3 in-findings__title">Japanese Forces Land in Thailand</h3>
+          <div class="rich-text in-findings__text">
+            <p>On December 8, 1941, Japanese forces landed in Thailand. The Japanese took effective control of Bangkok and the Thai government remained in power in little more than name. Luckily, Reginald Atkinson, Victor Jaques, and their families had previously departed from Thailand. Samuel Brighouse was less fortunate; he, his wife, and all but their youngest daughter Jane (who was at school in Malaya and managed to escape to Australia) were caught in Bangkok and interned. For the first time since its establishment, Tilleke &amp; Gibbins ceased operations.</p>
+          </div>
+        </li>
+        <li class="in-findings__item hist-timeline__item">
+          <p class="in-findings__num hist-timeline__year">1942</p>
+          <h3 class="h3 in-findings__title">Safeguarding the Firm</h3>
+          <div class="rich-text in-findings__text">
+            <p>Among the expatriates not interned was Ina Jorgensen, secretary to Victor Jaques, who retained her freedom as a national of Denmark, a country occupied by the Axis powers. Jorgensen was a resourceful and intrepid woman and was successful in not only keeping an eye on the Tilleke &amp; Gibbins office, which had been occupied by the Japanese military, but also in preserving the documents of foreign companies and other clients held by the firm. Jaques would later assign the trademark side of the business to Jorgensen as a reward for her loyalty in safeguarding the firm’s interests during World War II.</p>
+          </div>
+        </li>
+        <li class="in-findings__item hist-timeline__item">
+          <p class="in-findings__num hist-timeline__year">1945</p>
+          <h3 class="h3 in-findings__title">Operation Panicle</h3>
+          <div class="rich-text in-findings__text">
+            <p>In January 1945, Victor Jaques joined Force 136 of Britain’s Special Operations Executive (SOE) to execute an operation coded “Panicle.” The Allies believed that by connecting Pridi Phanomyong, a potential resistance leader in Thailand and the overall leader of the Free Thai Movement since 1943, with the Free Thai Movement overseas, they could undermine Japanese control in Thailand. Jaques was uniquely suited to infiltrate Thailand, make contact with Pridi, and act as a liaison between the Free Thai and Allied Command. Jaques successfully completed this mission, was promoted from acting to full brigadier, and was briefly the temporary British military governor of Thailand.</p>
+          </div>
+        </li>
+        <li class="in-findings__item hist-timeline__item">
+          <p class="in-findings__num hist-timeline__year">1946</p>
+          <h3 class="h3 in-findings__title">Back in Business</h3>
+          <div class="rich-text in-findings__text">
+            <p>Tilleke &amp; Gibbins was back in business, its usual caseload augmented by war claims against the Thai government on behalf of individuals and European companies. Victor Jaques, the sole remaining partner after the war, brought into the firm a young trial lawyer named Roland (later Rojvit) Periera.</p>
+          </div>
+        </li>
+        <li class="in-findings__item hist-timeline__item">
+          <p class="in-findings__num hist-timeline__year">1950s</p>
+          <h3 class="h3 in-findings__title">Building the IP Practice</h3>
+          <div class="rich-text in-findings__text">
+            <p>In the 1950s and 1960s, much of Albert Lyman’s attention was taken up with legislation and activities concerning trademarks and their infringement. This was a business he had to build up from scratch, as all such intellectual property work previously handled by the firm was transferred to Jorgensen after World War II. Borrowing the idea from a similar procedure used by Western colonial powers in China, Albert developed consular registration for patents, which went some way to providing protection for patent holders. The groundwork laid by Lyman in these areas bore abundant fruit in later years when Tilleke &amp; Gibbins became one of the foremost legal experts on intellectual property.</p>
+          </div>
+        </li>
+        <li class="in-findings__item hist-timeline__item">
+          <p class="in-findings__num hist-timeline__year">1951</p>
+          <h3 class="h3 in-findings__title">Albert Lyman Purchases Tilleke &amp; Gibbins</h3>
+          <div class="rich-text in-findings__text">
+            <p>In July 1951, Albert Lyman bought Tilleke &amp; Gibbins from Victor Jaques for the price of USD 2,500, which he had borrowed from his wife, Freda Lyman. Under the leadership of the Lymans, the firm added more recently arrived and mainly (though not exclusively) American companies, including Caltex, Getz Bros &amp; Co., Pepsi-Cola, Chase Manhattan, and Bank of America to its roster of clients, which continued to include established British trading concerns such as The Borneo Company Ltd. and foreign banks like the Hongkong &amp; Shanghai and the Mercantile Bank.</p>
+          </div>
+        </li>
+        <li class="in-findings__item hist-timeline__item">
+          <p class="in-findings__num hist-timeline__year">1961</p>
+          <h3 class="h3 in-findings__title">Bangkok Stock Exchange</h3>
+          <div class="rich-text in-findings__text">
+            <p>In 1950, Albert Lyman was a founding member of the American Association of Thailand which, in 1957, evolved into the American Chamber of Commerce, with Albert as one of its cofounders and its legal adviser for many years. Albert was also the inspiration for the founding of the Bangkok Stock Exchange (now the Securities Exchange of Thailand) in 1961 and served as its chairman for ten years.</p>
+          </div>
+        </li>
+        <li class="in-findings__item hist-timeline__item">
+          <p class="in-findings__num hist-timeline__year">1961</p>
+          <h3 class="h3 in-findings__title">Most Noble Order of the Crown of Thailand 5th Class</h3>
+          <div class="rich-text in-findings__text">
+            <p>Through her work with the American Women’s Club, Freda Lyman became actively involved with charitable activities aimed at aiding crippled children. She played a large part in the creation of the Foundation for Crippled Children, which in turn led to other welfare projects such as the Cheshire Homes. In recognition of this work, Freda was awarded the Most Noble Order of the Crown of Thailand 5th Class in 1961, making her the first foreign woman to be decorated by His Majesty King Bhumibol Adulyadej.</p>
+          </div>
+        </li>
+        <li class="in-findings__item hist-timeline__item">
+          <p class="in-findings__num hist-timeline__year">1967</p>
+          <h3 class="h3 in-findings__title">David Lyman Joins the Firm</h3>
+          <div class="rich-text in-findings__text">
+            <p>In 1967, David Lyman, the son of Albert and Freda, joined Tilleke &amp; Gibbins and began developing new clients and new systems for the firm. By the mid-1970s, business was expanding noticeably, especially in the fields of intellectual property and commercial and corporate business. Increasingly, large international contracts were secured and, for example, Tilleke &amp; Gibbins handled the formation of Diners Club and American Express in Thailand, marking the first major entry of credit card companies into the country.</p>
+          </div>
+        </li>
+        <li class="in-findings__item hist-timeline__item">
+          <p class="in-findings__num hist-timeline__year">1970s</p>
+          <h3 class="h3 in-findings__title">Largest Case in Thai History</h3>
+          <div class="rich-text in-findings__text">
+            <p>In his long career with the firm, Roland (later Rojvit) Periera appeared in more than 1,000 cases, many of them ranking among Bangkok’s most notable post-World War II trials. One of these cases was, at the time, the largest in Thai history in 1971, involving suit worth THB 400 million between Siam Kraft Paper and Parsons &amp; Whitmore, a construction company, concerning the Siam Kraft factory in Kanchanaburi. Periera succeeded in securing a satisfactory outcome to the litigation for Parsons &amp; Whitmore. Periera was also the lead attorney for Air India in a successful case involving the Customs Department (1976) and secured a victory for the Bank of America in a case involving deferred taxes (1970). Periera would later be joined at the firm by his sons Thanes and Santhapat Periera.</p>
+          </div>
+        </li>
+        <li class="in-findings__item hist-timeline__item">
+          <p class="in-findings__num hist-timeline__year">1984</p>
+          <h3 class="h3 in-findings__title">Albert Lyman’s Legacy</h3>
+          <div class="rich-text in-findings__text">
+            <p>On April 10, 1984, Albert Lyman succumbed to diabetes. He was followed by his wife, Freda Lyman, who passed away on July 18, 1986. Anecdotes abound attesting to the high regard in which Albert Lyman was held by all who knew him. As part of the after-dinner entertainment at a party hosted by the British Ambassador, eight British and two American guests were posed the hypothetical question of whom they would contact if they suddenly found themselves in a dangerous or threatening situation in Thailand and could make only one telephone call. Not one of the guests gave the obvious answer (of getting in touch with their embassy), but six of them did agree—they would call Albert Lyman.</p>
+          </div>
+        </li>
+        <li class="in-findings__item hist-timeline__item">
+          <p class="in-findings__num hist-timeline__year">1989</p>
+          <h3 class="h3 in-findings__title">Globalization</h3>
+          <div class="rich-text in-findings__text">
+            <p>In 1989, Lex Mundi contacted David Lyman, which resulted in Tilleke &amp; Gibbins joining what is the world’s premier international grouping of independent law firms. This membership grew to give the firm access to the expertise and experience of more than 21,000 attorneys in over 160 jurisdictions, thus vastly enhancing its services in handling cross-border transactions. In becoming a member of Lex Mundi (and subsequently several other international legal networks), Tilleke &amp; Gibbins anticipated the trend towards globalization that continued through the last decade of the twentieth century and into the new millennium.</p>
+          </div>
+        </li>
+        <li class="in-findings__item hist-timeline__item">
+          <p class="in-findings__num hist-timeline__year">1992</p>
+          <h3 class="h3 in-findings__title">Expanding to Vietnam</h3>
+          <div class="rich-text in-findings__text">
+            <p>In July 1992, Tilleke &amp; Gibbins became the first foreign law firm to be granted a license to establish a representative office in Vietnam. The new office, located in Ho Chi Minh City, the commercial heart of the reunified Vietnam, was followed by the establishment in January 1994 of a branch office in Hanoi, the nation’s capital. Both offices were awarded full branch office licenses in 1996.</p>
+          </div>
+        </li>
+        <li class="in-findings__item hist-timeline__item">
+          <p class="in-findings__num hist-timeline__year">1993</p>
+          <h3 class="h3 in-findings__title">Second Hundred Years Forest Project</h3>
+          <div class="rich-text in-findings__text">
+            <p>In 1993, Tilleke &amp; Gibbins launched the Second Hundred Years Forest Project, a community project in recognition of the firm’s second century of client service. Working with the Rajapruek Foundation, the Royal Thai Army, the Royal Forestry Department, and friends of the firm, including long-time client, the Thoresen Group, the firm planted over 100,000 trees in five phases between 1993 and 2010. The Second Hundred Years Forest Project is currently in its sixth phase.</p>
+          </div>
+        </li>
+        <li class="in-findings__item hist-timeline__item">
+          <p class="in-findings__num hist-timeline__year">2006</p>
+          <h3 class="h3 in-findings__title">New Managing Partners</h3>
+          <div class="rich-text in-findings__text">
+            <p>On August 4, 2006, Tilleke &amp; Gibbins appointed Darani Vachanavuttivong and Tiziana Sucharitkul as Co-Managing Partners of the firm. Darani Vachanavuttivong heads the firm’s intellectual property group and is a formidable enforcer of intellectual property rights, including trademarks, copyrights, and patents. Darani is currently recognized as a top IP practitioner by such publications as <em>Asialaw Leading Lawyers, Legal 500 Asia Pacific</em>, and <em>Chambers Asia-Pacific</em>. Tiziana Sucharitkul leads the firm’s dispute resolution and litigation group and is consistently ranked as one of Thailand’s leading dispute resolution lawyers. She represents international clients in diverse industries including technology, financial services, consumer goods, luxury goods, and transportation.</p>
+          </div>
+        </li>
+        <li class="in-findings__item hist-timeline__item">
+          <p class="in-findings__num hist-timeline__year">2008</p>
+          <h3 class="h3 in-findings__title">Merger with Pacific Legal Group</h3>
+          <div class="rich-text in-findings__text">
+            <p>On August 1, 2008, Tilleke &amp; Gibbins and Pacific Legal Group (Thailand) Ltd. merged their practices. This combination allowed the firm to offer clients Thai Food and Drug Administration (FDA) and Ministry of Agriculture (MOA) registration and regulatory compliance services of the highest quality rendered by the largest and most experienced group of Thai FDA and MOA registration and regulatory compliance specialists.</p>
+          </div>
+        </li>
+        <li class="in-findings__item hist-timeline__item">
+          <p class="in-findings__num hist-timeline__year">2010</p>
+          <h3 class="h3 in-findings__title">120th Anniversary</h3>
+          <div class="rich-text in-findings__text">
+            <p>Tilleke &amp; Gibbins celebrated the 120th anniversary of its founding in 2010 with the release of the book Wise Counsel. Recognition of the firm’s longevity is well illustrated by client loyalty. A total of 307 clients have been with the firm for more than 30 years and 25 of these for more than 70 years. Co-Managing Partner Tiziana Sucharitkul pledges that Tilleke &amp; Gibbins will “remain a very client-oriented firm.”</p>
+          </div>
+        </li>
+        <li class="in-findings__item hist-timeline__item">
+          <p class="in-findings__num hist-timeline__year">2010s</p>
+          <h3 class="h3 in-findings__title">Southeast Asia Expansion</h3>
+          <div class="rich-text in-findings__text">
+            <p>Building on its longstanding presence in Thailand and Vietnam, Tilleke &amp; Gibbins grew into a truly regional law firm providing service across Southeast Asia. During 2013–2015, the firm opened new offices in Cambodia, Indonesia, Laos, and Myanmar to serve its multinational clients in these growing markets.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ============================================================
+         SECTION: Wise Counsel (the About page's code-of-conduct block)
+         SCF block: about/code reused (label, heading, text, link)
+         ============================================================ -->
+    <section class="svc-overview svc-overview--top-label about-code hist-book" id="wise-counsel" data-section="about-code" data-toggle="show_about_code">
+      <p class="subhead pro-label svc-overview__label">Wise Counsel</p>
+      <h2 class="h2 svc-overview__heading">Wise Counsel:<br>A History of Thailand’s Oldest Law Firm</h2>
+      <div class="about-code__body">
+        <div class="rich-text svc-overview__text">
+          <p>To celebrate the firm’s 120th anniversary in 2010, Tilleke &amp; Gibbins released Wise Counsel, a 236-page illustrated chronicle of the firm. Published by Mark Standen and written by John Hoskin, Wise Counsel traces the firm’s development from William Alfred Goone Tilleke’s arrival in the Kingdom of Siam in 1890 through the various changes that have made the legal practice what it is today. The book features an impressive collection of historical photos, key partner profiles, and discussions of major cases, making it an excellent addition to any history enthusiast’s bookshelf.</p>
+        </div>
+        <a href="mailto:bangkok@tilleke.com?subject=Reserve%20Hard%20Copy%20of%20Wise%20Counsel" class="button-label link-arrow about-code__link">
+          Reserve a hard copy
+          <svg viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION: More from (grey link list)
+         SCF block: page/more-from
+         ============================================================ -->
+    <section class="more-from" data-section="more-from" data-toggle="show_more_from">
+      <h2 class="h2 more-from__title">More from<br>About</h2>
+      <ul class="more-from__list">
+        <li><a href="about.html" class="h3 more-from__link">Overview<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+        <li><a href="awards.html" class="h3 more-from__link">Awards &amp; Rankings<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+        <li><a href="pro-bono.html" class="h3 more-from__link">Pro Bono<span class="arrow-circle arrow-circle--lg" aria-hidden="true"><svg viewBox="0 0 10 10" fill="none"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER (site-wide)
+       SCF options page: site/footer
+       Fields: logo (image/svg), social_links (repeater: network, url),
+               newsletter_heading, newsletter_form (Mailchimp/CF7 embed or
+               action url), networks (repeater: logo, url), quick_links
+               (WP menu "Footer quick links", split into 2 columns),
+               copyright, legal_links (WP menu "Footer legal")
+       ============================================================ -->
+  <footer id="footer" class="hp-footer" data-section="footer">
+    <div class="hp-footer__top">
+
+      <div class="hp-footer__brand">
+        <!-- TODO: swap for the logo SVG once supplied; this is a text stand-in -->
+        <a href="index.html" class="hp-footer__logo" aria-label="Tilleke &amp; Gibbins">
+          <span>Tilleke</span>
+          <span><em>&amp;</em>Gibbins</span>
+        </a>
+
+        <ul class="hp-footer__social">
+          <li>
+            <a href="https://www.facebook.com/tillekegibbins" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.5-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H8v3h2.5V21h3z"/></svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.youtube.com/channel/UCRQKPcy9kYGdYqFVkqzSqVA" aria-label="YouTube">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18.3 5 12 5 12 5s-6.3 0-7.8.4A2.5 2.5 0 0 0 2.4 7.2C2 8.8 2 12 2 12s0 3.2.4 4.8a2.5 2.5 0 0 0 1.8 1.8C5.7 19 12 19 12 19s6.3 0 7.8-.4a2.5 2.5 0 0 0 1.8-1.8c.4-1.6.4-4.8.4-4.8s0-3.2-.4-4.8zM10 15V9l5.2 3L10 15z"/></svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/company/tilleke-gibbins/" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.9 8.7H3.6V20h3.3V8.7zM5.3 3.5a1.9 1.9 0 1 0 0 3.8 1.9 1.9 0 0 0 0-3.8zM20.4 13.1c0-3.2-1.7-4.7-4-4.7a3.4 3.4 0 0 0-3.1 1.7V8.7H10V20h3.3v-5.6c0-1.5.3-2.9 2.1-2.9 1.8 0 1.8 1.7 1.8 3V20h3.3v-6.9z"/></svg>
+            </a>
+          </li>
+        </ul>
+
+        <p class="button-label dark hp-footer__newsletter-heading">Subscribe to our newsletter</p>
+        <form class="hp-footer__form" action="https://tilleke.us7.list-manage.com/subscribe/post?u=266a11a0874fa0c222f4b20fd&amp;id=2fba872045" method="post" target="_blank">
+          <label class="visually-hidden" for="footer-email">Your email</label>
+          <input type="email" id="footer-email" name="EMAIL" placeholder="Your email" autocomplete="email" required>
+          <div class="visually-hidden" aria-hidden="true"><input type="text" name="b_266a11a0874fa0c222f4b20fd_2fba872045" tabindex="-1" value=""></div>
+          <button type="submit">
+            Subscribe
+            <svg viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M3 1l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </form>
+      </div>
+
+      <div class="hp-footer__nav">
+        <p class="subhead hp-footer__label">Networks</p>
+        <ul class="hp-footer__networks">
+          <li><a href="https://www.lexmundi.com/"><img src="assets/lexmundi.png" alt="Lex Mundi Member" class="hp-footer__network hp-footer__network--lexmundi"></a></li>
+          <li><a href="https://www.multilaw.com/"><img src="assets/multilaw.png" alt="Multilaw" class="hp-footer__network hp-footer__network--multilaw"></a></li>
+          <li><a href="https://www.drewnetworkasia.com/"><img src="assets/dna.png" alt="Drew Network Asia" class="hp-footer__network hp-footer__network--dna"></a></li>
+        </ul>
+
+        <p class="subhead hp-footer__label hp-footer__label--links">Quick links</p>
+        <div class="hp-footer__quick">
+          <ul class="hp-footer__quick-col">
+            <li><a href="professionals.html" class="button-label dark">Professionals</a></li>
+            <li><a href="services.html" class="button-label dark">Services</a></li>
+            <li><a href="insights.html" class="button-label dark">Insights</a></li>
+            <li><a href="global-reach.html" class="button-label dark">Locations</a></li>
+          </ul>
+          <ul class="hp-footer__quick-col">
+            <li><a href="about.html" class="button-label dark">About</a></li>
+            <li><a href="careers.html" class="button-label dark">Careers</a></li>
+            <li><a href="contact.html" class="button-label dark">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="hp-footer__bar">
+      <p class="subhead hp-footer__copyright">&copy; 2026 Tilleke &amp; Gibbins International Ltd. All rights reserved.</p>
+      <ul class="hp-footer__legal">
+        <li><a href="privacy-policy.html" class="subhead dark">Privacy Policy</a></li>
+        <li><a href="fraudulent-communications.html" class="subhead dark">Fraudulent Communications</a></li>
+        <li><a href="legal-notice.html" class="subhead dark">Legal Notice</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="assets/vendor/ScrollTrigger.min.js"></script>
+  <script src="assets/vendor/SplitText.min.js"></script>
+  <script src="assets/vendor/blaze-slider.min.js"></script>
+  <script src="assets/vendor/lenis.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

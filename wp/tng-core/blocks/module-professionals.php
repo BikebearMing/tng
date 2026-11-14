@@ -13,16 +13,24 @@ if ( ! tng_show( 'show_module_professionals', $tng_id ) ) {
 	return;
 }
 
-$tng_ids = array_slice( tng_rel_ids( 'related_professionals', $tng_id ), 0, 4 );
+// Published people only (a trashed or draft professional leaves no gap); none = no section.
+$tng_ids = array_slice(
+	array_filter(
+		tng_rel_ids( 'related_professionals', $tng_id ),
+		static function ( $pid ) {
+			return 'publish' === get_post_status( $pid );
+		}
+	),
+	0,
+	4
+);
 if ( ! $tng_ids ) {
 	return;
 }
 
 $tng_cards = '';
 foreach ( $tng_ids as $tng_pid ) {
-	if ( 'publish' === get_post_status( $tng_pid ) ) {
-		$tng_cards .= tng_pro_card( $tng_pid );
-	}
+	$tng_cards .= tng_pro_card( $tng_pid );
 }
 
 $tng_pros_page = get_page_by_path( 'professionals' );
